@@ -1,25 +1,21 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Just Create"
 date:   2015-08-15 00:20:55
-categories: jekyll update
+categories: design advice
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+This is post is a reminder to myself about all the negative things I’ve done and are currently do as a young designer that is hindering my personal development. Hopefully you can relate to this post as well. The message is simple just create!
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+* Don’t worry about make mistakes in projects because you will learn more effectively this way.
+* Don’t hesitate to write things down.
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
-
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+* Don’t compare yourself to anyone else.
+* Don’t be against using a front-end framework like bootstrap in your project
+⋅⋅* In that regard don’t be against using any third party tools. Your NOT required to build everything - a good craftsman is aware of the tools available to him/her and knows how and when to use them.
+* Don’t get wrapped in making your work perfect because theres no such thing
+* Don’t care about what others think of you and your work
+* Don’t get procrastinate because there is someone else out there fulfilling your dream
+* Don’t over think things
+* Don’t try to know everything before you begin
+* Don’t get too frustrated if your work looks wack in the beginning - you have to create a mountain of work under you before the good work starts to arrive
+* Never discredit yourself - always give yourself a pat on the back at the end of each project even when you don’t like the work you’ve created.
