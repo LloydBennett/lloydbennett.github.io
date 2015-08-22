@@ -11,4 +11,28 @@ github_username:  LloydBennett
 
 # Build settings
 markdown: kramdown
-permalinks: /:title
+permalink: /:title
+
+
+collections:
+  projects:
+    output: true
+
+
+
+# Default Settings
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Lloyd Bennett"
+
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "casestudy"
