@@ -1,22 +1,26 @@
-.menu-icon {
-  display: block;
-  float: right;
-  width: 36px;
-  height: 26px;
-  line-height: 0;
-  padding-top: 10px;
-  text-align: center;
+.nav{
+  
+  @include element('menu-icon'){
+    display: block;
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center;
 
-  > svg {
-      width: 18px;
-      height: 15px;
+      > svg {
+          width: 18px;
+          height: 15px;
 
-      path {
-          fill: grey;
+          path {
+              fill: grey;
+          }
+      }
+
+      @include media-query(48.75em){
+        display:none;
       }
   }
 
-  @include media-query(48.75em){
-    display:none;
-  }
 }

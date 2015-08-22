@@ -1,7 +1,7 @@
 ---
 layout: casestudy
-title:  Seed Creativity Re-Design
-category: Web Design
+title:  Driving E-Learning System
+category: App Design
 featured-image: desktopBrowser.jpg
 ---
 
