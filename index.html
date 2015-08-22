@@ -1,22 +1,54 @@
 ---
-layout: default
+title: Home
+layout: page
 ---
 
 <div class="home">
+  <section>
+    <h3> About Me </h3>
+    <div class="avatar">
+      <img src="../avatar-me.jpg" alt="my-picture">
+      <p>Lorem ipsum.</p>
+    </div>
+  </section>
 
-  <h1 class="page-heading">Posts</h1>
+  <section>
+    <h3> Portfolio </h3>
+    <div class="projects">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      {% for casestudy in site.portfolio %}
+      <div class="casestudy">
+        <img src="{{site.baseurl}}/{{casestudy.image}}" alt="my-picture">
+        <div class="overlay">
+          <h1 class="overlay__title">{{ casestudy.title }}</h1>
+          <h2 class="overlay__sub__title">{{ casestudy.catergory }}</h2>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  <section>
+    <h3>Recent Posts</h3>
+    <div class="posts">
+
+      {% for post in site.posts limit:5 %}
+      <a class="post" href="{{ post.url | prepend: site.baseurl }}">
+          <div class="overlay">
+            <h1>{{ post.category }}<h1>
+            <h1>{{ post.title }}<h1>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+          </div>
+
+      </a>
+      {% endfor %}
+
+
+    </div>
+  </section>
+
+
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 

@@ -1,0 +1,23 @@
+@mixin measure ($maxwidth: 38em){
+  max-width: $maxwidth;
+}
+
+@mixin element ($element){
+	&__#{$element}{
+		@content;
+	}
+
+}
+
+@mixin modifier ($modifier){
+	&--#{$modifier}{
+		@content;
+	}
+
+}
+
+@mixin media-query($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
