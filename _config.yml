@@ -26,7 +26,7 @@ defaults:
     values:
       layout: "post"
       author: "Lloyd Bennett"
-
+      comments: true
   -
     scope:
       path: ""
