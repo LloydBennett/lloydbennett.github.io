@@ -1,0 +1,23 @@
+.btn {
+  @include modifier('primary'){
+    padding: 15px 50px;
+
+  }
+  @include modifier('whiteblue'){
+    @include button-modifier($font-color: white, $border-color: white);
+
+    &:hover{
+      @include button-modifier($font-color: $brand--color, $bg-color: white, $transition: false);
+    }
+
+  }
+
+  @include modifier('bluewhite'){
+    @include button-modifier($brand--color, $brand--color);
+
+    &:hover{
+      @include button-modifier(white, $bg-color: $brand--color, $transition: false);
+    }
+  }
+
+}

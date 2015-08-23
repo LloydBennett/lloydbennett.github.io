@@ -1,4 +1,4 @@
-<header class="site-header">
+<header class="site-header" style="background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('{{ site.baseurl }}/images/{{ page.featured-image }}') no-repeat fixed center top; ">
 
     <nav class="nav">
       <div class="wrapper">
@@ -20,8 +20,13 @@
             {% endif %}
           {% endfor %}
         </ul>
-      </div>  
+      </div>
     </nav>
+
+    <div class="wrapper">
+      {% if post.categories %}
+        <span>{{ post.catergory }}</span>
+      {% endif %}
 
       {% if page.heading %}
         <h1>{{ page.heading }}</h1>
@@ -30,7 +35,11 @@
       {% endif %}
       <p class="text">{{ page.description }}</p>
 
-
+      {% if page.calltoaction %}
+        {% for buttonname in page.buttonname %}
+          <button class="btn--primary btn--whiteblue">{{ buttonname }}</button>
+        {% endfor %}
+      {% endif %}
     </div>
 
 </header>

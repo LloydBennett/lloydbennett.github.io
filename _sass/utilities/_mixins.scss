@@ -21,3 +21,14 @@
         @content;
     }
 }
+
+@mixin button-modifier ($font-color:null, $border-color:null, $bg-color:null, $transition: true) {
+  color: $font-color;
+  background-color: $bg-color;
+  border-color: $border-color;
+
+  @if $transition {
+    transition: 500ms ease;
+  }
+
+}

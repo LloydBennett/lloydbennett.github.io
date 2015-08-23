@@ -1,0 +1,10 @@
+/* Header */
+
+header{
+  background-size: cover;
+  height: 31.25em;
+  @include media-query(43.75em){
+    height: 43.75em;
+  }
+
+}

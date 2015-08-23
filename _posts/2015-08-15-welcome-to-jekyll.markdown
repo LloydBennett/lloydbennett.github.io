@@ -1,7 +1,8 @@
 ---
 title:  "Just Create"
 date:   2015-08-15 00:20:55
-categories: design advice
+category: design
+tags: advice learning
 featured-image: justcreate.jpg
 ---
 This is post is a reminder to myself about all the negative things I’ve done and are currently do as a young designer that is hindering my personal development. Hopefully you can relate to this post as well. The message is simple just create!

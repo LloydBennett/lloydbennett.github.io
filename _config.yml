@@ -33,3 +33,10 @@ defaults:
       type: "projects"
     values:
       layout: "casestudy"
+      calltoaction: false
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      calltoaction: true
