@@ -1,0 +1,13 @@
+
+.footer{
+
+  @include element('upper'){
+    min-height: 200px;
+    padding: 15% 0;
+    -webkit-clip-path: polygon(0 28%, 100% 0%, 100% 72%, 0% 100%);
+    clip-path: polygon(0 28%, 100% 0%, 100% 72%, 0% 100%);
+
+  }
+
+
+}

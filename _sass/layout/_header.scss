@@ -2,9 +2,19 @@
 
 header{
   background-size: cover;
-  height: 31.25em;
-  @include media-query(43.75em){
-    height: 43.75em;
-  }
+}
+.header {
+  @include modifier(polygon){
 
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+
+  }
+  @include element('masthead'){
+    height: 31.25em;
+    color: white;
+    @include media-query(43.75em){
+      height: 43.75em;
+    }
+  }
 }
