@@ -1,0 +1,56 @@
+.block{
+  @extend %clearfix;
+}
+
+.grid{
+  overflow: hidden;
+  position: relative;
+  display:block;
+
+  img{
+    width:100%;
+    display:block;
+  }
+
+  @include modifier('3'){
+    width:100%;
+    margin: 5% 0;
+
+    @include media-query(43.75em){
+      width: 48%;
+      margin: 5% 1%;
+      float: left;
+
+    }
+    @include media-query(960px){
+      width: 30%;
+      margin: 5% 1.5%;
+
+    }
+
+
+  }
+
+  @include modifier('curved-edges'){
+    border-radius: 5px;
+  }
+
+  /*@include modifier('hex'){
+    -webkit-clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
+  clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
+}*/
+  @include element('overlay'){
+    position:absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba($brand--color, 0.7);
+    color: white;
+    //display:none;
+
+  }
+
+
+
+}

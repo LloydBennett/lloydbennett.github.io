@@ -6,3 +6,18 @@
         clear: both;
     }
 }
+
+
+
+
+%center{
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/*  UTILITY CLASS  */
+
+.center{
+  @extend %center;
+}

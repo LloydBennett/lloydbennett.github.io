@@ -7,10 +7,14 @@ header{
   @include modifier(polygon){
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 82%);
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 82%);
-    
+
     @include media-query(43.75em){
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
       clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+    }
+
+    .no-cssmask &{
+      clip-path:url(#headerPolygon);
     }
   }
   @include element('masthead'){

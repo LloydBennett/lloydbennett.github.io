@@ -1,3 +1,11 @@
 @import 'header',
         'footer'
 ;
+.wrapper{
+  width:90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  @include media-query(43.75em){
+    width:80%;
+  }
+}

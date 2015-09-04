@@ -26,8 +26,15 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   font-family: $base-font-family;
-	line-height: 1.6;
   font-weight:400;
+	font-size: 100%;
+	line-height: 1.25;
+	color: $body-font--color;
+
+	@include media-query(43.75em){
+		line-height: 1.6;
+		font-size:110%;
+	}
 }
 /*ol, ul {
 	list-style: none;
