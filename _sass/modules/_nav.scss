@@ -1,20 +1,23 @@
 .nav{
-  
+  height:4.375rem;
+  overflow:hidden;
+
+
   @include element('menu-icon'){
     display: block;
     float: right;
     width: 36px;
     height: 26px;
     line-height: 0;
-    padding-top: 10px;
+    @extend %vertical-align-center;
     text-align: center;
 
       > svg {
-          width: 18px;
-          height: 15px;
+          width: 23px;
+          height: 20px;
 
           path {
-              fill: grey;
+              fill: white;
           }
       }
 
@@ -23,4 +26,38 @@
       }
   }
 
+  @include element('list'){
+    list-style:none;
+    background-color: $dark-grey--color;
+    height: 200px;
+    color:white;
+    display:none;
+    @extend %clearfix;
+
+
+
+
+    @include element('link'){
+      position: relative;
+      top: 40%;
+      -webkit-transform: translateY(-40%);
+      transform: translateY(-40%);
+      float:left;
+      width: 33.3%;
+      height:33.3%;
+      text-align: center;
+    }
+  }
+}
+
+.slide-down{
+  display:block;
+  -o-transition: 500ms ease-in;
+  -moz-transition: 500ms ease-in;
+  -webkit-transition: 500ms ease-in;
+  transition: 500ms ease-in;
+}
+
+.height-to-bottom{
+  height: 100%;
 }

@@ -18,10 +18,22 @@ header{
     }
   }
   @include element('masthead'){
-    height: 31.25em;
+    height: 43.75em;
     color: white;
-    @include media-query(43.75em){
-      height: 43.75em;
+
+  }
+}
+
+.intro{
+  text-align: center;
+  margin-top: 4.5rem;
+
+  @include element('brief'){
+    margin: 0.75rem auto 1.5rem;
+    padding: 0 0.5rem;
+
+    @include media-query(34.75em){
+      padding: 0 3rem;
     }
   }
 }

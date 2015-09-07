@@ -1,0 +1,15 @@
+.logo{
+  float: left;
+  width: 40px;
+  margin-top:2px;
+  @extend %vertical-align-center;
+
+  @include element('mark'){
+    width:100%;
+  }
+
+
+  @include media-query(43.75em){
+    width: 50px;
+  }
+}

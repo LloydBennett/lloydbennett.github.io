@@ -28,7 +28,7 @@ body {
   font-family: $base-font-family;
   font-weight:400;
 	font-size: 100%;
-	line-height: 1.25;
+	line-height: 1.5;
 	color: $body-font--color;
 
 	@include media-query(43.75em){
@@ -59,4 +59,7 @@ a{
 		color: inherit;
 	}
 
+}
+*{
+	box-sizing: border-box;
 }
