@@ -1,7 +1,6 @@
 .logo{
   float: left;
   width: 40px;
-  margin-top:2px;
   @extend %vertical-align-center;
 
   @include element('mark'){

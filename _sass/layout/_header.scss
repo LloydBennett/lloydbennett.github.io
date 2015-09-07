@@ -9,8 +9,8 @@ header{
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 82%);
 
     @include media-query(43.75em){
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 90%);
+      clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 90%);
     }
 
     .no-cssmask &{
@@ -28,12 +28,31 @@ header{
   text-align: center;
   margin-top: 4.5rem;
 
+  @include media-query(43.75em){
+    margin-top: 7.5rem;
+  }
+
+  @include element('title'){
+    -webkit-animation: fade-in 1s ease-in forwards;
+    animation: fade-in 1s ease-in forwards;
+  }
+
+
   @include element('brief'){
     margin: 0.75rem auto 1.5rem;
     padding: 0 0.5rem;
+    opacity: 0;
+    -webkit-animation: fade-in 1s ease-in 500ms forwards;
+    animation: fade-in 1s ease-in 500ms forwards;
 
     @include media-query(34.75em){
       padding: 0 3rem;
     }
+  }
+
+  button{
+    opacity: 0;
+    -webkit-animation: fade-in 1s ease-in 1s forwards;
+    animation: fade-in 1s ease-in 1s forwards;
   }
 }
