@@ -22,4 +22,15 @@
 
 .myinfo{
   @extend %center;
+
+  @include element('copy'){
+    margin:1.5rem auto 0;
+
+    @include media-query(50em){
+      padding-left: 1em;
+      padding-right:1em;
+    }
+  }
+
+
 }

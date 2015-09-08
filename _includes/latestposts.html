@@ -1,5 +1,5 @@
 <section class="block">
-  <h3>Recent Posts</h3>
+  <h3 class="block__title center">Recent Posts</h3>
 
     {% for post in site.posts limit:5 %}
     <a class="grid grid--3 grid--hex" href="{{ post.url | prepend: site.baseurl }}">
