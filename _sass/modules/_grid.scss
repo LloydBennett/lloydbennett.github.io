@@ -3,6 +3,10 @@
   margin-bottom:6rem;
   @include element('title'){
     margin-bottom: 3rem;
+
+    @include modifier('white'){
+      color: white;
+    }
   }
 }
 
@@ -23,16 +27,6 @@
     -o-transition: 500ms ease;
 
   }
-  &:hover img {
-    transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-
-    transition: 800ms ease;
-    -moz-transition: 800ms ease;
-    -webkit-transition: 800ms ease;
-    -o-transition: 800ms ease;
-
-  }
 
 
   img{
@@ -45,7 +39,18 @@
     -o-transition: 300ms ease-out;
 
   }
+  @include modifier('hover-scale'){
+    &:hover img {
+      transform: scale(1.5);
+      -webkit-transform: scale(1.5);
 
+      transition: 800ms ease;
+      -moz-transition: 800ms ease;
+      -webkit-transition: 800ms ease;
+      -o-transition: 800ms ease;
+
+    }
+  }
   @include modifier('3'){
     width:100%;
     margin: 0 0 5% 0;
@@ -65,14 +70,57 @@
 
   }
 
+  @include modifier('cluster'){
+     width:80%;
+     margin: 0 auto 1%;
+
+     .grid__overlay__title{
+       font-size: 1em;
+     }
+     .grid__overlay__subtitle{
+       font-size: .8em;
+     }
+
+
+    @include media-query(36.25em){ //580px
+      float: left;
+      width: 49%;
+      margin: 0 0.5% 1%;
+
+    }
+    @include media-query(60em){
+      width: 32%;
+      margin: 0 0.5% 1%;
+
+    }
+    &:last-child{
+      @include media-query(36.25em){
+        position:relative;
+        left:50%;
+        transform: translateX(-50%);
+
+      }
+
+    }
+    &:last-child, &:nth-last-child(2){
+      @include media-query(60em){
+        position:relative;
+        left:25%;
+        transform: translateX(-25%);
+
+      }
+    }
+
+  }
+
   @include modifier('curved-edges'){
     border-radius: 3px;
   }
 
-  /*@include modifier('hex'){
+  @include modifier('hex'){
     -webkit-clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
-  clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
-}*/
+    clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
+  }
   @include element('overlay'){
     position:absolute;
     top: 0;
@@ -82,7 +130,8 @@
     background-color: rgba($brand--color, 0.7);
     color: white;
     opacity: 0;
-
+    text-align: center;
+    text-transform: capitalize;
     transition: 300ms ease-out;
     -moz-transition: 300ms ease-out;
     -webkit-transition: 300ms ease-out;
@@ -91,20 +140,45 @@
 
     @include element('title'){
       font-size:1.25em;
-      text-align: center;
-      @extend %vertical-align-center;
+      margin-bottom: 0.4rem;
+      @include vertical-align(50%, -50%);
+
+
+      .grid__overlay__misc ~ & {
+        @include vertical-align(40%, -40%);
+        margin-bottom: 0.2rem;
+      }
     }
 
     @include element('subtitle'){
       display:block;
-      @extend %vertical-align-center;
+      @include vertical-align(50%, -50%);
       font-size:1em;
       font-weight:600;
-      text-align: center;
 
       @include media-query(43.75em) {
         font-size:0.75em;
       }
+
+      .grid__overlay__misc ~ & {
+        @include vertical-align(40%, -40%);
+      }
     }
+    @include element('misc'){
+      font-size:0.8em;
+      display: block;
+
+      @include vertical-align(23%);
+
+
+    }
+    @include element('hr'){
+      display: block;
+      @include vertical-align(28%);
+
+      width: 36px;
+      @extend .divider;
+    }
+
   }
 }

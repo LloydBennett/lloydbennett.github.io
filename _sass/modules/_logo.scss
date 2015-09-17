@@ -1,7 +1,7 @@
 .logo{
   float: left;
   width: 40px;
-  @extend %vertical-align-center;
+  @include vertical-align(50%, -50%);
 
   @include element('mark'){
     width:100%;

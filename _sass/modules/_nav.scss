@@ -9,7 +9,7 @@
     width: 36px;
     height: 26px;
     line-height: 0;
-    @extend %vertical-align-center;
+    @include vertical-align(50%, -50%);
     text-align: center;
 
       > svg {
@@ -57,10 +57,7 @@
 
 
     @include element('link'){
-      position: relative;
-      top: 40%;
-      -webkit-transform: translateY(-40%);
-      transform: translateY(-40%);
+      @include vertical-align(40%, -40%);
       float:left;
       width: 33.3%;
       height:33.3%;

@@ -13,7 +13,7 @@ function scrollTo(handler, target){
 
 //dom ready
 $(function(){
-  
+
   //mobile menu
   $('.nav__menu-icon').on('click', function(){
     $('.nav__list').slideToggle(300);
@@ -52,7 +52,7 @@ $(window).resize(function(){
     $navMenu.appendTo('.nav .wrapper');
   }
   else {
-    navMenu.insertBefore('.header__masthead');
+    $navMenu.insertBefore('.header__masthead');
   }
 
 });

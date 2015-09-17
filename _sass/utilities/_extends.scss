@@ -25,5 +25,12 @@
 /*  UTILITY CLASS  */
 
 .center{
+  display:block;
   @extend %center;
+}
+
+.divider{
+  height: 3px;
+  border: none;
+  background-color: white;
 }
