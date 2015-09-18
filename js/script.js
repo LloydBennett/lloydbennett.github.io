@@ -2,6 +2,7 @@
 var $navMenu = $('.nav__list'),
     $ctaButton = $('.btn--primary'),
     $ctaTarget = $('#cta-target');
+
 //call to action scrolling functionality
 function scrollTo(handler, target){
   handler.on('click', function(){
@@ -11,6 +12,22 @@ function scrollTo(handler, target){
   });
 }
 
+//field has input checker
+function fieldFocusOut(formField){
+
+  formField.focusout(function(){
+    var $inputVal = $(this).val();
+
+    if($inputVal === ""){
+      $(this).removeClass('has-input');
+    }else{
+      $(this).addClass('has-input');
+    }
+
+  });
+}
+
+
 //dom ready
 $(function(){
 
@@ -18,7 +35,12 @@ $(function(){
   $('.nav__menu-icon').on('click', function(){
     $('.nav__list').slideToggle(300);
   });
+  
+  //function calls
   scrollTo($ctaButton, $ctaTarget);
+  scrollTo($('#contactme'), $('.footer__upper'));
+  fieldFocusOut($('.input__group input'));
+  fieldFocusOut($('.input__group textarea'));
 });
 
 /* Preparation:

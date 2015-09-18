@@ -5,6 +5,8 @@ description: Lloyd Bennett's web design portfolio and blog site.
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: LloydBennett_
 github_username:  LloydBennett
+behance_username: LloydBennett
+linkedin_username: lloydbennett1
 
 # Build settings
 markdown: kramdown

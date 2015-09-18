@@ -1,0 +1,20 @@
+
+
+.footer__lower__icons{
+  margin: -48px auto 1.6rem;
+  text-align: center;
+}
+
+.footer__icon  {
+  margin-left: 10px;
+  svg {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+
+    > path{
+        fill: $brand--color;
+      }
+  }
+}

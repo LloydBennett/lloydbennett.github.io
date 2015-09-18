@@ -3,7 +3,8 @@
 
   @include element('upper'){
     min-height: 200px;
-    padding: 55% 0;
+    padding: 85% 0%;
+    //padding: 55% 0;
     color: white;
     -webkit-clip-path: polygon(0 28%, 100% 0%, 100% 72%, 0% 100%);
     clip-path: polygon(0 28%, 100% 0%, 100% 72%, 0% 100%);
