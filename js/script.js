@@ -35,10 +35,10 @@ $(function(){
   $('.nav__menu-icon').on('click', function(){
     $('.nav__list').slideToggle(300);
   });
-  
+
   //function calls
   scrollTo($ctaButton, $ctaTarget);
-  scrollTo($('#contactme'), $('.footer__upper'));
+  scrollTo($('#contactme'), $('.footer__upper .block__title'));
   fieldFocusOut($('.input__group input'));
   fieldFocusOut($('.input__group textarea'));
 });

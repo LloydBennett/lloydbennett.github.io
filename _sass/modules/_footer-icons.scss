@@ -1,8 +1,11 @@
-
-
 .footer__lower__icons{
-  margin: -48px auto 1.6rem;
+  margin: -40px auto 1.2rem;
   text-align: center;
+
+  @include media-query(43.75em){
+    margin: -0.4rem 0 0;
+    float: right;
+  }
 }
 
 .footer__icon  {
@@ -12,9 +15,22 @@
     width: 1.5rem;
     height: 1.5rem;
     vertical-align: middle;
-
-    > path{
-        fill: $brand--color;
-      }
   }
+
+  @include modifier('white'){
+    path{
+        fill: white;
+    }
+  }
+  @include modifier('blue'){
+    path{
+        fill: $brand--color;
+    }
+  }
+
+  @include element('mail'){
+    margin-right: 5px;
+    margin-top: -3px;
+  }
+
 }
