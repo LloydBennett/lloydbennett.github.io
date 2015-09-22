@@ -98,6 +98,7 @@
         position:relative;
         left:50%;
         transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
 
       }
 
@@ -107,6 +108,7 @@
         position:relative;
         left:25%;
         transform: translateX(-25%);
+        -webkit-transform: translateX(-25%);
 
       }
     }

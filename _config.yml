@@ -37,7 +37,7 @@ defaults:
       layout: "casestudy"
       calltoaction: false
       inprogress: false
-      permalink: /:title
+      
   -
     scope:
       path: ""

@@ -3,7 +3,7 @@ title:  "Start Today"
 date:   2015-09-20 00:14:04
 category: advice
 tags: advice learning
-featured-image: justcreate.jpg
-thumbnail-image: desktopBrowser.jpg
+featured-image: starttoday_bg.jpg
+thumbnail-image: starttoday_thumb.jpg
 ---
 lorem ipsum
