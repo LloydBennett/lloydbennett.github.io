@@ -2,25 +2,48 @@
 
 header{
   background-size: cover;
+  overflow:hidden;
 }
 .header {
   @include modifier(polygon){
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 82%);
-    clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 82%);
+    position:relative;
+    
+    @include generatedTriangle('after'){
+      border-width: 0 0 50rem 125rem; // 0 0 800px 2000px
+      border-color: transparent transparent rgba(255,255,255,1) transparent;
+      width:0;
+      height: 0;
+      bottom:0;
 
-    @include media-query(43.75em){
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 90%);
-      clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 90%);
-    }
+      @include media-query(460px){
+        border-width: 0 0 37.5rem 125rem; // 0 0 600px 2000px
+      }
+      @include media-query(37.5em){ //600px
+        border-width: 0 0 48.75rem 125rem; // 780px 2000px
+      }
 
-    .no-cssmask &{
-      clip-path:url(#headerPolygon);
+
+      @include media-query(43.75em){ //700px
+        border-width: 0 0 51.625rem 187.5rem; //0 0 826px 3000px
+      }
+
+      @include media-query(1400px){
+        border-width: 0 0 826px 4000px;
+      }
+
+      @include media-query(125rem){ //2000px
+        border-width: 0 0 1026px 6000px;
+      }
+
     }
   }
   @include element('masthead'){
-    height: 43.75em;
+    height: 34.375em;
     color: white;
 
+    @include media-query(37.5em){
+      height: 43.75em;
+    }
   }
 }
 

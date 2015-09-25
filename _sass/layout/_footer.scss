@@ -1,12 +1,69 @@
 
 .footer{
-
   @include element('upper'){
     min-height: 200px;
     padding: 13.75rem 0;
     color: white;
-    -webkit-clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
-    clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+    position:relative;
+    overflow: hidden;
+    /*-webkit-clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+    clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);*/
+    @include generatedTriangle('before'){
+      border-width: 208px 650px 0 0; // 0 0 800px 2000px
+      border-color: white transparent transparent transparent;
+      width:0;
+      height: 0;
+      top:0;
+      left:0;
+      @include media-query(600px){
+        border-width: 208px 1000px 0 0; // 0 0 600px 2000px
+      }
+      @include media-query(960px){ //600px
+        border-width: 208px 1800px 0 0; // 780px 2000px
+      }
+      @include media-query(1800px){ //600px
+        border-width: 208px 2600px 0 0; // 780px 2000px
+      }
+      @include media-query(2200px){ //600px
+        border-width: 308px 3400px 0 0; // 780px 2000px
+      }
+      @include media-query(3000px){ //600px
+        border-width: 308px 6000px 0 0; // 780px 2000px
+      }
+    }
+
+    @include generatedTriangle('after'){
+      border-width: 0 0 150px 500px; // 0 0 800px 2000px
+      border-color: transparent transparent white transparent;
+      width:0;
+      height: 0;
+      bottom:0;
+      right:0;
+
+        @include media-query(480px){
+          border-width: 0 0 150px 900px; // 0 0 600px 2000px
+        }
+
+
+        @include media-query(860px){ //600px
+          border-width: 0 0 180px 1200px; // 780px 2000px
+        }
+
+        @include media-query(1190px){ //600px
+          border-width: 0 0 220px 1600px; // 780px 2000px
+        }
+        @include media-query(1400px){ //700px
+          border-width: 0 0 220px 2200px; // 780px 2000px
+        }
+
+        @include media-query(2000px){ //700px
+          border-width: 0 0 220px 3000px; // 780px 2000px
+        }
+
+
+      }
+
+
 
     @include element('text'){
       @include media-query(43.75em){

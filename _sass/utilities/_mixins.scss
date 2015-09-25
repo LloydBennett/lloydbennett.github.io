@@ -43,3 +43,14 @@
   }
 
 }
+
+@mixin generatedTriangle($insertPos){
+  &::#{$insertPos}{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    overflow: hidden;
+    -moz-transform: scale(360);
+    @content;
+  }
+}
