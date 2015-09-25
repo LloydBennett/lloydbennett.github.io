@@ -20,7 +20,10 @@
   margin: 0 auto;
   text-align: center;
 }
-
+%rel-one-level-up{
+  position: relative;
+  z-index: 100;
+}
 
 /*  UTILITY CLASS  */
 

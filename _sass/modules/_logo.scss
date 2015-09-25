@@ -1,6 +1,7 @@
 .logo{
   float: left;
   width: 40px;
+  z-index: 100;
   @include vertical-align(50%, -50%);
 
   @include element('mark'){

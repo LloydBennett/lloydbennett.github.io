@@ -10,6 +10,7 @@
     height: 26px;
     line-height: 0;
     @include vertical-align(50%, -50%);
+    z-index: 100;
     text-align: center;
 
       > svg {
@@ -64,7 +65,8 @@
       text-align: center;
 
       @include media-query(60em){
-        position: static;
+        position: relative;
+        z-index: 100;
         text-align: left;
         padding: 5% 15px;
         -webkit-transform: translateY(0);

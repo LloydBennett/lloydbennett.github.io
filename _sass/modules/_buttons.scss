@@ -1,7 +1,7 @@
 .btn {
   @include modifier('primary'){
     padding: 15px 40px;
-
+    @extend %rel-one-level-up;
   }
   @include modifier('whiteblue'){
     @include button-modifier($font-color: white, $border-color: white);
