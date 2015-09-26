@@ -2,7 +2,31 @@
   height:4.375rem;
   overflow:hidden;
 
+  @include modifier('scrolling'){
+    position:fixed;
+    background-color: white;
+    width:100%;
+    z-index:1000;
+    transition: 500ms ease-in;
+    -webkit-transition: 500ms ease-in;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 
+    .nav__list__link{
+      color: $body-font--color;
+      z-index: 300;
+    }
+    .nav__list__link--active a{
+     @include media-query(60em){
+       border-bottom: 5px solid $brand--color;
+     }
+   }
+
+   .nav__menu-icon > svg rect{
+     fill: $brand--color;
+   }
+
+
+ }
   @include element('menu-icon'){
     display: block;
     float: right;
@@ -75,7 +99,18 @@
         height: auto;
       }
 
+      @include modifier('active'){
+        font-weight: 600;
+        -webkit-transition: opacity 500ms ease-in-out;
+        transition: opacity 500ms ease-in-out;
+        a{
+          @include media-query(60em){
+            padding-bottom: 1.0625rem;
+            border-bottom: 5px solid white;
+          }
+        }
 
+      }
 
     }
   }

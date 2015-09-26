@@ -5,10 +5,28 @@ var $navMenu = $('.nav__list'),
 
 //call to action scrolling functionality
 function scrollTo(handler, target){
-  handler.on('click', function(){
+  /*
+  we check to see whether the hander has a class of
+  nav__list__link and assign nav__list__link--active to it.
+
+  When then want to remove the the nav__list__link--active class
+  when another link has been clicked.
+
+  */
+  handler.on('click', function(event){
+    event.preventDefault();
     $("html, body").animate({
         scrollTop: target.offset().top
     }, 600);
+    $(this).removeClass('nav__list__link--active');
+
+    if(handler.hasClass('nav__list__link')){
+      $(this).addClass('nav__list__link--active');
+
+      setTimeout(function(){
+        handler.removeClass('nav__list__link--active')
+      }, 5000);
+    }
   });
 }
 
@@ -36,9 +54,24 @@ $(function(){
     $('.nav__list').slideToggle(300);
   });
 
+  window.onscroll = function(){
+    if(this.pageYOffset > 400){
+      $('.nav').addClass('nav--scrolling');
+      $('.logo img').attr('src', '../images/logoblue.svg');
+    }else {
+      $('.nav').removeClass('nav--scrolling');
+      $('.logo img').attr('src', '../images/logowhite.svg');
+    }
+  }
+
+
+
   //function calls
   scrollTo($ctaButton, $ctaTarget);
   scrollTo($('#contactme'), $('.footer__upper .block__title'));
+  scrollTo($('#aboutme'), $('.myinfo'));
+  scrollTo($('#contact'), $('.footer__upper .block__title'));
+  scrollTo($('#portfolio'), $ctaTarget);
   fieldFocusOut($('.input__group input'));
   fieldFocusOut($('.input__group textarea'));
 });

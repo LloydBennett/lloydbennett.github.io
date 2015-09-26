@@ -1,19 +1,23 @@
+{% capture location %}{{ page.url | split:'/' }}{% endcapture %}
 <ul class="nav__list">
   {% for page in site.pages %}
+  <!-- Comparing the URL !--->
+  {% assign current = page.title | downcase %}
     {% if page.title %}
-    <li class="nav__list__link">
+    <li {% if location == current %} class="nav__list__link nav__list__link--active" {% else %}
+    class="nav__list__link" {% endif %}>
       <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
     </li>
     {% endif %}
   {% endfor %}
-  <li class="nav__list__link">
-    <a href="#">About Me</a>
+  <li class="nav__list__link" id="aboutme">
+    <a href="#about">About Me</a>
   </li>
-  <li class="nav__list__link">
-    <a href="#">Portfolio</a>
+  <li class="nav__list__link" id="portfolio">
+    <a href="#cta-target">Portfolio</a>
   </li>
-  <li class="nav__list__link">
-    <a href="#">Contact</a>
+  <li class="nav__list__link" id="contact">
+    <a href="#messageme">Contact</a>
   </li>
 </ul>
 
