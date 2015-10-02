@@ -1,131 +1,127 @@
-//variables
-var $navMenu = $('.nav__list'),
-    $ctaButton = $('.btn--primary'),
-    $ctaTarget = $('#cta-target');
-
-//call to action scrolling functionality
-function scrollTo(handler, target){
-  /*
-  we check to see whether the hander has a class of
-  nav__list__link and assign nav__list__link--active to it.
-
-  When then want to remove the the nav__list__link--active class
-  when another link has been clicked.
-
-  */
-  handler.on('click', function(event){
-    event.preventDefault();
-    $("html, body").animate({
-        scrollTop: target.offset().top
-    }, 600);
-    $(this).removeClass('nav__list__link--active');
-
-    if(handler.hasClass('nav__list__link')){
-      $(this).addClass('nav__list__link--active');
-
-      setTimeout(function(){
-        handler.removeClass('nav__list__link--active')
-      }, 5000);
-    }
-  });
-}
-
-//field has input checker
-function fieldFocusOut(formField){
-
-  formField.focusout(function(){
-    var $inputVal = $(this).val();
-
-    if($inputVal === ""){
-      $(this).removeClass('has-input');
-    }else{
-      $(this).addClass('has-input');
-    }
-
-  });
-}
+(function($){
+  //'use strict';
+  //variables
+  var $navMenu = $('.nav__list'),
+      $ctaButton = $('.btn--primary'),
+      $ctaTarget = $('#cta-target'),
+      $body = $("html, body");
 
 
-//dom ready
-$(function(){
+      function mobileMenu(event){
+        $navMenu.slideToggle(300);
+      }
 
-  //mobile menu
-  $('.nav__menu-icon').on('click', function(){
-    $('.nav__list').slideToggle(300);
-  });
+      //call to action scrolling functionality
+      function scrollTo(handler, target){
 
-  window.onscroll = function(){
-    if(this.pageYOffset > 400){
-      $('.nav').addClass('nav--scrolling');
-      $('.logo img').attr('src', '../images/logoblue.svg');
-    }else {
-      $('.nav').removeClass('nav--scrolling');
-      $('.logo img').attr('src', '../images/logowhite.svg');
-    }
-  }
+        function handlerFunction(event){
+          event.preventDefault();
+          //checks to see whether the handler is a nav__list__link
+          if(handler.hasClass('nav__list__link')){
+            var $this = $(this),
+            navLinkHref = $this.find('a').attr('href');
 
+            /* checks to see if the user is not on the homepage when clicking on
+            the .nav__list__link handler, if not then user is re-directed to the
+            homepage and the target location */
+            if(window.location.pathname !== "/"){
+              window.location.hash = navLinkHref;
+              window.location.pathname = "/";
+              $this.addClass('nav__list__link--active');
 
+            }
+            else{
+              $('.nav__list__link').removeClass('nav__list__link--active');
+              $this.addClass('nav__list__link--active');
+              $body.animate({
+                  scrollTop: target.offset().top
+              }, 600)
+            }
 
-  //function calls
-  scrollTo($ctaButton, $ctaTarget);
-  scrollTo($('#contactme'), $('.footer__upper .block__title'));
-  scrollTo($('#aboutme'), $('.myinfo'));
-  scrollTo($('#contact'), $('.footer__upper .block__title'));
-  scrollTo($('#portfolio'), $ctaTarget);
-  fieldFocusOut($('.input__group input'));
-  fieldFocusOut($('.input__group textarea'));
-});
-
-/* Preparation:
-   - Problem: We dont have a menu for desktop screens.
-   We also want to avoid using any positioning hacks on the styling of
-   the menu.
-
-   - Solution: Use JavaScript to re-position the menu html code into
-   the header when the website is viewed on larger screens and then moved back
-   to its orginal place for mobile screens.
-*/
-
-/*Plan:
- - If statement checking to see if the browser width is than 960px
- - If the condition is true we want to get the navigation menu ul
- - Append the navigation to the header*/
+          }
+          else{
+            $body.animate({
+                scrollTop: target.offset().top
+            }, 600);
+          }
 
 
+        } // end of handler function
+        handler.on('click', handlerFunction);
+      }
+
+      //field has input checker
+      function fieldFocusOut(formField){
+        var $hasInput = $('.has-input');
+
+        formField.focusout(function(){
+          var $inputVal = $(this).val();
+
+          if($inputVal === ""){
+            $(this).removeClass($hasInput);
+          }
+          else{
+            $(this).addClass($hasInput);
+          }
+
+        });
+      }
+      function fixedNav(event){
+        var $navBar = $('.nav'),
+            $logo = $('.logo img');
+
+        if(this.pageYOffset > 400){
+          $navBar.addClass('nav--scrolling');
+          $logo.attr('src', '../images/logoblue.svg');
+        }
+        else {
+          $navBar.removeClass('nav--scrolling');
+          $logo.attr('src', '../images/logowhite.svg');
+        }
+
+      }
+
+      function rePosNavMenu(event){
+        if($(window).width() >= 960){
+          $navMenu.appendTo('.nav .wrapper');
+        }else{
+          $navMenu.insertBefore('.header__masthead');
+        }
+      }
+      /*function addRemoveLinkClass(event){
+
+
+        if($('.nav__list__link').hasClass('nav__list__link--active')){
+          var navLinkHref = $('.nav__list__link').find('a').attr('href'),
+              targetLinkElement = $(navLinkHref);
+          console.log(navLinkHref);
+          // want to check if the window is pass the position of its href
+
+          //if(window.pageYOffset > )
+        }
+      }*/
+      //dom ready
+      $(function(){
+        var $menuIcon = $('.nav__menu-icon'),
+            $footerTitle = $('.footer__upper .block__title'),
+            insertNavMenu = rePosNavMenu();
 
 
 
+          //mobile menu
+          $(window).resize(rePosNavMenu);
+          $menuIcon.on('click', mobileMenu);
+          $(window).on("scroll", fixedNav);
+          //$(window).on("scroll", addRemoveLinkClass);
 
+          //function calls
+          scrollTo($ctaButton, $ctaTarget);
+          scrollTo($('#contactme'), $footerTitle);
+          scrollTo($('#aboutme'), $('.myinfo'));
+          scrollTo($('#contact'), $footerTitle);
+          scrollTo($('#portfolio'), $ctaTarget);
+          fieldFocusOut($('.input__group input'));
+          fieldFocusOut($('.input__group textarea'));
+      });
 
-
-if($(window).width() >= 960){
-  $navMenu.appendTo('.nav .wrapper');
-}
-
-$(window).resize(function(){
-  if($(this).width() >= 960){
-    $navMenu.appendTo('.nav .wrapper');
-  }
-  else {
-    $navMenu.insertBefore('.header__masthead');
-  }
-
-});
-
-
-/*
-- Check whether the browser window has been resized less than 960px at any point after
-the browser window width has been 960px and over.
- - Check the browser width less than 960
- - Check if the navMenu parent is header*/
-/*if ($(window).resize().width < 960){ //&& $('.wrapper').has(navMenu)){
-  //navMenu.insertBefore('.header');
-  console.log('Hi guys');
-}*/
-
-
-/*
- - If the condition is true then we want to move the navigation menu ul back
- to its orginal place.
-
- */
+})(jQuery);
