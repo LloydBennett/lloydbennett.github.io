@@ -119,10 +119,6 @@
     border-radius: 3px;
   }
 
-  @include modifier('hex'){
-    -webkit-clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
-    clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
-  }
   @include element('overlay'){
     position:absolute;
     top: 0;

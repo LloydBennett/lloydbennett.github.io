@@ -52,16 +52,15 @@
 
       //field has input checker
       function fieldFocusOut(formField){
-        var $hasInput = $('.has-input');
 
         formField.focusout(function(){
           var $inputVal = $(this).val();
 
           if($inputVal === ""){
-            $(this).removeClass($hasInput);
+            $(this).removeClass('has-input');
           }
           else{
-            $(this).addClass($hasInput);
+            $(this).addClass('has-input');
           }
 
         });
@@ -88,18 +87,18 @@
           $navMenu.insertBefore('.header__masthead');
         }
       }
-      /*function addRemoveLinkClass(event){
+      function addRemoveLinkClass(event){
 
 
         if($('.nav__list__link').hasClass('nav__list__link--active')){
-          var navLinkHref = $('.nav__list__link').find('a').attr('href'),
-              targetLinkElement = $(navLinkHref);
+          var navLinkHref = $('.nav__list__link').find('a').attr('href');
+
           console.log(navLinkHref);
           // want to check if the window is pass the position of its href
 
           //if(window.pageYOffset > )
         }
-      }*/
+      }
       //dom ready
       $(function(){
         var $menuIcon = $('.nav__menu-icon'),
@@ -112,7 +111,7 @@
           $(window).resize(rePosNavMenu);
           $menuIcon.on('click', mobileMenu);
           $(window).on("scroll", fixedNav);
-          //$(window).on("scroll", addRemoveLinkClass);
+          $(window).on("scroll", addRemoveLinkClass);
 
           //function calls
           scrollTo($ctaButton, $ctaTarget);
