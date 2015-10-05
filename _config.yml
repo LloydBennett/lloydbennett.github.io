@@ -35,9 +35,9 @@ defaults:
       type: "projects"
     values:
       layout: "casestudy"
-      calltoaction: false
+      calltoaction: true
       inprogress: false
-      
+
   -
     scope:
       path: ""

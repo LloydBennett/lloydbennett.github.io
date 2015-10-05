@@ -41,13 +41,13 @@
   }
   @include modifier('hover-scale'){
     &:hover img {
-      transform: scale(1.5);
-      -webkit-transform: scale(1.5);
+      transform: scale(1.2);
+      -webkit-transform: scale(1.2);
 
-      transition: 800ms ease;
-      -moz-transition: 800ms ease;
-      -webkit-transition: 800ms ease;
-      -o-transition: 800ms ease;
+      transition: 500ms ease;
+      -moz-transition: 500ms ease;
+      -webkit-transition: 500ms ease;
+      -o-transition: 500ms ease;
 
     }
   }

@@ -2,17 +2,61 @@
 <html>
   {% include head.html %}
   <body>
-    <div class="container">
-      <a href="{{site.baseurl}}/..">
-        <button>Home</button>
-      </a>
-      <h1>{{ page.title }}</h1>
+    <a class="project__close" href="{{site.baseurl}}/..">
+      <span class="project__close__icon">x</span>
+    </a>
+    <div class="wrapper">
 
+      <div class="project__controls">
+        <a href="">
+          <span class="project__prev"></span>
+        </a>
+        <a href="">
+          <span class="project__next"></span>
+        </a>
+      </div>
+
+      <div class="project__heading">
+        <h1 class="project__title">{{ page.title }}</h1>
+
+        {% if page.calltoaction %}
+          {% for buttonname in page.buttonname %}
+          <div class="project__cta">
+            <a href="http:/{{page.cta-link}}">
+              <button class="btn--primary btn--bluewhite">{{ buttonname }}</button>
+            </a>
+         </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <hr></hr>
+      <q class="center">{{page.quote}}</q>
 
 
       <article class="post-content">
         {{ content }}
       </article>
+      <hr></hr>
+
+      <a href="">
+        <span class="project__prev__footer"></span>
+        <span>Previous Project</span>
+      </a>
+
+
+
+      {% if page.calltoaction %}
+        {% for buttonname in page.buttonname %}
+        <a href="http:/{{page.cta-link}}">
+          <button class="btn btn--bluewhite">{{ buttonname }}</button>
+        </a>
+        {% endfor %}
+      {% endif %}
+
+      <a href="">
+        <span class="project__next__footer"></span>
+        <span>Next Project</span>
+      </a>
 
     </div>
 

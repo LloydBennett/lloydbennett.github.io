@@ -1,0 +1,50 @@
+.project{
+
+  @include element('close'){
+    display:block;
+    position:relative;
+    top: 0;
+    left: 0;
+    font-size:24px;
+    border-style: solid;
+    border-width: 60px 80px 0 0;
+    border-color: $brand--color transparent transparent transparent;
+    color: white;
+    width:80px;
+
+
+    /*@include media-query(550px){
+      border-width: 60px 96px 0 0;
+    }*/
+    @include element('icon'){
+      display:block;
+      position:absolute;
+      top: -61px;
+      left: 14px;
+    }
+
+  }
+
+  @include element('heading'){
+    margin: 3.2rem 0;
+  }
+  @include element('title'){
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+    @extend .center;
+    @include media-query(43.75em){
+      font-size: 2.6rem;
+    }
+  }
+  @include element('cta'){
+    margin: auto;
+    width:162px;
+  }
+
+  @include element('img'){
+    width:100%;
+    display:block;
+    margin:auto;
+    max-width:598px;
+  }
+}
