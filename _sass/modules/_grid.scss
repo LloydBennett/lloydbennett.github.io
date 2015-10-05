@@ -1,6 +1,11 @@
 .block{
   @extend %clearfix;
   margin-bottom:6rem;
+
+  @include modifier('sml'){
+    @extend %clearfix;
+    margin-bottom:1.6rem;
+  }
   @include element('title'){
     margin-bottom: 3rem;
 

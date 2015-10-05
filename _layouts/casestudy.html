@@ -30,35 +30,33 @@
         {% endif %}
       </div>
       <hr></hr>
-      <q class="center">{{page.quote}}</q>
+      <q class="center dbl-margin-space--top">{{page.quote}}</q>
 
 
       <article class="post-content">
         {{ content }}
       </article>
       <hr></hr>
-
-      <a href="">
-        <span class="project__prev__footer"></span>
-        <span>Previous Project</span>
-      </a>
-
-
-
-      {% if page.calltoaction %}
-        {% for buttonname in page.buttonname %}
-        <a href="http:/{{page.cta-link}}">
-          <button class="btn btn--bluewhite">{{ buttonname }}</button>
+      <div class="project__footer">
+        <a href="" class="project__footer__link">
+          <span></span>
+          <span class="project__footer__link--bold">Previous Project</span>
         </a>
-        {% endfor %}
-      {% endif %}
 
-      <a href="">
-        <span class="project__next__footer"></span>
-        <span>Next Project</span>
-      </a>
 
-    </div>
+        {% if page.calltoaction %}
+          {% for buttonname in page.buttonname %}
+          <a href="http:/{{page.cta-link}}" class="project__footer__link">
+            <button class="btn btn--bluewhite">{{ buttonname }}</button>
+          </a>
+          {% endfor %}
+        {% endif %}
 
+        <a href="" class="project__footer__link">
+          <span></span>
+          <span class="project__footer__link--bold">Next Project</span>
+        </a>
+      </div>
+  </div>
   </body>
 </html>
