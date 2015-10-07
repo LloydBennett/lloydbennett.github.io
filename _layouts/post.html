@@ -6,15 +6,15 @@ layout: default
      <!--<p>{% if page.meta %} • {{ page.meta }}{% endif %}</p>!-->
 
     {% if page.author %}
-      <div class="avatar avatar--sml">
-        <img src="images/authors/avatar-me.jpg" alt="my-picture">
+      <div class="avatar avatar--sml center post__avatar-top">
+        <img src="../images/authors/avatar-me.jpg" alt="my-picture">
       </div>
-      <span>{{ page.author }}</span>
-      <span class="post__date">writes on {{ page.date | date: "%b %-d, %Y" }}</span>
+      <span class="post__meta post__author center half-margin-space--top">{{ page.author }}</span>
+      <span class="post__meta post__date center">writes on {{ page.date | date: "%b %-d, %Y" }}</span>
     {% else %}
-      <span class="post__date">{{ page.date | date: "%b %-d, %Y" }}</span>
+      <span class="post__date center">{{ page.date | date: "%b %-d, %Y" }}</span>
   {% endif %}
-  <article class="post__content">
+  <article class="copy-wrapper dbl-margin-space--top">
     {{ content }}
   </article>
 

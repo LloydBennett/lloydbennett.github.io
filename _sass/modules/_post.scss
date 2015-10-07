@@ -1,0 +1,24 @@
+.post{
+  @include element('meta'){
+    font-size: 0.8em;
+  }
+  @include element('date'){
+    font-style: italic;
+  }
+  @include element('avatar-top'){
+    position: relative;
+    z-index: 500;
+    margin-top: -18px;
+  }
+}
+
+.copy-wrapper{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.6rem;
+  max-width: 38em;
+
+  p {
+    margin-bottom: 1.6rem;
+  }
+}

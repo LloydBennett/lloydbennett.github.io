@@ -38,13 +38,25 @@ header{
     }
   }
   @include element('masthead'){
-    height: 34.375em;
     color: white;
     width:100%;
 
-    @include media-query(37.5em){
-      height: 43.75em;
+    @include modifier('lrg'){
+      height: 34.375em;
+      @include media-query(37.5em){
+        height: 43.75em;
+      }
     }
+    @include modifier('sml'){
+      height: 25em;
+      @include media-query(43.75em){
+        height: 31.25em;
+      }
+      @include media-query(56.25em){
+        height: 37.5em;
+      }
+    }
+
   }
 }
 
