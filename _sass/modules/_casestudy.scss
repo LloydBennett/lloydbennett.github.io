@@ -1,5 +1,46 @@
 .project{
+  @include element('controls'){
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-size: 0.8em;
 
+    @include element('prev'){
+      display: block;
+      @extend .half-margin-space--bottom;
+
+      @include media-query('550px'){
+        display:inline;
+        margin-right: 0.8em;
+        margin-bottom: 0
+      }
+      &:before{
+        content: '\2190';
+        color: $brand--color;
+        display:inline;
+      }
+      & ~ .project__controls__next:before{
+        @include media-query('550px'){
+          content: '|';
+          margin-right: 0.8em;
+        }
+      }
+    }
+    @include element('next'){
+      display: block;
+      text-align: right;
+
+      @include media-query('550px'){
+        display:inline;
+      }
+      &:after{
+        content: '\2192';
+        color: $brand--color;
+        display:inline;
+      }
+    }
+  }
   @include element('close'){
     display:block;
     position:relative;
@@ -13,9 +54,6 @@
     width:80px;
 
 
-    /*@include media-query(550px){
-      border-width: 60px 96px 0 0;
-    }*/
     @include element('icon'){
       display:block;
       position:absolute;
@@ -48,10 +86,6 @@
     max-width:598px;
   }
 
-  @include element('para-block'){
-    margin: 0 auto 1.6rem;
-    max-width: 38em;
-  }
   @include element('col'){
     margin: 1.6rem auto 3.2rem;
     max-width: 38em;
@@ -74,21 +108,66 @@
   }
   @include element('footer'){
     @extend %center;
+    @extend %clearfix;
+
+
+
+    @include element('controller'){
+      border: 1px solid $divider-color;
+      padding: 1.6rem 0;
+
+
+      &:only-of-type{
+        border-bottom-color: $divider-color;
+        @include media-query(570px){
+          clear:both;
+          width:100%;
+          border-right-color: $divider-color;
+          border-bottom-color: $divider-color;
+        }
+      }
+    }
+
 
     @include element('link'){
       display:block;
       width:100%;
-      margin-bottom: 1.6rem;
+      //margin-bottom: 1.6rem;
 
-      @include media-query(570px){
-        float: left;
-        width: 30%;
-        margin: 1.6rem 3% 1.6rem 0;
+
+      @include element('button'){
+        @extend .dbl-margin-space--top;
+        @extend .dbl-margin-space--bottom;
       }
 
       @include modifier('bold'){
         font-weight: 600;
-        color: #909090;
+        color: #C5C5C5;
+        font-size: 0.8em;
+
+      }
+
+      @include element('prev'){
+        border-bottom-color: transparent;
+        @include media-query(570px){
+          float: left;
+          width:50%;
+          border-right-color: transparent;
+          border-bottom-color: $divider-color;
+        }
+        @include media-query(730px){
+          padding: 3.2rem 0;
+        }
+      }
+
+      @include element('next'){
+        @include media-query(570px){
+          float: right;
+          width:50%;
+        }
+        @include media-query(730px){
+          padding: 3.2rem 0;
+        }
       }
     }
   }

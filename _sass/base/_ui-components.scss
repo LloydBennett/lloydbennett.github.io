@@ -17,7 +17,7 @@ input, textarea {
 button,
 input[type="submit"] {
   padding: 12px 36px;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 2px solid;
   background: none;
   cursor: pointer;
@@ -26,4 +26,7 @@ input[type="submit"] {
   &:focus{
     outline: none;
   }
+}
+hr{
+  border: 1px solid $divider-color;
 }
