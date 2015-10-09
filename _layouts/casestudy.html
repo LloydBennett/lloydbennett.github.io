@@ -57,8 +57,9 @@
         {% endif %}
       </div>
       <hr></hr>
+      {% if page.quote%}
       <q class="center dbl-margin-space--top">{{page.quote}}</q>
-
+      {% endif %}
 
       <article class="post-content">
         {{ content }}
