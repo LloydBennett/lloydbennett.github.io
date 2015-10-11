@@ -9,22 +9,22 @@ header{
     position:relative;
 
     @include generatedTriangle('after'){
-      border-width: 0 0 50rem 125rem; // 0 0 800px 2000px
+      border-width: 0 0 50rem 200rem; // 0 0 800px 2000px
       border-color: transparent transparent rgba(255,255,255,1) transparent;
       width:0;
       height: 0;
       bottom:0;
 
       @include media-query(460px){
-        border-width: 0 0 37.5rem 125rem; // 0 0 600px 2000px
+        border-width: 0 0 37.5rem 200rem; // 0 0 600px 2000px
       }
       @include media-query(37.5em){ //600px
-        border-width: 0 0 48.75rem 125rem; // 780px 2000px
+        border-width: 0 0 48.75rem 200rem; // 780px 2000px
       }
 
 
       @include media-query(43.75em){ //700px
-        border-width: 0 0 51.625rem 187.5rem; //0 0 826px 3000px
+        border-width: 0 0 51.625rem 240rem; //0 0 826px 3000px
       }
 
       @include media-query(1400px){
@@ -43,7 +43,7 @@ header{
 
     @include modifier('lrg'){
       height: 34.375em;
-      @include media-query(37.5em){
+      @include media-query(43.75em){
         height: 43.75em;
       }
     }

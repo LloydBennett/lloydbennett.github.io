@@ -8,7 +8,6 @@
   @include element('avatar-top'){
     position: relative;
     z-index: 500;
-    margin-top: -18px;
   }
 }
 
@@ -21,4 +20,85 @@
   p {
     margin-bottom: 1.6rem;
   }
+}
+.posts{
+  width:100%;
+  @include element('post'){
+    width:100%;
+    @extend .dbl-margin-space--top;
+    @extend .dbl-margin-space--bottom;
+    @include element('title'){
+      font-size: 1.4em;
+      margin-top:0.4rem;
+      margin-bottom:0.4rem;
+
+      @include media-query(43.75em){
+        font-size: 1.6em;
+        margin-top:0.8rem;
+        margin-bottom:0.8rem;
+      }
+      @include media-query(60em){
+        font-size: 1.8em;
+      }
+    }
+    @include element('excerpt'){
+      p{
+        @extend .half-margin-space--top;
+        @extend .one-margin-space--bottom;
+      }
+    }
+    @include element('thumbnail'){
+      position: relative;
+      display: block;
+    }
+    @include element('img'){
+      width:100%;
+      display: block;
+    }
+    @include element('date'){
+      position: absolute;
+      display:block;
+      top:-15px;
+      right: -10px;
+      width: 0;
+      height: 0;
+      border-width: 40px 60px 40px 40px;
+      color: white;
+      border-color: transparent $brand--color transparent transparent;
+      border-style: solid;
+
+      @include media-query(500px){
+        border-width: 50px 75px 50px 50px;
+        right: -15px;
+        right: -20px;
+      }
+
+      @include media-query(1100px){
+        border-width: 70px 110px 70px 70px;
+        top: -30px;
+        right: -30px;
+      }
+      p{
+        color: white;
+        position: absolute;
+        left: 34px;
+        top: -20px;
+        font-size: 0.8em;
+
+        @include media-query(500px){
+          left: 44px;
+        }
+        @include media-query(1100px){
+          left: 68px;
+          top: -27px;
+          font-size: 1.1em;
+        }
+      }
+    }
+  }
+  @include media-query(780px){
+    float: left;
+    width:70%;
+  }
+
 }
