@@ -1,3 +1,13 @@
+.sidebar-post{
+  @extend .one-margin-space--top;
+  @include media-query(780px){
+    float: right;
+    width:32%;
+    margin-top:0;
+    margin-left: 8%;
+  }
+}
+
 .post{
   @include element('meta'){
     font-size: 0.8em;
@@ -33,7 +43,7 @@
       margin-bottom:0.4rem;
 
       @include media-query(43.75em){
-        font-size: 1.6em;
+        //font-size: 1.6em;
         margin-top:0.8rem;
         margin-bottom:0.8rem;
       }
@@ -45,6 +55,7 @@
       p{
         @extend .half-margin-space--top;
         @extend .one-margin-space--bottom;
+        font-size: 1rem;
       }
     }
     @include element('thumbnail'){
@@ -98,7 +109,7 @@
   }
   @include media-query(780px){
     float: left;
-    width:70%;
+    width:60%;
   }
 
 }

@@ -41,7 +41,7 @@ h4{
 
 p{
   @include measure;
-
+  color: $para-font--color;
 }
 
 blockquote {

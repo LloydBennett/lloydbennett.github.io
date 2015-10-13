@@ -3,6 +3,13 @@
     padding: 15px 40px;
     @extend %rel-one-level-up;
   }
+  @include modifier('small'){
+    padding: 10px 20px;
+  }
+
+  @include modifier('disabled'){
+    @include button-modifier($font-color: #999, $border-color: #999);
+  }
   @include modifier('whiteblue'){
     @include button-modifier($font-color: white, $border-color: white);
 

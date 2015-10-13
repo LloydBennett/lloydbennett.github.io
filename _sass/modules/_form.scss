@@ -80,3 +80,25 @@
     -webkit-transform: translateY(0);
   }
 }
+
+.search-icon{
+
+  &:after {
+    content: "c";
+    font-size:1.5em;
+    position: absolute;
+    top:60%;
+    right: -10px;
+    transform: translateY(-60%);
+    -webkit-transform: translateY(-60%);
+    cursor: pointer;
+    transition: 200ms ease;
+    -webkit-transition: 200ms ease;
+  }
+
+}
+.is--searching{
+  color: $brand--color;
+  transition: 100ms ease;
+  -webkit-transition: 100ms ease;
+}

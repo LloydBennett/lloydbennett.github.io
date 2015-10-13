@@ -1,12 +1,12 @@
-{% capture location %}{{ page.url | split:'/' }}{% endcapture %}
+{% assign pages = site.pages | sort: 'order' %}
 <ul class="nav__list">
-  {% for page in site.pages %}
+  {% for p in pages %}
   <!-- Comparing the URL !--->
-  {% assign current = page.title | downcase %}
-    {% if page.title %}
-    <li {% if location == current %} class="nav__list__link nav__list__link--active" {% else %}
+
+    {% if p.title %}
+    <li {% if p.url == page.url %} class="nav__list__link nav__list__link--active" {% else %}
     class="nav__list__link" {% endif %}>
-      <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+      <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
     </li>
     {% endif %}
   {% endfor %}
@@ -27,7 +27,7 @@
     <nav class="nav">
       <div class="wrapper height-to-bottom">
         <a class="logo" href="../../">
-          <img class="logo__mark" src="../images/logowhite.svg" alt="site-logo">
+          <img class="logo__mark" src="/images/logowhite.svg" alt="site-logo">
         </a>
 
         <a href="#" class="nav__menu-icon">

@@ -32,6 +32,8 @@
     color: white;
     position:relative;
     overflow: hidden;
+
+    p{color:white;}
     /*-webkit-clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
     clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);*/
     @include generatedTriangle('before'){

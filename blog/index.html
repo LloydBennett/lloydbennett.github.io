@@ -1,0 +1,75 @@
+---
+layout: page
+title: Blog
+description: A personal journal where I express my views, thoughts and opinions on latest in tech and design.
+featured-image: blog-bg.jpg
+buttonnames: ["view posts"]
+order: 2
+---
+
+
+  <!-- Display post catergory here !-->
+<aside class="sidebar-post">
+  <form class="input__group">
+    <input type="text" name="search-post" class="input--flat input__search input--flat--blue blue--text"/>
+    <label class="form__label" for="search-post">Search</label>
+    <span class="search-icon"></span>
+  </form>
+
+</aside>
+<div class="clearfix">
+  <div class="posts">
+    {% for post in site.posts %}
+
+    <div class="posts__post">
+
+      <a class="posts__post__thumbnail" href="{{ post.url | prepend: site.baseurl }}">
+        <img class="posts__post__img"src="/images/{{post.blog-thumb-image}}" alt="post-image"/>
+        <div class="posts__post__date">
+          <p>{{ post.date | date: "%b %-d" }}</p>
+        </div>
+      </a>
+      <h2 class="posts__post__title">{{post.title}}</h2>
+      <span class="post__meta">{{post.author}}</span>
+      <span class="post__meta">{{post.catergory}}</span>
+      <div class="posts__post__excerpt">{{post.excerpt}}</div>
+
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+        <button class="btn btn--bluewhite"> Read More </button>
+      </a>
+    </div>
+    <hr></hr>
+    {% endfor %}
+
+  </div>
+</div>
+
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  <div class="pagination__links">
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <span class="pagination__link pagination__link--active">{{ page }}</em>
+    {% elsif page == 1 %}
+      <a class="pagination__link" href="{{ '/blog/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a class="pagination__link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page | remove: 'blog/' }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+  <div class="pagination__next-prev">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><button class="btn--small btn--bluewhite">&laquo;</button></a>
+  {% else %}
+    <button class="btn--small btn--disabled">&laquo;</button>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><button class="btn--small btn--bluewhite">&raquo;</button></a>
+  {% else %}
+    <button class="btn--small btn--disabled"> &raquo;</button>
+  {% endif %}
+  </div>
+
+</div>
+{% endif %}

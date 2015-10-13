@@ -7,6 +7,9 @@
     }
 }
 
+.clearfix{
+  @extend %clearfix;
+}
 
 %vertical-align-center{
   position: relative;

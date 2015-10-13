@@ -71,11 +71,11 @@
 
         if(this.pageYOffset > 400){
           $navBar.addClass('nav--scrolling');
-          $logo.attr('src', '../images/logoblue.svg');
+          $logo.attr('src', '/images/logoblue.svg');
         }
         else {
           $navBar.removeClass('nav--scrolling');
-          $logo.attr('src', '../images/logowhite.svg');
+          $logo.attr('src', '/images/logowhite.svg');
         }
 
       }
@@ -99,6 +99,11 @@
           //if(window.pageYOffset > )
         }
       }
+
+      function highLightItem(event){
+        $('.search-icon').addClass('is--searching');
+
+      }
       //dom ready
       $(function(){
         var $menuIcon = $('.nav__menu-icon'),
@@ -112,6 +117,10 @@
           $menuIcon.on('click', mobileMenu);
           $(window).on("scroll", fixedNav);
           $(window).on("scroll", addRemoveLinkClass);
+          $('input.input__search').focusout(function(){
+            $('.search-icon').removeClass('is--searching');
+          });
+          $('input.input__search').focus(highLightItem);
 
           //function calls
           scrollTo($ctaButton, $ctaTarget);

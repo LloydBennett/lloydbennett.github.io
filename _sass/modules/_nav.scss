@@ -92,7 +92,7 @@
         position: relative;
         z-index: 100;
         text-align: left;
-        padding: 5% 15px;
+        padding: 23px 15px;
         -webkit-transform: translateY(0);
         transform: translateY(0);
         width: auto;
@@ -115,7 +115,38 @@
     }
   }
 }
+.pagination{
+  width:100%;
+  padding-top:1.6rem;
+  @extend %clearfix;
 
+  @include element('links'){
+    text-align: center;
+    margin-bottom:1.6rem;
+    @include media-query(550px){
+      float: left;
+      text-align: left;
+      margin-bottom:0;
+    }
+  }
+  @include element('link'){
+    font-size:1.1em;
+    margin-left:0.8em;
+    @include modifier('active'){
+      font-weight: 600;
+
+
+    }
+  }
+  @include element('next-prev'){
+    display:inline-block;
+    margin:auto;
+
+    @include media-query(550px){
+      float: right;
+    }
+  }
+}
 
 .height-to-bottom{
   height: 100%;

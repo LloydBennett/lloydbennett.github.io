@@ -5,5 +5,8 @@ category: design
 tags: advice learning
 featured-image: designers.jpg
 thumbnail-image: designers_thumb.jpg
+blog-thumb-image: designers_blog_thumb.jpg
+
+
 ---
 lorem ipsum

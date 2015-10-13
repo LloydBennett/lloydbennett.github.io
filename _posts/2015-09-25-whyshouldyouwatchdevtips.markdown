@@ -5,5 +5,6 @@ category: design
 tags: YouTube learning
 featured-image: devtips_bg.jpg
 thumbnail-image: devtips.jpg
+blog-thumb-image: devtips_blog.jpg
 ---
 lorem ipsum

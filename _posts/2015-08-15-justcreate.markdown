@@ -5,6 +5,7 @@ category: design
 tags: advice learning
 featured-image: justcreate_bg.jpg
 thumbnail-image: justcreate_thumb.jpg
+blog-thumb-image: justcreate_blog_thumb.jpg
 ---
 This is post is a reminder to myself about all the negative things I’ve done and are currently do as a young designer that is hindering my personal development. Hopefully you can relate to this post as well. The message is simple just create!
 
