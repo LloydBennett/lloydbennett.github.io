@@ -1,4 +1,16 @@
 .btn {
+  padding: 12px 36px;
+  border-radius: 3px;
+  border: 2px solid;
+  background: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  
+  &:focus{
+    outline: none;
+  }
+
   @include modifier('primary'){
     padding: 15px 40px;
     @extend %rel-one-level-up;

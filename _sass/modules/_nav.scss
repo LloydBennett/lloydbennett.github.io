@@ -1,4 +1,4 @@
-.nav{
+.nav {
   height:4.375rem;
   overflow:hidden;
 
@@ -16,52 +16,95 @@
       z-index: 300;
     }
     .nav__list__link--active a{
-     @include media-query(60em){
-       border-bottom: 5px solid $brand--color;
-     }
-   }
-
-   .nav__menu-icon > svg rect{
-     fill: $brand--color;
-   }
+      @include media-query(60em){
+        border-bottom: 5px solid $brand--color;
+      }
+    }
 
 
- }
+  }
   @include element('menu-icon'){
-    display: block;
+    display: inline-block;
     float: right;
-    width: 36px;
-    height: 26px;
-    line-height: 0;
+    width: 25px;
     @include vertical-align(50%, -50%);
     z-index: 100;
-    text-align: center;
+    cursor: pointer;
+    @include media-query(60em){
+      display:none;
+    }
 
-      > svg {
-          width: 23px;
-          height: 20px;
+    span {
+      transition: all 500ms ease;
+      display: block;
+      background-color: white;
+      width: 100%;
+      height: 3px;
+      margin-bottom: 5px;
 
-          rect {
-              fill: white;
-          }
+      &:first-child{
+        transition: 300ms ease;
       }
-
-      @include media-query(60em){
-        display:none;
+      &:last-child{
+        margin-bottom: 0;
+        transition: 400ms ease;
       }
+      &:nth-child(2) {
+        transition: 300ms ease;
+      }
+    }
+
+    &.is-open {
+
+      span {
+
+        &:nth-child(2) {
+
+          opacity: 0;
+          transition: 300ms linear;
+        }
+
+        &:first-child{
+
+          transform: rotate(45deg);
+          bottom: -5px;
+          position: relative;
+          top:8px;
+          transition: 300ms ease;
+        }
+
+        &:last-child {
+          transform: rotate(-45deg);
+          top: -8px;
+          position: relative;
+          transition: 300ms ease;
+        }
+      }
+    }
   }
 
   @include element('list'){
     list-style:none;
-    background-color: $dark-grey--color;
-    height: 200px;
     color:white;
-    display:none;
     @extend %clearfix;
 
+    @media screen and (max-width: 59.9375em){
+      background-color: $dark-grey--color;
+      height: 200px;
+      position: fixed;
+      transform: translateY(-100%);
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all .2s;
+
+      &.is-open {
+        transform: translateY(0);
+        transition: all .2s;
+      }
+    }
     @include media-query(60em){
       display:block !important;
-      background-color: transparent;
       height: auto;
       float:right;
 

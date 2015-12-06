@@ -49,8 +49,8 @@
         {% if page.calltoaction %}
           {% for buttonname in page.buttonname %}
           <div class="project__cta">
-            <a href="http:/{{page.cta-link}}">
-              <button class="btn--primary btn--bluewhite">{{ buttonname }}</button>
+            <a class="btn btn--bluewhite" href="http:/{{page.cta-link}}">
+              {{ buttonname }}
             </a>
          </div>
           {% endfor %}
@@ -65,14 +65,14 @@
         {{ content }}
       </article>
       <hr></hr>
-  </div>
+    </div>
       <div class="project__footer">
 
 
         {% if page.calltoaction %}
           {% for buttonname in page.buttonname %}
-          <a href="http:/{{page.cta-link}}" class="project__footer__link project__footer__link__button">
-            <button class="btn btn--bluewhite">{{ buttonname }}</button>
+          <a href="http:/{{page.cta-link}}" class="btn btn--bluewhite">
+            {{ buttonname }}
           </a>
           {% endfor %}
         {% endif %}

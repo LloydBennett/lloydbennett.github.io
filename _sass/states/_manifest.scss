@@ -1,0 +1,14 @@
+body {
+	transition: all .3s;
+	@media screen and (max-width: 59.9375em){
+		&.nav-is-open {
+			position: relative;
+			top: 200px;
+			transition: all .3s linear 1s;
+			overflow: hidden;
+		}
+
+
+	}
+	
+}

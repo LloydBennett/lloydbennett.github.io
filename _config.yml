@@ -7,8 +7,8 @@ twitter_username: LloydBennett_
 github_username:  LloydBennett
 behance_username: LloydBennett
 linkedin_username: lloydbennett1
-paginate: 3
-paginate_path: "blog/page:num/"
+#paginate: 3
+#paginate_path: "blog/page:num/"
 
 # Build settings
 markdown: kramdown

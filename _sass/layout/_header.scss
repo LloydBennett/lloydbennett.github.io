@@ -60,7 +60,7 @@ header{
   }
 }
 
-.intro{
+.intro {
   text-align: center;
   margin-top: 4.5rem;
 
@@ -83,10 +83,12 @@ header{
 
     @include media-query(34.75em){
       padding: 0 3rem;
+      margin-top: 18px;
+      margin-bottom: 30px;
     }
   }
 
-  button{
+  button {
     opacity: 0;
     -webkit-animation: fade-in 1s ease-in 1s forwards;
     animation: fade-in 1s ease-in 1s forwards;

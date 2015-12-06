@@ -62,17 +62,17 @@
   }
   @include modifier('3'){
     width:100%;
-    margin: 0 0 5% 0;
+    margin: 0 0 1% 0;
 
     @include media-query(50em){
-      width: 48%;
-      margin: 0 1% 5%;
+      width: 49%;
+      margin: 0 0.25% 0.5%;
       float: left;
 
     }
     @include media-query(70.625em){
-      width: 30%;
-      margin: 0 1.5% 5%;
+      width: 32.5%;
+      margin: 0 0.25% 0.5%;
 
     }
 

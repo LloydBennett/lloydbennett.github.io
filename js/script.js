@@ -4,11 +4,14 @@
   var $navMenu = $('.nav__list'),
       $ctaButton = $('.btn--primary'),
       $ctaTarget = $('#cta-target'),
-      $body = $("html, body");
+      $body = $("html, body"),
+      $menuIcon = $('.nav__menu-icon');
 
 
       function mobileMenu(event){
-        $navMenu.slideToggle(300);
+        $navMenu.toggleClass('is-open');
+        $menuIcon.toggleClass('is-open');
+        $('body').toggleClass('nav-is-open');
       }
 
       //call to action scrolling functionality
@@ -65,30 +68,8 @@
 
         });
       }
-      function fixedNav(event){
-        var $navBar = $('.nav'),
-            $logo = $('.logo img');
-
-        if(this.pageYOffset > 400){
-          $navBar.addClass('nav--scrolling');
-          $logo.attr('src', '/images/logoblue.svg');
-        }
-        else {
-          $navBar.removeClass('nav--scrolling');
-          $logo.attr('src', '/images/logowhite.svg');
-        }
-
-      }
-
-      function rePosNavMenu(event){
-        if($(window).width() >= 960){
-          $navMenu.appendTo('.nav .wrapper');
-        }else{
-          $navMenu.insertBefore('.header__masthead');
-        }
-      }
+      
       function addRemoveLinkClass(event){
-
 
         if($('.nav__list__link').hasClass('nav__list__link--active')){
           var navLinkHref = $('.nav__list__link').find('a').attr('href');
@@ -96,26 +77,20 @@
           console.log(navLinkHref);
           // want to check if the window is pass the position of its href
 
-          //if(window.pageYOffset > )
         }
       }
 
       function highLightItem(event){
         $('.search-icon').addClass('is--searching');
-
       }
+
+
       //dom ready
       $(function(){
-        var $menuIcon = $('.nav__menu-icon'),
-            $footerTitle = $('.footer__upper .block__title'),
-            insertNavMenu = rePosNavMenu();
-
-
+        var $footerTitle = $('.footer__upper .block__title');
 
           //mobile menu
-          $(window).resize(rePosNavMenu);
           $menuIcon.on('click', mobileMenu);
-          $(window).on("scroll", fixedNav);
           $(window).on("scroll", addRemoveLinkClass);
           $('input.input__search').focusout(function(){
             $('.search-icon').removeClass('is--searching');

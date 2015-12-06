@@ -1,27 +1,3 @@
-{% assign pages = site.pages | sort: 'order' %}
-<ul class="nav__list">
-  {% for p in pages %}
-  <!-- Comparing the URL !--->
-
-    {% if p.title %}
-    <li {% if p.url == page.url %} class="nav__list__link nav__list__link--active" {% else %}
-    class="nav__list__link" {% endif %}>
-      <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
-    </li>
-    {% endif %}
-  {% endfor %}
-  <li class="nav__list__link" id="aboutme">
-    <a href="#about">About Me</a>
-  </li>
-  <li class="nav__list__link" id="portfolio">
-    <a href="#cta-target">Portfolio</a>
-  </li>
-  <li class="nav__list__link" id="contact">
-    <a href="#messageme">Contact</a>
-  </li>
-</ul>
-
-
 <header {% if page.title != 'Home' %}class="header__masthead header__masthead--sml header--polygon" {% else %} class="header__masthead header__masthead--lrg header--polygon" {% endif %} style="background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('{{ site.baseurl }}/images/{{ page.featured-image }}') no-repeat fixed center top; background-size:cover">
 
     <nav class="nav">
@@ -30,20 +6,35 @@
           <img class="logo__mark" src="/images/logowhite.svg" alt="site-logo">
         </a>
 
-        <a href="#" class="nav__menu-icon">
-
-          <svg viewBox="0 0 640 480">
-            <rect x="82.5" y="15.433" fill="#424242" width="480" height="80.334"/>
-          	<rect x="82.5" y="178.698" fill="#424242" width="480" height="80.334"/>
-          	<rect x="82.5" y="341.099" fill="#424242" width="353" height="80.334"/>
-          </svg>
-
-        </a>
+        <div class="nav__menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
         <!-- add the nav menu !-->
-
-
-
+        {% assign pages = site.pages | sort: 'order' %}
+          <ul class="nav__list">
+            {% for p in pages %}
+            
+              {% if p.title == 'Home' %}
+              <li {% if p.url == page.url %} class="nav__list__link nav__list__link--active" {% else %}
+              class="nav__list__link" {% endif %}>
+                <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+              </li>
+              {% endif %}
+            {% endfor %}
+            <li class="nav__list__link" id="aboutme">
+              <a href="#about">About Me</a>
+            </li>
+            <li class="nav__list__link" id="portfolio">
+              <a href="#cta-target">Portfolio</a>
+            </li>
+            <li class="nav__list__link" id="contact">
+              <a href="#messageme">Contact</a>
+            </li>
+          </ul>
+          
       </div>
     </nav>
 
@@ -66,7 +57,7 @@
 
         {% if page.calltoaction %}
           {% for buttonname in page.buttonname %}
-            <button class="btn--primary btn--whiteblue">{{ buttonname }}</button>
+            <button class="btn btn--primary btn--whiteblue">{{ buttonname }}</button>
           {% endfor %}
         {% endif %}
       </div>
