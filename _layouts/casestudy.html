@@ -46,6 +46,12 @@
       <div class="project__heading">
         <h1 class="project__title">{{ page.title }}</h1>
 
+        {% if page.quote %}
+          <q class="center one-margin-space--bottom">
+            {{page.quote}}
+          </q>
+        {% endif %}
+
         {% if page.calltoaction %}
           {% for buttonname in page.buttonname %}
           <div class="project__cta">
@@ -56,10 +62,6 @@
           {% endfor %}
         {% endif %}
       </div>
-      <hr></hr>
-      {% if page.quote%}
-      <q class="center dbl-margin-space--top">{{page.quote}}</q>
-      {% endif %}
 
       <article class="post-content">
         {{ content }}

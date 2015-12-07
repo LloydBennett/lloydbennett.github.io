@@ -11,11 +11,11 @@
     -webkit-transition: background-color 200ms ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 
-    .nav__list__link{
+    .nav__list__link {
       color: $body-font--color;
       z-index: 300;
     }
-    .nav__list__link--active a{
+    .nav__list__link--active a {
       @include media-query(60em){
         border-bottom: 5px solid $brand--color;
       }
@@ -96,11 +96,11 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      transition: all .2s;
+      transition: all .3s;
 
       &.is-open {
         transform: translateY(0);
-        transition: all .2s;
+        transition: all .3s;
       }
     }
     @include media-query(60em){
@@ -146,7 +146,7 @@
         font-weight: 600;
         -webkit-transition: opacity 500ms ease-in-out;
         transition: opacity 500ms ease-in-out;
-        a{
+        a {
           @include media-query(60em){
             padding-bottom: 1.0625rem;
             border-bottom: 5px solid white;

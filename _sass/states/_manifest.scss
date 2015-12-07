@@ -4,7 +4,7 @@ body {
 		&.nav-is-open {
 			position: relative;
 			top: 200px;
-			transition: all .3s linear 1s;
+			transition: all .3s;
 			overflow: hidden;
 		}
 
