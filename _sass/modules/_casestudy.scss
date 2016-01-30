@@ -1,4 +1,19 @@
-.project{
+.casestudy-thumb {
+  @media screen and (max-width: 499px){
+    max-width: 350px;
+  }
+
+  @media screen and (min-width: 500px) and (max-width: 799px) {
+    max-width: 500px;
+  }
+  @media screen and (max-width: 799px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+
+.project {
   @include element('controls'){
     display: inline-block;
     position: absolute;

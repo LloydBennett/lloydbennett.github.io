@@ -42,10 +42,10 @@
       height: 3px;
       margin-bottom: 5px;
 
-      &:first-child{
+      &:first-child {
         transition: 300ms ease;
       }
-      &:last-child{
+      &:last-child {
         margin-bottom: 0;
         transition: 400ms ease;
       }
@@ -100,7 +100,7 @@
 
       &.is-open {
         transform: translateY(0);
-        transition: all .3s;
+        //transition: all .3s;
       }
     }
     @include media-query(60em){

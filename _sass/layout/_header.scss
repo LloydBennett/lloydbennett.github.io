@@ -63,9 +63,10 @@ header{
 .intro {
   text-align: center;
   margin-top: 4.5rem;
-
+  position: relative;
+  z-index: 2;
   @include media-query(43.75em){
-    margin-top: 7.5rem;
+    margin-top: 8rem;
   }
 
   @include element('title'){
@@ -75,7 +76,7 @@ header{
 
 
   @include element('brief'){
-    margin: 0.75rem auto 1.5rem;
+    margin: 0.5rem auto 1.5rem;
     padding: 0 0.5rem;
     opacity: 0;
     -webkit-animation: fade-in 1s ease-in 500ms forwards;
