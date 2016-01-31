@@ -54,6 +54,7 @@
   padding: 15px 8px;
   font-size: 1em;
   min-height:200px;
+  max-width: 640px;
   @include modifier('white'){
     border: 2px solid white;
   }
