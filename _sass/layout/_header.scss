@@ -89,9 +89,13 @@ header{
     opacity: 0;
     -webkit-animation: fade-in 1s ease-in 500ms forwards;
     animation: fade-in 1s ease-in 500ms forwards;
-
+    @media screen and (max-width: 400px) {
+      font-size: 14px;
+    }
     @include media-query(34.75em){
       padding: 0 3rem;
+    }
+    @include media-query(768px) {
       margin-top: 18px;
       margin-bottom: 30px;
     }
