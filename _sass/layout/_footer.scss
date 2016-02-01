@@ -1,4 +1,12 @@
+#home-footer {
+  background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('../images/home/home-bg.jpg') no-repeat fixed bottom; 
+  background-size:cover; 
 
+  @media screen and (max-width: 767px) { 
+    background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('../images/home/home-bg-sm.jpg') no-repeat fixed bottom;
+
+  }
+}
 .footer{
   @include modifier('two'){
 
