@@ -1,6 +1,7 @@
 <footer class="footer">
 
-  <div class="footer__upper" style="background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('{{ site.baseurl }}/images/{{ page.featured-image }}') no-repeat fixed bottom; background-size: cover; ">
+  <div class="footer__upper" style="background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('{{ site.baseurl }}/images/{{ page.featured-image-desktop }}') no-repeat fixed bottom; background-size: cover; 
+  @media screen and(max-width: 767px) { background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('{{ site.baseurl }}/images/{{ page.featured-image-mobile }}') no-repeat fixed bottom;}">
     <div class="wrapper">
       <h3 class="block__title block__title--white center" id="messageme"> Contact Me </h3>
       <p class="footer__upper__text footer__upper__subtitle"> Got a project idea? Feel free to send me a message.</p>

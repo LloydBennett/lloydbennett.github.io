@@ -1,4 +1,7 @@
-<header {% if page.title != 'Home' %}class="header__masthead header__masthead--sml header--polygon" {% else %} class="header__masthead header__masthead--lrg header--polygon" {% endif %} style="background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('{{ site.baseurl }}/images/{{ page.featured-image }}') no-repeat fixed center top; background-size:cover">
+<header {% if page.title != 'Home' %}class="header__masthead header__masthead--sml header--polygon" 
+{% else %} class="header__masthead header__masthead--lrg header--polygon" 
+{% endif %} style="background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('{{ site.baseurl }}/images/{{ page.featured-image-desktop }}') no-repeat fixed center top; background-size:cover; 
+@media screen and(max-width: 767px) { background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('{{ site.baseurl }}/images/{{ page.featured-image-mobile }}') no-repeat fixed center top;}">
 
     <nav class="nav">
       <div class="wrapper height-to-bottom">
