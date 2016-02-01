@@ -3,7 +3,7 @@
   background-size:cover; 
 
   @media screen and (max-width: 767px) { 
-    background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('../images/home/home-bg.jpg') no-repeat fixed center top;
+    background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('../images/home/home-bg.jpg') no-repeat fixed center;
 
   } 
 }
@@ -121,6 +121,7 @@
   }
   @include element('lower'){
     text-align: center;
+    padding-bottom: 5px;
     @include element('signature'){
       @include media-query(43.75em){
         float: left;
