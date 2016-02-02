@@ -11,7 +11,7 @@
       function mobileMenu(event){
         $navMenu.toggleClass('is-open');
         $menuIcon.toggleClass('is-open');
-        $('body').toggleClass('nav-is-open');
+        /*$('body').toggleClass('nav-is-open');*/
       }
 
       //call to action scrolling functionality

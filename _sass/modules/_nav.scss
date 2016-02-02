@@ -28,7 +28,7 @@
     float: right;
     width: 25px;
     @include vertical-align(50%, -50%);
-    z-index: 100;
+    z-index: 1100;
     cursor: pointer;
     @include media-query(60em){
       display:none;
@@ -90,17 +90,39 @@
 
     @media screen and (max-width: 59.9375em){
       background-color: $dark-grey--color;
-      height: 200px;
+      height: 100%;
+      padding-top: 80px;
       position: fixed;
-      transform: translateY(-100%);
-      left: 0;
-      width: 100%;
+      transform: translateX(100%);
+      top: 0;
+      right: 0;
+      width: 80%;
+      max-width: 280px;
       z-index: 1000;
       transition: all .3s;
 
       &.is-open {
-        transform: translateY(0);
+        transform: translateX(0);
         //transition: all .3s;
+      }
+    }
+    .additional-links {
+      text-align: center;
+      position: absolute;
+      bottom: 13px;
+      margin-left: auto;
+      margin-right: auto;
+      right: 0;
+      left: 0;
+      @include media-query(60em) {
+        display: none;
+      }
+      .first-icon {
+          margin-left: 0 !important;
+      }
+      .social-icon {
+        margin-left: 20px;
+        width: 22px;
       }
     }
     @include media-query(60em){
@@ -110,7 +132,7 @@
 
     }
 
-    .no-js & {
+    /* .no-js & {
       @include media-query(60em){
         display:block;
         background-color: transparent;
@@ -120,21 +142,24 @@
         left: 50%;
         z-index:100;
       }
-    }
+    } */
 
 
 
     @include element('link'){
-      @include vertical-align(40%, -40%);
-      float:left;
-      width: 33.3%;
-      height:33.3%;
-      text-align: center;
+      @media screen and (max-width: 59.9375em){
+        display: block;
+        padding: 23px 15px;
+        text-align: center;
+        font-size: 18px;
+      }
+      //@include vertical-align(40%, -40%);
 
       @include media-query(60em){
         position: relative;
         z-index: 100;
         text-align: left;
+        float:left;
         padding: 23px 15px;
         -webkit-transform: translateY(0);
         transform: translateY(0);

@@ -35,6 +35,37 @@
             <li class="nav__list__link" id="contact">
               <a href="#messageme">Contact</a>
             </li>
+            <li class="additional-links">
+              <div class="social-icons">
+              {% if site.twitter_username %}
+                <!-- Twitter !-->
+                <a href="https://twitter.com/{{ site.twitter_username }}" target="blank_">
+                  <img class="first-icon social-icon social-icon-twitter" src="images/social-media/twitter-white.png">
+                </a>
+              {% endif %}
+
+              <!-- Dribbble !-->
+              {% if site.dribbble_username %}
+              <a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_">
+                <img class="social-icon social-icon-dribbble" src="images/social-media/dribbble-white.png">
+              </a>
+              {% endif %}
+
+              <!-- Linkedin !-->
+              {% if site.linkedin_username %}
+              <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="blank_">
+                <img class="social-icon social-icon-linkedin" src="images/social-media/linkedin-white.png"/>
+              </a>
+              {% endif %}
+
+              <!-- Github !-->
+              {% if site.github_username %}
+                <a href="https://github.com/{{ site.github_username }}" target="blank_">
+                  <img class="social-icon social-icon-github" src="images/social-media/github-white.png">
+                </a>
+              {% endif %}
+              </div>
+            </li>
           </ul>
           
       </div>
