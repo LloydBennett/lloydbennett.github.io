@@ -89,7 +89,7 @@
     @extend %clearfix;
 
     @media screen and (max-width: 59.9375em){
-      background-color: $dark-grey--color;
+      background-color: darken($brand--color, 45%);
       height: 100%;
       padding-top: 80px;
       position: fixed;
@@ -104,6 +104,12 @@
       &.is-open {
         transform: translateX(0);
         //transition: all .3s;
+      }
+    }
+    .overlay {
+      z-index: -1;
+      @media screen and (min-width: 60em) {
+        display: none;
       }
     }
     .additional-links {
