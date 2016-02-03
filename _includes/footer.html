@@ -1,81 +1,80 @@
-  <footer class="footer">
+<footer class="footer">
 
-    <div class="footer__upper" id="home-footer">
-      <div class="wrapper">
-        <h3 class="block__title block__title--white center" id="messageme"> Contact Me </h3>
-        <p class="footer__upper__text footer__upper__subtitle"> Got a project idea? Feel free to send me a message.</p>
-        <div class="one-margin-space--top footer__upper__text">
-          <a href="mailto:{{ site.email }}">
-            <img class="mail-icon" src="images/social-media/mail-white.png" alt="Email Icon"/>
-      
-              {{ site.email }}
-          </a>
-        </div>
-        <form class="contact-form" action="//formspree.io/{{ site.email }}" method="POST">
-          <div class="input__group">
-            <input class="input--flat input--flat--white white--text" type="text" name="name" id="name">
-            <label class="form__label" for="name">Name</label>
-          </div>
-          <div class="input__group">
-            <input class="input--flat input--flat--white white--text" type="email" name="_replyto" id="email">
-            <label class="form__label" for="email">your@email.com</label>
-          </div>
-          <div class="input__group dbl-margin-space--top">
-            <textarea class="textarea textarea--white white--text" name="message" id="message"></textarea>
-            <label class="form__label form__label__for-textarea" for="message">Message</label>
-          </div>
-          <button class="btn btn--whiteblue center" value="Send">Submit</button>
-        </form>
-
+  <div class="footer__upper" id="home-footer">
+    <div class="wrapper">
+      <h3 class="block__title block__title--white center" id="messageme"> Contact Me </h3>
+      <p class="footer__upper__text footer__upper__subtitle"> Got a project idea? Feel free to send me a message.</p>
+      <div class="one-margin-space--top footer__upper__text">
+        <a href="mailto:{{ site.email }}">
+          <img class="mail-icon" src="images/social-media/mail-white.png" alt="Email Icon"/>
+    
+            {{ site.email }}
+        </a>
       </div>
-    </div> <!-- End of upper footer !-->
-
-
-    <div class="footer__lower">
-      <div class="wrapper">
-        <div class="footer__lower__icons">
-
-
-          {% if site.twitter_username %}
-            <!-- Twitter !-->
-            <a href="https://twitter.com/{{ site.twitter_username }}" target="blank_">
-              <img class="social-icon social-icon-twitter" src="images/social-media/twitter.png">
-            </a>
-          {% endif %}
-
-          <!-- Dribbble !-->
-          {% if site.dribbble_username %}
-          <a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_">
-            <img class="social-icon social-icon-dribbble" src="images/social-media/dribbble.png">
-          </a>
-          {% endif %}
-
-
-
-          <!-- Linkedin !-->
-          {% if site.linkedin_username %}
-          <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="blank_">
-            <img class="social-icon social-icon-linkedin" src="images/social-media/linkedin.png"/>
-          </a>
-          {% endif %}
-
-          <!-- Github !-->
-          {% if site.github_username %}
-            <a href="https://github.com/{{ site.github_username }}" target="blank_">
-              <img class="social-icon social-icon-github" src="images/social-media/github.png">
-            </a>
-
-          {% endif %}
+      <form class="contact-form" action="//formspree.io/{{ site.email }}" method="POST">
+        <div class="input__group">
+          <input class="input--flat input--flat--white white--text" type="text" name="name" id="name">
+          <label class="form__label" for="name">Name</label>
         </div>
+        <div class="input__group">
+          <input class="input--flat input--flat--white white--text" type="email" name="_replyto" id="email">
+          <label class="form__label" for="email">your@email.com</label>
+        </div>
+        <div class="input__group dbl-margin-space--top">
+          <textarea class="textarea textarea--white white--text" name="message" id="message"></textarea>
+          <label class="form__label form__label__for-textarea" for="message">Message</label>
+        </div>
+        <button class="btn btn--whiteblue center" value="Send">Submit</button>
+      </form>
 
-          <p class="footer__lower__signature">&copy; 2016 <strong>Lloyd-Jamie Bennett</strong></p>
+    </div>
+  </div> <!-- End of upper footer !-->
 
 
-        </ul> <!-- End of social media icons !-->
+  <div class="footer__lower">
+    <div class="wrapper">
+      <div class="footer__lower__icons">
 
-      </div><!-- End of wrapper !-->
 
-    </div><!-- End of lower footer !-->
+        {% if site.twitter_username %}
+          <!-- Twitter !-->
+          <a href="https://twitter.com/{{ site.twitter_username }}" target="blank_">
+            <img class="social-icon social-icon-twitter" src="images/social-media/twitter.png">
+          </a>
+        {% endif %}
 
-  </footer>
-</div>
+        <!-- Dribbble !-->
+        {% if site.dribbble_username %}
+        <a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_">
+          <img class="social-icon social-icon-dribbble" src="images/social-media/dribbble.png">
+        </a>
+        {% endif %}
+
+
+
+        <!-- Linkedin !-->
+        {% if site.linkedin_username %}
+        <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="blank_">
+          <img class="social-icon social-icon-linkedin" src="images/social-media/linkedin.png"/>
+        </a>
+        {% endif %}
+
+        <!-- Github !-->
+        {% if site.github_username %}
+          <a href="https://github.com/{{ site.github_username }}" target="blank_">
+            <img class="social-icon social-icon-github" src="images/social-media/github.png">
+          </a>
+
+        {% endif %}
+      </div>
+
+        <p class="footer__lower__signature">&copy; 2016 <strong>Lloyd-Jamie Bennett</strong></p>
+
+
+      </ul> <!-- End of social media icons !-->
+
+    </div><!-- End of wrapper !-->
+
+  </div><!-- End of lower footer !-->
+
+</footer>

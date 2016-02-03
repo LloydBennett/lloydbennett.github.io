@@ -5,15 +5,13 @@
       $ctaButton = $('.btn--primary'),
       $ctaTarget = $('#cta-target'),
       $body = $("html, body"),
-      $menuIcon = $('.nav__menu-icon'),
-      $pageContainer = $('.page-container');
+      $menuIcon = $('.nav__menu-icon');
 
 
       function mobileMenu(event){
         $navMenu.toggleClass('is-open');
         $menuIcon.toggleClass('is-open');
         $body.toggleClass('overflow-hidden');
-        $pageContainer.toggleClass('overflow-hidden');
       }
 
       //call to action scrolling functionality
@@ -29,7 +27,6 @@
             if($navMenu.hasClass('is-open')){
               $navMenu.removeClass('is-open');
               $menuIcon.removeClass('is-open');
-              $pageContainer.removeClass('overflow-hidden');
               $body.removeClass('overflow-hidden');
             }
             /* checks to see if the user is not on the homepage when clicking on

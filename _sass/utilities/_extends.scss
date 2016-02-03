@@ -79,6 +79,6 @@
 }
 
 .overflow-hidden {
-      
+  -webkit-overflow-scrolling: touch;
   overflow: hidden;
 }
