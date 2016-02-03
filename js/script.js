@@ -5,13 +5,16 @@
       $ctaButton = $('.btn--primary'),
       $ctaTarget = $('#cta-target'),
       $body = $("html, body"),
-      $menuIcon = $('.nav__menu-icon');
+      $menuIcon = $('.nav__menu-icon'),
+      offsetY = window.pageYOffset;
 
 
       function mobileMenu(event){
         $navMenu.toggleClass('is-open');
         $menuIcon.toggleClass('is-open');
+        $body.css('top', -offsetY + 'px');
         $body.toggleClass('overflow-hidden');
+
       }
 
       //call to action scrolling functionality
