@@ -5,13 +5,15 @@
       $ctaButton = $('.btn--primary'),
       $ctaTarget = $('#cta-target'),
       $body = $("html, body"),
-      $menuIcon = $('.nav__menu-icon');
+      $menuIcon = $('.nav__menu-icon'),
+      $pageContainer = $('.page-container');
 
 
       function mobileMenu(event){
         $navMenu.toggleClass('is-open');
         $menuIcon.toggleClass('is-open');
-        /*$('body').toggleClass('nav-is-open');*/
+        $body.toggleClass('overflow-hidden');
+        $pageContainer.toggleClass('overflow-hidden');
       }
 
       //call to action scrolling functionality
@@ -23,7 +25,13 @@
           if(handler.hasClass('nav__list__link')){
             var $this = $(this),
             navLinkHref = $this.find('a').attr('href');
-
+            
+            if($navMenu.hasClass('is-open')){
+              $navMenu.removeClass('is-open');
+              $menuIcon.removeClass('is-open');
+              $pageContainer.removeClass('overflow-hidden');
+              $body.removeClass('overflow-hidden');
+            }
             /* checks to see if the user is not on the homepage when clicking on
             the .nav__list__link handler, if not then user is re-directed to the
             homepage and the target location */
@@ -74,14 +82,9 @@
         if($('.nav__list__link').hasClass('nav__list__link--active')){
           var navLinkHref = $('.nav__list__link').find('a').attr('href');
 
-          console.log(navLinkHref);
           // want to check if the window is pass the position of its href
 
         }
-      }
-
-      function highLightItem(event){
-        $('.search-icon').addClass('is--searching');
       }
 
 
@@ -95,7 +98,6 @@
           $('input.input__search').focusout(function(){
             $('.search-icon').removeClass('is--searching');
           });
-          $('input.input__search').focus(highLightItem);
 
           //function calls
           scrollTo($ctaButton, $ctaTarget);

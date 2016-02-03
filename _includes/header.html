@@ -1,99 +1,100 @@
-<header {% if page.title != 'Home' %} class="header__masthead header__masthead--sml header--polygon" 
-{% else %} id="home-header" class="header__masthead header__masthead--lrg header--polygon" 
-{% endif %}>
+<div class="page-container">
+  <header {% if page.title != 'Home' %} class="header__masthead header__masthead--sml header--polygon" 
+  {% else %} id="home-header" class="header__masthead header__masthead--lrg header--polygon" 
+  {% endif %}>
 
-    <nav class="nav">
-      <div class="wrapper height-to-bottom">
-        <a class="logo" href="../../">
-          <img class="logo__mark" src="/images/logowhite.svg" alt="site-logo">
-        </a>
+      <nav class="nav">
+        <div class="wrapper height-to-bottom">
+          <a class="logo" href="../../">
+            <img class="logo__mark" src="/images/logowhite.svg" alt="site-logo">
+          </a>
 
-        <div class="nav__menu-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+          <div class="nav__menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
-        <!-- add the nav menu !-->
-        {% assign pages = site.pages | sort: 'order' %}
-          <ul class="nav__list">
-            {% for p in pages %}
-            
-              {% if p.title == 'Home' %}
-              <li {% if p.url == page.url %} class="nav__list__link nav__list__link--active" {% else %}
-              class="nav__list__link" {% endif %}>
-                <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+          <!-- add the nav menu !-->
+          {% assign pages = site.pages | sort: 'order' %}
+            <ul class="nav__list">
+              {% for p in pages %}
+              
+                {% if p.title == 'Home' %}
+                <li {% if p.url == page.url %} class="nav__list__link nav__list__link--active" {% else %}
+                class="nav__list__link" {% endif %}>
+                  <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+                </li>
+                {% endif %}
+              {% endfor %}
+              <li class="nav__list__link" id="aboutme">
+                <a href="#about">About Me</a>
               </li>
-              {% endif %}
+              <li class="nav__list__link" id="portfolio">
+                <a href="#cta-target">Portfolio</a>
+              </li>
+              <li class="nav__list__link" id="contact">
+                <a href="#messageme">Contact</a>
+              </li>
+              <li class="additional-links">
+                <div class="social-icons">
+                {% if site.twitter_username %}
+                  <!-- Twitter !-->
+                  <a href="https://twitter.com/{{ site.twitter_username }}" target="blank_">
+                    <img class="first-icon social-icon social-icon-twitter" src="images/social-media/twitter-white.png">
+                  </a>
+                {% endif %}
+
+                <!-- Dribbble !-->
+                {% if site.dribbble_username %}
+                <a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_">
+                  <img class="social-icon social-icon-dribbble" src="images/social-media/dribbble-white.png">
+                </a>
+                {% endif %}
+
+                <!-- Linkedin !-->
+                {% if site.linkedin_username %}
+                <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="blank_">
+                  <img class="social-icon social-icon-linkedin" src="images/social-media/linkedin-white.png"/>
+                </a>
+                {% endif %}
+
+                <!-- Github !-->
+                {% if site.github_username %}
+                  <a href="https://github.com/{{ site.github_username }}" target="blank_">
+                    <img class="social-icon social-icon-github" src="images/social-media/github-white.png">
+                  </a>
+                {% endif %}
+                </div>
+              </li>
+            </ul>
+            
+        </div>
+      </nav>
+
+      <div class="wrapper">
+        <div class="intro">
+          <!-- This applies only for blog posts !-->
+          {% if post.categories %}
+            <span>{{ post.catergory }}</span>
+          {% endif %}
+
+          <!-- If a page has a heading name then display that instead of
+          the title !-->
+          {% if page.heading %}
+            <h1 class="intro__title">{{ page.heading }}</h1>
+          {% else %}
+            <h1 class="intro__title">{{ page.title }}</h1>
+          {% endif %}
+
+          <p class="intro__brief">{{ page.description }}</p>
+
+          {% if page.calltoaction %}
+            {% for buttonname in page.buttonname %}
+              <button class="btn btn--primary btn--whiteblue">{{ buttonname }}</button>
             {% endfor %}
-            <li class="nav__list__link" id="aboutme">
-              <a href="#about">About Me</a>
-            </li>
-            <li class="nav__list__link" id="portfolio">
-              <a href="#cta-target">Portfolio</a>
-            </li>
-            <li class="nav__list__link" id="contact">
-              <a href="#messageme">Contact</a>
-            </li>
-            <li class="additional-links">
-              <div class="social-icons">
-              {% if site.twitter_username %}
-                <!-- Twitter !-->
-                <a href="https://twitter.com/{{ site.twitter_username }}" target="blank_">
-                  <img class="first-icon social-icon social-icon-twitter" src="images/social-media/twitter-white.png">
-                </a>
-              {% endif %}
-
-              <!-- Dribbble !-->
-              {% if site.dribbble_username %}
-              <a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_">
-                <img class="social-icon social-icon-dribbble" src="images/social-media/dribbble-white.png">
-              </a>
-              {% endif %}
-
-              <!-- Linkedin !-->
-              {% if site.linkedin_username %}
-              <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="blank_">
-                <img class="social-icon social-icon-linkedin" src="images/social-media/linkedin-white.png"/>
-              </a>
-              {% endif %}
-
-              <!-- Github !-->
-              {% if site.github_username %}
-                <a href="https://github.com/{{ site.github_username }}" target="blank_">
-                  <img class="social-icon social-icon-github" src="images/social-media/github-white.png">
-                </a>
-              {% endif %}
-              </div>
-            </li>
-          </ul>
-          
+          {% endif %}
+        </div>
       </div>
-    </nav>
 
-    <div class="wrapper">
-      <div class="intro">
-        <!-- This applies only for blog posts !-->
-        {% if post.categories %}
-          <span>{{ post.catergory }}</span>
-        {% endif %}
-
-        <!-- If a page has a heading name then display that instead of
-        the title !-->
-        {% if page.heading %}
-          <h1 class="intro__title">{{ page.heading }}</h1>
-        {% else %}
-          <h1 class="intro__title">{{ page.title }}</h1>
-        {% endif %}
-
-        <p class="intro__brief">{{ page.description }}</p>
-
-        {% if page.calltoaction %}
-          {% for buttonname in page.buttonname %}
-            <button class="btn btn--primary btn--whiteblue">{{ buttonname }}</button>
-          {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-
-</header>
+  </header>
