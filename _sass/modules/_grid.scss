@@ -1,16 +1,34 @@
-.block{
+.block {
   @extend %clearfix;
   margin-bottom:6rem;
 
-  @include modifier('sml'){
+  @media screen and (min-width: 768px) {
+    margin-bottom:8rem;
+  }
+    
+
+  @include modifier('sml') {
     @extend %clearfix;
     margin-bottom:1.6rem;
   }
-  @include element('title'){
-    margin-bottom: 3rem;
+  @include element('title') {
+    margin-bottom: 25px;
 
-    @include modifier('white'){
+    &:after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 40px;
+      background-color: $brand--color;
+      margin: 20px auto 25px;
+    }
+
+    @include modifier('white') {
       color: white;
+
+      &:after {
+        background-color: white;
+      }
     }
   }
   @include modifier('blue'){
@@ -19,7 +37,7 @@
   }
 }
 
-.grid{
+.grid {
   overflow: hidden;
   position: relative;
   display:block;
