@@ -16,11 +16,7 @@
 
     &:after {
       content: "";
-      display: block;
-      height: 2px;
-      width: 40px;
-      background-color: $brand--color;
-      margin: 20px auto 25px;
+      
     }
 
     @include modifier('white') {
@@ -31,9 +27,23 @@
       }
     }
   }
-  @include modifier('blue'){
+
+  .hairline {
+      display: block;
+      height: 2px;
+      width: 40px;
+      background-color: white;
+      margin: 20px auto 25px;
+      border: none;
+
+      &.blue {
+        background-color: $brand--color !important;
+      }
+  }
+
+  @include modifier('blue') {
     background-color: $brand--color;
-    color: white
+    color: white;
   }
 }
 
