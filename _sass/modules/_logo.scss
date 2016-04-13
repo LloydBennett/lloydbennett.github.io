@@ -1,8 +1,7 @@
-.logo{
-  float: left;
+.logo {
   width: 40px;
   z-index: 100;
-  @include vertical-align(50%, -50%);
+  display:inline-block;
 
   @include element('mark'){
     width:100%;
@@ -11,6 +10,6 @@
 
 
   @include media-query(43.75em){
-    width: 50px;
+    width: 55px;
   }
 }

@@ -1,12 +1,8 @@
 @import 'header',
         'footer'
 ;
-.wrapper{
-  width:90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  @extend %clearfix;
-  @include media-query(43.75em){
-    width:80%;
-  }
+.container {
+	max-width: 1200px;
+	width: 90%;
 }
+

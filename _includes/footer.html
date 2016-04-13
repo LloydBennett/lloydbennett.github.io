@@ -3,29 +3,29 @@
   <div class="footer__upper" id="home-footer">
     <div class="wrapper">
       <h3 class="block__title block__title--white center" id="messageme"> Contact Me </h3>
-      <hr class="hairline wow hr-animate" data-wow-offset="50"></hr>
-      <p class="footer__upper__text footer__upper__subtitle"> Got a project idea? Feel free to send me a message.</p>
-      <div class="one-margin-space--top footer__upper__text">
-        <a href="mailto:{{ site.email }}">
+      <hr class="hairline wow hr-animate" data-wow-offset="50" data-wow-duration=".8s"></hr>
+      <p class="footer__upper__text footer__upper__subtitle wow fadeIn" data-wow-delay=".8s"> Got a project idea? Feel free to send me a message.</p>
+      <div class="one-margin-space--top footer__upper__text ">
+        <a class="wow fadeIn" href="mailto:{{ site.email }}" data-wow-delay=".8s" data-wow-offset="50">
           <img class="mail-icon" src="images/social-media/mail-white.png" alt="Email Icon"/>
     
             {{ site.email }}
         </a>
       </div>
       <form class="contact-form" action="//formspree.io/{{ site.email }}" method="POST">
-        <div class="input__group">
+        <div class="input__group wow fadeIn " data-wow-delay=".8s">
           <input class="input--flat input--flat--white white--text" type="text" name="name" id="name">
           <label class="form__label" for="name">Name</label>
         </div>
-        <div class="input__group">
+        <div class="input__group wow fadeIn" data-wow-delay=".8s" data-wow-offset="50">
           <input class="input--flat input--flat--white white--text" type="email" name="_replyto" id="email">
           <label class="form__label" for="email">your@email.com</label>
         </div>
-        <div class="input__group dbl-margin-space--top">
+        <div class="input__group dbl-margin-space--top wow fadeIn" data-wow-delay=".8s" data-wow-offset="50">
           <textarea class="textarea textarea--white white--text" name="message" id="message"></textarea>
           <label class="form__label form__label__for-textarea" for="message">Message</label>
         </div>
-        <button class="btn btn--whiteblue center" value="Send">Submit</button>
+        <button class="btn btn--whiteblue center wow fadeIn" value="Send" data-wow-delay=".4s" data-wow-offset="50">Submit</button>
       </form>
 
     </div>

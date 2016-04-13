@@ -1,7 +1,5 @@
 .nav {
-  height:4.375rem;
-  overflow:hidden;
-
+  padding-top: 20px;
   @include modifier('scrolling'){
     position:fixed;
     background-color: white;
@@ -23,89 +21,101 @@
 
 
   }
-  @include element('menu-icon'){
+  @include element('menu-icon') {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid #fff;
     display: inline-block;
-    float: right;
-    width: 25px;
-    @include vertical-align(50%, -50%);
-    z-index: 1100;
     cursor: pointer;
-    @include media-query(60em){
-      display:none;
-    }
+    .hamburger {
+      display: inline-block;
+      text-align: center;
+      width: 20px;
+      z-index: 1100;
 
-    span {
-      transition: all 500ms ease;
-      display: block;
-      background-color: white;
-      width: 100%;
-      height: 3px;
-      margin-bottom: 5px;
-
-      &:first-child {
-        transition: 300ms ease;
-      }
-      &:last-child {
-        margin-bottom: 0;
-        transition: 400ms ease;
-      }
-      &:nth-child(2) {
-        transition: 300ms ease;
-      }
-    }
-
-    &.is-open {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+          transform: translateY(-50%);
+      margin-left: auto;
+      margin-right: auto;
+      
 
       span {
+        transition: all 500ms ease;
+        display: block;
+        background-color: white;
+        width: 100%;
+        height: 2px;
+        margin-bottom: 5px;
 
-        &:nth-child(2) {
-
-          opacity: 0;
-          transition: 300ms linear;
-        }
-
-        &:first-child{
-
-          transform: rotate(45deg);
-          bottom: -5px;
-          position: relative;
-          top:8px;
+        &:first-child {
           transition: 300ms ease;
         }
-
         &:last-child {
-          transform: rotate(-45deg);
-          top: -8px;
-          position: relative;
+          margin-bottom: 0;
+          transition: 400ms ease;
+        }
+        &:nth-child(2) {
           transition: 300ms ease;
+        }
+      }
+
+      &.is-open {
+
+        span {
+
+          &:nth-child(2) {
+
+            opacity: 0;
+            transition: 300ms linear;
+          }
+
+          &:first-child{
+
+            transform: rotate(45deg);
+            bottom: -5px;
+            position: relative;
+            top:8px;
+            transition: 300ms ease;
+          }
+
+          &:last-child {
+            transform: rotate(-45deg);
+            top: -8px;
+            position: relative;
+            transition: 300ms ease;
+          }
         }
       }
     }
   }
+  
 
   @include element('list'){
     list-style:none;
     color:white;
     @extend %clearfix;
 
-    @media screen and (max-width: 59.9375em){
-      background-color: darken($brand--color, 45%);
-      height: 100%;
-      padding-top: 80px;
-      position: fixed;
-      transform: translateX(100%);
-      top: 0;
-      right: 0;
-      width: 80%;
-      max-width: 280px;
-      z-index: 1000;
-      transition: all .3s;
+    background-color: $brand--color;
+    opacity: 0;
+    height: 100%;
+    padding-top: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all .5s;
 
-      &.is-open {
-        transform: translateX(0);
-        //transition: all .3s;
-      }
+    &.is-open {
+      opacity: 1;
+      //transition: all .3s;
     }
+    
     .overlay {
       z-index: -1;
       @media screen and (min-width: 60em) {
@@ -120,9 +130,7 @@
       margin-right: auto;
       right: 0;
       left: 0;
-      @include media-query(60em) {
-        display: none;
-      }
+      
       .first-icon {
           margin-left: 0 !important;
       }
@@ -131,63 +139,24 @@
         width: 22px;
       }
     }
-    @include media-query(60em){
-      display:block !important;
-      height: auto;
-      float:right;
+    
 
-    }
-
-    /* .no-js & {
-      @include media-query(60em){
-        display:block;
-        background-color: transparent;
-        height: auto;
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        z-index:100;
-      }
-    } */
-
+    
 
 
     @include element('link'){
-      @media screen and (max-width: 59.9375em){
-        display: block;
-        padding: 23px 15px;
-        text-align: center;
-        font-size: 18px;
-        opacity: 0.7;
-      }
+     
+      display: block;
+      padding: 23px 15px;
+      text-align: center;
+      font-size: 25px;
+      
       //@include vertical-align(40%, -40%);
-
-      @include media-query(60em){
-        position: relative;
-        z-index: 100;
-        text-align: left;
-        float:left;
-        padding: 23px 15px;
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        width: auto;
-        height: auto;
-      }
 
       @include modifier('active'){
         font-weight: 600;
         -webkit-transition: opacity 500ms ease-in-out;
         transition: opacity 500ms ease-in-out;
-
-        @media screen and (max-width: 59.9375em){
-          opacity: 1;
-        }
-        a {
-          @include media-query(60em){
-            padding-bottom: 1.0625rem;
-            border-bottom: 5px solid white;
-          }
-        }
 
       }
 

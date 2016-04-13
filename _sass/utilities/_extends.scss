@@ -37,6 +37,13 @@
   @extend %center;
 }
 
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
 .divider{
   height: 3px;
   border: none;
