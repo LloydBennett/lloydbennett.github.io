@@ -1,118 +1,147 @@
-<header {% if page.title != 'Home' %} class="header__masthead header__masthead--sml header--polygon" 
-{% else %} id="home-header" class="header__masthead header__masthead--lrg header--polygon" 
+<header {% if page.title != 'Home' %} class="masthead small polygon" 
+{% else %} id="home-header" class="masthead large polygon" 
 {% endif %}>
 
 	<nav class="nav">
-	  <div class="container height-to-bottom">
-		<div class="row">
-		  <div class="col-xs-3">
-			<a class="logo wow fadeIn" data-wow-delay="1.2s" href="../../">
-			  <img class="logo__mark" src="/images/logowhite.svg" alt="site-logo">
-			</a>
-		  </div>
 
-		  <div class="col-xs-3 col-xs-offset-6 text-right">
-		  	<div class="nav__menu-icon">
+		<div class="nav-bar">
+		  	<div class="container height-to-bottom">
+				<div class="row">
+					<div class="col-xs-3">
+						<a class="logo wow fadeIn" data-wow-delay="1.2s" href="../../">
+							<img class="logo__mark" src="/images/logowhite.svg" alt="site-logo">
+						</a>
+					</div>
 
-			  <div class="hamburger">
-				<span></span>
-				<span></span>
-				<span></span>
+					<div class="col-xs-3 col-xs-offset-6 text-right">
+						<div class="hamburger">
 
-			  </div>
-		  
+							<div class="icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+					  
+						</div>
+
+					</div>
+				</div>
 			</div>
+		</div>
 
 
-		  </div>
+		<div class="nav-menu">
+			<!-- add the nav menu !-->
+			{% assign pages = site.pages | sort: 'order' %}
+		  	
+		  	<ul class="list">
+				{% for p in pages %}
+				
+					{% if p.title == 'Home' %}
+						<li {% if p.url == page.url %} class="link active wow fadeIn" 
+						{% else %}
+						class="link wow fadeIn" {% endif %} data-wow-delay="1.2s">
+
+							<a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+						
+						</li>
+					{% endif %}
+
+				{% endfor %}
+
+				<li class="link wow fadeIn" id="aboutme" data-wow-delay="1.5s">
+				  	<a href="#about">About Me</a>
+				</li>
+				<li class="link wow fadeIn" id="portfolio" data-wow-delay="1.9s">
+					<a href="#cta-target">Portfolio</a>
+				</li>
+				<li class="link wow fadeIn" id="contact" data-wow-delay="2.3s">
+					<a href="#messageme">Contact</a>
+				</li>
 			
+				<li class="additional-links">
+				
 
+					<div class="social-icons">
+
+						{% if site.twitter_username %}
+							
+							<a href="https://twitter.com/{{ site.twitter_username }}" target="blank_">
+							  <img class="first-icon social-icon social-icon-twitter" src="images/social-media/twitter-white.png">
+							</a>
+					  	
+					  	{% endif %}
+
+					  
+					  	{% if site.dribbble_username %}
+							<a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_">
+								<img class="social-icon social-icon-dribbble" src="images/social-media/dribbble-white.png">
+					  		</a>
+					  	{% endif %}
+
+					  
+					  	{% if site.linkedin_username %}
+					 		<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="blank_">
+								<img class="social-icon social-icon-linkedin" src="images/social-media/linkedin-white.png"/>
+							</a>
+					  	{% endif %}
+
+					  
+						{% if site.github_username %}
+							<a href="https://github.com/{{ site.github_username }}" target="blank_">
+						  		<img class="social-icon social-icon-github" src="images/social-media/github-white.png">
+							</a>
+					  	{% endif %}
+					</div>
+				
+				</li>
+			
+			</ul>
 
 		</div>
 		
-
-		
-
-		<!-- add the nav menu !-->
-		{% assign pages = site.pages | sort: 'order' %}
-		  <ul class="nav__list">
-			{% for p in pages %}
-			
-			  {% if p.title == 'Home' %}
-			  <li {% if p.url == page.url %} class="nav__list__link nav__list__link--active wow fadeIn" {% else %}
-			  class="nav__list__link wow fadeIn" {% endif %} data-wow-delay="1.2s">
-				<a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
-			  </li>
-			  {% endif %}
-			{% endfor %}
-			<li class="nav__list__link wow fadeIn" id="aboutme" data-wow-delay="1.5s">
-			  <a href="#about">About Me</a>
-			</li>
-			<li class="nav__list__link wow fadeIn" id="portfolio" data-wow-delay="1.9s">
-			  <a href="#cta-target">Portfolio</a>
-			</li>
-			<li class="nav__list__link wow fadeIn" id="contact" data-wow-delay="2.3s">
-			  <a href="#messageme">Contact</a>
-			</li>
-			<li class="additional-links">
-			  <div class="social-icons">
-			  {% if site.twitter_username %}
-				<!-- Twitter !-->
-				<a href="https://twitter.com/{{ site.twitter_username }}" target="blank_">
-				  <img class="first-icon social-icon social-icon-twitter" src="images/social-media/twitter-white.png">
-				</a>
-			  {% endif %}
-
-			  <!-- Dribbble !-->
-			  {% if site.dribbble_username %}
-			  <a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_">
-				<img class="social-icon social-icon-dribbble" src="images/social-media/dribbble-white.png">
-			  </a>
-			  {% endif %}
-
-			  <!-- Linkedin !-->
-			  {% if site.linkedin_username %}
-			  <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="blank_">
-				<img class="social-icon social-icon-linkedin" src="images/social-media/linkedin-white.png"/>
-			  </a>
-			  {% endif %}
-
-			  <!-- Github !-->
-			  {% if site.github_username %}
-				<a href="https://github.com/{{ site.github_username }}" target="blank_">
-				  <img class="social-icon social-icon-github" src="images/social-media/github-white.png">
-				</a>
-			  {% endif %}
-			  </div>
-			</li>
-		  </ul>
-		  
-	  </div>
 	</nav>
 
-	<div class="wrapper">
-	  <div class="intro">
-		<!-- This applies only for blog posts !-->
-		{% if post.categories %}
-		  <span>{{ post.catergory }}</span>
-		{% endif %}
+	<div class="intro">
 
-		<!-- If a page has a heading name then display that instead of
-		the title !-->
-		{% if page.heading %}
-		  <h1 class="intro__title">{{ page.heading }}</h1>
-		{% else %}
-		  <h1 class="intro__title">{{ page.title }}</h1>
-		{% endif %}
+		<div class="container">
 
-		<p class="intro__brief">{{ page.description }}</p>
+			{% if page.title == 'Home' %}
+				<h2>{{page.author}}</h2>
+			{% else %}
+				<h2>{{ project.catergory }}</h2>
+			{% endif %}
 
-		{% if page.calltoaction %}
-		  {% for buttonname in page.buttonname %}
-			<button class="btn btn--primary btn--whiteblue">{{ buttonname }}</button>
-		  {% endfor %}
-		{% endif %}
-	  </div>
+
+			{% if page.heading %}
+			  <h1 class="intro-title">{{ page.heading }}</h1>
+			{% else %}
+			  <h1 class="intro-title">{{ page.title }}</h1>
+			{% endif %}
+
+
+			{% if page.calltoaction %}
+				<div class="cta">
+					<svg width="10px" height="101px" viewBox="0 0 10 101">
+		    			<defs></defs>
+					    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <g id="Home" transform="translate(-132.000000, -462.000000)">
+					            <g id="Arrow" transform="translate(132.000000, 463.000000)">
+					                <path d="M5,0.5 L5,98.7496796" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+		                			<circle id="Oval-2" fill="#FFFFFF" cx="5" cy="95" r="5"></circle>
+		            			</g>
+		        			</g>
+		    			</g>
+					</svg>
+					<a href="#">{{ page.buttonname }}</a>
+				</div>
+			  
+			{% endif %}
+
+		</div>
+		
+		
+	 
 	</div>
 
 </header>

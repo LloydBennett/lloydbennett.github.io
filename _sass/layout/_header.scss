@@ -1,107 +1,85 @@
 /* Header */
-
-header{
-  overflow:hidden;
-}
-.header {
-  @include modifier(polygon){
-    position:relative;
-
-    @include generatedTriangle('after'){
-      border-width: 0 0 50rem 200rem; // 0 0 800px 2000px
-      border-color: transparent transparent rgba(255,255,255,1) transparent;
-      width:0;
-      height: 0;
-      bottom:0;
-
-      @include media-query(460px){
-        border-width: 0 0 37.5rem 200rem; // 0 0 600px 2000px
-      }
-      @include media-query(37.5em){ //600px
-        border-width: 0 0 48.75rem 200rem; // 780px 2000px
-      }
-
-
-      @include media-query(43.75em){ //700px
-        border-width: 0 0 51.625rem 240rem; //0 0 826px 3000px
-      }
-
-      @include media-query(1400px){
-        border-width: 0 0 826px 4000px;
-      }
-
-      @include media-query(125rem){ //2000px
-        border-width: 0 0 1026px 6000px;
-      }
-
-    }
-  }
-  @include element('masthead'){
+.masthead {
     color: white;
-    width:100%;
+    background-color: $brand--color;
+    overflow:hidden;
 
-    p{color:white;}
-    @include modifier('lrg'){
-      height: 34.375em;
-      @include media-query(43.75em){
-        height: 43.75em;
-      }
+    .polygon {
+        position: relative;
+
+        @include generatedTriangle('after') {
+            border-width: 0 0 50rem 200rem; // 0 0 800px 2000px
+            border-color: transparent transparent rgba(255,255,255,1) transparent;
+            width:0;
+            height: 0;
+            bottom:0;
+
+            @media screen and (min-width: 460px){
+                border-width: 0 0 37.5rem 200rem; // 0 0 600px 2000px
+            }
+
+            @media screen and (min-width: 37.5em){ //600px
+                border-width: 0 0 48.75rem 200rem; // 780px 2000px
+            }
+
+            @media screen and (min-width: 43.75em){ //700px
+                border-width: 0 0 51.625rem 240rem; //0 0 826px 3000px
+            }
+
+            @media screen and (min-width: 1400px){
+                border-width: 0 0 826px 4000px;
+            }
+
+            @media screen and (min-width: 125rem){ //2000px
+                border-width: 0 0 1026px 6000px;
+            }
+        }
     }
-    @include modifier('sml'){
-      height: 25em;
-      @include media-query(43.75em){
-        height: 31.25em;
-      }
-      @include media-query(56.25em){
-        height: 37.5em;
-      }
+
+    &.large {
+        height: 34.375em;
+        
+        @include media-query(43.75em){
+            height: 43.75em;
+        }
     }
 
-  }
-}
-#home-header {
-  background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('../images/home/home-bg.jpg') no-repeat fixed center top; 
-  background-size:cover; 
-
-  @media screen and (max-width: 767px) { 
-    background: linear-gradient(rgba(61, 150, 255, 0.86), rgba(61, 150, 255, 0.6)), url('../images/home/home-bg-sm.jpg') no-repeat fixed center top;
-
-  }
-}
-.intro {
-  text-align: center;
-  margin-top: 4.5rem;
-  position: relative;
-  z-index: 2;
-  @include media-query(43.75em){
-    margin-top: 8rem;
-  }
-
-  @include element('title'){
-    -webkit-animation: fade-in 1s ease-in forwards;
-    animation: fade-in 1s ease-in forwards;
-  }
-
-
-  @include element('brief'){
-    margin: 0.5rem auto 1.5rem;
-    padding: 0 0.5rem;
-    opacity: 0;
-    -webkit-animation: fade-in 1s ease-in 500ms forwards;
-    animation: fade-in 1s ease-in 500ms forwards;
+    &.small {
+        height: 25em;
+        @include media-query(43.75em){
+            height: 31.25em;
+        }
+        @include media-query(56.25em){
+            height: 37.5em;
+        }
+    }
     
-    @include media-query(34.75em){
-      padding: 0 3rem;
-    }
-    @include media-query(768px) {
-      margin-top: 18px;
-      margin-bottom: 30px;
-    }
-  }
+    .intro {
+        position: relative;
+        z-index: 2;
+        margin-top: 4.5rem;
 
-  button {
-    opacity: 0;
-    -webkit-animation: fade-in 1s ease-in 1s forwards;
-    animation: fade-in 1s ease-in 1s forwards;
-  }
+        @include media-query(43.75em){
+            margin-top: 8rem;
+        }
+
+        .intro-title {
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .cta {
+            font-size: 0.875rem;
+            text-transform: capitalize;
+            font-family: $display-font-family;
+            font-weight: 400;
+
+            svg {
+                margin-left: 40px;
+                margin-bottom: 10px;
+            }
+        }
+
+    }
+
 }
