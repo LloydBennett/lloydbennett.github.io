@@ -2,20 +2,32 @@
 title: Home
 layout: page
 author: Lloyd Bennett 
-heading: "<span>A UI Designer & Front-End Developer</span><span> who creates simple and engaging</span> <span>experiences for the web.</span>"
+heading: "<span>A UI Designer & <em>Front-End</em> Developer</span><span> who creates simple and engaging</span> <span>experiences for <em>the web.</em></span>"
 buttonname: ["view my work"]
 order: 1
 permalink: /
 include-nav: true;
 ---
 
-<section class="block myinfo" id="about">
-	<h3 class="block__title wow fadeIn"> About Me </h3>
-	
-	<p class="myinfo__copy wow fadeIn" data-wow-offset='100' data-wow-delay='.8s'>
-		Hi, name is Lloyd, I&apos;m currently a Front-End Developer at a London based digital agency called <a class="link" href="http://toadlondon.com/" target="_blank">TOAD.</a> 
-		I have a strong passion for design and creating things that people can interactive with. My multidisciplinary skillset in both design and development enables me to carry projects from concept through to inception and face a my day-to-day challenges with a broader perspective. This excites me as I thrive on problem solving and take pride in learning to expanding my skillset. My philosphy is to create beautiful and engaging digital products that resonate with consumers. Feel free to <a class="link" id="contactme"href="#">contact me</a> regarding any work or enquires.
-	</p>
+<section id="about">
+	<div class="container">
+		<div class="row">
+		
+			<div class="col-md-7 myinfo">
+				<h2 class="wow fadeIn"> About Me </h2>
+				<p class="wow fadeIn" data-wow-offset='100' data-wow-delay='.8s'>
+					Hi, name is Lloyd, I&apos;m currently a Front-End Developer at a London based digital agency called <a class="link" href="http://toadlondon.com/" target="_blank">TOAD.</a> 
+					I have a strong passion for design and creating things that people can interactive with. My multidisciplinary skillset in both design and development enables me to carry projects from concept through to inception and face a my day-to-day challenges with a broader perspective. This excites me as I thrive on problem solving and take pride in learning to expanding my skillset. My philosphy is to create beautiful and engaging digital products that resonate with consumers. Feel free to <a class="link" id="contactme"href="#">contact me</a> regarding any work or enquires.
+				</p>
+			</div>
+
+			<div class="col-md-5 avatar">
+				<img src="images/me.jpg" alt="Lloyd Bennett">
+			</div>
+
+		</div>
+	</div>
 </section>
  
 {% include portfolio.html %}
+{% include contact.html %}

@@ -1,58 +1,23 @@
-.btn {
-  padding: 12px 36px;
-  border-radius: 3px;
-  border: 2px solid;
-  background: none;
-  cursor: pointer;
-  font-size: 0.75rem;
-  text-transform: capitalize;
-  
-  &:focus{
-    outline: none;
-  }
+.link {
+	font-weight: 400;
+	position: relative;
+	display: inline-block;
 
-  @include modifier('primary'){
-    @extend %rel-one-level-up;
-    @media screen and (max-width: 767px) {
-      padding: 12px 30px;
-    }
-    @media screen and (min-width: 768px) {
-      padding: 15px 40px;
-    }
-  }
-  @include modifier('small'){
-    padding: 10px 20px;
-  }
-
-  @include modifier('disabled'){
-    @include button-modifier($font-color: #999, $border-color: #999);
-  }
-  @include modifier('whiteblue'){
-    @include button-modifier($font-color: white, $border-color: white);
-
-    &:hover{
-      @include button-modifier($font-color: $brand--color, $bg-color: white, $transition: false);
-    }
-
-  }
-
-  @include modifier('bluewhite'){
-    @include button-modifier($brand--color, $brand--color);
-
-    &:hover{
-      @include button-modifier(white, $bg-color: $brand--color, $transition: false);
-    }
-  }
+	&:after {
+		content: "";
+		display: block;
+		height: 8px;
+		width: 100%;
+		position: absolute;
+		bottom: 5px;
+		background-color: rgba(105, 174, 232, 0.47);
+		z-index: -1;
+	}
 
 }
 
-.link{
-  color: $brand--color;
-  font-weight: 600;
-}
-
-.viewpost-cta{
-  width: 160px;
-  margin-top: -50px;
-  //margin-bottom: 6rem;
+.viewpost-cta {
+	width: 160px;
+	margin-top: -50px;
+ 	//margin-bottom: 6rem;
 }

@@ -442,3 +442,13 @@ input, textarea {
   }
 
 }
+section {
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+	@media screen and (min-width: 43.75rem) {
+		margin-top: 100px;
+		margin-bottom: 100px;
+	}
+	
+}

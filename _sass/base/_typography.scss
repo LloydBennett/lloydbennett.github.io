@@ -1,60 +1,80 @@
+body {
+    font-family: $base-font-family;
+}
+
 h1, h2, h3 {
     font-family: $display-font-family;
 }
 
 
 h1 {
-    line-height: 1.4;
+    line-height: 1.5;
     font-weight: 700;
-    font-size: 2.5em; //40px
+    font-size: 1.375em; //22px
+    
+
+    @media screen and (min-width: 600px) and (max-width: 767px) {
+        font-size: 1.6em;
+    }
+
+    @media screen and (min-width: 768px) {
+        line-height: 1.4;
+        font-size: 2em;
+
+    }
+
+    @media screen and (min-width: 960px) {
+        
+        font-weight: 700;
+        font-size: 2.5em; //40px 
+    }
 
     span {
-        display: block;
+        @media screen and (min-width: 600px) {
+           display: block; 
+        }
+        
     }
 
-    /*  @media screen and (max-width: 399px) {
-        font-size: 1.8em;
+    em {
+        @extend .nowrap;
+        font-style: normal;
     }
-    @media screen and (min-width: 400px) and (max-width: 767px) {
-        font-size: 2em; 
-    }
-    @media screen and (min-width: 767px) and (max-width: 991px){
-        font-size: 2.5em;
-    }
-    @include media-query(992px){
-        font-size: 3em;
-        line-height: 1.125;
-    } */
 
 }
 
 h2 {
-    font-size: 1.25em; //20px
+    font-size: 1em; //16px
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 400;
+
+    @media screen and (min-width: 600px) {
+        font-size: 1.125em; //20px
+    }
 }
 
 h3 {
-  font-size: 16px; //22px
-  line-height: 1.136;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
+    font-size: 16px; //22px
+    line-height: 1.136;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
 
 }
 
-h4{
-  font-size: 1.125em; //18px
-  line-height: 1.4;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-}
+p {
+    line-height: 1.7;
+    @include measure;
+    color: $body-font--color;
+    font-size: 1em;
+    font-weight: 300;
 
-p{
-  @include measure;
-  color: $para-font--color;
+    @media screen and (min-width: 43.75em) {
+        font-size: 1.125em;
+        line-height: 1.8;
+    }
 }
 
 blockquote {
@@ -63,7 +83,8 @@ blockquote {
 strong{
   font-weight: 600;
 }
-q{
+
+q {
   font-style: italic;
 }
 figcaption{
