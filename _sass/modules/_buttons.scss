@@ -9,9 +9,13 @@
 		height: 8px;
 		width: 100%;
 		position: absolute;
-		bottom: 5px;
+		bottom: 3px;
 		background-color: rgba(105, 174, 232, 0.47);
 		z-index: -1;
+
+		@media screen and (min-width: 700px) {
+			bottom: 5px;
+		}
 	}
 
 }

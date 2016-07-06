@@ -1,5 +1,78 @@
+#cta-target {
+	h2 {
+		margin-bottom: 40px;
+
+		@media screen and (min-width: 600px) {
+			margin-bottom: 60px;
+		}
+	}
+}
+
 .project {
-	display: block;
+	display: inline-block;
 	position: relative;
+
+	@media screen and (max-width: 767px) {
+		margin-bottom: 30px;
+	}
+
+	.overlay {
+		color: white;
+		padding: 20px;
+		text-align: right;
+        background: linear-gradient(90deg, transparent 40%, rgba(0,0,0,0.5) 69%);
+		
+			
+		@media screen and (min-width: 500px) and (max-width: 900px) {
+			padding: 30px;
+		}
+		@media screen and (min-width: 901px) {
+			padding: 45px;
+		}
+		.overlay-title { 
+			font-size: 2em;
+			margin-top: 5px;
+
+			@media screen and (max-width: 550px) {
+				font-size: 1.25em;
+				margin-top: 0px;
+			}
+
+		}
+
+		.overlay-category {
+			font-size: 1em;
+			font-weight: 400;
+			font-family: $display-font-family;
+
+			@media screen and (max-width: 550px) {
+				font-size: 0.875em;
+			}
+		}
+
+		&:after {
+			content: "+";
+			position: absolute;
+			bottom: 10px;
+			right: 20px;
+			font-family: $display-font-family;
+			font-size: 1.875em;
+
+			@media screen and (min-width: 500px) and (max-width: 900px) {
+				bottom: 30px;
+				right: 30px
+			}
+			@media screen and (min-width: 901px) {
+				bottom: 45px;
+				right: 45px;
+				font-size: 2.8125em;
+			}
+		}
+	}
+
+	img {
+		width:100%;
+		display: block;
+	}
 
 }
