@@ -1,7 +1,24 @@
 footer {
+	position: relative;
 	background-color: $brand--color;
 	color: white;
+	overflow: hidden;
 	
+	@media screen and (max-width: 599px) {
+		margin-top: -20px;
+	}
+	
+	&:before {
+		content: "";
+		position: absolute;
+		bottom: 100px;
+		right: 0;
+		width: 100%;
+		background-color: white;
+		transform: rotate(-9deg);
+		height: 208px;
+    	border-left: 30px solid white;
+	}
 	
 	.container {
 		position: relative;
@@ -9,10 +26,14 @@ footer {
 	}
 
 	span {
-		padding-top: 140px;
+		padding-top: 170px;
 		padding-bottom: 20px;
-		text-align: right;
+		text-align: center;
 		display: inherit;
+
+		@media screen and (min-width: 768px) {
+			text-align: right;
+		}
 	}
 
 

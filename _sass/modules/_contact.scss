@@ -1,4 +1,11 @@
 #contact {
+	@media screen and (max-width: 599px) {
+		margin-bottom: 0;
+	}
+
+	@media screen and (min-width: 43.75rem) {
+		margin-bottom: 100px;
+	}
 
 	h2 {
 		margin-bottom: 40px;
@@ -11,6 +18,10 @@
 	.thumbnail {
 		position: relative;
 		height: 45px;
+
+		@media screen and (max-width: 767px) {
+			margin-bottom: 40px;
+		}
 	}
 
 	.social-icon {

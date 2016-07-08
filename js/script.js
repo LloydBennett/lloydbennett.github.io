@@ -1,112 +1,109 @@
 (function($){
   //'use strict';
   //variables
-  var $navMenu = $('.nav__list'),
-      $ctaButton = $('.btn--primary'),
-      $ctaTarget = $('#cta-target'),
-      $body = $("html, body"),
-      $menuIcon = $('.nav__menu-icon'),
-      offsetY = window.pageYOffset;
+	var $navMenu = $('.nav-menu'),
+		$ctaButton = $('.cta'),
+		$body = $("html, body"),
+		$menuIcon = $('.hamburger');
 
 
-      function mobileMenu(event){
-        $navMenu.toggleClass('is-open');
-        $menuIcon.toggleClass('is-open');
-        $body.css('top', -offsetY + 'px');
-        $body.toggleClass('overflow-hidden');
-
-      }
-
-      //call to action scrolling functionality
-      function scrollTo(handler, target){
-
-        function handlerFunction(event){
-          event.preventDefault();
-          //checks to see whether the handler is a nav__list__link
-          if(handler.hasClass('nav__list__link')){
-            var $this = $(this),
-            navLinkHref = $this.find('a').attr('href');
-            
-            if($navMenu.hasClass('is-open')){
-              $navMenu.removeClass('is-open');
-              $menuIcon.removeClass('is-open');
-              $body.removeClass('overflow-hidden');
-            }
-            /* checks to see if the user is not on the homepage when clicking on
-            the .nav__list__link handler, if not then user is re-directed to the
-            homepage and the target location */
-            if(window.location.pathname !== "/"){
-              window.location.hash = navLinkHref;
-              window.location.pathname = "/";
-              $this.addClass('nav__list__link--active');
-
-            }
-            else{
-              $('.nav__list__link').removeClass('nav__list__link--active');
-              $this.addClass('nav__list__link--active');
-              $body.animate({
-                  scrollTop: target.offset().top
-              }, 600)
-            }
-
-          }
-          else{
-            $body.animate({
-                scrollTop: target.offset().top
-            }, 600);
-          }
+	function navigationMenu(event) {
+		var navItems = $('.list .list-link');
+		
+		$navMenu.toggleClass('is-open');
+		$menuIcon.toggleClass('is-open');
+		$body.toggleClass('overflow-hidden');
 
 
-        } // end of handler function
-        handler.on('click', handlerFunction);
-      }
+		navItems.each(function(index, el) {
+			var duration = 300,
+				delay = 90 * index;
 
-      //field has input checker
-      function fieldFocusOut(formField){
+			if($navMenu.hasClass('is-open')) {
+				setTimeout(function(){
+					$(el).addClass('appear');
+				}, delay);
 
-        formField.focusout(function(){
-          var $inputVal = $(this).val();
+			}else {
+				$(el).removeClass('appear');
+			}
 
-          if($inputVal === ""){
-            $(this).removeClass('has-input');
-          }
-          else{
-            $(this).addClass('has-input');
-          }
+		});
 
-        });
-      }
-      
-      function addRemoveLinkClass(event){
+  	}
 
-        if($('.nav__list__link').hasClass('nav__list__link--active')){
-          var navLinkHref = $('.nav__list__link').find('a').attr('href');
+	  //call to action scrolling functionality
+	/*function scrollTo(handler, target){
 
-          // want to check if the window is pass the position of its href
+		function handlerFunction(event){
+			event.preventDefault();
+			var $this = $(this)
 
-        }
-      }
+			navLinkHref = $this.find('a').attr('href');
+		  	
+	    	if(handler.hasClass('list-link')){
+				
+				if($navMenu.hasClass('is-open')){
+					$navMenu.removeClass('is-open');
+					$menuIcon.removeClass('is-open');
+				}
+
+				 checks to see if the user is not on the homepage when clicking on
+				the .nav__list__link handler, if not then user is re-directed to the
+				homepage and the target location 
+				if(window.location.pathname !== "/"){
+					window.location.hash = navLinkHref;
+					window.location.pathname = "/";
+					$this.addClass('active');
+				}
+				else{
+					$('.list-link').removeClass('active');
+					$this.addClass('active');
+					$body.animate({
+					  scrollTop: target.offset().top
+				  	}, 600)
+				}
+
+	  		}
+			else{
+				$body.animate({
+					scrollTop: target.offset().top
+				}, 600);
+		  	}
+
+		} // end of handler function
+		handler.on('click', handlerFunction);
+	}*/
+
+	  //field has input checker
+	  
+  	// want to check if the window is pass the position of its href
+  	/*function addRemoveLinkClass(event){
+
+		if($('.list-link').hasClass('active')){
+		  var navLinkHref = $('.list-link').find('a').attr('href');
+
+		  
+
+		}
+  	}*/
 
 
-      //dom ready
-      $(function(){
-        var $footerTitle = $('.footer__upper .block__title');
+	  //dom ready
+  	$(function(){
 
-          //mobile menu
-          $menuIcon.on('click', mobileMenu);
-          $(window).on("scroll", addRemoveLinkClass);
-          $('input.input__search').focusout(function(){
-            $('.search-icon').removeClass('is--searching');
-          });
+	  //mobile menu
+		$menuIcon.on('click', navigationMenu);
+		/*$(window).on("scroll", addRemoveLinkClass);*/
 
-          //function calls
-          scrollTo($ctaButton, $ctaTarget);
-          scrollTo($('#contactme'), $footerTitle);
-          scrollTo($('#aboutme'), $('.myinfo'));
-          scrollTo($('#contact'), $footerTitle);
-          scrollTo($('#portfolio'), $ctaTarget);
-          fieldFocusOut($('.input__group input'));
-          fieldFocusOut($('.input__group textarea'));
-      });
+
+		//function calls
+		/*scrollTo($ctaButton, $ctaTarget);
+		scrollTo($('#contactme'), $footerTitle);
+		scrollTo($('#aboutme'), $('.myinfo'));
+		scrollTo($('#contact'), $footerTitle);
+		scrollTo($('#portfolio'), $ctaTarget);*/
+
+  	});
 
 })(jQuery);

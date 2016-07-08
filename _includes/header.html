@@ -31,73 +31,76 @@
 
 
 		<div class="nav-menu">
-			<!-- add the nav menu !-->
-			{% assign pages = site.pages | sort: 'order' %}
+			<div class="container">
+				
+				<!-- add the nav menu !-->
+				{% assign pages = site.pages | sort: 'order' %}
 		  	
-		  	<ul class="list">
-				{% for p in pages %}
-				
-					{% if p.title == 'Home' %}
-						<li {% if p.url == page.url %} class="link active wow fadeIn" 
-						{% else %}
-						class="link wow fadeIn" {% endif %} data-wow-delay="1.2s">
+			  	<ul class="list">
+					{% for p in pages %}
+					
+						{% if p.title == 'Home' %}
+							<li {% if p.url == page.url %} class="list-link active" 
+							{% else %}
+							class="list-link" {% endif %} data-wow-delay="1.2s">
 
-							<a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
-						
-						</li>
-					{% endif %}
-
-				{% endfor %}
-
-				<li class="link wow fadeIn" id="aboutme" data-wow-delay="1.5s">
-				  	<a href="#about">About Me</a>
-				</li>
-				<li class="link wow fadeIn" id="portfolio" data-wow-delay="1.9s">
-					<a href="#cta-target">Portfolio</a>
-				</li>
-				<li class="link wow fadeIn" id="contact" data-wow-delay="2.3s">
-					<a href="#messageme">Contact</a>
-				</li>
-			
-				<li class="additional-links">
-				
-
-					<div class="social-icons">
-
-						{% if site.twitter_username %}
+								<a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
 							
-							<a href="https://twitter.com/{{ site.twitter_username }}" target="blank_">
-							  <img class="first-icon social-icon social-icon-twitter" src="images/social-media/twitter-white.png">
-							</a>
-					  	
-					  	{% endif %}
+							</li>
+						{% endif %}
 
-					  
-					  	{% if site.dribbble_username %}
-							<a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_">
-								<img class="social-icon social-icon-dribbble" src="images/social-media/dribbble-white.png">
-					  		</a>
-					  	{% endif %}
+					{% endfor %}
 
-					  
-					  	{% if site.linkedin_username %}
-					 		<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="blank_">
-								<img class="social-icon social-icon-linkedin" src="images/social-media/linkedin-white.png"/>
-							</a>
-					  	{% endif %}
-
-					  
-						{% if site.github_username %}
-							<a href="https://github.com/{{ site.github_username }}" target="blank_">
-						  		<img class="social-icon social-icon-github" src="images/social-media/github-white.png">
-							</a>
-					  	{% endif %}
-					</div>
+					<li class="list-link" data-wow-delay="1.5s">
+					  	<a href="#about">About Me</a>
+					</li>
+					<li class="list-link" data-wow-delay="1.9s">
+						<a href="#cta-target">Portfolio</a>
+					</li>
+					<li class="list-link" data-wow-delay="2.3s">
+						<a href="#contact">Contact</a>
+					</li>
 				
-				</li>
-			
-			</ul>
+					<li class="additional-links">
+					
 
+						<div class="social-icons">
+
+							{% if site.twitter_username %}
+								
+								<a href="https://twitter.com/{{ site.twitter_username }}" target="blank_">
+								  <img class="first-icon social-icon social-icon-twitter" src="images/social-media/twitter-white.png">
+								</a>
+						  	
+						  	{% endif %}
+
+						  
+						  	{% if site.dribbble_username %}
+								<a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_">
+									<img class="social-icon social-icon-dribbble" src="images/social-media/dribbble-white.png">
+						  		</a>
+						  	{% endif %}
+
+						  
+						  	{% if site.linkedin_username %}
+						 		<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="blank_">
+									<img class="social-icon social-icon-linkedin" src="images/social-media/linkedin-white.png"/>
+								</a>
+						  	{% endif %}
+
+						  
+							{% if site.github_username %}
+								<a href="https://github.com/{{ site.github_username }}" target="blank_">
+							  		<img class="social-icon social-icon-github" src="images/social-media/github-white.png">
+								</a>
+						  	{% endif %}
+						</div>
+					
+					</li>
+				
+				</ul>
+
+			</div>
 		</div>
 		
 	</nav>
