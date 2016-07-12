@@ -6,6 +6,10 @@
 	}
  }
 
+.logo {
+	opacity: 0;
+	animation-fill-mode: forwards;
+}
 .hamburger {
 	width: 38px;
     height: 38px;
@@ -15,6 +19,8 @@
 	display: inline-block;
 	cursor: pointer;
 	z-index: 1100;
+	opacity: 0;
+	animation-fill-mode: forwards;
 
 	@media screen and (min-width: 700px) {
 		width: 50px;
@@ -109,6 +115,8 @@
 	}
 
 	.list {
+		margin-top: 0;
+		margin-bottom: 0;
 		list-style:none;
 		color:white;
 		@extend %clearfix;		
@@ -119,24 +127,6 @@
 	    top: 40%;
 	    transform: translateY(-40%);
 
-		.additional-links {
-			display: none;
-			text-align: center;
-			position: absolute;
-			bottom: 13px;
-			margin-left: auto;
-			margin-right: auto;
-			right: 0;
-			left: 0;
-		  
-			.first-icon {
-				margin-left: 0 !important;
-			}
-			.social-icon {
-				margin-left: 20px;
-				width: 22px;
-			}
-		}
 		
 		.list-link {
 			padding: 20px;
@@ -146,11 +136,7 @@
 			opacity: 0;
 			transform: translateY(30px);
 			transition: 200ms ease;
-			
-			&:last-child {
-				padding-bottom: 0;
-			}
-			
+		
 			@media screen and (min-width: 768px) {
 				font-size: 4em; // 64
 			}
@@ -159,10 +145,6 @@
 				opacity: 1;
 				transform: translateY(0);
 				transition: 200ms ease;	
-			}
-		  
-			&.active {
-				font-weight: 700;
 			}
 		}
 	}	

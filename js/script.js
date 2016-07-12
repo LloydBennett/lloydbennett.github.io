@@ -2,7 +2,7 @@
   //'use strict';
   //variables
 	var $navMenu = $('.nav-menu'),
-		$ctaButton = $('.cta'),
+		$ctaButton = $('.cta-button'),
 		$body = $("html, body"),
 		$menuIcon = $('.hamburger');
 
@@ -19,6 +19,8 @@
 			var duration = 300,
 				delay = 90 * index;
 
+			scrollTo($(el));
+
 			if($navMenu.hasClass('is-open')) {
 				setTimeout(function(){
 					$(el).addClass('appear');
@@ -33,77 +35,42 @@
   	}
 
 	  //call to action scrolling functionality
-	/*function scrollTo(handler, target){
+	function scrollTo(handler){
 
 		function handlerFunction(event){
 			event.preventDefault();
-			var $this = $(this)
-
-			navLinkHref = $this.find('a').attr('href');
+			var $this = $(this),
+				target = $this.find('a').attr('href');
 		  	
 	    	if(handler.hasClass('list-link')){
 				
 				if($navMenu.hasClass('is-open')){
 					$navMenu.removeClass('is-open');
 					$menuIcon.removeClass('is-open');
+					$body.toggleClass('overflow-hidden');
 				}
 
-				 checks to see if the user is not on the homepage when clicking on
-				the .nav__list__link handler, if not then user is re-directed to the
-				homepage and the target location 
-				if(window.location.pathname !== "/"){
-					window.location.hash = navLinkHref;
-					window.location.pathname = "/";
-					$this.addClass('active');
-				}
-				else{
-					$('.list-link').removeClass('active');
-					$this.addClass('active');
-					$body.animate({
-					  scrollTop: target.offset().top
-				  	}, 600)
-				}
-
+				
 	  		}
-			else{
-				$body.animate({
-					scrollTop: target.offset().top
-				}, 600);
-		  	}
+			
+			console.log(target);
+			$body.animate({
+				  scrollTop: $(target).offset().top
+			}, 600);
+		  	
 
 		} // end of handler function
 		handler.on('click', handlerFunction);
-	}*/
+	}
 
-	  //field has input checker
 	  
-  	// want to check if the window is pass the position of its href
-  	/*function addRemoveLinkClass(event){
 
-		if($('.list-link').hasClass('active')){
-		  var navLinkHref = $('.list-link').find('a').attr('href');
-
-		  
-
-		}
-  	}*/
-
-
-	  //dom ready
   	$(function(){
 
-	  //mobile menu
 		$menuIcon.on('click', navigationMenu);
-		/*$(window).on("scroll", addRemoveLinkClass);*/
-
-
-		//function calls
-		/*scrollTo($ctaButton, $ctaTarget);
-		scrollTo($('#contactme'), $footerTitle);
-		scrollTo($('#aboutme'), $('.myinfo'));
-		scrollTo($('#contact'), $footerTitle);
-		scrollTo($('#portfolio'), $ctaTarget);*/
-
+		scrollTo($($ctaButton));
+		scrollTo($('#message-me'));
+		
   	});
 
 })(jQuery);

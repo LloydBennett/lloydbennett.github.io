@@ -1,12 +1,12 @@
 <section id="cta-target">
     <div class="container">
-        <h2 class="center wow fadeIn" data-wow-offset="50"> Projects </h2>
+        <h2 class="center wow fadeIn" data-wow-offset="50" data-wow-duration="700ms"> Projects </h2>
         
         <div class="row">
             {% for casestudy in site.projects %}
 
                 <div class="col-sm-{{casestudy.colwidth}}">
-                    <a class="project" href="{{ casestudy.url | prepend: site.baseurl }}">
+                    <a class="project wow fadeIn" href="{{ casestudy.url | prepend: site.baseurl }}" data-wow-duration="700ms" data-wow-offset="100">
                         <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
                         <div class="overlay">
                             {% if casestudy.inprogress %}
