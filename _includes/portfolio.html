@@ -6,7 +6,7 @@
             {% for casestudy in site.projects %}
 
                 <div class="col-sm-{{casestudy.colwidth}}">
-                    <a class="project wow fadeIn" href="{{ casestudy.url | prepend: site.baseurl }}" data-wow-duration="700ms" data-wow-offset="100">
+                    <a id="project-thumb" class="ajaxLoad wow fadeIn" href="{{ casestudy.url | prepend: site.baseurl }}" data-wow-duration="700ms" data-wow-offset="100">
                         <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
                         <div class="overlay">
                             {% if casestudy.inprogress %}

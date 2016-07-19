@@ -5,15 +5,18 @@
 
   <body>
 
-    {% include header.html %}
-
     <div class="wrapper">
+		<div class="dynamic">
+			{% include header.html %}
 
-        {{ content }}
-
+        	{{ content }}
+        	
+			{% include footer.html %}
+		</div>
+    	
     </div>
 
-    {% include footer.html %}
+    
     <script src="/js/script.js"></script>
 
   </body>

@@ -1,102 +1,36 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <body>
-    <a class="project__close" href="{{site.baseurl}}/..">
-      <span class="icon-remove project__close__icon"></span>
-    </a>
-    <div class="wrapper">
-      {% capture projects %}{{page.collection}}{% endcapture %}
+    <body>
+        <div class="wrapper">
+            <div class="dynamic">
+                <a id="close-modal" class="link ajaxLoad" href="{{site.baseurl}}/..">
+                    Close
+                </a>
+                <div class="container">
+                    <div class="project__heading">
+                        <h1 class="project__title">{{ page.title }}</h1>
 
-      {% if page.collection %}
-          {% assign  document = site[projects] | sort: "date" | reversed %}
-      {% endif %}
+                        {% if page.calltoaction %}
+                        
+                        <div class="cta">
+                            <a href="http:/{{page.cta-link}}">
+                                {{ buttonname }}
+                            </a>
+                        </div>
 
-      {% for links in document %}
-          {% if links.title == page.title %}
-
-              {% unless forloop.first %}
-                  {% assign prevurl = prev.url %}
-
-                  {% assign prevtitle = prev.title %}
-              {% endunless %}
-
-              {% unless forloop.last %}
-                  {% assign next = document[forloop.index] %}
-
-                  {% assign nexturl = next.url %}
-
-                  {% assign nexttitle = next.title %}
-              {% endunless %}
-          {% endif %}
-
-          {% assign prev = links %}
-      {% endfor %}
-
-    {% if prevurl or nexturl %}
-      <div class="project__controls">
-      {% if prevurl %}
-        <a rel="prev" class="project__controls__prev" href="{{ prevurl }}"> {{ prevtitle }}</a>
-      {% endif %}
-      {% if nexturl %}
-        <a rel="next" class="project__controls__next" href="{{ nexturl }}">{{ nexttitle }} </a>
-      {% endif %}
-      </div>
-    {% endif %}
-      <div class="project__heading">
-        <h1 class="project__title">{{ page.title }}</h1>
-
-        {% if page.quote %}
-          <q class="center one-margin-space--bottom">
-            {{page.quote}}
-          </q>
-        {% endif %}
-
-        {% if page.calltoaction %}
-          {% for buttonname in page.buttonname %}
-          <div class="project__cta">
-            <a class="btn btn--bluewhite" href="http:/{{page.cta-link}}">
-              {{ buttonname }}
-            </a>
-         </div>
-          {% endfor %}
-        {% endif %}
-      </div>
-
-      <article class="post-content">
-        {{ content }}
-      </article>
-      <hr></hr>
-    </div>
-      <div class="project__footer">
-
-
-        {% if page.calltoaction %}
-          {% for buttonname in page.buttonname %}
-          <a href="http:/{{page.cta-link}}" class="btn btn--bluewhite">
-            {{ buttonname }}
-          </a>
-          {% endfor %}
-        {% endif %}
-
-        {% if prevurl %}
-        <a href="{{ prevurl }}" class="project__footer__link project__footer__link__prev project__footer__controller">
-          <div>{{ prevtitle }}</div>
-          <div class="project__footer__link--bold">Previous Project</div>
-        </a>
-        {% endif %}
-
-
-
-        {% if nexturl %}
-        <a href="{{ nexturl }}" class="project__footer__link project__footer__link__next project__footer__controller">
-          <div>{{ nexttitle }}</div>
-          <div class="project__footer__link--bold">Next Project</div>
-        </a>
-        {% endif %}
-      </div>
-
-   {% include sub-footer.html %}
-
-  </body>
+                        {% endif %}
+                    </div>
+                    {{ content }}
+                </div>  
+                {% include project-footer.html %}
+            </div>
+        </div>
+        
+        <script src="/js/script.js"></script>
+    </body>
 </html>
+
+
+
+   

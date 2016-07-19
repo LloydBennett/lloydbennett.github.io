@@ -1,6 +1,6 @@
 (function($){
   //'use strict';
-  //variables
+  
 	var $navMenu = $('.nav-menu'),
 		$ctaButton = $('.cta-button'),
 		$body = $("html, body"),
@@ -39,11 +39,13 @@
 
 		function handlerFunction(event){
 			event.preventDefault();
-			var $this = $(this),
-				target = $this.find('a').attr('href');
-		  	
-	    	if(handler.hasClass('list-link')){
+			var $this = $(this);
 				
+		  	
+	    	if(handler.hasClass('list-link')) {
+
+				target = $this.find('a').attr('href');
+
 				if($navMenu.hasClass('is-open')){
 					$navMenu.removeClass('is-open');
 					$menuIcon.removeClass('is-open');
@@ -51,9 +53,11 @@
 				}
 
 				
+	  		} else {
+	  			target = $this.attr('href');
 	  		}
 			
-			console.log(target);
+			
 			$body.animate({
 				  scrollTop: $(target).offset().top
 			}, 600);
@@ -63,13 +67,70 @@
 		handler.on('click', handlerFunction);
 	}
 
-	  
+	
+	/*function navigateToPage(pageURL) {
 
+		$.get(pageURL)
+
+			.done(function(data) {
+				console.log('it is working!');
+				var container = document.createElement("div"),
+					markup = container.innerHTML = data,
+					oldContent = $('.dynamic').first(),
+					fragment = $(markup).find('.dynamic');
+					fragment.css('display', 'none');
+
+					$('.wrapper').html($(fragment));
+
+					oldContent.fadeOut('500', function() {
+						$(fragment).fadeIn('500');
+						console.log(fragment);
+						oldContent.remove();
+					});
+		
+				if(!id == "next-project") {
+				}
+			})
+
+	}
+
+	function pageLoading(event) {
+		
+		if(Modernizr.history) {
+			event.preventDefault();
+
+			var pageURL = $(this).attr('href'),
+			elementId = $(this).attr('id');
+
+			window.history.pushState({path:pageURL},'',pageURL);
+
+			navigateToPage(elementId, pageURL);
+		}
+	}
+
+	var _popStateEventCount = 0;
+	
+	$(window).on('popstate', function (e) {
+ 
+    	this._popStateEventCount++;
+ 
+    	if ($.browser.webkit && this._popStateEventCount == 1) {
+        	return;
+    	}
+    
+    	navigateToPage(window.location.href);
+	});*/
+
+
+
+	
   	$(function(){
 
 		$menuIcon.on('click', navigationMenu);
 		scrollTo($($ctaButton));
 		scrollTo($('#message-me'));
+
+		$('.ajaxLoad').on('click', pageLoading);
 		
   	});
 
