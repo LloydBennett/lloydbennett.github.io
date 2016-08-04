@@ -3,6 +3,14 @@
 	background-color: $brand--color;
 	color: white;
 	overflow: hidden;
+	text-align: center;
+	padding-top: 170px;
+	padding-bottom: 20px;
+
+	@media screen and (min-width: 768px) {
+		text-align: right;
+	}
+	
 	
 	@media screen and (max-width: 599px) {
 		margin-top: -20px;
@@ -26,15 +34,26 @@
 	}
 
 	span {
-		padding-top: 170px;
-		padding-bottom: 20px;
-		text-align: center;
 		display: inherit;
-
-		@media screen and (min-width: 768px) {
-			text-align: right;
-		}
 	}
 
+	h2 {
+		display: table;
+		margin-left: auto;
+		text-transform: capitalize;
+		letter-spacing: 0;
+		margin-bottom: 0;
+		margin-top: 0;
+		@extend h1; 
+	}
+
+	h3 {
+		margin-bottom: 5px;
+	}
+	
+	&.casestudy {
+		padding-top: 90px;
+		padding-bottom: 30px;
+	}
 
 }

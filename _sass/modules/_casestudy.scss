@@ -31,6 +31,58 @@
 	}
 }
 
+#close-casestudy {
+	font-size: 18px;
+
+	@media screen and (min-width: 768px) {
+		font-size: 22px;
+	}
+
+	&:after {
+		bottom: 2px;
+	}
+}
+.content {
+	p {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+.project-top-nav {
+	text-align: center;
+	@media screen and (min-width: 768px) {
+		text-align: right;
+		position: fixed;
+		width: 100%;
+	}
+}
+.project-heading {
+	text-align: center;
+	margin-top: 70px;
+
+	@media screen and (min-width: 768px) {
+		margin-top: 150px;
+	}
+
+	.project-title {
+		margin-top: 12px;
+		line-height: 1;
+		font-size: 40px;
+
+		@media screen and (min-width: 960px) {
+			font-size: 60px;
+			margin-top: 0;
+		}
+		@media screen and (min-width: 960px) {
+			font-size: 80px;
+		}
+	}
+	.project-category {
+		margin-bottom: 0;
+		font-size: 12px;
+	}
+}
+
 #project-thumb {
 	display: inline-block;
 	position: relative;

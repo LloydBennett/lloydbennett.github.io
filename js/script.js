@@ -68,69 +68,54 @@
 	}
 
 	
-	/*function navigateToPage(pageURL) {
+	function navigateToPage(pageURL) {
 
-		$.get(pageURL)
-
-			.done(function(data) {
-				console.log('it is working!');
-				var container = document.createElement("div"),
-					markup = container.innerHTML = data,
-					oldContent = $('.dynamic').first(),
-					fragment = $(markup).find('.dynamic');
-					fragment.css('display', 'none');
-
-					$('.wrapper').html($(fragment));
-
-					oldContent.fadeOut('500', function() {
-						$(fragment).fadeIn('500');
-						console.log(fragment);
-						oldContent.remove();
-					});
-		
-				if(!id == "next-project") {
-				}
-			})
+		var section = $('.dynamic');
+		section.load(pageURL+' .dynamic > *', function(event){
+	    	// load new content and replace <main> content with the new one
+	      	$('.wrapper').html(section);
+	      	console.log('its working bro!');
+	      	//...
+	      	$('body').scrollTop(0);
+	      	//$('body').removeClass('page-is-changing');
+	      	//...
+			if(pageURL != window.location){
+				window.history.pushState({path:pageURL},'',pageURL);
+			}
+		});
 
 	}
 
-	function pageLoading(event) {
-		
-		if(Modernizr.history) {
-			event.preventDefault();
-
-			var pageURL = $(this).attr('href'),
-			elementId = $(this).attr('id');
-
-			window.history.pushState({path:pageURL},'',pageURL);
-
-			navigateToPage(elementId, pageURL);
-		}
-	}
-
-	var _popStateEventCount = 0;
 	
-	$(window).on('popstate', function (e) {
- 
-    	this._popStateEventCount++;
- 
-    	if ($.browser.webkit && this._popStateEventCount == 1) {
-        	return;
-    	}
-    
-    	navigateToPage(window.location.href);
-	});*/
 
+	$(window).on('popstate', function() {
+		var newPage = location.pathname;
+    	navigateToPage(newPage);
+	});
 
+	$menuIcon.on('click', navigationMenu);
 
-	
   	$(function(){
 
-		$menuIcon.on('click', navigationMenu);
+		
 		scrollTo($($ctaButton));
 		scrollTo($('#message-me'));
 
-		$('.ajaxLoad').on('click', pageLoading);
+		$('.wrapper').on('click', '.ajaxLoad', function (event) {
+			
+			if(Modernizr.history) {
+				event.preventDefault();
+				var pageURL = $(this).attr('href');
+				
+				navigateToPage(pageURL);
+
+				
+			}
+			event.stopPropagation();
+		});
+
+
+
 		
   	});
 

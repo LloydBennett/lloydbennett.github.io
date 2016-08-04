@@ -4,12 +4,24 @@
     <body>
         <div class="wrapper">
             <div class="dynamic">
-                <a id="close-modal" class="link ajaxLoad" href="{{site.baseurl}}/..">
-                    Close
-                </a>
-                <div class="container">
-                    <div class="project__heading">
-                        <h1 class="project__title">{{ page.title }}</h1>
+                <div class="nav-bar project-top-nav">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-2 col-sm-offset-10">
+                                <a id="close-casestudy" class="link ajaxLoad" href="{{site.baseurl}}/..">
+                                    Close
+                                </a> 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="container content">
+                    <div class="project-heading">
+                        <h2 class="project-category">{{ page.category }}</h2>
+                        <h1 class="project-title">{{ page.title }}</h1>
 
                         {% if page.calltoaction %}
                         
