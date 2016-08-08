@@ -73,3 +73,12 @@
   position: fixed;
   width: 100%;
 }
+
+@media screen and (max-width: 767px) {
+    .pull-xs-left {
+        float: left;
+    }
+    .pull-xs-right {
+        float: right;
+    }
+}

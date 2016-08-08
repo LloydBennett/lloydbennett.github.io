@@ -1,0 +1,23 @@
+#users {
+	.subheading {
+		@media screen and (min-width: 768px) {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+#wireframes {
+	.fullwidth {
+		height: 300px;
+		background-color: #5C5B5B;
+	}
+}
+
+.style-guide {
+	max-width: 525px;
+	margin: 50px auto 30px;
+
+	@media screen and (min-width: 768px) {
+		margin: 100px auto;
+	}
+}

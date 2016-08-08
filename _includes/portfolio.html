@@ -1,31 +1,43 @@
 <section id="cta-target">
     <div class="container">
-        <h2 class="center wow fadeIn" data-wow-offset="50" data-wow-duration="700ms"> Projects </h2>
+        <h2 class="center wow moveUpFade" data-wow-offset="50" data-wow-duration="700ms"> Projects </h2>
         
-        <div class="row">
+        <div class="work-grid clearfix">
             {% for casestudy in site.projects %}
 
-                <div class="col-sm-{{casestudy.colwidth}}">
-                    <a id="project-thumb" class="ajaxLoad wow fadeIn" href="{{ casestudy.url | prepend: site.baseurl }}" data-wow-duration="700ms" data-wow-offset="100">
-                        <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
-                        <div class="overlay">
-                            {% if casestudy.inprogress %}
+            <div class="{{casestudy.colwidth}} grid">
+                <a id="project-thumb" class="ajaxLoad wow moveUpFade" href="{{ casestudy.url | prepend: site.baseurl }}" data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 650 }}ms">
 
-                            <span class="inprogress">
-                                In Progress
-                            </span>
+                    {% if casestudy.mobile-featured-image %}
+                    <img class="hide-xs" src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
 
-                            {% endif %}
-                            <span class="overlay-category">{{ casestudy.category }}</span>
-                            <h1 class="overlay-title">{{ casestudy.title }}</h1>
-                            
-                        </div>
-                    </a>
-                </div>
+                    <img class="hide-sm" src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.mobile-featured-image}}" alt="project">
+
+                    {% else %}
+
+                    <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
+
+                    {% endif %}   
+
+            
+                    <div class="overlay">
+                        {% if casestudy.inprogress %}
+
+                        <span class="inprogress">
+                            In Progress
+                        </span>
+
+                        {% endif %}
+                        <span class="overlay-category">{{ casestudy.category }}</span>
+                        <h1 class="overlay-title">{{ casestudy.title }}</h1>
+                        
+                    </div>
+                </a>
+            </div>
 
             {% endfor %}
-
         </div>
+        
 
     </div>
    

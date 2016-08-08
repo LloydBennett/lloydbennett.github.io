@@ -70,42 +70,41 @@
             }
         }
 
-        .cta {
-            font-size: 0.875rem;
-            text-transform: capitalize;
-            font-family: $display-font-family;
-            font-weight: 400;
-
-            svg {
-                margin-bottom: 10px;
-
-            
-                @media screen and (min-width: 600px) {
-                    margin-left: 40px;
-                }
-
-                #line {
-                    stroke-dasharray: 150;
-                    stroke-dashoffset: 150;
-                }
-
-                #point {
-                    transform: scale(0);
-                    transform-origin: 50% 50%;
-                }
-            }
-
-
-
-            a {
-                display: table;
-                @media screen and (max-width: 599px) {
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-            }
-        }
-
     }
 
+}
+
+.cta {
+    font-size: 0.875rem;
+    text-transform: capitalize;
+    font-family: $display-font-family;
+    font-weight: 400;
+
+    svg {
+        margin-bottom: 10px;
+
+    
+        @media screen and (min-width: 600px) {
+            margin-left: 40px;
+        }
+
+        #line {
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+        }
+
+        #point {
+            transform: scale(0);
+            transform-origin: 50% 50%;
+        }
+    }
+
+
+    a {
+        display: table;
+        @media screen and (max-width: 599px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }
