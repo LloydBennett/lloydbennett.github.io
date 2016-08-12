@@ -21,3 +21,16 @@
 		margin: 100px auto;
 	}
 }
+
+.wireframe-images {
+	margin-top: 50px;
+	@media screen and (min-width: 768px) {
+		margin-top: 80px;
+	}
+	.thumbnail {
+		text-align: center;
+		img {
+			max-width: 200px;
+		}
+	}
+}

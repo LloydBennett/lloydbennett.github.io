@@ -92,6 +92,10 @@
 	line-height: 1.5;
 	text-transform: capitalize;
 	
+	@media screen and (min-width: 500px) and (max-width: 767px) {
+		font-size: 1.6em;
+		line-height: 1.4;
+	}
 	@media screen and (max-width: 767px) {
 		text-align: center;
 	}
