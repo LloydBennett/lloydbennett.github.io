@@ -445,10 +445,11 @@ input, textarea {
 section {
 	margin-top: 50px;
 	margin-bottom: 80px;
+  counter-reset: number-counter;
     
-    & + section {
+    /* & + section {
         margin-top: 0;
-    }
+    } */
     
     @media screen and (min-width: 768px) {
         margin-bottom: 50px;

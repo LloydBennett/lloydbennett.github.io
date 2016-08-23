@@ -2,7 +2,7 @@ body {
     font-family: $base-font-family;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: $display-font-family;
 }
 
@@ -56,12 +56,20 @@ h2 {
 
 h3 {
     font-size: 16px; //22px
-    line-height: 1.136;
+    line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 400;
     margin-bottom: 1.5rem;
 
+}
+
+h4 {
+    font-size: 16px;
+    margin-bottom: 0;
+    @media screen and (min-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 p {
