@@ -6,15 +6,22 @@
 
 {% for links in document %}
     {% if links.title == page.title %}
+        
+        {% if forloop.last %}
+            {% assign next = document[0] %}
 
+            {% assign nexturl = next.url %}
 
-        {% unless forloop.last %}
+            {% assign nexttitle = next.title %}
+
+        {% else %}
             {% assign next = document[forloop.index] %}
 
             {% assign nexturl = next.url %}
 
             {% assign nexttitle = next.title %}
-        {% endunless %}
+        {% endif %}
+        
     {% endif %}
 
 {% endfor %}

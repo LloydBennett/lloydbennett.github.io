@@ -17,6 +17,15 @@
 	}
 }
 
+.sub-section {
+	margin: 50px auto;
+
+	@media screen and (min-width: 768px) {
+		margin: 100px auto;
+	}
+	
+}
+
 .hide-xs {
 	@media screen and (max-width: 767px) {
 		display: none !important;

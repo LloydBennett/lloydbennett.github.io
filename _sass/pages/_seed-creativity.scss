@@ -1,11 +1,35 @@
+#seed-intro {
+	@media screen and (min-width: 768px) and (max-width: 950px){
+		margin-bottom: 160px;
+	}
+}
 #users {
 	@extend %clearfix;
 	.copy-wrapper {
 		position: relative;
+		margin-left: 20px;
+		margin-right: 20px;
+
+		@media screen and (max-width: 767px) {
+			margin-bottom: 30px;
+		}
+
 		@media screen and (min-width: 768px) {
-			margin-left: 76.500px;
 			float: left;
 		}
+
+		@media screen and (min-width: 600px) and (max-width: 991px) {
+			margin-left: 60px;
+		}
+
+		@media screen and (min-width: 600px) and (max-width: 767px) {
+			margin-right: 60px;
+		}
+
+		@media screen and (min-width: 992px) {
+			margin-left: 76.500px;
+		}
+
 		@media screen and (min-width: 842px) {
 			width: 35%;
 		}
@@ -45,8 +69,9 @@
 	}
 
 	.copy-wrapper {
+		margin-bottom: 60px;
 		@media screen and (min-width: 768px) {
-			margin-top: 50px;
+			margin-top: 80px;
 			margin-bottom: 150px;
 		}
 		
@@ -62,6 +87,12 @@
 }
 
 #visual {
+
+	.copy-wrapper {
+		@media screen and (min-width: 767px) {
+			margin-bottom: 100px;
+		}
+	}
 	.stage-number {
 		@media screen and (min-width: 768px) {
 		    left: 20%;
@@ -71,18 +102,12 @@
 }
 .style-guide {
 	max-width: 525px;
-	margin: 50px auto 30px;
-
-	@media screen and (min-width: 768px) {
-		margin: 100px auto;
-	}
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .wireframe-images {
-	margin-top: 50px;
-	@media screen and (min-width: 768px) {
-		margin-top: 80px;
-	}
+
 	.thumbnail {
 		@media screen and (max-width: 767px) {
 			text-align: center;
@@ -154,8 +179,29 @@
 
 #bds {
 	@extend %clearfix;
+	
+	@media screen and (max-width: 767px) {
+		margin-top: 0;
+	}
+
+	@media screen and (max-width: 599px) {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	@media screen and (min-width: 600px) and (max-width: 767px) {
+		margin-left: 60px;
+		margin-right: 60px;
+	}
+
 
 	.copy {
+
+		h4 {
+			@media screen and (max-width: 767px) {
+				text-align: center;
+			}
+		}
 		@media screen and (min-width: 768px) {
 			width: 40%;
 			float: left;
@@ -164,6 +210,7 @@
 		}
 	}
 	.thumbnail {
+		text-align: center;
 		@media screen and (min-width: 768px) {
 			width: 60%;
 			max-width: 764px;
