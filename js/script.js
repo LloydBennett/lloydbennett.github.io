@@ -71,18 +71,29 @@
 	function navigateToPage(pageURL) {
 
 		var section = $('.dynamic');
-		section.load(pageURL+' .dynamic > *', function(event){
+
+		
+		$('body').addClass('fadeOut');
+
+
+		setTimeout(function(){
+
+			section.load(pageURL+' .dynamic > *', function(event){
 	    	// load new content and replace <main> content with the new one
-	      	$('.wrapper').html(section);
-	      	console.log('its working bro!');
-	      	//...
-	      	$('body').scrollTop(0);
-	      	//$('body').removeClass('page-is-changing');
-	      	//...
-			if(pageURL != window.location){
-				window.history.pushState({path:pageURL},'',pageURL);
-			}
-		});
+		      	$('.wrapper').html(section);
+		      	console.log('its working bro!');
+		      	//...
+		      	$('body').scrollTop(0).removeClass('fadeOut');
+		      	
+				if(pageURL != window.location){
+					window.history.pushState({path:pageURL},'',pageURL);
+				}
+			});
+			
+		},2000);
+
+		
+		
 
 	}
 

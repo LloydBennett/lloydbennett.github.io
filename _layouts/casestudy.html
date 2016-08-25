@@ -24,7 +24,7 @@
                             <h2 class="project-category wow fadeIn" data-wow-duration="700ms">{{ page.category }}</h2>
                             <h1 class="project-title wow fadeIn" data-wow-duration="1.5s" data-wow-delay="600ms">{{ page.title }}</h1>
 
-                           {% if page.button-details %}
+                           {% if page.button-text %}
                             <div class="cta">
                                 <svg width="10px" height="101px" viewBox="0 0 10 101">
                                     <defs></defs>
@@ -37,7 +37,7 @@
                                         </g>
                                     </g>
                                 </svg>
-                                <a href="http://www.{{ page.button-details[1] }}" target="_blank" class="cta-button wow fadeIn" data-wow-duration="600ms" data-wow-delay="2.2s" >{{ page.button-details[0] }}</a>
+                                <a href="http://www.{{ page.live-url }}" target="_blank" class="cta-button wow fadeIn" data-wow-duration="600ms" data-wow-delay="2.2s" >{{ page.button-text }}</a>
                             </div>
                             {% endif %}
                         

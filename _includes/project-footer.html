@@ -1,34 +1,48 @@
-{% capture projects %}{{page.collection}}{% endcapture %}
-
-{% if page.collection %}
-    {% assign  document = site[projects] | sort: "date" | reversed %}
-{% endif %}
-
-{% for links in document %}
-    {% if links.title == page.title %}
-        
-        {% if forloop.last %}
-            {% assign next = document[0] %}
-
-            {% assign nexturl = next.url %}
-
-            {% assign nexttitle = next.title %}
-
-        {% else %}
-            {% assign next = document[forloop.index] %}
-
-            {% assign nexturl = next.url %}
-
-            {% assign nexttitle = next.title %}
-        {% endif %}
-        
-    {% endif %}
-
-{% endfor %}
-
 <div class="footer casestudy">
     <div class="container">
-        <a id="next-project" class="ajaxLoad" href="{{ nexturl }}">
+        <a id="next-project"
+
+        {% capture projects %}{{page.collection}}{% endcapture %}
+
+        {% if page.collection %}
+            {% assign  document = site[projects] | sort: "date" | reversed %}
+        {% endif %}
+
+        {% for links in document %}
+            {% if links.title == page.title %}
+                
+                {% if forloop.last %}
+
+                    {% assign next = document[0] %}            
+                    {% assign nexttitle = next.title %}
+
+                {% else %}
+
+                    {% assign next = document[forloop.index] %}
+                    {% assign nexttitle = next.title %}
+
+                {% endif %}
+
+
+                {% if next.point-to-url %}
+
+                    {% assign nexturl = next.live-url %}
+                    href="http://www.{{ nexturl }}" target="_blank"
+
+                {% else %}
+
+                    {% assign nexturl = next.url %}
+                    class="ajaxLoad"
+                    href="{{ nexturl }}"
+
+                {% endif %}
+
+                
+            {% endif %}
+
+        {% endfor %}
+
+        >
             <h3>Next Project</h3>
             <h2>{{ nexttitle }}</h2>
         </a>

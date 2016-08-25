@@ -6,7 +6,20 @@
             {% for casestudy in site.projects %}
 
             <div class="{{casestudy.colwidth}} grid">
-                <a id="project-thumb" class="ajaxLoad wow moveUpFade" href="{{ casestudy.url | prepend: site.baseurl }}" data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 650 }}ms">
+                <a id="project-thumb" 
+
+                {%if casestudy.point-to-url %} 
+                class="wow moveUpFade"
+                href="http://www.{{ casestudy.live-url }}" target="_blank"
+
+                {%else %}
+
+                class="ajaxLoad wow moveUpFade"
+                href="{{ casestudy.url | prepend: site.baseurl }}"
+                
+                {% endif %}
+
+                 data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 650 }}ms">
 
                     {% if casestudy.mobile-featured-image %}
                     <img class="hide-xs" src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">

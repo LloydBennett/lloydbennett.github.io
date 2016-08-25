@@ -1,4 +1,12 @@
 /* Header */
+body {
+
+    &.fadeOut {
+        animation-duration: 800ms;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+}
 .masthead {
     color: white;
     background-color: $brand--color;
