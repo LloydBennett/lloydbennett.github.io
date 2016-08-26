@@ -26,6 +26,17 @@
 		transform: rotate(-9deg);
 		height: 208px;
     	border-left: 30px solid white;
+
+    	@media screen and (min-width: 1266px) {
+    		border-top: 20px solid;
+    		transform: rotate(-8deg);
+    	}
+    	@media screen and (min-width: 1585px) {
+    		transform: rotate(-7deg);
+    	}
+    	@media screen and (min-width: 1800px) {
+    		transform: rotate(-6deg);
+    	}
 	}
 	
 	.container {
