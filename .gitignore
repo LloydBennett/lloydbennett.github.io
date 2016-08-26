@@ -1,6 +1,16 @@
 _site
 .sass-cache
-bower_components
 
-!*/animate.css
-!*/wow.js
+bower_components/*
+
+!bower_components/wow
+bower_components/wow/*
+!bower_components/wow/css
+bower_components/wow/css/*
+!bower_components/wow/css/libs
+bower_components/wow/css/libs/*
+!bower_components/wow/css/libs/animate.css
+
+!bower_components/wow/dist
+bower_components/wow/dist/*
+!bower_components/wow/dist/wow.js
