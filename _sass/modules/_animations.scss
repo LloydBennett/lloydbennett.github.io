@@ -41,6 +41,23 @@
 	}
 }
 
+
+@keyframes fadeInLight {
+
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: .4;
+	}
+}
+
+.fadeInLight {
+	animation-name: fadeInLight;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
 .moveUpFade {
 	animation-name: moveUpFade;
 	animation-fill-mode: forwards;

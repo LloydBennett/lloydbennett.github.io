@@ -93,6 +93,12 @@ body {
             }
         }
 
+        h2 {
+            @media screen and (max-width: 767px) {
+                margin-bottom: 8px;
+            }
+        }
+
     }
 
 }
