@@ -81,7 +81,6 @@
 			section.load(pageURL+' .dynamic > *', function(event){
 	    	// load new content and replace <main> content with the new one
 		      	$('.wrapper').html(section);
-		      	console.log('its working bro!');
 		      	//...
 		      	$('body').scrollTop(0).removeClass('fadeOut');
 		      	
