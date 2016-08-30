@@ -117,7 +117,7 @@
 	.list {
 		margin-top: 0;
 		margin-bottom: 0;
-		list-style:none;
+		list-style: none;
 		color:white;
 		@extend %clearfix;		
 		padding-left: 0;
@@ -129,6 +129,7 @@
 
 		
 		.list-link {
+			position: relative;
 			padding: 20px;
 			text-align: center;
 			font-size: 2em; //32
@@ -139,6 +140,34 @@
 		
 			@media screen and (min-width: 768px) {
 				font-size: 4em; // 64
+			}
+			&:after {
+				@media screen and (min-width: 768px) {
+					content: "";
+					display: block;
+					height: 15px;
+					left: 0;
+					right: 0;
+					top: 60%;
+					margin-left: auto;
+					margin-right: auto;
+					width: 30%;
+					position: absolute;
+					//bottom: 31px;
+					background-color: rgb(105, 174, 232);
+					/* z-index: -1; */
+					transform: scaleX(0) translateY(-50%);
+					transition: 300ms cubic-bezier(.645,.045,.355,1);
+					transform-origin: left top;
+				}
+			}
+			&:hover {
+				&:after {
+					@media screen and (min-width: 768px) {
+						transform: scaleX(1) translateY(-50%);
+						transition: 300ms cubic-bezier(.645,.045,.355,1);
+					}
+				}
 			}
 
 			&.appear {
