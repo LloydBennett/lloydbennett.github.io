@@ -154,7 +154,7 @@
 					width: 30%;
 					position: absolute;
 					//bottom: 31px;
-					background-color: rgb(105, 174, 232);
+					background-color: $brand-accent--color;
 					/* z-index: -1; */
 					transform: scaleX(0) translateY(-50%);
 					transition: 300ms cubic-bezier(.645,.045,.355,1);

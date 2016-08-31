@@ -73,23 +73,26 @@
 		var section = $('.dynamic');
 
 		
-		$('body').addClass('fadeOut');
+		$('.wrapper').addClass('fadeOut');
+		$('#load-container').addClass('fadeIn');
 
 
 		setTimeout(function(){
 
 			section.load(pageURL+' .dynamic > *', function(event){
 	    	// load new content and replace <main> content with the new one
-		      	$('.wrapper').html(section);
+	    		$('body').scrollTop(0);
+		      	$('.wrapper').html(section).removeClass('fadeOut');
 		      	//...
-		      	$('body').scrollTop(0).removeClass('fadeOut');
+		      	
+		      	$('#load-container').removeClass('fadeIn');
 		      	
 				if(pageURL != window.location){
 					window.history.pushState({path:pageURL},'',pageURL);
 				}
 			});
 			
-		},2000);
+		},3000);
 
 		
 		
