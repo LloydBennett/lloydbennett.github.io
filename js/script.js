@@ -110,7 +110,6 @@
 
   	$(function(){
 
-		
 		scrollTo($($ctaButton));
 		scrollTo($('#message-me'));
 

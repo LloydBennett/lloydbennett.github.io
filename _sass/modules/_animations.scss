@@ -48,7 +48,18 @@
 	}
 }
 
+@-webkit-keyframes draw {
+	100% { 
+		stroke-dashoffset: 0; 
+	}
+}
+
 @keyframes grow {
+	from { transform: scale(0); }
+	to { transform: scale(1); }
+}
+
+@-webkit-keyframes grow {
 	from { transform: scale(0); }
 	to { transform: scale(1); }
 }
@@ -66,6 +77,21 @@
 	}
 }
 
+@-webkit-keyframes moveUpFade {
+
+	0% {
+		transform: translateY(50px);
+		opacity: 0
+	}
+	
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+
+
 
 @keyframes fadeInLight {
 
@@ -81,22 +107,35 @@
 	animation-name: fadeInLight;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease;
+
+	-webkit-animation-name: fadeInLight;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease;
 }
 
 .moveUpFade {
 	animation-name: moveUpFade;
 	animation-fill-mode: forwards;
+	-webkit-animation-name: moveUpFade;
+	-webkit-animation-fill-mode: forwards;
 	opacity: 0;
 	transform: translateY(50px);
+	-webkit-transform: translateY(50px);
 
 }
 
 .grow {
 	animation-name: grow;
 	animation-fill-mode: forwards;
+
+	-webkit-animation-name: grow;
+	-webkit-animation-fill-mode: forwards;
 }
 
 .draw {
 	animation-name: draw;
 	animation-fill-mode: forwards;
+
+	-webkit-animation-name: draw;
+	-webkit-animation-fill-mode: forwards;
 }

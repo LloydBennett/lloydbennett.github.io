@@ -3,22 +3,22 @@
 
   {% include head.html %}
 
-  <body>
+    <body>
 
-    <div class="wrapper">
-		<div class="dynamic">
-			{% include header.html %}
+        <div class="wrapper">
+    		<div class="dynamic">
+    			{% include header.html %}
 
-        	{{ content }}
+            	{{ content }}
+            	
+    			{% include footer.html %}
+    		</div>
         	
-			{% include footer.html %}
-		</div>
-    	
-    </div>
+        </div>
 
-    <div id="load-container"><div class="loader"></div></div>
-    <script src="/js/script.js"></script>
+        <div id="load-container"><div class="loader"></div></div>
+        <script src="/js/script.js"></script>
 
-  </body>
+    </body>
 
 </html>
