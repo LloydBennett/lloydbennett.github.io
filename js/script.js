@@ -4,7 +4,7 @@
 	var $navMenu = $('.nav-menu'),
 		$ctaButton = $('.cta-button'),
 		$body = $("html, body"),
-		$menuIcon = $('.hamburger');
+		$menuIcon = $('#open-menu');
 
 
 	function navigationMenu(event) {

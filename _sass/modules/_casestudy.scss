@@ -192,10 +192,14 @@ h3 {
 	}
 }
 #close-casestudy {
-	font-size: 22px;
+	border: none;
+	opacity: 1;
 	
-	&:after {
-		bottom: 2px;
+	.icon {
+		width: 30px !important;
+		span {
+			background-color: $brand--color;
+		}
 	}
 }
 .content {
