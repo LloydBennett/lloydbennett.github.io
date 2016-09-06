@@ -142,7 +142,7 @@
 
 
 }
-h3 {
+h2, h3 {
 
 	@media screen and (max-width: 767px) {
 		text-align: center;
@@ -325,6 +325,7 @@ h3 {
 	.project-category {
 		margin-bottom: 0;
 		font-size: 12px;
+		font-weight: 400;
 	}
 
 	.cta {
@@ -422,4 +423,12 @@ h3 {
 		display: block;
 	}
 
+}
+
+#prototyping {
+
+	.stage-number {
+		left: 300px;
+    	top: -20px;
+	}
 }
