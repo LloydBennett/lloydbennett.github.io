@@ -130,9 +130,9 @@
 		
 		.list-link {
 			position: relative;
-			padding: 20px;
+			padding: 15px;
 			text-align: center;
-			font-size: 2em; //32
+			font-size: 3em; 
 			font-family: $display-font-family;
 			opacity: 0;
 			transform: translateY(30px);
@@ -140,6 +140,7 @@
 		
 			@media screen and (min-width: 768px) {
 				font-size: 4em; // 64
+				padding: 20px;
 			}
 			&:after {
 				@media screen and (min-width: 768px) {

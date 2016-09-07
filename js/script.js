@@ -74,7 +74,6 @@
 
 		
 		$('.wrapper').addClass('fadeOut');
-		$('#load-container').addClass('fadeIn');
 
 
 		setTimeout(function(){
@@ -85,14 +84,13 @@
 		      	$('.wrapper').html(section).removeClass('fadeOut');
 		      	//...
 		      	
-		      	$('#load-container').removeClass('fadeIn');
 		      	
 				if(pageURL != window.location){
 					window.history.pushState({path:pageURL},'',pageURL);
 				}
 			});
 			
-		},3000);
+		},1000);
 
 		
 		
