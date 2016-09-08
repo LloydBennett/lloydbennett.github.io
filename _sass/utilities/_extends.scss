@@ -11,6 +11,10 @@
   @extend %clearfix;
 }
 
+.wow {
+    visibility: hidden;
+}
+
 %vertical-align-center{
   position: relative;
   top: 50%;
