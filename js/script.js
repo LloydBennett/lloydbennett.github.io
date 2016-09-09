@@ -72,7 +72,6 @@
 
 		var section = $('.dynamic');
 
-		
 		$('.wrapper').addClass('fadeOut');
 
 
@@ -101,7 +100,9 @@
 
 	$(window).on('popstate', function() {
 		var newPage = location.pathname;
+		if (event.state) {
     	navigateToPage(newPage);
+    	}
 	});
 
 	$menuIcon.on('click', navigationMenu);
