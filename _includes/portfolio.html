@@ -3,7 +3,7 @@
         <h2 class="center wow moveUpFade" data-wow-offset="50" data-wow-duration="700ms"> Projects </h2>
         
         <div class="work-grid clearfix">
-            {% for casestudy in site.projects %}
+            {% for casestudy in site.projects reversed %}
 
             <div class="{{casestudy.colwidth}} grid">
                 <a id="project-thumb" 
