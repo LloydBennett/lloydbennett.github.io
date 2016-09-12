@@ -356,6 +356,29 @@ h2, h3 {
 	display: block;
 	position: relative;
 	transition: 300ms ease;
+
+	.inprogress {
+		&:hover {
+			@media screen and (min-width: 960px) {
+				.status-label {
+					bottom: 58px;
+					transition: 300ms ease;
+					opacity: 1;
+				}
+			}
+			&:after {
+				@media screen and (min-width: 960px) {
+					transform: translateX(-90px) rotate(1turn);
+					transition: 500ms ease 50ms;
+				}
+				
+			}
+		}
+
+		&:after {
+			transition: 500ms ease 100ms;
+		}	
+	}
 	.overlay {
 		color: white;
 		padding: 20px;
@@ -368,6 +391,17 @@ h2, h3 {
 		}
 		@media screen and (min-width: 901px) {
 			padding: 45px;
+		}
+
+		.status-label {
+			position: absolute;
+			right: 45px;
+			bottom: 45px;
+			transition: 300ms ease;
+			@media screen and (min-width: 960px) {
+				bottom: -10px;
+				opacity: 0;
+			}
 		}
 		.overlay-title { 
 			font-size: 2em;

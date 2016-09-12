@@ -33,14 +33,16 @@
                     {% endif %}   
 
             
-                    <div class="overlay">
-                        {% if casestudy.inprogress %}
+                    {% if casestudy.inprogress %}
+                    <div class="overlay inprogress">
 
-                        <span class="inprogress">
+                        <span class="status-label">
                             In Progress
                         </span>
+                    {% else %}
+                    <div class="overlay">
 
-                        {% endif %}
+                    {% endif %}
                         <span class="overlay-category">{{ casestudy.category }}</span>
                         <h1 class="overlay-title">{{ casestudy.thumb-title }}</h1>
                         
