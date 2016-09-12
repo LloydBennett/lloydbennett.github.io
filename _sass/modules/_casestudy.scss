@@ -63,19 +63,23 @@
 				padding-left: 15px;
 			}
 		}
+		
+		.no-touch & {
+			&:hover {
+				transform: scale(1.03);
+			    position: relative;
+			    
+			    z-index: 2;
+			    transition: 300ms ease;
 
-		&:hover {
-			transform: scale(1.03);
-		    position: relative;
-		    
-		    z-index: 2;
-		    transition: 300ms ease;
+			    #project-thumb {
+			    	box-shadow: 0 20px 50px 0 rgba(0,0,0,0.4);
+			    	transition: 300ms ease;
+			    }
+			}
 
-		    #project-thumb {
-		    	box-shadow: 0 20px 50px 0 rgba(0,0,0,0.4);
-		    	transition: 300ms ease;
-		    }
 		}
+		
 	}
 	
 	.two-thirds, .one-third, .half {
@@ -164,7 +168,6 @@ h2, h3 {
 
 
 }
-
 
 
 .fullwidth {
@@ -351,34 +354,71 @@ h2, h3 {
 		}
 	}
 }
+.inprogress {
+	.no-touch & {
+		&:hover {
+			.status-label {
+				transition: 500ms ease 70ms;
+				opacity: 1;
+				bottom: 16px;
+				@media screen and (min-width: 500px) and (max-width: 900px) {
+					bottom: 36px;
+				}
+				@media screen and (min-width: 901px) {
+					bottom: 58px;
+				}
+			}
+			&:after {
+				transition: 550ms ease;
+				transform: translateX(-90px) rotate(1turn);	
+			}
+		}
 
+		&:after {
+			transition: 550ms ease 80ms;
+		}
+	}
+	.touch & {
+		&:after {
+			transform: translateX(-90px) rotate(1turn);
+		}
+	}	
+}
+.status-label {
+	position: absolute;
+	transition: 500ms ease;
+	right: 20px;
+	opacity: 0;
+	bottom: -10px;
+
+	@media screen and (min-width: 500px) and (max-width: 900px) {
+		right: 30px;
+	}
+
+	@media screen and (min-width: 901px) {
+		right: 45px;
+	}
+
+	.touch & {
+		opacity: 1;
+		bottom: 16px;
+
+		@media screen and (min-width: 500px) and (max-width: 900px) {
+			bottom: 36px;
+		}
+
+		@media screen and (min-width: 901px) {
+			bottom: 58px;
+		}
+
+	}
+
+}
 #project-thumb {
 	display: block;
 	position: relative;
 	transition: 300ms ease;
 
-	.inprogress {
-		&:hover {
-			@media screen and (min-width: 960px) {
-				.status-label {
-					bottom: 58px;
-					transition: 300ms ease;
-					opacity: 1;
-				}
-			}
-			&:after {
-				@media screen and (min-width: 960px) {
-					transform: translateX(-90px) rotate(1turn);
-					transition: 500ms ease 50ms;
-				}
-				
-			}
-		}
-
-		&:after {
-			transition: 500ms ease 100ms;
-		}	
-	}
 	.overlay {
 		color: white;
 		padding: 20px;
@@ -393,16 +433,7 @@ h2, h3 {
 			padding: 45px;
 		}
 
-		.status-label {
-			position: absolute;
-			right: 45px;
-			bottom: 45px;
-			transition: 300ms ease;
-			@media screen and (min-width: 960px) {
-				bottom: -10px;
-				opacity: 0;
-			}
-		}
+		
 		.overlay-title { 
 			font-size: 2em;
 			margin-top: 5px;
