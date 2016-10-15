@@ -47,21 +47,12 @@ h1 {
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 700;
-
-    @media screen and (min-width: 600px) {
-        font-size: 1.125em; //20px
-    }
 }
 
 h2, h3 {
 
-    @media screen and (max-width: 767px) {
-        text-align: center;
-    }
-    
-    
     &.break {
         span {
             display: block;
@@ -78,8 +69,17 @@ h2, h3 {
 }
 
 .section-title {
+    font-size: 1em;
     text-transform: uppercase;
     letter-spacing: 3px;
+
+    @media screen and (min-width: 600px) {
+        font-size: 1.125em; //20px
+    }
+
+    @media screen and (max-width: 767px) {
+        text-align: center;
+    }
 }
 
 h3 {
