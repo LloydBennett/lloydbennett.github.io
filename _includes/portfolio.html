@@ -1,6 +1,6 @@
 <section id="cta-target">
     <div class="container">
-        <h2 class="center wow moveUpFade" data-wow-offset="50" data-wow-duration="700ms"> Projects </h2>
+        <h2 class="section-title center wow moveUpFade" data-wow-offset="50" data-wow-duration="700ms"> Projects </h2>
         
         <div class="work-grid clearfix">
             {% for casestudy in site.projects reversed %}
@@ -19,7 +19,7 @@
                 
                 {% endif %}
 
-                 data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 650 }}ms">
+                 data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
 
                     {% if casestudy.mobile-featured-image %}
                     <img class="hide-xs" src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
@@ -44,7 +44,7 @@
 
                     {% endif %}
                         <span class="overlay-category">{{ casestudy.category }}</span>
-                        <h1 class="overlay-title">{{ casestudy.thumb-title }}</h1>
+                        <h3 class="overlay-title">{{ casestudy.thumb-title }}</h3>
                         
                     </div>
                 </a>

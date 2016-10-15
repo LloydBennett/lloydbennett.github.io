@@ -48,8 +48,6 @@ h1 {
 
 h2 {
     font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing: 3px;
     font-weight: 700;
 
     @media screen and (min-width: 600px) {
@@ -57,22 +55,40 @@ h2 {
     }
 }
 
-h3 {
-    font-size: 16px;
-    line-height: 1.5;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
+h2, h3 {
+
+    @media screen and (max-width: 767px) {
+        text-align: center;
+    }
+    
+    
+    &.break {
+        span {
+            display: block;
+        }
+    }
+    &.break-xs {
+        span {
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+        }
+    }
 
 }
 
-h4 {
-    font-size: 16px;
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 700;
+    //margin-bottom: 1.5rem;
     margin-bottom: 0;
-    @media screen and (min-width: 768px) {
-        font-size: 18px;
-    }
+
 }
 
 p {
@@ -98,9 +114,19 @@ strong{
 q {
   font-style: italic;
 }
+
 figcaption{
   font-style: italic;
   margin: 0.8em auto;
   font-size: 0.8em;
   text-align:center;
+}
+
+.small-heading {
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: $display-font-family;
 }
