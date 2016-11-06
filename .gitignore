@@ -1,6 +1,6 @@
 _site
 .sass-cache
-
+.idea
 bower_components/*
 
 !bower_components/wow
