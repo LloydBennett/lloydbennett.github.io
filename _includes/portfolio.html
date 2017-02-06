@@ -1,27 +1,23 @@
 <section id="cta-target">
     <h2 class="section-title center wow moveUpFade" data-wow-offset="50" data-wow-duration="700ms"> Projects </h2>
 
-    {% for casestudy in site.projects reversed %}
-
     <div class="projects">
+    {% for casestudy in site.projects reversed %}
         <div id="{{ casestudy.id }}" class="project-thumb wow moveUpFade" data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
             <div class="backdrop">
                 <div class="container">
-                    <div class="col-xs-6 col-sm-4">
+                    <div class="text-right project-featured-image">
+                        <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 project-thumb-info">
                         <span class="project-thumb-category">{{ casestudy.category }}</span>
                         <h3 class="project-thumb-title">{{ casestudy.thumb-title }}</h3>
-                        <a class="ajaxLoad" href="{{ casestudy.url | prepend: site.baseurl }}">
-                        <span>
+                        <a class="ajaxLoad link" href="{{ casestudy.url | prepend: site.baseurl }}">
                             View Case Study
-                        </span>
                         </a>
                     </div>
 
-                    <div class="col-xs-6 col-sm-8 text-right project-featured-image">
-                        <div class="thumbnail">
-                            <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
