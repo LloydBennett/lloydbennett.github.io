@@ -1,0 +1,83 @@
+.projects {
+  margin-top: pxtoem(150, 16);
+}
+
+.project-thumb {
+  color: white;
+  margin-bottom: pxtoem(120);
+
+  a {
+    position: relative;
+    display: inline-block;
+    &:before {
+      content: "+";
+      position: relative;
+      top: -4px;
+      font-family: $display-font-family;
+      font-size: 1.875em;
+      margin-right: 5px;
+      vertical-align: middle;
+
+      @media screen and (min-width: 901px) {
+        font-size: 2.8125em;
+      }
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+.backdrop {
+  height: 360px;
+  padding: 70px 0;
+}
+
+#toad {
+  .backdrop {
+    background-color: black;
+  }
+}
+
+#vocals {
+  .backdrop {
+    background-color: #6187BE;
+  }
+}
+
+.project-featured-image {
+  position: absolute;
+  right: 0;
+  top: -55px;
+}
+
+.project-thumb-title {
+  font-size: pxtoem(36);
+  line-height: 1.2;
+  margin: 0 auto pxtoem(50, 36);
+  @media screen and (max-width: 550px) {
+    font-size: 1.25em;
+  }
+
+  @media screen and (min-width: 551px) and (max-width: 900px) {
+    font-size: 1.5em;
+  }
+
+  span {
+    display: block!important;
+  }
+}
+
+
+.project-thumb-category {
+  font-size: 1em;
+  font-weight: 400;
+  font-family: $display-font-family;
+  margin-bottom: pxtoem(20);
+  display: block;
+  @media screen and (max-width: 550px) {
+    font-size: 0.875em;
+  }
+}

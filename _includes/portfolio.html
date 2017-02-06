@@ -3,25 +3,29 @@
 
     {% for casestudy in site.projects reversed %}
 
-    <div id="{{ casestudy.id }}" class="project-thumb wow moveUpFade" data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
-        <div class="backdrop">
-            <div class="container">
-                <div class="col-xs-6 col-sm-4">
-                    <span class="project-thumb-category">{{ casestudy.category }}</span>
-                    <h3 class="project-thumb-title">{{ casestudy.thumb-title }}</h3>
-                    <a class="ajaxLoad" href="{{ casestudy.url | prepend: site.baseurl }}">
+    <div class="projects">
+        <div id="{{ casestudy.id }}" class="project-thumb wow moveUpFade" data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
+            <div class="backdrop">
+                <div class="container">
+                    <div class="col-xs-6 col-sm-4">
+                        <span class="project-thumb-category">{{ casestudy.category }}</span>
+                        <h3 class="project-thumb-title">{{ casestudy.thumb-title }}</h3>
+                        <a class="ajaxLoad" href="{{ casestudy.url | prepend: site.baseurl }}">
                         <span>
                             View Case Study
                         </span>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-                <div class="col-xs-6 col-sm-8 text-right">
-                    <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
+                    <div class="col-xs-6 col-sm-8 text-right project-featured-image">
+                        <div class="thumbnail">
+                            <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 
 </section>
