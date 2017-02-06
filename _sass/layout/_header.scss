@@ -103,6 +103,14 @@
 
     }
 
+    .link {
+        font-weight: bold;
+
+        &:after {
+            background-color: lighten($brand-color-off-blue, 70%);
+        }
+    }
+
 }
 
 .cta {

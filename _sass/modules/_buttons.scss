@@ -10,7 +10,7 @@
 		width: 100%;
 		position: absolute;
 		bottom: 3px;
-		background-color: rgba(105, 174, 232, 0.47);
+		background-color: $brand-color-off-blue;
 		z-index: -1;
 
 		@media screen and (min-width: 700px) {

@@ -1,59 +1,27 @@
 <section id="cta-target">
-    <div class="container">
-        <h2 class="section-title center wow moveUpFade" data-wow-offset="50" data-wow-duration="700ms"> Projects </h2>
-        
-        <div class="work-grid clearfix">
-            {% for casestudy in site.projects reversed %}
+    <h2 class="section-title center wow moveUpFade" data-wow-offset="50" data-wow-duration="700ms"> Projects </h2>
 
-            <div class="{{casestudy.colwidth}} grid">
-                <a id="project-thumb" 
+    {% for casestudy in site.projects reversed %}
 
-                {%if casestudy.point-to-url %} 
-                class="wow moveUpFade"
-                href="http://www.{{ casestudy.live-url }}" target="_blank"
-
-                {%else %}
-
-                class="ajaxLoad wow moveUpFade"
-                href="{{ casestudy.url | prepend: site.baseurl }}"
-                
-                {% endif %}
-
-                 data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
-
-                    {% if casestudy.mobile-featured-image %}
-                    <img class="hide-xs" src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
-
-                    <img class="hide-sm" src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.mobile-featured-image}}" alt="project">
-
-                    {% else %}
-
-                    <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
-
-                    {% endif %}   
-
-            
-                    {% if casestudy.inprogress %}
-                    <div class="overlay inprogress">
-
-                        <span class="status-label">
-                            In Progress
+    <div id="{{ casestudy.id }}" class="project-thumb wow moveUpFade" data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
+        <div class="backdrop">
+            <div class="container">
+                <div class="col-xs-6 col-sm-4">
+                    <span class="project-thumb-category">{{ casestudy.category }}</span>
+                    <h3 class="project-thumb-title">{{ casestudy.thumb-title }}</h3>
+                    <a class="ajaxLoad" href="{{ casestudy.url | prepend: site.baseurl }}">
+                        <span>
+                            View Case Study
                         </span>
-                    {% else %}
-                    <div class="overlay">
+                    </a>
+                </div>
 
-                    {% endif %}
-                        <span class="overlay-category">{{ casestudy.category }}</span>
-                        <h3 class="overlay-title">{{ casestudy.thumb-title }}</h3>
-                        
-                    </div>
-                </a>
+                <div class="col-xs-6 col-sm-8 text-right">
+                    <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/{{casestudy.featured-image}}" alt="project">
+                </div>
             </div>
-
-            {% endfor %}
         </div>
-        
-
     </div>
-   
+    {% endfor %}
+
 </section>
