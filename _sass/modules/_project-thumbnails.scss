@@ -17,7 +17,7 @@
   }
 
   @media screen and (min-width: pxtoem(768)) {
-    margin-bottom: 5em;
+    margin-bottom: pxtoem(120);
   }
 }
 
@@ -45,8 +45,17 @@
     background-color: #6187BE;
 
     .project-featured-image {
-      max-width: 700px;
       bottom: -63px;
+
+      @media screen and (min-width: pxtoem(768)) {
+        max-width: 700px;
+      }
+
+      img {
+        @media screen and (max-width: pxtoem(767)) {
+          max-width: 700px;
+        }
+      }
     }
   }
 }
@@ -57,25 +66,35 @@
 }
 
 .project-featured-image {
-  @extend .thumbnail;
-  width: 100vw;
+    @extend .thumbnail;
+    width: 100vw;
 
-  img {
-    display: block;
-  }
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  @media screen and (max-width: pxtoem(767)) {
-    margin-left: -20px;
-    margin-bottom: pxtoem(30);
-  }
+    @media screen and (max-width: pxtoem(599)) {
+        margin-left: -20px;
+    }
 
-  @media screen and (min-width: pxtoem(768)) {
-    max-width: 800px;
-    width: 80%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
+    @media screen and (min-width: pxtoem(600)) and (max-width: pxtoem(767)) {
+        margin-left: -60px;
+    }
+
+    @media screen and (max-width: pxtoem(767)) {
+        margin-bottom: pxtoem(30);
+    }
+
+    @media screen and (min-width: pxtoem(768)) {
+        max-width: 800px;
+        width: 80%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        text-align: right;
+    }
 }
 
 .project-thumb-title {
