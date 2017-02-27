@@ -3,7 +3,7 @@
 
     <div class="projects">
     {% for casestudy in site.projects reversed %}
-        <div id="{{ casestudy.id }}" class="project-thumb wow moveUpFade" data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
+        <div id="{{ casestudy.name }}" class="project-thumb wow moveUpFade" data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
             <div class="backdrop">
                 <div class="container">
                     <div class="project-featured-image">
