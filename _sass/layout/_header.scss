@@ -10,10 +10,16 @@
     color: white;
     background-color: $brand--color;
     overflow:hidden;
+    height: 100vh;
+    min-height: 600px;
+
+    @include media-query(44.75em) { //716px
+        min-height: 750px;
+    }
 
     &.polygon {
         position: relative;
-        
+
         &:after {
             content: "";
             width: 100%;
@@ -39,7 +45,7 @@
             @media screen and (min-width: 1628px) {
                 border-top: 10px solid;
             }
-            
+
             @media screen and (min-width: 1674px) {
                 border-top: 50px solid;
                 bottom: -115px;
@@ -49,55 +55,29 @@
         }
     }
 
-    &.large {
-        height: 600px;
-        
-        @include media-query(44.75em){ //716px
-            height: 750px;
-        }
-    }
-
-    &.small {
-        height: 25em;
-        @include media-query(43.75em){
-            height: 31.25em;
-        }
-        @include media-query(56.25em){
-            height: 37.5em;
-        }
-    }
-    
     .intro {
         position: relative;
         z-index: 2;
         margin-top: 4.5rem;
 
         @media screen and (max-width: 599px) {
-            text-align: center;
             margin-top: 3.5rem;
         }
 
         @include media-query(44.75em){
-            margin-top: 7rem;
+            margin-top: 12vh;
         }
 
         .intro-title {
             margin-top: 0;
             margin-bottom: 25px;
-            @media screen and (max-width: 599px) {
-                max-width: 300px;
-                margin-left: auto;
-                margin-right: auto;
-            }
         }
 
         h2 {
             font-weight: 400;
+            text-align: left;
             @media screen and (max-width: 767px) {
                 margin-bottom: 8px;
-            }
-            @media screen and (min-width: 600px) {
-                text-align: left;
             }
         }
 
@@ -122,7 +102,7 @@
     svg {
         margin-bottom: 10px;
 
-    
+
         @media screen and (min-width: 600px) {
             margin-left: 40px;
         }
