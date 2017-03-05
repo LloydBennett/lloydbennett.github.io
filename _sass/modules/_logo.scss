@@ -2,14 +2,13 @@
   width: 42px;
   z-index: 100;
   display:inline-block;
-  
+
   @include element('mark'){
     width:100%;
     display:block;
   }
-
-
-  @include media-query(43.75em){
+  
+  @include media-query(pxtoem(550)){
     width: 55px;
   }
 }

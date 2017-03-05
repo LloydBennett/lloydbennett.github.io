@@ -6,16 +6,23 @@
         animation-fill-mode: forwards;
     }
 }
+
 .masthead {
     color: white;
     background-color: $brand--color;
     overflow:hidden;
-    height: 100vh;
     min-height: 600px;
+    padding-bottom: 50px;
 
-    @include media-query(44.75em) { //716px
+
+    @include media-query(pxtoem(550)) {
         min-height: 750px;
     }
+
+    @include media-query(pxtoem(768)) {
+        padding-bottom: 250px;
+    }
+
 
     &.polygon {
         position: relative;
@@ -31,7 +38,7 @@
             transform: rotate(-7deg);
             border-right: 20px solid;
 
-            @media screen and (min-width: 716px) and (max-width: 959px) {
+            @media screen and (min-width: 768px) and (max-width: 959px) {
                 bottom: -60px;
             }
             @media screen and (min-width: 960px) {
@@ -58,13 +65,13 @@
     .intro {
         position: relative;
         z-index: 2;
-        margin-top: 4.5rem;
+        margin-top: 3.5rem;
 
-        @media screen and (max-width: 599px) {
-            margin-top: 3.5rem;
-        }
+        // @media screen and (max-width: 599px) {
+        //     margin-top: 3.5rem;
+        // }
 
-        @include media-query(44.75em){
+        @include media-query(pxtoem(550)){
             margin-top: 12vh;
         }
 
@@ -101,11 +108,7 @@
 
     svg {
         margin-bottom: 10px;
-
-
-        @media screen and (min-width: 600px) {
-            margin-left: 40px;
-        }
+        margin-left: 40px;
 
         #line {
             stroke-dasharray: 150;
@@ -121,9 +124,5 @@
 
     a {
         display: table;
-        @media screen and (max-width: 599px) {
-            margin-left: auto;
-            margin-right: auto;
-        }
     }
 }

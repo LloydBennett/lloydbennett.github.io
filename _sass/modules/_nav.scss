@@ -1,8 +1,8 @@
 .nav-bar {
 	padding-top: 20px;
 
-	@media screen and (min-width: 43.75rem) {
-		padding-top: 45px; 
+	@include media-query(pxtoem(550)) {
+		padding-top: 45px;
 	}
  }
 
@@ -22,11 +22,11 @@
 	opacity: 0;
 	animation-fill-mode: forwards;
 
-	@media screen and (min-width: 700px) {
+	@include media-query(pxtoem(550)) {
 		width: 50px;
 		height: 50px;
 	}
-	
+
 	&.is-open {
 		.icon {
 			span {
@@ -45,12 +45,9 @@
 					transform: rotate(-45deg);
 					top: -7px;
 				}
-		
 			}
-
 		}
-
-	}  
+	}
 
 
 	.icon {
@@ -68,7 +65,7 @@
 		@media screen and (min-width: 700px) {
 			width: 20px;
 		}
-		
+
 
 		span {
 			display: block;
@@ -77,7 +74,7 @@
 			margin-bottom: 5px;
 			transition: 300ms ease;
 			position: relative;
-			
+
 			&:first-child, &:last-child {
 				transform: rotate(0);
 				top: 0;
@@ -87,10 +84,9 @@
 				margin-bottom: 0;
 			}
 		}
-
 	}
 }
-  
+
 .nav-menu {
 	position: fixed;
 	background-color: $brand--color;
@@ -102,7 +98,7 @@
 	height: 100%;
 	z-index: 1000;
 	transition: .3s ease;
-	
+
 	.container {
 		position: relative;
 		width: 100%;
@@ -119,7 +115,7 @@
 		margin-bottom: 0;
 		list-style: none;
 		color:white;
-		@extend %clearfix;		
+		@extend %clearfix;
 		padding-left: 0;
 		position: absolute;
 	    width: 100%;
@@ -127,17 +123,17 @@
 	    top: 40%;
 	    transform: translateY(-40%);
 
-		
+
 		.list-link {
 			position: relative;
 			padding: 15px;
 			text-align: center;
-			font-size: 3em; 
+			font-size: 3em;
 			font-family: $display-font-family;
 			opacity: 0;
 			transform: translateY(30px);
 			transition: 200ms ease;
-		
+
 			@media screen and (min-width: 768px) {
 				font-size: 4em; // 64
 				padding: 20px;
@@ -174,10 +170,10 @@
 			&.appear {
 				opacity: 1;
 				transform: translateY(0);
-				transition: 200ms ease;	
+				transition: 200ms ease;
 			}
 		}
-	}	
+	}
 }
 
 .height-to-bottom{

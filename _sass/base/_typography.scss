@@ -13,7 +13,7 @@ h1 {
     font-size: pxtoem(24);
 
 
-    @media screen and (min-width: 550) {
+    @media screen and (min-width: pxtoem(550)) {
         font-size: pxtoem(36);
     }
 

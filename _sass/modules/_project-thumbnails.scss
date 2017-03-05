@@ -67,7 +67,6 @@
 
 .project-featured-image {
     @extend .thumbnail;
-    width: 100vw;
 
     img {
         display: block;
@@ -75,16 +74,8 @@
         margin-right: auto;
     }
 
-    @media screen and (max-width: pxtoem(599)) {
-        margin-left: -20px;
-    }
-
-    @media screen and (min-width: pxtoem(600)) and (max-width: pxtoem(767)) {
-        margin-left: -60px;
-    }
-
     @media screen and (max-width: pxtoem(767)) {
-        margin-bottom: pxtoem(30);
+        margin: 0 -20px pxtoem(30);
     }
 
     @media screen and (min-width: pxtoem(768)) {
