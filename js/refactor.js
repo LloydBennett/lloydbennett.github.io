@@ -1,9 +1,7 @@
 (function(){
-
 	/*
 	 Global Variables
 	 */
-
 	var $navMenu = $('.nav-menu'),
 		$ctaButton = $('.cta-button'),
 		$htmlBody = $("html, body"),
@@ -68,12 +66,14 @@
 
 	function animateNavLinks() {
         $navLinks.each(function(index, elem) {
-            delay *= index;
-            $(elem).on('click', animatedScroll);
 
-            setTimeout(function(){
-                $(elem).addClass('appear');
-            }, delay);
+
+            // delay *= index;
+            // $(elem).on('click', animatedScroll);
+			//
+            // setTimeout(function(){
+            //     $(elem).addClass('appear');
+            // }, delay);
         });
     }
 
