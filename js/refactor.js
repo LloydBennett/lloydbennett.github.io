@@ -9,11 +9,9 @@
 		$htmlBody = $("html, body"),
         $body = $('body'),
 		$menuIcon = $('#open-menu'),
-		$navLinks = $('.list-link a'),
+		$navLinks = $('.list-link'),
         $contentWrapper = $('.wrapper'),
-        $dynamicSection = $('.dynamic'),
-		delay = 90,
-		isOpen = false;
+        $dynamicSection = $('.dynamic');
 
 	/*
 	Initialising all the functions
@@ -30,34 +28,10 @@
 	 */
 
 	function checkNavigationMenuState() {
-		(!isOpen)? openMenu() : closeMenu();
-		//$body.removeClass('overflow-hidden');
-	}
-
-	/*
-	 Sets isOpen to true adds
-	 animation css classes to nav
-	 menu and icon for open state
-	 */
-
-	function openMenu() {
-		isOpen = true;
-		$navMenu.addClass('is-open');
-		$menuIcon.addClass('is-open');
-        animateNavLinks();
-	}
-
-    /*
-     Sets isOpen to false
-     removes animation css classes to
-     nav menu and icon for open state
-     */
-
-	function closeMenu() {
-		isOpen = false;
-		//$(el).removeClass('appear');
-		$navMenu.removeClass('is-open');
-		$menuIcon.removeClass('is-open');
+		$body.toggleClass('overflow-hidden');
+		$navMenu.toggleClass('is-open');
+		$menuIcon.toggleClass('is-open');
+		animateNavLinks();
 	}
 
     /*
@@ -67,30 +41,27 @@
      */
 
 	function animateNavLinks() {
+		var delay;
         $navLinks.each(function(index, elem) {
-            delay *= index;
-            $(elem).on('click', animatedScroll);
-
+            delay = 90 * index;
+            $(elem).on('click', 'a', animatedScroll);
             setTimeout(function(){
-                $(elem).addClass('appear');
+                $(elem).toggleClass('appear');
             }, delay);
         });
     }
 
-
 	function animatedScroll(event){
-		var scrollDestination,
-			$this = $(this);
-
 		event.preventDefault();
 
-		$(event.target).hasClass('list-link') && openMenu();
-        scrollDestination = $this.attr('href');
+		var $this = $(this),
+			scrollDestination = ($(event.target).hasClass('list-link')) ?
+							$this.find('a').attr('href') : $this.attr('href');
 
+		checkNavigationMenuState();
 		$htmlBody.animate({
 			scrollTop: $(scrollDestination).offset().top
 		}, 600);
-
 	}
 
 	/*
@@ -104,12 +75,10 @@
         $contentWrapper.on('click', '.ajaxLoad', isHistoryAPISupported);
 	}
 
-
     function navigateToPage(pageURL) {
-
         $contentWrapper.addClass('fadeOut');
 
-        setTimeout(function(){
+		setTimeout(function(){
 
             $dynamicSection.load(pageURL+' .dynamic > *', function(event){
                 // load new content and replace <main> content with the new one

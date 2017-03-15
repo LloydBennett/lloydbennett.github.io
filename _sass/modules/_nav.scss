@@ -150,9 +150,8 @@
 					margin-right: auto;
 					width: 30%;
 					position: absolute;
-					//bottom: 31px;
 					background-color: $brand-accent--color;
-					/* z-index: -1; */
+					pointer-events: none;
 					transform: scaleX(0) translateY(-50%);
 					transition: 300ms cubic-bezier(.645,.045,.355,1);
 					transform-origin: left top;

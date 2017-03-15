@@ -34,7 +34,7 @@
 
   	}
 
-	  //call to action scrolling functionality
+	//call to action scrolling functionality
 	function scrollTo(handler){
 
 		function handlerFunction(event){
