@@ -1,9 +1,7 @@
 (function(){
-
 	/*
 	 Global Variables
 	 */
-
 	var $navMenu = $('.nav-menu'),
 		$ctaButton = $('.cta-button'),
 		$htmlBody = $("html, body"),
