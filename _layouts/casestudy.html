@@ -24,15 +24,16 @@
 
                 <div class="content">
                     <div class="container">
-                        <div class="project-heading">
+                        <div class="col-sm-12 no-padding">
+                            <div class="project-heading">
+                                <h1 class="project-title wow moveUpFade" data-wow-duration="700ms">{{ page.title }}</h1>
 
-                            <h1 class="project-title wow fadeIn" data-wow-duration="1.5s" data-wow-delay="600ms">{{ page.title }}</h1>
-
-                           {% if page.button-text %}
-                            <div class="cta">
-                                <a href="http://www.{{ page.live-url }}" target="_blank" class="link wow fadeIn" data-wow-duration="600ms" data-wow-delay="1.3s" >{{ page.button-text }}</a>
+                                {% if page.button-text %}
+                                <div class="cta">
+                                    <a href="http://www.{{ page.live-url }}" target="_blank" class="link wow fadeIn" data-wow-duration="600ms" data-wow-delay="1.3s" >{{ page.button-text }}</a>
+                                </div>
+                                {% endif %}
                             </div>
-                            {% endif %}
                         </div>
 
                         {{ content }}

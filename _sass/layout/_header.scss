@@ -89,16 +89,6 @@
         }
 
     }
-
-    .link {
-        font-weight: bold;
-
-        &:after {
-            background-color: lighten($brand-color-off-blue, 70%);
-            bottom: -2px;
-        }
-    }
-
 }
 
 .cta {

@@ -1,23 +1,12 @@
 .link {
-	font-weight: 400;
-	position: relative;
+	@include link-underline($brand-color-off-blue);
+	font-weight: inherit;
 	display: inline-block;
+	line-height: 0.9;
 
-	&:after {
-		content: "";
-		display: block;
-		height: 0.35em;
-		width: 100%;
-		position: absolute;
-		bottom: 3px;
-		background-color: $brand-color-off-blue;
-		z-index: -1;
-
-		@media screen and (min-width: 700px) {
-			bottom: 5px;
-		}
+	&.link-light {
+		@include link-underline($brand-color-off-blue-lighter);
 	}
-
 }
 
 .viewpost-cta {

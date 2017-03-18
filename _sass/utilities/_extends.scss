@@ -70,6 +70,10 @@
   display: inline;
 }
 
+.no-padding {
+  padding: 0 !important;
+}
+
 .no-padding-xs {
   @media screen and (max-width: 767px) {
     padding: 0 !important;

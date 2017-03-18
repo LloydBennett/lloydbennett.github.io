@@ -6,14 +6,12 @@
 	&__#{$element}{
 		@content;
 	}
-
 }
 
 @mixin modifier ($modifier){
 	&--#{$modifier}{
 		@content;
 	}
-
 }
 
 @mixin media-query($device) {
@@ -53,4 +51,9 @@
     -moz-transform: scale(360);
     @content;
   }
+}
+
+@mixin link-underline($colour, $size: 0.2em) {
+  border-bottom: $size solid $colour;
+  box-shadow: 0px -4px 0px $colour inset;
 }
