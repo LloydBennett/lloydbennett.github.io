@@ -1,4 +1,5 @@
 (function(){
+
 	/*
 	 Global Variables
 	 */
@@ -73,36 +74,34 @@
         $contentWrapper.on('click', '.ajaxLoad', isHistoryAPISupported);
 	}
 
+	/*
+	 // load new page requested content and replaces with old content,
+	 	whilst changing the url in the address bar.
+	 */
     function navigateToPage(pageURL) {
         $contentWrapper.addClass('fadeOut');
 
 		setTimeout(function(){
-
             $dynamicSection.load(pageURL+' .dynamic > *', function(event){
-                // load new content and replace <main> content with the new one
                 $body.scrollTop(0);
                 $contentWrapper.html($dynamicSection).removeClass('fadeOut');
-                //...
-                pageURL != window.location && window.history.pushState({path:pageURL},'',pageURL);
+			 	if (pageURL != window.location) window.history.pushState({path:pageURL},'',pageURL);
             });
 
         }, 1000);
 
     }
 
-    function isHistoryAPISupported(event) {
-
-        if(Modernizr.history) {
-            event.preventDefault();
-            var pageURL = $(this).attr('href');
-            navigateToPage(pageURL);
-        }
+	function isHistoryAPISupported(event) {
+		event.preventDefault();
         event.stopPropagation();
+		var pageURL = $(this).attr('href');
+		navigateToPage(pageURL);
     }
 
     $(window).on('popstate', function(event) {
         var newPage = location.pathname;
-        event.state && navigateToPage(newPage);
+        if (event.state) navigateToPage(newPage);
     });
 
 

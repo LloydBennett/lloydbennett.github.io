@@ -74,7 +74,7 @@
 
 		$('.wrapper').addClass('fadeOut');
 
-
+		$.ajaxSetup({cache: true});
 		setTimeout(function(){
 
 			section.load(pageURL+' .dynamic > *', function(event){
