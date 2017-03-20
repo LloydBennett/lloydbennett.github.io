@@ -75,7 +75,7 @@
     }
 
     @media screen and (max-width: pxtoem(767)) {
-        margin: 0 -20px pxtoem(30);
+        margin: 0 0 pxtoem(30);
     }
 
     @media screen and (min-width: pxtoem(768)) {
@@ -104,7 +104,6 @@
     display: block!important;
   }
 }
-
 
 .project-thumb-category {
   font-size: 1em;

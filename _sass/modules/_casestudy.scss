@@ -72,25 +72,10 @@
 	}
 }
 
-
-.fullwidth {
-	width: 100vw;
-}
-
-
 .page-overlay {
 	overflow: hidden;
 }
 
-#cta-target {
-	h2 {
-		margin-bottom: 40px;
-
-		@media screen and (min-width: 600px) {
-			margin-bottom: 60px;
-		}
-	}
-}
 
 .thumbnail {
 	img {
@@ -130,65 +115,6 @@
     font-family: $display-font-family;
 }
 
-.sideinfo {
-	@media screen and (min-width: 992px) {
-		margin-top: 60px;
-	}
-	
-	h3 {
-		text-transform: uppercase;
-	    letter-spacing: 3px;
-	    font-size: 14px;
-	    font-weight: 700;
-	}
-	p {
-		margin-top: 5px;
-		font-size: 14px;
-	}
-}
-
-
-.laydown {
-	width: 100%;
-	overflow: hidden;
-	margin-top: 80px; 
-	margin-bottom: 100px;
-	min-height: 300px;
-
-	@media screen and (min-width: 500px) {
-		min-height: 500px;
-	}
-
-	@media screen and (max-width: 767px) {
-		margin-top: 40px;
-		margin-bottom: 60px;
-	}
-
-	
-	@media screen and (max-width: 999px) {
-		width: 100vw;
-	}
-	
-	img {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		position: relative;
-    	transform: translateX(-50%);
-    	left: 50%;
-		@media screen and (max-width: 499px) {
-			width: 500px;
-		}
-		@media screen and (min-width: 500px) and (max-width: 799px) {
-			width: 800px;
-		}
-		@media screen and (min-width: 800px) {
-			width: 100%;
-		}
-	}
-	
-}
-
 .project-top-nav {
 	text-align: right;
 	@media screen and (min-width: 768px) {
@@ -198,27 +124,12 @@
 	}
 }
 .project-heading {
-	margin-top: 70px;
-	color: #2e2e2e;
-	@media screen and (min-width: 768px) {
-		margin-top: 150px;
+	margin: 70px 0 30px;
+
+    @media screen and (min-width: 768px) {
+		margin: 150px 0 50px;
 	}
 
-	.project-title {
-		margin-top: 8px;
-		line-height: 1;
-		font-size: 40px;
-		margin-bottom: 20px;
-
-		@media screen and (min-width: 960px) {
-			font-size: 60px;
-			margin-top: 0;
-		}
-		@media screen and (min-width: 960px) {
-			font-size: 80px;
-		}
-	}
-	
 	.cta {
 		@media screen and (min-width: 768px) {
 			margin-top: 30px;
@@ -230,36 +141,23 @@
 	}
 }
 
-.inprogress {
-	.no-touch & {
-		&:hover {
-			.status-label {
-				transition: 500ms ease 70ms;
-				opacity: 1;
-				bottom: 16px;
-				@media screen and (min-width: 500px) and (max-width: 900px) {
-					bottom: 36px;
-				}
-				@media screen and (min-width: 901px) {
-					bottom: 58px;
-				}
-			}
-			&:after {
-				transition: 550ms ease;
-				transform: translateX(-90px) rotate(1turn);	
-			}
-		}
+.project-title {
+    margin-top: 0;
+    line-height: 1;
+    margin-bottom: 30px;
+    color: $display-font--color;
 
-		&:after {
-			transition: 550ms ease 80ms;
-		}
-	}
-	.touch & {
-		&:after {
-			transform: translateX(-90px) rotate(1turn);
-		}
-	}	
+    @media screen and (max-width: pxtoem(767)) {
+      font-size: pxtoem(40);
+    }
 }
 
+.project-details {
+    @extend .list;
+	padding-left: 0;
+    list-style: none;
 
-
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+}

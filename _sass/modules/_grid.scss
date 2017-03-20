@@ -4,10 +4,13 @@
  .container {
    margin-right: auto;
    margin-left: auto;
-   padding-left: 15px;
-   padding-right: 15px;
    max-width: 1200px;
    width: 90%;
+
+   @media screen and (min-width: 768px) {
+     padding-left: 15px;
+     padding-right: 15px;
+   }
  }
 
  .row {

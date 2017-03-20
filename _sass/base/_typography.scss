@@ -26,18 +26,10 @@ h1 {
         font-size: pxtoem(55);
     }
 
-    span {
-        @media screen and (min-width: 600px) {
-           display: block;
-        }
-
-    }
-
     em {
         @extend .nowrap;
         font-style: normal;
     }
-
 }
 
 h2 {
@@ -100,8 +92,10 @@ p {
 blockquote {
   font-size: 1.25em; //20px
 }
-strong{
+
+strong {
   font-weight: 600;
+  color: $display-font--color;
 }
 
 q {

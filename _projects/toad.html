@@ -13,7 +13,7 @@ date: 2016-04-12 00:09:00
 ---
 <div class="row">
    <div class="col-sm-8">
-      <p>Toad London is a young and emerging creative agency that produces
+      <p class="wow moveUpFade" data-wow-duration="700ms" data-wow-delay='500ms'>Toad London is a young and emerging creative agency that produces
          advertising campaigns, websites, mobile apps and content for brands.
          Since the turn of the year 2016, Toad wanted to undertake a new strategy
          to win over new business by using their recent successes on projects as
@@ -21,33 +21,134 @@ date: 2016-04-12 00:09:00
          felt their current site didn&apos;t align with their and wanted to undertake a
          website re-design which includes the following feature set:</p>
 
-      <ul>
-         <li>
-            <strong>Case Studies</strong> &ndash; To sell the narrative and process behind each project
+      <ul class="list">
+         <li class="wow moveUpFade" data-wow-duration="700ms" data-wow-delay='800ms'>
+            <p>
+               <strong>Case Studies</strong> &ndash; To sell the narrative and process behind each project.
+            </p>
          </li>
-         <li>
-            <strong>Animation Driven</strong> &ndash; To provide a engaging experience for users and showcase what they can do.
+         <li class="wow moveUpFade" data-wow-duration="700ms" data-wow-delay='1.1s'>
+            <p>
+               <strong>Animation Driven</strong> &ndash; To provide a engaging experience for users and showcase what they can do.
+            </p>
          </li>
-         <li>
-            <strong>Minimal</strong> &ndash; In style but effective and memorable.
+         <li class="wow moveUpFade" data-wow-duration="700ms" data-wow-delay='1.4s'>
+            <p>
+               <strong>Minimal</strong> &ndash; In style but effective and memorable.
+            </p>
          </li>
       </ul>
    </div>
    <div class="col-sm-4">
-      <ul>
+      <ul class="project-details">
          <li>
-            <span><strong>Project Date</strong></span>
-            <span>Early 2016</span>
+            <p><strong>Project Date</strong></p>
+            <p>Early 2016</p>
          </li>
          <li>
-            <span><strong>Project Duration</strong></span>
-            <span>Two months</span>
+            <p><strong>Project Duration</strong></p>
+            <p>Two months</p>
          </li>
          <li>
-            <span><strong>Contributors</strong></span>
-            <span>Daniel Montgomery &mdash; Visual Design</span>
-            <span>Myself &amp; Kevin Rousseau &mdash; Front-End Development</span>
+            <p><strong>Contributors</strong></p>
+            <p>Daniel Montgomery &ndash; Visual Design</p>
+            <p>Myself &amp; Kevin Rousseau &ndash; Front-End Development</p>
          </li>
       </ul>
    </div>
+</div>
+<div class="row">
+   <div class="col-sm-8">
+      <h2>Choosing A Suitable Framework</h2>
+      <p>Having analysed the requirements company directors, we (the development team) came
+         to the conclusion that using a framework or library on this project would be a good idea
+         as this will be idea as we were on a tight schedule. We chose a JavaScript framework
+         called Vue.js for these following reasons: </p>
+
+      <ul class="list">
+         <li>
+            <p>
+               <strong>Small in file size &amp; fast rendering</strong> &ndash; Ideal for this project as this is a small site.
+            </p>
+         </li>
+         <li>
+            <p>
+               <strong>Easy to learn</strong>
+            </p>
+         </li>
+         <li>
+            <p>
+               <strong>A focus on the view layer in MVC pattern</strong> &ndash; This site is purely for visual and marketing purposes
+               so the fact the library has a focus on the presentational layer meshes well with the goal of the site. This also limits the chances of
+               library giving us unnecessary features we don&apos;t we need.
+            </p>
+         </li>
+         <li>
+            <p>
+               <strong>Preserves many of the core JavaScript MVC features </strong> &ndash;
+               such as asynchronous page loading (routing), event binding and enforces modular written code by
+               building components.
+            </p>
+         </li>
+      </ul>
+   </div>
+</div>
+
+<div class="row">
+   <div class="col-sm-6">
+      <h2>Design Began On The Computer</h2>
+      <p>High fidelity mock-ups of the site were created very early in the design process.
+         This approach forced many avoidable design revisions that could have been discovered
+         at lower design level (wireframes) or even through more thorough discovery process.
+         This approach also caused a lot of back and forth between design and development as mock-ups were
+         being built as they were being designed due to being on a tight schedule.
+      </p>
+   </div>
+</div>
+
+<div class="row">
+   <div class="col-sm-6">
+      <h2>Modular Approach To Design</h2>
+      <p>
+         Combating the constant design revisions whilst maintaining on track of the development schedule we
+         executed the following: </p>
+
+      <ul class="list">
+         <li>
+            <p>
+               <strong>Dissect the design into smaller pieces</strong> &ndash;
+               Analysed any repetition, behaviour, relationships between UI elements such as buttons
+               in the design and built them as reusable web components and templates.
+            </p>
+         </li>
+
+         <li>
+            <p>
+               <strong>Write modular CSS code</strong> &ndash; that was flexible for design revisions and reusable.
+            </p>
+         </li>
+         <li>
+            <p>
+               <strong>Descriptive and meaningful folder names</strong> &ndash;
+               This made navigating around folders easy and fast thus allowing us to be more
+               productive.
+            </p>
+         </li>
+         <li>
+            <p>
+               <strong>Challenged design revisions</strong> &ndash;
+               Some revisions were purely aesthetic that didn&apos;t provide any value
+               to the site going forward, those were the ones we challenged.
+            </p>
+         </li>
+      </ul>
+      <p>As a whole this sped up development time. The components I worked on are as follows:</p>
+   </div>
+</div>
+
+<div class="row">
+   <div class="col-sm-12">
+      <h3 class="text-center">Case Study Thumbnails</h3>
+   </div>
+   <img src="{{site.baseurl}}/images/projects/toad/case-study-thumbnail.png" alt="">
 </div>
