@@ -14,13 +14,19 @@
                                         <span></span>
                                         <span></span>
                                     </div>
-                                </a> 
-
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
+                {% if page.header-images %}
+                <div class="casestudy-header-image">
+                    {% for headerImage in page.header-images %}
+                    <img src="/images/projects/{{page.directory}}/casestudy/header/{{ headerImage }}" alt="">
+                    {% endfor %}
+                </div>
+                {% endif %}
 
                 <div class="content">
                     <div class="container">
