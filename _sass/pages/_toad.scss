@@ -1,0 +1,60 @@
+.toad-hero {
+  position: relative;
+  padding-top: 50px;
+  text-align: right;
+  max-width: 1400px;
+  margin: 0 auto -100px;
+  width: 100%;
+  overflow-x: hidden;
+
+  @media screen and (min-width: pxtoem(768)) {
+    margin: 0 auto -40px;
+    padding-top: 100px;
+  }
+
+  @media screen and (min-width: pxtoem(1400)) {
+    overflow-x: visible;
+  }
+
+  img {
+    &:first-child,
+    &:nth-child(2){
+      position: absolute;
+    }
+
+    &:first-child {
+      z-index: 3;
+      bottom: 11%;
+      right: 30%;
+
+      @media screen and (min-width: pxtoem(600)) {
+        right: 58%;
+      }
+    }
+
+    &:nth-child(2) {
+      z-index: 2;
+      right: 34%;
+      bottom: 5%;
+
+      @media screen and (min-width: pxtoem(600)) {
+        right: 40%;
+      }
+    }
+
+    &:last-child {
+      position: relative;
+      z-index: 1;
+      width: 955px;
+
+      @media screen and (min-width: pxtoem(600)) {
+        width: auto;
+        left: 20%;
+      }
+
+      @media screen and (min-width: pxtoem(1400)) {
+        left: 5%;
+      }
+    }
+  }
+}

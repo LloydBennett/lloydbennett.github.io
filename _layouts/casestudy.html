@@ -21,8 +21,8 @@
                 </div>
 
                 {% if page.header-images %}
-                <div class="casestudy-header-image">
-                    {% for headerImage in page.header-images %}
+                <div class="project-hero {{page.name}}-hero">
+                    {% for headerImage in page.header-images reversed %}
                     <img src="/images/projects/{{page.directory}}/casestudy/header/{{ headerImage }}" alt="">
                     {% endfor %}
                 </div>
