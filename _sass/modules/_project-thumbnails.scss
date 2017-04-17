@@ -1,4 +1,6 @@
 .projects {
+  margin-top: pxtoem(50, 16);
+
   @media screen and (min-width: pxtoem(768)) {
     margin-top: pxtoem(150, 16);
   }

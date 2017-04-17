@@ -23,7 +23,13 @@
                 {% if page.header-images %}
                 <div class="project-hero {{page.name}}-hero">
                     {% for headerImage in page.header-images reversed %}
-                    <img src="/images/projects/{{page.directory}}/casestudy/header/{{ headerImage }}" alt="">
+                    <img {% if headerImage.animationName %}
+                         class="wow {{headerImage.animationName}}"
+                         data-wow-duration="{{ headerImage.animationDuration }}"
+                         data-wow-delay="{{ headerImage.animationDelay }}"
+                         {% endif %}
+                         src="/images/projects/{{ page.directory }}/casestudy/header/{{ headerImage.image }}"
+                         alt="{{ headerImage.name }}">
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -41,9 +47,8 @@
                                 {% endif %}
                             </div>
                         </div>
-
-                        {{ content }}
                     </div>
+                    {{ content }}
                 </div>
   
                 {% include project-footer.html %}
