@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                {% if page.header-images %}
+               {% if page.header-images %}
                 <div class="project-hero {{page.name}}-hero">
                     {% for headerImage in page.header-images reversed %}
                     <img {% if headerImage.animationName %}
@@ -38,7 +38,9 @@
                     <div class="container">
                         <div class="col-sm-12 no-padding">
                             <div class="project-heading">
-                                <h1 class="project-title wow moveUpFade" data-wow-duration="700ms">{{ page.title }}</h1>
+                                <h1 class="project-title wow moveUpFade" data-wow-duration="700ms">
+                                    {{ page.title }}
+                                </h1>
 
                                 {% if page.button-text %}
                                 <div class="cta">
