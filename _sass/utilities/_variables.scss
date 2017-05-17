@@ -14,3 +14,10 @@ $base-font-size:   16px;
 $display-font--color: #2e2e2e;
 $body-font--color: #6b6b6b;
 $para-font--color: #3E3E3E;
+
+/* Breakpoints */
+$mobile-max-breakpoint: pxtoem(767);
+$tablet-min-breakpoint: pxtoem(768);
+$tablet-max-breakpoint: pxtoem(991);
+$small-desktop-min-breakpoint: pxtoem(992);
+$small-desktop-max-breakpoint: pxtoem(1199);

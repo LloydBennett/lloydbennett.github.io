@@ -59,22 +59,32 @@
   }
 }
 
-.next-project-thumbnail {
-  max-width: 540px;
-  height: 265px;
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-
-  &.inactive {
-    background: url('../images/projects/toad/casestudy/section-2/case-study-thumbnail.jpg') no-repeat center top;
-    background-size: cover;
-  }
-
-  &.hoverstate {
+.hover-state {
+  @media screen and (min-width: $tablet-min-breakpoint) {
     position: absolute;
+    top: 50%;
+    left: 20%;
     z-index: 2;
-    background: url('../images/projects/toad/casestudy/section-2/case-study-thumbnail-hover.jpg') no-repeat center top/cover;
-
   }
+}
+
+.thumbnail-component {
+  @extend .thumbnail;
+  width: 100%;
+  @media screen and (min-width: $tablet-min-breakpoint) {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+
+.hero-component {
+  margin-top: 50px;
+  @media screen and (min-width: $tablet-min-breakpoint) {
+    margin-top: 200px;
+  }
+}
+
+.thumbnail-section {
+  position: relative;
 }
