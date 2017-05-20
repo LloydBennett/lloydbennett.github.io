@@ -114,7 +114,6 @@
 		margin-top: 0;
 		margin-bottom: 0;
 		list-style: none;
-		color:white;
 		@extend %clearfix;
 		padding-left: 0;
 		position: absolute;
@@ -138,6 +137,11 @@
 				font-size: 4em; // 64
 				padding: 20px;
 			}
+
+			a {
+				color:white;
+			}
+
 			&:after {
 				@media screen and (min-width: 768px) {
 					content: "";

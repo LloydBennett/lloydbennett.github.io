@@ -19,26 +19,11 @@
 	}
 
 	&:before {
+		@include diagonalGradientSection(bottom right, white white transparent transparent);
 		content: "";
 		position: absolute;
-		bottom: 100px;
+		top: 0;
 		right: 0;
-		width: 100%;
-		background-color: white;
-		transform: rotate(-9deg);
-		height: 208px;
-    	border-left: 30px solid white;
-
-    	@media screen and (min-width: 1266px) {
-    		border-top: 20px solid;
-    		transform: rotate(-8deg);
-    	}
-    	@media screen and (min-width: 1585px) {
-    		transform: rotate(-7deg);
-    	}
-    	@media screen and (min-width: 1800px) {
-    		transform: rotate(-6deg);
-    	}
 	}
 
 	.container {
@@ -57,8 +42,9 @@
 		letter-spacing: 0;
 		margin-bottom: 0;
 		margin-top: 0;
+		font-size: pxtoem(48);
 
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: $mobile-max-breakpoint) {
 			margin-right: auto;
 			font-size: 2em;
 		}
@@ -89,5 +75,4 @@
 			}
 		}
 	}
-
 }
