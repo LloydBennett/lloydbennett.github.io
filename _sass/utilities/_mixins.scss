@@ -60,11 +60,15 @@
 
 @mixin diagonalGradientSection($direction, $colour) {
   width: 100%;
-  height: 200px;
+  height: 100px;
   background-image: linear-gradient(
                   to $direction,
                   nth($colour, 1), nth($colour, 2) 50%,
                   nth($colour, 3) 50%, nth($colour, 4)
   );
+
+  @media screen and (min-width: $tablet-min-breakpoint) {
+    height: 200px;
+  }
 }
 

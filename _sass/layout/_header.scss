@@ -19,7 +19,7 @@
     }
 
     @include media-query(pxtoem(768)) {
-        padding-bottom: 250px;
+        padding-bottom: 150px;
     }
 
 
@@ -31,7 +31,6 @@
             content: "";
             width: 100%;
             display: block;
-            height: 200px;
             position: absolute;
             bottom: 0;
         }
