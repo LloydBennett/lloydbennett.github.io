@@ -58,7 +58,7 @@
 							$this.find('a').attr('href') : $this.attr('href');
 
 		checkNavigationMenuState();
-		$htmlBody.animate({
+		$body.animate({
 			scrollTop: $(scrollDestination).offset().top
 		}, 600);
 	}
@@ -83,7 +83,7 @@
 
 		setTimeout(function(){
             $dynamicSection.load(pageURL+' .dynamic > *', function(event){
-                $body.scrollTop(0);
+				$body.scrollTop(0);
                 $contentWrapper.html($dynamicSection).removeClass('fadeOut');
 			 	if (pageURL != window.location) window.history.pushState({path:pageURL},'',pageURL);
             });
