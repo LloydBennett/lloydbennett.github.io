@@ -4,13 +4,14 @@
 	 Global Variables
 	 */
 	var $navMenu = $('.nav-menu'),
-		$ctaButton = $('.cta-button'),
+		$animateScrollLinks = $('[data-animate-scroll]'),
 		$htmlBody = $("html, body"),
         $body = $('body'),
 		$menuIcon = $('#open-menu'),
 		$navLinks = $('.list-link'),
         $contentWrapper = $('.wrapper'),
-        $dynamicSection = $('.dynamic');
+        $dynamicSection = $('.dynamic'),
+		menuIsOpen = false;
 
 	/*
 	Initialising all the functions
@@ -27,7 +28,8 @@
 	 */
 
 	function checkNavigationMenuState() {
-		$body.toggleClass('overflow-hidden');
+		menuIsOpen = !menuIsOpen;
+		//$body.toggleClass('overflow-hidden');
 		$navMenu.toggleClass('is-open');
 		$menuIcon.toggleClass('is-open');
 		animateNavLinks();
@@ -43,7 +45,7 @@
 		var delay;
         $navLinks.each(function(index, elem) {
             delay = 90 * index;
-            $(elem).on('click', 'a', animatedScroll);
+
             setTimeout(function(){
                 $(elem).toggleClass('appear');
             }, delay);
@@ -52,12 +54,12 @@
 
 	function animatedScroll(event){
 		event.preventDefault();
-
+		event.stopPropagation();
 		var $this = $(this),
-			scrollDestination = ($(event.target).hasClass('list-link')) ?
-							$this.find('a').attr('href') : $this.attr('href');
+			scrollDestination = $this.attr('href');
 
-		checkNavigationMenuState();
+		if(menuIsOpen) checkNavigationMenuState();
+
 		$body.animate({
 			scrollTop: $(scrollDestination).offset().top
 		}, 600);
@@ -70,7 +72,7 @@
 
 	function addEvents() {
 		$menuIcon.on('click', checkNavigationMenuState);
-        $ctaButton.on('click', animatedScroll);
+        $animateScrollLinks.on('click', animatedScroll);
         $contentWrapper.on('click', '.ajaxLoad', isHistoryAPISupported);
 	}
 
