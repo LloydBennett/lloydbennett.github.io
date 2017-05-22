@@ -11,15 +11,11 @@
     color: white;
     background-color: $brand--color;
     overflow:hidden;
-    min-height: 600px;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
 
-    @include media-query(pxtoem(550)) {
-        min-height: 750px;
-    }
 
     @include media-query(pxtoem(768)) {
-        padding-bottom: 150px;
+        padding-bottom: 250px;
     }
 
 
@@ -62,24 +58,13 @@
 }
 
 .cta {
-    font-size: 0.875rem;
+    font-size: 1.1em;
     text-transform: capitalize;
     font-family: $display-font-family;
     font-weight: 400;
-
-    svg {
-        margin-bottom: 10px;
-        margin-left: 40px;
-
-        #line {
-            stroke-dasharray: 150;
-            stroke-dashoffset: 150;
-        }
-
-        #point {
-            transform: scale(0);
-            transform-origin: 50% 50%;
-        }
+    @media screen and (min-width: $tablet-min-breakpoint ) {
+        font-size: pxtoem(28);
+        margin-top: pxtoem(50, 28);
     }
 
     a {

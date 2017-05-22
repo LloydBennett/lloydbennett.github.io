@@ -1,39 +1,10 @@
 <!DOCTYPE html>
 <html>
-  {% include head.html %}
+    {% include head.html %}
     <body>
         <div class="wrapper">
             <div class="dynamic">
-                <div class="nav-bar project-top-nav">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-2 col-sm-offset-10">
-                                <a id="close-casestudy" class="hamburger is-open ajaxLoad" href="{{site.baseurl}}/..">
-                                    <div class="icon">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-               {% if page.header-images %}
-                <div class="project-hero {{page.name}}-hero">
-                    {% for headerImage in page.header-images reversed %}
-                    <img {% if headerImage.animationName %}
-                         class="wow {{headerImage.animationName}}"
-                         data-wow-duration="{{ headerImage.animationDuration }}"
-                         data-wow-delay="{{ headerImage.animationDelay }}"
-                         {% endif %}
-                         src="/images/projects/{{ page.directory }}/casestudy/header/{{ headerImage.image }}"
-                         alt="{{ headerImage.name }}">
-                    {% endfor %}
-                </div>
-                {% endif %}
-
+                {% include _casestudy/casestudy-header.html %}
                 <div class="content">
                     <div class="container">
                         <div class="col-sm-12 no-padding">
@@ -52,15 +23,9 @@
                     </div>
                     {{ content }}
                 </div>
-  
-                {% include project-footer.html %}
+                {% include _casestudy/casestudy-footer.html %}
             </div>
         </div>
-        
         <script src="/js/refactor.js"></script>
     </body>
 </html>
-
-
-
-   
