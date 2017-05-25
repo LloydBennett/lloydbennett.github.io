@@ -8,6 +8,7 @@
 		$htmlBody = $("html, body"),
         $body = $('body'),
 		$menuIcon = $('#open-menu'),
+		$navBar = $('.nav-bar'),
 		$navLinks = $('.list-link'),
         $contentWrapper = $('.wrapper'),
         $dynamicSection = $('.dynamic'),
@@ -30,8 +31,10 @@
 	function checkNavigationMenuState() {
 		menuIsOpen = !menuIsOpen;
 		//$body.toggleClass('overflow-hidden');
+
 		$navMenu.toggleClass('is-open');
 		$menuIcon.toggleClass('is-open');
+		$navBar.toggleClass('is-open');
 		animateNavLinks();
 	}
 

@@ -1,8 +1,26 @@
 .nav-bar {
 	padding-top: 20px;
-
+	width: 100%;
+	height: pxtoem(60);
 	@include media-query(pxtoem(550)) {
 		padding-top: 45px;
+	}
+
+	@include media-query(551px) {
+		height: pxtoem(100);
+	}
+
+	&.is-open {
+		.container {
+			position: fixed;
+			z-index: 10000;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.logo {
+			display: none;
+		}
 	}
  }
 
@@ -10,6 +28,7 @@
 	opacity: 0;
 	animation-fill-mode: forwards;
 }
+
 .hamburger {
 	width: 38px;
     height: 38px;
@@ -28,6 +47,7 @@
 	}
 
 	&.is-open {
+
 		.icon {
 			span {
 				transition: 300ms ease;
@@ -119,9 +139,8 @@
 		position: absolute;
 	    width: 100%;
 	    left: 0;
-	    top: 40%;
-	    transform: translateY(-40%);
-
+	    top: 50%;
+	    transform: translateY(-50%);
 
 		.list-link {
 			position: relative;
