@@ -16,15 +16,69 @@ html {
 }
 
 body {
+  color: $type--body-color;
   font-family: $type--font-family;
   font-size: 1em;
   line-height: $type--line-height;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0 0 $spacing--base;
 }
 
 p {
   font-weight: 300;
 }
 
-h1, h2, h3, .label {
+h1,
+h2,
+h3,
+.label {
   font-weight: 600;
+}
+
+h1,
+h2,
+h3 {
+  color: $type--headings-colour;
+}
+
+
+h1 {
+  font-size: pxtoem(36);
+  line-height: 1.2;
+
+  @include media-query($bp--small) {
+    font-size: pxtoem(48);
+  }
+
+  @include media-query($bp--medium) {
+    line-height: 1;
+    font-size: pxtoem(63);
+  }
+
+  @include media-query($bp--xx-large) {
+    font-size: pxtoem(84);
+  }
+}
+
+
+.section-title {
+  color: $type--small-title-colour;
+  display: block;
+  font-size: 1em;
+
+  @include media-query($bp--medium) {
+    font-size: 18px;
+  }
+}
+
+// Utilities
+
+.no-wrap-and-break {
+  display: block;
+  white-space: nowrap;
 }

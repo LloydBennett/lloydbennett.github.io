@@ -22,3 +22,9 @@
   border-bottom: $size solid $colour;
   box-shadow: 0px -4px 0px $colour inset;
 }
+
+@mixin offset-paragraph {
+  @include media-query($bp--x-large) {
+    margin-left: 10vw;
+  }
+}
