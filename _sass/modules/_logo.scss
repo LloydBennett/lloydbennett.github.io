@@ -1,13 +1,8 @@
 .logo {
   width: 42px;
   z-index: 100;
-  display:inline-block;
+  display: inline-block;
 
-  @include element('mark'){
-    width:100%;
-    display:block;
-  }
-  
   @include media-query(pxtoem(550)){
     width: 55px;
   }

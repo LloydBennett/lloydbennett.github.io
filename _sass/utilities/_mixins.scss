@@ -2,33 +2,10 @@
   max-width: $maxwidth;
 }
 
-@mixin element ($element){
-	&__#{$element}{
-		@content;
-	}
-}
-
-@mixin modifier ($modifier){
-	&--#{$modifier}{
-		@content;
-	}
-}
-
 @mixin media-query($device) {
-    @media screen and (min-width: $device) {
-        @content;
-    }
-}
-
-@mixin button-modifier ($font-color:null, $border-color:null, $bg-color:null, $transition: true) {
-  color: $font-color;
-  background-color: $bg-color;
-  border-color: $border-color;
-
-  @if $transition {
-    transition: 500ms ease;
+  @media screen and (min-width: $device) {
+    @content;
   }
-
 }
 
 @mixin vertical-align ($top, $translateY:null){
@@ -38,18 +15,6 @@
   @if $translateY {
     transform: translateY($translateY);
     -webkit-transform: translateY($translateY);
-  }
-
-}
-
-@mixin generatedTriangle($insertPos){
-  &::#{$insertPos}{
-    content: "";
-    position: absolute;
-    border-style: solid;
-    overflow: hidden;
-    -moz-transform: scale(360);
-    @content;
   }
 }
 
@@ -71,4 +36,3 @@
     height: 200px;
   }
 }
-

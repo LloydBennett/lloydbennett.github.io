@@ -8,13 +8,33 @@ $grey-color: red;
 $divider-color: #E8E8E8;
 
 /* Type */
-$base-font-family: "aktiv-grotesk", sans-serif;
-$base-font-size: 16px;
-$display-font--color: #2e2e2e;
-$body-font--color: #6b6b6b;
-$para-font--color: #3E3E3E;
+$type--line-height: 1.5;
+$type--font-family: "aktiv-grotesk", sans-serif;
+$type--font-sizes: (
+  small: 100%,
+  medium: 112.5%,
+  large: 131.25%,
+  x-large: 150%
+);
+
+//Spacing
+$spacing--base: 1rem * $type--line-height;
+$spacing--s: $spacing--base / 2;
+$spacing--xs: $spacing--s / 2;
+$spacing--xxs: $spacing--xs / 2;
+$spacing--m: $spacing--base * 2;
+$spacing--l: $spacing--m * 2;
+$spacing--xl: $spacing--l * 2;
+$spacing--xxl: $spacing--xl * 2;
 
 /* Breakpoints */
+$bp--small: pxtoem(550);
+$bp--medium: pxtoem(768);
+$bp--large: pxtoem(960);
+$bp--x-large: pxtoem(1200);
+$bp--xx-large: pxtoem(1600);
+
+// to be deleted
 $mobile-max-breakpoint: pxtoem(767);
 $tablet-min-breakpoint: pxtoem(768);
 $tablet-max-breakpoint: pxtoem(991);

@@ -1,3 +1,30 @@
+/* Typography */
+html {
+  font-size: map-get($type--font-sizes, small);
+
+  @include media-query($bp--medium) {
+    font-size: map-get($type--font-sizes, medium);
+  }
+
+  @include media-query($bp--large) {
+    font-size: map-get($type--font-sizes, large);
+  }
+
+  @include media-query($bp--x-large) {
+    font-size: map-get($type--font-sizes, x-large);
+  }
+}
+
 body {
-  font-family: $base-font-family;
+  font-family: $type--font-family;
+  font-size: 1em;
+  line-height: $type--line-height;
+}
+
+p {
+  font-weight: 300;
+}
+
+h1, h2, h3, .label {
+  font-weight: 600;
 }
