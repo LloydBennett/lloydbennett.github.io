@@ -15,7 +15,6 @@
 
 
 	&:before {
-		@include diagonalGradientSection(bottom right, white white transparent transparent);
 		content: "";
 		position: absolute;
 		top: 0;
