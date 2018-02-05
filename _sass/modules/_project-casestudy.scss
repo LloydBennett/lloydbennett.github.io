@@ -1,3 +1,7 @@
+.projects-section-title {
+  @include offset-paragraph;
+}
+
 .project-modal {
 	position: fixed;
 	top: 0;
