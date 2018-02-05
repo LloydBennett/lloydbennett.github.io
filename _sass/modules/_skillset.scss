@@ -1,0 +1,33 @@
+.skills {
+  @include offset-paragraph;
+  @include section-spacing;
+}
+
+.skills-grid {
+  @include media-query($bp--large) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  p {
+    max-width: 700px;
+  }
+}
+
+.skill {
+  @extend h2;
+  display: block;
+  margin-bottom: $spacing--xs;
+
+  @include media-query($bp--medium) {
+    margin-bottom: $spacing--s;
+  }
+}
+
+.skills-list {
+  margin: 0 $spacing--m $spacing--base 0;
+
+  @include media-query($bp--large) {
+    margin: 0 $spacing--m 0 0;
+  }
+}

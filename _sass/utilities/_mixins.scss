@@ -28,3 +28,10 @@
     margin-left: 10vw;
   }
 }
+
+@mixin section-spacing {
+  margin-bottom: $spacing--m;
+  @include media-query($bp--medium) {
+    margin-bottom: $spacing--l;
+  }
+}

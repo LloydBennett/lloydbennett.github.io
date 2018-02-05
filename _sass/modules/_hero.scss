@@ -1,13 +1,19 @@
+.hero {
+  @include section-spacing;
+  padding-bottom: $spacing--base;
+
+  @include media-query($bp--medium) {
+    padding-bottom: $spacing--m;
+  }
+}
+
 .hero-content {
   @include offset-paragraph;
+
   max-width: 800px;
   margin-top: $spacing--l;
 
   @include media-query($bp--small) {
     width: 70%;
-  }
-
-  .section-title {
-    margin-bottom: $spacing--m;
   }
 }

@@ -65,11 +65,26 @@ h1 {
   }
 }
 
+h2 {
+  font-size: pxtoem(24);
+  line-height: 1.1;
+
+  @include media-query($bp--small) {
+    font-size: pxtoem(32);
+  }
+
+  @include media-query($bp--x-large) {
+    font-size: pxtoem(36);
+  }
+}
 
 .section-title {
   color: $type--small-title-colour;
   display: block;
   font-size: 1em;
+  font-weight: 500;
+  line-height: $type--line-height;
+  margin-bottom: $spacing--m;
 
   @include media-query($bp--medium) {
     font-size: 18px;
@@ -81,4 +96,9 @@ h1 {
 .no-wrap-and-break {
   display: block;
   white-space: nowrap;
+}
+
+.line-through {
+  color: $type--line-through-colour;
+  text-decoration: line-through;
 }
