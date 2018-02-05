@@ -1,19 +1,39 @@
 .hero {
   @include section-spacing;
+  background-color: $colour--accent-grey;
   padding-bottom: $spacing--base;
+  position: relative;
 
   @include media-query($bp--medium) {
     padding-bottom: $spacing--m;
+  }
+
+  .container {
+    position: relative;
   }
 }
 
 .hero-content {
   @include offset-paragraph;
 
-  max-width: 800px;
   margin-top: $spacing--l;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
 
   @include media-query($bp--small) {
     width: 70%;
+  }
+}
+
+.hero-avatar {
+  bottom: -#{$spacing--m};
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+
+  img {
+    display: block;
   }
 }
