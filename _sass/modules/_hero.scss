@@ -24,6 +24,11 @@
   @include media-query($bp--small) {
     width: 70%;
   }
+
+  @include media-query($bp--large) {
+    margin-top: $spacing--m;
+    margin-bottom: $spacing--m;
+  }
 }
 
 .hero-avatar {
