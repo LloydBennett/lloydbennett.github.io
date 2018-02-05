@@ -438,7 +438,7 @@ input, textarea {
   }
   &:-webkit-autofill, &:-webkit-autofill:hover,
   &:-webkit-autofill:active, &:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0 1000px $brand--color inset;
+    -webkit-box-shadow: 0 0 0 1000px grey inset; //change later
   }
 
 }

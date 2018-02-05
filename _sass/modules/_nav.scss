@@ -105,7 +105,7 @@
 
 .nav-menu {
 	position: fixed;
-	background-color: $brand--color;
+	background-color: black;
 	opacity: 0;
 	visibility: hidden;
 	top: 0;
@@ -168,7 +168,6 @@
 					margin-right: auto;
 					width: 30%;
 					position: absolute;
-					background-color: $brand-accent--color;
 					pointer-events: none;
 					transform: scaleX(0) translateY(-50%);
 					transition: 300ms cubic-bezier(.645,.045,.355,1);
