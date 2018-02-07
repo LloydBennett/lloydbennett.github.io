@@ -1,44 +1,95 @@
 .hero {
   @include section-spacing;
   background-color: $colour--accent-grey;
-  padding-bottom: $spacing--base;
+  // padding-bottom: $spacing--base;
   position: relative;
-
+  height: 90vh;
   @include media-query($bp--medium) {
-    padding-bottom: $spacing--m;
+    // padding-bottom: $spacing--m;
+
+    min-height: 800px;
   }
 
   .container {
     position: relative;
+    height: 100%;
+  }
+}
+
+.hero-home {
+  .overlay {
+    background-color: rgba(62,62,62, 0.2);
+
+    @include media-query($bp--medium) {
+      display: none;
+    }
+  }
+
+  .intro-title,
+  .intro-description,
+  .section-title {
+    color: $colour--accent-white;
+
+    @include media-query($bp--medium) {
+      color: inherit;
+    }
   }
 }
 
 .hero-content {
+  height: 100%;
+}
+
+.hero-content-intro {
   @include offset-paragraph;
 
-  margin-top: $spacing--l;
-  max-width: 800px;
+  height: 100%;
+  padding-bottom: $spacing--m;
+  max-width: 700px;
   position: relative;
   z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 
   @include media-query($bp--small) {
     width: 70%;
   }
 
   @include media-query($bp--large) {
-    margin-top: $spacing--m;
-    margin-bottom: $spacing--m;
+    padding-bottom: $spacing--l;
+  }
+
+  .cta {
+    bottom: 0;
+    left: 0;
+    position: absolute;
   }
 }
 
 .hero-avatar {
-  bottom: -#{$spacing--m};
+  bottom: 0;
   pointer-events: none;
   position: absolute;
   right: 0;
+  height: 550px;
   z-index: 1;
+
+  @include media-query($bp--medium) {
+    height: auto;
+  }
+
+  @include media-query($bp--large) {
+    width: auto;
+  }
 
   img {
     display: block;
+    height: 100%;
+
+    @include media-query($bp--medium) {
+      width: 100%;
+      height: auto;
+    }
   }
 }

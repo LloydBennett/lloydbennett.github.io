@@ -1,3 +1,15 @@
+.cta {
+  align-items: center;
+  background-color: $colour--brand-passion;
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  justify-content: flex-end;
+  padding-bottom: $spacing--s;
+  width: 80px;
+}
+
+
 .link {
 	//@include link-underline($brand-color-off-blue);
 	font-weight: inherit;

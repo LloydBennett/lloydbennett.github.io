@@ -1,83 +1,68 @@
-<header class="hero">
-	<nav class="nav">
-		<div class="nav-bar">
-		  	<div class="container">
-				<div class="row">
-					<div class="col-xs-3">
-						<a class="logo wow fadeIn" data-wow-duration="700ms" data-wow-delay="1.8s" href="../../">
-							<!-- <img class="logo__mark" src="/images/logowhite.svg" alt="site-logo"> -->
-						</a>
-					</div>
+<div class="nav-menu">
+  <div class="container">
+    <ul class="list">
+      <li class="list-link">
+        <a href="#about" data-animate-scroll>About Me</a>
+      </li>
+      <li class="list-link">
+        <a href="#cta-target" data-animate-scroll>Projects</a>
+      </li>
+      <li class="list-link">
+        <a href="#contact" data-animate-scroll>Contact</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
-					<div class="col-xs-3 col-xs-offset-6 text-right">
-						<div id="open-menu" class="hamburger wow fadeIn" data-wow-duration="700ms"data-wow-delay="1.8s">
-							<div class="icon">
-								<span></span>
-								<span></span>
-								<span></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<header class="hero hero-home">
+  <div class="overlay"></div>
+	<div class="container">
+    <div class="nav-bar">
+      <a class="logo wow fadeIn" data-wow-duration="700ms" data-wow-delay="1.8s" href="../../">
 
-		<div class="nav-menu">
-			<div class="container">
+      </a>
 
-				<!-- add the nav menu !-->
+      <div id="open-menu" class="hamburger wow fadeIn" data-wow-duration="700ms"data-wow-delay="1.8s">
+        <div class="icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
 
+    <div class="hero-content-intro">
+      <div class="hero-intro-wrapper">
+        <span class="section-title wow fadeIn" data-wow-duration="700ms">{{page.author}}</span>
 
-			  	<ul class="list">
-					<li class="list-link">
-					  	<a href="#about" data-animate-scroll>About Me</a>
-					</li>
-					<li class="list-link">
-						<a href="#cta-target" data-animate-scroll>Projects</a>
-					</li>
-					<li class="list-link">
-						<a href="#contact" data-animate-scroll>Contact</a>
-					</li>
-
-				</ul>
-
-			</div>
-		</div>
-
-	</nav>
-
-	<div class="intro">
-
-		<div class="container">
-
-			<div class="hero-content">
-
-				<span class="section-title wow fadeIn" data-wow-duration="700ms">{{page.author}}</span>
-
-				{% if page.heading %}
-				  <h1 class="intro-title wow fadeIn" data-wow-duration="1.5s" data-wow-delay="600ms">{{ page.heading }}</h1>
-				{% else %}
-				  <h1 class="intro-title wow fadeIn" data-wow-duration="1.5s" data-wow-delay="600ms">{{ page.title }}</h1>
-				{% endif %}
-
-        {% if page.description %}
-          <p>{{ page.description }}</p>
+        {% if page.heading %}
+        <h1 class="intro-title wow fadeIn" data-wow-duration="1.5s" data-wow-delay="600ms">{{ page.heading }}</h1>
+        {% else %}
+        <h1 class="intro-title wow fadeIn" data-wow-duration="1.5s" data-wow-delay="600ms">{{ page.title }}</h1>
         {% endif %}
 
-				{% if page.calltoaction %}
-					<div class="cta">
-						<a href="#cta-target" class="link link-light wow fadeIn" data-animate-scroll data-wow-duration="600ms" data-wow-delay="1.2s" >{{ page.buttonname }}</a>
-					</div>
-
-				{% endif %}
-			</div>
-
-      <div class="hero-avatar">
-        <img src="images/home/lloyd.png" alt="Lloyd Bennett">
+        {% if page.description %}
+        <p class="intro-description">{{ page.description }}</p>
+        {% endif %}
       </div>
 
-		</div>
+      {% if page.calltoaction %}
+        <a href="#cta-target" class="cta wow fadeIn" data-animate-scroll data-wow-duration="600ms" data-wow-delay="1.2s">
+          <svg width="32" height="19" viewBox="0 0 32 19" xmlns="http://www.w3.org/2000/svg">
+            <title>
+              Down Chervron
+            </title>
+            <path d="M16 17.6L2 3.6 3.5 2l12.4 12.5L28.5 2 30 3.5z" fill="#FFF" fill-rule="nonzero" stroke="#FFF" stroke-width="2"/>
+          </svg>
+        </a>
 
-	</div>
+      {% endif %}
+    </div>
 
+    <div class="hero-avatar">
+      <img src="images/home/lloyd.png" alt="Lloyd Bennett">
+    </div>
+
+
+  </div>
 </header>

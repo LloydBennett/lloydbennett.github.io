@@ -9,10 +9,6 @@ html {
   @include media-query($bp--large) {
     font-size: map-get($type--font-sizes, large);
   }
-
-  @include media-query($bp--x-large) {
-    font-size: map-get($type--font-sizes, x-large);
-  }
 }
 
 body {
@@ -20,6 +16,10 @@ body {
   font-family: $type--font-family;
   font-size: 1em;
   line-height: $type--line-height;
+
+  @include media-query($bp--medium) {
+    line-height: 1.6;
+  }
 }
 
 h1,
@@ -37,7 +37,7 @@ h1,
 h2,
 h3,
 .label {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h1,
@@ -71,6 +71,7 @@ h2 {
 
   @include media-query($bp--small) {
     font-size: pxtoem(32);
+    line-height: 1.2;
   }
 
   @include media-query($bp--x-large) {
