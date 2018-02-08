@@ -1,12 +1,12 @@
 # Site settings
 title: Lloyd Bennett
 email: lloydbennett92@gmail.com
-description: Lloyd Bennett's web design portfolio and blog site.
+description: Lloyd Bennett's web design portfolio.
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: LloydBennett_
-github_username:  LloydBennett
 dribbble_username: ljbennett
 linkedin_username: lloydbennett1
+instagram_username: designbyljb
 #paginate: 3
 #paginate_path: "blog/page:num/"
 

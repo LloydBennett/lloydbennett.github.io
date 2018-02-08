@@ -107,7 +107,7 @@
   align-items: center;
   position: absolute;
   left: -92px;
-  top: 52%;
+  top: 54%;
   color: $colour--brand-passion;
   z-index: 2;
   transform: rotateZ(90deg);
@@ -117,7 +117,7 @@
   }
 
   @include media-query($bp--xx-large) {
-    top: 46%;
+    top: 48%;
   }
 
   .line {
