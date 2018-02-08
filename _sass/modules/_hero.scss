@@ -101,3 +101,63 @@
     }
   }
 }
+
+.hero-socials {
+  display: none;
+  align-items: center;
+  position: absolute;
+  left: -92px;
+  top: 52%;
+  color: $colour--brand-passion;
+  z-index: 2;
+  transform: rotateZ(90deg);
+
+  @include media-query($bp--x-large) {
+    display: flex;
+  }
+
+  @include media-query($bp--xx-large) {
+    top: 46%;
+  }
+
+  .line {
+    width: 50px;
+    height: 2px;
+    background-color: $colour--brand-passion;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+
+.hero-socials-title {
+  margin-right: $spacing--s;
+}
+
+.hero-socials-title-label {
+  font-size: 18px;
+}
+
+
+.hero-social-links {
+  display: flex;
+  align-items: center;
+
+  a {
+    width: 25px;
+    margin-right: $spacing--s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+
+  .path {
+    fill: $colour--brand-passion;
+  }
+}
