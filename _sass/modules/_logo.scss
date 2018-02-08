@@ -1,9 +1,15 @@
 .logo {
+  animation-fill-mode: forwards;
+  display: inline-block;
+  opacity: 0;
   width: 42px;
   z-index: 100;
-  display: inline-block;
 
   @include media-query(pxtoem(550)){
     width: 55px;
+  }
+
+  img {
+    width: 100%;
   }
 }

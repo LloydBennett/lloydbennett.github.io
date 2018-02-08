@@ -9,12 +9,15 @@
  }
 
 
- .container:after {
-   clear: both;
- }
+//Utility class
+.clearfix {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
 
- .container:before,
- .container:after {
-   content: " ";
-   display: table;
- }
+  &::after {
+    clear: both;
+  }
+}

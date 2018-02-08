@@ -18,14 +18,14 @@
 
 
 @keyframes draw {
-	100% { 
-		stroke-dashoffset: 0; 
+	100% {
+		stroke-dashoffset: 0;
 	}
 }
 
 @-webkit-keyframes draw {
-	100% { 
-		stroke-dashoffset: 0; 
+	100% {
+		stroke-dashoffset: 0;
 	}
 }
 
@@ -45,7 +45,7 @@
 		transform: translateY(50px);
 		opacity: 0
 	}
-	
+
 	100% {
 		transform: translateY(0px);
 		opacity: 1;
@@ -58,7 +58,7 @@
 		transform: translateY(50px);
 		opacity: 0
 	}
-	
+
 	100% {
 		transform: translateY(0px);
 		opacity: 1;
@@ -120,4 +120,9 @@
 
 	-webkit-animation-name: draw;
 	-webkit-animation-fill-mode: forwards;
+}
+
+
+.wow {
+  visibility: hidden;
 }

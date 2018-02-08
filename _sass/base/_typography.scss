@@ -95,6 +95,11 @@ h2 {
 
 // Utilities
 
+.nowrap {
+  white-space: nowrap;
+  display: inline;
+}
+
 .no-wrap-and-break {
   display: block;
   white-space: nowrap;
@@ -107,4 +112,11 @@ h2 {
 
 .highlight-text {
   color: $colour--brand-passion;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
 }
