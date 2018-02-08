@@ -1,12 +1,12 @@
 .hero {
   @include section-spacing;
   background-color: $colour--accent-grey;
-  // padding-bottom: $spacing--base;
+  overflow: hidden;
   position: relative;
   height: 90vh;
-  @include media-query($bp--medium) {
-    // padding-bottom: $spacing--m;
+  min-height: 500px;
 
+  @include media-query($bp--medium) {
     min-height: 800px;
   }
 
@@ -18,9 +18,9 @@
 
 .hero-home {
   .overlay {
-    background-color: rgba(62,62,62, 0.2);
+    background-color: rgba(62,62,62, 0.25);
 
-    @include media-query($bp--medium) {
+    @include media-query($bp--x-large) {
       display: none;
     }
   }
@@ -28,10 +28,8 @@
   .intro-title,
   .intro-description,
   .section-title {
-    color: $colour--accent-white;
-
-    @include media-query($bp--medium) {
-      color: inherit;
+    @media screen and (max-width: 1199px) {
+      color: $colour--accent-white;
     }
   }
 }
@@ -44,7 +42,7 @@
   @include offset-paragraph;
 
   height: 100%;
-  padding-bottom: $spacing--m;
+  padding-bottom: $spacing--l + $spacing--s;
   max-width: 700px;
   position: relative;
   z-index: 2;
@@ -56,15 +54,19 @@
     width: 70%;
   }
 
-  @include media-query($bp--large) {
-    padding-bottom: $spacing--l;
+  @include media-query($bp--medium) {
+    padding-bottom: $spacing--xl;
   }
 
-  .cta {
-    bottom: 0;
-    left: 0;
-    position: absolute;
+  .button {
+    @include media-query($bp--small) {
+      margin-top: $spacing--s;
+    }
   }
+}
+
+.intro-description {
+  max-width: 600px;
 }
 
 .hero-avatar {
@@ -72,24 +74,30 @@
   pointer-events: none;
   position: absolute;
   right: 0;
-  height: 550px;
+  min-height: 500px;
+  height: 70vh;
   z-index: 1;
 
-  @include media-query($bp--medium) {
-    height: auto;
-  }
-
   @include media-query($bp--large) {
-    width: auto;
+    min-height: 800px;
   }
 
   img {
     display: block;
     height: 100%;
+  }
 
-    @include media-query($bp--medium) {
-      width: 100%;
-      height: auto;
+  .large {
+    display: none;
+
+    @include media-query($bp--large) {
+      display: block;
+    }
+  }
+
+  .small {
+    @include media-query($bp--large) {
+      display: none;
     }
   }
 }

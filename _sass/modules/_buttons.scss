@@ -1,12 +1,35 @@
-.cta {
-  align-items: center;
-  background-color: $colour--brand-passion;
-  display: flex;
-  flex-direction: column;
-  height: 70px;
-  justify-content: flex-end;
-  padding-bottom: $spacing--s;
-  width: 80px;
+.button {
+  position: relative;
+  display: inline-block;
+  padding: $spacing--s $spacing--m;
+  background-color: black;
+  color: $colour--accent-white;
+  font-weight: 500;
+
+
+  &::after {
+    content: "";
+    background-color: $colour--brand-passion;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: width 300ms ease;
+    width: 0;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+      transition: width 300ms ease;
+    }
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 

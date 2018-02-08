@@ -82,13 +82,14 @@ h2 {
 .section-title {
   color: $type--small-title-colour;
   display: block;
-  font-size: 1em;
+  font-size: 14px;
   font-weight: 500;
   line-height: $type--line-height;
-  margin-bottom: $spacing--m;
+  margin-bottom: $spacing--s + $spacing--xs + $spacing--xxs;
 
   @include media-query($bp--medium) {
     font-size: 18px;
+    margin-bottom: $spacing--m;
   }
 }
 
