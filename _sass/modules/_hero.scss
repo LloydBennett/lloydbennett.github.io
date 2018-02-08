@@ -1,19 +1,8 @@
 .hero {
   @include section-spacing;
   background-color: $colour--accent-grey;
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
-  height: 90vh;
-  min-height: 500px;
-
-  @include media-query($bp--medium) {
-    min-height: 800px;
-  }
-
-  .container {
-    position: relative;
-    height: 100%;
-  }
 }
 
 .hero-home {
@@ -35,14 +24,22 @@
 }
 
 .hero-content {
-  height: 100%;
+  .container {
+    position: relative;
+    height: 90vh;
+    min-height: 500px;
+
+    @include media-query($bp--medium) {
+      min-height: 800px;
+    }
+  }
 }
 
 .hero-content-intro {
   @include offset-paragraph;
 
   height: 100%;
-  padding-bottom: $spacing--l + $spacing--s;
+  padding-bottom: $spacing--m;
   max-width: 700px;
   position: relative;
   z-index: 2;
@@ -55,7 +52,7 @@
   }
 
   @include media-query($bp--medium) {
-    padding-bottom: $spacing--xl;
+    padding-bottom: $spacing--l;
   }
 
   .button {
@@ -78,7 +75,7 @@
   height: 70vh;
   z-index: 1;
 
-  @include media-query($bp--large) {
+  @include media-query($bp--medium) {
     min-height: 800px;
   }
 
@@ -90,13 +87,13 @@
   .large {
     display: none;
 
-    @include media-query($bp--large) {
+    @include media-query($bp--medium) {
       display: block;
     }
   }
 
   .small {
-    @include media-query($bp--large) {
+    @include media-query($bp--medium) {
       display: none;
     }
   }
