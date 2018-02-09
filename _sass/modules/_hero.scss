@@ -55,6 +55,12 @@
     padding-bottom: $spacing--l;
   }
 
+  @include media-query($bp--large) {
+    padding-bottom: 0;
+    justify-content: center;
+  }
+
+
   .button {
     @include media-query($bp--small) {
       margin-top: $spacing--s;
