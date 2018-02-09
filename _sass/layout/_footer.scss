@@ -1,12 +1,3 @@
-// .footer-spacer {
-//   @include media-query($bp--medium) {
-//     position: relative;
-//     z-index: -1;
-//     height: 650px;
-//     pointer-events: none;
-//   }
-// }
-
 .footer {
   color: $colour--accent-white;
   padding: $spacing--s 0;
@@ -22,7 +13,7 @@
   }
 
   p {
-    color: #b7b7b7;
+    color: $type--body-colour-on-dark;
   }
 
   .container {

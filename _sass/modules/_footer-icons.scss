@@ -1,1 +1,27 @@
+.footer-social-links {
+  margin-top: $spacing--m;
+  display: flex;
+  align-items: center;
 
+  a {
+    width: 25px;
+    margin-right: $spacing--m;
+
+    @include media-query($bp--medium) {
+      width: 50px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+
+  .path {
+    fill: $type--body-colour-on-dark;
+  }
+}
