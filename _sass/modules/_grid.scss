@@ -8,6 +8,14 @@
    max-width: 1800px;
  }
 
+ .main-content {
+   @include media-query($bp--medium) {
+     position: relative;
+     z-index: 10;
+     background-color: $colour--accent-white;
+     margin-bottom: 100vh;
+   }
+ }
 
 //Utility class
 .clearfix {

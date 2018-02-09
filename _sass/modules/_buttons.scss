@@ -63,10 +63,10 @@
 
 
 .link {
-	//@include link-underline($brand-color-off-blue);
-	font-weight: inherit;
+	@include link-underline(lighten($colour--brand-passion, 20%));
+	//font-weight: inherit;
 	display: inline-block;
-	line-height: 0.9;
+	//line-height: 0.9;
 
 	&.link-light {
 		//@include link-underline($brand-color-off-blue-lighterr);
