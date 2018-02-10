@@ -1,124 +1,23 @@
-.projects {
-  margin-top: pxtoem(50, 16);
-
-  @media screen and (min-width: pxtoem(768)) {
-    margin-top: pxtoem(150, 16);
-  }
-}
-
-.project-thumb {
-  color: white;
-
-  a {
-    position: relative;
-    display: inline-block;
-
-    &:after {
-      bottom: -1px;
-    }
-  }
-
-  @media screen and (min-width: $tablet-min-breakpoint) {
-    margin-bottom: 7em;
-  }
-
-  @media screen and (min-width: pxtoem(860)) {
-    margin-bottom: 10em;
-  }
-
-}
-
-.backdrop {
-  @media screen and (max-width: $mobile-max-breakpoint) {
-    padding: 70px 0;
-  }
-
-  .container {
-    position: relative;
-    height: 100%;
-  }
-}
-
-#toad {
-  .backdrop {
-    background-color: black;
-  }
-}
-
-#vocals {
-  .backdrop {
-    background-color: #6187BE;
-
-    .project-featured-image {
-      @media screen and (min-width: pxtoem(768)) {
-        max-width: 700px;
-        bottom: -20px;
-      }
-
-      img {
-        @media screen and (max-width: pxtoem(767)) {
-          max-width: 700px;
-        }
-      }
-    }
-  }
-}
-
-.project-thumb-info {
+.project-thumbnail {
   position: relative;
-  z-index: 2;
+  display: inline-block;
 
-  @media screen and (min-width: $tablet-min-breakpoint) {
-    padding: 70px 0;
+  .medium {
+    display: block;
+    @include media-query($bp--medium) {
+      display: none;
+    }
+  }
+
+  .large {
+    display: none;
+    @include media-query($bp--large) {
+      display: block;
+    }
   }
 }
 
-.project-featured-image {
-    @extend .thumbnail;
-    img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    @media screen and (max-width: pxtoem(767)) {
-        margin: 0 0 pxtoem(30);
-    }
-
-    @media screen and (min-width: pxtoem(768)) {
-        max-width: 800px;
-        width: 80%;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        text-align: right;
-    }
-}
-
-.project-thumb-title {
-  font-size: pxtoem(36);
-  line-height: 1.2;
-  margin: 0 auto pxtoem(50, 36);
-  @media screen and (max-width: 550px) {
-    font-size: 1.25em;
-  }
-
-  @media screen and (min-width: 551px) and (max-width: 991px) {
-    font-size: 1.5em;
-  }
-
-  span {
-    display: block!important;
-  }
-}
-
-.project-thumb-category {
-  font-size: 1em;
-  font-weight: 400;
-  margin-bottom: pxtoem(20);
-  display: block;
-
-  @media screen and (max-width: 550px) {
-    font-size: 0.875em;
-  }
+.project-overlay {
+  @extend .overlay;
+  background: none;
 }

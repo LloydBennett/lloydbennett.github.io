@@ -1,29 +1,19 @@
-<section id="cta-target">
+<section id="cta-target" class="projects">
   <div class="container">
     <h2 class="projects-section-title wow moveUpFade" data-wow-offset="50" data-wow-duration="700ms">
       Selected Projects <span class="no-wrap-and-break"> &amp; Activities &mdash;</span>
     </h2>
-  </div>
-
-    <div class="projects">
-    {% for casestudy in site.projects reversed %}
-        <div id="{{ casestudy.name }}" class="project-thumb wow moveUpFade" data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
-            <div class="backdrop">
-                <div class="container">
-                    <div class="project-featured-image">
-                        <img src="{{site.baseurl}}/images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}" alt="project">
-                    </div>
-                    <div class="col-xs-12 col-sm-6 project-thumb-info">
-                        <span class="project-thumb-category">{{ casestudy.category }}</span>
-                        <h3 class="project-thumb-title">{{ casestudy.thumb-title }}</h3>
-                        <a href="{{ casestudy.live-url }}" target="_blank"><!--href="{{ casestudy.url | prepend: site.baseurl }} ajaxLoad"!-->
-                            View Project
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <div class="projects-grid">
+      {% for casestudy in site.projects reversed %}
+      <a href="#" id="{{ casestudy.name }}" class="project-thumbnail wow moveUpFade" data-wow-duration="650ms" data-wow-offset="150" data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
+        <img class="medium" src="http://via.placeholder.com/618x715">
+        <img class="large" src="http://via.placeholder.com/900x1041">
+        <div class="project-overlay">
+          <span>{{ casestudy.category }}</span>
+          <h3>{{ casestudy.thumb-title }}</h3>
         </div>
-        {% endfor %}
+      </a>
+      {% endfor %}
     </div>
-
+  </div>
 </section>

@@ -1,0 +1,11 @@
+.projects {
+  //@include section-spacing;
+}
+
+.projects-section-title {
+  @include offset-paragraph;
+}
+
+.projects-grid {
+  margin-top: $spacing--l;
+}

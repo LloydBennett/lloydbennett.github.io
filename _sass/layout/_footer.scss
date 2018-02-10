@@ -50,8 +50,12 @@
 }
 
 .connect {
-  max-width: 600px;
+  max-width: 400px;
   margin-bottom: $spacing--m;
+
+  @include media-query($bp--large) {
+    max-width: 500px;
+  }
 
   h2 {
     color: $colour--accent-white;
