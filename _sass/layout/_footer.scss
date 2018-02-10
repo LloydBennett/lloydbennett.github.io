@@ -25,6 +25,17 @@
   }
 }
 
+.footer-spacer {
+  display: none;
+  @include media-query($bp--medium) {
+    display: block;
+    height: $spacing--l;
+  }
+  @include media-query($bp--large) {
+    height: $spacing--l + $spacing--m;
+  }
+}
+
 .footer-grid {
   @include offset-paragraph;
   @include media-query($bp--medium) {
@@ -56,10 +67,10 @@
   @include media-query($bp--large) {
     max-width: 500px;
   }
+}
 
-  h2 {
-    color: $colour--accent-white;
-  }
+.connect-title {
+  color: $colour--accent-white;
 }
 
 .email {

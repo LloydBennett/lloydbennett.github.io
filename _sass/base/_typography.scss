@@ -66,7 +66,20 @@ h1 {
 }
 
 h2 {
-  font-size: pxtoem(24);
+  font-size: pxtoem(28);
+  line-height: 1.2;
+
+  @include media-query($bp--small) {
+    font-size: pxtoem(36);
+  }
+
+  @include media-query($bp--medium) {
+    font-size: pxtoem(48);
+  }
+}
+
+h3 {
+  font-size: pxtoem(21);
   line-height: 1.1;
 
   @include media-query($bp--small) {
@@ -78,6 +91,11 @@ h2 {
     font-size: pxtoem(36);
   }
 }
+
+
+
+
+
 
 .section-title {
   color: $type--small-title-colour;

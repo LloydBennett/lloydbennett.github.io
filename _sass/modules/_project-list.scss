@@ -7,5 +7,10 @@
 }
 
 .projects-grid {
-  margin-top: $spacing--l;
+  @include media-query($bp--small) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: $spacing--m;
+    grid-row-gap: $spacing--m;
+  }
 }

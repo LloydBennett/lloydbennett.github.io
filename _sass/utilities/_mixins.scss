@@ -1,21 +1,16 @@
-@mixin measure ($maxwidth: 40em){
-  max-width: $maxwidth;
-}
-
 @mixin media-query($device) {
   @media screen and (min-width: $device) {
     @content;
   }
 }
 
-@mixin vertical-align ($top, $translateY:null){
-  position: relative;
-  top: $top;
-
-  @if $translateY {
-    transform: translateY($translateY);
-    -webkit-transform: translateY($translateY);
-  }
+@mixin overlay($bg--color: rgba(62,62,62, 0.5)) {
+  background-color: $bg--color;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 @mixin link-underline($colour, $size: 0.2em) {
