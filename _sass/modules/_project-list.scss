@@ -1,5 +1,14 @@
 .projects {
-  //@include section-spacing;
+  position: relative;
+  overflow: hidden;
+
+  @include media-query($bp--medium) {
+    padding: $spacing--m 0;
+  }
+
+  @include media-query($bp--large) {
+    padding: $spacing--l 0;
+  }
 }
 
 .projects-section-title {
@@ -13,4 +22,22 @@
     grid-column-gap: $spacing--m;
     grid-row-gap: $spacing--m;
   }
+}
+
+.clipped-title {
+  position: absolute;
+  font-size: 24vw;
+  font-weight: 800;
+  opacity: 0.04;
+  z-index: -1;
+}
+
+.clipped-title-part-one {
+  top: 0; // 8% /-8%
+  right: -8%;
+}
+
+.clipped-title-part-two {
+  bottom: -6%; // -3%/-16%
+  left: -6%;
 }

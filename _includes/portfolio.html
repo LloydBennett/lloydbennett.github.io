@@ -12,8 +12,8 @@
       class="project-thumbnail wow moveUpFade" data-wow-duration="650ms"
       data-wow-offset="150"
       data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
-        <img class="medium" src="http://via.placeholder.com/618x715">
-        <img class="large" src="http://via.placeholder.com/900x1041">
+        <img class="medium" src="http://via.placeholder.com/618x715/{{ casestudy.colour}}/{{ casestudy.colour}}">
+        <img class="large" src="http://via.placeholder.com/900x1041/{{ casestudy.colour}}/{{ casestudy.colour}}">
         <div class="project-overlay">
           <span class="project-thumbnail-category">{{ casestudy.category }}</span>
           <h3 class="project-thumbnail-title">{{ casestudy.thumb-title }}</h3>
@@ -22,10 +22,10 @@
       {% endfor %}
     </div>
   </div>
-   <span class="clipped-title clipped-title-part-one">
-    WO&mdash;
+  <div class="clipped-title clipped-title-part-one">
+    WO
   </div>
-  <!--<span class="clipped-title clipped-title-part-two">
+  <div class="clipped-title clipped-title-part-two">
     RK
-  </div> -->
+  </div>
 </section>
