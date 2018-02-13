@@ -1,4 +1,5 @@
 .projects {
+  @include section-spacing;
   position: relative;
   overflow: hidden;
 
@@ -16,9 +17,14 @@
 }
 
 .projects-grid {
-  @include media-query($bp--small) {
+  @include media-query($bp--medium) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: $spacing--base;
+    grid-row-gap: $spacing--base;
+  }
+
+  @include media-query($bp--large) {
     grid-column-gap: $spacing--m;
     grid-row-gap: $spacing--m;
   }

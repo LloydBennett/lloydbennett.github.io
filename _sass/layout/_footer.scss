@@ -1,6 +1,6 @@
 .footer {
   color: $colour--accent-white;
-  padding: $spacing--s 0;
+  padding: $spacing--m 0;
   background-color: black;
 
   @include media-query($bp--medium) {
@@ -44,7 +44,7 @@
 }
 
 .footer-logo {
-  margin-bottom: $spacing--m;
+  margin-bottom: $spacing--base;
 
   @include media-query($bp--medium) {
     margin-bottom: 0;
@@ -62,7 +62,7 @@
 
 .connect {
   max-width: 400px;
-  margin-bottom: $spacing--m;
+  margin-bottom: 0;
 
   @include media-query($bp--large) {
     max-width: 500px;

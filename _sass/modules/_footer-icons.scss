@@ -1,7 +1,11 @@
 .footer-social-links {
-  margin-top: $spacing--m;
+  margin-top: $spacing--base;
   display: flex;
   align-items: center;
+
+  @include media-query($bp--small) {
+    margin-top: $spacing--m;
+  }
 
   a {
     width: 25px;

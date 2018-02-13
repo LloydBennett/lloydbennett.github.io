@@ -1,12 +1,24 @@
 .project-thumbnail {
   box-shadow: 0 2px 30px 2px rgba(0,0,0,0.15);
-  display: table;
+  display: block;
   overflow: hidden;
   position: relative;
   z-index: 2;
 
+  @include media-query($bp--medium) {
+    display: table;
+  }
+
   img {
     width: 100%;
+  }
+
+  & + & {
+    margin-top: $spacing--base;
+
+    @include media-query($bp--medium) {
+      margin-top: 0;
+    }
   }
 
   .medium {
@@ -24,7 +36,7 @@
   }
 
   &:nth-child(2) {
-    @include media-query($bp--small) {
+    @include media-query($bp--medium) {
       margin-top: $spacing--l;
     }
 
@@ -36,8 +48,9 @@
 
 .project-overlay {
   @include overlay(transparent);
-  padding: $spacing--s + $spacing--xs;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.175));
   color: $colour--accent-white;
+  padding: $spacing--s + $spacing--xs;
 
   @include media-query($bp--x-large) {
     padding: $spacing--m;
