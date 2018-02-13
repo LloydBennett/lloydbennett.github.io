@@ -85,3 +85,12 @@
     }
   }
 }
+
+.thoughtbot-thumbnail {
+  .project-thumbnail-subject {
+    top: 25%;
+    right: -16%;
+    max-width: 850px;
+    transform: rotate(-25deg);
+  }
+}
