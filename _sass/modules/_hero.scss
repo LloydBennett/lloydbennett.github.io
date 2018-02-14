@@ -1,7 +1,6 @@
 .hero {
   @include section-spacing;
   background-color: $colour--accent-grey;
-  //overflow: hidden;
   position: relative;
 }
 
@@ -31,6 +30,7 @@
 
     @include media-query($bp--medium) {
       min-height: 800px;
+      max-height: 1200px;
     }
   }
 }
@@ -83,6 +83,7 @@
 
   @include media-query($bp--medium) {
     min-height: 800px;
+    max-height: 1000px;
   }
 
   img {
