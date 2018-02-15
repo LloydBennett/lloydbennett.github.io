@@ -7,7 +7,6 @@
   font-weight: 500;
   overflow: hidden;
 
-
   &::after {
     content: "";
     background-color: $colour--brand-passion;
@@ -35,6 +34,10 @@
       transform: translateY(-150%);
       transition: transform 300ms ease;
     }
+  }
+
+  &:visited {
+    color: $colour--accent-white;
   }
 
   span {

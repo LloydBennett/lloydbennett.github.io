@@ -1,0 +1,23 @@
+.nav-bar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+	&.is-open {
+    .nav-bar-wrapper {
+      position: fixed;
+      z-index: 10000;
+    }
+	}
+}
+
+.nav-bar-wrapper {
+  width: 100%;
+}
