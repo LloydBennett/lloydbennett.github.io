@@ -1,20 +1,20 @@
 .button {
-  position: relative;
-  display: inline-block;
-  padding: $spacing--s $spacing--m;
   background-color: black;
   color: $colour--accent-white;
+  display: inline-block;
   font-weight: 500;
   overflow: hidden;
+  padding: $spacing--s $spacing--m;
+  position: relative;
 
   &::after {
     content: "";
     background-color: $colour--brand-passion;
+    bottom: 0;
     display: block;
     height: 0;
     left: 0;
     position: absolute;
-    bottom: 0;
     transition: height 300ms ease 100ms;
     width: 100%;
   }
@@ -51,27 +51,20 @@
   }
 
   .hover-message {
-    position: absolute;
-    top: 100%;
     display: block;
     left: 0;
-    right: 0;
     margin-left: auto;
     margin-right: auto;
+    position: absolute;
+    right: 0;
     text-align: center;
+    top: 100%;
     transition: top 300ms ease;
     z-index: 2;
   }
 }
 
-
 .link {
 	@include link-underline(lighten($colour--brand-passion, 20%));
-	//font-weight: inherit;
 	display: inline-block;
-	//line-height: 0.9;
-
-	&.link-light {
-		//@include link-underline($brand-color-off-blue-lighterr);
-	}
 }

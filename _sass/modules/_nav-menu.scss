@@ -26,14 +26,21 @@
 }
 
 .nav-menu-list {
+  @include offset-paragraph;
   counter-reset: navigation;
 }
 
 .nav-menu-link {
   list-style-type: none;
   color: $colour--accent-white;
-  font-size: 2em;
+  font-size: 2.2em;
   margin-bottom: $spacing--base;
+  text-align: center;
+
+  @include media-query($bp--small) {
+    font-size: 3em;
+    text-align: left;
+  }
 
   &::before {
     counter-increment: navigation;

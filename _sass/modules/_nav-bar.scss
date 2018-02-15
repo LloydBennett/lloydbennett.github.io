@@ -5,9 +5,9 @@
   align-items: center;
 
   .container {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
 	&.is-open {

@@ -1,16 +1,16 @@
 .hamburger {
-	width: 38px;
-  height: 38px;
-	position: relative;
-	display: inline-block;
-	cursor: pointer;
-	z-index: 1100;
-	opacity: 0;
 	animation-fill-mode: forwards;
+	cursor: pointer;
+	display: inline-block;
+	opacity: 0;
+	position: relative;
+	width: 38px;
+	z-index: 1100;
+  height: 38px;
 
 	@include media-query(pxtoem(550)) {
-		width: 50px;
 		height: 50px;
+		width: 50px;
 	}
 
 	&.is-open {
@@ -39,15 +39,15 @@
 
 	.icon {
 		display: inline-block;
-		text-align: center;
-		width: 25px;
-		position: absolute;
 		left: 0;
-		right: 0;
-		top: 50%;
-		transform: translateY(-50%);
 		margin-left: auto;
 		margin-right: auto;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 25px;
 
 		@media screen and (min-width: 700px) {
 			width: 32px;
@@ -55,12 +55,12 @@
 
 
 		span {
-			display: block;
 			background-color: black;
+			display: block;
 			height: 3px;
 			margin-bottom: $spacing--xs;
-			transition: 300ms ease;
 			position: relative;
+			transition: 300ms ease;
 
 			&:first-child, &:last-child {
 				transform: rotate(0);
