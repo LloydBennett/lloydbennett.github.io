@@ -1,38 +1,9 @@
-<div class="nav-menu">
-  <div class="container">
-    <ul class="nav-menu-list">
-      <li class="nav-menu-link">
-        <a href="#about" data-animate-scroll>About Me</a>
-      </li>
-      <li class="nav-menu-link">
-        <a href="#cta-target" data-animate-scroll>Projects</a>
-      </li>
-      <li class="nav-menu-link">
-        <a href="#contact" data-animate-scroll>Contact</a>
-      </li>
-    </ul>
-  </div>
-</div>
+{% include _navigation/nav-menu.html %}
 
 <header class="hero hero-home">
   <div class="overlay"></div>
-  <div class="nav-bar">
-    <div class="nav-bar-wrapper">
-      <div class="container">
-        <a class="logo wow fadeIn" data-wow-duration="700ms" data-wow-delay="1.8s" href="../../">
-          <img src="http://via.placeholder.com/55x55">
-        </a>
-        <div id="open-menu" class="hamburger wow fadeIn" data-wow-duration="700ms"data-wow-delay="1.8s">
-          <div class="icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
+  {% include _navigation/nav-bar.html %}
   <div class="hero-content">
     <div class="container">
       <div class="hero-content-intro">
@@ -71,10 +42,10 @@
         </div>
 
         <div class="hero-social-links">
-          {% include dribbble.html %}
-          {% include instagram.html %}
-          {% include twitter.html %}
-          {% include linkedin.html %}
+          {% include _social-links/dribbble.html %}
+          {% include _social-links/instagram.html %}
+          {% include _social-links/twitter.html %}
+          {% include _social-links/linkedin.html %}
         </div>
       </div>
     </div>
