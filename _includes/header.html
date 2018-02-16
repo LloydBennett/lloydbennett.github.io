@@ -1,12 +1,13 @@
 {% include _navigation/nav-menu.html %}
 
 <header class="hero hero-home">
-  <div class="overlay"></div>
+  <div class="hero-bg wow anim-start-position grow-wipe" data-wow-duration="600ms" data-wow-delay="400ms"></div>
+  <div class="overlay wow anim-start-position grow-wipe" data-wow-duration="600ms" data-wow-delay="400ms"></div>
 
   {% include _navigation/nav-bar.html %}
   <div class="hero-content">
     <div class="container">
-      <div class="hero-content-intro">
+      <!-- <div class="hero-content-intro">
         <div class="hero-intro-wrapper">
           <span class="section-title wow fadeIn" data-wow-duration="700ms">{{page.author}}</span>
 
@@ -29,8 +30,10 @@
           {% endif %}
         </div>
 
-      </div>
-      <div class="hero-avatar">
+      </div>-->
+      <div class="hero-avatar wow anim-start-position fade-left"
+       data-wow-duration="600ms" data-wow-delay="1000ms"
+      >
         <img class="small" src="images/home/lloyd.png" alt="Lloyd Bennett">
         <img class="large" src="images/home/lloyd-large.png" alt="Lloyd Bennett">
       </div>

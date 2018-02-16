@@ -3,7 +3,6 @@ $colour--brand-passion: #f56308;
 $colour--accent-grey: #F2F2F2;
 $colour--accent-white: white;
 
-
 /* Type */
 $type--line-height: 1.5;
 $type--font-family: "aktiv-grotesk", sans-serif;
@@ -35,9 +34,5 @@ $bp--large: pxtoem(960);
 $bp--x-large: pxtoem(1200);
 $bp--xx-large: pxtoem(1600);
 
-// to be deleted
-$mobile-max-breakpoint: pxtoem(767);
-$tablet-min-breakpoint: pxtoem(768);
-$tablet-max-breakpoint: pxtoem(991);
-$small-desktop-min-breakpoint: pxtoem(992);
-$small-desktop-max-breakpoint: pxtoem(1199);
+/* Animation */
+$anim--wipe-bezier: cubic-bezier(.7,.26,.18,.99);
