@@ -1,3 +1,7 @@
+.js .wow {
+  visibility: hidden;
+}
+
 @keyframes grow-wipe {
   from {
     width: 0;
@@ -7,9 +11,16 @@
   }
 }
 
+.js .grow-wipe {
+	animation-name: grow-wipe;
+	animation-fill-mode: forwards;
+  animation-timing-function: $anim--wipe;
+  width: 0;
+}
+
 @keyframes fade-left {
   from {
-    transform: translateX(20%);
+    transform: translateX(10%);
     opacity: 0;
   }
   to {
@@ -18,17 +29,94 @@
   }
 }
 
-.grow-wipe {
-	animation-name: grow-wipe;
-	animation-fill-mode: forwards;
-  animation-timing-function: $anim--wipe-bezier;
-}
-
-.fade-left {
+.js .fade-left {
   animation-name: fade-left;
 	animation-fill-mode: forwards;
-  animation-timing-function: $anim--wipe-bezier;
+  animation-timing-function: $anim--fade-direction;
+  transform: translateX(10%);
+  opacity: 0;
 }
+
+.js .fade-left {
+  animation-name: fade-left;
+	animation-fill-mode: forwards;
+  animation-timing-function: $anim--fade-direction;
+  transform: translateX(10%);
+  opacity: 0;
+}
+
+@keyframes fade-right {
+	0% {
+		transform: translateY(-10%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+.js .fade-right {
+  animation-name: fade-right;
+	animation-fill-mode: forwards;
+  animation-timing-function: $anim--fade-direction;
+  transform: translateX(-10%);
+  opacity: 0;
+}
+
+
+@keyframes fade-up {
+	0% {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+
+.js .fade-up {
+	animation-name: fade-up;
+	animation-fill-mode: forwards;
+  animation-timing-function: $anim--fade-direction;
+	opacity: 0;
+	transform: translateY(50px);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.js .fade-in {
+  animation-name: fade-in;
+	animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @keyframes draw {
@@ -53,41 +141,6 @@
 	to { transform: scale(1); }
 }
 
-@keyframes moveUpFade {
-
-	0% {
-		transform: translateY(50px);
-		opacity: 0
-	}
-
-	100% {
-		transform: translateY(0px);
-		opacity: 1;
-	}
-}
-
-@-webkit-keyframes moveUpFade {
-
-	0% {
-		transform: translateY(50px);
-		opacity: 0
-	}
-
-	100% {
-		transform: translateY(0px);
-		opacity: 1;
-	}
-}
-
-.moveUpFade {
-	animation-name: moveUpFade;
-	animation-fill-mode: forwards;
-	-webkit-animation-name: moveUpFade;
-	-webkit-animation-fill-mode: forwards;
-	opacity: 0;
-	transform: translateY(50px);
-	-webkit-transform: translateY(50px);
-}
 
 .grow {
 	animation-name: grow;
@@ -103,8 +156,4 @@
 
 	-webkit-animation-name: draw;
 	-webkit-animation-fill-mode: forwards;
-}
-
-.js .wow {
-  visibility: hidden;
 }

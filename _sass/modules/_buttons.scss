@@ -1,5 +1,4 @@
 .button {
-  background-color: black;
   color: $colour--accent-white;
   display: inline-block;
   font-weight: 500;
@@ -15,24 +14,24 @@
     height: 0;
     left: 0;
     position: absolute;
-    transition: height 300ms ease 100ms;
+    transition: height 300ms $anim--wipe 100ms;
     width: 100%;
   }
 
   &:hover {
     &::after {
       height: 100%;
-      transition: height 300ms ease 100ms;
+      transition: height 300ms $anim--wipe 100ms;
     }
 
     .hover-message {
       top: 24%;
-      transition: top 300ms ease;
+      transition: top 300ms $anim--wipe;
     }
 
     .default-message {
       transform: translateY(-150%);
-      transition: transform 300ms ease;
+      transition: transform 300ms $anim--wipe;
     }
   }
 
@@ -47,7 +46,7 @@
 
   .default-message {
     transform: translateY(0);
-    transition: transform 300ms ease;
+    transition: transform 300ms $anim--wipe;
   }
 
   .hover-message {
@@ -59,9 +58,13 @@
     right: 0;
     text-align: center;
     top: 100%;
-    transition: top 300ms ease;
+    transition: top 300ms $anim--wipe;
     z-index: 2;
   }
+}
+
+.button-bg {
+  @include overlay(black);
 }
 
 .link {

@@ -7,10 +7,6 @@
   @include overlay($colour--accent-grey);
 }
 
-.js .anim-start-position.hero-bg {
-  width: 0;
-}
-
 .hero-home {
   .overlay {
     background-color: rgba(62,62,62, 0.25);
@@ -27,10 +23,6 @@
       color: $colour--accent-white;
     }
   }
-}
-
-.js .hero .anim-start-position.overlay {
-  width: 0;
 }
 
 .hero-content {
@@ -115,11 +107,6 @@
       display: none;
     }
   }
-}
-
-.js .anim-start-position.hero-avatar {
-  opacity: 0;
-  transform: translateX(20%);
 }
 
 .hero-socials {
