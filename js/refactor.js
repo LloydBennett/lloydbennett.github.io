@@ -111,6 +111,8 @@
 
 
 	$(function(){
+    console.log(this);
+    $(this).scrollTop(0);
 		init();
 	});
 

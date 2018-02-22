@@ -22,6 +22,10 @@
   @include media-query($bp--x-large) {
     margin-left: 10%;//20%;//10vw; //15%
   }
+
+  @include media-query($bp--xx-large) {
+    margin-left: 15%;
+  }
 }
 
 @mixin section-spacing {

@@ -1,0 +1,20 @@
+.js .loading-screen {
+  background-color: $colour--accent-black;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  transition: 400ms ease;
+  visibility: visible;
+  width: 100%;
+  z-index: 2000;
+
+  &.is-ready {
+    opacity: 0;
+    transition: 400ms ease;
+    visibility: hidden;
+  }
+
+  h3 {
+    color: $colour--accent-white;
+  }
+}
