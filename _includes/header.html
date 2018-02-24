@@ -9,9 +9,12 @@
     <div class="container">
     <div class="hero-content-intro">
         <div class="hero-intro-wrapper">
+
+          {% if page.author %}
           <span class="section-title wow fade-up" data-wow-duration="500ms" data-wow-delay='1000ms'>
-            {{page.author}}
+            {{ page.author }}
           </span>
+          {% endif %}
 
           {% if page.heading %}
           <h1 class="intro-title">{{ page.heading }}</h1>
@@ -27,12 +30,13 @@
 
           {% if page.calltoaction %}
             {% include button.html target='cta-target' bg-animation-delay='1800ms' btn-text-animation-delay='2300ms'
-            button-text='View projects' hover-message='Scroll down'
+            button-text='View Projects' hover-message='Scroll down'
             %}
           {% endif %}
         </div>
-
       </div>
+
+      {% if page.title == "Home" %}
       <div class="hero-avatar wow fade-left"
        data-wow-duration="400ms" data-wow-delay="1000ms"
       >
@@ -54,5 +58,7 @@
         </div>
       </div>
     </div>
+    {% endif %}
+
   </div>
 </header>
