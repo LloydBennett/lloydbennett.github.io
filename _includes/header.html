@@ -26,14 +26,9 @@
           {% endif %}
 
           {% if page.calltoaction %}
-          <a href="#cta-target" class="button" data-animate-scroll>
-            <div class="button-bg wow grow-wipe" data-wow-duration="500ms" data-wow-delay="1800ms"></div>
-            <span class="default-message wow fade-in" data-wow-duration="400ms" data-wow-delay="2300ms">
-              View Projects
-            </span>
-            <span class="hover-message">Scroll Down</span>
-          </a>
-
+            {% include button.html target='cta-target' bg-animation-delay='1800ms' btn-text-animation-delay='2300ms'
+            button-text='View projects' hover-message='Scroll down'
+            %}
           {% endif %}
         </div>
 

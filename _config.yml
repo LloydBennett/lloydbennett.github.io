@@ -45,4 +45,4 @@ defaults:
       path: ""
       type: "pages"
     values:
-      calltoaction: true
+      calltoaction: false
