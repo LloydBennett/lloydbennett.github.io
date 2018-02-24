@@ -1,8 +1,13 @@
 {% include _navigation/nav-menu.html %}
 
+{% if page.title == 'Home' %}
 <header class="hero hero-home">
   <div class="hero-bg wow grow-wipe" data-wow-duration="450ms" data-wow-delay="400ms"></div>
   <div class="overlay wow grow-wipe" data-wow-duration="450ms" data-wow-delay="400ms"></div>
+{% else %}
+<header class="hero hero-page">
+  <div class="hero-bg wow grow-wipe" data-wow-duration="450ms" data-wow-delay="400ms"></div>
+{% endif %}
 
   {% include _navigation/nav-bar.html %}
   <div class="hero-content">
@@ -59,6 +64,5 @@
       </div>
     </div>
     {% endif %}
-
   </div>
 </header>
