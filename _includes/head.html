@@ -27,13 +27,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="/bower_components/wow/dist/wow.js"></script>
   <script>
-    window.addEventListener('load', function(){
-      setTimeout(function(){
-        window.scrollTo(0, 0);
-        $('.loading-screen').addClass('is-ready');
-        var wow = new WOW();
-        wow.init();
-      }, 2000);
-    });
+    var wow = new WOW();
+    wow.init();
+    // window.addEventListener('load', function(){
+    //   setTimeout(function(){
+    //     window.scrollTo(0, 0);
+    //     $('.loading-screen').addClass('is-ready');
+    //     var wow = new WOW();
+    //     wow.init();
+    //   }, 2000);
+    // });
   </script>
 </head>

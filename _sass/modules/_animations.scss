@@ -14,7 +14,7 @@
 .js .grow-wipe {
 	animation-name: grow-wipe;
 	animation-fill-mode: forwards;
-  animation-timing-function: $anim--wipe;
+  animation-timing-function: $anim--wipe;//ease-in-out;
   width: 0;
 }
 

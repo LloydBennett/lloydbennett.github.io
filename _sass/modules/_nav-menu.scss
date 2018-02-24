@@ -1,6 +1,5 @@
 .nav-menu {
 	position: fixed;
-	background-color: $colour--brand-passion;
 	opacity: 0;
 	visibility: hidden;
 	top: 0;
@@ -22,7 +21,20 @@
 		opacity: 1;
 		visibility: visible;
 		transition: .3s ease;
+
+    .nav-menu-bg {
+      width: 100%;
+      transition: width 550ms $anim--wipe;
+    }
 	}
+
+  .nav-menu-bg {
+    @include overlay($colour--brand-passion);
+    width: 0;
+    right: 0;
+    left: auto;
+    transition: width 550ms $anim--wipe;
+  }
 }
 
 .nav-menu-list {
