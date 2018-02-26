@@ -4,15 +4,15 @@
 	 Global Variables
 	 */
 	var $navMenu = $('.nav-menu'),
-		$animateScrollLinks = $('[data-animate-scroll]'),
-		$htmlBody = $("html, body"),
-        $body = $('body'),
-		$menuIcon = $('#open-menu'),
-		$navBar = $('.nav-bar'),
-		$navLinks = $('.list-link'),
-        $contentWrapper = $('.wrapper'),
-        $dynamicSection = $('.dynamic'),
-		menuIsOpen = false;
+		  $animateScrollLinks = $('[data-animate-scroll]'),
+		  $htmlBody = $("html, body"),
+      $body = $('body'),
+		  $menuIcon = $('#open-menu'),
+		  $navBar = $('.nav-bar'),
+		  $navLinks = $('.list-link'),
+      $contentWrapper = $('.wrapper'),
+      $dynamicSection = $('.dynamic'),
+		  menuIsOpen = false;
 
 	/*
 	Initialising all the functions
@@ -55,16 +55,18 @@
         });
     }
 
-	function animatedScroll(event){
+	function animatedScroll(event, $this){
 		event.preventDefault();
 		event.stopPropagation();
-		var $this = $(this),
-			scrollDestination = $this.attr('href');
 
-		if(menuIsOpen) checkNavigationMenuState();
+	  var scrollDestination = "#" + $($this).attr('href');
 
-		$body.animate({
-			scrollTop: $(scrollDestination).offset().top
+    console.log($(scrollDestination).offset().top);
+    //console.log($(scrollDestination));
+		//if(menuIsOpen) checkNavigationMenuState();
+
+		$htmlBody.animate({
+		    scrollTop: $(scrollDestination).offset().top
 		}, 600);
 	}
 
@@ -75,8 +77,11 @@
 
 	function addEvents() {
 		$menuIcon.on('click', checkNavigationMenuState);
-        $animateScrollLinks.on('click', animatedScroll);
-        $contentWrapper.on('click', '.ajaxLoad', isHistoryAPISupported);
+    $animateScrollLinks.on('click', function(){
+      var _this = this;
+      animatedScroll(event, _this);
+    });
+    $contentWrapper.on('click', '.ajaxLoad', isHistoryAPISupported);
 	}
 
 	/*
@@ -111,8 +116,8 @@
 
 
 	$(function(){
-    console.log(this);
-    $(this).scrollTop(0);
+    //console.log(this);
+    //$(this).scrollTop(0);
 		init();
 	});
 
