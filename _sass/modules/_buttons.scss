@@ -2,38 +2,32 @@
   color: $colour--accent-white;
   display: inline-block;
   font-weight: 500;
-  overflow: hidden;
+  //overflow: hidden;
   padding: $spacing--s $spacing--m;
   position: relative;
 
-  &::after {
-    content: "";
-    background-color: $colour--brand-passion;
-    bottom: 0;
-    display: block;
-    height: 0;
-    left: 0;
-    position: absolute;
-    transition: height 300ms $anim--wipe 100ms;
-    width: 100%;
-  }
+  // &::after {
+  //   content: "";
+  //   background-color: $colour--brand-passion;
+  //   bottom: 0;
+  //   display: block;
+  //   height: 100%;
+  //   left: 0;
+  //   position: absolute;
+  //   transition: transform 400ms $anim--wipe;
+  //   width: 100%;
+  //   transform: translate(100%, 0%);
+  // }
 
-  &:hover {
-    &::after {
-      height: 100%;
-      transition: height 300ms $anim--wipe 100ms;
-    }
-
-    .hover-message {
-      top: 24%;
-      transition: top 300ms $anim--wipe;
-    }
-
-    .default-message {
-      transform: translateY(-150%);
-      transition: transform 300ms $anim--wipe;
-    }
-  }
+  // &:hover {
+  //   &::after {
+  //     animation-name: storyFrame;
+  //   	animation-fill-mode: forwards;
+  //     animation-timing-function: $anim--wipe;
+  //     animation-duration: 400ms;
+  //     transform: translate(-100%, 0);
+  //   }
+  // }
 
   &:visited {
     color: $colour--accent-white;
@@ -45,26 +39,19 @@
   }
 
   .default-message {
-    transform: translateY(0);
-    transition: transform 300ms $anim--wipe;
-  }
-
-  .hover-message {
-    display: block;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 100%;
-    transition: top 300ms $anim--wipe;
+    position: relative;
     z-index: 2;
   }
 }
 
 .button-bg {
   @include overlay(black);
+}
+
+.button-bg-hover {
+  @include overlay($colour--brand-passion);
+  // transform: translate(100%, 0%);
+  // transition: transform 400ms $anim--wipe;
 }
 
 .link {

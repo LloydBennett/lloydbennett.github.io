@@ -3,13 +3,14 @@
 	/*
 	 Global Variables
 	 */
-	var $navMenu = $('.nav-menu'),
+	var $navMenu = $('[data-nav-menu]'),
 		  $animateScrollLinks = $('[data-animate-scroll]'),
+      $button = $('.button'),
 		  $htmlBody = $("html, body"),
       $body = $('body'),
 		  $menuIcon = $('#open-menu'),
 		  $navBar = $('.nav-bar'),
-		  $navLinks = $('.list-link'),
+		  $navLinks = $('[data-nav-menu-link]'),
       $contentWrapper = $('.wrapper'),
       $dynamicSection = $('.dynamic'),
 		  menuIsOpen = false;
@@ -23,6 +24,27 @@
 		addEvents();
 	}
 
+  // function onHover {
+  //   $button.css({})
+  // }
+
+  function offFocus($this) {
+    var hoverBg = $this.find('.button-bg-hover');
+    hoverBg.animate({
+    transform : -100,
+  }, 500, function() {
+
+  })
+    $($this).find('.button-bg-hover').css({ "-webkit-transform":"translate(100%,0)"});
+    // $buttonHover.css({ 'transform' : 'translate("100%")'});
+  }
+
+  // function offFocus($this) {
+  //   //var hoverBg = $this.find('.button-bg-hover');
+  //
+  //   $($this).find('.button-bg-hover').css({ "-webkit-transform":"translate(100%,0)"});
+  //   // $buttonHover.css({ 'transform' : 'translate("100%")'});
+  // }
 	/*
 	 Checks whether the navigation
 	 menu is opened or closed
@@ -35,7 +57,7 @@
 		$navMenu.toggleClass('is-open');
 		$menuIcon.toggleClass('is-open');
 		$navBar.toggleClass('is-open');
-		animateNavLinks();
+		animateNavLinks(menuIsOpen);
 	}
 
     /*
@@ -44,16 +66,18 @@
      nav menu and icon for open state
      */
 
-	function animateNavLinks() {
+	function animateNavLinks(isOpen) {
 		var delay;
-        $navLinks.each(function(index, elem) {
-            delay = 90 * index;
 
-            setTimeout(function(){
-                $(elem).toggleClass('appear');
-            }, delay);
-        });
-    }
+    $navLinks.each(function(index, elem) {
+      isOpen? delay = (150 * index) + 400 : delay = 90 * index;
+
+      setTimeout(function(){
+        $(elem).toggleClass('appear');
+      }, delay);
+
+    });
+  }
 
 	function animatedScroll(event, $this){
 		event.preventDefault();
@@ -81,6 +105,10 @@
       var _this = this;
       animatedScroll(event, _this);
     });
+    // $button.mouseenter( function() {
+    //   var _this = this;
+    //   offFocus(_this);
+    // });
     $contentWrapper.on('click', '.ajaxLoad', isHistoryAPISupported);
 	}
 
