@@ -13,7 +13,6 @@
 	&.is-open {
     .nav-bar-wrapper {
       position: fixed;
-      z-index: 10000;
       display: flex;
       align-items: center;
       height: 80px;
@@ -22,5 +21,7 @@
 }
 
 .nav-bar-wrapper {
+  position: relative;
   width: 100%;
+  z-index: 10000;
 }
