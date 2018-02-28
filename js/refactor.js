@@ -4,6 +4,7 @@
 	 Global Variables
 	 */
 	var $navMenu = $('[data-nav-menu]'),
+      $navMenuBg = $('[data-nav-menu] .nav-menu-bg'),
 		  $animateScrollLinks = $('[data-animate-scroll]'),
       $button = $('.button'),
 		  $htmlBody = $("html, body"),
@@ -12,8 +13,7 @@
 		  $navBar = $('.nav-bar'),
 		  $navLinks = $('[data-nav-menu-link]'),
       $contentWrapper = $('.wrapper'),
-      $dynamicSection = $('.dynamic'),
-		  menuIsOpen = false;
+      $dynamicSection = $('.dynamic');
 
 	/*
 	Initialising all the functions
@@ -50,46 +50,13 @@
 	 menu is opened or closed
 	 */
 
-	function checkNavigationMenuState() {
-		menuIsOpen = !menuIsOpen;
-		//$body.toggleClass('overflow-hidden');
-
-		$navMenu.toggleClass('is-open');
-		$menuIcon.toggleClass('is-open');
-		$navBar.toggleClass('is-open');
-		animateNavLinks(menuIsOpen);
-	}
-
-    /*
-     Sets isOpen to false
-     removes animation css classes to
-     nav menu and icon for open state
-     */
-
-	function animateNavLinks(isOpen) {
-		var delay;
-
-    $navLinks.each(function(index, elem) {
-      isOpen? delay = (150 * index) + 400 : delay = 90 * index;
-
-      setTimeout(function(){
-        $(elem).toggleClass('appear');
-      }, delay);
-
-    });
-  }
-
 	function animatedScroll(event, $this){
 		event.preventDefault();
 		event.stopPropagation();
 
 	  var scrollDestination = "#" + $($this).attr('href');
 
-    console.log($(scrollDestination).offset().top);
-    //console.log($(scrollDestination));
-		//if(menuIsOpen) checkNavigationMenuState();
-
-		$htmlBody.animate({
+    $htmlBody.animate({
 		    scrollTop: $(scrollDestination).offset().top
 		}, 600);
 	}
@@ -100,11 +67,11 @@
 	 */
 
 	function addEvents() {
-		$menuIcon.on('click', checkNavigationMenuState);
     $animateScrollLinks.on('click', function(){
       var _this = this;
       animatedScroll(event, _this);
     });
+    new NavigationMenu($navMenu, $navLinks, $navMenuBg, $menuIcon, $navBar);
     // $button.mouseenter( function() {
     //   var _this = this;
     //   offFocus(_this);
@@ -144,8 +111,6 @@
 
 
 	$(function(){
-    //console.log(this);
-    //$(this).scrollTop(0);
 		init();
 	});
 
