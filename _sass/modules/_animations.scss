@@ -103,16 +103,16 @@
   opacity: 0;
 }
 
-// @keyframes storyFrame {
-//   from {
-//     transform: translate(-100%, 0);
-//     transition: transform 400ms $anim--wipe;
-//   }
-//   to {
-//     transform: translate(0, 0);
-//     transition: transform 400ms $anim--wipe;
-//   }
-// }
+@keyframes storyFrame {
+  from {
+    transform: translateX(-100%);
+    transition: transform 400ms $anim--wipe;
+  }
+  to {
+    transform: translate(0);
+    transition: transform 400ms $anim--wipe;
+  }
+}
 
 
 

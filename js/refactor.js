@@ -7,6 +7,7 @@
       $navMenuBg = $('[data-nav-menu] .nav-menu-bg'),
 		  $animateScrollLinks = $('[data-animate-scroll]'),
       $button = $('.button'),
+      $hoverBg = $('.button-bg-hover');
 		  $htmlBody = $("html, body"),
       $body = $('body'),
 		  $menuIcon = $('[data-toggle-menu]'),
@@ -24,27 +25,16 @@
 		addEvents();
 	}
 
-  // function onHover {
-  //   $button.css({})
-  // }
-
-  function offFocus($this) {
-    var hoverBg = $this.find('.button-bg-hover');
-    hoverBg.animate({
-    transform : -100,
-  }, 500, function() {
-
-  })
-    $($this).find('.button-bg-hover').css({ "-webkit-transform":"translate(100%,0)"});
-    // $buttonHover.css({ 'transform' : 'translate("100%")'});
+  function onFocus() {
+    $(this).removeClass('setPos');
+    $(this).addClass('hover');
   }
 
-  // function offFocus($this) {
-  //   //var hoverBg = $this.find('.button-bg-hover');
-  //
-  //   $($this).find('.button-bg-hover').css({ "-webkit-transform":"translate(100%,0)"});
-  //   // $buttonHover.css({ 'transform' : 'translate("100%")'});
-  // }
+  function offFocus() {
+    $(this).removeClass('hover');
+    $(this).addClass('setPos');
+  }
+
 	/*
 	 Checks whether the navigation
 	 menu is opened or closed
@@ -72,10 +62,7 @@
       animatedScroll(event, _this);
     });
     new NavigationMenu($navMenu, $navLinks, $navMenuBg, $menuIcon, $navBar);
-    // $button.mouseenter( function() {
-    //   var _this = this;
-    //   offFocus(_this);
-    // });
+    $button.hover(onFocus, offFocus);
     $contentWrapper.on('click', '.ajaxLoad', isHistoryAPISupported);
 	}
 

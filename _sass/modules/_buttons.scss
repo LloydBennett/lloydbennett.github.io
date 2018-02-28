@@ -2,40 +2,35 @@
   color: $colour--accent-white;
   display: inline-block;
   font-weight: 500;
-  //overflow: hidden;
+  overflow: hidden;
   padding: $spacing--s $spacing--m;
   position: relative;
 
-  // &::after {
-  //   content: "";
-  //   background-color: $colour--brand-passion;
-  //   bottom: 0;
-  //   display: block;
-  //   height: 100%;
-  //   left: 0;
-  //   position: absolute;
-  //   transition: transform 400ms $anim--wipe;
-  //   width: 100%;
-  //   transform: translate(100%, 0%);
-  // }
-
-  // &:hover {
-  //   &::after {
-  //     animation-name: storyFrame;
-  //   	animation-fill-mode: forwards;
-  //     animation-timing-function: $anim--wipe;
-  //     animation-duration: 400ms;
-  //     transform: translate(-100%, 0);
-  //   }
-  // }
+  &.hover {
+    &:hover {
+      .button-bg-hover {
+      	animation-fill-mode: forwards;
+        animation-duration: 450ms;
+        animation-name: storyFrame;
+        animation-timing-function: $anim--wipe;
+        transform: translate(-100%, 0);
+      }
+    }
+  }
+  &.setPos {
+    .button-bg-hover {
+      transform: translateX(101%);
+      transition: transform 450ms $anim--wipe;
+    }
+  }
 
   &:visited {
     color: $colour--accent-white;
   }
 
   span {
-    position: relative;
     display: block;
+    position: relative;
   }
 
   .default-message {
@@ -50,8 +45,6 @@
 
 .button-bg-hover {
   @include overlay($colour--brand-passion);
-  // transform: translate(100%, 0%);
-  // transition: transform 400ms $anim--wipe;
 }
 
 .link {
