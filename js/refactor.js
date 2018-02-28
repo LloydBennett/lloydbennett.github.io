@@ -8,7 +8,7 @@
       $button = $('.button'),
 		  $htmlBody = $("html, body"),
       $body = $('body'),
-		  $menuIcon = $('#open-menu'),
+		  $menuIcon = $('[data-toggle-menu]'),
 		  $navBar = $('.nav-bar'),
 		  $navLinks = $('[data-nav-menu-link]'),
       $contentWrapper = $('.wrapper'),

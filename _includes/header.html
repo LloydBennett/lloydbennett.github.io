@@ -4,12 +4,13 @@
 <header class="hero hero-home">
   <div class="hero-bg wow grow-wipe" data-wow-duration="450ms" data-wow-delay="400ms"></div>
   <div class="overlay wow grow-wipe" data-wow-duration="450ms" data-wow-delay="400ms"></div>
+  {% include _navigation/nav-bar.html animation-delay="3000ms" %}
 {% else %}
 <header class="hero hero-page">
   <div class="hero-bg wow grow-wipe" data-wow-duration="450ms" data-wow-delay="400ms"></div>
+  {% include _navigation/nav-bar.html animation-delay="1900ms" %}
 {% endif %}
 
-  {% include _navigation/nav-bar.html %}
   <div class="hero-content">
     <div class="container">
     <div class="hero-content-intro">
