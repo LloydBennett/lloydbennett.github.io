@@ -14,26 +14,25 @@
 		.icon-line {
 
 			&:first-child {
-				// transform: rotate(45deg);
-				// top: 11px;
-        // transition: top 600ms ease, transform 300ms ease 850ms;
+				transform: rotate(45deg);
+				top: 11px;
+        transition: top 400ms ease 200ms, transform 300ms ease 450ms;
 			}
 
 			&:nth-child(2) {
 				opacity: 0;
-        transition: opacity 2s ease;
+        transition: opacity 400ms ease;
 			}
 
 			&:last-child {
-				// transform: rotate(-45deg);
-				// top: -11px;
-        // transition: top 600ms ease, transform 300ms ease 850ms;
+				transform: rotate(-45deg);
+				top: -11px;
+        transition: top 400ms ease 200ms, transform 300ms ease 450ms;
 			}
 
 		}
 
 	}
-
 
 	.icon {
 		display: inline-block;
@@ -57,12 +56,12 @@
     &:first-child, &:last-child {
       transform: rotate(0);
       top: 0;
-      //transition: top 600ms ease, transform 300ms ease 850ms;
+      transition: top 400ms ease 450ms, transform 300ms ease 200ms;
     }
 
     &:nth-child(2) {
       opacity: 1;
-      transition: opacity 2000ms ease;
+      transition: opacity 400ms ease 600ms;
     }
 
     &:last-child {
