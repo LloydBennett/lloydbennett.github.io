@@ -29,10 +29,7 @@
   display: none;
   @include media-query($bp--medium) {
     display: block;
-    height: $spacing--l;
-  }
-  @include media-query($bp--large) {
-    height: $spacing--l + $spacing--m;
+    height: 1px;
   }
 }
 
