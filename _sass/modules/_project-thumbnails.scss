@@ -4,9 +4,16 @@
   overflow: hidden;
   position: relative;
   z-index: 2;
+  transition: 500ms ease;
+  transform: scale(1);
 
   @include media-query($bp--medium) {
     display: table;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 50px 2px rgba(0,0,0,0.40);
+    transition: 500ms ease;
   }
 
   img {
