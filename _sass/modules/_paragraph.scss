@@ -1,18 +1,25 @@
-.paragraph-left {
-  @include offset-paragraph;
+.paragraph-max-width {
   max-width: 600px;
 }
 
-.paragraph-two-col {
+.paragraph-left {
   @include offset-paragraph;
+}
 
-  p {
-    max-width: 600px;
+.paragraph-two-col {
+  @include media-query($bp--medium) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
-    @include media-query($bp--medium) {
-      column-count: 2;
-      max-width: 1200px;
-    }
+.paragraph-two-col-copy {
+  @include media-query($bp--medium) {
+    margin-left: $spacing--m;
+  }
+
+  @include media-query($bp--xx-large) {
+    margin-left: 0;
   }
 }
 
