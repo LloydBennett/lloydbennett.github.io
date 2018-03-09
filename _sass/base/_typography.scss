@@ -46,7 +46,6 @@ h3 {
   color: $type--headings-colour;
 }
 
-
 h1 {
   font-size: pxtoem(36);
   line-height: 1.2;
@@ -80,7 +79,7 @@ h2 {
 
 h3 {
   font-size: pxtoem(21);
-  line-height: 1.1;
+  line-height: 1.3;
 
   @include media-query($bp--small) {
     font-size: pxtoem(32);
@@ -91,11 +90,6 @@ h3 {
     font-size: pxtoem(36);
   }
 }
-
-
-
-
-
 
 .section-title {
   color: $type--small-title-colour;
@@ -109,9 +103,18 @@ h3 {
     font-size: 18px;
     margin-bottom: $spacing--m;
   }
+
+  &.section-title-small {
+    @include media-query($bp--medium) {
+      margin-bottom: $spacing--base;
+    }
+  }
 }
 
 // Utilities
+.no-margin {
+  margin-bottom: 0;
+}
 
 .nowrap {
   white-space: nowrap;

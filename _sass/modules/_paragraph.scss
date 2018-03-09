@@ -1,0 +1,27 @@
+.paragraph-left {
+  @include offset-paragraph;
+  max-width: 600px;
+}
+
+.paragraph-two-col {
+  @include offset-paragraph;
+
+  p {
+    max-width: 600px;
+
+    @include media-query($bp--medium) {
+      column-count: 2;
+      max-width: 1200px;
+    }
+  }
+}
+
+.paragraph-center {
+  max-width: 700px;
+
+  @include media-query($bp--small) {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

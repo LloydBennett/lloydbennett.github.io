@@ -1,0 +1,24 @@
+.section {
+  margin-bottom: $spacing--m;
+
+  @include media-query($bp--medium) {
+    margin-bottom: $spacing--l;
+  }
+}
+
+.section-bg {
+  padding: $spacing--base 0;
+  margin-bottom: 0;
+
+  @include media-query($bp--medium) {
+    padding: $spacing--m 0;
+  }
+
+  @include media-query($bp--large) {
+    padding: $spacing--l 0;
+  }
+}
+
+.section-bg-grey {
+  background-color: $colour--accent-grey;
+}
