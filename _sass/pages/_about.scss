@@ -1,0 +1,49 @@
+.image-stack {
+  margin: $spacing--m 0;
+  position: relative;
+
+  @include media-query($bp--small) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @include media-query($bp--medium) {
+    margin: $spacing--l 0 $spacing--xxl;
+  }
+
+  .thumbnail {
+    max-width: 600px;
+    margin-bottom: $spacing--s;
+
+    &:first-child {
+      @include media-query($bp--small) {
+        left: 10%;
+        margin-bottom: 0;
+        position: relative;
+        transform: translateY(25%);
+      }
+    }
+  }
+
+  .transparent-title {
+    transform: rotate(90deg);
+  }
+
+  .pattern {
+    display: none;
+
+    @include media-query($bp--small) {
+      position: absolute;
+      display: inline-block;
+      top: 75%;
+      left: -25%;
+      width: 50%;
+      max-width: 300px;
+    }
+
+    svg {
+      width: 100%;
+      display: block;
+    }
+  }
+}

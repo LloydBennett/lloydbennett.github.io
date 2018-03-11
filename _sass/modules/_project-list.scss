@@ -35,21 +35,10 @@
   }
 }
 
-.clipped-title {
-  position: absolute;
-  font-size: 40vw;
-  font-weight: 800;
-  color: rgba(236,236, 236, 0.4);
-  z-index: -1;
-
-  @include media-query($bp--medium) {
-    font-size: 24vw;
-  }
-}
-
 .clipped-title-part-one {
   top: -5%; // 8% /-8%
   right: -15%;
+  z-index: -1;
 
   @include media-query($bp--medium) {
     top: 0;
@@ -60,4 +49,5 @@
 .clipped-title-part-two {
   bottom: -6%; // -3%/-16%
   left: -6%;
+  z-index: -1;
 }

@@ -111,6 +111,19 @@ h3 {
   }
 }
 
+.transparent-title {
+  color: rgba(236,236, 236, 0.4);
+  font-size: 40vw;
+  font-weight: 800;
+  line-height: 0;
+  position: absolute;
+  text-transform: uppercase;
+
+  @include media-query($bp--medium) {
+    font-size: 24vw;
+  }
+}
+
 // Utilities
 .no-margin {
   margin-bottom: 0;
