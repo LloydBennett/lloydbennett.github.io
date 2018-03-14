@@ -7,14 +7,14 @@
 }
 
 .paragraph-two-col {
-  @include media-query($bp--medium) {
+  @include media-query($bp--large) {
     display: flex;
     justify-content: space-between;
   }
 }
 
 .paragraph-two-col-copy {
-  @include media-query($bp--medium) {
+  @include media-query($bp--large) {
     margin-left: $spacing--m;
   }
 

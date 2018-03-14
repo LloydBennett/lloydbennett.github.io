@@ -1,9 +1,5 @@
 .section {
-  margin-bottom: $spacing--m;
-
-  @include media-query($bp--medium) {
-    margin-bottom: $spacing--l;
-  }
+  @include section-spacing;
 }
 
 .section-bg {
