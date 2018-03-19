@@ -67,6 +67,6 @@
   &.appear {
     opacity: 1;
     transform: translate(0);
-    transition: 350ms $anim--fade-direction;
+    transition: 400ms $anim--fade-direction 200ms;
   }
 }

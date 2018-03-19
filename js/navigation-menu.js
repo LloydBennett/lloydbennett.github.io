@@ -28,7 +28,7 @@ NavigationMenu.prototype = {
     this.isAnimating = true;
 
     this.parentLinks.each(function(index, elem) {
-      this.menuIsOpen? delay = (150 * index) + 400 : delay = 90 * index;
+      this.menuIsOpen? delay = (150 * index) + 500 : delay = 90 * index;
 
       setTimeout(function(){
         $(elem).toggleClass('appear');
@@ -41,7 +41,7 @@ NavigationMenu.prototype = {
         _this.isAnimating = false;
       }, 400);
     });
-    
+
   },
   addEvents: function() {
     var _this = this;
