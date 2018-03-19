@@ -3,12 +3,8 @@
 }
 
 .section-bg {
-  padding: $spacing--base 0;
+  padding: $spacing--m 0;
   margin-bottom: 0;
-
-  @include media-query($bp--medium) {
-    padding: $spacing--m 0;
-  }
 
   @include media-query($bp--large) {
     padding: $spacing--l 0;

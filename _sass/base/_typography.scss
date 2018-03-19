@@ -138,6 +138,16 @@ h3 {
   white-space: nowrap;
 }
 
+.no-wrap-and-break-sm {
+  display: block;
+  white-space: nowrap;
+
+  @include media-query($bp--medium) {
+    display: inline;
+    white-space: normal;
+  }
+}
+
 .line-through {
   color: $type--line-through-colour;
   text-decoration: line-through;

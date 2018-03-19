@@ -1,17 +1,9 @@
 .skills {
   @include offset-paragraph;
   @include section-spacing;
-}
 
-.skills-grid {
-  @include media-query($bp--large) {
-    display: flex;
-    flex-direction: row;
-  }
-
-  p {
-    max-width: 700px;
-    margin-bottom: 0;
+  @include media-query($bp--medium) {
+    margin-bottom: $spacing--m;
   }
 }
 
@@ -20,13 +12,31 @@
   display: block;
   margin-bottom: $spacing--xs;
 
-  @include media-query($bp--medium) {
+  @include media-query($bp--small) {
     margin-bottom: $spacing--s;
+  }
+
+  @include media-query($bp--medium) {
+    display: inline-block;
+    flex-shrink: 0;
+    margin-right: $spacing--s;
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 }
 
 .skills-list {
+  display: flex;
+  flex-direction: column;
   margin: 0 $spacing--m $spacing--base 0;
+  max-width: 1200px;
+
+  @include media-query($bp--medium) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   @include media-query($bp--large) {
     margin: 0 $spacing--m 0 0;
