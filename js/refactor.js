@@ -3,18 +3,36 @@
 	/*
 	 Global Variables
 	 */
-	var $navMenu = $('[data-nav-menu]'),
-      $navMenuBg = $('[data-nav-menu] .nav-menu-bg'),
-		  $animateScrollLinks = $('[data-animate-scroll]'),
-      $button = $('.button'),
-      $hoverBg = $('.button-bg-hover');
-		  $htmlBody = $("html, body"),
-      $body = $('body'),
-		  $menuIcon = $('[data-toggle-menu]'),
-		  $navBar = $('.nav-bar'),
-		  $navLinks = $('[data-nav-menu-link]'),
-      $contentWrapper = $('.wrapper'),
+
+  var $body = $('body'),
+      $contentWrapper =  $('.wrapper'),
       $dynamicSection = $('.dynamic');
+
+  var domVariables = function(){
+    return {
+      $navMenu: $('[data-nav-menu]'),
+      $navMenuBg: $('[data-nav-menu] .nav-menu-bg'),
+      $animateScrollLinks: $('[data-animate-scroll]'),
+      $button: $('.button'),
+      $hoverBg: $('.button-bg-hover'),
+      $htmlBody: $("html, body"),
+      $menuIcon: $('[data-toggle-menu]'),
+      $navBar: $('.nav-bar'),
+      $navLinks: $('[data-nav-menu-link]')
+    }
+  }
+	// var $navMenu = $('[data-nav-menu]'),
+  //     $navMenuBg = $('[data-nav-menu] .nav-menu-bg'),
+	// 	  $animateScrollLinks = $('[data-animate-scroll]'),
+  //     $button = $('.button'),
+  //     $hoverBg = $('.button-bg-hover');
+	// 	  $htmlBody = $("html, body"),
+  //     $body = $('body'),
+	// 	  $menuIcon = $('[data-toggle-menu]'),
+	// 	  $navBar = $('.nav-bar'),
+	// 	  $navLinks = $('[data-nav-menu-link]'),
+  //     $contentWrapper = $('.wrapper'),
+  //     $dynamicSection = $('.dynamic');
 
 	/*
 	Initialising all the functions
@@ -22,7 +40,7 @@
 	 */
 
 	function init() {
-		addEvents();
+		addEvents(domVariables());
 	}
 
   function onFocus() {
@@ -56,45 +74,58 @@
 	 in our program.
 	 */
 
-	function addEvents() {
-    $animateScrollLinks.on('click', function(){
+	function addEvents(vars) {
+    console.log('heyy!!');
+
+    vars.$animateScrollLinks.on('click', function(){
       var _this = this;
       animatedScroll(event, _this);
     });
-    new NavigationMenu($navMenu, $navLinks, $navMenuBg, $menuIcon, $navBar);
-    $button.hover(onFocus, offFocus);
-    $contentWrapper.on('click', '.ajaxLoad', isHistoryAPISupported);
+    new NavigationMenu(vars.$navMenu, vars.$navLinks, vars.$navMenuBg, vars.$menuIcon, vars.$navBar);
+    vars.$button.hover(onFocus, offFocus);
+    $contentWrapper.on('click', '[data-page-transition]', isHistoryAPISupported);
 	}
 
 	/*
 	 // load new page requested content and replaces with old content,
 	 	whilst changing the url in the address bar.
 	 */
-    function navigateToPage(pageURL) {
-        $contentWrapper.addClass('fadeOut');
+  function animateToPage(pageURL, animationType) {
+    $contentWrapper.addClass('fadeOut');
 
-		setTimeout(function(){
-            $dynamicSection.load(pageURL+' .dynamic > *', function(event){
+    setTimeout(function(){
+      $dynamicSection.load(pageURL+' .dynamic > *', function(event){
 				$body.scrollTop(0);
-                $contentWrapper.html($dynamicSection).removeClass('fadeOut');
-			 	if (pageURL != window.location) window.history.pushState({path:pageURL},'',pageURL);
-            });
+        $contentWrapper.html($dynamicSection).removeClass('fadeOut');
+			 	if (pageURL != window.location) {
+          window.history.pushState({path:pageURL},'',pageURL);
+          init();
+        }
+      });
 
-        }, 1000);
-
-    }
+    }, 1000);
+  }
 
 	function isHistoryAPISupported(event) {
 		event.preventDefault();
-        event.stopPropagation();
-		var pageURL = $(this).attr('href');
-		navigateToPage(pageURL);
-    }
+    event.stopPropagation();
+		var pageURL = getPageURL($(this));
+    var pageAnimationType = getPageTransitionType($(this));
+		animateToPage(pageURL, pageAnimationType);
+  }
 
-    $(window).on('popstate', function(event) {
-        var newPage = location.pathname;
-        if (event.state) navigateToPage(newPage);
-    });
+  function getPageURL(element) {
+    return $(element).attr('href');
+  }
+
+  function getPageTransitionType(element){
+    return $(element).data('page-transition');
+  }
+
+  $(window).on('popstate', function(event) {
+    var newPage = location.pathname;
+    if (event.state) navigateToPage(newPage);
+  });
 
 
 	$(function(){
