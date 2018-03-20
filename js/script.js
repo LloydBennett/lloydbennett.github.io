@@ -6,6 +6,7 @@
 
   var $body = $('body'),
       $contentWrapper =  $('.wrapper'),
+      $htmlBody = $("html, body"),
       $dynamicSection = $('.dynamic');
 
   var domVariables = function(){
@@ -15,25 +16,12 @@
       $animateScrollLinks: $('[data-animate-scroll]'),
       $button: $('.button'),
       $hoverBg: $('.button-bg-hover'),
-      $htmlBody: $("html, body"),
       $menuIcon: $('[data-toggle-menu]'),
       $navBar: $('.nav-bar'),
       $navLinks: $('[data-nav-menu-link]')
     }
   }
-	// var $navMenu = $('[data-nav-menu]'),
-  //     $navMenuBg = $('[data-nav-menu] .nav-menu-bg'),
-	// 	  $animateScrollLinks = $('[data-animate-scroll]'),
-  //     $button = $('.button'),
-  //     $hoverBg = $('.button-bg-hover');
-	// 	  $htmlBody = $("html, body"),
-  //     $body = $('body'),
-	// 	  $menuIcon = $('[data-toggle-menu]'),
-	// 	  $navBar = $('.nav-bar'),
-	// 	  $navLinks = $('[data-nav-menu-link]'),
-  //     $contentWrapper = $('.wrapper'),
-  //     $dynamicSection = $('.dynamic');
-
+	
 	/*
 	Initialising all the functions
 	in our program.
