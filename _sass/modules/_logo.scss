@@ -3,7 +3,7 @@
   width: 45px;
   z-index: 100;
 
-  @include media-query(pxtoem(550)){
+  @include media-query($bp--medium) {
     width: 55px;
   }
 
