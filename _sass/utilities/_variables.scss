@@ -36,5 +36,5 @@ $bp--x-large: pxtoem(1200);
 $bp--xx-large: pxtoem(1600);
 
 /* Animation */
-$anim--wipe: cubic-bezier(.66,.01,.53,1);
+$anim--wipe: cubic-bezier(0.7, 0.01, 0.3, 1);//cubic-bezier(.66,.01,.53,1);
 $anim--fade-direction: cubic-bezier(.3,.06,.47,1);//cubic-bezier(.33,.12,.61,.99);

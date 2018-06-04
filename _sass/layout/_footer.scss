@@ -52,8 +52,21 @@
     margin-right: $spacing--xl + $spacing--l + $spacing--s;
   }
 
+  a {
+    width: 50px;
+
+    @include media-query($bp--medium) {
+      width: 80px;
+    }
+  }
+
+  a,
   img {
     display: block;
+  }
+
+  img {
+    width: 100%;
   }
 }
 

@@ -14,6 +14,15 @@
   &:hover {
     box-shadow: 0 2px 50px 2px rgba(0,0,0,0.40);
     transition: 500ms ease;
+
+    .project-thumbnail-subject {
+      transform: scale(1.05);
+      transition: transform 500ms ease;
+    }
+
+    &.thoughtbot-thumbnail .project-thumbnail-subject {
+      transform: scale(1.05) rotate(-25deg);
+    }
   }
 
   img {
@@ -86,6 +95,8 @@
 .project-thumbnail-subject {
   background-color: transparent;
   position: absolute;
+  transform: scale(1);
+  transition: transform 500ms ease;
 
   img {
     display: block;
@@ -111,6 +122,6 @@
     top: 25%;
     right: -16%;
     max-width: 850px;
-    transform: rotate(-25deg);
+    transform: scale(1) rotate(-25deg);
   }
 }
