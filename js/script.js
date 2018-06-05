@@ -21,7 +21,7 @@
       $navLinks: $('[data-nav-menu-link]')
     }
   }
-	
+
 	/*
 	Initialising all the functions
 	in our program.
@@ -50,7 +50,7 @@
 		event.preventDefault();
 		event.stopPropagation();
 
-	  var scrollDestination = "#" + $($this).attr('href');
+	  var scrollDestination = $($this).attr('href');
 
     $htmlBody.animate({
 		    scrollTop: $(scrollDestination).offset().top
@@ -63,13 +63,12 @@
 	 */
 
 	function addEvents(vars) {
-    console.log('heyy!!');
-
+    var menu = new NavigationMenu(vars.$navMenu, vars.$navLinks, vars.$navMenuBg, vars.$menuIcon, vars.$navBar);
     vars.$animateScrollLinks.on('click', function(){
       var _this = this;
       animatedScroll(event, _this);
+      menu.checkNavigationMenuState();
     });
-    new NavigationMenu(vars.$navMenu, vars.$navLinks, vars.$navMenuBg, vars.$menuIcon, vars.$navBar);
     vars.$button.hover(onFocus, offFocus);
     $contentWrapper.on('click', '[data-page-transition]', isHistoryAPISupported);
 	}
