@@ -37,22 +37,14 @@
   opacity: 0;
 }
 
-.js .fade-left {
-  animation-name: fade-left;
-	animation-fill-mode: forwards;
-  animation-timing-function: $anim--fade-direction;
-  transform: translateX(10%);
-  opacity: 0;
-}
-
 @keyframes fade-right {
 	0% {
-		transform: translateY(-10%);
+		transform: translateX(-10%);
 		opacity: 0;
 	}
 
 	100% {
-		transform: translateY(0px);
+		transform: translateX(0px);
 		opacity: 1;
 	}
 }
