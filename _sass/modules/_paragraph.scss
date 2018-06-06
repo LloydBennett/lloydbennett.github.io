@@ -7,6 +7,7 @@
 }
 
 .paragraph-two-col {
+  max-width: 1260px;
   @include media-query($bp--large) {
     display: flex;
     justify-content: space-between;
