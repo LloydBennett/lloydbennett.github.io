@@ -12,6 +12,10 @@
   display: block;
   margin-bottom: $spacing--xs;
 
+  @media screen and (max-width: 549px) {
+    font-size: pxtoem(28);
+  }
+
   @include media-query($bp--small) {
     margin-bottom: $spacing--s;
   }

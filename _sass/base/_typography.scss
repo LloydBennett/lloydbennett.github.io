@@ -47,7 +47,7 @@ h3 {
 }
 
 h1 {
-  font-size: pxtoem(36);
+  font-size: pxtoem(42);
   line-height: 1.2;
 
   @include media-query($bp--small) {
