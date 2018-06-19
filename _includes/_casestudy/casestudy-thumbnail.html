@@ -1,18 +1,20 @@
 {% for casestudy in site.projects reversed %}
-<a href="{{ casestudy.live-url }}" target="_blank"
-class="project-thumbnail {{ casestudy.name }}-thumbnail wow fade-up"
-data-wow-duration="300ms"
-data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
-  <div class="project-thumbnail-bg">
-    <img class="medium" src="http://via.placeholder.com/618x715/{{ casestudy.colour}}/{{ casestudy.colour}}">
-    <img class="large" src="http://via.placeholder.com/900x1041/{{ casestudy.colour}}/{{ casestudy.colour}}">
-  </div>
-  <div class="project-thumbnail-subject">
-    <img src="images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}" alt="{{casestudy.name}}">
-  </div>
-  <div class="project-overlay">
-    <span class="project-thumbnail-category">{{ casestudy.category }}</span>
-    <h3 class="project-thumbnail-title">{{ casestudy.thumb-title }}</h3>
-  </div>
-</a>
+<div class="project-thumbnail-wrapper">
+  <a href="{{ casestudy.live-url }}" target="_blank"
+    class="project-thumbnail {{ casestudy.name }}-thumbnail wow fade-up"
+    data-wow-duration="300ms"
+    data-wow-delay="{{ forloop.index | minus: 1 | times: 280 }}ms">
+    <div class="project-thumbnail-bg">
+      <img class="medium" src="http://via.placeholder.com/618x715/{{ casestudy.colour}}/{{ casestudy.colour}}">
+      <img class="large" src="http://via.placeholder.com/900x1041/{{ casestudy.colour}}/{{ casestudy.colour}}">
+    </div>
+    <div class="project-thumbnail-subject">
+      <img src="images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}" alt="{{casestudy.name}}">
+    </div>
+    <div class="project-overlay">
+      <span class="project-thumbnail-category">{{ casestudy.category }}</span>
+      <h3 class="project-thumbnail-title">{{ casestudy.thumb-title }}</h3>
+    </div>
+  </a>
+</div>
 {% endfor %}
