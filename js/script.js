@@ -52,9 +52,21 @@
 
 	  var scrollDestination = $($this).attr('href');
 
-    $htmlBody.animate({
-		    scrollTop: $(scrollDestination).offset().top
-		}, 600);
+    //if href does exist on the page go to homepage and scroll to div
+    if(!$(scrollDestination).length) {
+      animateToPage('/');
+      setTimeout(function(){
+        console.log("After transition: " + $(scrollDestination).length)
+        $htmlBody.animate({
+    		    scrollTop: $(scrollDestination).offset().top
+    		}, 600);
+      }, 2000);
+
+    } else {
+      $htmlBody.animate({
+  		    scrollTop: $(scrollDestination).offset().top
+  		}, 600);
+    }
 	}
 
 	/*
@@ -67,7 +79,10 @@
     vars.$animateScrollLinks.on('click', function(){
       var _this = this;
       animatedScroll(event, _this);
-      menu.checkNavigationMenuState();
+
+      if(_this.parentNode.hasAttribute("data-nav-menu-link")) {
+        menu.checkNavigationMenuState();
+      }
     });
     vars.$button.hover(onFocus, offFocus);
     $contentWrapper.on('click', '[data-page-transition]', isHistoryAPISupported);
