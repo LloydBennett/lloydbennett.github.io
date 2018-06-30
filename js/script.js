@@ -56,7 +56,6 @@
     if(!$(scrollDestination).length) {
       animateToPage('/');
       setTimeout(function(){
-        console.log("After transition: " + $(scrollDestination).length)
         $htmlBody.animate({
     		    scrollTop: $(scrollDestination).offset().top
     		}, 600);
