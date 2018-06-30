@@ -115,6 +115,10 @@
   max-height: 1100px;
   z-index: 1;
 
+  @include media-query($bp--xx-large) {
+    right: 5%;
+  }
+
   img {
     display: block;
     height: 100%;
