@@ -36,7 +36,6 @@
 }
 
 .nav-menu-list {
-  @include offset-paragraph;
   counter-reset: navigation;
 }
 
@@ -51,7 +50,7 @@
   transition: transform 350ms $anim--fade-direction, opacity 400ms ease 100ms;
 
   @include media-query($bp--small) {
-    font-size: 3em;
+    font-size: 4.2em;
     text-align: left;
   }
 
