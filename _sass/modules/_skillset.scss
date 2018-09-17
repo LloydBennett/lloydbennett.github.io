@@ -34,15 +34,10 @@
 .skills-list {
   display: flex;
   flex-direction: column;
-  margin: 0 $spacing--m $spacing--base 0;
   max-width: 1200px;
 
   @include media-query($bp--medium) {
     flex-direction: row;
     flex-wrap: wrap;
-  }
-
-  @include media-query($bp--large) {
-    margin: 0 $spacing--m 0 0;
   }
 }
