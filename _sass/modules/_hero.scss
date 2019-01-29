@@ -32,12 +32,6 @@
     }
   }
 
-  .hero-intro-wrapper {
-    @include media-query($bp--large) {
-      margin-top: $spacing--m;
-    }
-  }
-
   .hero-content {
     .container {
       position: relative;
@@ -116,7 +110,7 @@
   z-index: 1;
 
   @include media-query($bp--xx-large) {
-    right: 5%;
+    right: 2%;
   }
 
   img {
