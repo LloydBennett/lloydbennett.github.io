@@ -1,0 +1,11 @@
+@mixin grid {
+  @include media-query($breakpoint--small) {
+    display: grid;
+    grid-column-gap: spacing(3);
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column-gap: spacing(4);
+  }
+}

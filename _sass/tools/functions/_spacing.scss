@@ -1,0 +1,3 @@
+@function spacing($amount) {
+  @return $spacing-rule * $amount;
+}

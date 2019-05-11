@@ -1,0 +1,30 @@
+/* Colours */
+$colour--passion: #f56308;
+$colour--grey: #F2F2F2;
+$colour--white: white;
+$colour--black: black;
+
+/* Type */
+$type--line-height: 1.5;
+$type--family-body: "aktiv-grotesk", sans-serif;
+
+// $type--headings-colour: #292929;
+// $type--small-title-colour: #999696;
+// $type--body-colour: #3E3E3E;
+// $type--line-through-colour: #9D9D9D;
+// $type--body-colour-on-dark: #b7b7b7;
+
+/* Spacing */
+$spacing-rule: 0.8rem;
+
+/* Breakpoints */
+$breakpoint--small: 550px;
+$breakpoint--medium: 768px;
+$breakpoint--large: 960px;
+$breakpoint--x-large: 1200px;
+$breakpoint--xx-large: 1600px;
+$breakpoint--xxx-large: 2000px;
+
+/* Animation */
+// $anim--wipe: cubic-bezier(0.7, 0.01, 0.3, 1);//cubic-bezier(.66,.01,.53,1);
+// $anim--fade-direction: cubic-bezier(.3,.06,.47,1);//cubic-bezier(.33,.12,.61,.99);

@@ -5,8 +5,17 @@
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "utilities/manifest",
-        "base/manifest"
 
-;
+//non-rendering sass
+@import "generic/reset";
+@import "settings/variables";
+@import "tools/functions/px-to-em";
+@import "tools/functions/spacing";
+@import "tools/mixins/media-query";
+@import "tools/mixins/grid";
+@import "tools/mixins/section";
+@import "layout/container";
+@import "layout/grid";
+
+//rendering sass
+@import "elements/typography";
