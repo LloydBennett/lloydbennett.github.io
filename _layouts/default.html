@@ -2,20 +2,14 @@
 <html>
   {% include head.html %}
   <body>
-    <!-- {% include loading-screen.html %} -->
-    <div class="wrapper">
-  		<div class="dynamic">
-        <div class="main-content">
-          {% include header.html %}
-
-          {{ content }}
-          <div class="footer-spacer"></div>
-        </div>
-
-  			{% include footer.html %}
-		  </div>
-    </div>
-    <script src="/js/navigation-menu.js"></script>
-    <script src="/js/script.js"></script>
+    <main>
+      <div class="{{ site.page.title }}">
+        {{ content }}
+      </div>
+      <div class="footer-spacer"></div>
+    </main>
+  	<!-- {% include footer.html %} -->
+    <!-- <script src="/js/navigation-menu.js"></script>
+    <script src="/js/script.js"></script> -->
   </body>
 </html>
