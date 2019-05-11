@@ -14,8 +14,11 @@
 @import "tools/mixins/media-query";
 @import "tools/mixins/grid";
 @import "tools/mixins/section";
+@import "tools/mixins/inner-section";
 @import "layout/container";
 @import "layout/grid";
 
 //rendering sass
 @import "elements/typography";
+@import "components/project";
+@import "components/main-view-grid";

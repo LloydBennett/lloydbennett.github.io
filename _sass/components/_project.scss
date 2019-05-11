@@ -1,0 +1,39 @@
+.project {
+  @include inner-section;
+
+  @include media-query($breakpoint--large) {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    margin-bottom: 0;
+  }
+}
+
+.project__thumbnail {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.project__thumbnail__bg {
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.project__thumbnail__design {
+  position: absolute;
+}
+
+.project--show-on-desktop {
+  @include media-query($breakpoint--large - 1, max-width) {
+    display: none;
+  }
+}
+
+.project--show-on-mobile {
+  @include media-query($breakpoint--large) {
+    display: none;
+  }
+}

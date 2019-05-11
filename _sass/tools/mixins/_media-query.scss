@@ -1,5 +1,12 @@
-@mixin media-query($device) {
-  @media screen and (min-width: $device) {
-    @content;
+@mixin media-query($device, $width-type: null) {
+
+  @if $width-type == null {
+    @media screen and (min-width: $device) {
+      @content;
+    }
+  } @else {
+    @media screen and (#{$width-type}: $device) {
+      @content;
+    }
   }
 }

@@ -1,6 +1,16 @@
-@mixin grid {
+@mixin grid($device: null) {
+  @if $device == null {
+    @include media-query($breakpoint--small) {
+      display: grid;
+    }
+  }
+  @else {
+    @include media-query($device) {
+      display: grid;
+    }
+  }
+
   @include media-query($breakpoint--small) {
-    display: grid;
     grid-column-gap: spacing(3);
     grid-template-columns: repeat(12, 1fr);
   }

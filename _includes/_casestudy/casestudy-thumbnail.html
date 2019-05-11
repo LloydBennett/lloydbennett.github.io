@@ -1,23 +1,24 @@
 {% for casestudy in site.projects reversed %}
 <div class="project">
-  <h3 class="project__title">{{ casestudy.thumb-title }}</h3>
-  <p class="project__description">
-    Hello world
-  </p>
-  <span class="project__tags">
-    {{ casestudy.category }}
-  </span>
-  <a class="button" href="{{ casestudy.live-url }}" target="_blank">
-    View Case Study
-  </a>
-  <a class="project__thumbnail" href="{{ casestudy.live-url }}" target="_blank">
-    <div class="project__thumbnail__bg">
-      <img class="medium" src="http://via.placeholder.com/618x715/{{ casestudy.colour}}/{{ casestudy.colour}}">
-      <img class="large" src="http://via.placeholder.com/900x1041/{{ casestudy.colour}}/{{ casestudy.colour}}">
-    </div>
-    <div class="project__thumbnail__design">
-      <img src="images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}" alt="{{casestudy.name}}">
-    </div>
-  </a>
+  <div class="project__wrapper">
+    <h2 class="project__title">{{ casestudy.thumb-title }}</h2>
+    <p class="project__description project--show-on-desktop">
+      Hello world
+    </p>
+    <span class="project__tags project--show-on-desktop">
+      {{ casestudy.category }}
+    </span>
+    <a class="button project--show-on-desktop" href="{{ casestudy.live-url }}" target="_blank">
+      View Case Study
+    </a>
+    <a class="project__thumbnail project--show-on-mobile" href="{{ casestudy.live-url }}" target="_blank">
+      <div class="project__thumbnail__bg">
+        <img src="http://via.placeholder.com/660x600/{{ casestudy.colour}}/{{ casestudy.colour}}">
+      </div>
+      <div class="project__thumbnail__design">
+        <img src="images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}" alt="{{casestudy.name}}">
+      </div>
+    </a>
+  </div>
 </div>
 {% endfor %}
