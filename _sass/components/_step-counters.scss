@@ -1,0 +1,25 @@
+.step--reset {
+  counter-reset: step-counter;
+}
+
+.step__title {
+  position: relative;
+
+  &::before {
+    content: counter(step-counter, decimal-leading-zero);
+    counter-increment: step-counter;
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: spacing(2);
+
+    @include media-query($breakpoint--small) {
+      font-size: 2.4rem;
+    }
+
+    @include media-query($breakpoint--large) {
+      margin-bottom: 0;
+      left: -#{spacing(5) / 2};
+      position: relative;
+    }
+  }
+}
