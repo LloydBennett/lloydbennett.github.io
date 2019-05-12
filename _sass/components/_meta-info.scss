@@ -5,9 +5,9 @@
 .image-meta-info {
   position: absolute;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 1.2rem;
 
-  @include media-query($bp--large) {
-    font-size: 14px;
+  @include media-query($breakpoint--large) {
+    font-size: 1.4rem;
   }
 }
