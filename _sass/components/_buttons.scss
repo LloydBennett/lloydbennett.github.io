@@ -1,53 +1,52 @@
 .button {
-  color: $colour--accent-white;
+  @include body-text;
+  cursor: pointer;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 1px;
   overflow: hidden;
-  padding: $spacing--s $spacing--m;
   position: relative;
+  text-transform: uppercase;
 
-  &.hover {
-    &:hover {
-      .button-bg-hover {
-      	animation-fill-mode: forwards;
-        animation-duration: 450ms;
-        animation-name: storyFrame;
-        animation-timing-function: $anim--wipe;
-        transform: translate(-100%, 0);
-      }
-    }
-  }
-  &.setPos {
-    .button-bg-hover {
-      transform: translateX(101%);
-      transition: transform 450ms $anim--wipe;
-    }
-  }
-
-  &:visited {
-    color: $colour--accent-white;
-  }
-
-  span {
+  &::after {
+    background-color: $colour--black;
+    content: "";
     display: block;
-    position: relative;
+    height: 0.2rem;
+    transition: 600ms ease;
+    width: 100%;
+    margin-top: spacing(1) / 2
   }
 
-  .default-message {
-    position: relative;
-    z-index: 2;
+  &:hover {
+    &::after {
+      animation: link-hover 600ms ease 0s 1;
+    }
   }
 }
 
-.button-bg {
-  @include overlay(black);
+.button--margin-top {
+  margin-top: spacing(5);
+
+  @include media-query($breakpoint--medium) {
+    margin-top: spacing(7);
+  }
 }
 
-.button-bg-hover {
-  @include overlay($colour--brand-passion);
-}
+@keyframes link-hover {
+  0% {
+    transform: translateX(0);
+  }
 
-.link {
-	@include link-underline(lighten($colour--brand-passion, 20%));
-	display: inline-block;
+  50% {
+    transform: translateX(100%);
+  }
+
+  50.01% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }

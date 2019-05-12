@@ -23,6 +23,7 @@
     grid-column: 5 / 13;
     margin-left: -#{spacing(3)};
     padding-left: calc(#{spacing(8)} + 5%);
+    padding-right: 5%;
   }
 
   @include media-query($breakpoint--x-large) {

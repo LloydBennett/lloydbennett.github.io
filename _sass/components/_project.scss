@@ -37,3 +37,7 @@
     display: none;
   }
 }
+
+.project__description {
+  @include max-paragraph-width;
+}

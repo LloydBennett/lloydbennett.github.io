@@ -1,0 +1,7 @@
+@mixin body-text {
+  font-size: 1.6rem;
+
+  @include media-query($breakpoint--medium) {
+    font-size: 1.8rem;
+  }
+}

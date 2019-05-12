@@ -3,12 +3,12 @@
   <div class="project__wrapper">
     <h2 class="project__title step__title">{{ casestudy.thumb-title }}</h2>
     <p class="project__description project--show-on-desktop">
-      Hello world
+      {{ casestudy.description }}
     </p>
-    <span class="project__tags project--show-on-desktop">
-      {{ casestudy.category }}
-    </span>
-    <a class="button project--show-on-desktop" href="{{ casestudy.live-url }}" target="_blank">
+    <p class="project__tags project--show-on-desktop">
+      <strong>Roles: </strong>{{ casestudy.category }}
+    </p>
+    <a class="button button--margin-top project--show-on-desktop" href="{{ casestudy.live-url }}" target="_blank">
       View Case Study
     </a>
     <a class="project__thumbnail project--show-on-mobile" href="{{ casestudy.live-url }}" target="_blank">

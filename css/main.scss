@@ -15,11 +15,14 @@
 @import "tools/mixins/grid";
 @import "tools/mixins/section";
 @import "tools/mixins/inner-section";
+@import "tools/mixins/body-text";
+@import "tools/mixins/max-paragraph-width";
 @import "layout/container";
 @import "layout/grid";
 
 //rendering sass
 @import "elements/typography";
+@import "components/buttons";
 @import "components/project";
 @import "components/main-view-grid";
 @import "components/step-counters";

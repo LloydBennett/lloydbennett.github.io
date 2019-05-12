@@ -47,7 +47,7 @@ h2 {
   }
 
   @include media-query($breakpoint--medium) {
-    font-size: 6rem;
+    font-size: 6.3rem;
   }
 }
 
@@ -66,10 +66,11 @@ h3 {
 }
 
 p {
-  font-size: 1.6rem;
+  @include body-text;
   line-height: $type--line-height;
+  margin-bottom: 0;
 
-  @include media-query($breakpoint--medium) {
-    font-size: 1.8rem;
+  & + & {
+    margin-top: spacing(3);
   }
 }
