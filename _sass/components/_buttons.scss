@@ -1,12 +1,11 @@
 .button {
   @include body-text;
+  @include capitalized-text;
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
-  letter-spacing: 1px;
   overflow: hidden;
   position: relative;
-  text-transform: uppercase;
 
   &::after {
     background-color: $colour--black;
