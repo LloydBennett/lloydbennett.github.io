@@ -1,4 +1,5 @@
 {% for casestudy in site.projects reversed %}
+{% capture project-image-url %}images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}{% endcapture %}
 <div class="project">
   <div class="project__wrapper">
     <h2 class="project__title step__title">{{ casestudy.title }}</h2>
@@ -15,9 +16,11 @@
       <div class="project__thumbnail__bg">
         <img src="http://via.placeholder.com/660x600/{{ casestudy.colour}}/{{ casestudy.colour}}">
       </div>
-      <div class="project__thumbnail__design project__thumbnail--{{ casestudy.directory }}">
-        <img src="images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}" alt="{{casestudy.title}}">
-      </div>
+      <picture class="project__thumbnail__design project__thumbnail--{{ casestudy.directory }}">
+        <source media="(min-width: 550px)" srcset="{{ project-image-url }}@2x.png">
+        <source media="(max-width: 549px)" srcset="{{ project-image-url }}.png">
+        <img src="{{ project-image-url }}.png" alt="{{casestudy.title}}" />
+      </picture>
     </a>
   </div>
 </div>
