@@ -31,8 +31,9 @@
 <script>
   $(function() {
     var slides = document.querySelectorAll("[data-slide]");
+    var firstSlide = slides[0];
 
-    $.scrollify({
+    var scrollifyOptions = {
       section : slides,
       scrollSpeed: 800,
       updateHash: false,
@@ -45,6 +46,21 @@
 
         activeSlide.classList.add('active');
       }
-    });
+    };
+
+    function checkWindowSize(){
+      if($(window).width() < 960) {
+        $.scrollify.disable();
+      }
+      else {
+        $.scrollify.enable();
+        $.scrollify(scrollifyOptions);
+      }
+    }
+
+    firstSlide.classList.add('active');
+
+    checkWindowSize();
+    $(window).resize(checkWindowSize);
   });
 </script>
