@@ -6,7 +6,7 @@
   font-weight: 600;
   overflow: hidden;
   position: relative;
-  transition: 300ms ease;
+  transition: 500ms ease color;
 
   &::after {
     background-color: $colour--black;
@@ -16,16 +16,16 @@
     transition: 600ms ease;
     width: 100%;
     margin-top: spacing(1) / 2;
-    transition: 300ms ease;
+    transition: 500ms ease;
   }
 
   &:hover {
     color: $colour--passion;
-    transition: 400ms ease;
+    transition: 500ms ease background-color;
 
     &::after {
       animation: link-hover 600ms ease 0s 1 forwards;
-      transition: 400ms ease 100ms;
+      transition: 500ms ease 100ms;
       background-color: $colour--passion;
     }
   }
