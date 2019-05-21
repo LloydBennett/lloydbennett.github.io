@@ -18,11 +18,22 @@
           {% include _social-links/linkedin.html %}
         </div>
       </div>
-      <form action="" class="two-column-layout__column">
+      <form action="" class="two-column-layout__column footer__form">
         <div class="input">
-          <input type="text" class="input__field">
-          <label for="" class="input__label"></label>
+          <input type="text" name="name" class="input__field input__field--dark">
+          <label for="name" class="input__label input__label--dark">
+            Your Name
+          </label>
         </div>
+        <div class="input">
+          <input type="email" name="email" class="input__field input__field--dark">
+          <label for="email" class="input__label input__label--dark">
+            Email Address
+          </label>
+        </div>
+        <button type="submit" class="button button--inverted button--margin-top" form="form" value="Submit">
+          Send
+        </button>
       </form>
     </div>
   </div>

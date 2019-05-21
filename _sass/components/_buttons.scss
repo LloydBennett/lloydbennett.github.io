@@ -7,6 +7,9 @@
   overflow: hidden;
   position: relative;
   transition: 500ms ease color;
+  background-color: transparent;
+  border: none;
+  padding: 0;
 
   &::after {
     background-color: $colour--black;
@@ -36,6 +39,14 @@
 
   @include media-query($breakpoint--medium) {
     margin-top: spacing(7);
+  }
+}
+
+.button--inverted {
+  color: $colour--white;
+
+  &::after {
+    background-color: $colour--white;
   }
 }
 

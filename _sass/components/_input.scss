@@ -1,0 +1,43 @@
+.input {
+  max-width: 60rem;
+  position: relative;
+  width: 100%;
+
+  & + & {
+    margin-top: spacing(6);
+  }
+}
+
+.has-input {
+  .input__label {
+    font-size: 1.4rem;
+    top: -#{spacing(5)};
+  }
+}
+
+.input__field {
+  border: none;
+  border-bottom: 2px solid $colour--black;
+  border-radius: 0;
+  display: block;
+  padding-bottom: spacing(1);
+  width: 100%;
+}
+
+.input__field--dark {
+  border-bottom: 2px solid #D8D8D8;
+}
+
+.input__label {
+  @include body-text;
+  display: inline-block;
+  left: 0;
+  margin-bottom: 0;
+  pointer-events: none;
+  position: absolute;
+  top: -#{spacing(1)};
+}
+
+.input__label--dark {
+  color: $colour--text-on-grit;
+}

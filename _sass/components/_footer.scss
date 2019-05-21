@@ -30,7 +30,7 @@
 
 .footer__grid {
   @include media-query($breakpoint--medium) {
-    grid-column: 2/10;
+    grid-column: 2/12;
   }
 }
 
@@ -55,4 +55,9 @@
   path {
     fill: $colour--white;
   }
+}
+
+.footer__form {
+  max-width: 60rem;
+  width: 100%;
 }
