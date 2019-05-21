@@ -1,28 +1,29 @@
-<footer id="contact" class="footer">
-	<div class="container">
-    <div class="footer-grid">
-      <div class="footer-logo">
-        <a href="https://placeholder.com">
-          <img src="../images/logo-white.svg" alt="L.J.B">
-        </a>
-      </div>
-      <div class="connect">
-        <h3 class="connect-title">Let’s work together.</h3>
+<footer class="footer" data-contact>
+	<div class="container grid">
+    <div class="two-column-layout footer__grid">
+      <div class="connect two-column-layout__column">
+        <h2>
+          Got a project in mind?
+        </h2>
         <p>
-          If you'd like to talk about a project or need
-          advice on digital product design,
-          drop me a message at:
+          Drop me a message on the contact form or
+          alternatively via email at:
+          <a class="link" href="mailto:{{ site.email }}">
+            {{ site.email }}
+          </a>
         </p>
-        <a class="email" href="mailto:{{ site.email }}">
-          {{ site.email }}
-        </a>
-        <div class="footer-social-links">
+        <div class="footer__socials">
           {% include _social-links/dribbble.html %}
           {% include _social-links/instagram.html %}
-          {% include _social-links/twitter.html %}
           {% include _social-links/linkedin.html %}
         </div>
       </div>
+      <form action="" class="two-column-layout__column">
+        <div class="input">
+          <input type="text" class="input__field">
+          <label for="" class="input__label"></label>
+        </div>
+      </form>
     </div>
   </div>
 </footer>

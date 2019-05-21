@@ -1,0 +1,16 @@
+.two-column-layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+.two-column-layout__column {
+  &:first-child {
+    @include media-query($breakpoint--small) {
+      margin-right: spacing(3);
+    }
+
+    @include media-query($breakpoint--x-large) {
+      margin-right: spacing(6);
+    }
+  }
+}

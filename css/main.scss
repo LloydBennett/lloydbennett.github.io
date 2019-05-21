@@ -22,6 +22,7 @@
 @import "tools/mixins/fade-in-appear";
 @import "layout/container";
 @import "layout/grid";
+@import "layout/two-column-layout";
 
 //rendering sass
 @import "elements/typography";
@@ -30,3 +31,4 @@
 @import "components/main-view-grid";
 @import "components/step-counters";
 @import "components/meta-info";
+@import "components/footer";

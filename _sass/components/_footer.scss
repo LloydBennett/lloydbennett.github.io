@@ -1,94 +1,58 @@
 .footer {
-  color: $colour--accent-white;
-  padding: $spacing--m 0;
-  background-color: black;
+  background-color: $colour--grit;
+  color: $colour--white;
+  padding: spacing(8) 0;
 
-  @include media-query($bp--medium) {
+  @include media-query($breakpoint--small) {
+    align-items: center;
     bottom: 0;
+    display: flex;
     height: 100vh;
     padding: 0;
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 1;
   }
 
   p {
-    color: $type--body-colour-on-dark;
-  }
-
-  .container {
-    @include media-query($bp--medium) {
-      display: flex;
-      align-items: center;
-      height: 100%;
-    }
+    color: $colour--text-on-grit;
   }
 }
 
 .footer-spacer {
   display: none;
-  @include media-query($bp--medium) {
+
+  @include media-query($breakpoint--medium) {
     display: block;
     height: 1px;
   }
 }
 
-.footer-grid {
-  @include offset-paragraph;
-  @include media-query($bp--medium) {
-    display: flex;
+.footer__grid {
+  @include media-query($breakpoint--medium) {
+    grid-column: 2/10;
   }
 }
 
-.footer-logo {
-  margin-bottom: $spacing--base;
-
-  @include media-query($bp--medium) {
-    margin-bottom: 0;
-    margin-right: $spacing--l;
-  }
-
-  @include media-query($bp--xx-large) {
-    margin-right: $spacing--xl + $spacing--l + $spacing--s;
-  }
+.footer__socials {
+  margin-top: spacing(5);
 
   a {
-    width: 50px;
+    display: inline-block;
+    margin-right: spacing(3);
+    width: 22px;
 
-    @include media-query($bp--medium) {
-      width: 80px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
     }
   }
 
-  a,
-  img {
-    display: block;
-  }
-
-  img {
-    width: 100%;
-  }
-}
-
-.connect {
-  max-width: 400px;
-  margin-bottom: 0;
-
-  @include media-query($bp--large) {
-    max-width: 500px;
-  }
-}
-
-.connect-title {
-  color: $colour--accent-white;
-}
-
-.email {
-  @extend .link;
-  font-weight: 300;
-  font-size: pxtoem(20);
-
-  @include media-query($bp--small) {
-    font-size: pxtoem(26);
+  path {
+    fill: $colour--white;
   }
 }
