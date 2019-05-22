@@ -11,21 +11,30 @@
 .has-input {
   .input__label {
     font-size: 1.4rem;
-    top: -#{spacing(5)};
+    top: -#{spacing(3)};
+    transition: 300ms ease;
   }
 }
 
 .input__field {
+  @include body-text;
   border: none;
   border-bottom: 2px solid $colour--black;
   border-radius: 0;
   display: block;
   padding-bottom: spacing(1);
   width: 100%;
+
+  &:focus + .input__label {
+    font-size: 1.4rem;
+    top: -#{spacing(4)};
+    transition: 300ms ease;
+  }
 }
 
 .input__field--dark {
   border-bottom: 2px solid #D8D8D8;
+  color: $colour--white;
 }
 
 .input__label {
@@ -35,7 +44,8 @@
   margin-bottom: 0;
   pointer-events: none;
   position: absolute;
-  top: -#{spacing(1)};
+  top: 0;
+  transition: 300ms ease;
 }
 
 .input__label--dark {
