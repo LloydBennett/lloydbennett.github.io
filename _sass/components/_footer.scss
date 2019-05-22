@@ -29,8 +29,29 @@
 }
 
 .footer__grid {
-  @include media-query($breakpoint--medium) {
+  @include media-query($tweakpoint-two-column-layout) {
+    @include grid;
+  }
+}
+
+.footer__grid__layout {
+  @include media-query($tweakpoint-two-column-layout) {
+    grid-column: 1/13;
+  }
+
+  @include media-query($breakpoint--xx-large) {
     grid-column: 2/12;
+  }
+}
+
+.footer__connect,
+.footer__form {
+  @include max-paragraph-width;
+  width: 100%;
+
+  @include media-query($tweakpoint-two-column-layout - 1, max-width) {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -55,9 +76,4 @@
   path {
     fill: $colour--white;
   }
-}
-
-.footer__form {
-  max-width: 60rem;
-  width: 100%;
 }
