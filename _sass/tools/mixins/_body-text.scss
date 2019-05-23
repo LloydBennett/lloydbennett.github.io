@@ -1,4 +1,5 @@
 @mixin body-text {
+  color: $colour--body-type;
   font-size: 1.6rem;
 
   @include media-query($breakpoint--medium) {

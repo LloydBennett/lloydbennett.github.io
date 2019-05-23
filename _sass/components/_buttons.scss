@@ -1,15 +1,16 @@
 .button {
   @include body-text;
   @include capitalized-text;
+  background-color: transparent;
+  border: none;
+  color: $colour--black;
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
   overflow: hidden;
+  padding: 0;
   position: relative;
   transition: 500ms ease color;
-  background-color: transparent;
-  border: none;
-  padding: 0;
 
   &::after {
     background-color: $colour--black;

@@ -15,6 +15,7 @@ body {
 h1,
 h2,
 h3 {
+  color: $colour--heading-type;
   font-family: $type--family-headings;
   margin: 0 0 spacing(4);
   font-weight: 600;

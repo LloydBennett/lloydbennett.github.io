@@ -30,6 +30,8 @@
 
 
 .footer__title {
+  color: $colour--white;
+
   span {
     @include media-query($tweakpoint-two-column-layout) {
       display: block;
