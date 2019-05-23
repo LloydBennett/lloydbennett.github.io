@@ -19,7 +19,9 @@
           {% include _social-links/linkedin.html %}
         </div>
       </div>
-      <form action="" class="two-column-layout__column footer__form">
+      <form action="https://formspree.io/{{ site.email }}"
+            class="two-column-layout__column footer__form"
+            method="POST">
         <div class="input">
           <input type="text" name="name" class="input__field input__field--dark">
           <label for="name" class="input__label input__label--dark">
@@ -27,8 +29,8 @@
           </label>
         </div>
         <div class="input">
-          <input type="email" name="email" class="input__field input__field--dark">
-          <label for="email" class="input__label input__label--dark">
+          <input type="email" name="_replyto" class="input__field input__field--dark">
+          <label for="_replyto" class="input__label input__label--dark">
             Email Address
           </label>
         </div>
@@ -56,7 +58,7 @@
             Tell me about your project
           </label>
         </div>
-        <button type="submit" class="button button--inverted button--margin-top" form="form" value="Submit">
+        <button type="submit" class="button button--inverted button--margin-top" value="Send">
           Send
         </button>
       </form>
