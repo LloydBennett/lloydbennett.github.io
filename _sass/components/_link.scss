@@ -1,0 +1,29 @@
+.link {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    background-color: #4e4e53;
+    bottom: 3px;
+    content: "";
+    display: block;
+    height: 0.1rem;
+    left: 0;
+    position: absolute;
+    transition: 600ms ease;
+    width: 100%;
+  }
+
+  &:hover {
+    &::after {
+      animation: link-hover 600ms ease 0s 1 forwards;
+    }
+  }
+}
+
+.link--dark {
+  &::after {
+    background-color: $colour--text-on-grit;
+  }
+}
