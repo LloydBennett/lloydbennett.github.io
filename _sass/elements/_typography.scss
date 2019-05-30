@@ -37,6 +37,10 @@ h1 {
     line-height: 1;
     font-size: 9.6rem;
   }
+
+  @include media-query($breakpoint--x-large) {
+    font-size: 11rem;
+  }
 }
 
 h2 {

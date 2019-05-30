@@ -1,0 +1,12 @@
+@mixin no-wrap-and-break($device: null){
+  @if $device == null {
+    display: block;
+    white-space: nowrap;
+  }
+  @else {
+    @include media-query($device) {
+      display: block;
+      white-space: nowrap;
+    }
+  }
+}
