@@ -1,3 +1,8 @@
+$input-placeholder: #B8B8B6;
+
+@include change-input-placeholder-color($input-placeholder);
+
+
 .input {
   position: relative;
   width: 100%;
@@ -7,46 +12,45 @@
   }
 }
 
-.has-input {
-  .input__label {
-    font-size: 1.4rem;
-    top: -#{spacing(3)};
-    transition: 300ms ease;
-  }
-}
-
 .input__field {
   @include body-text;
-  border: none;
+  background-color: transparent;
   border-bottom: 2px solid $colour--black;
   border-radius: 0;
+  border: none;
   display: block;
   padding-bottom: spacing(1);
   width: 100%;
 
-  &:focus + .input__label {
-    font-size: 1.4rem;
-    top: -#{spacing(4)};
-    transition: 300ms ease;
+  &:focus + .input__label,
+  &.has-input + .input__label {
+    transform: translateY(-#{spacing(2)});
+    transition: 300ms ease transform,
+                300ms ease opacity 100ms;
+    opacity: 1;
   }
 }
 
 .input__field--dark {
   border-bottom: 2px solid #D8D8D8;
   color: $colour--white;
+  transition: 300ms ease;
 }
 
 .input__label {
-  @include body-text;
   display: inline-block;
+  font-size: 1.4rem;
   left: 0;
   margin-bottom: 0;
   pointer-events: none;
   position: absolute;
-  top: 0;
-  transition: 300ms ease;
+  top: -#{spacing(2)};
+  transition: 300ms ease transform 150ms,
+              300ms ease opacity;
+  transform: translateY(0);
+  opacity: 0;
 }
 
 .input__label--dark {
-  color: $colour--text-on-grit;
+  color: $colour--white;
 }

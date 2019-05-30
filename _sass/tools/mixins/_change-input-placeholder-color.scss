@@ -1,0 +1,25 @@
+@mixin change-input-placeholder-color($color) {
+  ::-webkit-input-placeholder {
+    color: #{$color};
+    opacity: 1;
+    transition: 600ms ease 100ms;
+  }
+
+  ::-moz-placeholder {
+    color: #{$color};
+    opacity: 1;
+    transition: 600ms ease 100ms;
+  }
+
+  :-ms-input-placeholder {
+    color: #{$color};
+    opacity: 1;
+    transition: 600ms ease 100ms;
+  }
+
+  :-moz-placeholder {
+    color: #{$color};
+    opacity: 1;
+    transition: 600ms ease 100ms;
+  }
+}

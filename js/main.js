@@ -17,6 +17,17 @@
     },
     setHeights: false
   };
+  var input = document.querySelectorAll('[data-input-field]');
+
+  function updateInputContent() {
+    let inputValue = this.value;
+
+    if (inputValue === "") {
+      this.classList.remove("has-input");
+    } else {
+      this.classList.add("has-input");
+    }
+  }
 
   function checkWindowSize(){
     if($(window).width() < 960) {
@@ -31,6 +42,10 @@
 
   function init() {
     firstSlide.classList.add('active');
+
+    input.forEach(function(element, index){
+      element.addEventListener("focusout", updateInputContent);
+    });
 
     checkWindowSize();
     $(window).resize(checkWindowSize);
