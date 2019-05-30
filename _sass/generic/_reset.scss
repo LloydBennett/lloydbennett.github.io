@@ -462,26 +462,4 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 30px #202020 inset !important;
   -webkit-text-fill-color: white !important;
-  font-family: "freight-sans-pro", sans-serif;
-}
-
-input:focus::-webkit-input-placeholder {
-  //color:transparent;
-  opacity: 0;
-  transition: 300ms ease;
-}
-
-input:focus:-moz-placeholder {
-  opacity: 0;
-  transition: 300ms ease;
-}
-
-input:focus::-moz-placeholder {
-  opacity: 0;
-  transition: 300ms ease;
-}
-
-input:focus:-ms-input-placeholder {
-  opacity: 0;
-  transition: 300ms ease;
 }

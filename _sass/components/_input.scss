@@ -1,7 +1,7 @@
 $input-placeholder: #B8B8B6;
 
 @include change-input-placeholder-color($input-placeholder);
-
+@include input-placeholder-disappear-on-focus;
 
 .input {
   position: relative;

@@ -1,0 +1,21 @@
+@mixin input-placeholder-disappear-on-focus {
+  .input__field:focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition: 300ms ease;
+  }
+
+  .input__field:focus:-moz-placeholder {
+    opacity: 0;
+    transition: 300ms ease;
+  }
+
+  .input__field:focus::-moz-placeholder {
+    opacity: 0;
+    transition: 300ms ease;
+  }
+
+  .input__field:focus:-ms-input-placeholder {
+    opacity: 0;
+    transition: 300ms ease;
+  }  
+}
