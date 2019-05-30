@@ -18,7 +18,7 @@
   background-color: $colour--white;
 
   @include media-query($breakpoint--large - 1, max-width) {
-    padding: 0 5%;
+    padding: 0 5% spacing(3);
   }
 
   @include media-query($breakpoint--large) {
