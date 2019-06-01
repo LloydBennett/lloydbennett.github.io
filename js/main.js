@@ -41,7 +41,6 @@
   }
 
   function init() {
-    firstSlide.classList.add('active');
 
     input.forEach(function(element, index){
       element.addEventListener("focusout", updateInputContent);
