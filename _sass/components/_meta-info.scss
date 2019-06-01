@@ -6,9 +6,11 @@
   top: 20%;
   writing-mode: vertical-lr;
   z-index: 5;
+  display: none;
 
   @include media-query($breakpoint--small) {
     font-size: 1rem;
+    display: inline-block;
   }
 
   @include media-query($breakpoint--large) {

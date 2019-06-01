@@ -1,9 +1,10 @@
 .hero {
-  position: sticky;
+  background: red;
   height: 100vh;
+  min-height: 60rem;
+  position: sticky;
   width: 100%;
   z-index: 3;
-  background: red;
 }
 
 .hero__bg {
@@ -28,13 +29,19 @@
   }
 }
 
-.hero__content {
+.hero__wrapper {
+  @include container;
+  @include grid;
   height: 100%;
-  left: 0;
-  padding: 0 5%;
-  position: absolute;
-  top: 0;
-  width: 100%;
+}
+
+.hero__content {
+  @include offset-content;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
   z-index: 2;
 }
 

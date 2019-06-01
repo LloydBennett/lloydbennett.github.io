@@ -26,20 +26,23 @@ h3 {
 }
 
 h1 {
-  font-size: 5.5rem;
-  line-height: 1.2;
+  font-size: 5.3rem;
+  line-height: 1;
 
   @include media-query($breakpoint--small) {
-    font-size: 6.3rem;
+    font-size: 7.3rem;
   }
 
   @include media-query($breakpoint--medium) {
-    line-height: 1;
     font-size: 9.6rem;
   }
 
   @include media-query($breakpoint--x-large) {
     font-size: 11rem;
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    font-size: 12.7rem;
   }
 }
 

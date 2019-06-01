@@ -1,0 +1,9 @@
+@mixin offset-content {
+  @include media-query($breakpoint--small) {
+    grid-column: 2 / 12;
+  }
+
+  @include media-query($breakpoint--xxx-large) {
+    grid-column: 3 / 13;
+  }
+}

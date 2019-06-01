@@ -23,6 +23,12 @@ $tweakpoint-project-thumbnail: 600px;
       margin-left: auto;
     }
   }
+
+  &:last-child {
+    @include media-query($breakpoint--large - 1, max-width) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .project__thumbnail {
