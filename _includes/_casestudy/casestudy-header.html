@@ -8,8 +8,22 @@
       <h1 class="hero__title">
         {{ page.title }}
       </h1>
-      <div class="hero__details">
 
+      <picture class="hero__image--{{ page.directory }}">
+        <source media="(min-width: 550px)" srcset="{{ page.project-image-url }}@2x.png">
+        <source media="(max-width: 549px)" srcset="{{ page.project-image-url }}.png">
+        <img src="{{ page.project-image-url }}.png" alt="{{ page.title}}" />
+      </picture>
+
+      <div class="hero__details">
+        <hr></hr>
+        {% if page.category %}
+        <ul>
+          {% for cat in page.category %}
+          <li>{{ cat }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
       </div>
     </div>
   </div>

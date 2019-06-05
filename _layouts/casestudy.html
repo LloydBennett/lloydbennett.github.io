@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html>
-  {% include head.html %}
-  <body>
-    <div class="wrapper">
-      <div class="dynamic">
-        {% include _casestudy/casestudy-header.html %}
-        <div class="main-content">
+---
+layout: default
+---
+{% include _casestudy/casestudy-header.html %}
 
-          {{ content }}
+{{ content }}
 
-          {% include _casestudy/casestudy-footer.html %}
-        </div>
-      </div>
-    </div>
-    <script src="/js/script.js"></script>
-  </body>
-</html>
+{% include _casestudy/casestudy-footer.html %}
