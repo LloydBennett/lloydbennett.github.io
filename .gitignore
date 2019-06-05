@@ -2,6 +2,7 @@ _site
 .sass-cache
 .idea
 bower_components/*
+node-modules/
 
 !bower_components/wow
 bower_components/wow/*

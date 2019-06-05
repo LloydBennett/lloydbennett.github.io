@@ -1,13 +1,16 @@
-<div class="project-heading">
-  <div class="container">
-    <h1 class="project-title wow moveUpFade" data-wow-duration="700ms">
-      {{ page.title }}
-    </h1>
-    {% if page.button-text %}
-    <div class="cta">
-      <a href="http://www.{{ page.live-url }}" target="_blank" class="link wow moveUpFade" data-wow-duration="700ms" data-wow-delay="300ms" >{{ page.button-text }}</a>
-    </div>
-    {% endif %}
-
+<section class="hero">
+  <div class="hero__bg">
+    {% include _hero-strip.html colour= page.colour %}
   </div>
-</div>
+
+  <div class="hero__wrapper">
+    <div class="hero__content">
+      <h1 class="hero__title">
+        {{ page.title }}
+      </h1>
+      <div class="hero__details">
+
+      </div>
+    </div>
+  </div>
+</section>

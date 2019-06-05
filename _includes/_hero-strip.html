@@ -1,0 +1,5 @@
+{% for i in (1..5) %}
+  <div class="hero__bg-strip"
+       style="background-color: {{ include.colour | prepend: '#'}}">
+  </div>
+{% endfor %}
