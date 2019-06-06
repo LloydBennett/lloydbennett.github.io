@@ -1,6 +1,4 @@
 .content {
+  @include content-view-sticky;
   background-color: $colour--white;
-  bottom: 0;
-  position: sticky;
-  z-index: 2;
 }

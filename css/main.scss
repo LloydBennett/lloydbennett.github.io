@@ -18,6 +18,7 @@
 @import "tools/mixins/section";
 @import "tools/mixins/inner-section";
 @import "tools/mixins/body-text";
+@import "tools/mixins/content-view-sticky";
 @import "tools/mixins/no-wrap-and-break";
 @import "tools/mixins/max-paragraph-width";
 @import "tools/mixins/capitalized-text";
@@ -31,6 +32,7 @@
 
 //rendering sass
 @import "elements/typography";
+@import "elements/list";
 @import "components/buttons";
 @import "components/link";
 @import "components/website";

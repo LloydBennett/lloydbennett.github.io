@@ -1,4 +1,5 @@
 .main-view {
+  //@include content-view-sticky;
   @include grid($breakpoint--large);
 }
 

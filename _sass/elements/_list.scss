@@ -1,12 +1,3 @@
-.list {
-  padding-left: 20px;
-
-  li {
-    padding-bottom: 5px;
-    color: $colour--brand-passion;
-
-    p {
-      margin: 0;
-    }
-  }
+li {
+  list-style: none;
 }

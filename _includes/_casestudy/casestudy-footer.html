@@ -1,53 +1,51 @@
 <div class="footer casestudy">
-    <div class="container">
-        <a id="next-project"
+  <div class="container">
+      <a id="next-project"
 
-        {% capture projects %}{{page.collection}}{% endcapture %}
+      {% capture projects %}{{page.collection}}{% endcapture %}
 
-        {% if page.collection %}
-            {% assign  document = site[projects] | sort: "date" | reversed %}
-        {% endif %}
+      {% if page.collection %}
+          {% assign  document = site[projects] | sort: "date" | reversed %}
+      {% endif %}
 
-        {% for links in document %}
-            {% if links.title == page.title %}
-                
-                {% if forloop.last %}
+      {% for links in document %}
+          {% if links.title == page.title %}
 
-                    {% assign next = document[0] %}            
-                    {% assign nexttitle = next.title %}
+              {% if forloop.last %}
 
-                {% else %}
+                  {% assign next = document[0] %}
+                  {% assign nexttitle = next.title %}
 
-                    {% assign next = document[forloop.index] %}
-                    {% assign nexttitle = next.title %}
+              {% else %}
 
-                {% endif %}
+                  {% assign next = document[forloop.index] %}
+                  {% assign nexttitle = next.title %}
+
+              {% endif %}
 
 
-                {% if next.point-to-url %}
+              {% if next.point-to-url %}
 
-                    {% assign nexturl = next.live-url %}
-                    href="http://www.{{ nexturl }}" target="_blank"
+                  {% assign nexturl = next.live-url %}
+                  href="http://www.{{ nexturl }}" target="_blank"
 
-                {% else %}
+              {% else %}
 
-                    {% assign nexturl = next.url %}
-                    class="ajaxLoad"
-                    href="{{ nexturl }}"
+                  {% assign nexturl = next.url %}
+                  class="ajaxLoad"
+                  href="{{ nexturl }}"
 
-                {% endif %}
+              {% endif %}
 
-                
-            {% endif %}
 
-        {% endfor %}
+          {% endif %}
 
-        >
-            <span class="small-heading">Next Project</span>
-            <h2>{{ nexttitle }}</h2>
-        </a>
+      {% endfor %}
 
-    </div>
-	
- 
+      >
+          <span class="small-heading">Next Project</span>
+          <h2>{{ nexttitle }}</h2>
+      </a>
+
+  </div>
 </div>
