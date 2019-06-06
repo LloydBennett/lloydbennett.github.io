@@ -1,0 +1,14 @@
+hr {
+  background-color: $colour--body-type;
+  border: none;
+  height: 0.3rem;
+  margin: 0 0 spacing(4);
+}
+
+.hr--inverted {
+  background-color: $colour--white;
+}
+
+.hr--short {
+  width: 5rem;
+}

@@ -1,3 +1,5 @@
 li {
+  @include body-text;
   list-style: none;
+  margin-bottom: spacing(2);
 }

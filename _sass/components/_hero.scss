@@ -7,6 +7,13 @@
   z-index: 3;
 }
 
+.hero--inverted {
+  .hero__title,
+  .hero__details-list-item {
+    color: $colour--white;
+  }
+}
+
 .hero__bg {
   position: absolute;
   top: 0;

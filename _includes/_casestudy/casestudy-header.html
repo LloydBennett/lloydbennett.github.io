@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero {% if page.white-text-on-hero %} hero--inverted {% endif %}">
   <div class="hero__bg">
     {% include _hero-strip.html colour= page.colour %}
   </div>
@@ -9,18 +9,22 @@
         {{ page.title }}
       </h1>
 
-      <picture class="hero__image--{{ page.directory }}">
+      <picture class="hero__image hero__image--{{ page.directory }}">
         <source media="(min-width: 550px)" srcset="{{ page.project-image-url }}@2x.png">
         <source media="(max-width: 549px)" srcset="{{ page.project-image-url }}.png">
         <img src="{{ page.project-image-url }}.png" alt="{{ page.title}}" />
       </picture>
 
       <div class="hero__details">
-        <hr></hr>
+        <hr class="hr--short {% if page.white-text-on-hero %} hr--inverted {% endif %}"></hr>
         {% if page.category %}
-        <ul>
+        <ul class="hero__details-list">
           {% for cat in page.category %}
-          <li>{{ cat }}</li>
+          <li class="hero__details-list-item">
+            <span>
+              {{ cat }}
+            </span>
+          </li>
           {% endfor %}
         </ul>
         {% endif %}
