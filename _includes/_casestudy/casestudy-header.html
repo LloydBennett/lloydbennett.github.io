@@ -1,4 +1,5 @@
-<section class="hero {% if page.white-text-on-hero %} hero--inverted {% endif %}">
+{% capture project-image-url %}../images/projects/{{page.directory}}/thumbnail/{{page.thumbnail}}{% endcapture %}
+<section class="hero hero--{{ page.directory }} {% if page.white-text-on-hero %} hero--inverted {% endif %}">
   <div class="hero__bg">
     {% include _hero-strip.html colour= page.colour %}
   </div>
@@ -9,10 +10,10 @@
         {{ page.title }}
       </h1>
 
-      <picture class="hero__image hero__image--{{ page.directory }}">
-        <source media="(min-width: 550px)" srcset="{{ page.project-image-url }}@2x.png">
-        <source media="(max-width: 549px)" srcset="{{ page.project-image-url }}.png">
-        <img src="{{ page.project-image-url }}.png" alt="{{ page.title}}" />
+      <picture class="hero__image hero__image--{{ page.directory }} thumbnail">
+        <source media="(min-width: 550px)" srcset="{{ project-image-url }}@2x.png">
+        <source media="(max-width: 549px)" srcset="{{ project-image-url }}.png">
+        <img src="{{ project-image-url }}.png" alt="{{ page.title}}" />
       </picture>
 
       <div class="hero__details">

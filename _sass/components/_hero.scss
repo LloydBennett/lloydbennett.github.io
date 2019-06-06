@@ -2,15 +2,40 @@
   bottom: 0;
   height: 100vh;
   min-height: 60rem;
+  overflow: hidden;
   position: sticky;
   width: 100%;
   z-index: 3;
+
+  @include media-query($breakpoint--small - 1, max-width) {
+    max-height: 800px;
+  }
+}
+
+.hero--home {
+  .hero--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hero__details {
+    bottom: #{spacing(9)};
+    position: absolute;
+  }
 }
 
 .hero--inverted {
   .hero__title,
   .hero__details-list-item {
     color: $colour--white;
+  }
+}
+
+.hero__details-list-item {
+  @include media-query($breakpoint--small - 1, max-width) {
+    font-size: 1.4rem;
+    margin-bottom: spacing(1);
   }
 }
 
@@ -43,20 +68,45 @@
 
 .hero__content {
   @include offset-content;
-  display: flex;
-  flex-direction: column;
   height: 100%;
-  justify-content: space-between;
   position: relative;
   z-index: 2;
+
+  @include media-query($breakpoint--x-large) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .hero__details {
-  bottom: #{spacing(9)};
-  position: absolute;
+  @include media-query($breakpoint--x-large) {
+    bottom: #{spacing(9)};
+    position: absolute;
+  }
 }
 
 .hero__copy {
   @include max-paragraph-width;
   margin-top: 0;
+}
+
+.hero__image {
+  position: absolute;
+}
+
+.hero__image--thoughtbot {
+  bottom: -20rem;
+  min-height: 50rem;
+  width: 100vw;
+
+  @include media-query($breakpoint--medium) {
+    right: -7%;
+    bottom: -17rem;
+    width: 80vw;
+  }
+
+  @include media-query($breakpoint--large) {
+    width: 80vh;
+  }
 }

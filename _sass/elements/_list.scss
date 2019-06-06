@@ -2,4 +2,8 @@ li {
   @include body-text;
   list-style: none;
   margin-bottom: spacing(2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
