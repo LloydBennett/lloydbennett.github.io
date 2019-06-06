@@ -134,3 +134,43 @@
     width: 60vw;
   }
 }
+
+.hero__image--vocalsandverses {
+  bottom: 5%;
+  width: 105%;
+
+  @include media-query($breakpoint--small) {
+    bottom: 0;
+    width: 120%;
+    max-width: 60rem;
+  }
+
+  @media screen and (min-width: $breakpoint--small)
+  and (max-width: $breakpoint--large - 1) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include media-query($breakpoint--small) {
+    bottom: -5%;
+  }
+
+  @include media-query($breakpoint--medium) {
+    max-width: none;
+    min-width: 60rem;
+    width: 80%;
+  }
+
+  @include media-query($breakpoint--large) {
+    right: -10%;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    width: 55vw;
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    right: 0;
+    width: 50vw;
+  }
+}
