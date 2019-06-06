@@ -7,7 +7,14 @@
       {{ casestudy.description }}
     </p>
     <p class="project__tags project--show-on-desktop">
-      <strong>Roles: </strong>{{ casestudy.category }}
+      <strong>Roles: </strong>
+      {% for cat in casestudy.category %}
+        {% if forloop.last == true %}
+        <span>{{ cat }}</span>
+        {% else %}
+        <span>{{ cat }}&comma; </span>
+        {% endif %}
+      {% endfor %}
     </p>
     <a class="button button--margin-top project--show-on-desktop" href="{{ casestudy.url }}">
       View Case Study
