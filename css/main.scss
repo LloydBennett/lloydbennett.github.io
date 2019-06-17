@@ -26,6 +26,7 @@
 @import "tools/mixins/fade-in-appear";
 @import "tools/mixins/change-input-placeholder-color";
 @import "tools/mixins/input-placeholder-disappear-on-focus";
+@import "tools/mixins/overlay";
 @import "layout/container";
 @import "layout/grid";
 @import "layout/two-column-layout";
@@ -49,3 +50,4 @@
 @import "components/thumbnail";
 @import "components/intro";
 @import "components/casestudy";
+@import "components/background-strip";

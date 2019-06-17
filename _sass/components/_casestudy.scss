@@ -7,6 +7,25 @@
   @include media-query($breakpoint--small) {
     padding: spacing(13) 0 spacing(18);
   }
+
+  .container {
+    position: relative;
+  }
+
+  .hero__bg-strip {
+    height: 0;
+  }
+
+  &:hover {
+    .hero__bg-strip {
+      height: 100%;
+      @for $i from 0 through 3 {
+        &:nth-child(#{$i}) {
+          transition: height 300ms ease ($i * 150)#{'ms'}
+        }
+      }
+    }
+  }
 }
 
 .casestudy__next-titles {

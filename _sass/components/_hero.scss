@@ -40,16 +40,8 @@
 }
 
 .hero__bg {
+  @include overlay;
   display: flex;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.hero__bg-strip {
-  width: 20%;
 }
 
 .hero__title {

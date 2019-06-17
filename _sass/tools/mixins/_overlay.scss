@@ -1,0 +1,13 @@
+@mixin overlay($position-top: true) {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+
+  @if $position-top == false {
+    bottom: 0;
+  }
+  @else {
+    top: 0;
+  }
+}
