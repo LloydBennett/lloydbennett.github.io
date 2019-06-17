@@ -1,0 +1,14 @@
+.casestudy__next {
+  background-color: $colour--grey;
+  display: block;
+  position: relative;
+  padding: spacing(8) 0 spacing(21);
+
+  @include media-query($breakpoint--small) {
+    padding: spacing(13) 0 spacing(18);
+  }
+}
+
+.casestudy__next-titles {
+  @include offset-content;
+}

@@ -1,0 +1,16 @@
+$color--small-caps: #717070;
+
+.small-caps {
+  color: $color--small-caps;
+  display: block;
+  font-family: $type--family-body;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin-bottom: spacing(2);
+  text-transform: uppercase;
+
+  @include media-query($breakpoint--xxx-large) {
+    font-size: 1.4rem;
+  }
+}

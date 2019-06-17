@@ -1,51 +1,41 @@
-<div class="footer casestudy">
-  <div class="container">
-      <a id="next-project"
+{% capture projects %}{{page.collection}}{% endcapture %}
 
-      {% capture projects %}{{page.collection}}{% endcapture %}
+{% if page.collection %}
+  {% assign  document = site[projects] | sort: "date" | reversed %}
+{% endif %}
 
-      {% if page.collection %}
-          {% assign  document = site[projects] | sort: "date" | reversed %}
+<a class="casestudy__next"
+
+{% for links in document %}
+    {% if links.title == page.title %}
+      {% if forloop.last %}
+        {% assign next = document[0] %}
+        {% assign nexttitle = next.title %}
+      {% else %}
+        {% assign next = document[forloop.index] %}
+        {% assign nexttitle = next.title %}
       {% endif %}
 
-      {% for links in document %}
-          {% if links.title == page.title %}
+        {% if next.point-to-url %}
+          {% assign nexturl = next.live-url %}
+          href="http://www.{{ nexturl }}" target="_blank"
+        {% else %}
+          {% assign nexturl = next.url %}
+          href="{{ nexturl }}"
+          data-page-load
+        {% endif %}
 
-              {% if forloop.last %}
-
-                  {% assign next = document[0] %}
-                  {% assign nexttitle = next.title %}
-
-              {% else %}
-
-                  {% assign next = document[forloop.index] %}
-                  {% assign nexttitle = next.title %}
-
-              {% endif %}
-
-
-              {% if next.point-to-url %}
-
-                  {% assign nexturl = next.live-url %}
-                  href="http://www.{{ nexturl }}" target="_blank"
-
-              {% else %}
-
-                  {% assign nexturl = next.url %}
-                  class="ajaxLoad"
-                  href="{{ nexturl }}"
-
-              {% endif %}
-
-
-          {% endif %}
-
-      {% endfor %}
-
-      >
-          <span class="small-heading">Next Project</span>
-          <h2>{{ nexttitle }}</h2>
-      </a>
-
+    {% endif %}
+{% endfor %}
+>
+  <div class="container grid">
+    <div class="casestudy__next-titles">
+      <h2>
+        <span class="small-caps">
+          Next Project
+        </span>
+        {{ nexttitle }}
+      </h2>
+    </div>
   </div>
-</div>
+</a>
