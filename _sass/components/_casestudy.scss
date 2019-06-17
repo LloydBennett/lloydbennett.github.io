@@ -12,20 +12,33 @@
     position: relative;
   }
 
-  .hero__bg-strip {
+  .background-strip {
     height: 0;
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        transition: height 250ms ease ($i * 100)#{'ms'}
+      }
+    }
   }
 
   &:hover {
-    .hero__bg-strip {
+    .background-strip {
       height: 100%;
-      @for $i from 0 through 3 {
+
+      @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
-          transition: height 300ms ease ($i * 150)#{'ms'}
+          transition: height 250ms ease ($i * 100)#{'ms'}
         }
       }
     }
   }
+}
+
+.casestudy__next-bg {
+  @include overlay(false);
+  align-items: flex-end;
+  display: flex;
 }
 
 .casestudy__next-titles {

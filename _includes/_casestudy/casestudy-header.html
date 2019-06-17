@@ -1,7 +1,7 @@
 {% capture project-image-url %}../images/projects/{{page.directory}}/thumbnail/{{page.thumbnail}}{% endcapture %}
 <section class="hero hero--{{ page.directory }} {% if page.white-text-on-hero %} hero--inverted {% endif %}">
   <div class="hero__bg">
-    {% include _background-strip.html colour= page.colour %}
+    {% include background-strip.html colour= page.colour %}
   </div>
 
   <div class="hero__wrapper">
@@ -10,11 +10,13 @@
         {{ page.title }}
       </h1>
 
-      <picture class="hero__image hero__image--{{ page.directory }} thumbnail">
-        <source media="(min-width: 550px)" srcset="{{ project-image-url }}@2x.png">
-        <source media="(max-width: 549px)" srcset="{{ project-image-url }}.png">
-        <img src="{{ project-image-url }}.png" alt="{{ page.title}}" />
-      </picture>
+      {% capture thumbnail-css-classes %}hero__image hero__image--{{ page.directory }} thumbnail{% endcapture %}
+
+      {% include casestudy-graphic.html
+        classlist= thumbnail-css-classes
+        image-url= project-image-url
+        title= page.directory
+      %}
 
       <div class="hero__details">
         <hr class="hr--short {% if page.white-text-on-hero %} hr--inverted {% endif %}"></hr>

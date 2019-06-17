@@ -23,11 +23,13 @@
       <div class="project__thumbnail__bg">
         <img src="http://via.placeholder.com/660x600/{{ casestudy.colour}}/{{ casestudy.colour}}">
       </div>
-      <picture class="project__thumbnail__design project__thumbnail--{{ casestudy.directory }}">
-        <source media="(min-width: 550px)" srcset="{{ project-image-url }}@2x.png">
-        <source media="(max-width: 549px)" srcset="{{ project-image-url }}.png">
-        <img src="{{ project-image-url }}.png" alt="{{casestudy.title}}" />
-      </picture>
+      {% capture thumbnail-css-classes %} project__thumbnail__design project__thumbnail--{{ casestudy.directory }}{% endcapture %}
+
+      {% include casestudy-graphic.html
+        classlist= thumbnail-css-classes
+        image-url= project-image-url
+        title= casestudy.directory
+      %}
     </a>
   </div>
 </div>
