@@ -3,8 +3,13 @@
   display: block;
   position: relative;
   padding: spacing(8) 0 spacing(21);
+  overflow: hidden;
 
-  @include media-query($breakpoint--small) {
+  @include media-query($breakpoint--large - 1, max-width) {
+    height: 50rem;
+  }
+
+  @include media-query($breakpoint--large) {
     padding: spacing(13) 0 spacing(18);
   }
 
@@ -13,23 +18,46 @@
   }
 
   .background-strip {
-    height: 0;
+    height: 100%;
+
+    @include media-query($breakpoint--large) {
+      height: 0;
+    }
 
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
-        transition: height 250ms ease ($i * 100)#{'ms'}
+        @include media-query($breakpoint--large) {
+          transition: height 250ms ease ($i * 100)#{'ms'}
+        }
       }
     }
   }
 
   &:hover {
     .background-strip {
-      height: 100%;
+      @include media-query($breakpoint--large) {
+        height: 100%;
+      }
 
       @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
-          transition: height 250ms ease ($i * 100)#{'ms'}
+          @include media-query($breakpoint--large) {
+            transition: height 250ms ease ($i * 100)#{'ms'}
+          }
         }
+      }
+    }
+
+    .casestudy__next-image {
+      transform: translateY(0);
+      transition: transform 300ms ease 600ms;
+    }
+
+    .casestudy__next-title-thoughtbot,
+    .casestudy__next-title-thoughtbot .small-caps {
+      @include media-query($breakpoint--large) {
+        color: $colour--white;
+        transition: color 400ms ease 200ms;
       }
     }
   }
@@ -41,6 +69,44 @@
   display: flex;
 }
 
-.casestudy__next-titles {
+.casestudy__next-wrapper {
   @include offset-content;
+}
+
+.casestudy__next-image {
+  position: absolute;
+}
+
+.casestudy__next-title,
+.small-caps {
+  transition: color 400ms ease 200ms;
+
+  @include media-query($breakpoint--large - 1, max-width) {
+    color: $colour--white;
+  }
+}
+
+
+
+.casestudy__next-image-thoughtbot {
+  bottom: -10rem;
+  max-width: 35rem;
+  right: 0;
+  transition: transform 300ms ease;
+
+  @include media-query($breakpoint--medium) {
+    max-width: 40rem;
+  }
+
+  @include media-query($breakpoint--large) {
+    transform: translateY(70%);
+  }
+
+  @include media-query($breakpoint--large) {
+    right: 10%;
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    right: 25%;
+  }
 }

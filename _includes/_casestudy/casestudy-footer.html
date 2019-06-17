@@ -26,19 +26,28 @@
         {% endif %}
 
     {% endif %}
+
 {% endfor %}
 >
+  {% capture project-image-url %}../images/projects/{{next.directory}}/thumbnail/{{next.thumbnail}}{% endcapture %}
   <div class="casestudy__next-bg">
     {% include background-strip.html colour= next.colour %}
   </div>
   <div class="container grid">
-    <div class="casestudy__next-titles">
-      <h2>
+    <div class="casestudy__next-wrapper">
+      <h2 class="casestudy__next-title casestudy__next-title-{{ next.directory }}">
         <span class="small-caps">
           Next Project
         </span>
         {{ nexttitle }}
       </h2>
     </div>
+  </div>
+  <div class="casestudy__next-image casestudy__next-image-{{ next.directory }}">
+    {% include casestudy-graphic.html
+      classlist= "thumbnail"
+      image-url= project-image-url
+      title= next.directory
+    %}
   </div>
 </a>
