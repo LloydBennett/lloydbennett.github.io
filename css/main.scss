@@ -27,6 +27,8 @@
 @import "tools/mixins/change-input-placeholder-color";
 @import "tools/mixins/input-placeholder-disappear-on-focus";
 @import "tools/mixins/overlay";
+@import "tools/mixins/animate-bg-strip";
+@import "tools/mixins/casestudy-footer-titles-transition";
 @import "layout/container";
 @import "layout/grid";
 @import "layout/two-column-layout";
@@ -50,5 +52,5 @@
 @import "components/hero";
 @import "components/thumbnail";
 @import "components/intro";
-@import "components/casestudy";
+@import "components/casestudy-footer";
 @import "components/background-strip";

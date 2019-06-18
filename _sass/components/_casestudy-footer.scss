@@ -1,3 +1,5 @@
+$colour--bluvalt-text: #2D313F;
+
 .casestudy__footer {
   background-color: $colour--grey;
   display: block;
@@ -13,38 +15,11 @@
     padding: spacing(13) 0 spacing(18);
   }
 
-  .container {
-    position: relative;
-  }
-
-  .background-strip {
-    height: 100%;
-
-    @include media-query($breakpoint--large) {
-      height: 0;
-    }
-
-    @for $i from 1 through 5 {
-      &:nth-child(#{$i}) {
-        @include media-query($breakpoint--large) {
-          transition: height 250ms ease ($i * 100)#{'ms'}
-        }
-      }
-    }
-  }
-
   &:hover {
     .background-strip {
+      @include animate-bg-strip;
       @include media-query($breakpoint--large) {
         height: 100%;
-      }
-
-      @for $i from 1 through 5 {
-        &:nth-child(#{$i}) {
-          @include media-query($breakpoint--large) {
-            transition: height 250ms ease ($i * 100)#{'ms'}
-          }
-        }
       }
     }
 
@@ -56,18 +31,30 @@
     }
 
     .casestudy__footer-title-thoughtbot {
-      @include media-query($breakpoint--large) {
-        color: $colour--white;
-        transition: color 400ms ease 200ms;
-      }
+      @include casestudy-footer-titles($colour--white, $childclass: small-caps);
     }
-    .casestudy__footer-title-thoughtbot .small-caps {
-      @include media-query($breakpoint--large) {
-        color: transparentize($colour--white, 0.2);
-        transition: color 400ms ease 200ms;
-      }
+
+    .casestudy__footer-title-bluvalt {
+      @include casestudy-footer-titles($colour--bluvalt-text, $childclass: small-caps);
     }
   }
+}
+
+.casestudy__footer-bg {
+  .background-strip {
+    @include animate-bg-strip;
+    height: 100%;
+
+    @include media-query($breakpoint--large) {
+      height: 0;
+    }
+  }
+}
+
+.casestudy__footer-wrapper {
+  @include container;
+  @include grid;
+  position: relative;
 }
 
 .casestudy__footer-bg {
@@ -76,7 +63,7 @@
   display: flex;
 }
 
-.casestudy__footer-wrapper {
+.casestudy__footer-content {
   @include offset-content;
 }
 
@@ -94,18 +81,12 @@
   transition: color 400ms ease 200ms;
 }
 
-.casestudy__footer-title-thoughtbot,
-.casestudy__footer-title-thoughtbot .small-caps {
-  @include media-query($breakpoint--large - 1, max-width) {
-    color: $colour--white;
-  }
+.casestudy__footer-title-thoughtbot {
+  @include casestudy-footer-titles($colour--white, $breakpoint--large - 1, max-width, small-caps);
 }
 
-.casestudy__footer-title-bluvalt,
-.casestudy__footer-title-bluvalt .small-caps {
-  @include media-query($breakpoint--large - 1, max-width) {
-    color: #2D313F;
-  }
+.casestudy__footer-title-bluvalt {
+  @include casestudy-footer-titles($colour--bluvalt-text, $breakpoint--large - 1, max-width, small-caps);
 }
 
 .casestudy__footer-image-bluvalt {

@@ -1,0 +1,46 @@
+@mixin casestudy-footer-titles($colour, $device: null, $width-type: null, $childclass: null) {
+  @if $device == null {
+    @include media-query($breakpoint--large) {
+      color: $colour;
+      transition: color 400ms ease 200ms;
+    }
+
+    @if $childclass {
+      .#{$childclass} {
+        @include media-query($breakpoint--large) {
+          color: transparentize($colour, 0.3);
+        }
+      }
+    }
+  }
+  @else {
+    @if $width-type == null {
+      @include media-query($device) {
+        color: $colour;
+        transition: color 400ms ease 200ms;
+      }
+
+      @if $childclass {
+        .#{$childclass} {
+          @include media-query($device) {
+            color: transparentize($colour, 0.3);
+          }
+        }
+      }
+    }
+    @else {
+      @include media-query($device, $width-type) {
+        color: $colour;
+        transition: color 400ms ease 200ms;
+      }
+
+      @if $childclass {
+        .#{$childclass} {
+          @include media-query($device, $width-type) {
+            color: transparentize($colour, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
