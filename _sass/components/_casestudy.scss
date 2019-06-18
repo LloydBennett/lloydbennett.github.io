@@ -86,6 +86,25 @@
   }
 }
 
+.casestudy__next-image-bluvalt {
+  bottom: 0;
+  max-width: 60rem;
+  right: -25%;
+
+  @include media-query($breakpoint--medium) {
+    bottom: -25%;
+    right: 10%;
+  }
+
+  @include media-query($breakpoint--large) {
+    bottom: -35%;
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    max-width: 80rem;
+  }
+}
+
 .casestudy__next-image-thoughtbot {
   bottom: -10rem;
   max-width: 35rem;
