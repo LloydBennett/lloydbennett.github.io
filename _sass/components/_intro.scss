@@ -1,3 +1,11 @@
 .intro {
   @include section;
 }
+
+.intro__wrapper {
+  @include offset-content;
+
+  @include media-query(1080px) {
+    grid-column: 2 / 13;
+  }
+}

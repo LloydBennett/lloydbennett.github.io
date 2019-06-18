@@ -78,15 +78,13 @@
 }
 
 .casestudy__next-title,
-.small-caps {
+.casestudy__next-title .small-caps {
   transition: color 400ms ease 200ms;
 
   @include media-query($breakpoint--large - 1, max-width) {
     color: $colour--white;
   }
 }
-
-
 
 .casestudy__next-image-thoughtbot {
   bottom: -10rem;

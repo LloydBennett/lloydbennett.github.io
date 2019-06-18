@@ -7,6 +7,33 @@ $tweakpoint-two-column-layout: 1080px;
   }
 }
 
+.two-column-layout--grid {
+  @include media-query($tweakpoint-two-column-layout) {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-column-gap: spacing(3);
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column-gap: spacing(4);
+  }
+
+  .two-column-layout__column {
+    &:first-child {
+      grid-column: 1/5;
+      margin-right: 0;
+
+      @include media-query($tweakpoint-two-column-layout - 1, max-width) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:nth-child(2) {
+      grid-column: 6/13;
+    }
+  }
+}
+
 .two-column-layout__column {
   &:first-child {
     @include media-query($tweakpoint-two-column-layout - 1, max-width) {

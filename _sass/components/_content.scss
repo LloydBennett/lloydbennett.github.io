@@ -1,4 +1,13 @@
 .content {
   @include content-view-sticky;
   background-color: $colour--white;
+  padding: spacing(10) 0;
+
+  @include media-query($breakpoint--medium) {
+    padding: spacing(13) 0;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    padding: spacing(21) 0;
+  }
 }

@@ -1,0 +1,4 @@
+.single-column__wrapper {
+  @include offset-content;
+  @include max-paragraph-width;
+}

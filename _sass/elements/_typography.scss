@@ -40,43 +40,42 @@ h1 {
   @include media-query($breakpoint--x-large) {
     font-size: 11rem;
   }
-
-  @include media-query($breakpoint--xx-large) {
-    font-size: 12.7rem;
-  }
 }
 
 h2 {
   font-size: 4.2rem;
   line-height: 1.2;
 
-  @include media-query($breakpoint--small) {
+  @include media-query($breakpoint--x-large) {
     font-size: 5.5rem;
   }
 
-  @include media-query($breakpoint--medium) {
+  @include media-query($breakpoint--xx-large) {
     font-size: 6.3rem;
   }
 }
 
 h3 {
-  font-size: 2.1rem;
+  font-size: 3.2rem;
   line-height: 1.3;
 
+  @include media-query($breakpoint--medium) {
+    margin: 0 0 spacing(5);
+  }
+
   @include media-query($breakpoint--small) {
-    font-size: 3.2rem;
-    line-height: 1.2;
+    font-size: 3.6rem;
   }
 
   @include media-query($breakpoint--x-large) {
-    font-size: 3.6rem;
+    font-size: 4.2rem;
   }
 }
 
 p {
   @include body-text;
   line-height: $type--line-height;
-  margin-bottom: 0;
+  margin: 0;
 
   & + & {
     margin-top: spacing(3);
