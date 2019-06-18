@@ -4,7 +4,7 @@
   {% assign  document = site[projects] | sort: "date" | reversed %}
 {% endif %}
 
-<a class="casestudy__next"
+<a class="casestudy__footer"
 
 {% for links in document %}
     {% if links.title == page.title %}
@@ -30,12 +30,12 @@
 {% endfor %}
 >
   {% capture project-image-url %}../images/projects/{{next.directory}}/thumbnail/{{next.thumbnail}}{% endcapture %}
-  <div class="casestudy__next-bg">
+  <div class="casestudy__footer-bg">
     {% include background-strip.html colour= next.colour %}
   </div>
   <div class="container grid">
-    <div class="casestudy__next-wrapper">
-      <h2 class="casestudy__next-title casestudy__next-title-{{ next.directory }}">
+    <div class="casestudy__footer-wrapper">
+      <h2 class="casestudy__footer-title casestudy__footer-title-{{ next.directory }}">
         <span class="small-caps">
           Next Project
         </span>
@@ -43,7 +43,7 @@
       </h2>
     </div>
   </div>
-  <div class="casestudy__next-image casestudy__next-image-{{ next.directory }}">
+  <div class="casestudy__footer-image casestudy__footer-image-{{ next.directory }}">
     {% include casestudy-graphic.html
       classlist= "thumbnail"
       image-url= project-image-url

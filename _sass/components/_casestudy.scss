@@ -1,4 +1,4 @@
-.casestudy__next {
+.casestudy__footer {
   background-color: $colour--grey;
   display: block;
   position: relative;
@@ -48,45 +48,67 @@
       }
     }
 
-    .casestudy__next-image {
-      transform: translateY(0);
-      transition: transform 300ms ease 600ms;
+    .casestudy__footer-image {
+      @include media-query($breakpoint--large) {
+        transform: translateY(0);
+        transition: transform 300ms ease 600ms;
+      }
     }
 
-    .casestudy__next-title-thoughtbot,
-    .casestudy__next-title-thoughtbot .small-caps {
+    .casestudy__footer-title-thoughtbot {
       @include media-query($breakpoint--large) {
         color: $colour--white;
+        transition: color 400ms ease 200ms;
+      }
+    }
+    .casestudy__footer-title-thoughtbot .small-caps {
+      @include media-query($breakpoint--large) {
+        color: transparentize($colour--white, 0.2);
         transition: color 400ms ease 200ms;
       }
     }
   }
 }
 
-.casestudy__next-bg {
+.casestudy__footer-bg {
   @include overlay(false);
   align-items: flex-end;
   display: flex;
 }
 
-.casestudy__next-wrapper {
+.casestudy__footer-wrapper {
   @include offset-content;
 }
 
-.casestudy__next-image {
+.casestudy__footer-image {
   position: absolute;
+
+  @include media-query($breakpoint--large) {
+    transform: translateY(70%);
+    transition: transform 300ms ease;
+  }
 }
 
-.casestudy__next-title,
-.casestudy__next-title .small-caps {
+.casestudy__footer-title,
+.casestudy__footer-title .small-caps {
   transition: color 400ms ease 200ms;
+}
 
+.casestudy__footer-title-thoughtbot,
+.casestudy__footer-title-thoughtbot .small-caps {
   @include media-query($breakpoint--large - 1, max-width) {
     color: $colour--white;
   }
 }
 
-.casestudy__next-image-bluvalt {
+.casestudy__footer-title-bluvalt,
+.casestudy__footer-title-bluvalt .small-caps {
+  @include media-query($breakpoint--large - 1, max-width) {
+    color: #2D313F;
+  }
+}
+
+.casestudy__footer-image-bluvalt {
   bottom: 0;
   max-width: 60rem;
   right: -25%;
@@ -105,18 +127,13 @@
   }
 }
 
-.casestudy__next-image-thoughtbot {
+.casestudy__footer-image-thoughtbot {
   bottom: -10rem;
   max-width: 35rem;
   right: 0;
-  transition: transform 300ms ease;
 
   @include media-query($breakpoint--medium) {
     max-width: 40rem;
-  }
-
-  @include media-query($breakpoint--large) {
-    transform: translateY(70%);
   }
 
   @include media-query($breakpoint--large) {
