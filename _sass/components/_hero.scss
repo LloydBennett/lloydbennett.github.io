@@ -18,6 +18,14 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
+  .hero__details {
+    position: absolute;
+    
+    @include media-query($breakpoint--large - 1, max-width) {
+      bottom: #{spacing(14)};
+    }
+  }
 }
 
 .hero--inverted {
@@ -71,10 +79,8 @@
 }
 
 .hero__details {
-  position: absolute;
-  bottom: #{spacing(14)};
-
   @include media-query($breakpoint--large) {
+    position: absolute;
     bottom: #{spacing(9)};
   }
 }
