@@ -40,7 +40,11 @@
 }
 
 .hero__title {
-  padding-top: spacing(14);
+  padding-top: spacing(10);
+
+  @include media-query($breakpoint--small) {
+    padding-top: spacing(14);
+  }
 
   span {
     @include no-wrap-and-break;

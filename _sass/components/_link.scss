@@ -1,7 +1,8 @@
 .link {
   display: inline-block;
-  position: relative;
   overflow: hidden;
+  position: relative;
+  vertical-align: bottom;
 
   &::after {
     background-color: #4e4e53;

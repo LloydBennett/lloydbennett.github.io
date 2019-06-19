@@ -1,7 +1,7 @@
 .footer {
   background-color: $colour--grit;
   color: $colour--white;
-  padding: spacing(8) 0;
+  padding: spacing(10) 0;
   position: sticky;
   bottom: 0;
   width: 100%;
@@ -67,7 +67,11 @@
 }
 
 .footer__socials {
-  margin-top: spacing(5);
+  margin-top: spacing(4);
+
+  @include media-query($breakpoint--medium) {
+    margin-top: spacing(5);
+  }
 
   a {
     display: inline-block;
