@@ -17,10 +17,6 @@
     right: 2%;
     font-size: 1.2rem;
   }
-
-  @include media-query($breakpoint--xx-large) {
-    top: 18%;
-  }
 }
 
 .image-meta-info {
