@@ -1,0 +1,10 @@
+.js .wow {
+  visibility: hidden;
+}
+
+.js .slide-up {
+  animation-name: slide-up;
+	animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  transform: translateY(100%);
+}

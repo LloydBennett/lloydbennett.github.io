@@ -21,7 +21,7 @@
 
   .hero__details {
     position: absolute;
-    
+
     @include media-query($breakpoint--large - 1, max-width) {
       bottom: #{spacing(14)};
     }
@@ -57,6 +57,10 @@
   span {
     @include no-wrap-and-break;
   }
+}
+
+.hero__title-wrapper {
+  overflow: hidden;
 }
 
 .hero__wrapper {

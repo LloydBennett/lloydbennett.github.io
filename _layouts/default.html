@@ -10,42 +10,45 @@
     </main>
 
     <span class="meta-info">
-      Lloyd Bennett - UX Designer
+      Lloyd Bennett - Web Designer
     </span>
     {% include footer.html %}
 
     <script>
-    // percentage loader reaches 100%;
-    //   // background strip slides up
-    //   // loader disappears
-    var finished = false;
-
-    function loader () {
+      // percentage loader reaches 100%;
+      //   // background strip slides up
+      //   // loader disappears
       var loaderPercentage = document.querySelector('[data-percentage-value]');
       var percentageValue = loaderPercentage.dataset.percentageValue;
 
+      function loaderTimer() {
+        setInterval(function() {
+          if(percentageValue === 100) {
+            clearInterval();
+            animateLoader();
+            return;
+          } else {
+            percentageValue++;
+            loaderPercentage.innerHTML = percentageValue;
+          }
+        }, 10);
+      }
 
-      var percentageInterval = setInterval(function() {
-        if(percentageValue === 100) {
-          clearInterval();
-          animateLoader();
-          return;
-        } else {
-          percentageValue++;
-          loaderPercentage.innerHTML = percentageValue;
-        }
-      }, 20);
-    }
+      function animateLoader() {
+        var loader = document.querySelector('.loader');
+        loader.classList.add('loader--hide');
+      }
 
-    function animateLoader() {
-      var loader = document.querySelector('.loader');
-      loader.classList.add('loader--hide');
-    }
+      function loader () {
+        loaderPercentage.addEventListener("animationend", function() {
+          setTimeout(loaderTimer, 800);
+        });
+      }
 
+      window.addEventListener('load', function(){
+        loader();
+      });
 
-    window.addEventListener('load', function(){
-      loader();
-    });
     </script>
     <script src="/js/main.js"></script>
   </body>
