@@ -13,6 +13,40 @@
       Lloyd Bennett - UX Designer
     </span>
     {% include footer.html %}
+
+    <script>
+    // percentage loader reaches 100%;
+    //   // background strip slides up
+    //   // loader disappears
+    var finished = false;
+
+    function loader () {
+      var loaderPercentage = document.querySelector('[data-percentage-value]');
+      var percentageValue = loaderPercentage.dataset.percentageValue;
+
+
+      var percentageInterval = setInterval(function() {
+        if(percentageValue === 100) {
+          clearInterval();
+          animateLoader();
+          return;
+        } else {
+          percentageValue++;
+          loaderPercentage.innerHTML = percentageValue;
+        }
+      }, 20);
+    }
+
+    function animateLoader() {
+      var loader = document.querySelector('.loader');
+      loader.classList.add('loader--hide');
+    }
+
+
+    window.addEventListener('load', function(){
+      loader();
+    });
+    </script>
     <script src="/js/main.js"></script>
   </body>
 </html>

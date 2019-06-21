@@ -1,8 +1,8 @@
-@mixin animate-bg-strip {
+@mixin animate-bg-strip($duration: 250, $delay: 100) {
   @for $i from 1 through 5 {
     &:nth-child(#{$i}) {
       @include media-query($breakpoint--large) {
-        transition: height 250ms ease ($i * 100)#{'ms'}
+        transition: height #{$duration}ms ease ($i * $delay)#{'ms'}
       }
     }
   }

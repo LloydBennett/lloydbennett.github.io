@@ -6,13 +6,19 @@
   overflow: hidden;
   position: fixed;
   z-index: 100;
+
+  &.loader--hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: 600ms ease 1s;
+
+    .background-strip {
+      @include animate-bg-strip(400, 100);
+      height: 0;
+    }
+  }
 }
 
-.loader--hide {
-  visibility: hidden;
-  opacity: 0;
-  transition: 600ms ease;
-}
 
 .loader__bg {
   @include overlay;
@@ -31,4 +37,17 @@
 .loader__title {
   color: $colour--white;
   font-size: 2.1rem;
+}
+
+.loader__progress {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  overflow: hidden;
+}
+
+.loader__percentage {
+  color: $colour--grey;
+  font-family: $type--family-headings;
+  font-size: 6rem;
 }
