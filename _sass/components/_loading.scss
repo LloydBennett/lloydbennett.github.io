@@ -1,0 +1,34 @@
+.loader {
+  @include overlay;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  z-index: 100;
+}
+
+.loader--hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: 600ms ease;
+}
+
+.loader__bg {
+  @include overlay;
+  display: flex;
+
+  .background-strip {
+    height: 100%;
+  }
+}
+
+.loader__content {
+  overflow: hidden;
+  position: relative;
+}
+
+.loader__title {
+  color: $colour--white;
+  font-size: 2.1rem;
+}
