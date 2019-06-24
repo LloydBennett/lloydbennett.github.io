@@ -12,7 +12,7 @@
     <span class="meta-info">
       Lloyd Bennett - Web Designer
     </span>
-    {% include footer.html %}
+    <!-- {% include footer.html %} -->
 
     <script>
       // percentage loader reaches 100%;
@@ -20,6 +20,7 @@
       //   // loader disappears
       var loaderPercentage = document.querySelector('[data-percentage-value]');
       var percentageValue = loaderPercentage.dataset.percentageValue;
+      var backgroundStrips = document.querySelectorAll('[data-hero-strip]');
 
       function loaderTimer() {
         setInterval(function() {
@@ -36,6 +37,14 @@
 
       function animateLoader() {
         var loader = document.querySelector('.loader');
+
+        loader.addEventListener("transitionend", function() {
+          backgroundStrips.forEach(function(elem){
+            console.log(elem);
+            //elem.classList.add('bg-grow');
+          });
+        });
+
         loader.classList.add('loader--hide');
       }
 

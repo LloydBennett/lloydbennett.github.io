@@ -1,5 +1,9 @@
 {% for i in (1..5) %}
-  <div class="background-strip"
-       style="background-color: {{ include.colour | prepend: '#'}}">
-  </div>
+  {% if include.animatestip %}
+    <div class="background-strip" data-hero-strip
+  {% else %}
+    <div class="background-strip"
+  {% endif %}
+    style="background-color: {{ include.colour | prepend: '#'}}">
+    </div>
 {% endfor %}

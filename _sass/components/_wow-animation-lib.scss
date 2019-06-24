@@ -8,3 +8,20 @@
   animation-timing-function: ease;
   transform: translateY(100%);
 }
+
+.js .bg-grow {
+  height: 0%;
+  animation-name: bg-grow;
+	animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes bg-grow {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100%;
+  }
+}
