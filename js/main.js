@@ -29,16 +29,16 @@
     }
   }
 
-  function checkWindowSize(){
-    if($(window).width() < 960) {
-       $.scrollify.disable();
-
-    }
-    else {
-      $.scrollify.enable();
-      $.scrollify(scrollifyOptions);
-    }
-  }
+  // function checkWindowSize(){
+  //   if($(window).width() < 960) {
+  //      $.scrollify.disable();
+  //
+  //   }
+  //   else {
+  //     $.scrollify.enable();
+  //     $.scrollify(scrollifyOptions);
+  //   }
+  // }
 
   function init() {
 
@@ -50,8 +50,8 @@
     //$(window).resize(checkWindowSize);
 	}
 
-  $(function(){
-		init();
-	});
+  window.load = function(){
+    init();
+  }
 
 }());
