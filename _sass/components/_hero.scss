@@ -61,12 +61,20 @@
 
 .hero__title-wrapper {
   overflow: hidden;
+
+  &:last-child {
+    margin-top: -1.5rem;
+  }
 }
 
 .js {
   .hero__title-content {
-    transform: translateY(100%);
+    transform: translateY(calc(100% + 1.5rem));
   }
+}
+
+.hero__title-content {
+  margin-bottom: 1.5rem;
 }
 
 .hero__wrapper {
