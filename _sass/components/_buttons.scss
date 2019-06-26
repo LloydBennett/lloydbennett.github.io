@@ -12,27 +12,25 @@
   position: relative;
   transition: 500ms ease color;
 
-  &::after {
-    background-color: $colour--black;
-    content: "";
-    display: block;
-    height: 0.2rem;
-    transition: 600ms ease;
-    width: 100%;
-    margin-top: spacing(1) / 2;
-    transition: 500ms ease;
-  }
-
   &:hover {
     color: $colour--passion;
     transition: 500ms ease background-color;
 
-    &::after {
+    .button__line {
       animation: link-hover 600ms ease 0s 1 forwards;
       transition: 500ms ease 100ms;
       background-color: $colour--passion;
     }
   }
+}
+
+.button__line {
+  background-color: $colour--black;
+  display: block;
+  height: 0.2rem;
+  width: 100%;
+  margin-top: spacing(1) / 2;
+  transition: 500ms ease;
 }
 
 .button--margin-top {

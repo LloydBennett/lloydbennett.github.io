@@ -36,12 +36,20 @@ include-nav: true;
       <div class="hero__details">
         <p class="hero__copy" data-hero-copy>I create web and mobile experiences that work successfully
     for your business, product and your customers.</p>
-        <a href="https://dribbble.com/ljbennett"
+
+        {% include button.html
+          target="https://dribbble.com/ljbennett"
+          externalLink = true
+          heroCta = true
+          buttonText = "See Work"
+        %}
+
+        <!-- <a href="https://dribbble.com/ljbennett"
           target="_blank"
           class="button button--margin-top"
           data-hero-cta>
           See Work
-        </a>
+        </a> -->
       </div>
     </div>
   </div>

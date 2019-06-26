@@ -8,7 +8,8 @@ class Loader {
     this.heroTitles = document.querySelectorAll('[data-hero-titles]');
     this.heroCopy = document.querySelector('[data-hero-copy]');
     this.heroBtn = document.querySelector('[data-hero-cta]');
-    //this.heroBtnLine = document.querySelector('[data-hero-cta]::after');
+    this.heroBtnLine = document.querySelector('[data-hero-cta] .button__line');
+    this.metaInfo = document.querySelector('[data-meta-info]');
     this.init();
   }
 
@@ -27,8 +28,9 @@ class Loader {
     this.loaderTl.to(this.loader, 0.3, { opacity: 0, visibility: "hidden" });
     this.animateNodeList(this.heroTitles, { y: 0 }, "-=0.22");
     this.loaderTl.fromTo(this.heroCopy, 0.3, { opacity: 0, y: 50 }, { opacity: 1, y: 0 });
-    this.loaderTl.fromTo(this.heroBtn, 0.3, { opacity: 0 }, { opacity: 1 });
-    //this.loaderTl.fromTo(this.heroBtnLine, 0.3, { width: 0 }, { width: "100%" }, offsetDelay);
+    this.loaderTl.fromTo(this.heroBtn, 0.3, { opacity: 0 }, { opacity: 1 }, "last-elements");
+    this.loaderTl.fromTo(this.heroBtnLine, 0.05, { width: 0 }, { width: "100%" }, offsetDelay);
+    this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, {opacity: 1}, "last-elements");
   }
 
   animateNodeList(nodelist, props, offset) {
