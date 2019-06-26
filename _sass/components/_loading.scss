@@ -10,20 +10,9 @@
   &.loader--hide {
     visibility: hidden;
     opacity: 0;
-    transition: 600ms ease 1.2s;
-
-    .background-strip {
-      @include animate-bg-strip(400, 100);
-      height: 0;
-    }
-
-    .loader__percentage {
-      animation-name: slide-in;
-      animation-direction: reverse;
-    }
+    transition: 600ms ease;
   }
 }
-
 
 .loader__bg {
   @include overlay;
@@ -62,14 +51,4 @@
   animation-fill-mode: forwards;
   transform: translateY(100%);
   display: inline-block;
-}
-
-@keyframes slide-up {
-  from {
-    transform: translateY(100%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
 }

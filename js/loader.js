@@ -1,9 +1,11 @@
 class Loader {
   constructor(){
     this.loaderTl = new TimelineLite();
+    this.loader = document.querySelector('[data-loader]');
     this.loaderBgStrips = document.querySelectorAll('.loader__bg .background-strip');
     this.heroBgStrips = document.querySelectorAll('[data-hero-strip]');
     this.loaderTimer = document.querySelector('[data-loader-timer]');
+    this.heroTitles = document.querySelectorAll('[data-hero-titles]');
     this.init();
   }
 
@@ -14,25 +16,30 @@ class Loader {
   animateLoader() {
     var offsetDelay = "-=0.15";
 
-
     // pull in the percentage timer up
     // animate the timer to show how much has been loaded
     // hide the loader
-    this.animateBackground(this.loaderBgStrips, 0, offsetDelay);
-    this.animateBackground(this.heroBgStrips, "100%", offsetDelay);
-    // animate the titles, paragraph and cta button
+    this.animateNodeList(this.loaderBgStrips, { height: 0 }, offsetDelay);
+    this.animateNodeList(this.heroBgStrips, { height: "100%" }, offsetDelay);
+    this.loaderTl.to(this.loader, 0.3, { opacity: 0, visibility: "hidden" });
+    this.animateNodeList(this.heroTitles, { y: 0 }, offsetDelay);
 
+    //this.animateContent();
+    // animate the titles, paragraph and cta button
   }
 
-  animateBackground(nodelist, height, o) {
+  animateNodeList(nodelist, props, offset) {
     nodelist.forEach((e, i) => {
       if(i == 0) {
-        this.loaderTl.to(e, 0.3, { height: height });
+        this.loaderTl.to(e, 0.3, props);
       }
       else {
-        this.loaderTl.to(e, 0.3, { height: height }, o);
+        this.loaderTl.to(e, 0.3, props, offset);
       }
     });
+  }
+  animateContent() {
+
   }
 }
 

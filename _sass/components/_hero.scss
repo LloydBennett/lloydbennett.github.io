@@ -63,6 +63,12 @@
   overflow: hidden;
 }
 
+.js {
+  .hero__title-content {
+    transform: translateY(100%);
+  }
+}
+
 .hero__wrapper {
   @include container;
   @include grid;
