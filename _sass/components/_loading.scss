@@ -42,13 +42,14 @@
 
 .loader__percentage {
   color: $colour--grey;
+  display: inline-block;
   font-family: $type--family-headings;
   font-size: 6rem;
-  animation-name: slide-up;
-  animation-duration: 400ms;
-  animation-timing-function: ease;
-  animation-delay: 800ms;
-  animation-fill-mode: forwards;
+  // animation-name: slide-up;
+  // animation-duration: 400ms;
+  // animation-timing-function: ease;
+  // animation-delay: 800ms;
+  // animation-fill-mode: forwards;
   transform: translateY(100%);
-  display: inline-block;
+
 }
