@@ -27,13 +27,13 @@ class Loader {
     this.calculateLoadTime(0);
   }
 
-  animateNodeList(nodelist, props, offset) {
+  animateNodeList(nodelist,props, offset, duration = 0.3) {
     nodelist.forEach((e, i) => {
       if(i == 0) {
-        this.loaderTl.to(e, 0.3, props);
+        this.loaderTl.to(e, duration, props);
       }
       else {
-        this.loaderTl.to(e, 0.3, props, offset);
+        this.loaderTl.to(e, duration, props, offset);
       }
     });
   }
@@ -49,14 +49,14 @@ class Loader {
     if(al == 100) {
       clearInterval(timer);
       this.loaderPercentage.innerHTML = 100;
-      this.revealContent();
+      this.revealContent(); //set a delay to function
     }
   }
 
   revealContent() {
     let offsetDelay = "-=0.15";
 
-    this.animateNodeList(this.loaderTimerContent, { y: "100%" }, "-=0.3");
+    this.animateNodeList(this.loaderTimerContent, { y: "100%" },"-=0.6", 0.6);
     this.animateNodeList(this.loaderBgStrips, { height: 0 }, offsetDelay);
     this.animateNodeList(this.heroBgStrips, { height: "100%" }, offsetDelay);
     this.loaderTl.to(this.loader, 0.3, { opacity: 0, visibility: "hidden" });
