@@ -2,7 +2,6 @@
 <html>
   {% include head.html %}
   <body>
-    {% include loading-screen.html %}
     <main class="website">
       <div class="step--reset {{ site.page.title }}">
         {{ content }}
@@ -13,52 +12,6 @@
       Lloyd Bennett - Web Designer
     </span>
     <!-- {% include footer.html %} -->
-
-    <!-- <script>
-      // percentage loader reaches 100%;
-      //   // background strip slides up
-      //   // loader disappears
-      var loaderPercentage = document.querySelector('[data-percentage-value]');
-      var percentageValue = loaderPercentage.dataset.percentageValue;
-      var backgroundStrips = document.querySelectorAll('[data-hero-strip]');
-
-      function loaderTimer() {
-        setInterval(function() {
-          if(percentageValue === 100) {
-            clearInterval();
-            animateLoader();
-            return;
-          } else {
-            percentageValue++;
-            loaderPercentage.innerHTML = percentageValue;
-          }
-        }, 10);
-      }
-
-      function animateLoader() {
-        var loader = document.querySelector('.loader');
-
-        loader.addEventListener("transitionend", function() {
-          backgroundStrips.forEach(function(elem){
-            console.log(elem);
-            //elem.classList.add('bg-grow');
-          });
-        });
-
-        loader.classList.add('loader--hide');
-      }
-
-      function loader () {
-        loaderPercentage.addEventListener("animationend", function() {
-          setTimeout(loaderTimer, 800);
-        });
-      }
-
-      window.addEventListener('load', function(){
-        loader();
-      });
-
-    </script> -->
     <script src="/js/loader.js"></script>
     <script src="/js/main.js"></script>
   </body>
