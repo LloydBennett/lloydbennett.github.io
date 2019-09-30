@@ -7,7 +7,7 @@ class Loader {
     this.heroBtn = document.querySelector('[data-hero-cta]');
     this.heroBtnLine = document.querySelector('[data-hero-cta] .button__line');
     this.metaInfo = document.querySelector('[data-meta-info]');
-    this.footer = document.query('[data-footer]');
+    this.footer = document.querySelector('[data-footer]');
     this.finishedCalculating = false;
 
     this.init();
@@ -35,8 +35,9 @@ class Loader {
     this.animateNodeList(this.heroTitles, { y: 0 }, "-=0.22");
     this.loaderTl.fromTo(this.heroCopy, 0.3, { opacity: 0, y: 50 }, { opacity: 1, y: 0 });
     this.loaderTl.fromTo(this.heroBtn, 0.3, { opacity: 0 }, { opacity: 1 }, "last-elements");
-    this.loaderTl.fromTo(this.heroBtnLine, 0.05, { width: 0 }, { width: "100%" }, offsetDelay);
-    this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, {opacity: 1}, "last-elements");
+    this.loaderTl.fromTo(this.heroBtnLine, 0.3, { width: 0 }, { width: "100%" }, offsetDelay);
+    this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1 }, "last-elements");
+    this.loaderTl.fromTo(this.footer, 0.3, { opacity: 0 }, { opacity: 1 });
   }
 }
 

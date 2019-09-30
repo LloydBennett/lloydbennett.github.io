@@ -10,11 +10,11 @@
   overflow: hidden;
   padding: 0;
   position: relative;
-  transition: 500ms ease color;
+  transition: color 500ms ease;
 
   &:hover {
     color: $colour--passion;
-    transition: 500ms ease background-color;
+    transition: color 500ms ease;
 
     .button__line {
       animation: link-hover 600ms ease 0s 1 forwards;
@@ -30,7 +30,7 @@
   height: 0.2rem;
   width: 100%;
   margin-top: spacing(1) / 2;
-  transition: 500ms ease;
+  transition: transform 500ms ease;
 }
 
 .button--margin-top {
