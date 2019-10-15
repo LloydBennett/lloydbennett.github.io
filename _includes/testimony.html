@@ -1,4 +1,7 @@
 <div class="testimony">
+  <div class="testimony__mark">
+    {% include quotation-mark.html %}
+  </div>
   <p class="testimony__quote">
     {{ include.quote }}
   </p>
@@ -6,11 +9,11 @@
     <div class="avatar thumbnail">
       <img src="../images/projects/{{page.directory}}/avatars/{{ include.avatar }}.jpg" alt="{{ include.name }}">
     </div>
-    <div class="testimony__author-details">
-      <span class="testimony__author-name">
+    <div class="testimony__author-wrapper">
+      <span class="testimony__author-detail testimony__author-name">
         {{ include.name }}
       </span>
-      <span class="testimony__author-role">
+      <span class="testimony__author-detail testimony__author-role">
         {{ include.role }}
       </span>
     </div>

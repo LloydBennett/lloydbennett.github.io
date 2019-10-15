@@ -42,6 +42,10 @@ $tweakpoint-two-column-layout: 1080px;
   }
 }
 
+.two-column-layout__column-bottom {
+  align-self: flex-end;
+}
+
 .two-column-layout__column {
   &:first-child {
     @include media-query($tweakpoint-two-column-layout - 1, max-width) {
