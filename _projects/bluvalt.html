@@ -40,33 +40,47 @@ description: Bluvalt is a Saudi Arabian cloud computing service that was encount
       </div>
     </div>
   </section>
-  <section class="single-column">
+
+
+  <section>
     <div class="container grid">
-      <div class="single-column__wrapper">
-        <h3>
-          <span>Setting goals</span>
-          <span>and wireframming</span>
-        </h3>
-        <p>
-          After reviewing users activity on the website on Fullstory we learnt
-          that users often felt lost as they move their mouse around, attempt
-          to click on a few things that would lead them on a dead end page and
-          then leave the site all together. We set an overarching goal for the
-          site and goals for each individual page.
-        </p>
+      <div class="two-column-layout two-column-layout--grid two-column-layout__offset">
+        <div class="two-column-layout__column">
+          <h3>
+            <span>Setting goals</span>
+            <span>and wireframming</span>
+          </h3>
+          <p>
+            After reviewing users activity on the website on Fullstory we learnt
+            that users often felt lost as they move their mouse around, attempt
+            to click on a few things that would lead them on a dead end page and
+            then leave the site all together. We set an overarching goal for the
+            site and goals for each individual page.
+          </p>
+        </div>
+        <div class="two-column-layout__column">
+          {% include testimony.html avatar = "rami-taibah"
+            name = "Rami Taibah"
+            role = "UX Architect at Bluvalt"
+            quote = "Lloyd understood the problem, wasn’t much back and forth."
+          %}
+        </div>
       </div>
     </div>
-    <div class="media-section">
-      <picture class="media-section-bg">
-        <source media="(max-width: 799px)" srcset="https://via.placeholder.com/600x650.jpg/f2f2f2/f2f2f2">
-        <source media="(min-width: 800px)" srcset="https://via.placeholder.com/1440x750.jpg/f2f2f2/f2f2f2">
-        <img src="https://via.placeholder.com/1440x750.png/f2f2f2" alt="Media Background">
-      </picture>
-    </div>
   </section>
-  <section class="single-column">
+
+
+  <section class="media-section">
+    <picture class="media-section-bg">
+      <source media="(max-width: 799px)" srcset="https://via.placeholder.com/600x650.jpg/f2f2f2/f2f2f2">
+      <source media="(min-width: 800px)" srcset="https://via.placeholder.com/1440x750.jpg/f2f2f2/f2f2f2">
+      <img src="https://via.placeholder.com/1440x750.png/f2f2f2" alt="Media Background">
+    </picture>
+  </section>
+
+  <section>
     <div class="container grid">
-      <div class="single-column__wrapper">
+      <div class="single-column">
         <h3>
           <span>Establishing a</span>
           <span>visual direction</span>
@@ -85,9 +99,9 @@ description: Bluvalt is a Saudi Arabian cloud computing service that was encount
     </div>
   </section>
 
-  <section class="single-column">
+  <section>
     <div class="container grid">
-      <div class="single-column__wrapper">
+      <div class="single-column">
         <h3>
           <span>Developer Hand-off</span>
         </h3>
@@ -128,27 +142,13 @@ description: Bluvalt is a Saudi Arabian cloud computing service that was encount
           </p>
         </div>
         <div class="two-column-layout__column">
-          <div class="testimony">
-            <p class="testimony__quote">
-              Top notch, problem solvers, very candid. I felt like it wasn’t all
-              about the end product, the work-flow, communication was very
-              important to thoughtbotters too.
-            </p>
-            <div class="testimony__author">
-              <div class="avatar thumbnail">
-                <img src="../images/projects/{{page.directory}}/avatars/rami-taibah.jpg" alt="Rami Taibah">
-              </div>
-              <div class="testimony__author-details">
-                <span class="testimony__author-name">
-                  Rami Taibah
-                </span>
-                <span class="testimony__author-role">
-                  UX Architect at Bluvalt
-                </span>
-
-              </div>
-            </div>
-          </div>
+          {% include testimony.html avatar = "rami-taibah"
+            name = "Rami Taibah"
+            role = "UX Architect at Bluvalt"
+            quote = "Top notch, problem solvers, very candid. I felt like it wasn’t all
+            about the end product, the work-flow, communication was very
+            important to thoughtbotters too."
+          %}
         </div>
       </div>
     </div>

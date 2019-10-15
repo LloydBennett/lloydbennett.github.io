@@ -1,0 +1,18 @@
+<div class="testimony">
+  <p class="testimony__quote">
+    {{ include.quote }}
+  </p>
+  <div class="testimony__author">
+    <div class="avatar thumbnail">
+      <img src="../images/projects/{{page.directory}}/avatars/{{ include.avatar }}.jpg" alt="{{ include.name }}">
+    </div>
+    <div class="testimony__author-details">
+      <span class="testimony__author-name">
+        {{ include.name }}
+      </span>
+      <span class="testimony__author-role">
+        {{ include.role }}
+      </span>
+    </div>
+  </div>
+</div>
