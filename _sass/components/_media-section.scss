@@ -2,6 +2,26 @@
   @include section;
   max-height: 80rem;
   overflow: hidden;
+  position: relative;
+}
+
+.media-section__content {
+  display: table;
+  left: 50%;
+  max-height: 80rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.media-section__content-wide {
+  max-width: 144rem;
+  width: 100%;
 }
 
 .media-section-bg,
