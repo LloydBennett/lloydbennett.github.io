@@ -11,8 +11,13 @@
 
 .testimony__mark {
   display: table;
-  margin-bottom: spacing(4);
-  height: 3rem;
+  margin-bottom: spacing(3);
+  height: 2rem;
+
+  @include media-query($breakpoint--small) {
+    height: 3rem;
+    margin-bottom: spacing(4);
+  }
 
   @include media-query($breakpoint--large) {
     height: auto;
@@ -30,10 +35,14 @@
 }
 
 .testimony__quote {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-family: $type--family-headings;
   font-style: italic;
   margin-bottom: spacing(3);
+
+  @include media-query($breakpoint--medium) {
+    font-size: 2.8rem;
+  }
 }
 
 .testimony__author-wrapper {

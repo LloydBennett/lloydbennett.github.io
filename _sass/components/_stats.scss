@@ -1,5 +1,9 @@
 .stats {
-  margin-top: spacing(7);
+  margin-top: spacing(6);
+
+  @include media-query($breakpoint--medium) {
+    margin-top: spacing(7);
+  }
 }
 
 .stats__info {
@@ -11,10 +15,14 @@
   color: $colour--body-type;
   display: block;
   font-family: $type--family-headings;
-  font-size: 5.8rem;
+  font-size: 5rem;
   margin-bottom: spacing(1);
   margin-top: spacing(1);
   font-weight: 400;
+
+  @include media-query($breakpoint--medium) {
+    font-size: 5.8rem;
+  }
 }
 
 .stats__info-description {
