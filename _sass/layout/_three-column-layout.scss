@@ -1,0 +1,24 @@
+.three-column-layout {
+  @include media-query($breakpoint--small) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: spacing(3);
+    grid-row-gap: spacing(4);
+  }
+
+  @include media-query($breakpoint--large) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column-gap: spacing(4);
+  }
+}
+
+.three-column-layout__column {
+  & + & {
+    @include media-query($breakpoint--small - 1, max-width) {
+      margin-top: spacing(6);
+    }
+  }
+}

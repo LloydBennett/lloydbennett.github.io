@@ -10,6 +10,20 @@ button-text: "View Website"
 live-url: http://www.thoughtbot.co.uk
 date: 2017-04-12 00:09:00
 description: Bluvalt is a Saudi Arabian cloud computing service that was encountering bounce rate on their marketing site. A site redesign was required to make their service clearer to their customers.
+colour-swatches:
+  - colour: Tech Blue
+    hex: "4BCBF3"
+    rgb: "75,203,243"
+    cmyk: "69,16,0,5"
+  - colour: Communicative Purple
+    hex: "AD72E4"
+    rgb: "173,114,228"
+    cmyk: "22,45,0,11"
+  - colour: Authoritative Blue
+    hex: "024065"
+    rgb: "2,64,101"
+    cmyk: "39,15,0,60"
+
 ---
 
 <div class="content">
@@ -111,6 +125,26 @@ description: Bluvalt is a Saudi Arabian cloud computing service that was encount
       <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/components-2x.png">
       <img src="../images/projects/{{page.directory}}/case-study/components.png" alt="Components">
     </picture>
+  </section>
+
+  <section>
+    <div class="container grid">
+
+      <div class="three-column-layout two-column-layout__offset">
+        {% for colour in page.colour-swatches %}
+        <div class="three-column-layout__column">
+
+          {% include colour-swatches.html
+            colour-name = colour.colour
+            hex = colour.hex
+            rgb = colour.rgb
+            cmyk = colour.cmyk
+          %}
+          
+        </div>
+        {% endfor %}
+      </div>
+    </div>
   </section>
 
   <section class="section">

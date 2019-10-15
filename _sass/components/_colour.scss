@@ -1,0 +1,23 @@
+.colour__swatch {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.colour__details-name {
+  font-size: 1.8rem;
+  color: $colour--body-type;
+}
+
+.colour__details-code {
+
+  & + & {
+    margin-top: $spacing-rule-half;
+  }
+
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
