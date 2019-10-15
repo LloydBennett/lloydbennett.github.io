@@ -1,4 +1,5 @@
 .media-section {
+  @include section;
   max-height: 80rem;
   overflow: hidden;
 }
