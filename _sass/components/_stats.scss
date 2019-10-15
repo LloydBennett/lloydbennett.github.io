@@ -1,0 +1,23 @@
+.stats {
+  margin-top: spacing(7);
+}
+
+.stats__info {
+  border-top: 4px solid $colour--body-type;
+  max-width: 11.5rem;
+}
+
+.stats__info-percentage {
+  color: $colour--body-type;
+  display: block;
+  font-family: $type--family-headings;
+  font-size: 5.8rem;
+  margin-bottom: spacing(1);
+  margin-top: spacing(1);
+  font-weight: 400;
+}
+
+.stats__info-description {
+  color: $colour--body-type;
+  font-size: 1.4rem;
+}
