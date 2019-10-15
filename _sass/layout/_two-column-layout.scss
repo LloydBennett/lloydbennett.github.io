@@ -11,16 +11,12 @@ $tweakpoint-two-column-layout: 1080px;
   @include media-query($tweakpoint-two-column-layout) {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-column-gap: spacing(3);
-  }
-
-  @include media-query($breakpoint--x-large) {
     grid-column-gap: spacing(4);
   }
 
   .two-column-layout__column {
     &:first-child {
-      grid-column: 1/5;
+      grid-column: 1/6;
       margin-right: 0;
     }
 
@@ -36,6 +32,10 @@ $tweakpoint-two-column-layout: 1080px;
   }
 }
 
+.two-column-layout__paragraph {
+  @include max-paragraph-width;
+}
+
 .two-column-layout__offset {
   @include offset-content;
 
@@ -49,7 +49,7 @@ $tweakpoint-two-column-layout: 1080px;
 }
 
 .two-column-layout__column {
-  &:first-child {
+  &:first-child:not(.two-column-layout__heading) {
     @include media-query($tweakpoint-two-column-layout - 1, max-width) {
       @include inner-section;
     }
@@ -60,6 +60,14 @@ $tweakpoint-two-column-layout: 1080px;
 
     @include media-query($breakpoint--x-large) {
       margin-right: spacing(8);
+    }
+  }
+}
+
+.two-column-cancel-spacing {
+  &:first-child {
+    @include media-query($tweakpoint-two-column-layout - 1, max-width) {
+      @include inner-section;
     }
   }
 }
