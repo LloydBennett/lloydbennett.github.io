@@ -45,6 +45,16 @@
   }
 }
 
+.testimony__quote-break-bluvalt {
+  @include media-query($breakpoint--small) {
+    display: block;
+  }
+  // bluvalt short testimony tweakpoint
+  @media screen and (min-width: 1080px) and (max-width: 1199px) {
+    display: inline;
+  }
+}
+
 .testimony__author-wrapper {
   margin-left: spacing(2);
 }
