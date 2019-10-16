@@ -22,3 +22,11 @@
     }
   }
 }
+
+.three-column-layout--offset {
+  @include offset-content;
+
+  @include media-query($breakpoint--large) {
+    grid-column: 2 / 13;
+  }
+}

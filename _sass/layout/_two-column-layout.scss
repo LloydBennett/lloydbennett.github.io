@@ -17,11 +17,16 @@ $tweakpoint-two-column-layout: 1080px;
   .two-column-layout__column {
     &:first-child {
       grid-column: 1/6;
-      margin-right: 0;
     }
 
     &:nth-child(2) {
       grid-column: 6/13;
+    }
+
+    &:first-child:not(.two-column-layout__heading) {
+      @include media-query($tweakpoint-two-column-layout - 1, max-width) {
+        @include inner-section;
+      }
     }
 
     & + & {
@@ -36,7 +41,7 @@ $tweakpoint-two-column-layout: 1080px;
   @include max-paragraph-width;
 }
 
-.two-column-layout__offset {
+.two-column-layout--offset {
   @include offset-content;
 
   @include media-query(1080px) {
@@ -46,22 +51,6 @@ $tweakpoint-two-column-layout: 1080px;
 
 .two-column-layout__column-bottom {
   align-self: flex-end;
-}
-
-.two-column-layout__column {
-  &:first-child:not(.two-column-layout__heading) {
-    @include media-query($tweakpoint-two-column-layout - 1, max-width) {
-      @include inner-section;
-    }
-
-    @include media-query($tweakpoint-two-column-layout) {
-      margin-right: spacing(6);
-    }
-
-    @include media-query($breakpoint--x-large) {
-      margin-right: spacing(8);
-    }
-  }
 }
 
 .two-column-cancel-spacing {

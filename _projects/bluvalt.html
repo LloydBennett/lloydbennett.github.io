@@ -29,7 +29,7 @@ colour-swatches:
 <div class="content">
   <section class="intro">
     <div class="container grid">
-      <div class="two-column-layout two-column-layout--grid two-column-layout__offset">
+      <div class="two-column-layout two-column-layout--grid two-column-layout--offset">
         <div class="two-column-layout__column two-column-layout__paragraph two-column-layout__heading">
           <h3>
             <span class="small-caps">
@@ -58,7 +58,7 @@ colour-swatches:
 
   <section class="section">
     <div class="container grid">
-      <div class="two-column-layout two-column-layout--grid two-column-layout__offset">
+      <div class="two-column-layout two-column-layout--grid two-column-layout--offset">
         <div class="two-column-layout__column two-column-layout__paragraph">
           <h3>
             <span>Setting goals</span>
@@ -130,7 +130,7 @@ colour-swatches:
   <section>
     <div class="container grid">
 
-      <div class="three-column-layout two-column-layout__offset">
+      <div class="three-column-layout three-column-layout--offset inner-section">
         {% for colour in page.colour-swatches %}
         <div class="three-column-layout__column">
 
@@ -140,10 +140,11 @@ colour-swatches:
             rgb = colour.rgb
             cmyk = colour.cmyk
           %}
-          
+
         </div>
         {% endfor %}
       </div>
+
     </div>
   </section>
 
@@ -184,7 +185,7 @@ colour-swatches:
 
   <section>
     <div class="container grid">
-      <div class="two-column-layout two-column-layout--grid two-column-layout__offset">
+      <div class="two-column-layout two-column-layout--grid two-column-layout--offset">
         <div class="two-column-layout__column two-column-layout__paragraph">
           <h3>
             <span class="small-caps">
