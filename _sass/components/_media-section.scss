@@ -1,17 +1,27 @@
 .media-section {
   @include section;
-  max-height: 80rem;
-  overflow: hidden;
-  position: relative;
 }
 
+.media-section__wrapper {
+  position: relative;
+  margin-bottom: spacing(2);
+
+  @include media-query($breakpoint--medium) {
+    margin-bottom: spacing(3);
+  }
+}
+
+.media-section__bg,
+.media-section__bg img {
+  @include overlay;
+}
+
+
 .media-section__content {
+  position: relative;
   display: table;
-  left: 50%;
-  max-height: 80rem;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: auto;
+  margin-right: auto;
 
   img {
     height: 100%;
