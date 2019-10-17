@@ -35,11 +35,7 @@ $tweakpoint-two-column-layout: 1080px;
 }
 
 .two-column-layout--offset {
-  @include offset-content;
-
-  @include media-query(1080px) {
-    grid-column: 2 / 13;
-  }
+  @include offset-content(true, $tweakpoint-two-column-layout);
 }
 
 .two-column-layout__column-bottom {
