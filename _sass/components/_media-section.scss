@@ -23,7 +23,8 @@
   margin-left: auto;
   margin-right: auto;
 
-  img {
+  img,
+  video {
     height: 100%;
     width: 100%;
   }
@@ -38,4 +39,9 @@
 .media-section-bg img {
   display: block;
   width: 100%;
+}
+
+.media-section__figure {
+  font-size: 1.4rem;
+  font-style: italic;
 }

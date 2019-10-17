@@ -91,11 +91,26 @@ colour-swatches:
   </section>
 
   <section class="media-section">
-    <picture class="media-section-bg">
-      <source media="(max-width: 767px)" srcset="https://via.placeholder.com/600x630.jpg/f2f2f2/f2f2f2">
-      <source media="(min-width: 768px)" srcset="https://via.placeholder.com/1440x750.jpg/f2f2f2/f2f2f2">
-      <img src="https://via.placeholder.com/1440x750.png/f2f2f2" alt="Media Background">
-    </picture>
+    <div class="media-section__wrapper">
+      <picture class="media-section__bg">
+        <source media="(max-width: 767px)" srcset="https://via.placeholder.com/600x630.jpg/f2f2f2/f2f2f2">
+        <source media="(min-width: 768px)" srcset="https://via.placeholder.com/1440x750.jpg/f2f2f2/f2f2f2">
+        <img src="https://via.placeholder.com/1440x750.png/f2f2f2" alt="Media Background">
+      </picture>
+      <picture class="media-section__content media-section__content-wide">
+        <source media="(max-width: 767px)" srcset="../images/projects/{{page.directory}}/case-study/components-mobile.png">
+        <source media="(max-width: 1199px)" srcset="../images/projects/{{page.directory}}/case-study/components.png">
+        <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/components-2x.png">
+        <img src="../images/projects/{{page.directory}}/case-study/components.png" alt="Components">
+      </picture>
+    </div>
+    <div class="container grid">
+      <div class="single-column">
+        <p class="media-section__figure">
+          Figure 1: UI Components
+        </p>
+      </div>
+    </div>
   </section>
 
   <section class="inner-section">
@@ -120,20 +135,25 @@ colour-swatches:
   </section>
 
   <section class="media-section">
-    <div class="media-section-wrapper">
-      <picture class="media-section-bg">
+    <div class="media-section__wrapper">
+      <picture class="media-section__bg">
         <source media="(max-width: 767px)" srcset="https://via.placeholder.com/600x630.jpg/f2f2f2/f2f2f2">
         <source media="(min-width: 768px)" srcset="https://via.placeholder.com/1440x750.jpg/f2f2f2/f2f2f2">
         <img src="https://via.placeholder.com/1440x750.png/f2f2f2" alt="Media Background">
       </picture>
-      <picture class="media-section__content media-section__content-wide">
-        <source media="(max-width: 767px)" srcset="../images/projects/{{page.directory}}/case-study/components-mobile.png">
-        <source media="(max-width: 1199px)" srcset="../images/projects/{{page.directory}}/case-study/components.png">
-        <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/components-2x.png">
-        <img src="../images/projects/{{page.directory}}/case-study/components.png" alt="Components">
-      </picture>
+      <div class="media-section__content media-section__content-wide">
+        <video playsinline="true">
+          <source src="../video/projects/{{page.directory}}/inspo-board_1.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
-    <p class="media-section__figure">Figure 1: ddddd</p>
+    <div class="container grid">
+      <div class="single-column">
+        <p class="media-section__figure">
+          Figure 1: UI Components
+        </p>
+      </div>
+    </div>
   </section>
 
   <section class="section">
@@ -279,10 +299,6 @@ colour-swatches:
             <img src="../images/projects/{{page.directory}}/case-study/cloud-application-single-page.jpg" alt="Sign Up">
           </div>
         </div>
-
-
-
-
       </div>
     </div>
   </section>
