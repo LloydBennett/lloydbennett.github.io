@@ -64,5 +64,5 @@
 }
 
 .media--shadow {
-  box-shadow: 0 2px 50px 0 rgba(73,72,72,0.30);
+  @include drop-shadow;
 }

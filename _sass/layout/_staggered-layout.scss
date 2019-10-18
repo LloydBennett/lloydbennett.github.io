@@ -1,12 +1,6 @@
 .staggered-layout {
   @include offset-content(true);
 
-  // //grid-column-gap: spacing(2);
-  //
-  // @include media-query($breakpoint--small) {
-  //   //grid-column-gap: spacing(3);
-  // }
-
   @include media-query($breakpoint--large) {
     grid-column-gap: spacing(5);
     display: grid;
@@ -29,7 +23,7 @@
 }
 
 .staggered-layout__screen {
-  box-shadow: 0 2px 35px 0 rgba(99,99,99,0.30);
+  @include drop-shadow;
 
   & + & {
     margin-top: spacing(3);
