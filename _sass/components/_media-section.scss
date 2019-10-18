@@ -57,6 +57,10 @@
 .media__video {
   display: inline-block;
 
+  @include media-query($breakpoint--large - 1, max-width) {
+    width: 80%;
+  }
+
   video {
     display: block;
     width: 100%;
