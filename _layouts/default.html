@@ -3,7 +3,7 @@
   {% include head.html %}
   <body>
     <main class="website">
-      <div class="step--reset {{ site.page.title }}">
+      <div id="{{ page.title | downcase }}" class="step--reset">
         {{ content }}
       </div>
     </main>

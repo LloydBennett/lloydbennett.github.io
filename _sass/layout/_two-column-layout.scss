@@ -30,6 +30,20 @@ $tweakpoint-two-column-layout: 1080px;
   }
 }
 
+.two-column-layout__services {
+  &:first-child {
+    grid-column: 1/2;
+
+    @include media-query($tweakpoint-two-column-layout) {
+      padding-top: 1rem;
+    }
+  }
+
+  &:nth-child(2) {
+    grid-column: 3/13;
+  }
+}
+
 .two-column-layout__paragraph {
   @include max-paragraph-width;
 }
