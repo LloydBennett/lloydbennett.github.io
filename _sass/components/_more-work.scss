@@ -1,0 +1,10 @@
+.more-work {
+  @include max-paragraph-width;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.more-work__title {
+  margin-bottom: 0;
+}

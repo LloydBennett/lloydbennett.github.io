@@ -50,4 +50,20 @@ include-nav: true;
 <div class="content">
   {% include _home/services.html %}
   <!-- {% include _home/portfolio-view.html %} -->
+
+  <section>
+    <div class="container">
+      <div class="more-work">
+        <h2 class="more-work__title">
+          Want to see more work?
+        </h2>
+        {% include button.html
+          target="https://dribbble.com/ljbennett"
+          externalLink = true
+          heroCta = true
+          buttonText = "Take me there"
+        %}
+      </div>
+    </div>
+  </section>
 </div>
