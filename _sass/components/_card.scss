@@ -1,0 +1,87 @@
+.card {
+  @include grid($breakpoint--large);
+  position: relative;
+
+  @include media-query($breakpoint--large - 1, max-width) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.card__aside {
+  background-color: gray;
+
+  @include media-query($breakpoint--large) {
+    grid-column: 1 / 5;
+    height: 100vh;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.card__main {
+  background-color: $colour--white;
+
+  @include media-query($breakpoint--large - 1, max-width) {
+    padding: spacing(8) 5%;
+  }
+
+  @include media-query($breakpoint--large) {
+    display: flex;
+    align-items: center;
+    grid-column: 5 / 13;
+    margin-left: -#{spacing(3)};
+    padding-left: calc(#{spacing(8)} + 5%);
+    padding-right: 5%;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    margin-left: -#{spacing(4)};
+    padding-left: calc(#{spacing(8)} + 10%);
+  }
+}
+
+.card__thumbnail {
+  @include media-query($breakpoint--large) {
+    height: 100%;
+    display: block;
+    pointer-events: none;
+  }
+}
+
+.card__thumbnail-bg {
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.card__thumbnail-design {
+  @include fluid-image;
+  position: absolute;
+  z-index: 2;
+}
+
+.card__thumbnail--bluvalt {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 130%;
+  left: 0;
+}
+
+.card__description {
+  @include max-paragraph-width;
+}
+
+.card--desktop {
+  @include media-query($breakpoint--large - 1, max-width) {
+    display: none;
+  }
+}
+
+.card--mobile {
+  @include media-query($breakpoint--large) {
+    display: none;
+  }
+}

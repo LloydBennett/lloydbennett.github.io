@@ -31,24 +31,7 @@ $tweakpoint-project-thumbnail: 600px;
   }
 }
 
-.project__thumbnail {
-  display: block;
-  overflow: hidden;
-  position: relative;
-}
 
-.project__thumbnail__bg {
-  img {
-    display: block;
-    width: 100%;
-  }
-}
-
-.project__thumbnail__design {
-  @include fluid-image;
-  position: absolute;
-  z-index: 2;
-}
 
 .project__thumbnail--thoughtbot {
   bottom: -10%;
@@ -57,31 +40,10 @@ $tweakpoint-project-thumbnail: 600px;
   width: 90%;
 }
 
-.project__thumbnail--bluvalt {
-  top: 50%;
-  transform: translateY(-50%);
-  width: 130%;
-  left: 0;
-}
+
 
 .project__thumbnail--vocalsandverses {
   bottom: 0;
   left: 0;
   width: 90%
-}
-
-.project--show-on-desktop {
-  @include media-query($breakpoint--large - 1, max-width) {
-    display: none;
-  }
-}
-
-.project--show-on-mobile {
-  @include media-query($breakpoint--large) {
-    display: none;
-  }
-}
-
-.project__description {
-  @include max-paragraph-width;
 }

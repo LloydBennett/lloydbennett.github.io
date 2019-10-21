@@ -1,0 +1,49 @@
+{% for casestudy in site.projects %}
+  {% capture project-image-url %}images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}{% endcapture %}
+  {% capture thumbnail-css-classes %} card__thumbnail-design card__thumbnail--{{ casestudy.directory }}{% endcapture %}
+  <div class="card">
+    <div class="card__aside" style="background-color: #{{ casestudy.colour}}">
+      <a class="card__thumbnail" href="{{ casestudy.url }}">
+        <div class="card__thumbnail-bg card--mobile">
+          <img src="http://via.placeholder.com/660x600/{{ casestudy.colour}}/{{ casestudy.colour}}">
+        </div>
+
+        {% include casestudy-graphic.html
+          classlist= thumbnail-css-classes
+          image-url= project-image-url
+          title= casestudy.directory
+        %}
+      </a>
+    </div>
+    <div class="card__main">
+      <div class="card__content">
+        <h2 class="card__title step__title">
+          {{ casestudy.title }}
+        </h2>
+        <p class="card__description card--desktop">
+          {{ casestudy.description }}
+        </p>
+        <p class="card__tags card--desktop">
+          <strong>Roles: </strong>
+          {% for cat in casestudy.category %}
+            {% if forloop.last == true %}
+            <span>{{ cat }}</span>
+            {% else %}
+            <span>{{ cat }}&comma; </span>
+            {% endif %}
+          {% endfor %}
+        </p>
+
+        <a class="button button--margin-top card--desktop" href="{{ casestudy.url }}">
+          <span class="button__text">
+            View Case Study
+          </span>
+          <span class="button__line"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="card__top card__top--{{ casestudy.title | downcase }}"></div>
+
+  </div>
+{% endfor %}
