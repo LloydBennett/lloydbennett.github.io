@@ -33,6 +33,16 @@
   }
 }
 
+.card__aside-bluvalt {
+  @include media-query($breakpoint--large) {
+    margin-top: spacing(7);
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    margin-top: spacing(11);
+  }
+}
+
 .card__main {
   background-color: $colour--white;
 
@@ -111,17 +121,8 @@
   }
 }
 
-.card__top {
-  position: absolute;
+.card__top-bluvalt {
   right: 0;
-  overflow: hidden;
-
-  @include media-query($breakpoint--large - 1, max-width) {
-    display: none;
-  }
-}
-
-.card__top--bluvalt {
   width: 25%;
   max-width: 30rem;
   background-color: #9DABDD;
@@ -131,17 +132,7 @@
   }
 }
 
-.card__top-image {
-  position: absolute;
-  top: 0;
-  display: block;
-
-  img {
-    width: 100%;
-  }
-}
-
-.card__top-image--bluvalt {
+.card__top-image-bluvalt {
   top: 20%;
   left: -30%;
   width: 200%;
@@ -149,4 +140,36 @@
   @include media-query($breakpoint--x-large) {
     top: 30%;
   }
+}
+
+.card__piece {
+  position: absolute;
+  overflow: hidden;
+
+  @include media-query($breakpoint--large - 1, max-width) {
+    display: none;
+  }
+
+  .thumbnail {
+    display: block;
+  }
+}
+
+.card__piece-image {
+  position: absolute;
+  display: block;
+
+  img {
+    width: 100%;
+  }
+}
+
+.card__bottom-bluvalt {
+  bottom: 0;
+  right: 0;
+}
+
+.card__bottom-image-bluvalt {
+  bottom: 0;
+  width: 200%;
 }
