@@ -25,6 +25,11 @@
     overflow: hidden;
     position: sticky;
     top: 0;
+    max-height: 80rem;
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    max-height: none;
   }
 }
 
@@ -103,5 +108,45 @@
 .card--mobile {
   @include media-query($breakpoint--large) {
     display: none;
+  }
+}
+
+.card__top {
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+
+  @include media-query($breakpoint--large - 1, max-width) {
+    display: none;
+  }
+}
+
+.card__top--bluvalt {
+  width: 25%;
+  max-width: 30rem;
+  background-color: #9DABDD;
+
+  @include media-query($breakpoint--x-large) {
+    width: 30%;
+  }
+}
+
+.card__top-image {
+  position: absolute;
+  top: 0;
+  display: block;
+
+  img {
+    width: 100%;
+  }
+}
+
+.card__top-image--bluvalt {
+  top: 20%;
+  left: -30%;
+  width: 200%;
+
+  @include media-query($breakpoint--x-large) {
+    top: 30%;
   }
 }

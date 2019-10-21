@@ -1,6 +1,8 @@
 {% for casestudy in site.projects %}
   {% capture project-image-url %}images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}{% endcapture %}
   {% capture thumbnail-css-classes %} card__thumbnail-design card__thumbnail--{{ casestudy.directory }}{% endcapture %}
+
+  {% capture card-top-image-classes %} card__top-image card__top-image--{{ casestudy.title | downcase }}{% endcapture %}
   <div class="card">
     <div class="card__aside" style="background-color: #{{ casestudy.colour}}">
       <a class="card__thumbnail" href="{{ casestudy.url }}">
@@ -43,7 +45,18 @@
       </div>
     </div>
 
-    <div class="card__top card__top--{{ casestudy.title | downcase }}"></div>
+    <div class="card__top card__top--{{ casestudy.title | downcase }}">
+      <div class="thumbnail">
+        <img src="http://via.placeholder.com/421x296/{{ casestudy.colour}}/{{ casestudy.colour}}">
+      </div>
+
+      {% include casestudy-graphic.html
+        classlist= card-top-image-classes
+        image-url= project-image-url
+        title= casestudy.directory
+      %}
+
+    </div>
 
   </div>
 {% endfor %}
