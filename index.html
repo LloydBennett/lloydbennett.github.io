@@ -34,11 +34,13 @@ include-nav: true;
         </div>
       </h1>
       <div class="hero__details">
-        <p class="hero__copy" data-hero-copy>I create web and mobile experiences that work successfully
-    for your business, product and your customers.</p>
+        <p class="hero__copy" data-hero-copy>
+          I create web and mobile experiences that work successfully
+          for your business, product and your customers.
+        </p>
 
         {% include button.html
-          target="https://dribbble.com/ljbennett"
+          target="#portfolio"
           externalLink = true
           heroCta = true
           buttonText = "See Work"
@@ -50,7 +52,7 @@ include-nav: true;
 <div class="content">
   {% include _home/services.html %}
 
-  <section class="section">
+  <section id="portfolio" class="section">
     {% include _casestudy/casestudy-card.html %}
   </section>
 
@@ -64,7 +66,7 @@ include-nav: true;
         {% include button.html
           target="https://dribbble.com/ljbennett"
           externalLink = true
-          heroCta = true
+          heroCta = false
           buttonText = "Take me there"
         %}
       </div>
