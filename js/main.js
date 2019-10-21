@@ -2,7 +2,6 @@
 
   var input = document.querySelectorAll('[data-input-field]');
   var heroCta = document.querySelectorAll('[data-hero-cta]');
-  console.log(heroCta);
 
   function updateInputContent() {
     let inputValue = this.value;
@@ -14,13 +13,22 @@
     }
   }
 
+  function scrollToSection(e) {
+    e.preventDefault();
+
+    console.log('heyy!!!');
+  }
+
   function init() {
 
-    console.log('heyyy');
     input.forEach(function(element, index) {
       element.addEventListener("focusout", updateInputContent);
     });
 
+    heroCta.forEach(function(element, index){
+      element.addEventListener('click', scrollToSection);
+      console.log(index);
+    });
 
 	}
 

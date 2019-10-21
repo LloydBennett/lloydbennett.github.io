@@ -3,7 +3,7 @@
   font-size: 0.8rem;
   position: fixed;
   right: 1%;
-  top: 9%;
+  top: 13rem;
   writing-mode: vertical-lr;
   z-index: 5;
   display: none;
@@ -14,7 +14,7 @@
 
   @include media-query($breakpoint--medium) {
     font-size: 1rem;
-    top: 11%;
+    top: 14rem;
   }
 
   @include media-query($breakpoint--large) {
