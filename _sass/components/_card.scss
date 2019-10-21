@@ -9,11 +9,19 @@
 }
 
 .card__aside {
-  background-color: gray;
+  position: relative;
+  overflow: hidden;
+
+  @include media-query ($breakpoint--large - 1, max-width) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
 
   @include media-query($breakpoint--large) {
     grid-column: 1 / 5;
     height: 100vh;
+    min-height: 65rem;
     overflow: hidden;
     position: sticky;
     top: 0;
@@ -24,7 +32,11 @@
   background-color: $colour--white;
 
   @include media-query($breakpoint--large - 1, max-width) {
-    padding: spacing(8) 5%;
+    @include container;
+  }
+
+  @media screen and (min-width: $breakpoint--small) and (max-width: $breakpoint--large - 1) {
+    @include grid;
   }
 
   @include media-query($breakpoint--large) {
@@ -42,10 +54,18 @@
   }
 }
 
+.card__content {
+  @include media-query($breakpoint--large - 1, max-width) {
+    @include offset-content;
+  }
+}
+
 .card__thumbnail {
+  display: block;
+  width: 100%;
+
   @include media-query($breakpoint--large) {
     height: 100%;
-    display: block;
     pointer-events: none;
   }
 }

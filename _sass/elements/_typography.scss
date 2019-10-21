@@ -43,8 +43,12 @@ h1 {
 }
 
 h2 {
-  font-size: 4.2rem;
+  font-size: 3.2rem;
   line-height: 1.2;
+
+  @include media-query($breakpoint--small) {
+    font-size: 4.2rem;
+  }
 
   @include media-query($breakpoint--x-large) {
     font-size: 5.5rem;
