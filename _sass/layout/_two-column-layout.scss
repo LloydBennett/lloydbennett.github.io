@@ -53,6 +53,10 @@ $tweakpoint-two-column-layout: 1080px;
   @include offset-content(true, $tweakpoint-two-column-layout);
 }
 
+.two-column-layout-services--offset {
+  @include offset-content(true, $breakpoint--small);
+}
+
 .two-column-layout__column-bottom {
   align-self: flex-end;
 }

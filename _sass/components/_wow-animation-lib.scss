@@ -2,16 +2,38 @@
   visibility: hidden;
 }
 
-.js .slide-up {
+.js .anim-fade-in-up {
   animation-name: slide-up;
 	animation-fill-mode: forwards;
   animation-timing-function: ease;
-  transform: translateY(100%);
+  transform: translateY(50%);
+  opacity: 0;
 }
 
 .js .bg-grow {
   height: 0%;
   animation-name: bg-grow;
+	animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.js .anim-image-reveal {
+  width: 100%;
+  animation-name: wipe;
+	animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.js .anim-zoom-out {
+  transform: scale(1.2);
+  animation-name: zoom-out;
+	animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.js .anim-zoom-out-special {
+  transform: translateY(-50%) scale(1.2);
+  animation-name: zoom-out-special;
 	animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
@@ -28,10 +50,41 @@
 
 @keyframes slide-up {
   from {
-    transform: translateY(100%);
+    transform: translateY(50%);
+    opacity: 0;
   }
 
   to {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes wipe {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom-out-special {
+  from {
+    transform: translateY(-50%) scale(1.2);
+  }
+
+  to {
+    transform: translateY(-50%) scale(1);
   }
 }

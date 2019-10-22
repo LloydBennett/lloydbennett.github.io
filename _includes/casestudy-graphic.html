@@ -1,4 +1,4 @@
-<picture class="{{ include.classlist }}">
+<picture class="{{ include.classlist }}" {{ include.datalist }}>
   <source media="(min-width: 550px)" srcset="{{ include.image-url }}@2x.png">
   <source media="(max-width: 549px)" srcset="{{ include.image-url }}.png">
   <img src="{{ include.image-url }}.png" alt="{{ include.title }}" />

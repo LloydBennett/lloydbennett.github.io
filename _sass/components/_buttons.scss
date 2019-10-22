@@ -47,6 +47,10 @@
   &::after {
     background-color: $colour--white;
   }
+
+  .button__line {
+    background-color: $colour--white;
+  }
 }
 
 @keyframes link-hover {

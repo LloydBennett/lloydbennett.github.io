@@ -1,0 +1,10 @@
+@mixin image-concealer($colour: null) {
+  @include overlay;
+
+  @if $colour {
+    background-color: $colour;
+  }
+  @else {
+    background-color: $colour--white;
+  }
+}

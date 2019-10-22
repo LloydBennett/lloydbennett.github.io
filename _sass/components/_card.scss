@@ -96,6 +96,7 @@
   @include fluid-image;
   position: absolute;
   z-index: 2;
+  visibility: visible !important;
 }
 
 .card__thumbnail--bluvalt {
@@ -153,6 +154,12 @@
   .thumbnail {
     display: block;
   }
+}
+
+.card__piece-concealer {
+  @include image-concealer;
+  z-index: 3;
+  visibility: visible !important;
 }
 
 .card__piece-image {

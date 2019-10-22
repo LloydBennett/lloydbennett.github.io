@@ -1,12 +1,15 @@
 {% for casestudy in site.projects %}
   {% capture project-image-url %}images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}{% endcapture %}
-  {% capture thumbnail-css-classes %} card__thumbnail-design card__thumbnail--{{ casestudy.directory }}{% endcapture %}
-
-  {% capture card-top-image-classes %} card__piece-image card__top-image-{{ casestudy.title | downcase }}{% endcapture %}
-  {% capture card-bottom-image-classes %} card__piece-image card__bottom-image-{{ casestudy.title | downcase }}{% endcapture %}
+  {% capture thumbnail-css-classes %} card__thumbnail-design card__thumbnail--{{ casestudy.directory }} wow anim-zoom-out-special{% endcapture %}
+  {% capture thumbnail-main-data-attr %} data-wow-duration='800ms' data-wow-offset='-100'{% endcapture %}
+  {% capture thumbnail-data-attr %} data-wow-duration='800ms'{% endcapture %}
+  {% capture card-top-image-classes %} card__piece-image card__top-image-{{ casestudy.title | downcase }} wow anim-zoom-out{% endcapture %}
+  {% capture card-bottom-image-classes %} card__piece-image card__bottom-image-{{ casestudy.title | downcase }} wow anim-zoom-out{% endcapture %}
 
   <div class="card">
     <div class="card__aside card__aside-{{ casestudy.title | downcase }}" style="background-color: #{{ casestudy.colour}}">
+      <div class="card__piece-concealer wow anim-image-reveal"
+        data-wow-duration="600ms" data-wow-offset="120"></div>
       <a class="card__thumbnail" href="{{ casestudy.url }}">
         <div class="card__thumbnail-bg card--mobile">
           <img src="http://via.placeholder.com/660x600/{{ casestudy.colour}}/{{ casestudy.colour}}">
@@ -14,6 +17,7 @@
 
         {% include casestudy-graphic.html
           classlist= thumbnail-css-classes
+          datalist= thumbnail-main-data-attr
           image-url= project-image-url
           title= casestudy.directory
         %}
@@ -47,13 +51,16 @@
       </div>
     </div>
 
-    <div class="card__piece card__top-{{ casestudy.title | downcase }}">
+    <div class="card__piece card__top-{{ casestudy.title | downcase }} ">
+      <div class="card__piece-concealer wow anim-image-reveal"
+        data-wow-duration="600ms" data-wow-offset="50"></div>
       <div class="thumbnail">
         <img src="http://via.placeholder.com/421x296/{{ casestudy.colour}}/{{ casestudy.colour}}">
       </div>
 
       {% include casestudy-graphic.html
         classlist= card-top-image-classes
+        datalist= thumbnail-data-attr
         image-url= project-image-url
         title= casestudy.directory
       %}
@@ -61,12 +68,15 @@
     </div>
 
     <div class="card__piece card__bottom-{{ casestudy.title | downcase }}">
+      <div class="card__piece-concealer wow anim-image-reveal"
+        data-wow-duration="600ms" data-wow-offset="50"></div>
       <div class="thumbnail">
         <img src="http://via.placeholder.com/364x103/{{ casestudy.colour}}/{{ casestudy.colour}}">
       </div>
 
       {% include casestudy-graphic.html
         classlist= card-bottom-image-classes
+        datalist= thumbnail-data-attr
         image-url= project-image-url
         title= casestudy.directory
       %}
