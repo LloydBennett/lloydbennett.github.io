@@ -6,8 +6,13 @@
 
   <div class="hero__wrapper">
     <div class="hero__content">
+
       <h1 class="hero__title">
-        {{ page.title }}
+        <div class="hero__title-wrapper">
+          <span class="hero__title-content" data-hero-titles>
+            {{ page.title }}
+          </span>
+        </div>
       </h1>
 
       {% capture thumbnail-css-classes %}hero__image hero__image--{{ page.directory }} thumbnail{% endcapture %}

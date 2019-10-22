@@ -2,19 +2,19 @@
   visibility: hidden;
 }
 
-.js .anim-fade-in-up {
+.js .anim-slide-up {
   animation-name: slide-up;
+	animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  transform: translateY(150%);
+}
+
+.js .anim-fade-in-up {
+  animation-name: slide-up-with-opacity;
 	animation-fill-mode: forwards;
   animation-timing-function: ease;
   transform: translateY(50%);
   opacity: 0;
-}
-
-.js .bg-grow {
-  height: 0%;
-  animation-name: bg-grow;
-	animation-fill-mode: forwards;
-  animation-timing-function: ease;
 }
 
 .js .anim-image-reveal {
@@ -38,7 +38,7 @@
   animation-timing-function: ease;
 }
 
-@keyframes bg-grow {
+@keyframes reveal-text {
   from {
     height: 0;
   }
@@ -50,6 +50,16 @@
 
 @keyframes slide-up {
   from {
+    transform: translateY(150%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up-with-opacity {
+  from {
     transform: translateY(50%);
     opacity: 0;
   }
@@ -59,6 +69,8 @@
     opacity: 1;
   }
 }
+
+
 
 @keyframes wipe {
   from {
