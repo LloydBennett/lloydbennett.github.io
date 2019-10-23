@@ -21,8 +21,6 @@
 
     var destination = this.getAttribute("href");
 
-
-
     $(htmlBody).animate({
       scrollTop: $(destination).offset().top
     }, 600);
@@ -37,6 +35,15 @@
     heroCta.forEach(function(element, index){
       element.addEventListener('click', scrollToSection);
       console.log(index);
+    });
+
+    buttonLine.addEventListener('animationend', () => {
+      var $thisElem = event.target;
+      console.log($thisElem);
+      if($thisElem.classList.contains('wow')){
+        $thisElem.classList.remove('wow', 'anim-grow');
+        $thisElem.setAttribute("style", "");
+      };
     });
 	}
 

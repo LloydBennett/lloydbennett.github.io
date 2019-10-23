@@ -12,7 +12,6 @@
 .js .anim-appear-before {
   &::before {
     animation-name: appear;
-    //animation-duration: 1s;
   	animation-fill-mode: forwards;
     animation-timing-function: ease;
     opacity: 0;
