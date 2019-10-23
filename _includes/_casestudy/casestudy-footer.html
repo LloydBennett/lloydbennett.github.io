@@ -1,9 +1,10 @@
 {% capture projects %}{{page.collection}}{% endcapture %}
 
 {% if page.collection %}
-  {% assign  document = site[projects] | sort: "date" | reversed %}
+  {% assign  document = site[projects] | sort: "order" | reversed %}
 {% endif %}
 
+{% if document.size > 1 %}
 <a class="casestudy__footer"
 
 {% for links in document %}
@@ -51,3 +52,4 @@
     %}
   </div>
 </a>
+{% endif %}
