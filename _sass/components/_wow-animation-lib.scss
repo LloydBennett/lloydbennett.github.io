@@ -2,6 +2,31 @@
   visibility: hidden;
 }
 
+.js .anim-appear {
+  animation-name: appear;
+	animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  opacity: 0;
+}
+
+.js .anim-appear-before {
+  &::before {
+    animation-name: appear;
+    //animation-duration: 1s;
+  	animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    opacity: 0;
+    //visibility: hidden !important;
+  }
+}
+
+.js .anim-grow {
+  animation-name: grow;
+	animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  width: 0;
+}
+
 .js .anim-slide-up {
   animation-name: slide-up;
 	animation-fill-mode: forwards;
@@ -38,13 +63,23 @@
   animation-timing-function: ease;
 }
 
-@keyframes reveal-text {
+@keyframes appear {
   from {
-    height: 0;
+    opacity: 0;
   }
 
   to {
-    height: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
   }
 }
 
@@ -69,8 +104,6 @@
     opacity: 1;
   }
 }
-
-
 
 @keyframes wipe {
   from {

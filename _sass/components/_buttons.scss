@@ -24,6 +24,10 @@
   }
 }
 
+.button__text {
+  display: block; 
+}
+
 .button__line {
   background-color: $colour--black;
   display: block;

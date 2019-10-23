@@ -2,6 +2,8 @@
 
   var input = document.querySelectorAll('[data-input-field]');
   var heroCta = document.querySelectorAll('[data-hero-cta]');
+  var buttonLine = document.querySelector('[data-remove-class]');
+  var htmlBody = document.querySelector('html, body');
 
   function updateInputContent() {
     let inputValue = this.value;
@@ -15,12 +17,19 @@
 
   function scrollToSection(e) {
     e.preventDefault();
+    e.stopPropagation();
 
-    console.log('heyy!!!');
+    var destination = this.getAttribute("href");
+
+
+
+    $(htmlBody).animate({
+      scrollTop: $(destination).offset().top
+    }, 600);
+
   }
 
   function init() {
-
     input.forEach(function(element, index) {
       element.addEventListener("focusout", updateInputContent);
     });
@@ -29,11 +38,10 @@
       element.addEventListener('click', scrollToSection);
       console.log(index);
     });
-
 	}
 
-  window.load = function(){
+  window.addEventListener('load', function(){
     init();
-  }
+  });
 
 }());

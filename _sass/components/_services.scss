@@ -1,9 +1,5 @@
 .services-title {
+  @include title-mask;
   display: inline-block;
   margin-bottom: 0;
-  overflow: hidden;
-
-  span {
-    display: inline-block;
-  }
 }

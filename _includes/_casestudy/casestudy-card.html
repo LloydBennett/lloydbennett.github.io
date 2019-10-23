@@ -25,13 +25,19 @@
     </div>
     <div class="card__main">
       <div class="card__content">
-        <h2 class="card__title step__title">
-          {{ casestudy.title }}
+        <h2 class="card__title step__title wow anim-appear-before" data-wow-duration="400ms">
+          <div class="title-mask">
+            <span class="wow anim-slide-up" data-wow-duration="400ms" data-wow-delay="100ms">
+              {{ casestudy.title }}
+            </span>
+          </div>
         </h2>
-        <p class="card__description card--desktop">
+        <p class="card__description card--desktop wow anim-fade-in-up"
+        data-wow-duration="400ms" data-wow-delay="200ms">
           {{ casestudy.description }}
         </p>
-        <p class="card__tags card--desktop">
+        <p class="card__tags card--desktop wow anim-fade-in-up"
+        data-wow-duration="400ms" data-wow-delay="300ms">
           <strong>Roles: </strong>
           {% for cat in casestudy.category %}
             {% if forloop.last == true %}
@@ -43,10 +49,11 @@
         </p>
 
         <a class="button button--margin-top card--desktop" href="{{ casestudy.url }}">
-          <span class="button__text">
+          <span class="button__text wow anim-appear" data-wow-duration="450ms" data-wow-delay="400ms">
             View Case Study
           </span>
-          <span class="button__line"></span>
+          <span class="button__line wow grow" data-wow-duration="300ms" data-wow-delay="750ms" data-remove-class>
+          </span>
         </a>
       </div>
     </div>

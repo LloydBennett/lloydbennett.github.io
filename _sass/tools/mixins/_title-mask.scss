@@ -1,0 +1,7 @@
+@mixin title-mask {
+  overflow: hidden;
+
+  span {
+    display: inline-block;
+  }
+}
