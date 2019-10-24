@@ -18,14 +18,6 @@
     flex-direction: column;
     justify-content: space-between;
   }
-
-  .hero__details {
-    position: absolute;
-
-    @include media-query($breakpoint--large - 1, max-width) {
-      bottom: #{spacing(14)};
-    }
-  }
 }
 
 .hero--inverted {
@@ -103,6 +95,21 @@
   }
 }
 
+.hero__details-home {
+  position: absolute;
+
+  @include media-query($breakpoint--large - 1, max-width) {
+    bottom: #{spacing(14)};
+  }
+}
+
+.hero__details-casetudy {
+  @include media-query($breakpoint--x-large) {
+    position: absolute;
+    bottom: #{spacing(9)};
+  }
+}
+
 .hero__copy {
   @include max-paragraph-width;
   margin-top: 0;
@@ -143,7 +150,7 @@
     left: 0;
   }
 
-  @include media-query($breakpoint--x-large) {
+  @include media-query($breakpoint--large) {
     left: auto;
     max-width: none;
     min-width: 90rem;
