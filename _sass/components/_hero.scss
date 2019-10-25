@@ -63,6 +63,15 @@
   .hero__title-content {
     transform: translateY(calc(100% + 1.5rem));
   }
+
+  .hero__copy,
+  .hero .button {
+    opacity: 0;
+  }
+
+  .hero .button__line {
+    width: 0;
+  }
 }
 
 .hero__title-content {
