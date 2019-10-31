@@ -2,27 +2,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.icons-thumbnail--big {
+  max-width: 15rem;
+
+  @include media-query($breakpoint--x-large) {
+    max-width: 20rem;
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    max-width: 25rem;
+  }
 
   svg {
     width: 100%;
     display: block;
   }
+}
 
-  .thumbnail {
-    max-width: 15rem;
-
-    @include media-query($breakpoint--x-large) {
-      max-width: 20rem;
-    }
-
-    @include media-query($breakpoint--xx-large) {
-      max-width: 25rem;
-    }
+.icons-thumbnail {
+  svg {
+    height: 100%;
+    width: auto;
+    display: block;
   }
 }
 
-
-.small-icons {
+.icons-layout {
   @include offset-content;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -32,13 +39,15 @@
   @include media-query($breakpoint--small) {
     grid-template-columns: repeat(3, 1fr);
   }
+}
 
+.icons-layout--small {
   @include media-query($breakpoint--large) {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 
-.small-icon__thumbnail {
+.icons-thumbnail--small {
   height: 8rem;
   display: flex;
   justify-content: center;
@@ -46,13 +55,8 @@
   @include media-query($breakpoint--small) {
     height: 10rem;
   }
-
-  svg {
-    height: 100%;
-    width: auto;
-    display: block;
-  }
 }
+
 
 .bv-illustrations {
   @include media-query($breakpoint--medium - 1, max-width) {
