@@ -22,12 +22,6 @@ $tweakpoint-two-column-layout: 1080px;
       @include inner-section;
     }
   }
-
-  & + & {
-    @include media-query($tweakpoint-two-column-layout - 1, max-width) {
-      margin-bottom: spacing(6);
-    }
-  }
 }
 
 .two-column-layout__services {
