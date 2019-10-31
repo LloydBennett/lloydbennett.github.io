@@ -20,3 +20,36 @@
     }
   }
 }
+
+
+.small-icons {
+  @include offset-content;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: spacing(6);
+  grid-column-gap: spacing(4);
+
+  @include media-query($breakpoint--small) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-query($breakpoint--large) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.small-icon__thumbnail {
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+
+  @include media-query($breakpoint--small) {
+    height: 10rem;
+  }
+
+  svg {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+}
