@@ -85,11 +85,11 @@
   &:nth-child(2) {
     @include media-query($breakpoint--medium) {
       align-self: flex-end;
-      margin-top: -#{spacing(4)};
+      margin-top: -#{spacing(15)};
     }
 
     @include media-query($breakpoint--x-large) {
-      margin-top: -#{spacing(8)};
+      margin-top: -#{spacing(30)};
     }
   }
 

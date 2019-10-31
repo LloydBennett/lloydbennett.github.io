@@ -2,6 +2,22 @@
   @include section;
 }
 
+.media--with-padding {
+  padding: spacing(4) 0;
+
+  @include media-query($breakpoint--medium) {
+    padding: spacing(6) spacing(6);
+  }
+
+  @include media-query($breakpoint--x-large) {
+    padding: spacing(9) spacing(6);
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    padding: spacing(9) 0;
+  }
+}
+
 .media__wrapper {
   position: relative;
   margin-bottom: spacing(2);
