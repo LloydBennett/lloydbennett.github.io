@@ -175,12 +175,6 @@
   }
 }
 
-.card__piece-concealer {
-  @include image-concealer;
-  z-index: 3;
-  visibility: visible !important;
-}
-
 .card__piece-image {
   position: absolute;
   display: block;

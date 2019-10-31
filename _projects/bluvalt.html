@@ -92,12 +92,15 @@ colour-swatches:
 
   <section class="media">
     <div class="media__wrapper media--with-padding">
+      <div class="concealer wow anim-image-reveal"
+        data-wow-duration="600ms" data-wow-delay="400ms" data-wow-offset="200"></div>
       <picture class="media__overlay">
         <source media="(max-width: 767px)" srcset="https://via.placeholder.com/600x630.jpg/f2f2f2/f2f2f2">
         <source media="(min-width: 768px)" srcset="https://via.placeholder.com/1440x750.jpg/f2f2f2/f2f2f2">
         <img src="https://via.placeholder.com/1440x750.png/f2f2f2" alt="Media Background">
       </picture>
-      <picture class="media__content media__content--overlap media__content--wide">
+      <picture class="media__content media__content--overlap media__content--wide wow anim-zoom-out"
+      data-wow-duration='800ms' data-wow-delay="600ms">
         <source media="(max-width: 767px)" srcset="../images/projects/{{page.directory}}/case-study/flow-diagram-mobile.png">
         <source media="(max-width: 1199px)" srcset="../images/projects/{{page.directory}}/case-study/flow-diagram.png">
         <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/flow-diagram-2x.png">
@@ -106,7 +109,7 @@ colour-swatches:
     </div>
     <div class="container grid">
       <div class="single-column">
-        <p class="media__figure">
+        <p class="media__figure wow anim-appear" data-wow-duration="600ms" data-wow-offset="50">
           Figure 1: Flow Diagram of the proposed design
         </p>
       </div>
@@ -136,6 +139,8 @@ colour-swatches:
 
   <section class="media">
     <div class="media__wrapper">
+      <div class="concealer wow anim-image-reveal"
+        data-wow-duration="600ms" data-wow-delay="400ms" data-wow-offset="200"></div>
       <picture class="media__bg">
         <source media="(max-width: 1079px)" srcset="https://via.placeholder.com/600x500.jpg/f2f2f2/f2f2f2">
         <source media="(max-width: 1999px)" srcset="https://via.placeholder.com/1440x750.jpg/f2f2f2/f2f2f2">

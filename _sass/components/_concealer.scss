@@ -1,0 +1,5 @@
+.concealer {
+  @include image-concealer;
+  z-index: 3;
+  visibility: visible !important;
+}
