@@ -26,3 +26,7 @@
 .three-column-layout--offset {
   @include offset-content(true);
 }
+
+.three-column-layout--tight-offset {
+  @include offset-content;
+}

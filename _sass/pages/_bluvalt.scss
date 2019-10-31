@@ -1,0 +1,22 @@
+.three-column-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+
+  .thumbnail {
+    max-width: 15rem;
+
+    @include media-query($breakpoint--x-large) {
+      max-width: 20rem;
+    }
+
+    @include media-query($breakpoint--xx-large) {
+      max-width: 25rem;
+    }
+  }
+}
