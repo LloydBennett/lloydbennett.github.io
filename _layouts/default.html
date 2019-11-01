@@ -3,7 +3,8 @@
   {% include head.html %}
   <body>
     <main class="website">
-      <div id="{{ page.title | downcase }}" class="step--reset">
+      <div id="{{ page.title | downcase }}" class="step--reset
+        {% if page.layout == "casestudy" %}casestudy{% endif %}"> 
         {{ content }}
       </div>
     </main>

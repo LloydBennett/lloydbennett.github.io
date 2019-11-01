@@ -20,6 +20,10 @@
   }
 }
 
+.js .hero__details-list-item span {
+  transform: translateY(100%);
+}
+
 .hero--inverted {
   .hero__title,
   .hero__details-list-item {

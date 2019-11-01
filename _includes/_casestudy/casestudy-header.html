@@ -1,4 +1,5 @@
 {% capture project-image-url %}../images/projects/{{page.directory}}/thumbnail/{{page.thumbnail}}{% endcapture %}
+{% capture hero-data-attr %}data-hero-image{% endcapture %}
 <section class="hero hero--{{ page.directory }} {% if page.white-text-on-hero %} hero--inverted {% endif %}">
   <div class="hero__bg">
     {% include background-strip.html colour= page.colour animatestip= true %}
@@ -21,15 +22,16 @@
         classlist= thumbnail-css-classes
         image-url= project-image-url
         title= page.directory
+        datalist= hero-data-attr
       %}
 
       <div class="hero__details-casetudy">
-        <hr class="hr hr--short {% if page.white-text-on-hero %} hr--inverted {% endif %}"></hr>
+        <hr class="hr hr--short {% if page.white-text-on-hero %} hr--inverted {% endif %}" data-hero-hr></hr>
         {% if page.category %}
         <ul class="hero__details-list">
           {% for cat in page.category %}
-          <li class="hero__details-list-item">
-            <span>
+          <li class="hero__details-list-item title-mask">
+            <span data-hero-details-item>
               {{ cat }}
             </span>
           </li>
