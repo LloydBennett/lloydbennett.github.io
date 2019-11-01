@@ -31,6 +31,14 @@
   opacity: 0;
 }
 
+.js .anim-fade-in-up-soft {
+  animation-name: slide-up-with-opacity-soft;
+	animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  transform: translateY(20%);
+  opacity: 0;
+}
+
 .js .anim-image-reveal {
   width: 100%;
   animation-name: wipe;
@@ -85,6 +93,18 @@
 @keyframes slide-up-with-opacity {
   from {
     transform: translateY(50%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up-with-opacity-soft {
+  from {
+    transform: translateY(20%);
     opacity: 0;
   }
 
