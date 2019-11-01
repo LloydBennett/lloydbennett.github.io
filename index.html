@@ -5,10 +5,9 @@ author: Lloyd Bennett &mdash; <span class='no-wrap-and-break'>Web Designer from 
 heading: "<span class='no-wrap-and-break wow fade-up' data-wow-duration='350ms' data-wow-delay='1200ms'>Designs with </span>
 <span class='no-wrap-and-break wow fade-up' data-wow-duration='350ms' data-wow-delay='1400ms'>
   a <span class='highlight-text'>purpose.</span></span>"
-description: I create web and mobile experiences that work successfully for your business, product and your customers.
+description: A London based designer who crafts digital experiences and visual brand identities to solve business problems.
 calltoaction: true
-buttoname: "View Projects"
-buttonhovertext: "Scroll Down"
+buttoname: See Work
 order: 1
 permalink: /
 include-nav: true;
@@ -35,15 +34,14 @@ include-nav: true;
       </h1>
       <div class="hero__details hero__details-home">
         <p class="hero__copy" data-hero-copy>
-          I create web and mobile experiences that work successfully
-          for your business, product and your customers.
+          {{ page.description }}
         </p>
 
         {% include button.html
           target="#portfolio"
           externalLink = true
           heroCta = true
-          buttonText = "See Work"
+          buttonText = page.buttoname
         %}
       </div>
     </div>
@@ -55,21 +53,4 @@ include-nav: true;
   <section id="portfolio">
     {% include _casestudy/casestudy-card.html %}
   </section>
-
-
-  <!-- <section>
-    <div class="container">
-      <div class="more-work">
-        <h2 class="more-work__title">
-          Want to see more work?
-        </h2>
-        {% include button.html
-          target="https://dribbble.com/ljbennett"
-          externalLink = true
-          heroCta = false
-          buttonText = "Take me there"
-        %}
-      </div>
-    </div>
-  </section> -->
 </div>
