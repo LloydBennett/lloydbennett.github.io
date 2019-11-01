@@ -9,16 +9,6 @@
   opacity: 0;
 }
 
-.js .anim-appear-before {
-  &::before {
-    animation-name: appear;
-  	animation-fill-mode: forwards;
-    animation-timing-function: ease;
-    opacity: 0;
-    //visibility: hidden !important;
-  }
-}
-
 .js .anim-grow {
   animation-name: grow;
 	animation-fill-mode: forwards;

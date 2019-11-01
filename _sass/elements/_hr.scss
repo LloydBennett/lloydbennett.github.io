@@ -1,12 +1,10 @@
-hr {
+.hr {
   background-color: $colour--body-type;
   border: none;
   height: 0.2rem;
-  margin: 0 0 spacing(3);
 
   @include media-query($breakpoint--small) {
     height: 0.3rem;
-    margin: 0 0 spacing(4);
   }
 }
 
@@ -15,5 +13,10 @@ hr {
 }
 
 .hr--short {
+  margin: 0 0 spacing(3);
   width: 5rem;
+
+  @include media-query($breakpoint--small) {
+    margin: 0 0 spacing(4);
+  }
 }

@@ -31,14 +31,18 @@ colour-swatches:
     <div class="container grid">
       <div class="two-column-layout two-column-layout--offset">
         <div class="two-column-layout__column two-column-layout__paragraph two-column-layout__heading">
-          <h3>
-            <span class="small-caps">
+          <h3 class="title-mask">
+            <span class="small-caps wow anim-fade-in-up"
+            data-wow-duration="500ms">
               The Challenge
             </span>
-            Create an optimal experience that encourages customer conversion
+            <span class="wow anim-slide-up" data-wow-duration="550ms" data-wow-offset="50">
+              Create an optimal experience that encourages customer conversion
+            </span>
           </h3>
         </div>
-        <div class="two-column-layout__column two-column-layout__paragraph">
+        <div class="two-column-layout__column two-column-layout__paragraph wow anim-fade-in-up"
+          data-wow-duration="500ms">
           <p>
             Bluvalt is a cloud computing service based in Saudi Arabia, focused
             on providing affordable and locally-tailored computing resources
@@ -65,11 +69,15 @@ colour-swatches:
     <div class="container grid">
       <div class="two-column-layout two-column-layout--offset">
         <div class="two-column-layout__column two-column-layout__paragraph">
-          <h3>
-            <span>Setting goals</span>
-            <span>and wireframming</span>
+          <h3 class="title-mask">
+            <span class="wow anim-slide-up" data-wow-duration="550ms" data-wow-offset="50">
+              Setting goals
+            </span>
+            <span class="wow anim-slide-up" data-wow-duration="550ms" data-wow-offset="50">
+              and wireframming
+            </span>
           </h3>
-          <p>
+          <p class="wow anim-fade-in-up" data-wow-duration="500ms">
             After reviewing users activity on Bluvalt’s website we noticed many
             users were lost on the website. We came to the conclusion that the
             high bounce rate was due to a lack of clarity in the value proposition
@@ -79,7 +87,8 @@ colour-swatches:
             when crafting a new user journey.
           </p>
         </div>
-        <div class="two-column-layout__column two-column-layout__column-bottom two-column-layout__paragraph">
+        <div class="two-column-layout__column two-column-layout__column-bottom two-column-layout__paragraph wow anim-appear"
+        data-wow-duration="400ms" data-wow-offset="100">
           {% include testimony.html avatar = "rami-taibah"
             name = "Rami Taibah"
             role = "UX Architect at Bluvalt"
@@ -119,11 +128,15 @@ colour-swatches:
   <section class="inner-section">
     <div class="container grid">
       <div class="single-column">
-        <h3>
-          <span>Establishing a</span>
-          <span>visual direction</span>
+        <h3 class="title-mask">
+          <span class="wow anim-slide-up" data-wow-duration="550ms" data-wow-offset="50">
+            Establishing a
+          </span>
+          <span class="wow anim-slide-up" data-wow-duration="550ms" data-wow-offset="50">
+            visual direction
+          </span>
         </h3>
-        <p>
+        <p class="wow anim-fade-in-up" data-wow-duration="500ms">
           I created an inspiration / mood board of visuals that I felt would
           best convey the brand and presented this to the client. Undertaking
           this step before fleshing out any mock-ups made the client feel involved
@@ -157,7 +170,7 @@ colour-swatches:
     </div>
     <div class="container grid">
       <div class="single-column">
-        <p class="media__figure">
+        <p class="media__figure wow anim-appear" data-wow-duration="600ms" data-wow-offset="50">
           Figure 2: A collection of visual references on an 'Invision Board'
         </p>
       </div>
@@ -168,21 +181,38 @@ colour-swatches:
     <div class="container grid">
 
       <div class="three-column-layout three-column-layout--offset section">
+        {% assign delay = 50 %}
+
         {% for colour in page.colour-swatches %}
         <div class="three-column-layout__column">
+          {% if forloop.first %}
+            {% include colour-swatches.html
+              colour-name = colour.colour
+              hex = colour.hex
+              rgb = colour.rgb
+              cmyk = colour.cmyk
+              delay = 0
+            %}
 
-          {% include colour-swatches.html
-            colour-name = colour.colour
-            hex = colour.hex
-            rgb = colour.rgb
-            cmyk = colour.cmyk
-          %}
+          {% else %}
+            {% assign delayTime = forloop.index | minus: 1 | times: delay %}
+
+            {% include colour-swatches.html
+              colour-name = colour.colour
+              hex = colour.hex
+              rgb = colour.rgb
+              cmyk = colour.cmyk
+              delay = delayTime
+            %}
+
+          {% endif %}
+
 
         </div>
         {% endfor %}
       </div>
 
-      <div class="two-column-layout--offset inner-section">
+      <div class="two-column-layout--offset inner-section wow anim-appear" data-wow-duration="500ms" data-wow-offset="100">
         <span class="small-caps type-container__heading">
           Headline 1 &amp; 2 &ndash; Gotham Rounded Bold
         </span>
@@ -207,7 +237,7 @@ colour-swatches:
         </div>
       </div>
 
-      <div class="two-column-layout--offset inner-section">
+      <div class="two-column-layout--offset inner-section wow anim-appear" data-wow-duration="500ms" data-wow-offset="100">
         <span class="small-caps type-container__heading">
           Headline 3 &amp; 4 &ndash; Gotham Rounded Medium
         </span>
@@ -236,7 +266,7 @@ colour-swatches:
       </div>
 
 
-      <div class="two-column-layout--offset inner-section">
+      <div class="two-column-layout--offset inner-section wow anim-appear" data-wow-duration="500ms" data-wow-offset="100">
         <span class="small-caps type-container__heading">
           Body &ndash; Gotham Rounded Light
         </span>
@@ -258,7 +288,7 @@ colour-swatches:
 
       </div>
 
-      <div class="single-column">
+      <div class="single-column wow anim-appear" data-wow-duration="500ms" data-wow-offset="100">
         <span class="small-caps type-container__heading">
           Arabic Version &ndash; Teshrin Bold, Medium, Light
         </span>
@@ -280,11 +310,15 @@ colour-swatches:
     <div class="container">
       <div class="grid inner-section">
         <div class="single-column">
-          <h3>
-            <span>Illustrative</span>
-            <span>visual direction</span>
+          <h3 class="title-mask">
+            <span class="wow anim-slide-up" data-wow-duration="550ms" data-wow-offset="50">
+              Illustrative
+            </span>
+            <span class="wow anim-slide-up" data-wow-duration="550ms" data-wow-offset="50">
+              visual direction
+            </span>
           </h3>
-          <p>
+          <p class="wow anim-fade-in-up" data-wow-duration="500ms">
             I created an inspiration / mood board of visuals that I felt would
             best convey the brand and presented this to the client. Undertaking
             this step before fleshing out any mock-ups made the client feel involved
@@ -294,17 +328,17 @@ colour-swatches:
       </div>
 
       <div class="three-column-layout section">
-        <div class="three-column-layout__column text-center">
+        <div class="three-column-layout__column text-center wow anim-appear" data-wow-duration="600ms" data-wow-offset="100">
           <div class="thumbnail text-center">
             <img src="../images/projects/{{page.directory}}/case-study/sketch-one.png" alt="Sketch One">
           </div>
         </div>
-        <div class="three-column-layout__column text-center">
+        <div class="three-column-layout__column text-center wow anim-appear" data-wow-duration="600ms" data-wow-offset="100" data-wow-delay="100ms">
           <div class="thumbnail text-center">
             <img src="../images/projects/{{page.directory}}/case-study/sketch-two.png" alt="Sketch One">
           </div>
         </div>
-        <div class="three-column-layout__column text-center">
+        <div class="three-column-layout__column text-center wow anim-appear" data-wow-duration="600ms" data-wow-offset="100" data-wow-delay="200ms">
           <div class="thumbnail">
             <img src="../images/projects/{{page.directory}}/case-study/sketch-three.png" alt="Sketch One">
           </div>
@@ -312,13 +346,13 @@ colour-swatches:
       </div>
 
       <div class="bv-illustrations section">
-        <div class="bv-illustrations__thumbnail">
+        <div class="bv-illustrations__thumbnail wow anim-appear" data-wow-duration="600ms" data-wow-offset="100">
           {% include _casestudy/_bluvalt/usp-shop.html %}
         </div>
-        <div class="bv-illustrations__thumbnail">
+        <div class="bv-illustrations__thumbnail wow anim-appear" data-wow-duration="600ms" data-wow-offset="100" data-wow-delay="100ms">
           {% include _casestudy/_bluvalt/usp-money.html %}
         </div>
-        <div class="bv-illustrations__thumbnail">
+        <div class="bv-illustrations__thumbnail wow anim-appear" data-wow-duration="600ms" data-wow-offset="100" data-wow-delay="200ms">
           {% include _casestudy/_bluvalt/usp-reliable.html %}
         </div>
       </div>
@@ -379,30 +413,30 @@ colour-swatches:
     <div class="container grid">
       <div class="staggered-layout">
         <div class="staggered-layout__column">
-          <div class="staggered-layout__screen">
+          <div class="staggered-layout__screen wow anim-fade-in-up" data-wow-duration="750ms">
             <img src="../images/projects/{{page.directory}}/case-study/home-page.jpg" alt="Home Page">
           </div>
-          <div class="staggered-layout__screen">
+          <div class="staggered-layout__screen wow anim-fade-in-up" data-wow-duration="750ms">
             <img src="../images/projects/{{page.directory}}/case-study/404-page.jpg" alt="404 Page">
           </div>
-          <div class="staggered-layout__screen">
+          <div class="staggered-layout__screen wow anim-fade-in-up" data-wow-duration="750ms">
             <img src="../images/projects/{{page.directory}}/case-study/sign-up-screen.jpg" alt="Sign Up">
           </div>
 
-          <div class="staggered-layout__screen">
+          <div class="staggered-layout__screen wow anim-fade-in-up" data-wow-duration="750ms">
             <img src="../images/projects/{{page.directory}}/case-study/about-us.jpg" alt="Sign Up">
           </div>
         </div>
 
         <div class="staggered-layout__column">
-          <div class="staggered-layout__screen">
+          <div class="staggered-layout__screen wow anim-fade-in-up" data-wow-duration="750ms" data-wow-delay="50ms">
             <img src="../images/projects/{{page.directory}}/case-study/virtual-data-center.jpg" alt="Virtual Data Center">
           </div>
 
-          <div class="staggered-layout__screen">
+          <div class="staggered-layout__screen wow anim-fade-in-up" data-wow-duration="750ms" data-wow-delay="100ms">
             <img src="../images/projects/{{page.directory}}/case-study/application-marketplace.jpg" alt="Virtual Data Center">
           </div>
-          <div class="staggered-layout__screen">
+          <div class="staggered-layout__screen wow anim-fade-in-up" data-wow-duration="750ms" data-wow-delay="150ms">
             <img src="../images/projects/{{page.directory}}/case-study/cloud-application-single-page.jpg" alt="Sign Up">
           </div>
         </div>
@@ -413,10 +447,12 @@ colour-swatches:
   <section class="inner-section">
     <div class="container grid">
       <div class="single-column">
-        <h3>
-          <span>Developer Hand-off</span>
+        <h3 class="title-mask">
+          <span class="wow anim-slide-up" data-wow-duration="550ms" data-wow-offset="50">
+            Developer Hand-off
+          </span>
         </h3>
-        <p>
+        <p class="wow anim-fade-in-up" data-wow-duration="500ms">
           The typical designer to developer hand off consists of a bunch of
           Sketch files with annotations being thrown over the wall with the
           expectation that the developers will be able to make sense of it.
@@ -431,12 +467,15 @@ colour-swatches:
 
   <section class="media">
     <div class="media__wrapper">
+      <div class="concealer wow anim-image-reveal"
+        data-wow-duration="600ms" data-wow-delay="400ms" data-wow-offset="200"></div>
       <picture class="media__overlay">
         <source media="(max-width: 767px)" srcset="https://via.placeholder.com/600x630.jpg/f2f2f2/f2f2f2">
         <source media="(min-width: 768px)" srcset="https://via.placeholder.com/1440x750.jpg/f2f2f2/f2f2f2">
         <img src="https://via.placeholder.com/1440x750.png/f2f2f2" alt="Media Background">
       </picture>
-      <picture class="media__content media__content--overlap media__content--wide">
+      <picture class="media__content media__content--overlap media__content--wide wow anim-zoom-out"
+      data-wow-duration='800ms' data-wow-delay="600ms">
         <source media="(max-width: 767px)" srcset="../images/projects/{{page.directory}}/case-study/components-mobile.png">
         <source media="(max-width: 1199px)" srcset="../images/projects/{{page.directory}}/case-study/components.png">
         <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/components-2x.png">
@@ -445,7 +484,7 @@ colour-swatches:
     </div>
     <div class="container grid">
       <div class="single-column">
-        <p class="media__figure">
+        <p class="media__figure wow anim-appear" data-wow-duration="600ms" data-wow-offset="50">
           Figure 4: UI Components
         </p>
       </div>
@@ -457,13 +496,15 @@ colour-swatches:
     <div class="container grid">
       <div class="two-column-layout two-column-layout--offset">
         <div class="two-column-layout__column two-column-layout__paragraph">
-          <h3>
-            <span class="small-caps">
+          <h3 class="title-mask">
+            <span class="small-caps wow anim-fade-in-up" data-wow-duration="500ms">
               The Challenge
             </span>
-            <span>Conclusion</span>
+            <span class="wow anim-slide-up" data-wow-duration="550ms" data-wow-offset="50">
+              Conclusion
+            </span>
           </h3>
-          <p>
+          <p class="wow anim-fade-in-up" data-wow-duration="500ms">
             thoughtbot delivered a new web experience and a cohesive visual
             language for Bluvalt.com. This generated lots of positive feedback
             and sharing from customers on social media. Most importantly,
@@ -474,7 +515,8 @@ colour-swatches:
             in the design process and understood every decision being made.
           </p>
         </div>
-        <div class="two-column-layout__column two-column-layout__column-bottom">
+        <div class="two-column-layout__column two-column-layout__column-bottom wow anim-appear"
+        data-wow-duration="400ms" data-wow-offset="100">
           {% include testimony.html avatar = "rami-taibah"
             name = "Rami Taibah"
             role = "UX Architect at Bluvalt"
@@ -485,12 +527,19 @@ colour-swatches:
         </div>
         <div class="stats">
           <div class="stats__info">
-            <span class="stats__info-percentage">
-              35&percnt;
-            </span>
-            <span class="stats__info-description">
-              Bounce rate reduced
-            </span>
+            <div class="hr wow anim-grow" data-wow-duration="400ms"></div>
+            <div class="title-mask">
+              <span class="stats__info-percentage wow anim-slide-up" data-wow-duration="450ms" data-wow-offset="50"
+              data-wow-delay="200ms">
+                35&percnt;
+              </span>
+            </div>
+            <div class="title-mask">
+              <span class="stats__info-description wow anim-slide-up" data-wow-duration="450ms" data-wow-offset="50"
+              data-wow-delay="250ms">
+                Bounce rate reduced
+              </span>
+            </div>
           </div>
         </div>
       </div>

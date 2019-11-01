@@ -2,7 +2,7 @@ $color--small-caps: #717070;
 
 .small-caps {
   color: $color--small-caps;
-  display: block;
+  display: block !important;
   font-family: $type--family-body;
   font-size: 1.4rem;
   font-weight: 600;
