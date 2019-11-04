@@ -1,4 +1,8 @@
 .website {
   position: relative;
   z-index: 3;
+
+  @include media-query($breakpoint--small) {
+    margin-bottom: 100vh;
+  }
 }
