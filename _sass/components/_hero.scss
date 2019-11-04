@@ -24,6 +24,10 @@
   transform: translateY(100%);
 }
 
+.js .hero__image {
+  opacity: 0; 
+}
+
 .hero--inverted {
   .hero__title,
   .hero__details-list-item {
