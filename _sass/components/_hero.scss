@@ -219,3 +219,34 @@
     width: 50vw;
   }
 }
+
+.hero__socials {
+  position: absolute;
+  right: -0.5%;
+  bottom: 11rem;
+  transform: rotate(90deg);
+  display: none;
+
+  @include media-query($breakpoint--large) {
+    display: inline-block;
+  }
+
+  a {
+    display: inline-block;
+    margin-right: spacing(3);
+    width: 2rem;
+
+    @include media-query($breakpoint--x-large) {
+      width: 2.2rem;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+}
