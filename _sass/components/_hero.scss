@@ -3,7 +3,7 @@
   height: 100vh;
   min-height: 60rem;
   overflow: hidden;
-  position: sticky;
+  position: relative;
   width: 100%;
   z-index: 3;
 
@@ -25,7 +25,7 @@
 }
 
 .js .hero__image {
-  opacity: 0; 
+  opacity: 0;
 }
 
 .hero--inverted {
