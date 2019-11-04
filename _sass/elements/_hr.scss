@@ -14,7 +14,7 @@
 
 .hr--short {
   margin: 0 0 spacing(3);
-  width: 5rem;
+  max-width: 5rem;
 
   @include media-query($breakpoint--small) {
     margin: 0 0 spacing(4);

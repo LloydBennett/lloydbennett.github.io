@@ -46,7 +46,7 @@ class Loader {
     }
     else if(caseStudy) {
       this.loaderTl.fromTo(this.heroImage, 0.3, { opacity: 0, x: 50 }, { opacity: 1, x: 0 });
-      this.loaderTl.fromTo(this.heroHorizLine, 0.3, { width: 0 }, { width: 100 }, "last-elements");
+      this.loaderTl.fromTo(this.heroHorizLine, 0.3, { width: 0 }, { width: "100%" }, "last-elements");
       this.animateNodeList(this.heroDetailsListItems, { y: 0 }, "-=0.05", 0.2);
     }
 
