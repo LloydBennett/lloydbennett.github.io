@@ -24,7 +24,8 @@
   transform: translateY(100%);
 }
 
-.js .hero__image {
+.js .hero__image,
+.js .hero__socials {
   opacity: 0;
 }
 
@@ -222,7 +223,7 @@
 
 .hero__socials {
   position: absolute;
-  right: -0.5%;
+  right: -2.7rem;
   bottom: 11rem;
   transform: rotate(90deg);
   display: none;
@@ -231,13 +232,21 @@
     display: inline-block;
   }
 
+  @include media-query(1400px) {
+    right: -2.1rem;
+  }
+
+  @include media-query($breakpoint--xxx-large) {
+    right: -0.5rem;
+  }
+
   a {
     display: inline-block;
     margin-right: spacing(3);
-    width: 2rem;
+    width: 20px;
 
     @include media-query($breakpoint--x-large) {
-      width: 2.2rem;
+      width: 22px;
     }
 
     &:last-child {

@@ -11,6 +11,7 @@ class Loader {
     this.heroImage = document.querySelector('[data-hero-image]');
     this.heroHorizLine = document.querySelector('[data-hero-hr]');
     this.heroDetailsListItems = document.querySelectorAll('[data-hero-details-item]');
+    this.heroSocials = document.querySelector('[data-hero-socials]');
     this.finishedCalculating = false;
 
     this.init();
@@ -51,6 +52,7 @@ class Loader {
     }
 
     this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1 }, "last-elements");
+    this.loaderTl.fromTo(this.heroSocials, 0.6, { opacity: 0}, { opacity: 1 }, "last-elements");
     this.loaderTl.fromTo(this.footer, 0.3, { opacity: 0 }, { opacity: 1 });
   }
 }

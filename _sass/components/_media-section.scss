@@ -21,6 +21,7 @@
 .media__wrapper {
   position: relative;
   margin-bottom: spacing(2);
+  overflow: hidden;
 
   @include media-query($breakpoint--medium) {
     margin-bottom: spacing(3);
