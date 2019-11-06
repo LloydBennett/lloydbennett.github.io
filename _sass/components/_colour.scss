@@ -8,6 +8,8 @@
 .colour__details-name {
   font-size: 1.8rem;
   color: $colour--body-type;
+  margin: spacing(3) 0 spacing(2);
+  font-family: $type--family-body;
 }
 
 .colour__details-code {
