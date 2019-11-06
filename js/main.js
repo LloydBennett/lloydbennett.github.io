@@ -3,7 +3,6 @@
   var input = document.querySelectorAll('[data-input-field]');
   var heroCta = document.querySelectorAll('[data-hero-cta]');
   var buttonLine = document.querySelector('[data-remove-class]');
-  var htmlBody = document.querySelector('html, body');
 
   function updateInputContent() {
     let inputValue = this.value;
@@ -18,10 +17,23 @@
   function scrollToSection(e) {
     e.preventDefault();
     e.stopPropagation();
-
+    var bodyElement;
+    var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+               navigator.userAgent &&
+               navigator.userAgent.indexOf('CriOS') == -1 &&
+               navigator.userAgent.indexOf('FxiOS') == -1;
     var destination = this.getAttribute("href");
 
-    $(htmlBody).animate({
+    // Scroll functionality works differently on safari
+
+    if (isSafari) {
+      bodyElement = $('body');
+    }
+    else {
+      bodyElement = $('html, body');
+    }
+
+    $(bodyElement).animate({
       scrollTop: $(destination).offset().top
     }, 600);
 
@@ -34,12 +46,10 @@
 
     heroCta.forEach(function(element, index){
       element.addEventListener('click', scrollToSection);
-      console.log(index);
     });
 
     buttonLine.addEventListener('animationend', () => {
       var $thisElem = event.target;
-      console.log($thisElem);
       if($thisElem.classList.contains('wow')){
         $thisElem.classList.remove('wow', 'anim-grow');
         $thisElem.setAttribute("style", "");
