@@ -5,15 +5,25 @@ $tweakpoint-two-column-layout: 1080px;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-column-gap: spacing(4);
+    grid-row-gap: spacing(6);
+  }
+}
+
+.two-column-layout--long {
+  @include media-query($breakpoint--medium) {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-column-gap: spacing(4);
+    grid-row-gap: spacing(6);
   }
 }
 
 .two-column-layout__column {
-  &:first-child {
+  &:nth-child(odd) {
     grid-column: 1/6;
   }
 
-  &:nth-child(2) {
+  &:nth-child(even) {
     grid-column: 6/13;
   }
 
@@ -24,7 +34,7 @@ $tweakpoint-two-column-layout: 1080px;
   }
 }
 
-.two-column-layout__services {
+.two-column-layout__tail {
   &:first-child {
     grid-column: 1/2;
 
@@ -47,7 +57,7 @@ $tweakpoint-two-column-layout: 1080px;
   @include offset-content(true, $tweakpoint-two-column-layout);
 }
 
-.two-column-layout-services--offset {
+.two-column-layout-tail--offset {
   @include offset-content(true, $breakpoint--small);
 }
 

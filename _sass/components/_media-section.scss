@@ -44,6 +44,14 @@
   }
 }
 
+.media__column {
+  grid-column: 1/13;
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 1/12;
+  }
+}
+
 .media__content--overlap {
   position: relative;
   display: table;
