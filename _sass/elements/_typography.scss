@@ -78,6 +78,22 @@ h3 {
   }
 }
 
+h4 {
+  color: $colour--heading-type;
+  font-family: $type--family-headings;
+  font-size: 1.8rem;
+  margin: 0 0 spacing(2) 0;
+
+  @include media-query($breakpoint--small) {
+    font-size: 2.1rem;
+    margin: 0 0 spacing(3) 0;
+  }
+
+  @include media-query($breakpoint--medium) {
+    font-size: 2.4rem;
+  }
+}
+
 p {
   @include body-text;
   line-height: $type--line-height;
