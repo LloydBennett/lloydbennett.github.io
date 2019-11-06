@@ -27,7 +27,7 @@ h3 {
 
 h1 {
   font-size: 5.3rem;
-  line-height: 1;
+  line-height: 1.1;
 
   @include media-query($breakpoint--small) {
     font-size: 7.3rem;
