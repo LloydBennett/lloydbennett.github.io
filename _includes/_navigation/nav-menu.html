@@ -6,9 +6,13 @@
         <li class="nav-menu__link" data-nav-menu-link>
           <a href="/about" data-page-transition="standard">About Me</a>
         </li>
+        {% for casestudy in site.projects %}
         <li class="nav-menu__link" data-nav-menu-link>
-          <a href="#cta-target" data-animate-scroll>Projects</a>
+          <a href="{{ casestudy.directory }}">
+            {{ casestudy.title }}
+          </a>
         </li>
+        {% endfor %}
         <li class="nav-menu__link" data-nav-menu-link>
           <a href="#contact" data-animate-scroll>Contact</a>
         </li>
