@@ -97,9 +97,3 @@ $tweakpoint-two-column-layout: 1080px;
     }
   }
 }
-
-.mobile-dash {
-  @include media-query($tweakpoint-two-column-layout - 1, max-width) {
-    display: none;
-  }
-}

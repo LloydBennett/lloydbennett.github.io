@@ -1,0 +1,19 @@
+$tweakpoint-type-dash-small: 1079px;
+$tweakpoint-type-dash-large: 1721px;
+
+.type-dash__wrapper {
+  @media screen and(min-width: $tweakpoint-type-dash-small + 1) and
+  (max-width: $tweakpoint-type-dash-large - 1) {
+    max-width: 100px;
+  }
+}
+
+.type-dash {
+  @include media-query($tweakpoint-type-dash-small, max-width) {
+    display: none;
+  }
+
+  @include media-query($tweakpoint-type-dash-large) {
+    display: none;
+  }
+}
