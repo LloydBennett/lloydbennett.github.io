@@ -58,10 +58,10 @@
   @include media-query($breakpoint--small) {
     padding-top: spacing(14);
   }
+}
 
-  span {
-    @include no-wrap-and-break;
-  }
+.hero__title-break {
+  @include no-wrap-and-break;
 }
 
 .hero__title--no-margin {
@@ -91,6 +91,7 @@
   }
 }
 
+//this is to avoid weird cliping with h1 titles
 .hero__title-content {
   margin-bottom: 1.5rem;
 }

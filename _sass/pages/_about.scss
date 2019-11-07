@@ -1,3 +1,5 @@
+$tweakpoint-about-title: 820px;
+
 .about__socials {
   position: absolute;
   top: 40%;
@@ -15,5 +17,12 @@
 
   @include media-query($breakpoint--xxx-large) {
     right: 1.2rem;
+  }
+}
+
+.about__title {
+  @include media-query($tweakpoint-about-title) {
+    display: block;
+    white-space: nowrap;
   }
 }
