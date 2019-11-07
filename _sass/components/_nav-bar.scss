@@ -1,0 +1,18 @@
+.nav-bar {
+  padding: spacing(2) 0;
+
+  @include media-query($breakpoint--medium) {
+    padding: spacing(3) 0;
+  }
+}
+
+.nav-bar__wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar__logo {
+  @extend .thumbnail;
+  max-width: 4rem;
+}

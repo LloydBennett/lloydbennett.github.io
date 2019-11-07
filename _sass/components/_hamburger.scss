@@ -1,0 +1,27 @@
+.hamburger {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  width: 4rem;
+
+  @include media-query($breakpoint--x-large) {
+    width: 4.4rem;
+  }
+}
+
+.hamburger__icon-line {
+  display: block;
+  width: 100%;
+  height: 0.3rem;
+  background-color: $colour--grit;
+
+  & + & {
+    margin-top: 0.6rem;
+
+    @include media-query($breakpoint--x-large) {
+      margin-top: spacing(1);
+    }
+  }
+}
