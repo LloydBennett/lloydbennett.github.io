@@ -68,6 +68,12 @@ $tweakpoint-two-column-layout: 1080px;
   }
 }
 
+.two-column-layout__tail-heading {
+  @include media-query($tweakpoint-two-column-layout - 1, max-width) {
+    margin-bottom: spacing(4);
+  }
+}
+
 .two-column-layout__tail-long {
   &:nth-child(2) {
     max-width: 100rem;
