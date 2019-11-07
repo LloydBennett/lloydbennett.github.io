@@ -32,15 +32,21 @@ include-nav: true;
     {% include _social-links/linkedin.html %}
   </div> -->
 </section>
-<div class="media grid inner-section">
-  <picture class="media__column thumbnail">
-    <source media="(max-width: 700px)" srcset="https://via.placeholder.com/700x600.jpg/f2f2f2/f2f2f2">
-    <source media="(max-width: 1200px)" srcset="https://via.placeholder.com/1200x800.jpg/f2f2f2/f2f2f2">
-    <source media="(max-width: 1440px)" srcset="https://via.placeholder.com/1440x646.jpg/f2f2f2/f2f2f2">
-    <source media="(min-width: 1441px)" srcset="https://via.placeholder.com/2880x1292.jpg/f2f2f2/f2f2f2">
-    <img src="https://via.placeholder.com/1440x750.png/f2f2f2" alt="Media Background">
-  </picture>
+<div class="inner-section grid">
+  <div class="media__wrapper media__column">
+    <div class="concealer wow anim-image-reveal"
+      data-wow-duration="600ms" data-wow-delay="400ms" data-wow-offset="200">
+    </div>
+    <picture class=" thumbnail wow anim-zoom-out"
+    data-wow-duration='800ms' data-wow-delay="600ms">
+      <source media="(max-width: 700px)" srcset="../images/about/about-hero-mobile.jpg">
+      <source media="(max-width: 1270px)" srcset="../images/about/about-hero.jpg">
+      <source media="(min-width: 1271px)" srcset="../images/about/about-hero-x2.jpg">
+      <img src="../images/about/about-hero.jpg" alt="Lloyd Bennett">
+    </picture>
+  </div>
 </div>
+
 <section class="inner-section">
   <div class="container grid">
     <div class="two-column-layout two-column-layout-tail--offset">
