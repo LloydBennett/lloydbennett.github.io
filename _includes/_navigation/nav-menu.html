@@ -1,16 +1,24 @@
 <div class="nav-menu" data-nav-menu>
   <div class="nav-menu-bg"></div>
-  <div class="container">
-    <ul class="nav-menu-list">
-      <li class="nav-menu-link" data-nav-menu-link>
-        <a href="/about" data-page-transition="standard">About Me</a>
-      </li>
-      <li class="nav-menu-link" data-nav-menu-link>
-        <a href="#cta-target" data-animate-scroll>Projects</a>
-      </li>
-      <li class="nav-menu-link" data-nav-menu-link>
-        <a href="#contact" data-animate-scroll>Contact</a>
-      </li>
-    </ul>
+  <div class="container grid">
+    <div class="nav-menu__wrapper">
+      <ul class="nav-menu__list">
+        <li class="nav-menu__link" data-nav-menu-link>
+          <a href="/about" data-page-transition="standard">About Me</a>
+        </li>
+        <li class="nav-menu__link" data-nav-menu-link>
+          <a href="#cta-target" data-animate-scroll>Projects</a>
+        </li>
+        <li class="nav-menu__link" data-nav-menu-link>
+          <a href="#contact" data-animate-scroll>Contact</a>
+        </li>
+      </ul>
+      <div class="nav-menu__socials socials">
+        {% include _social-links/dribbble.html %}
+        {% include _social-links/instagram.html %}
+        {% include _social-links/linkedin.html %}
+      </div>
+    </div>
   </div>
+
 </div>
