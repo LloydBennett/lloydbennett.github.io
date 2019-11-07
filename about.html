@@ -25,14 +25,8 @@ include-nav: true;
         </h1>
       </div>
     </div>
-
-    <div class="hero__socials" data-hero-socials>
-      {% include _social-links/dribbble.html %}
-      {% include _social-links/instagram.html %}
-      {% include _social-links/linkedin.html %}
-    </div>
   </div>
-  <div class="inner-section grid">
+  <div class="inner-section grid grid--relative">
     <div class="media__wrapper media__column">
       <div class="concealer wow anim-image-reveal"
       data-wow-duration="600ms" data-wow-delay="400ms" data-wow-offset="200">
@@ -44,6 +38,11 @@ include-nav: true;
         <source media="(min-width: 1271px)" srcset="../images/about/about-hero-x2.jpg">
         <img src="../images/about/about-hero.jpg" alt="Lloyd Bennett">
       </picture>
+    </div>
+    <div class="socials socials--rotated about__socials" data-hero-socials>
+      {% include _social-links/dribbble.html %}
+      {% include _social-links/instagram.html %}
+      {% include _social-links/linkedin.html %}
     </div>
   </div>
 

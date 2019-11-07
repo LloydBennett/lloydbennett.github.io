@@ -1,0 +1,19 @@
+.about__socials {
+  position: absolute;
+  top: 40%;
+  transform: rotate(90deg) translateY(-40%);
+  display: none;
+  right: 0;
+
+  @include media-query($breakpoint--x-large) {
+    display: inline-block;
+  }
+
+  @include media-query(1400px) {
+    right: 0.5rem;
+  }
+
+  @include media-query($breakpoint--xxx-large) {
+    right: 1.2rem;
+  }
+}
