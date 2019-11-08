@@ -29,13 +29,14 @@
 .nav-menu__wrapper {
   @include offset-content;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   position: relative;
   height: 100%;
 }
 
 .nav-menu__list {
+  margin-top: 30vh;
   margin-bottom: spacing(8);
 }
 
@@ -74,9 +75,7 @@
 }
 
 .nav-menu__socials {
-  position: absolute;
-  left: 0;
-  bottom: 5%;
+  margin-bottom: 5%;
   opacity: 0;
   transition: 300ms ease 100ms;
 
