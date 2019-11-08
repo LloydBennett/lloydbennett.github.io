@@ -1,28 +1,19 @@
 .meta-info {
   @include capitalized-text;
   font-size: 1rem;
-  position: fixed;
-  right: 1%;
-  top: 22rem;
+  position: absolute;
+  right: 0;
+  top: 18rem;
   writing-mode: vertical-lr;
   z-index: 5;
   display: none;
 
   @include media-query($breakpoint--large) {
-    right: 2%;
     display: inline-block;
   }
 
   @include media-query($breakpoint--x-large) {
     font-size: 1.2rem;
-  }
-
-  @include media-query($breakpoint--xx-large) {
-    top: 25.5rem;
-  }
-
-  @include media-query($breakpoint--xxx-large) {
-    top: 27rem;
   }
 }
 
