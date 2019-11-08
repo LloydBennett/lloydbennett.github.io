@@ -1,7 +1,7 @@
-function NavigationMenu(parent, parentLinks, parentBackground, menuTrigger, navBar) {
+function NavigationMenu(parent, parentLinks, menuTrigger, navBar) {
   this.parent = parent;
   this.parentLinks = parentLinks;
-  this.parentBackground = parentBackground;
+  //this.parentBackground = parentBackground;
   this.navBar = navBar;
   this.menuTrigger = menuTrigger;
   this.menuIsOpen = false;
@@ -27,8 +27,8 @@ NavigationMenu.prototype = {
 
     this.isAnimating = true;
 
-    this.parentLinks.each(function(index, elem) {
-      _this.menuIsOpen? delay = (150 * index) + 200 : delay = 90 * index;
+    this.parentLinks.forEach(function(elem, index) {
+      _this.menuIsOpen? delay = (100 * index) + 200 : delay = 90 * index;
 
       setTimeout(function(){
         $(elem).toggleClass('appear');
@@ -36,20 +36,25 @@ NavigationMenu.prototype = {
 
     });
 
-    this.parentBackground.bind('webkitTransitionEnd', function(){
-      setTimeout(function(){
-        _this.isAnimating = false;
-      }, 400);
-    });
+    setTimeout(function(){
+      _this.isAnimating = false;
+    }, 400);
+
+    // this.parentBackground.bind('webkitTransitionEnd', function(){
+    //   setTimeout(function(){
+    //     _this.isAnimating = false;
+    //   }, 400);
+    // });
 
   },
   addEvents: function() {
     var _this = this;
-    this.menuTrigger.on('click', function(){
+    this.menuTrigger.addEventListener('click', () => {
       _this.checkNavigationMenuState();
     });
   },
   init: function() {
+    console.log('this is working');
     this.addEvents();
   }
 }

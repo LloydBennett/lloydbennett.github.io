@@ -6,10 +6,23 @@
   top: 0;
   background-color: $colour--grit;
   z-index: 100;
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: 300ms ease;
 
   .container {
     height: 100%;
+  }
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transition: 300ms ease;
+
+    .nav-menu__socials {
+      opacity: 1;
+      transition: 400ms ease 700ms;
+    }
   }
 }
 
@@ -40,6 +53,8 @@
     color: $colour--white;
     font-family: $type--family-headings;
     display: inline-block;
+    transform: translateY(100%);
+    transition: transform 200ms ease;
 
     @include media-query($breakpoint--small) {
       font-size: 4.2rem;
@@ -49,12 +64,21 @@
       font-size: 5.8rem;
     }
   }
+
+  &.appear {
+    a {
+      transform: translateY(0);
+      transition: transform 200ms ease;
+    }
+  }
 }
 
 .nav-menu__socials {
   position: absolute;
   left: 0;
   bottom: 5%;
+  opacity: 0;
+  transition: 300ms ease 100ms;
 
   .path {
     fill: $colour--white;

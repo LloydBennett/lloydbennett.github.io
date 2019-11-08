@@ -4,10 +4,47 @@
   border: none;
   cursor: pointer;
   display: inline-block;
-  width: 4rem;
+  width: 3rem;
+  padding: 0;
+  outline: none;
 
   @include media-query($breakpoint--x-large) {
-    width: 4.4rem;
+    width: 3.4rem;
+  }
+
+  &.is-open {
+    .hamburger__icon-line {
+      background-color: $colour--white;
+      transition: 300ms ease;
+
+      &:nth-child(2) {
+        width: 0 !important;
+        transition: width 200ms ease;
+      }
+
+      &:nth-child(1) {
+        transform: translateY(0.9rem) rotate(45deg);
+
+        @include media-query($breakpoint--x-large) {
+          transform: translateY(1.1rem) rotate(45deg);
+        }
+      }
+
+      &:last-child {
+        transform: translateY(-0.9rem) rotate(-45deg);
+
+        @include media-query($breakpoint--x-large) {
+          transform: translateY(-1.1rem) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .hamburger__icon-line:nth-child(2) {
+      width: 60%;
+      transition: width 200ms ease;
+    }
   }
 }
 
@@ -16,6 +53,8 @@
   width: 100%;
   height: 0.3rem;
   background-color: $colour--grit;
+  transition: background-color transform 300ms ease,
+              width 150ms ease;
 
   & + & {
     margin-top: 0.6rem;
