@@ -28,23 +28,21 @@ NavigationMenu.prototype = {
     this.isAnimating = true;
 
     this.parentLinks.forEach(function(elem, index) {
-      _this.menuIsOpen? delay = (100 * index) + 200 : delay = 90 * index;
+      _this.menuIsOpen? delay = (100 * index) + 200 : delay = 300;
 
-      setTimeout(function(){
+      if(index === _this.parentLinks.length - 1) {
+        elem.addEventListener('transitionend', () => {
+          setTimeout(function() {
+            _this.isAnimating = false;
+          }, 400);
+        });
+      }
+
+      setTimeout(function() {
         $(elem).toggleClass('appear');
       }, delay);
 
     });
-
-    setTimeout(function(){
-      _this.isAnimating = false;
-    }, 400);
-
-    // this.parentBackground.bind('webkitTransitionEnd', function(){
-    //   setTimeout(function(){
-    //     _this.isAnimating = false;
-    //   }, 400);
-    // });
 
   },
   addEvents: function() {
