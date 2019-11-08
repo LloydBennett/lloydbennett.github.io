@@ -10,10 +10,18 @@
   @include media-query($breakpoint--small - 1, max-width) {
     max-height: 800px;
   }
+
+  @include media-query($breakpoint--large) {
+    padding-bottom: spacing(9);
+  }
 }
 
 .hero--home {
-  .hero--content {
+  @include media-query($breakpoint--large - 1, max-width) {
+    padding-bottom: spacing(10);
+  }
+
+  .hero__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -53,19 +61,7 @@
 }
 
 .hero__title {
-  padding-top: spacing(6);
-
-  @include media-query($breakpoint--small) {
-    padding-top: spacing(10);
-  }
-
-  @include media-query($breakpoint--medium) {
-    padding-top: spacing(14);
-  }
-
-  @include media-query($breakpoint--xx-large) {
-    padding-top: spacing(18);
-  }
+  padding-top: spacing(18);
 }
 
 .hero__title-break {
@@ -120,28 +116,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-}
-
-.hero__details {
-  @include media-query($breakpoint--large) {
-    position: absolute;
-    bottom: #{spacing(9)};
-  }
-}
-
-.hero__details-home {
-  position: absolute;
-
-  @include media-query($breakpoint--large - 1, max-width) {
-    bottom: #{spacing(14)};
-  }
-}
-
-.hero__details-casetudy {
-  @include media-query($breakpoint--x-large) {
-    position: absolute;
-    bottom: #{spacing(9)};
   }
 }
 
