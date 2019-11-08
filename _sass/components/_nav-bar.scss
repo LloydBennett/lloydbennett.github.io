@@ -1,6 +1,9 @@
 .nav-bar {
   padding: spacing(2) 0;
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   z-index: 200;
 
   @include media-query($breakpoint--medium) {
