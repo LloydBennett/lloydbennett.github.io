@@ -1,7 +1,6 @@
 function NavigationMenu(parent, parentLinks, menuTrigger, navBar) {
   this.parent = parent;
   this.parentLinks = parentLinks;
-  //this.parentBackground = parentBackground;
   this.navBar = navBar;
   this.menuTrigger = menuTrigger;
   this.menuIsOpen = false;
