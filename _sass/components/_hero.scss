@@ -161,10 +161,11 @@
   }
 
   @include media-query($breakpoint--large) {
+    bottom: -5%;
     left: auto;
     max-width: none;
     min-width: 90rem;
-    right: -15%;
+    right: -12%;
     width: 60vw;
   }
 }
