@@ -6,6 +6,7 @@
       <div id="{{ page.title | downcase }}" class="step--reset
         {% if page.layout == "casestudy" %}casestudy{% endif %}">
         {% include _navigation/nav-menu.html %}
+        {% include _navigation/nav-bar.html %}
         {{ content }}
       </div>
     </main>

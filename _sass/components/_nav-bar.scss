@@ -9,6 +9,10 @@
   @include media-query($breakpoint--medium) {
     padding: spacing(3) 0;
   }
+
+  &.is-sticky {
+    position: fixed;
+  }
 }
 
 .nav-bar__wrapper {
