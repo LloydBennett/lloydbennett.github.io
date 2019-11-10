@@ -6,7 +6,7 @@ $tweakpoint-about-title-content: 584px;
   top: 40%;
   transform: rotate(90deg) translateY(-40%);
   display: none;
-  right: 2;
+  right: 2%;
 
   @include media-query($breakpoint--x-large) {
     display: inline-block;
