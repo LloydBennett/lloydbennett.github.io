@@ -33,7 +33,7 @@ h1 {
     font-size: 7.3rem;
   }
 
-  @include media-query($breakpoint--medium) {
+  @include media-query($breakpoint--large) {
     font-size: 9.6rem;
   }
 
