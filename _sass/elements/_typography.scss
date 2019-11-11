@@ -10,6 +10,11 @@ html {
 body {
   font-family: $type--family-body;
   font-size: 100%;
+
+  &.no-scrolling {
+    overflow: hidden;
+    position: fixed;
+  }
 }
 
 h1,

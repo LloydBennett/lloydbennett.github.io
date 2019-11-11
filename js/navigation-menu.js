@@ -5,6 +5,7 @@ function NavigationMenu(parent, parentLinks, menuTrigger, navBar) {
   this.menuTrigger = menuTrigger;
   this.menuIsOpen = false;
   this.isAnimating = false;
+  this.body = $('[data-body]');
 
   this.init();
 }
@@ -14,6 +15,7 @@ NavigationMenu.prototype = {
     this.menuIsOpen = !this.menuIsOpen;
 
     if(!this.isAnimating) {
+      $(this.body).toggleClass('no-scrolling');
       $(this.parent).toggleClass('is-open');
       $(this.menuTrigger).toggleClass('is-open');
       $(this.navBar).toggleClass('is-open');
@@ -51,7 +53,7 @@ NavigationMenu.prototype = {
     });
   },
   init: function() {
-    console.log('this is working');
+    console.log(this.body);
     this.addEvents();
   }
 }
