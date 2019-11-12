@@ -13,6 +13,20 @@
   &.is-sticky {
     position: fixed;
   }
+
+  &.is-open {
+    .nav-bar__logo {
+      .path {
+        fill: $colour--white;
+        transition: 300ms ease;
+      }
+
+      .path-stroke {
+        stroke: $colour--white;
+        transition: 300ms ease;
+      }
+    }
+  }
 }
 
 .nav-bar__wrapper {
@@ -24,4 +38,18 @@
 .nav-bar__logo {
   @extend .thumbnail;
   max-width: 4rem;
+
+  @include media-query($breakpoint--large) {
+    max-width: 5rem;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+  }
+
+  .path,
+  .path-stroke {
+    transition: 300ms ease;
+  }
 }
