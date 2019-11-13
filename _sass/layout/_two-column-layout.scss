@@ -59,7 +59,6 @@ $tweakpoint-two-column-layout: 1080px;
   }
 
   &:nth-child(2) {
-    @include max-paragraph-width;
     grid-column: 3/13;
 
     @include media-query($breakpoint--large) {
