@@ -39,6 +39,15 @@ NavigationMenu.prototype = {
         });
       }
 
+      if(elem.querySelector('a').hasAttribute('data-animate-scroll')) {
+        var elemChild = elem.querySelector('a');
+        elemChild.addEventListener('click', () => {
+          console.log('heyyy!');
+            //this.smoothScrolling
+        });
+      }
+      // if( elem.querySelector('a').)
+
       setTimeout(function() {
         $(elem).toggleClass('appear');
       }, delay);
@@ -52,8 +61,8 @@ NavigationMenu.prototype = {
       _this.checkNavigationMenuState();
     });
   },
+  smoothScrolling: scrollToSection,
   init: function() {
-    console.log(this.body);
     this.addEvents();
   }
 }
