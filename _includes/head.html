@@ -30,7 +30,12 @@
 
   <script src="/js/vendor/wow.js"></script>
   <script>
-    var wow = new WOW();
-    wow.init();
-  </script>
+   window.addEventListener('load', function(){
+     setTimeout(function(){
+       window.scrollTo(0, 0);
+       var wow = new WOW();
+       wow.init();
+     }, 5);
+   });
+ </script>
 </head>
