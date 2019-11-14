@@ -29,7 +29,15 @@ NavigationMenu.prototype = {
     this.isAnimating = true;
 
     this.parentLinks.forEach(function(elem, index) {
+      var elemChild = elem.querySelector('a');
       _this.menuIsOpen? delay = (100 * index) + 200 : delay = 300;
+
+      if(elemChild.hasAttribute('data-scroll-to-bottom') && _this.menuIsOpen) {
+        elemChild.addEventListener('click', function(e) {
+          _this.checkNavigationMenuState();
+          _this.smoothScrolling(e, this);
+        });
+      }
 
       if(index === _this.parentLinks.length - 1) {
         elem.addEventListener('transitionend', () => {
@@ -38,15 +46,6 @@ NavigationMenu.prototype = {
           }, 400);
         });
       }
-
-      if(elem.querySelector('a').hasAttribute('data-animate-scroll')) {
-        var elemChild = elem.querySelector('a');
-        elemChild.addEventListener('click', () => {
-          console.log('heyyy!');
-            //this.smoothScrolling
-        });
-      }
-      // if( elem.querySelector('a').)
 
       setTimeout(function() {
         $(elem).toggleClass('appear');

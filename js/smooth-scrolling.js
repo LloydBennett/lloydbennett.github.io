@@ -1,4 +1,4 @@
-function scrollToSection(e) {
+function scrollToSection(e, $this) {
   e.preventDefault();
   e.stopPropagation();
   var bodyElement;
@@ -6,10 +6,15 @@ function scrollToSection(e) {
              navigator.userAgent &&
              navigator.userAgent.indexOf('CriOS') == -1 &&
              navigator.userAgent.indexOf('FxiOS') == -1;
-  var destination = this.getAttribute("href");
+  var destination = $this.getAttribute("href");
 
   // Scroll functionality works differently on safari
-  console.log(this);
+
+  if($this.hasAttribute('data-scroll-to-bottom')) {
+    window.scrollTo(0,document.body.scrollHeight);
+    return;
+  }
+
   if (isSafari) {
     bodyElement = $('body');
   }

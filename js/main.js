@@ -25,7 +25,9 @@
     });
 
     heroCta.forEach(function(element, index){
-      element.addEventListener('click', scrollToSection);
+      element.addEventListener('click', (e) => {
+        scrollToSection(e, element)
+      });
     });
 
     if(homePage) {
