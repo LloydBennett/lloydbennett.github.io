@@ -60,7 +60,7 @@ h2 {
   }
 
   @include media-query($breakpoint--xx-large) {
-    font-size: 6.3rem;
+    font-size: 7.2rem;
   }
 }
 
@@ -76,10 +76,6 @@ h3 {
   @include media-query($breakpoint--medium) {
     margin: 0 0 spacing(5);
     font-size: 3.6rem;
-  }
-
-  @include media-query($breakpoint--x-large) {
-    font-size: 4.2rem;
   }
 }
 
