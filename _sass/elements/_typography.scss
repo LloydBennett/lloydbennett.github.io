@@ -22,7 +22,6 @@ h1,
 h2,
 h3 {
   color: $colour--heading-type;
-  font-family: $type--family-headings;
   margin: 0 0 spacing(4);
   font-weight: 600;
 
@@ -86,7 +85,6 @@ h3 {
 
 h4 {
   color: $colour--heading-type;
-  font-family: $type--family-headings;
   font-size: 1.8rem;
   margin: 0 0 spacing(2) 0;
 
