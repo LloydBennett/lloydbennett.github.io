@@ -7,6 +7,7 @@
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
+  font-family: $type--family-alt;
   overflow: hidden;
   padding: 0;
   position: relative;
@@ -25,7 +26,7 @@
 }
 
 .button__text {
-  display: block; 
+  display: block;
 }
 
 .button__line {
@@ -39,10 +40,6 @@
 
 .button--margin-top {
   margin-top: spacing(5);
-
-  @include media-query($breakpoint--medium) {
-    margin-top: spacing(7);
-  }
 }
 
 .button--inverted {
