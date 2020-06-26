@@ -1,9 +1,41 @@
 .meta {
+  margin-bottom: spacing(7);
+
   @include media-query($breakpoint--small) {
-    grid-column: 1 / 2;
+    grid-column: 2 / 4;
   }
 
-  @include media-query($breakpoint--large) {
+  @include media-query($breakpoint--medium) {
+    grid-column: 1 / 2;
+    margin-bottom: 0;
+  }
+
+  @include media-query($breakpoint--x-large) {
     grid-column: 2 / 3;
   }
+}
+
+.meta__content {
+  display: block;
+}
+
+.meta--body-text {
+  font-size: 1.4rem;
+
+  @include media-query($breakpoint--large) {
+    font-size: 1.6rem;
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    font-size: 1.8rem;
+  }
+
+
+  & + & {
+    margin-top: $spacing-rule-half / 2;
+  }
+}
+
+.meta--captialized {
+  @include capitalized-text;
 }

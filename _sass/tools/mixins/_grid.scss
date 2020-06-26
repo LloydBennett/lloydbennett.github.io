@@ -12,13 +12,13 @@
 
   @include media-query($breakpoint--small) {
     grid-column-gap: spacing(3);
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @include media-query($breakpoint--large) {
-    grid-column-gap: spacing(3);
     grid-template-columns: repeat(6, 1fr);
   }
+
+  // @include media-query($breakpoint--large) {
+  //   grid-column-gap: spacing(3);
+  //   grid-template-columns: repeat(6, 1fr);
+  // }
 
   @include media-query($breakpoint--x-large) {
     grid-column-gap: spacing(4);
