@@ -9,40 +9,7 @@ order: 1
 permalink: /
 include-nav: true;
 ---
-
-<section class="hero">
-  <div class="hero__grid">
-    <div class="meta hero__meta">
-      <div class="hr"></div>
-      <span class="meta__content meta--body-text">
-        Lloyd Bennett
-      </span>
-      <span class="meta__content meta--body-text">
-        Digital Designer
-      </span>
-    </div>
-
-    <div class="hero__content">
-      <h1 class="hero__title">
-        Designs with a <i><u>purpose</u></i>
-      </h1>
-      <div class="hero__details">
-        <p class="hero__copy" data-hero-copy>
-          {{ page.description }}
-        </p>
-
-        {% include button.html
-          target="#portfolio"
-          externalLink = true
-          heroCta = true
-          buttonText = page.buttoname
-        %}
-      </div>
-    </div>
-  </div>
-</section>
-
-
+{% include hero.html %}
 
 <div class="content content--with-padding">
   {% include _home/services.html %}
