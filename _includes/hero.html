@@ -1,6 +1,28 @@
 <section class="hero">
   <div class="hero__grid">
     <div class="meta hero__meta">
+      {% if page.type == "casestudy" %}
+        <div class="meta__group">
+          <span class="meta__title">
+            My Roles
+          </span>
+        {% for cat in page.category %}
+          <span class="meta__content meta--body-text">
+            {{ cat }}
+          </span>
+        {% endfor %}
+        </div>
+        <div class="meta__group">
+          <span class="meta__title">
+            Contributors
+          </span>
+          {% for person in page.contributors %}
+            <span class="meta__content meta--body-text">
+              {{ person }}
+            </span>
+          {% endfor %}
+        </div>
+      {% else %}
       <div class="hr"></div>
       <span class="meta__content meta--body-text">
         Lloyd Bennett
@@ -8,24 +30,34 @@
       <span class="meta__content meta--body-text">
         Digital Designer
       </span>
+      {% endif %}
     </div>
 
     <div class="hero__content">
       <h1 class="hero__title">
-        Designs with a <i><u>purpose</u></i>
+        {% if page.herotitle %}
+          {{ page.herotitle }}
+        {% else %}
+          {{ page.title }}
+        {% endif %}
+        <!-- Designs with a <i><u>purpose</u></i> -->
       </h1>
-      <div class="hero__details">
-        <p class="hero__copy" data-hero-copy>
-          {{ page.description }}
-        </p>
 
+      {% if page.description %}
+      <p class="hero__copy" data-hero-copy>
+        {{ page.description }}
+      </p>
+      {% endif %}
+
+      {% if page.buttoname %}
         {% include button.html
           target="#portfolio"
           externalLink = true
           heroCta = true
           buttonText = page.buttoname
         %}
-      </div>
+      {% endif %}
+
     </div>
   </div>
 </section>

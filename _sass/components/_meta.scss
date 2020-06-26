@@ -25,7 +25,9 @@
   display: block;
 }
 
-.meta--body-text {
+
+.meta--body-text,
+.meta__title {
   font-size: 1.4rem;
 
   @include media-query($breakpoint--large) {
@@ -35,13 +37,22 @@
   @include media-query($breakpoint--xx-large) {
     font-size: 1.8rem;
   }
+}
 
-
+.meta--body-text {
   & + & {
     margin-top: $spacing-rule-half / 2;
   }
 }
 
-.meta--captialized {
+.meta__title {
   @include capitalized-text;
+  margin-bottom: spacing(2);
+  display: block;
+}
+
+.meta__group {
+  & + & {
+    margin-top: spacing(3);
+  }
 }
