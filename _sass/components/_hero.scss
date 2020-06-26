@@ -1,16 +1,27 @@
+.hero {
+  padding-top: spacing(7);
+
+  @include media-query($breakpoint--small) {
+    padding-top: spacing(13);
+  }
+
+  @include media-query($breakpoint--large) {
+    padding-top: spacing(18);
+  }
+
+  @include media-query($breakpoint--x-large) {
+    padding-top: spacing(22);
+  }
+}
+
 .hero__grid {
   @include container;
   @include grid;
-  //height: 100%;
   position: relative;
 }
 
 .hero__content {
   @include offset-content;
-  //height: 100%;
-  //position: relative;
-  //z-index: 2;
-  //padding-top: spacing(18);
 }
 
 .hero__copy {

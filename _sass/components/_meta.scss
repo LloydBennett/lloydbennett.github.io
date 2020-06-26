@@ -1,13 +1,19 @@
 .meta {
   margin-bottom: spacing(7);
+  display: table;
 
   @include media-query($breakpoint--small) {
     grid-column: 2 / 4;
+    padding-top: #{spacing(3) - $spacing-rule-half};
   }
 
   @include media-query($breakpoint--medium) {
     grid-column: 1 / 2;
     margin-bottom: 0;
+  }
+
+  @include media-query($breakpoint--large) {
+    padding-top: spacing(3);
   }
 
   @include media-query($breakpoint--x-large) {
