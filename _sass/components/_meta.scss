@@ -1,0 +1,9 @@
+.meta {
+  @include media-query($breakpoint--small) {
+    grid-column: 1 / 2;
+  }
+
+  @include media-query($breakpoint--large) {
+    grid-column: 2 / 3;
+  }
+}
