@@ -1,73 +1,37 @@
 .card {
-  @include grid($breakpoint--large);
+  @include container;
+  @include grid;
   position: relative;
 
-  @include media-query($breakpoint--large - 1, max-width) {
-    display: flex;
-    flex-direction: column-reverse;
-  }
+  // @include media-query($breakpoint--large - 1, max-width) {
+  //   display: flex;
+  //   flex-direction: column-reverse;
+  // }
 }
 
-.card__aside {
-  position: relative;
-  overflow: hidden;
-
-  @include media-query ($breakpoint--large - 1, max-width) {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-  }
-
-  @include media-query($breakpoint--large) {
-    grid-column: 1 / 5;
-    height: 100vh;
-    min-height: 65rem;
-    overflow: hidden;
-    position: sticky;
-    top: 0;
-    max-height: 80rem;
-  }
-
-  @include media-query($breakpoint--xx-large) {
-    max-height: none;
-  }
+.card__wrapper {
+  @include two-thirds-media-layout;
 }
 
-.card__aside-bluvalt {
-  @include media-query($breakpoint--large) {
-    margin-top: spacing(7);
-  }
+.card__meta {
+  display: grid;
 
-  @include media-query($breakpoint--xx-large) {
-    margin-top: spacing(11);
-  }
-}
-
-.card__main {
-  background-color: $colour--white;
-
-  @include media-query($breakpoint--large - 1, max-width) {
-    @include container;
-  }
-
-  @media screen and (min-width: $breakpoint--small) and (max-width: $breakpoint--large - 1) {
-    @include grid;
-  }
-
-  @include media-query($breakpoint--large) {
-    display: flex;
-    align-items: center;
-    grid-column: 5 / 13;
-    margin-left: -#{spacing(3)};
-    padding-left: calc(#{spacing(8)} + 5%);
-    padding-right: 5%;
+  @include media-query($breakpoint--small) {
+    grid-column-gap: spacing(3);
   }
 
   @include media-query($breakpoint--x-large) {
-    margin-left: -#{spacing(4)};
-    padding-left: calc(#{spacing(8)} + 10%);
+    grid-column-gap: spacing(4);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
+
+.card__meta-content {
+  grid-column: 3/6;
+}
+
+
+
 
 .card__content {
   @include media-query($breakpoint--large - 1, max-width) {

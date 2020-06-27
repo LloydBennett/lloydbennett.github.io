@@ -6,7 +6,66 @@
   {% capture card-top-image-classes %} card__piece-image card__top-image-{{ casestudy.title | downcase }} wow anim-zoom-out{% endcapture %}
   {% capture card-bottom-image-classes %} card__piece-image card__bottom-image-{{ casestudy.title | downcase }} wow anim-zoom-out{% endcapture %}
 
-  <div class="card">
+<div class="card">
+  <div class="card__wrapper">
+    <div class="card__meta">
+      <h2>
+        {{ forloop.index }}
+      </h2>
+      <div class="card__meta-content">
+        <h2 class="card__title">
+          {{ casestudy.title }}
+        </h2>
+      </div>
+    </div>
+    <a class="card__thumbnail" href="{{ casestudy.url }}">
+      <!-- {% include casestudy-graphic.html
+        classlist= thumbnail-css-classes
+        datalist= thumbnail-main-data-attr
+        image-url= project-image-url
+        title= casestudy.directory
+      %} -->
+    </a>
+    <div class="card__meta">
+      <div class="card__meta-tags card--desktop">
+        {% for cat in casestudy.category %}
+        <p>
+          {% if forloop.last == true %}
+          <span>{{ cat }}</span>
+          {% else %}
+          <span>{{ cat }}&comma; </span>
+          {% endif %}
+        </p>
+        {% endfor %}
+      </div>
+      <div class="card__meta-content">
+        <p class="card__description card--desktop wow anim-fade-in-up"
+        data-wow-duration="400ms" data-wow-delay="200ms">
+          {{ casestudy.excerpt }}
+        </p>
+
+        <a class="button button--margin-top card--desktop" href="{{ casestudy.url }}">
+          <span class="button__text wow anim-appear" data-wow-duration="450ms" data-wow-delay="400ms">
+            View Case Study
+          </span>
+          <span class="button__line wow anim-grow" data-wow-duration="300ms" data-wow-delay="750ms" data-remove-class>
+          </span>
+        </a>
+
+      </div>
+
+
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+  <!-- <div class="card">
     <div class="card__aside card__aside-{{ casestudy.title | downcase }}" style="background-color: #{{ casestudy.colour}}">
       <div class="concealer wow anim-image-reveal"
         data-wow-duration="600ms" data-wow-offset="120"></div>
@@ -90,5 +149,5 @@
 
     </div>
 
-  </div>
+  </div> -->
 {% endfor %}
