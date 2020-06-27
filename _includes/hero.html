@@ -1,28 +1,31 @@
 <section class="hero">
-  <div class="hero__grid">
-    <div class="meta">
-      {% if page.type == "casestudy" %}
-        <div class="meta__group">
-          <span class="meta__title">
-            My Roles
-          </span>
-        {% for cat in page.category %}
+  <div class="hero__grid {% if page.type == 'casestudy' %} hero--flex">
+
+    <div class="meta meta--credits">
+      <div class="meta__group">
+        <span class="meta__title">
+          My Roles
+        </span>
+      {% for cat in page.category %}
+        <span class="meta__content meta--body-text">
+          {{ cat }}
+        </span>
+      {% endfor %}
+      </div>
+      <div class="meta__group">
+        <span class="meta__title">
+          Contributors
+        </span>
+        {% for person in page.contributors %}
           <span class="meta__content meta--body-text">
-            {{ cat }}
+            {{ person }}
           </span>
         {% endfor %}
-        </div>
-        <div class="meta__group">
-          <span class="meta__title">
-            Contributors
-          </span>
-          {% for person in page.contributors %}
-            <span class="meta__content meta--body-text">
-              {{ person }}
-            </span>
-          {% endfor %}
-        </div>
-      {% else %}
+      </div>
+    </div>
+    {% else %}
+    ">
+    <div class="meta meta--head">
       <div class="hr"></div>
       <span class="meta__content meta--body-text">
         Lloyd Bennett
@@ -30,8 +33,8 @@
       <span class="meta__content meta--body-text">
         Digital Designer
       </span>
-      {% endif %}
     </div>
+    {% endif %}
 
     <div class="hero__content">
       <h1 class="hero__title">

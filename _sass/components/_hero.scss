@@ -28,3 +28,10 @@
   @include max-paragraph-width;
   margin-top: 0;
 }
+
+.hero--flex {
+  @include media-query($breakpoint--small - 1, max-width) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
