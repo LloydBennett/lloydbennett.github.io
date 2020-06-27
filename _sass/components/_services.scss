@@ -1,5 +1,27 @@
-.services-title {
-  @include title-mask;
-  display: inline-block;
-  margin-bottom: 0;
+.services {
+  @include section;
+}
+
+.services__description {
+  font-size: 2.1rem;
+  line-height: 1.4;
+
+  @include media-query($breakpoint--medium) {
+    font-size: 2.8rem;
+  }
+}
+
+.services__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: spacing(2);
+  margin-top: spacing(5);
+
+  @include media-query($breakpoint--small) {
+    grid-column-gap: spacing(3);
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column-gap: spacing(4);
+  }
 }
