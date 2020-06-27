@@ -1,0 +1,9 @@
+@mixin two-thirds-media-layout {
+  @include media-query($breakpoint--small) {
+    grid-column: 1 / 7;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 2 / 7;
+  }
+}

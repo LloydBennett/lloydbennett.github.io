@@ -20,6 +20,12 @@
   position: relative;
 }
 
+.hero--collaspe-padding {
+  @include media-query($breakpoint--small - 1, max-width) {
+    width: 100%;
+  }
+}
+
 .hero__content {
   @include offset-content;
 }
@@ -34,4 +40,12 @@
     display: flex;
     flex-direction: column-reverse;
   }
+}
+
+.hero__image {
+  @extend .thumbnail;
+}
+
+.hero--image-two-thirds {
+  @include two-thirds-media-layout;
 }
