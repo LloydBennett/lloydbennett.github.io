@@ -7,9 +7,15 @@
           My Roles
         </span>
       {% for cat in page.category %}
+
         <span class="meta__content meta--body-text">
-          {{ cat }}
+          {% if forloop.last == true %}
+            {{ cat }}
+          {% else %}
+            {{ cat }},
+          {% endif %}
         </span>
+
       {% endfor %}
       </div>
       <div class="meta__group">
@@ -27,12 +33,18 @@
     ">
     <div class="meta meta--head">
       <div class="hr"></div>
-      <span class="meta__content meta--body-text">
-        Lloyd Bennett
-      </span>
-      <span class="meta__content meta--body-text">
-        Digital Designer
-      </span>
+      {% if page.meta %}
+        <span class="meta__title">
+          {{ page.meta }}
+        </span>
+      {% else %}
+        <span class="meta__content meta--body-text">
+          Lloyd Bennett
+        </span>
+        <span class="meta__content meta--body-text">
+          Digital Designer
+        </span>
+      {% endif %}
     </div>
     {% endif %}
 
