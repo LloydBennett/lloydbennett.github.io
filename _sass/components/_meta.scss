@@ -37,7 +37,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: spacing(3);
-    margin-top: spacing(7);
   }
 }
 
@@ -45,8 +44,7 @@
   display: block;
 }
 
-.meta--body-text,
-.meta__title {
+.meta--body-text {
   font-size: 1.4rem;
 
   @include media-query($breakpoint--large) {
@@ -56,9 +54,7 @@
   @include media-query($breakpoint--xx-large) {
     font-size: 1.8rem;
   }
-}
 
-.meta--body-text {
   & + & {
     margin-top: $spacing-rule-half / 2;
   }
@@ -66,8 +62,13 @@
 
 .meta__title {
   @include capitalized-text;
-  margin-bottom: spacing(2);
+  margin-bottom: spacing(1);
   display: block;
+  font-size: 1.2rem;
+
+  @include media-query($breakpoint--large) {
+    font-size: 1.4rem;
+  }
 }
 
 .meta__group {
