@@ -2,3 +2,13 @@
   @include offset-content;
   @include max-paragraph-width;
 }
+
+.single-column__group {
+  & + & {
+    margin-top: spacing(6);
+
+    @include media-query($breakpoint--medium) {
+      margin-top: spacing(8);
+    }
+  }
+}
