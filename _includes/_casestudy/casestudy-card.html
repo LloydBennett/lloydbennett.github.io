@@ -8,7 +8,7 @@
 
 <div class="card">
   <h2 class="card__no card__side">
-    {{ forloop.index }}
+    {{ forloop.index | prepend: "0" }}
   </h2>
   <h2 class="card__title card__main">
     {{ casestudy.title }}
