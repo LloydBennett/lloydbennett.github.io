@@ -48,7 +48,9 @@
 }
 
 .hero--title-no-margin {
-  margin-bottom: 0;
+  @include media-query($breakpoint--medium) {
+    margin-bottom: 0;
+  }
 }
 
 .hero__image {
