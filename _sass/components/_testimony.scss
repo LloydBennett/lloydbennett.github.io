@@ -35,12 +35,12 @@
 }
 
 .testimony__quote {
-  font-size: 2.4rem;
+  font-size: 3.2rem;
   font-style: italic;
   margin-bottom: spacing(3);
 
   @include media-query($breakpoint--medium) {
-    font-size: 2.8rem;
+    font-size: 4rem;
   }
 }
 
