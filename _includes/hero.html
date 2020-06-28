@@ -49,7 +49,7 @@
     {% endif %}
 
     <div class="hero__content">
-      <h1 class="hero__title">
+      <h1 class="hero__title {% if page.type == 'casestudy' %}hero--title-no-margin{% endif %}">
         {% if page.herotitle %}
           {{ page.herotitle }}
         {% else %}

@@ -47,6 +47,10 @@
   }
 }
 
+.hero--title-no-margin {
+  margin-bottom: 0;
+}
+
 .hero__image {
   @extend .thumbnail;
 }
