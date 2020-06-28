@@ -2,7 +2,7 @@
   position: relative;
   z-index: 3;
   background-color: $colour--grey;
-  
+
   @include media-query($breakpoint--small) {
     margin-bottom: 100vh;
   }

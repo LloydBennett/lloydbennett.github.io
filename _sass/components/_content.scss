@@ -1,27 +1,15 @@
-.content {
-  background-color: $colour--white;
-}
+.section--padding {
+  padding-bottom: spacing(8);
 
-.content--with-padding {
-  padding: spacing(10) 0;
+  @include media-query($breakpoint--small) {
+    padding-bottom: spacing(10);
+  }
 
   @include media-query($breakpoint--medium) {
-    padding: spacing(13) 0;
+    padding-bottom: spacing(13);
   }
 
   @include media-query($breakpoint--x-large) {
-    padding: spacing(21) 0;
-  }
-}
-
-.content--with-padding-single {
-  padding: 0 0 spacing(10);
-
-  @include media-query($breakpoint--medium) {
-    padding: 0 0 spacing(13);
-  }
-
-  @include media-query($breakpoint--x-large) {
-    padding: 0 0 spacing(21);
+    padding-bottom: spacing(20);
   }
 }

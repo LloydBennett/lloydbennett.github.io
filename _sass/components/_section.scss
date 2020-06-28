@@ -1,3 +1,19 @@
 .section {
   @include section;
 }
+
+.section--padding {
+  padding-bottom: spacing(8);
+
+  @include media-query($breakpoint--small) {
+    padding-bottom: spacing(10);
+  }
+
+  @include media-query($breakpoint--medium) {
+    padding-bottom: spacing(13);
+  }
+
+  @include media-query($breakpoint--x-large) {
+    padding-bottom: spacing(20);
+  }
+}
