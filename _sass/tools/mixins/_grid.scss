@@ -1,7 +1,14 @@
-@mixin grid($device: null) {
+@mixin grid($device: null, $fromBeginning: false) {
   @if $device == null {
-    @include media-query($breakpoint--small) {
+    @if $fromBeginning == true {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: spacing(3);
+    }
+    @else {
+      @include media-query($breakpoint--small) {
+        display: grid;
+      }
     }
   }
   @else {

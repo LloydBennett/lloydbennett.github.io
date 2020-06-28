@@ -1,35 +1,22 @@
 .card {
   @include container;
-  @include grid;
+  @include grid(null, true);
   position: relative;
-
-  // @include media-query($breakpoint--large - 1, max-width) {
-  //   display: flex;
-  //   flex-direction: column-reverse;
-  // }
 }
 
 .card__wrapper {
   @include two-thirds-media-layout;
 }
 
-.card__meta {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: spacing(2);
-
-  @include media-query($breakpoint--small) {
-    grid-column-gap: spacing(3);
-    grid-template-columns: repeat(6, 1fr);
-  }
+.card__side {
+  grid-column: 1/2;
 
   @include media-query($breakpoint--x-large) {
-    grid-column-gap: spacing(4);
-    grid-template-columns: repeat(5, 1fr);
+    grid-column: 2 / 3;
   }
 }
 
-.card__meta-content {
+.card__main {
   grid-column: 2/4;
 
   @include media-query($breakpoint--small) {
@@ -37,13 +24,11 @@
   }
 
   @include media-query($breakpoint--medium) {
-    grid-column: 3/7;
+    grid-column: 3 / 7;
   }
-}
 
-.card__content {
-  @include media-query($breakpoint--large - 1, max-width) {
-    @include offset-content;
+  @include media-query($breakpoint--x-large) {
+    grid-column: 4 / 7;
   }
 }
 
@@ -90,13 +75,6 @@
   }
 }
 
-.card__thumbnail--bluvalt {
-  top: 50%;
-  transform: translateY(-50%);
-  width: 130%;
-  left: 0;
-}
-
 .card__description {
   @include max-paragraph-width;
 }
@@ -111,57 +89,4 @@
   @include media-query($breakpoint--large) {
     display: none;
   }
-}
-
-.card__top-bluvalt {
-  right: 0;
-  width: 25%;
-  max-width: 30rem;
-  background-color: #9DABDD;
-
-  @include media-query($breakpoint--x-large) {
-    width: 30%;
-  }
-}
-
-.card__top-image-bluvalt {
-  top: 20%;
-  left: -30%;
-  width: 200%;
-
-  @include media-query($breakpoint--x-large) {
-    top: 30%;
-  }
-}
-
-.card__piece {
-  position: absolute;
-  overflow: hidden;
-
-  @include media-query($breakpoint--large - 1, max-width) {
-    display: none;
-  }
-
-  .thumbnail {
-    display: block;
-  }
-}
-
-.card__piece-image {
-  position: absolute;
-  display: block;
-
-  img {
-    width: 100%;
-  }
-}
-
-.card__bottom-bluvalt {
-  bottom: 0;
-  right: 0;
-}
-
-.card__bottom-image-bluvalt {
-  bottom: 0;
-  width: 200%;
 }

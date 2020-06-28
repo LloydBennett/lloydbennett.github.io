@@ -36,7 +36,7 @@
 
   &:nth-child(even) {
     @include media-query($breakpoint--small) {
-      grid-column: 3/5;
+      grid-column: 3/6;
     }
   }
 
