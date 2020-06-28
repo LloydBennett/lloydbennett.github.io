@@ -19,6 +19,10 @@
   @include container;
   @include grid;
   position: relative;
+
+  &:first-child {
+    @include inner-section;
+  }
 }
 
 .hero--collaspe-padding {
