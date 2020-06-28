@@ -14,12 +14,11 @@
     {{ casestudy.title }}
   </h2>
   <a class="card__thumbnail" href="{{ casestudy.url }}">
-    <!-- {% include casestudy-graphic.html
+    {% include casestudy-graphic.html
       classlist= thumbnail-css-classes
       datalist= thumbnail-main-data-attr
-      image-url= project-image-url
       title= casestudy.directory
-    %} -->
+    %}
   </a>
 
   <ul class="card__meta-tags card__side card--desktop">
@@ -48,92 +47,4 @@
     </a>
   </div>
 </div>
-
-
-
-  <!-- <div class="card">
-    <div class="card__aside card__aside-{{ casestudy.title | downcase }}" style="background-color: #{{ casestudy.colour}}">
-      <div class="concealer wow anim-image-reveal"
-        data-wow-duration="600ms" data-wow-offset="120"></div>
-      <a class="card__thumbnail" href="{{ casestudy.url }}">
-        <div class="card__thumbnail-bg card--mobile">
-          <img src="http://via.placeholder.com/660x600/{{ casestudy.colour}}/{{ casestudy.colour}}">
-        </div>
-
-        {% include casestudy-graphic.html
-          classlist= thumbnail-css-classes
-          datalist= thumbnail-main-data-attr
-          image-url= project-image-url
-          title= casestudy.directory
-        %}
-      </a>
-    </div>
-    <div class="card__main">
-      <div class="card__content">
-        <h2 class="card__title step__title wow anim-appear-before" data-wow-duration="400ms">
-          <div class="title-mask">
-            <span class="wow anim-slide-up" data-wow-duration="400ms" data-wow-delay="100ms">
-              {{ casestudy.title }}
-            </span>
-          </div>
-        </h2>
-        <p class="card__description card--desktop wow anim-fade-in-up"
-        data-wow-duration="400ms" data-wow-delay="200ms">
-          {{ casestudy.excerpt }}
-        </p>
-        <p class="card__tags card--desktop wow anim-fade-in-up"
-        data-wow-duration="400ms" data-wow-delay="300ms">
-          <strong>Roles: </strong>
-          {% for cat in casestudy.category %}
-            {% if forloop.last == true %}
-            <span>{{ cat }}</span>
-            {% else %}
-            <span>{{ cat }}&comma; </span>
-            {% endif %}
-          {% endfor %}
-        </p>
-
-        <a class="button button--margin-top card--desktop" href="{{ casestudy.url }}">
-          <span class="button__text wow anim-appear" data-wow-duration="450ms" data-wow-delay="400ms">
-            View Case Study
-          </span>
-          <span class="button__line wow anim-grow" data-wow-duration="300ms" data-wow-delay="750ms" data-remove-class>
-          </span>
-        </a>
-      </div>
-    </div>
-
-    <div class="card__piece card__top-{{ casestudy.title | downcase }} ">
-      <div class="concealer wow anim-image-reveal"
-        data-wow-duration="600ms" data-wow-offset="50"></div>
-      <div class="thumbnail">
-        <img src="http://via.placeholder.com/421x296/{{ casestudy.colour}}/{{ casestudy.colour}}">
-      </div>
-
-      {% include casestudy-graphic.html
-        classlist= card-top-image-classes
-        datalist= thumbnail-data-attr
-        image-url= project-image-url
-        title= casestudy.directory
-      %}
-
-    </div>
-
-    <div class="card__piece card__bottom-{{ casestudy.title | downcase }}">
-      <div class="concealer wow anim-image-reveal"
-        data-wow-duration="600ms" data-wow-offset="50"></div>
-      <div class="thumbnail">
-        <img src="http://via.placeholder.com/364x103/{{ casestudy.colour}}/{{ casestudy.colour}}">
-      </div>
-
-      {% include casestudy-graphic.html
-        classlist= card-bottom-image-classes
-        datalist= thumbnail-data-attr
-        image-url= project-image-url
-        title= casestudy.directory
-      %}
-
-    </div>
-
-  </div> -->
 {% endfor %}

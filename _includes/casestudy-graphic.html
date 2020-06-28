@@ -1,5 +1,12 @@
-<picture class="{{ include.classlist }}" {{ include.datalist }}>
+<!-- <picture class="{{ include.classlist }}" {{ include.datalist }}>
   <source media="(min-width: 550px)" srcset="{{ include.image-url }}@2x.png">
   <source media="(max-width: 549px)" srcset="{{ include.image-url }}.png">
   <img src="{{ include.image-url }}.png" alt="{{ include.title }}" />
+</picture> -->
+
+<picture class="card__thumbnail-image">
+  <source media="(min-width: 1200px)" srcset="https://via.placeholder.com/1619x850/">
+  <source media="(min-width: 850px)" srcset="https://via.placeholder.com/1179x750/">
+  <source media="(min-width: 550px)" srcset="https://via.placeholder.com/960x750/">
+  <img src="https://via.placeholder.com/550x550/" alt="{{ include.title }}" />
 </picture>

@@ -9,7 +9,7 @@
 }
 
 .card__side {
-  grid-column: 1/2;
+  grid-column: 1 / 2;
 
   @include media-query($breakpoint--x-large) {
     grid-column: 2 / 3;
@@ -17,10 +17,10 @@
 }
 
 .card__main {
-  grid-column: 2/4;
+  grid-column: 2 / 4;
 
   @include media-query($breakpoint--small) {
-    grid-column: 4/7;
+    grid-column: 4 / 7;
   }
 
   @include media-query($breakpoint--medium) {
@@ -33,13 +33,17 @@
 }
 
 .card__thumbnail {
-  display: block;
-  width: 100%;
+  @extend .thumbnail;
+  grid-column: 1 / 4;
 
-  @include media-query($breakpoint--large) {
-    height: 100%;
-    pointer-events: none;
+  @include media-query($breakpoint--small) {
+    grid-column: 1 / 7;
   }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 2 / 7;
+  }
+
 
   &:hover {
     .card__thumbnail-design {
