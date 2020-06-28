@@ -1,11 +1,11 @@
+ul {
+  margin: 0;
+}
+
 li {
   @include body-text;
   list-style: none;
   margin-bottom: spacing(1);
-
-  @include media-query($breakpoint--small) {
-    margin-bottom: spacing(2);
-  }
 
   &:last-child {
     margin-bottom: 0;

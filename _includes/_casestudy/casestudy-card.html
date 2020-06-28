@@ -22,17 +22,17 @@
     %} -->
   </a>
 
-  <div class="card__meta-tags card__side card--desktop">
+  <ul class="card__meta-tags card__side card--desktop">
     {% for cat in casestudy.category %}
-    <p>
+    <li>
       {% if forloop.last == true %}
-      <span>{{ cat }}</span>
+      <p>{{ cat }}</p>
       {% else %}
-      <span>{{ cat }}&comma; </span>
+      <p>{{ cat }}&comma; </p>
       {% endif %}
-    </p>
+    </li>
     {% endfor %}
-  </div>
+  </ul>
 
   <div class="card__main card--desktop">
     <p class="card__description">
