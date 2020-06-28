@@ -33,7 +33,7 @@
 }
 
 .card__no {
-  line-height: 1; 
+  line-height: 1;
 }
 
 .card__title,
@@ -45,6 +45,7 @@
   @extend .thumbnail;
   grid-column: 1 / 4;
   margin-bottom: spacing(3);
+  grid-row-start: 1;
 
   @include media-query($breakpoint--small) {
     grid-column: 1 / 7;
@@ -52,6 +53,7 @@
 
   @include media-query($breakpoint--large) {
     margin: spacing(6) 0;
+    grid-row-start: 2;
   }
 
   @include media-query($breakpoint--x-large) {
