@@ -170,13 +170,13 @@ colour-swatches:
   </section>
 
   <section class="section">
-    <div class="container grid">
+    <div class="container">
 
-      <div class="three-column-layout three-column-layout--offset section">
+      <div class="grid section">
         {% assign delay = 50 %}
 
         {% for colour in page.colour-swatches %}
-        <div class="three-column-layout__column">
+        <div class="three-columns">
           {% if forloop.first %}
             {% include colour-swatches.html
               colour-name = colour.colour
@@ -299,24 +299,27 @@ colour-swatches:
   </section>
 
   <section class="section">
-    <div class="container">
-      <div class="three-column-layout section">
-        <div class="three-column-layout__column text-center wow anim-appear" data-wow-duration="600ms" data-wow-offset="100">
+    <div class="container grid">
+      <div class="grid section">
+        <div class="three-columns text-center wow anim-appear" data-wow-duration="600ms" data-wow-offset="100">
           <div class="thumbnail text-center">
             <img src="../images/projects/{{page.directory}}/case-study/sketch-one.png" alt="Sketch One">
           </div>
         </div>
-        <div class="three-column-layout__column text-center wow anim-appear" data-wow-duration="600ms" data-wow-offset="100" data-wow-delay="100ms">
+        <div class="three-columns text-center wow anim-appear" data-wow-duration="600ms" data-wow-offset="100" data-wow-delay="100ms">
           <div class="thumbnail text-center">
             <img src="../images/projects/{{page.directory}}/case-study/sketch-two.png" alt="Sketch One">
           </div>
         </div>
-        <div class="three-column-layout__column text-center wow anim-appear" data-wow-duration="600ms" data-wow-offset="100" data-wow-delay="200ms">
+
+        <div class="three-columns text-center wow anim-appear" data-wow-duration="600ms" data-wow-offset="100" data-wow-delay="200ms">
           <div class="thumbnail">
             <img src="../images/projects/{{page.directory}}/case-study/sketch-three.png" alt="Sketch One">
           </div>
         </div>
       </div>
+
+
 
       <div class="bv-illustrations section">
         <div class="bv-illustrations__thumbnail wow anim-appear" data-wow-duration="600ms" data-wow-offset="100">
