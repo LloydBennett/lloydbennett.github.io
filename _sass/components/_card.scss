@@ -15,9 +15,12 @@
 
 .card__meta {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: spacing(2);
 
   @include media-query($breakpoint--small) {
     grid-column-gap: spacing(3);
+    grid-template-columns: repeat(6, 1fr);
   }
 
   @include media-query($breakpoint--x-large) {
@@ -27,7 +30,15 @@
 }
 
 .card__meta-content {
-  grid-column: 3/6;
+  grid-column: 2/4;
+
+  @include media-query($breakpoint--small) {
+    grid-column: 4/7;
+  }
+
+  @include media-query($breakpoint--medium) {
+    grid-column: 3/7;
+  }
 }
 
 
