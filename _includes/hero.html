@@ -75,6 +75,21 @@
 
     </div>
   </div>
+
+  {% if page.type == 'casestudy' %}
+  <div class="media__wrapper media__column">
+    <div class="concealer wow anim-image-reveal"
+    data-wow-duration="600ms" data-wow-delay="400ms" data-wow-offset="200">
+    </div>
+    <picture class="thumbnail wow anim-zoom-out"
+    data-wow-duration='800ms' data-wow-delay="600ms">
+      <source media="(max-width: 700px)" srcset="../images/about/about-hero-mobile.jpg">
+      <source media="(max-width: 1270px)" srcset="../images/about/about-hero.jpg">
+      <source media="(min-width: 1271px)" srcset="../images/about/about-hero-x2.jpg">
+      <img src="../images/about/about-hero.jpg" alt="Lloyd Bennett">
+    </picture>
+  </div>
+  {% else %}
   <div class="hero__grid hero--collaspe-padding">
     <picture class="hero__image hero--image-two-thirds">
       <source media="(min-width: 550px)" srcset="https://via.placeholder.com/1615x945/">
@@ -82,4 +97,7 @@
       <img src="https://via.placeholder.com/700x600" alt="image" />
     </picture>
   </div>
+  {% endif %}
+
+
 </section>

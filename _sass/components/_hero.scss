@@ -1,4 +1,5 @@
 .hero {
+  @include section;
   padding-top: spacing(7);
 
   @include media-query($breakpoint--small) {
