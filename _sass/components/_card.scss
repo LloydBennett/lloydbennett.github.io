@@ -32,13 +32,18 @@
   }
 }
 
-.card__no {
-  line-height: 1;
-}
 
 .card__title,
 .card__no {
   margin-bottom: 0;
+
+  @include media-query($breakpoint--medium) {
+    line-height: 1;
+  }
+
+  @include media-query($breakpoint--large) {
+    font-size: 6rem;
+  }
 }
 
 .card__thumbnail {
@@ -49,6 +54,7 @@
 
   @include media-query($breakpoint--small) {
     grid-column: 1 / 7;
+    margin-bottom: spacing(5);
   }
 
   @include media-query($breakpoint--large) {
