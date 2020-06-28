@@ -41,9 +41,6 @@
   }
 }
 
-
-
-
 .card__content {
   @include media-query($breakpoint--large - 1, max-width) {
     @include offset-content;
