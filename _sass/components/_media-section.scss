@@ -2,22 +2,6 @@
   @include section;
 }
 
-.media--with-padding {
-  padding: spacing(4) 0;
-
-  @include media-query($breakpoint--medium) {
-    padding: spacing(6) spacing(6);
-  }
-
-  @include media-query($breakpoint--x-large) {
-    padding: spacing(9) spacing(6);
-  }
-
-  @include media-query($breakpoint--xx-large) {
-    padding: spacing(9) 0;
-  }
-}
-
 .media__wrapper {
   position: relative;
   margin-bottom: spacing(2);
@@ -33,7 +17,6 @@
   @include overlay;
 }
 
-
 .media__content {
   margin-left: auto;
   margin-right: auto;
@@ -44,28 +27,10 @@
   }
 }
 
-.media__column {
-  grid-column: 1/13;
-
-  @include media-query($breakpoint--x-large) {
-    grid-column: 1/12;
-  }
-}
-
-.media__content--overlap {
-  position: relative;
-  display: table;
-}
-
 .media--center {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.media__content--wide {
-  max-width: 144rem;
-  width: 100%;
 }
 
 .media__bg,
@@ -83,7 +48,7 @@
   display: inline-block;
 
   @include media-query($breakpoint--large - 1, max-width) {
-    width: 80%;
+    width: 90%;
   }
 
   video {
