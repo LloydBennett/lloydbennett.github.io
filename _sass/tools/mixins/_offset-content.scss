@@ -1,4 +1,4 @@
-@mixin offset-content($large: false, $breakpoint: null ) {
+@mixin offset-content() {
   @include media-query($breakpoint--small) {
     grid-column: 2 / 7;
   }

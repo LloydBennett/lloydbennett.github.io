@@ -2,9 +2,8 @@
 <html>
   {% include head.html %}
   <body data-body>
-    <main class="website">
-      <div id="{{ page.title | downcase }}" class="step--reset
-        {% if page.layout == "casestudy" %}casestudy{% endif %}">
+    <main class="website {% if page.type == "casestudy" %}website--casestudy{% endif %}">
+      <div id="{{ page.title | downcase }}" class="step--reset">
         {% include _navigation/nav-menu.html %}
         {% include _navigation/nav-bar.html %}
         {% include hero.html %}

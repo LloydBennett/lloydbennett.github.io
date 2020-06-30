@@ -205,39 +205,37 @@ colour-swatches:
         {% endfor %}
       </div>
 
-      <div class="two-column-layout--offset inner-section">
-        <div class="two-column-layout">
-          <div class="two-column-layout__column">
-            <span class="small-caps type-container__heading">
-              Latin Version &ndash; Gotham Rounded Bold, Medium &amp; Light
-            </span>
-            <div class="type-container type-container--h1">
-              {% include _casestudy/_bluvalt/type-headline-bold.html %}
-            </div>
-            <div class="type-container type-container--h2">
-              {% include _casestudy/_bluvalt/type-headline-bold.html %}
-            </div>
-            <div class="type-container type-container--body">
-              {% include _casestudy/_bluvalt/type-body.html %}
-            </div>
+      <div class="two-columns two-columns--large-gap inner-section">
+        <div class="two-columns__item">
+          <span class="small-caps type-container__heading">
+            Latin Version &ndash; Gotham Rounded Bold, Medium &amp; Light
+          </span>
+          <div class="type-container type-container--h1">
+            {% include _casestudy/_bluvalt/type-headline-bold.html %}
           </div>
-
-          <div class="two-column-layout__column">
-            <span class="small-caps type-container__heading">
-              Arabic Version &ndash; Teshrin Bold, Medium, Light
-            </span>
-            <div class="type-container type-container--h1">
-              {% include _casestudy/_bluvalt/type-arabic-bold.html %}
-            </div>
-            <div class="type-container type-container--h3">
-              {% include _casestudy/_bluvalt/type-arabic-medium.html %}
-            </div>
-            <div class="type-container type-container--body">
-              {% include _casestudy/_bluvalt/type-arabic-light.html %}
-            </div>
+          <div class="type-container type-container--h2">
+            {% include _casestudy/_bluvalt/type-headline-bold.html %}
           </div>
-
+          <div class="type-container type-container--body">
+            {% include _casestudy/_bluvalt/type-body.html %}
+          </div>
         </div>
+
+        <div class="two-columns__item">
+          <span class="small-caps type-container__heading">
+            Arabic Version &ndash; Teshrin Bold, Medium, Light
+          </span>
+          <div class="type-container type-container--h1">
+            {% include _casestudy/_bluvalt/type-arabic-bold.html %}
+          </div>
+          <div class="type-container type-container--h3">
+            {% include _casestudy/_bluvalt/type-arabic-medium.html %}
+          </div>
+          <div class="type-container type-container--body">
+            {% include _casestudy/_bluvalt/type-arabic-light.html %}
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -274,8 +272,6 @@ colour-swatches:
         </div>
       </div>
 
-
-
       <p class="media__figure wow anim-appear" data-wow-duration="600ms" data-wow-offset="50">
         Figure 3: Illustration & Icon Design by
         <a href="http://www.michael-weinstein.com/" target="_blank">
@@ -286,35 +282,39 @@ colour-swatches:
   </section>
 
   <section class="section">
-    <div class="container grid">
-      <div class="staggered-layout">
-        <div class="staggered-layout__column">
-          <div class="staggered-layout__screen wow anim-fade-in-up-soft" data-wow-duration="600ms">
-            <img src="../images/projects/{{page.directory}}/case-study/home-page.jpg" alt="Home Page">
-          </div>
-          <div class="staggered-layout__screen wow anim-fade-in-up-soft" data-wow-duration="600ms">
-            <img src="../images/projects/{{page.directory}}/case-study/404-page.jpg" alt="404 Page">
-          </div>
-          <div class="staggered-layout__screen wow anim-fade-in-up-soft" data-wow-duration="600ms">
-            <img src="../images/projects/{{page.directory}}/case-study/sign-up-screen.jpg" alt="Sign Up">
-          </div>
-
-          <div class="staggered-layout__screen wow anim-fade-in-up-soft" data-wow-duration="600ms">
-            <img src="../images/projects/{{page.directory}}/case-study/about-us.jpg" alt="Sign Up">
-          </div>
+    <div class="container">
+      <div class="two-columns">
+        <picture class="two-columns__full-width thumbnail">
+          <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/sign-up@2x.jpg">
+          <img src="../images/projects/{{page.directory}}/case-study/sign-up.jpg" alt="Sign Up">
+        </picture>
+        <picture class="two-columns__full-width thumbnail">
+          <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/404@2x.jpg">
+          <img src="../images/projects/{{page.directory}}/case-study/404.jpg" alt="404 Page">
+        </picture>
+        <div class="two-columns__item text-center">
+          <picture class="thumbnail">
+            <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/about-us@2x.jpg">
+            <img src="../images/projects/{{page.directory}}/case-study/about-us.jpg" alt="About Us">
+          </picture>
         </div>
-
-        <div class="staggered-layout__column">
-          <div class="staggered-layout__screen wow anim-fade-in-up-soft" data-wow-duration="600ms" data-wow-delay="50ms">
-            <img src="../images/projects/{{page.directory}}/case-study/virtual-data-center.jpg" alt="Virtual Data Center">
-          </div>
-
-          <div class="staggered-layout__screen wow anim-fade-in-up-soft" data-wow-duration="600ms" data-wow-delay="100ms">
-            <img src="../images/projects/{{page.directory}}/case-study/application-marketplace.jpg" alt="Virtual Data Center">
-          </div>
-          <div class="staggered-layout__screen wow anim-fade-in-up-soft" data-wow-duration="600ms" data-wow-delay="150ms">
-            <img src="../images/projects/{{page.directory}}/case-study/cloud-application-single-page.jpg" alt="Sign Up">
-          </div>
+        <div class="two-columns__item text-center">
+          <picture class="thumbnail">
+            <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/marketplace@2x.jpg">
+            <img src="../images/projects/{{page.directory}}/case-study/marketplace.jpg" alt="Marketplace">
+          </picture>
+        </div>
+        <div class="two-columns__item text-center">
+          <picture class="thumbnail">
+            <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/home-page@2x.jpg">
+            <img src="../images/projects/{{page.directory}}/case-study/home-page.jpg" alt="Home Page">
+          </picture>
+        </div>
+        <div class="two-columns__item text-center">
+          <picture class="thumbnail">
+            <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/vdc@2x.jpg">
+            <img src="../images/projects/{{page.directory}}/case-study/vdc.jpg" alt="Virtual Data Center Page">
+          </picture>
         </div>
       </div>
     </div>
