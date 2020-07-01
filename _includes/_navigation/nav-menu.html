@@ -1,21 +1,42 @@
 <div class="nav-menu" data-nav-menu>
   <div class="container grid">
     <div class="nav-menu__wrapper">
-      <ul class="nav-menu__list">
-        <li class="nav-menu__link" data-nav-menu-link>
-          <a href="/about" data-page-transition="standard">About Me</a>
-        </li>
-        {% for casestudy in site.projects %}
-        <li class="nav-menu__link" data-nav-menu-link>
-          <a href="{{ casestudy.directory }}">
-            {{ casestudy.title }}
-          </a>
-        </li>
-        {% endfor %}
-        <li class="nav-menu__link" data-nav-menu-link>
-          <a href="#contact" data-scroll-to-bottom>Contact</a>
-        </li>
-      </ul>
+      <div class="nav-menu__main">
+        <div>
+          <div class="hr"></div>
+          <span class="meta__title">
+            Main Menu
+          </span>
+        </div>
+        <ul class="nav-menu__list">
+          <li class="nav-menu__link" data-nav-menu-link>
+            <a href="/about">About Me</a>
+          </li>
+          <li class="nav-menu__link" data-nav-menu-link>
+            <a href="/about">Case Studies</a>
+          </li>
+          <li class="nav-menu__link" data-nav-menu-link>
+            <a href="#contact" data-scroll-to-bottom>Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-menu__sub">
+        <div>
+          <div class="hr"></div>
+          <span class="meta__title">
+            Main Menu
+          </span>
+        </div>
+        <ul class="nav-menu__list">
+          {% for casestudy in site.projects %}
+          <li class="nav-menu__link" data-nav-menu-link>
+            <a href="{{ casestudy.directory }}">
+              {{ casestudy.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
       <div class="nav-menu__socials socials">
         {% include _social-links/dribbble.html %}
         {% include _social-links/instagram.html %}
@@ -23,5 +44,7 @@
       </div>
     </div>
   </div>
-
+  <div class="nav-menu__aside">
+    
+  </div>
 </div>

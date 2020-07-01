@@ -27,11 +27,12 @@
 }
 
 .nav-menu__wrapper {
-  @include offset-content;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  position: relative;
+  // @include offset-content;
+  // display: flex;
+  // justify-content: space-between;
+  // flex-direction: column;
+  // position: relative;
+  grid-column: 2 / 5;
   height: 100%;
 }
 
@@ -71,6 +72,15 @@
       transition: transform 200ms ease;
     }
   }
+}
+
+.nav-menu__aside {
+  width: 25%;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .nav-menu__socials {
