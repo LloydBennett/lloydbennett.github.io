@@ -49,4 +49,29 @@
   .path-stroke {
     transition: 300ms ease;
   }
+
+  &.hide {
+    opacity: 0;
+    transition: 300ms ease;
+    display: none;
+  }
+}
+
+.nav-bar__back {
+  align-items: center;
+  background-color: #646363;
+  border-radius: 100%;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+  height: 5.6rem;
+  justify-content: center;
+  width: 5.6rem;
+  transition: 300ms ease;
+
+  &.appear {
+    display: flex;
+    opacity: 1;
+    transition: 300ms ease;
+  }
 }

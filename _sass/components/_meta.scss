@@ -102,11 +102,19 @@
 }
 
 .meta__frame-content {
+  transition: 300ms ease;
+  transform: translateY(0);
+
   .meta__title {
     margin-bottom: 0;
-    
+
     &:nth-child(2) {
       position: absolute;
     }
+  }
+
+  &.flip-frame {
+    transform: translateY(-100%);
+    transition: 300ms ease;
   }
 }

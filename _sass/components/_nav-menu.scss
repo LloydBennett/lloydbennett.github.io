@@ -137,12 +137,10 @@
   }
 
   @include media-query($breakpoint--x-large) {
-    // width: 25%;
     grid-column: 5 / 7;
     height: 100%;
     background-color: red;
     position: sticky;
-    // right: 0;
     top: 0;
     grid-row-start: 1;
     grid-row-end: 4;
@@ -208,6 +206,33 @@
   display: block;
   transform: translateX(-102%);
   transition: 200ms ease;
+}
+
+
+.nav-menu__main {
+  transition: 300ms ease;
+
+  &.hide {
+    position: absolute;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.nav-menu__sub {
+  transition: 300ms ease;
+  position: absolute;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+
+  &.appear {
+    transform: translateX(0);
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 

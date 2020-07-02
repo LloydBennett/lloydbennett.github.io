@@ -2,6 +2,9 @@
   <div class="nav-menu__grid">
     <div class="nav-bar" data-nav-bar>
       <div class="nav-bar__wrapper">
+        <div class="nav-bar__back">
+          {% include back-icon.html %}
+        </div>
 
         <a class="nav-bar__logo" href="../../">
           {% include logo.html %}
@@ -38,7 +41,7 @@
                 <span class="nav-menu__link-line"></span>
               </a>
             </li>
-            <li class="nav-menu__link" data-nav-menu-link>
+            <li class="nav-menu__link" data-nav-menu-link data-toggle-sub-menu>
               <a href="/about">
                 <span>Case Studies</span>
                 <span class="nav-menu__link-line"></span>
