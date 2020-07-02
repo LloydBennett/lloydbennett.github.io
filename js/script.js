@@ -16,7 +16,7 @@
       $animateScrollLinks: $('[data-animate-scroll]'),
       $button: $('.button'),
       $hoverBg: $('.button-bg-hover'),
-      $menuIcon: $('[data-toggle-menu]'),
+      $menuIcon: document.querySelectorAll('[data-toggle-menu]'),
       $navBar: $('.nav-bar'),
       $navLinks: $('[data-nav-menu-link]')
     }

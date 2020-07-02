@@ -1,5 +1,20 @@
 <div class="nav-menu" data-nav-menu>
-  <div class="container grid">
+  <div class="nav-menu__grid">
+    <div class="nav-bar" data-nav-bar>
+      <div class="nav-bar__wrapper">
+
+        <a class="nav-bar__logo" href="../../">
+          {% include logo.html %}
+        </a>
+
+        <button class="hamburger" data-toggle-menu>
+          <div class="hamburger__icon-line"></div>
+          <div class="hamburger__icon-line"></div>
+          <div class="hamburger__icon-line"></div>
+        </button>
+      </div>
+    </div>
+
     <div class="nav-menu__heading meta--white meta--margin-bottom">
       <div class="hr"></div>
       <div class="meta__frame">
@@ -39,7 +54,7 @@
           {% endfor %}
         </ul>
       </div>
-      <div class="nav-menu__socials socials">
+      <div class="nav-menu__socials">
         {% include _social-links/dribbble.html useIcon = false %}
         {% include _social-links/instagram.html useIcon = false %}
         {% include _social-links/linkedin.html useIcon = false %}
@@ -47,6 +62,6 @@
     </div>
   </div>
   <div class="nav-menu__aside">
-
+    <!-- <img src="" alt=""> -->
   </div>
 </div>

@@ -56,9 +56,14 @@ NavigationMenu.prototype = {
   },
   addEvents: function() {
     var _this = this;
-    this.menuTrigger.addEventListener('click', () => {
-      _this.checkNavigationMenuState();
+    this.menuTrigger.forEach((el) => {
+      el.addEventListener('click', () => {
+        _this.checkNavigationMenuState();
+      });
     });
+
+
+
   },
   smoothScrolling: scrollToSection,
   init: function() {
