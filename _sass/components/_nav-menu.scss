@@ -109,15 +109,25 @@
   &:hover  {
     .nav-menu__link-no {
       opacity: 0;
-      display: none;
-      transition: 300ms ease opacity, 300ms ease display 300ms; 
+      //display: none;
+      transition: 300ms ease opacity;
     }
-
+    .nav-menu__link-wrapper {
+      transform: translateX(-60px);
+      transition: 300ms ease transform;
+    }
     .nav-menu__link-line {
       //animation: nav-link-hover 300ms ease 0s 1 forwards;
       transition: 200ms ease;
       transform: translateX(0%);
     }
+  }
+}
+
+.nav-menu__link:hover ~ .nav-menu__link {
+  a {
+    color: #676767;
+    transition: 300ms ease;
   }
 }
 
@@ -182,6 +192,7 @@
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
+  transition: 300ms ease transform;
 }
 
 .nav-menu__link-no {
@@ -195,7 +206,7 @@
   margin-top: spacing(1) / 2;
   background-color: $colour--white;
   display: block;
-  transform: translateX(-100%);
+  transform: translateX(-102%);
   transition: 200ms ease;
 }
 
