@@ -18,11 +18,18 @@
   @media screen and (min-width: $breakpoint--small)
   and (max-width: $breakpoint--medium - 1) {
     grid-column: 2 / 4;
-    // padding-top: #{spacing(3) - $spacing-rule-half};
   }
 
   @include media-query($breakpoint--medium - 1, max-width) {
     margin-bottom: spacing(7);
+  }
+}
+
+.meta--margin-bottom {
+  margin-bottom: spacing(7);
+
+  @include media-query($breakpoint--medium) {
+    margin-bottom: spacing(9);
   }
 }
 

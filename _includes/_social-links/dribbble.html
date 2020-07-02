@@ -1,4 +1,6 @@
-<a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_" class="socials__icon">
+<a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="blank_"
+{% if include.useIcon == true %} class="socials__icon">
+
   <svg width="43" height="43" viewBox="0 0 43 43" xmlns="http://www.w3.org/2000/svg">
     <title>
       Dribbble
@@ -10,4 +12,8 @@
     67.3 0 0 1-18.8 2.6v.6a18.3 18.3 0 0 0 4.6 12.3s5-9 15-12.2zm-2.3-6.1a111 111 0 0 0-6.8-10.6C8.5 7.3 4.7 12 3.5 17.7c.5
     0 8.2.1 17-2.2z" fill="#000000" fill-rule="evenodd"/>
   </svg>
+  {% else %}
+    class="social__link">
+    Dribbble
+  {% endif %}
 </a>

@@ -2,7 +2,7 @@
   <div class="container grid">
     <div class="nav-menu__wrapper">
       <div class="nav-menu__main">
-        <div>
+        <div class="meta--margin-bottom">
           <div class="hr"></div>
           <span class="meta__title">
             Main Menu
@@ -21,7 +21,7 @@
         </ul>
       </div>
       <div class="nav-menu__sub">
-        <div>
+        <div class="meta--margin-bottom">
           <div class="hr"></div>
           <span class="meta__title">
             Main Menu
@@ -38,13 +38,13 @@
         </ul>
       </div>
       <div class="nav-menu__socials socials">
-        {% include _social-links/dribbble.html %}
-        {% include _social-links/instagram.html %}
-        {% include _social-links/linkedin.html %}
+        {% include _social-links/dribbble.html useIcon = false %}
+        {% include _social-links/instagram.html useIcon = false %}
+        {% include _social-links/linkedin.html useIcon = false %}
       </div>
     </div>
   </div>
   <div class="nav-menu__aside">
-    
+
   </div>
 </div>

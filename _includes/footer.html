@@ -15,9 +15,9 @@
         </p>
       </div>
       <div class="footer__socials footer--desktop">
-        {% include _social-links/dribbble.html %}
-        {% include _social-links/instagram.html %}
-        {% include _social-links/linkedin.html %}
+        {% include _social-links/dribbble.html useIcon = true %}
+        {% include _social-links/instagram.html useIcon = false %}
+        {% include _social-links/linkedin.html useIcon = true %}
       </div>
     </div>
     <form action="https://formspree.io/{{ site.email }}"
