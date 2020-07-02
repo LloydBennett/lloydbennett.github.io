@@ -13,7 +13,7 @@
     fill="#000" fill-rule="nonzero"/>
   </svg>
   {% else %}
-    class="social__link">
-    Instagram
+    class="link {% if include.dark-mode == true %}link--dark{% endif %}">
+    <p>Instagram</p>
   {% endif %}
 </a>

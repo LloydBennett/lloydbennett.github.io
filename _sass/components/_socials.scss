@@ -6,14 +6,6 @@
   transform: rotate(90deg);
 }
 
-.social__link {
-  @include body-text;
-}
-
-.social--link-white {
-  color: $colour--white;
-}
-
 .socials__icon {
   display: inline-block;
   margin-right: spacing(3);

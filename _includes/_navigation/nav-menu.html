@@ -29,35 +29,65 @@
       </div>
     </div>
     <div class="nav-menu__wrapper">
+      <div class="nav-menu__content">
+        <div class="nav-menu__main">
+          <ul class="nav-menu__list">
+            <li class="nav-menu__link" data-nav-menu-link>
+              <a href="/about">
+                <span>About Me</span>
+                <span class="nav-menu__link-line"></span>
+              </a>
+            </li>
+            <li class="nav-menu__link" data-nav-menu-link>
+              <a href="/about">
+                <span>Case Studies</span>
+                <span class="nav-menu__link-line"></span>
+              </a>
 
-      <div class="nav-menu__main">
-        <ul class="nav-menu__list">
-          <li class="nav-menu__link" data-nav-menu-link>
-            <a href="/about">About Me</a>
-          </li>
-          <li class="nav-menu__link" data-nav-menu-link>
-            <a href="/about">Case Studies</a>
-          </li>
-          <li class="nav-menu__link" data-nav-menu-link>
-            <a href="#contact" data-scroll-to-bottom>Contact</a>
-          </li>
-        </ul>
+            </li>
+            <li class="nav-menu__link" data-nav-menu-link>
+              <a href="#contact" data-scroll-to-bottom>
+                <span>Contact</span>
+                <span class="nav-menu__link-line"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-menu__sub">
+          <ul class="nav-menu__list">
+            {% for casestudy in site.projects %}
+            <li class="nav-menu__link" data-nav-menu-link>
+              <a href="{{ casestudy.directory }}">
+                <span class="nav-menu__link-no">
+                  {{ forloop.index | prepend: "0" }}
+                </span>
+                <span class="nav-menu__link-wrapper">
+                  <span>{{ casestudy.title }}</span>
+                  <span class="nav-menu__link-line"></span>
+                </span>
+              </a>
+            </li>
+            {% endfor %}
+            <li class="nav-menu__link" data-nav-menu-link>
+              <a href="/">
+                 <span class="nav-menu__link-no">
+                   02
+                 </span>
+                 <span class="nav-menu__link-wrapper">
+                   <span>Steel Warriors</span>
+                   <span class="nav-menu__link-line"></span>
+                 </span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
       </div>
-      <div class="nav-menu__sub">
-        <ul class="nav-menu__list">
-          {% for casestudy in site.projects %}
-          <li class="nav-menu__link" data-nav-menu-link>
-            <a href="{{ casestudy.directory }}">
-              {{ casestudy.title }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+
       <div class="nav-menu__socials">
-        {% include _social-links/dribbble.html useIcon = false %}
-        {% include _social-links/instagram.html useIcon = false %}
-        {% include _social-links/linkedin.html useIcon = false %}
+        {% include _social-links/dribbble.html useIcon = false dark-mode = true %}
+        {% include _social-links/instagram.html useIcon = false dark-mode = true %}
+        {% include _social-links/linkedin.html useIcon = false dark-mode = true %}
       </div>
     </div>
     <div class="nav-menu__aside">

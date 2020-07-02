@@ -13,7 +13,7 @@
     0 8.2.1 17-2.2z" fill="#000000" fill-rule="evenodd"/>
   </svg>
   {% else %}
-    class="social__link">
-    Dribbble
+    class="link {% if include.dark-mode == true %}link--dark{% endif %}">
+    <p>Dribbble</p>
   {% endif %}
 </a>
