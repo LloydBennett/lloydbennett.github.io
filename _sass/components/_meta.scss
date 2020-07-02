@@ -12,6 +12,16 @@
   }
 }
 
+.meta--white {
+  .meta__title {
+  color: $colour--white;
+  }
+
+  .hr {
+    background-color: $colour--white;
+  }
+}
+
 .meta--head {
   display: table;
 
@@ -82,6 +92,21 @@
   & + & {
     @include media-query($breakpoint--medium) {
       margin-top: spacing(3);
+    }
+  }
+}
+
+.meta__frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.meta__frame-content {
+  .meta__title {
+    margin-bottom: 0;
+    
+    &:nth-child(2) {
+      position: absolute;
     }
   }
 }

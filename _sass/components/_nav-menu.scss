@@ -74,12 +74,17 @@
 }
 
 .nav-menu__aside {
-  width: 25%;
-  height: 100%;
-  background-color: red;
-  position: absolute;
-  right: 0;
-  top: 0;
+  display: none;
+
+  @include media-query($breakpoint--large) {
+    width: 25%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+  }
 }
 
 .nav-menu__socials {
@@ -101,5 +106,14 @@
     @include media-query($breakpoint--medium) {
       margin-right: spacing(10);
     }
+  }
+}
+
+.nav-menu__heading {
+  min-width: 15rem;
+  max-width: 20rem;
+
+  @include media-query($breakpoint--small) {
+    grid-column: 2 / 4;
   }
 }

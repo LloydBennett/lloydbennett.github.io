@@ -1,13 +1,21 @@
 <div class="nav-menu" data-nav-menu>
   <div class="container grid">
-    <div class="nav-menu__wrapper">
-      <div class="nav-menu__main">
-        <div class="meta--margin-bottom">
-          <div class="hr"></div>
+    <div class="nav-menu__heading meta--white meta--margin-bottom">
+      <div class="hr"></div>
+      <div class="meta__frame">
+        <div class="meta__frame-content">
           <span class="meta__title">
             Main Menu
           </span>
+          <span class="meta__title">
+            Case Studies
+          </span>
         </div>
+      </div>
+    </div>
+    <div class="nav-menu__wrapper">
+
+      <div class="nav-menu__main">
         <ul class="nav-menu__list">
           <li class="nav-menu__link" data-nav-menu-link>
             <a href="/about">About Me</a>
@@ -21,12 +29,6 @@
         </ul>
       </div>
       <div class="nav-menu__sub">
-        <div class="meta--margin-bottom">
-          <div class="hr"></div>
-          <span class="meta__title">
-            Main Menu
-          </span>
-        </div>
         <ul class="nav-menu__list">
           {% for casestudy in site.projects %}
           <li class="nav-menu__link" data-nav-menu-link>
