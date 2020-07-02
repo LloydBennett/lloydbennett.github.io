@@ -27,7 +27,7 @@
   @include container;
   @include grid;
 
-  @include media-query($breakpoint--large) {
+  @include media-query($breakpoint--x-large) {
     width: 95%;
     margin-right: 0;
   }
@@ -40,7 +40,7 @@
       margin-bottom: spacing(9);
     }
 
-    @include media-query($breakpoint--large) {
+    @include media-query($breakpoint--x-large) {
       grid-column: 1 / 5;
     }
   }
@@ -112,7 +112,7 @@
     display: none;
   }
 
-  @include media-query($breakpoint--large) {
+  @include media-query($breakpoint--x-large) {
     // width: 25%;
     grid-column: 5 / 7;
     height: 100%;
@@ -121,7 +121,10 @@
     // right: 0;
     // top: 0;
     grid-row-start: 1;
+    grid-row-end: 4;
   }
+
+
 }
 
 .nav-menu__socials {
