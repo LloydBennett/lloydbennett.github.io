@@ -2,11 +2,11 @@
   <div class="nav-menu__grid">
     <div class="nav-bar" data-nav-bar>
       <div class="nav-bar__wrapper">
-        <div class="nav-bar__back">
+        <div class="nav-bar__back" data-close-submenu>
           {% include back-icon.html %}
         </div>
 
-        <a class="nav-bar__logo" href="../../">
+        <a class="nav-bar__logo" href="../../" data-logo>
           {% include logo.html %}
         </a>
 
@@ -21,7 +21,7 @@
     <div class="nav-menu__heading meta--white meta--margin-bottom">
       <div class="hr"></div>
       <div class="meta__frame">
-        <div class="meta__frame-content">
+        <div class="meta__frame-content" data-meta-frame>
           <span class="meta__title">
             Main Menu
           </span>
@@ -33,7 +33,7 @@
     </div>
     <div class="nav-menu__wrapper">
       <div class="nav-menu__content">
-        <div class="nav-menu__main">
+        <div class="nav-menu__main" data-main-menu>
           <ul class="nav-menu__list">
             <li class="nav-menu__link" data-nav-menu-link>
               <a href="/about">
@@ -41,12 +41,11 @@
                 <span class="nav-menu__link-line"></span>
               </a>
             </li>
-            <li class="nav-menu__link" data-nav-menu-link data-toggle-sub-menu>
-              <a href="/about">
+            <li class="nav-menu__link" data-nav-menu-link>
+              <a href="#" data-toggle-sub-menu>
                 <span>Case Studies</span>
                 <span class="nav-menu__link-line"></span>
               </a>
-
             </li>
             <li class="nav-menu__link" data-nav-menu-link>
               <a href="#contact" data-scroll-to-bottom>
@@ -56,7 +55,7 @@
             </li>
           </ul>
         </div>
-        <div class="nav-menu__sub">
+        <div class="nav-menu__sub" data-sub-menu>
           <ul class="nav-menu__list">
             {% for casestudy in site.projects %}
             <li class="nav-menu__link" data-nav-menu-link>

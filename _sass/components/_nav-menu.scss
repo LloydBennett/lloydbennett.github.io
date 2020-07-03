@@ -26,6 +26,7 @@
 .nav-menu__grid {
   @include container;
   @include grid;
+  height: 100%;
 
   @include media-query($breakpoint--x-large) {
     width: 95%;
@@ -207,7 +208,6 @@
   transform: translateX(-102%);
   transition: 200ms ease;
 }
-
 
 .nav-menu__main {
   transition: 300ms ease;
