@@ -26,6 +26,7 @@ NavigationMenu.prototype = {
       $(this.menuTrigger).toggleClass('is-open');
       $(this.navBar).toggleClass('is-open');
       this.animate();
+      if(this.subMenuOpen) this.toggleSubMenu(this);
     }
   },
   animate: function() {
