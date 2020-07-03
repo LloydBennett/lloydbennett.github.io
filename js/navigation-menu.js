@@ -79,11 +79,13 @@ NavigationMenu.prototype = {
     });
   },
   toggleSubMenu:(_this) => {
+    _this.subMenuOpen = !_this.subMenuOpen;
     _this.metaFrame.classList.toggle('flip-frame');
     _this.subMenu.classList.toggle('appear');
     _this.mainMenu.classList.toggle('hide');
     _this.closeSubMenuTrigger.classList.toggle('appear');
     _this.logo.classList.toggle('hide');
+    console.log(_this.subMenuOpen);
   },
   smoothScrolling: scrollToSection,
   init: function() {
