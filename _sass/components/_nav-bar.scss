@@ -64,10 +64,21 @@
   cursor: pointer;
   display: none;
   opacity: 0;
-  height: 5.6rem;
+  height: 4rem;
   justify-content: center;
-  width: 5.6rem;
+  width: 4rem;
   transition: 300ms ease;
+
+  @include media-query($breakpoint--medium) {
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+
+  svg {
+    @include media-query($breakpoint--medium - 1, max-width) {
+      width: 1.8rem;
+    }
+  }
 
   &.appear {
     display: flex;
