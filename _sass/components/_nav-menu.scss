@@ -42,7 +42,7 @@
     }
 
     @include media-query($breakpoint--x-large) {
-      grid-column: 1 / 5;
+      grid-column: 1 / 6;
     }
   }
 }
@@ -138,13 +138,14 @@
   }
 
   @include media-query($breakpoint--x-large) {
-    grid-column: 5 / 7;
+    grid-column: 6 / 7;
     height: 100%;
     background-color: red;
     position: sticky;
     top: 0;
     grid-row-start: 1;
     grid-row-end: 4;
+    min-width: 25rem;
   }
 }
 
