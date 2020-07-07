@@ -78,10 +78,10 @@
   {% if page.type == 'casestudy' %}
 
     <picture class="thumbnail">
-      <source media="(max-width: 700px)" srcset="../images/about/about-hero-mobile.jpg">
-      <source media="(max-width: 1270px)" srcset="../images/about/about-hero.jpg">
-      <source media="(min-width: 1271px)" srcset="../images/about/about-hero-x2.jpg">
-      <img src="../images/about/about-hero.jpg" alt="Lloyd Bennett">
+      <source media="(max-width: 700px)" srcset="../images/projects/{{page.directory}}/hero/hero-small.jpg">
+      <source media="(max-width: 1270px)" srcset="../images/projects/{{page.directory}}/hero/hero-medium.jpg">
+      <source media="(min-width: 1271px)" srcset="../images/projects/{{page.directory}}/hero/hero-large.jpg">
+      <img src="../images/projects/{{page.directory}}/hero/hero-medium.jpg" alt="{{page.directory}}">
     </picture>
 
   {% else %}
