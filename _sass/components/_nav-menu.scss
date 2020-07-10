@@ -4,7 +4,6 @@
   height: 100%;
   left: 0;
   top: 0;
-  background-color: $colour--grit;
   z-index: 100;
   opacity: 0;
   pointer-events: none;
@@ -16,11 +15,35 @@
     pointer-events: auto;
     transition: 300ms ease;
 
+    .nav-menu__bg {
+      width: 100%;
+      transition: 700ms ease;
+    }
+
+    .nav-menu__aside-overlay {
+      transition: 500ms ease 500ms transform;
+      transform: translateX(0);
+      animation: menu-image-swipe 500ms ease 1.3s 1 forwards;
+    }
+
+    .nav-menu__aside-image {
+      transition: 400ms ease 1s;
+      opacity: 1;
+    }
+
     .nav-menu__socials {
       opacity: 1;
       transition: 400ms ease 700ms;
     }
   }
+}
+
+.nav-menu__bg {
+  @include overlay;
+  background-color: $colour--grit;
+  width: 0;
+  right: 0;
+  left: auto;
 }
 
 .nav-menu__grid {
@@ -140,13 +163,30 @@
   @include media-query($breakpoint--x-large) {
     grid-column: 6 / 7;
     height: 100%;
-    background-color: red;
+    //background-color: red;
     position: sticky;
     top: 0;
     grid-row-start: 1;
     grid-row-end: 4;
     min-width: 25rem;
+    overflow: hidden;
   }
+}
+
+.nav-menu__aside-image {
+  @include overlay;
+  background-color: blue;
+  opacity: 0;
+}
+
+.nav-menu__aside-overlay {
+  background-color: green;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  position: absolute;
+  transform: translateX(100%);
+  z-index: 2;
 }
 
 .nav-menu__socials {
@@ -233,5 +273,16 @@
     position: static;
     opacity: 1;
     pointer-events: auto;
+  }
+}
+
+
+@keyframes menu-image-swipe {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
   }
 }
