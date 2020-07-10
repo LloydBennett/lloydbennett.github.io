@@ -1,5 +1,5 @@
 <div class="nav-menu" data-nav-menu>
-  <div class="nav-menu__bg"></div>
+  <div class="nav-menu__bg" data-nav-menu-bg></div>
   <div class="nav-menu__grid">
     <div class="nav-bar" data-nav-bar>
       <div class="nav-bar__wrapper">
@@ -11,7 +11,7 @@
           {% include logo.html %}
         </a>
 
-        <button class="hamburger" data-toggle-menu>
+        <button class="hamburger is-open" data-toggle-menu>
           <div class="hamburger__icon-line"></div>
           <div class="hamburger__icon-line"></div>
           <div class="hamburger__icon-line"></div>
@@ -38,7 +38,9 @@
           <ul class="nav-menu__list">
             <li class="nav-menu__link" data-nav-menu-link>
               <a href="/about">
-                <span>About Me</span>
+                <span class="title-mask">
+                  <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span><span>&nbsp;</span><span>M</span><span>e</span>
+                </span>
                 <span class="nav-menu__link-line"></span>
               </a>
             </li>
@@ -94,8 +96,8 @@
       </div>
     </div>
     <div class="nav-menu__aside">
-      <div class="nav-menu__aside-overlay"></div>
-      <div class="nav-menu__aside-image"></div>
+      <div class="nav-menu__aside-overlay" data-nav-aside-overlay></div>
+      <div class="nav-menu__aside-image" data-nav-aside-image></div>
     </div>
   </div>
 

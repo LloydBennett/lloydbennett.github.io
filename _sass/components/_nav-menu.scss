@@ -10,6 +10,10 @@
   transition: 300ms ease;
   overflow: scroll;
 
+  .nav-bar {
+    opacity: 0;
+  }
+
   &.is-open {
     opacity: 1;
     pointer-events: auto;
@@ -17,7 +21,7 @@
 
     .nav-menu__bg {
       width: 100%;
-      transition: 700ms ease;
+      transition: 650ms ease;
     }
 
     .nav-menu__aside-overlay {
@@ -39,11 +43,11 @@
 }
 
 .nav-menu__bg {
-  @include overlay;
   background-color: $colour--grit;
-  width: 0;
+  height: 100%;
+  position: fixed;
   right: 0;
-  left: auto;
+  width: 0;
 }
 
 .nav-menu__grid {
@@ -111,7 +115,6 @@
     font-size: 3.6rem;
     color: $colour--white;
     display: inline-block;
-    transform: translateY(100%);
     transition: transform 200ms ease;
 
     @include media-query(600px) {
@@ -123,8 +126,14 @@
     }
   }
 
+  .title-mask {
+    span {
+      transform: translateY(100%);
+    }
+  }
+
   &.appear {
-    a {
+    .title-mask {
       transform: translateY(0);
       transition: transform 200ms ease;
     }

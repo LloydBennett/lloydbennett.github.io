@@ -3,10 +3,6 @@
   var input = document.querySelectorAll('[data-input-field]');
   var heroCta = document.querySelectorAll('[data-hero-cta]');
   var buttonLine = document.querySelector('[data-remove-class]');
-  var menuTrigger = document.querySelectorAll('[data-toggle-menu]');
-  var navMenu = document.querySelector('[data-nav-menu]');
-  var navMenuLinks = document.querySelectorAll('[data-nav-menu-link]');
-  var navBar = document.querySelector('[data-nav-bar]');
   var homePage = document.getElementById('home');
 
   function updateInputContent() {
@@ -40,7 +36,7 @@
       });
     }
 
-    new NavigationMenu(navMenu, navMenuLinks, menuTrigger, navBar);
+    new NavigationMenu();
 	}
 
   window.addEventListener('load', function(){
