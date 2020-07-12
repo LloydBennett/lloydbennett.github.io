@@ -36,22 +36,22 @@
       <div class="nav-menu__content">
         <div class="nav-menu__main" data-main-menu>
           <ul class="nav-menu__list">
-            <li class="nav-menu__link" data-nav-menu-link>
-              <a href="/about">
+            <li class="nav-menu__list-item">
+              <a href="/about" class="nav-menu__link" data-nav-menu-link>
                 <span class="title-mask">
                   <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span><span>&nbsp;</span><span>M</span><span>e</span>
                 </span>
                 <span class="nav-menu__link-line"></span>
               </a>
             </li>
-            <li class="nav-menu__link" data-nav-menu-link>
-              <a href="#" data-toggle-sub-menu>
+            <li class="nav-menu__list-item">
+              <a href="#" class="nav-menu__link" data-nav-menu-link data-toggle-sub-menu>
                 <span>Case Studies</span>
                 <span class="nav-menu__link-line"></span>
               </a>
             </li>
-            <li class="nav-menu__link" data-nav-menu-link>
-              <a href="#contact" data-scroll-to-bottom>
+            <li class="nav-menu__list-item">
+              <a href="#contact" class="nav-menu__link" data-nav-menu-link data-scroll-to-bottom>
                 <span>Contact</span>
                 <span class="nav-menu__link-line"></span>
               </a>
@@ -61,8 +61,8 @@
         <div class="nav-menu__sub" data-sub-menu>
           <ul class="nav-menu__list">
             {% for casestudy in site.projects %}
-            <li class="nav-menu__link" data-nav-menu-link>
-              <a href="{{ casestudy.directory }}">
+            <li class="nav-menu__list-item">
+              <a href="{{ casestudy.directory }}" class="nav-menu__link" data-nav-menu-link>
                 <span class="nav-menu__link-no">
                   {{ forloop.index | prepend: "0" }}
                 </span>
@@ -73,8 +73,8 @@
               </a>
             </li>
             {% endfor %}
-            <li class="nav-menu__link" data-nav-menu-link>
-              <a href="/">
+            <li class="nav-menu__list-item">
+              <a href="/" class="nav-menu__list-item" data-nav-menu-link>
                  <span class="nav-menu__link-no">
                    02
                  </span>
