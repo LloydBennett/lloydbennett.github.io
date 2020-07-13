@@ -54,6 +54,7 @@
   @include container;
   @include grid;
   height: 100%;
+  position: relative;
 
   @include media-query($breakpoint--x-large) {
     width: 95%;
@@ -146,6 +147,13 @@
   &:visited {
     color: $colour--white;
   }
+
+  span {
+    &.appear {
+      transform: translateY(0);
+      transition: transform 400ms ease;
+    }
+  }
 }
 
 .nav-menu__list-item:hover ~ .nav-menu__list-item {
@@ -162,12 +170,7 @@
 //   }
 // }
 //
-// &.appear {
-//   .title-mask {
-//     transform: translateY(0);
-//     transition: transform 200ms ease;
-//   }
-// }
+
 
 .nav-menu__aside {
   @include media-query($breakpoint--large - 1, max-width) {
