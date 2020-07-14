@@ -29,9 +29,9 @@ class NavigationMenu {
 
   checkNavigationMenuState() {
     this.menuIsOpen = !this.menuIsOpen;
-    console.log('heyy!');
-
+    console.log('this is working!');
     if(!this.isAnimating) {
+      console.log('animate the menu!');
       this.body.classList.toggle('no-scrolling');
       this.parent.classList.toggle('is-open');
       this.navBar.classList.toggle('is-open');
@@ -59,7 +59,7 @@ class NavigationMenu {
     });
   }
 
-  animate () {
+  animate() {
     this.isAnimating = true;
 
     this.parentBg.addEventListener('transitionend', () => {
@@ -94,17 +94,18 @@ class NavigationMenu {
 
       this.metaHr.classList.toggle('appear');
       this.metaFrame.classList.toggle('appear');
-
-      // if(index === _this.parentLinks.length - 1) {
-      //   elem.addEventListener('transitionend', () => {
-      //     setTimeout(function() {
-      //       _this.isAnimating = false;
-      //     }, 400);
-      //   });
-      // }
     });
 
     this.socialMediaLinks.forEach((e, i) => {
+      if(i === this.socialMediaLinks.length - 1) {
+        e.addEventListener('transitionend', () => {
+          // setTimeout(function() {
+          //   _this.isAnimating = false;
+          // }, 400);
+          this.isAnimating = false;
+          console.log('ready!');
+        });
+      }
       setTimeout(() => {
         e.classList.toggle('appear');
       }, 200);
