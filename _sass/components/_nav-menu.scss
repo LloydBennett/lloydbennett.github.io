@@ -14,6 +14,15 @@
     opacity: 0;
   }
 
+  .hr {
+    width: 0;
+
+    &.appear {
+      width: 100%;
+      transition: 300ms ease;
+    }
+  }
+
   &.is-open {
     opacity: 1;
     pointer-events: auto;
@@ -223,9 +232,27 @@
   .link {
     display: table;
     margin-top: spacing(2);
+    overflow: hidden;
 
     &:first-child {
       margin-top: 0;
+    }
+
+    p {
+      transform: translateY(100%);
+      transition: 300ms ease;
+    }
+
+    &::after {
+      transform: translateY(20px);
+      transition: 300ms ease;
+    }
+
+    &.appear {
+      p,
+      &::after {
+        transform: translateY(0);
+      }
     }
   }
 }
@@ -292,7 +319,6 @@
     pointer-events: auto;
   }
 }
-
 
 @keyframes menu-image-swipe {
   0% {

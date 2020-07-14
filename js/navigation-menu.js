@@ -4,20 +4,22 @@ class NavigationMenu {
     this.parent = document.querySelector('[data-nav-menu]');
     this.parentLinks = document.querySelectorAll('[data-nav-menu-link]');
     this.navBar = this.parent.querySelector('[data-nav-bar]');
+    this.socialMediaLinks = this.parent.querySelectorAll('.nav-menu__socials .link');
     this.menuTrigger = document.querySelectorAll('[data-toggle-menu]');
     this.parentBg = this.parent.querySelector('[data-nav-menu-bg]');
     this.navAsideOverlay = this.parent.querySelector('[data-nav-aside-overlay]');
     this.navAsideImage = this.parent.querySelector('[data-nav-aside-image]');
-    this.menuIsOpen = false;
-    this.subMenuOpen = false;
-    this.isAnimating = false;
     this.body = document.body;
     this.subMenuTrigger = document.querySelector('[data-toggle-sub-menu]');
     this.closeSubMenuTrigger = document.querySelector('[data-close-submenu]');
+    this.metaHr = document.querySelector('[data-meta-menu-hr]');
     this.metaFrame = document.querySelector('[data-meta-frame]');
     this.subMenu = document.querySelector('[data-sub-menu]');
     this.mainMenu = document.querySelector('[data-main-menu]');
     this.logo = document.querySelector('[data-logo]');
+    this.menuIsOpen = false;
+    this.subMenuOpen = false;
+    this.isAnimating = false;
     this.init();
   }
 
@@ -61,40 +63,37 @@ class NavigationMenu {
     this.isAnimating = true;
 
     this.parentBg.addEventListener('transitionend', () => {
-      this.navTl.to(this.navBar, 0.4, { opacity: "1" });
       this.showNavLinks();
+      this.navTl.to(this.navBar, 0.4, { opacity: "1" });
     });
-
-    // get all the nav links
-    // loop through the title mask spans
-    // animate each title mask span
   }
 
   showNavLinks() {
     var delay,
         _this = this;
 
-    this.parentLinks.forEach(function(elem, index) {
+    this.parentLinks.forEach((elem, index) => {
       var elemChild = elem.querySelectorAll('.title-mask span');
 
       if(elem.hasAttribute('data-scroll-to-bottom') && _this.menuIsOpen) {
         elem.addEventListener('click', function(e) {
-          this.checkNavigationMenuState();
-          this.smoothScrolling(e, this);
+          _this.checkNavigationMenuState();
+          _this.smoothScrolling(e, this);
         });
       }
 
-      console.log(elemChild);
-
       elemChild.forEach((item, i) => {
         //_this.menuIsOpen? delay = 150 * index : delay = 300;
-        delay = 150 * index;
+        delay = 20 * i;
 
         setTimeout(function() {
           item.classList.toggle('appear');
-          console.log(index + ":" + delay);
+          console.log(delay);
         }, delay);
       });
+
+      this.metaHr.classList.toggle('appear');
+      this.metaFrame.classList.toggle('appear');
 
       // if(index === _this.parentLinks.length - 1) {
       //   elem.addEventListener('transitionend', () => {
@@ -103,6 +102,12 @@ class NavigationMenu {
       //     }, 400);
       //   });
       // }
+    });
+
+    this.socialMediaLinks.forEach((e, i) => {
+      setTimeout(() => {
+        e.classList.toggle('appear');
+      }, 200);
     });
   }
 

@@ -102,8 +102,8 @@
 }
 
 .meta__frame-content {
+  @include appear;
   transition: 300ms ease;
-  transform: translateY(0);
 
   .meta__title {
     margin-bottom: 0;
