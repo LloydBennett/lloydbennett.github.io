@@ -20,6 +20,7 @@ class NavigationMenu {
     this.menuIsOpen = false;
     this.subMenuOpen = false;
     this.isAnimating = false;
+    this.initializedMenu = false;
     this.init();
   }
 
@@ -29,7 +30,7 @@ class NavigationMenu {
 
   checkNavigationMenuState() {
     this.menuIsOpen = !this.menuIsOpen;
-    console.log(`Animation state: ${this.isAnimating}`);
+
     if(!this.isAnimating) {
       this.body.classList.toggle('no-scrolling');
       this.parent.classList.toggle('is-open');
@@ -59,32 +60,32 @@ class NavigationMenu {
   }
 
   animate() {
+    let _this = this;
+    let duration = 620;
     this.isAnimating = true;
-    this.showNavLinks();
-    this.navBar.classList.toggle('appear');
-    //this.showElements();
-    // let showElements = () => {
-    //   this.showNavLinks();
-    // }
 
-    // if(this.menuIsOpen) {
-    //   this.parentBg.addEventListener('transitionend', () => {
-    //     this.showElements();
-    //   });
-    // }
-    // else {
-    //   this.showNavLinks();
-    //   this.navTl.to(this.navBar, 0.4, { opacity: "0" });
-    // }
+    if(this.menuIsOpen) {
+      setTimeout(() => {
+        this.showNavLinks();
+        this.navBar.classList.add('appear');
+      }, duration);
+    }
+    else {
+      this.showNavLinks();
+      this.navBar.classList.remove('appear');
+    }
   }
+
   showNavLinks() {
     var delay,
         _this = this;
-    console.log('show nav links');
+
     this.parentLinks.forEach((elem, index) => {
       var elemChild = elem.querySelectorAll('.title-mask span');
 
-      if(elem.hasAttribute('data-scroll-to-bottom') && _this.menuIsOpen) {
+      if(elem.hasAttribute('data-scroll-to-bottom') && !_this.initializedMenu) {
+        _this.initializedMenu = true;
+
         elem.addEventListener('click', function(e) {
           _this.checkNavigationMenuState();
           _this.smoothScrolling(e, this);
@@ -106,24 +107,14 @@ class NavigationMenu {
     this.socialMediaLinks.forEach((e, i) => {
       if(i === this.socialMediaLinks.length - 1) {
         e.addEventListener('transitionend', () => {
-          // setTimeout(function() {
-          //   _this.isAnimating = false;
-          // }, 400);
           _this.isAnimating = false;
         });
       }
       setTimeout(() => {
         e.classList.toggle('appear');
       }, 200);
-
     });
   }
-
-  // showElements() {
-  //   // console.log(this);
-  //   this.showNavLinks();
-  //   this.navTl.to(this.navBar, 0.4, { opacity: "1" });
-  // }
 
   toggleSubMenu(_this) {
     _this.subMenuOpen = !_this.subMenuOpen;
@@ -132,7 +123,6 @@ class NavigationMenu {
     _this.mainMenu.classList.toggle('hide');
     _this.closeSubMenuTrigger.classList.toggle('appear');
     _this.logo.classList.toggle('hide');
-    console.log(_this.subMenuOpen);
   }
 }
 

@@ -35,7 +35,11 @@
 
     .nav-menu__bg {
       width: 100%;
-      transition: 650ms ease;
+      transition: 550ms ease;
+
+      @include media-query($breakpoint--medium) {
+        transition: 650ms ease;
+      }
     }
 
     .nav-menu__aside-overlay {
