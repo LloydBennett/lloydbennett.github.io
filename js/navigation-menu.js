@@ -29,9 +29,8 @@ class NavigationMenu {
 
   checkNavigationMenuState() {
     this.menuIsOpen = !this.menuIsOpen;
-    console.log('this is working!');
+    console.log(`Animation state: ${this.isAnimating}`);
     if(!this.isAnimating) {
-      console.log('animate the menu!');
       this.body.classList.toggle('no-scrolling');
       this.parent.classList.toggle('is-open');
       this.navBar.classList.toggle('is-open');
@@ -61,17 +60,27 @@ class NavigationMenu {
 
   animate() {
     this.isAnimating = true;
+    this.showNavLinks();
+    this.navBar.classList.toggle('appear');
+    //this.showElements();
+    // let showElements = () => {
+    //   this.showNavLinks();
+    // }
 
-    this.parentBg.addEventListener('transitionend', () => {
-      this.showNavLinks();
-      this.navTl.to(this.navBar, 0.4, { opacity: "1" });
-    });
+    // if(this.menuIsOpen) {
+    //   this.parentBg.addEventListener('transitionend', () => {
+    //     this.showElements();
+    //   });
+    // }
+    // else {
+    //   this.showNavLinks();
+    //   this.navTl.to(this.navBar, 0.4, { opacity: "0" });
+    // }
   }
-
   showNavLinks() {
     var delay,
         _this = this;
-
+    console.log('show nav links');
     this.parentLinks.forEach((elem, index) => {
       var elemChild = elem.querySelectorAll('.title-mask span');
 
@@ -83,12 +92,10 @@ class NavigationMenu {
       }
 
       elemChild.forEach((item, i) => {
-        //_this.menuIsOpen? delay = 150 * index : delay = 300;
-        delay = 20 * i;
+        _this.menuIsOpen? delay = 20 * i : delay = 0;
 
         setTimeout(function() {
           item.classList.toggle('appear');
-          console.log(delay);
         }, delay);
       });
 
@@ -102,15 +109,21 @@ class NavigationMenu {
           // setTimeout(function() {
           //   _this.isAnimating = false;
           // }, 400);
-          this.isAnimating = false;
-          console.log('ready!');
+          _this.isAnimating = false;
         });
       }
       setTimeout(() => {
         e.classList.toggle('appear');
       }, 200);
+
     });
   }
+
+  // showElements() {
+  //   // console.log(this);
+  //   this.showNavLinks();
+  //   this.navTl.to(this.navBar, 0.4, { opacity: "1" });
+  // }
 
   toggleSubMenu(_this) {
     _this.subMenuOpen = !_this.subMenuOpen;

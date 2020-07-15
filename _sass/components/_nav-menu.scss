@@ -7,11 +7,16 @@
   z-index: 100;
   opacity: 0;
   pointer-events: none;
-  transition: 300ms ease;
+  transition: 400ms ease;
   overflow: scroll;
 
   .nav-bar {
     opacity: 0;
+
+    &.appear {
+      opacity: 1;
+      transition: 400ms ease;
+    }
   }
 
   .hr {
@@ -57,6 +62,7 @@
   position: fixed;
   right: 0;
   width: 0;
+  transition: 650ms ease 400ms;
 }
 
 .nav-menu__grid {
@@ -172,15 +178,6 @@
   }
 }
 
-
-// .title-mask {
-//   span {
-//     transform: translateY(100%);
-//   }
-// }
-//
-
-
 .nav-menu__aside {
   @include media-query($breakpoint--large - 1, max-width) {
     display: none;
@@ -189,7 +186,6 @@
   @include media-query($breakpoint--x-large) {
     grid-column: 6 / 7;
     height: 100%;
-    //background-color: red;
     position: sticky;
     top: 0;
     grid-row-start: 1;
@@ -203,6 +199,12 @@
   @include overlay;
   background-color: blue;
   opacity: 0;
+  transition: 400ms ease 400ms;
+
+  img {
+    display: block;
+    height: 100%;
+  }
 }
 
 .nav-menu__aside-overlay {
