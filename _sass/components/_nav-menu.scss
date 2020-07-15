@@ -179,7 +179,7 @@
 }
 
 .nav-menu__aside {
-  @include media-query($breakpoint--large - 1, max-width) {
+  @include media-query($breakpoint--x-large - 1, max-width) {
     display: none;
   }
 
@@ -203,7 +203,7 @@
 
   img {
     display: block;
-    height: 100%;
+    width: 100%;
   }
 }
 
