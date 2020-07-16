@@ -70,8 +70,8 @@
   transition: 300ms ease;
 
   @include media-query($breakpoint--medium) {
-    width: 5.6rem;
-    height: 5.6rem;
+    width: 5rem;
+    height: 5rem;
   }
 
   svg {

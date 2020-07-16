@@ -26,6 +26,7 @@ class NavigationMenu {
 
   init() {
     this.addEvents();
+    this.checkHeightOfMenus();
   }
 
   checkNavigationMenuState() {
@@ -57,6 +58,15 @@ class NavigationMenu {
       e.preventDefault();
       this.toggleSubMenu(this);
     });
+  }
+
+  checkHeightOfMenus() {
+    let subMenu = this.subMenu;
+    let mainMenu = this.mainMenu;
+
+    if (subMenu.offsetHeight < mainMenu.offsetHeight) {
+      subMenu.style.height = `${mainMenu.offsetHeight}px`;
+    }
   }
 
   animate() {
@@ -118,8 +128,10 @@ class NavigationMenu {
 
   toggleSubMenu(_this) {
     let delay = 50;
-    let mainMenuListItems = _this.mainMenu.querySelectorAll('.nav-menu__list-item');
-    let subMenuListItems = _this.subMenu.querySelectorAll('.nav-menu__list-item');
+    let subMenu = _this.subMenu;
+    let mainMenu = _this.mainMenu;
+    let mainMenuListItems = mainMenu.querySelectorAll('.nav-menu__list-item');
+    let subMenuListItems = subMenu.querySelectorAll('.nav-menu__list-item');
     let socialMedia = document.querySelector('.nav-menu__socials');
 
     let showSubMenuLinks = (nodeList, delay, className, parentNode = null, afterElement = null) => {
@@ -141,36 +153,13 @@ class NavigationMenu {
     };
 
     _this.subMenuOpen = !_this.subMenuOpen;
-    socialMedia.classList.toggle('hide');
 
+    _this.closeSubMenuTrigger.classList.toggle('appear');
+    _this.logo.classList.toggle('hide');
+    _this.metaFrame.classList.toggle('flip-frame');
 
-    //_this.closeSubMenuTrigger.classList.toggle('appear');
-    //_this.logo.classList.toggle('hide');
-    //this.navTl.to(socialMedia, 0.3, { opacity: 0 });
-
-    //console.log(socialMedia[0].style.opacity);
-    setTimeout(() => {
-      _this.metaFrame.classList.toggle('flip-frame');
-      showSubMenuLinks(mainMenuListItems, delay, "hide", _this.mainMenu, _this.subMenu);
-      showSubMenuLinks(subMenuListItems, delay, "appear");
-    }, 500);
-
-    //_this.subMenu.classList.toggle('appear');
-
-
-    //_this.mainMenu.classList.toggle('hide');
-
-    //this.navTl.to(socialMedia, 0.3, { opacity: 0, y: 50 }, { opacity: 1, y: 0 });
-
-    // mainMenulistItems.forEach((e, i) => {
-    //   console.log(delay);
-    //
-    //   setTimeout(() => {
-    //     e.classList.toggle('hide');
-    //   }, delay * i);
-    // });
-
-    //_this.mainMenu.classList.toggle('hide');
+    showSubMenuLinks(mainMenuListItems, delay, "hide", _this.mainMenu, _this.subMenu);
+    showSubMenuLinks(subMenuListItems, delay, "appear");
   }
 }
 
