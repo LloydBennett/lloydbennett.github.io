@@ -165,7 +165,6 @@ colour-swatches:
     <div class="container">
 
       <div class="grid section">
-        {% assign delay = 50 %}
 
         {% for colour in page.colour-swatches %}
         <div class="three-columns">
@@ -175,7 +174,6 @@ colour-swatches:
               hex = colour.hex
               rgb = colour.rgb
               cmyk = colour.cmyk
-              delay = 0
             %}
 
           {% else %}
@@ -186,7 +184,6 @@ colour-swatches:
               hex = colour.hex
               rgb = colour.rgb
               cmyk = colour.cmyk
-              delay = delayTime
             %}
 
           {% endif %}

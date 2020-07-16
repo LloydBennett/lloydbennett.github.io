@@ -53,10 +53,10 @@
       opacity: 1;
     }
 
-    .nav-menu__socials {
-      opacity: 1;
-      transition: 400ms ease 700ms;
-    }
+    // .nav-menu__socials {
+    //   opacity: 1;
+    //   transition: 400ms ease 700ms;
+    // }
   }
 }
 
@@ -106,17 +106,17 @@
   }
 }
 
-.nav-menu__list {
-  margin-bottom: spacing(6);
-
-  @include media-query($breakpoint--small) {
-    margin-bottom: spacing(8);
-  }
-
-  @include media-query($breakpoint--medium) {
-    margin-bottom: spacing(9);
-  }
-}
+// .nav-menu__list {
+//   margin-bottom: spacing(6);
+//
+//   @include media-query($breakpoint--small) {
+//     margin-bottom: spacing(8);
+//   }
+//
+//   @include media-query($breakpoint--medium) {
+//     margin-bottom: spacing(9);
+//   }
+// }
 
 .nav-menu__list-item {
   margin-bottom: spacing(3);
@@ -143,7 +143,7 @@
     .nav-menu__link-line {
       //animation: nav-link-hover 300ms ease 0s 1 forwards;
       transition: 200ms ease;
-      transform: translateX(0%);
+      transform: translateX(0);
     }
   }
 }
@@ -223,16 +223,27 @@
 
 .nav-menu__socials {
   margin-bottom: 5%;
-  opacity: 0;
+  // opacity: 0;
   transition: 300ms ease 100ms;
+  margin-top: spacing(6);
   margin-bottom: spacing(5);
+
+  @include media-query($breakpoint--small) {
+    margin-top: spacing(8);
+  }
 
   @include media-query($breakpoint--medium) {
     margin-bottom: spacing(9);
+    margin-top: spacing(9);
   }
 
   @include media-query($breakpoint--large) {
     margin-bottom: spacing(13);
+  }
+
+  &.hide {
+    opacity: 0;
+    transition: 200ms ease;
   }
 
   .link {
@@ -276,6 +287,7 @@
 .nav-menu__content {
   position: relative;
   display: flex;
+  //background-color: red;
 }
 
 .nav-menu__link-wrapper {
@@ -306,8 +318,17 @@
   &.hide {
     position: absolute;
     transform: translateX(-100%);
+    transition: 300ms ease 900ms;
     opacity: 0;
     pointer-events: none;
+  }
+
+  .nav-menu__list-item {
+    &.hide {
+      transform: translateX(-100%);
+      opacity: 0;
+      transition: 500ms ease transform, 300ms ease opacity 150ms;
+    }
   }
 }
 
@@ -315,14 +336,24 @@
   transition: 300ms ease;
   position: absolute;
   transform: translateX(100%);
-  opacity: 0;
   pointer-events: none;
 
   &.appear {
     transform: translateX(0);
+    transition: 400ms ease;
     position: static;
-    opacity: 1;
     pointer-events: auto;
+  }
+
+  .nav-menu__list-item {
+    transform: translateX(100%);
+    opacity: 0;
+
+    &.appear {
+      transform: translateX(0%);
+      transition: 500ms ease transform, 300ms ease opacity 150ms;
+      opacity: 1;
+    }
   }
 }
 

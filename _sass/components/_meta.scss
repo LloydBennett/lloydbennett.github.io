@@ -115,6 +115,6 @@
 
   &.flip-frame {
     transform: translateY(-100%);
-    transition: 300ms ease;
+    transition: 400ms ease 50ms;
   }
 }
