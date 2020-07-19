@@ -37,7 +37,6 @@ class NavigationMenu {
       this.parent.classList.toggle('is-open');
       this.navBar.classList.toggle('is-open');
       this.animate();
-      //if(this.subMenuOpen) this.toggleSubMenu(this);
     }
   }
 
@@ -124,6 +123,12 @@ class NavigationMenu {
         e.classList.toggle('appear');
       }, 200);
     });
+
+    if(this.subMenuOpen) {
+      setTimeout(() => {
+        this.toggleSubMenu(this);
+      }, 600);
+    }
   }
 
   toggleSubMenu(_this) {
