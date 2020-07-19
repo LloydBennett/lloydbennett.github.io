@@ -54,11 +54,6 @@
       transition: 400ms ease 1s;
       opacity: 1;
     }
-
-    // .nav-menu__socials {
-    //   opacity: 1;
-    //   transition: 400ms ease 700ms;
-    // }
   }
 }
 
@@ -122,6 +117,10 @@
       transition: 200ms ease;
       transform: translateX(0);
     }
+
+    // a {
+    //   c
+    // }
   }
 }
 
@@ -309,15 +308,15 @@
     opacity: 0;
     pointer-events: none;
   }
+}
 
-  .nav-menu__list-item {
+.nav-menu__main-item {
+  transition: 500ms ease transform, 300ms ease opacity 150ms;
+
+  &.hide {
+    transform: translateX(-100%);
+    opacity: 0;
     transition: 500ms ease transform, 300ms ease opacity 150ms;
-
-    &.hide {
-      transform: translateX(-100%);
-      opacity: 0;
-      transition: 500ms ease transform, 300ms ease opacity 150ms;
-    }
   }
 }
 
@@ -333,16 +332,16 @@
     position: static;
     pointer-events: auto;
   }
+}
 
-  .nav-menu__list-item {
-    transform: translateX(30%);
-    opacity: 0;
+.nav-menu__sub-item {
+  transform: translateX(30%);
+  opacity: 0;
+  transition: 500ms ease transform, 300ms ease opacity 150ms;
+
+  &.appear {
+    transform: translateX(0%);
     transition: 500ms ease transform, 300ms ease opacity 150ms;
-
-    &.appear {
-      transform: translateX(0%);
-      transition: 500ms ease transform, 300ms ease opacity 150ms;
-      opacity: 1;
-    }
+    opacity: 1;
   }
 }

@@ -36,7 +36,7 @@
       <div class="nav-menu__content">
         <div class="nav-menu__main" data-main-menu>
           <ul class="nav-menu__list">
-            <li class="nav-menu__list-item">
+            <li class="nav-menu__list-item nav-menu__main-item">
               <a href="/about" class="nav-menu__link" data-nav-menu-link>
                 <div class="title-mask">
                   <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span><span>&nbsp;</span><span>M</span><span>e</span>
@@ -44,7 +44,7 @@
                 <div class="nav-menu__link-line"></div>
               </a>
             </li>
-            <li class="nav-menu__list-item">
+            <li class="nav-menu__list-item nav-menu__main-item">
               <a href="#" class="nav-menu__link" data-nav-menu-link data-toggle-sub-menu>
                 <div class="title-mask">
                   <span>C</span><span>a</span><span>s</span><span>e</span><span>&nbsp;</span><span>S</span><span>t</span><span>u</span><span>d</span><span>i</span><span>e</span><span>s</span>
@@ -52,7 +52,7 @@
                 <div class="nav-menu__link-line"></div>
               </a>
             </li>
-            <li class="nav-menu__list-item">
+            <li class="nav-menu__list-item nav-menu__main-item">
               <a href="#contact" class="nav-menu__link" data-nav-menu-link data-scroll-to-bottom>
                 <div class="title-mask">
                   <span>C<span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span>
@@ -65,7 +65,7 @@
         <div class="nav-menu__sub" data-sub-menu>
           <ul class="nav-menu__list">
             {% for casestudy in site.projects %}
-            <li class="nav-menu__list-item">
+            <li class="nav-menu__list-item nav-menu__sub-item">
               <a href="{{ casestudy.directory }}" class="nav-menu__link" data-nav-menu-link>
                 <span class="nav-menu__link-no">
                   {{ forloop.index | prepend: "0" }}
@@ -77,7 +77,7 @@
               </a>
             </li>
             {% endfor %}
-            <li class="nav-menu__list-item">
+            <li class="nav-menu__list-item nav-menu__sub-item">
               <a href="/" class="nav-menu__link" data-nav-menu-link>
                  <span class="nav-menu__link-no">
                    02
