@@ -5,6 +5,7 @@
   <p class="testimony__quote">
     {{ include.quote }}
   </p>
+  {% if include.name and include.avatar %}
   <div class="testimony__author">
     <div class="avatar thumbnail">
       <img src="../images/projects/{{page.directory}}/avatars/{{ include.avatar }}.jpg" alt="{{ include.name }}">
@@ -18,4 +19,5 @@
       </span>
     </div>
   </div>
+  {% endif %}
 </div>

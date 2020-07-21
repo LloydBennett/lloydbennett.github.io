@@ -66,7 +66,7 @@
           <ul class="nav-menu__list">
             {% for casestudy in site.projects %}
             <li class="nav-menu__list-item nav-menu__sub-item">
-              <a href="{{ casestudy.permalink }}" class="nav-menu__link" data-nav-menu-link>
+              <a href="{{ casestudy.url }}" class="nav-menu__link" data-nav-menu-link>
                 <span class="nav-menu__link-no">
                   {{ forloop.index | prepend: "0" }}
                 </span>
