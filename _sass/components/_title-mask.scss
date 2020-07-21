@@ -7,19 +7,19 @@
   display: inline-block;
   position: relative;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 115%;
-    width: 105%;
-    height: 110%;
-    left: -5%;
-    display: block;
-    background-color: $colour--grey;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 115%;
+  //   width: 105%;
+  //   height: 110%;
+  //   left: -5%;
+  //   display: block;
+  //   background-color: $colour--grey;
+  // }
 
   span {
     display: inline-block;
-    transform: translateY(100%);
+    //transform: translateY(100%);
   }
 }
