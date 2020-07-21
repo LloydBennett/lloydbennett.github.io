@@ -1,11 +1,8 @@
-{% for casestudy in site.projects %}
+{% assign casestudies = site.projects | sort: "order" %}
+
+{% for casestudy in casestudies %}
   {% capture project-image-url %}images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}{% endcapture %}
   {% capture thumbnail-css-classes %} card__thumbnail-design card__thumbnail--{{ casestudy.directory }} wow anim-zoom-out-special{% endcapture %}
-  {% capture thumbnail-main-data-attr %} data-wow-duration='800ms' data-wow-offset='-100'{% endcapture %}
-  {% capture thumbnail-data-attr %} data-wow-duration='800ms'{% endcapture %}
-  {% capture card-top-image-classes %} card__piece-image card__top-image-{{ casestudy.title | downcase }} wow anim-zoom-out{% endcapture %}
-  {% capture card-bottom-image-classes %} card__piece-image card__bottom-image-{{ casestudy.title | downcase }} wow anim-zoom-out{% endcapture %}
-
 <div class="card">
   <h2 class="card__no card__side">
     {{ forloop.index | prepend: "0" }}
@@ -16,7 +13,6 @@
   <a class="card__thumbnail" href="{{ casestudy.url }}">
     {% include casestudy-graphic.html
       classlist= thumbnail-css-classes
-      datalist= thumbnail-main-data-attr
       title= casestudy.directory
       image-url= project-image-url
     %}
