@@ -4,7 +4,7 @@
   }
 
   @include media-query($breakpoint--large) {
-    padding-top: spacing(3);
+    padding-top: spacing(1);
   }
 
   @include media-query($breakpoint--x-large) {

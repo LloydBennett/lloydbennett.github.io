@@ -10,4 +10,8 @@
 
 .website--casestudy {
   background-color: $colour--white;
+
+  @include media-query($breakpoint--small) {
+    margin-bottom: 0;
+  }
 }
