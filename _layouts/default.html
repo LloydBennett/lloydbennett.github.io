@@ -10,8 +10,12 @@
         {{ content }}
       </div>
     </main>
-
-    {% include footer.html %}
+    {% if page.type == "casestudy" %}
+      {% include _casestudy/casestudy-footer.html %}
+    {% else %}
+      {% include footer.html %}
+    {% endif %}
+    
     <script src="/js/loader.js"></script>
     <script src="/js/smooth-scrolling.js"></script>
     <script src="/js/main.js"></script>

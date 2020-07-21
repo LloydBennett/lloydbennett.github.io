@@ -11,10 +11,10 @@
     {% if links.title == page.title %}
       {% if forloop.last %}
         {% assign next = document[0] %}
-        {% assign nexttitle = next.title %}
+        {% assign nexttitle = next.herotitle %}
       {% else %}
         {% assign next = document[forloop.index] %}
-        {% assign nexttitle = next.title %}
+        {% assign nexttitle = next.herotitle %}
       {% endif %}
 
         {% if next.point-to-url %}
@@ -30,26 +30,26 @@
 
 {% endfor %}
 >
-  {% capture project-image-url %}../images/projects/{{next.directory}}/thumbnail/{{next.thumbnail}}{% endcapture %}
-  <div class="casestudy__footer-bg">
-    {% include background-strip.html colour= next.colour %}
-  </div>
-  <div class="casestudy__footer-wrapper">
-    <div class="casestudy__footer-content">
-      <h2 class="casestudy__footer-title casestudy__footer-title-{{ next.directory }}">
-        <span class="small-caps">
-          Next Project
-        </span>
+  {% capture project-image-url %}../images/projects/{{next.directory}}/hero/{% endcapture %}
+
+  <div class="hero__grid">
+    <div class="meta meta--head">
+      <div class="hr"></div>
+      <span class="meta__title">
+        Next Project
+      </span>
+    </div>
+    <div class="hero__content">
+      <span class="casestudy-footer__title">
         {{ nexttitle }}
-      </h2>
+      </span>
     </div>
   </div>
-  <div class="casestudy__footer-image casestudy__footer-image-{{ next.directory }}">
-    {% include casestudy-graphic.html
-      classlist= "thumbnail"
-      image-url= project-image-url
-      title= next.directory
-    %}
-  </div>
+  <picture class="thumbnail">
+    <source media="(max-width: 700px)" srcset="{{ project-image-url }}/hero-small.jpg">
+    <source media="(max-width: 1270px)" srcset="{{ project-image-url }}/hero-medium.jpg">
+    <source media="(min-width: 1271px)" srcset="{{ project-image-url }}/hero-large.jpg">
+    <img src="{{ project-image-url }}/hero-medium.jpg" alt="{{page.directory}}">
+  </picture>
 </a>
 {% endif %}

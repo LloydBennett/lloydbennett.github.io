@@ -1,127 +1,17 @@
-$colour--bluvalt-text: #2D313F;
-
 .casestudy__footer {
   background-color: $colour--grey;
   display: block;
   position: relative;
-  padding: spacing(8) 0 spacing(21);
+  padding: spacing(8) 0 0;
   overflow: hidden;
-
-  @include media-query($breakpoint--large - 1, max-width) {
-    height: 50rem;
-  }
+  height: 50rem;
 
   @include media-query($breakpoint--large) {
-    padding: spacing(13) 0 spacing(18);
-  }
-
-  &:hover {
-    .background-strip {
-      @include animate-bg-strip;
-      @include media-query($breakpoint--large) {
-        height: 100%;
-      }
-    }
-
-    .casestudy__footer-image {
-      @include media-query($breakpoint--large) {
-        transform: translateY(0);
-        transition: transform 300ms ease 600ms;
-      }
-    }
-
-    .casestudy__footer-title-thoughtbot {
-      @include casestudy-footer-titles($colour--white, $childclass: small-caps);
-    }
-
-    .casestudy__footer-title-bluvalt {
-      @include casestudy-footer-titles($colour--bluvalt-text, $childclass: small-caps);
-    }
+    padding: spacing(13) 0 0;
+    height: 56rem;
   }
 }
 
-.casestudy__footer-bg {
-  .background-strip {
-    @include animate-bg-strip;
-    height: 100%;
-
-    @include media-query($breakpoint--large) {
-      height: 0;
-    }
-  }
-}
-
-.casestudy__footer-wrapper {
-  @include container;
-  @include grid;
-  position: relative;
-}
-
-.casestudy__footer-bg {
-  @include overlay(false);
-  align-items: flex-end;
-  display: flex;
-}
-
-.casestudy__footer-content {
-  @include offset-content;
-}
-
-.casestudy__footer-image {
-  position: absolute;
-
-  @include media-query($breakpoint--large) {
-    transform: translateY(70%);
-    transition: transform 300ms ease;
-  }
-}
-
-.casestudy__footer-title,
-.casestudy__footer-title .small-caps {
-  transition: color 400ms ease 200ms;
-}
-
-.casestudy__footer-title-thoughtbot {
-  @include casestudy-footer-titles($colour--white, $breakpoint--large - 1, max-width, small-caps);
-}
-
-.casestudy__footer-title-bluvalt {
-  @include casestudy-footer-titles($colour--bluvalt-text, $breakpoint--large - 1, max-width, small-caps);
-}
-
-.casestudy__footer-image-bluvalt {
-  bottom: 0;
-  max-width: 60rem;
-  right: -25%;
-
-  @include media-query($breakpoint--medium) {
-    bottom: -25%;
-    right: 10%;
-  }
-
-  @include media-query($breakpoint--large) {
-    bottom: -35%;
-  }
-
-  @include media-query($breakpoint--xx-large) {
-    max-width: 80rem;
-  }
-}
-
-.casestudy__footer-image-thoughtbot {
-  bottom: -10rem;
-  max-width: 35rem;
-  right: 0;
-
-  @include media-query($breakpoint--medium) {
-    max-width: 40rem;
-  }
-
-  @include media-query($breakpoint--large) {
-    right: 10%;
-  }
-
-  @include media-query($breakpoint--xx-large) {
-    right: 25%;
-  }
+.casestudy-footer__title {
+  @extend h1;
 }
