@@ -92,14 +92,19 @@ class NavigationMenu {
     this.parentLinks.forEach((elem, index) => {
       var elemChild = elem.querySelectorAll('.title-mask span');
 
-      if(elem.hasAttribute('data-scroll-to-bottom') && !_this.initializedMenu) {
-        _this.initializedMenu = true;
+      if (!_this.initializedMenu) {
+        // add mouse over event
 
-        elem.addEventListener('click', function(e) {
-          _this.checkNavigationMenuState();
-          _this.smoothScrolling(e, this);
-        });
+        if(elem.hasAttribute('data-scroll-to-bottom')) {
+          _this.initializedMenu = true;
+
+          elem.addEventListener('click', (e) => {
+            _this.checkNavigationMenuState();
+            _this.smoothScrolling(e, this);
+          });
+        }
       }
+
 
       elemChild.forEach((item, i) => {
         _this.menuIsOpen? delay = 20 * i : delay = 0;
