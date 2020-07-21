@@ -37,7 +37,7 @@
         <div class="nav-menu__main" data-main-menu>
           <ul class="nav-menu__list">
             <li class="nav-menu__list-item nav-menu__main-item">
-              <a href="/about" class="nav-menu__link" data-nav-menu-link>
+              <a href="../about" class="nav-menu__link" data-nav-menu-link>
                 <div class="title-mask">
                   <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span><span>&nbsp;</span><span>M</span><span>e</span>
                 </div>
@@ -66,7 +66,7 @@
           <ul class="nav-menu__list">
             {% for casestudy in site.projects %}
             <li class="nav-menu__list-item nav-menu__sub-item">
-              <a href="{{ casestudy.directory }}" class="nav-menu__link" data-nav-menu-link>
+              <a href="{{ casestudy.permalink }}" class="nav-menu__link" data-nav-menu-link>
                 <span class="nav-menu__link-no">
                   {{ forloop.index | prepend: "0" }}
                 </span>
