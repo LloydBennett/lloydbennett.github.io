@@ -26,15 +26,15 @@
       });
     });
 
-    if(homePage) {
-      buttonLine.addEventListener('animationend', () => {
-        var $thisElem = event.target;
-        if($thisElem.classList.contains('wow')){
-          $thisElem.classList.remove('wow', 'anim-grow');
-          $thisElem.setAttribute("style", "");
-        };
-      });
-    }
+    // if(homePage) {
+    //   buttonLine.addEventListener('animationend', () => {
+    //     var $thisElem = event.target;
+    //     if($thisElem.classList.contains('wow')){
+    //       $thisElem.classList.remove('wow', 'anim-grow');
+    //       $thisElem.setAttribute("style", "");
+    //     };
+    //   });
+    // }
 
     new NavigationMenu();
 	}
