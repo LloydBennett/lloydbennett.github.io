@@ -1,8 +1,8 @@
 .stats {
-  margin-top: spacing(6);
+  margin-top: spacing(2);
 
   @include media-query($breakpoint--medium) {
-    margin-top: spacing(7);
+    margin-top: spacing(3);
   }
 }
 
