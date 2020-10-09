@@ -3,6 +3,7 @@
   {% include head.html %}
   <body data-body>
     <main class="website {% if page.type == "casestudy" %}website--casestudy{% endif %}">
+
       <div id="{{ page.title | downcase }}" class="step--reset">
         {% include _navigation/nav-menu.html %}
         {% include _navigation/nav-bar.html %}
@@ -16,7 +17,6 @@
       {% include footer.html %}
     {% endif %}
 
-    <script src="/js/loader.js"></script>
     <script src="/js/smooth-scrolling.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/navigation-menu.js"></script>

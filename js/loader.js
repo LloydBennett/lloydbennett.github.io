@@ -3,6 +3,7 @@ class Loader {
     this.loaderTl = new TimelineLite();
     this.heroTitle = document.querySelector('[data-hero-title]');
     this.heroTitleLetters = this.heroTitle.querySelectorAll('.word span');
+    this.strips = document.querySelectorAll('[data-strips]');
 
     // this.heroBgStrips = document.querySelectorAll('[data-hero-strip]');
     // this.heroTitles = document.querySelectorAll('[data-hero-titles]');
@@ -40,9 +41,11 @@ class Loader {
     let offsetDelay = "-=0.15";
     let homePage = document.getElementById('home');
     let caseStudy = document.querySelector('.casestudy');
-    console.log(this.heroTitleLetters);
-    this.animateNodeList(this.heroTitleLetters, { y: 0 }, "-=0.39", 0.4);
 
+    //this.animateNodeList(this.heroTitleLetters, { y: 0 }, "-=0.39", 0.4);
+    this.animateNodeList(this.strips, { height: "100%" }, "-=0.45", 0.6);
+
+    //this.loaderTl.to(this.strips, 0.8, { height: "100%", ease: Power4.out });
     // this.animateNodeList(this.heroBgStrips, { height: "100%" }, offsetDelay);
     // this.animateNodeList(this.heroTitles, { y: 0 }, "-=0.22");
     //
