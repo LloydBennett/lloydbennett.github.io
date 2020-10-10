@@ -15,6 +15,10 @@
   }
 }
 
+.hero--about {
+  @include inner-section;
+}
+
 .hero__grid {
   @include container;
   @include grid;

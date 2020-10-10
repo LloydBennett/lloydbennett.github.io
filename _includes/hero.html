@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero {% if page.title == 'About' %}hero--about{% endif %}">
   <div class="hero__grid {% if page.type == 'casestudy' %} hero--flex">
 
     <div class="meta meta--credits">
@@ -106,9 +106,9 @@
 
       <div class="hero__grid hero--collaspe-padding">
         <picture class="hero__image hero--image-two-thirds">
-          <source media="(min-width: 1000px)" srcset="https://via.placeholder.com/1615x945/">
-          <source media="(min-width: 700px)" srcset="https://via.placeholder.com/1077x630/">
-          <img src="https://via.placeholder.com/700x600" alt="image" />
+          <source media="(min-width: 1000px)" srcset="../images/{{page.directory}}/hero@1-5x.jpg">
+          <source media="(min-width: 700px)" srcset="../images/{{page.directory}}/hero.jpg">
+          <img src="../images/{{page.directory}}/hero-mobile.jpg" alt="image" />
         </picture>
       </div>
     {% endif %}
