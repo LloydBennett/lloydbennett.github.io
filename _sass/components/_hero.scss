@@ -45,7 +45,7 @@
   }
 
   .thumbnail {
-    grid-column: 1 / 7;
+    //grid-column: 1 / 7;
 
     &:first-child {
       @include media-query($breakpoint--small - 1, max-width) {
@@ -57,7 +57,12 @@
       }
 
       @include media-query($breakpoint--small) {
-        grid-column: 1 / 6;
+        //grid-column: 1 / 6;
+        grid-column: 1 / 4;
+      }
+
+      @media screen and (min-width: $breakpoint--small) and (max-width: $breakpoint--medium - 1) {
+        margin-top: 20rem;
       }
 
       @include media-query($breakpoint--medium) {
@@ -75,11 +80,15 @@
       @include media-query($breakpoint--small - 1, max-width) {
         //padding-left: 5%;
         grid-column: 2/4;
-        grid-row-start: 1;
       }
 
       @include media-query($breakpoint--small) {
-        grid-column: 2 / 7;
+        //grid-column: 2 / 7;
+        grid-column: 5 / 7;
+      }
+
+      @include media-query($breakpoint--medium - 1, max-width) {
+        grid-row-start: 1;
       }
 
       @include media-query($breakpoint--medium) {
