@@ -17,6 +17,18 @@
 
 .hero--about {
   @include inner-section;
+
+  .hero__copy {
+    @include media-query($breakpoint--medium - 1, max-width) {
+      display: none;
+    }
+  }
+
+  .hero__title {
+    @include media-query($breakpoint--medium - 1, max-width) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .hero__grid {
@@ -99,7 +111,7 @@
 }
 
 .hero--collaspe-padding {
-  @include media-query($breakpoint--small - 1, max-width) {
+  @include media-query($breakpoint--medium - 1, max-width) {
     width: 100%;
   }
 }
