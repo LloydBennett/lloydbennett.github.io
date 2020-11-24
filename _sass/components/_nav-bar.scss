@@ -59,7 +59,7 @@
 
 .nav-bar__back {
   align-items: center;
-  background-color: #646363;
+  border: 0.2rem solid $colour--white;
   border-radius: 100%;
   cursor: pointer;
   display: none;
@@ -84,5 +84,24 @@
     display: flex;
     opacity: 1;
     transition: 300ms ease;
+  }
+
+  &:hover {
+    svg {
+      animation-name: anim-back;
+      animation-duration: 300ms;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+    }
+  }
+}
+
+
+@keyframes anim-back {
+  0, 100%{
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px);
   }
 }
