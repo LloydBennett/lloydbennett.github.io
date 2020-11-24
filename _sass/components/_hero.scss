@@ -145,3 +145,59 @@
 .hero--image-two-thirds {
   @include two-thirds-media-layout;
 }
+
+.hero--home {
+  @include media-query($breakpoint--small - 1, max-width) {
+    overflow: hidden;
+  }
+
+  .hero__title {
+    @include media-query($breakpoint--small - 1, max-width) {
+      display: none;
+    }
+  }
+
+  .hero__grid {
+    &:first-child {
+      @include media-query($breakpoint--small - 1, max-width) {
+        margin-bottom: spacing(8);
+      }
+    }
+  }
+}
+
+.hero__home-masthead {
+  margin-bottom: spacing(6);
+
+  @include media-query($breakpoint--small) {
+    display: none;
+  }
+
+  .thumbnail {
+    left: calc(-50vw + 50%);
+    position: relative;
+    width: 100vw;
+  }
+}
+
+.hero--title-mobile {
+  @extend h1;
+  margin-bottom: 0;
+
+  span {
+    display: inline-block;
+  }
+}
+
+.hero--title-mobile-tweak {
+  margin-bottom: spacing(2);
+
+  @include media-query(365px, max-width) {
+    font-size: 4.8rem;
+  }
+}
+
+.hero--title-mobile-wrap {
+  display: flex;
+  justify-content: space-between;
+}

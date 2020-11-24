@@ -1,4 +1,4 @@
-<section class="hero {% if page.title == 'About' %}hero--about{% endif %}">
+<section class="hero {% if page.title == 'About' %}hero--about{% endif %}{% if page.title == 'Home' %}hero--home{% endif %}">
   <div class="hero__grid {% if page.type == 'casestudy' %} hero--flex">
 
     <div class="meta meta--credits">
@@ -57,6 +57,20 @@
           {{ page.title }}
         {% endif %}
       </h1>
+
+      {% if page.title == 'Home' %}
+      <div class="hero__home-masthead">
+        <div class="hero--title-mobile hero--title-mobile-tweak">
+          <span>Designs</span> <span>with</span>
+        </div>
+        <div class="thumbnail">
+          <img src="../images/home/lloyd-hero-face-mobile.jpg" alt="Lloyd Bennett">
+        </div>
+        <div class="hero--title-mobile hero--title-mobile-wrap">
+          <span>a</span> <span><i>purpose</i></span>
+        </div>
+      </div>
+      {% endif %}
 
       {% if page.description %}
       <p class="hero__copy" data-hero-copy>
