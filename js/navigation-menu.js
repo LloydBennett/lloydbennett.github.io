@@ -8,7 +8,6 @@ class NavigationMenu {
     this.menuTrigger = document.querySelectorAll('[data-toggle-menu]');
     this.parentBg = this.parent.querySelector('[data-nav-menu-bg]');
     this.navAsideOverlay = this.parent.querySelector('[data-nav-aside-overlay]');
-    this.navAsideImage = this.parent.querySelector('[data-nav-aside-image]');
     this.body = document.body;
     this.subMenuTrigger = document.querySelector('[data-toggle-sub-menu]');
     this.closeSubMenuTrigger = document.querySelector('[data-close-submenu]');
