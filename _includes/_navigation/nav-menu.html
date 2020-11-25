@@ -66,7 +66,7 @@
           <ul class="nav-menu__list">
             {% for casestudy in site.projects %}
             <li class="nav-menu__list-item nav-menu__sub-item">
-              <a href="{{ casestudy.url }}" class="nav-menu__link" data-nav-menu-link>
+              <a href="{{ casestudy.url }}" class="nav-menu__link" data-nav-menu-link="{{ casestudy.directory }}">
                 <span class="nav-menu__link-no">
                   {{ forloop.index | prepend: "0" }}
                 </span>
@@ -94,7 +94,7 @@
     <div class="nav-menu__aside-overlay" data-nav-aside-overlay></div>
     <div class="nav-menu__aside-image" data-nav-aside-image-wrapper>
 
-      <img src="../images/menu-cover.jpg" alt="Sideview" data-nav-aside-image="default">
+      <img class="nav-menu-image--active" src="../images/menu-cover.jpg" alt="Sideview" data-nav-aside-image="default">
       {% for project in site.projects %}
         <img src="../images/projects/{{ project.directory }}/menu-cover.jpg" alt="{{ project.title }}"
         data-nav-aside-image="{{ project.directory }}">

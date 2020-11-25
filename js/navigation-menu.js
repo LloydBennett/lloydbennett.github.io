@@ -14,8 +14,10 @@ class NavigationMenu {
     this.metaHr = document.querySelector('[data-meta-menu-hr]');
     this.metaFrame = document.querySelector('[data-meta-frame]');
     this.subMenu = document.querySelector('[data-sub-menu]');
+    this.subMenuLinks = this.subMenu.querySelectorAll('.nav-menu__sub-item');
     this.mainMenu = document.querySelector('[data-main-menu]');
     this.logo = document.querySelector('[data-logo]');
+    this.navSideImage = document.querySelectorAll('[data-nav-aside-image]');
     this.menuIsOpen = false;
     this.subMenuOpen = false;
     this.isAnimating = false;
@@ -55,6 +57,39 @@ class NavigationMenu {
     this.closeSubMenuTrigger.addEventListener('click', (e) => {
       e.preventDefault();
       this.toggleSubMenu(this);
+    });
+
+    this.subMenuLinks.forEach((el) => {
+      el.addEventListener('mouseover', () =>{
+        _this.showProjectImg(el);
+      });
+
+      el.addEventListener('mouseleave', () =>{
+        _this.removeProjectImg();
+      });
+    });
+  }
+
+  showProjectImg(target) {
+    let link = target.querySelector('a');
+    let projectLink = link.getAttribute('data-nav-menu-link');
+
+    this.navSideImage.forEach((item, i) => {
+      let currentDataVal = item.getAttribute('data-nav-aside-image');
+
+      if(currentDataVal === projectLink) {
+        item.classList.add('nav-menu-image--active');
+      } else {
+        item.classList.remove('nav-menu-image--active');
+      }
+    });
+  }
+
+  removeProjectImg(){
+    this.navSideImage.forEach((item, i) => {
+      if(item.getAttribute('data-nav-aside-image') == "default") {
+        item.classList.add('nav-menu-image--active');
+      }
     });
   }
 

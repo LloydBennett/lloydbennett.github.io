@@ -117,10 +117,6 @@
       transition: 200ms ease;
       transform: translateX(0);
     }
-
-    // a {
-    //   c
-    // }
   }
 }
 
@@ -193,8 +189,12 @@
   transition: 400ms ease 400ms;
 
   img {
-    display: block;
+    display: none;
     width: 100%;
+  }
+
+  .nav-menu-image--active {
+    display: block;
   }
 }
 
