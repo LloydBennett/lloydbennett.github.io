@@ -23,7 +23,12 @@
 }
 
 .meta--head {
-  display: table;
+  display: flex;
+  flex-direction: column;
+
+  @include media-query($breakpoint--small - 1, max-width) {
+    display: table;
+  }
 
   @media screen and (min-width: $breakpoint--small)
   and (max-width: $breakpoint--medium - 1) {
