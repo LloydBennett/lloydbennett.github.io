@@ -10,7 +10,7 @@
   <h2 class="card__title card__main">
     {{ casestudy.title }}
   </h2>
-  <a class="card__thumbnail" href="{{ casestudy.url }}">
+  <a class="card__thumbnail" href="{{ casestudy.url }}" data-page-transition="{{ casestudy.directory }}">
     {% include casestudy-graphic.html
       classlist= thumbnail-css-classes
       title= casestudy.directory
