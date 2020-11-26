@@ -68,6 +68,17 @@ class NavigationMenu {
         _this.removeProjectImg();
       });
     });
+
+    this.parentLinks.forEach((el) => {
+      el.addEventListener('mouseover', (e) => {
+        this.parentLinks.forEach(element => element.classList.add("nav-menu-link--inactive"));
+        el.classList.remove("nav-menu-link--inactive");
+      });
+      el.addEventListener('mouseleave', (e) => {
+        this.parentLinks.forEach(element => element.classList.remove("nav-menu-link--inactive"));
+      });
+    });
+
   }
 
   showProjectImg(target) {
