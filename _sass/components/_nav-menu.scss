@@ -102,9 +102,15 @@ $nav-inactive: #676767;
   }
 }
 
+.nav-menu__list {
+  display: flex;
+  flex-direction: column;
+}
+
 .nav-menu__list-item {
   margin-bottom: spacing(3);
   overflow: hidden;
+  align-self: flex-start;
 
   @include media-query($breakpoint--small) {
     margin-bottom: spacing(4);
