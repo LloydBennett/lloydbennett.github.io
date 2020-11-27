@@ -4,19 +4,22 @@
   <body data-body>
     <main class="website {% if page.type == "casestudy" %}website--casestudy{% endif %}"
     data-main>
-
-      <div id="{{ page.title | downcase }}" data-scroll>
-        {% include _navigation/nav-menu.html %}
-        {% include _navigation/nav-bar.html %}
-        {% include hero.html %}
-        {{ content }}
+      <div data-scroll>
+        <div id="{{ page.title | downcase }}">
+          {% include _navigation/nav-menu.html %}
+          {% include _navigation/nav-bar.html %}
+          {% include hero.html %}
+          {{ content }}
+        </div>
+        {% if page.type == "casestudy" %}
+          {% include _casestudy/casestudy-footer.html %}
+        {% else %}
+          {% include footer.html %}
+        {% endif %}
       </div>
+
     </main>
-    {% if page.type == "casestudy" %}
-      {% include _casestudy/casestudy-footer.html %}
-    {% else %}
-      {% include footer.html %}
-    {% endif %}
+
 
     <!-- <script src="/js/page-transition.js"></script> -->
     <!-- <script src="/js/smooth-to-section.js"></script> -->
