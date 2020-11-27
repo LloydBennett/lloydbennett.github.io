@@ -4,7 +4,7 @@
   <body data-body>
     <main class="website {% if page.type == "casestudy" %}website--casestudy{% endif %}">
 
-      <div id="{{ page.title | downcase }}" class="step--reset">
+      <div id="{{ page.title | downcase }}" data-scroll>
         {% include _navigation/nav-menu.html %}
         {% include _navigation/nav-bar.html %}
         {% include hero.html %}

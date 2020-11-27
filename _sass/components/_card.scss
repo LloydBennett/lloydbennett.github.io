@@ -66,6 +66,7 @@
   grid-column: 1 / 4;
   margin-bottom: spacing(3);
   grid-row-start: 1;
+  overflow: hidden;
 
   @include media-query($breakpoint--small) {
     grid-column: 1 / 7;
@@ -83,16 +84,45 @@
 
 
   &:hover {
-    .card__thumbnail-design {
-      img {
-        @include media-query($breakpoint--large - 1, max-width) {
-          transform: scale(1.1);
-          transition: 500ms ease;
-        }
-      }
+    .card__thumbnail-img {
+      transform: scale(1.1);
+      transition: 600ms transform ease-in;
     }
   }
 }
+
+.card__thumbnail-img {
+  padding-bottom: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  transition: 600ms transform ease-in;
+
+  @include media-query($breakpoint--small) {
+    padding-bottom: 750 / 960 * 100%;
+  }
+
+  @include media-query(850px) {
+    padding-bottom: 750 / 1179 * 100%;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    padding-bottom: 850 / 1619 * 100%;
+  }
+}
+
+// .card__thumbnail-img {
+//   position: absolute;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: 50% 0%;
+//   // height: calc(100% + (2 * 60px));
+//   // top: calc( -1 * 60px);
+//   // display: none;
+// }
+
+
 
 .card__description {
   @include max-paragraph-width;
