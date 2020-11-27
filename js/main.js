@@ -37,6 +37,7 @@
     // }
 
     new NavigationMenu();
+    new SmoothScroll();
 	}
 
   window.addEventListener('load', function(){
