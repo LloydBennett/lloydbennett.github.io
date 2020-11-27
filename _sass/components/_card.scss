@@ -86,7 +86,7 @@
   &:hover {
     .card__thumbnail-img {
       transform: scale(1.1);
-      transition: 600ms transform ease-in;
+      transition: 500ms transform cubic-bezier(0.28,0,0.49,1);
     }
   }
 }
@@ -97,7 +97,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 0%;
-  transition: 600ms transform ease-in;
+  transition: 500ms transform cubic-bezier(0.28,0,0.49,1);
+  transform: scale(1.001);
 
   @include media-query($breakpoint--small) {
     padding-bottom: 750 / 960 * 100%;
@@ -111,18 +112,6 @@
     padding-bottom: 850 / 1619 * 100%;
   }
 }
-
-// .card__thumbnail-img {
-//   position: absolute;
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: 50% 0%;
-//   // height: calc(100% + (2 * 60px));
-//   // top: calc( -1 * 60px);
-//   // display: none;
-// }
-
-
 
 .card__description {
   @include max-paragraph-width;
