@@ -4,7 +4,15 @@
     <div class="nav-bar" data-nav-bar>
       <div class="nav-bar__wrapper">
         <div class="nav-bar__back" data-close-submenu>
-          {% include back-icon.html %}
+          <svg width="50" height="50" class="nav-bar__back-outline">
+             <circle cx="25" cy="25" r="24" />
+          </svg>
+          <div class="nav-bar__back-main">
+            <div class="nav-bar__back-wrap">
+              {% include back-icon.html %}
+            </div>
+          </div>
+
         </div>
 
         <a class="nav-bar__logo" href="../../" data-logo>

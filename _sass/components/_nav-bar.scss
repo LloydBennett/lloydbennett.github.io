@@ -58,44 +58,74 @@
 }
 
 .nav-bar__back {
-  align-items: center;
-  border: 0.2rem solid $colour--white;
-  border-radius: 100%;
   cursor: pointer;
   display: none;
   opacity: 0;
-  height: 4rem;
-  justify-content: center;
-  width: 4rem;
-  transition: 300ms ease;
-
-  @include media-query($breakpoint--medium) {
-    width: 5rem;
-    height: 5rem;
-  }
+  position: relative;
 
   svg {
+    display: block;
     @include media-query($breakpoint--medium - 1, max-width) {
       width: 1.8rem;
     }
   }
 
   &.appear {
-    display: flex;
+    display: block;
     opacity: 1;
     transition: 300ms ease;
   }
 
   &:hover {
-    svg {
-      animation-name: anim-back;
-      animation-duration: 300ms;
-      animation-fill-mode: forwards;
-      animation-timing-function: ease-out;
+    .back-icon {
+      animation: link-hover-inverted 450ms ease 0s 1 forwards;
+
+      path {
+        transition: 500ms ease 100ms;
+        stroke: $colour--passion;
+      }
+    }
+    .nav-bar__back-outline circle {
+      stroke-dashoffset: -310px;
+      transition: 500ms ease;
     }
   }
 }
 
+.nav-bar__back-main {
+  align-items: center;
+  border: 0.2rem solid $colour--white;
+  border-radius: 100%;
+  height: 4rem;
+  justify-content: center;
+  width: 4rem;
+  transition: 300ms ease;
+  display: flex;
+
+  @include media-query($breakpoint--medium) {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.nav-bar__back-outline {
+  @include overlay;
+
+  circle {
+    stroke: $colour--passion;
+    stroke-width: 0.2rem;
+    fill: none;
+    transform: rotate(-90deg);
+    transform-origin: 50%;
+    stroke-dashoffset: -158px;
+    stroke-dasharray: 158px;
+    transition: 500ms ease;
+  }
+}
+
+.nav-bar__back-wrap {
+  overflow: hidden;
+}
 
 @keyframes anim-back {
   0, 100%{

@@ -33,7 +33,7 @@ class Loader {
 
     this.loaderTl.to(this.heroTitleLetters, {
       y: 0,
-      duration: 0.5,
+      duration: 0.4,
       stagger: {
         amount: 0.4
       }
@@ -41,7 +41,7 @@ class Loader {
 
     this.loaderTl.fromTo(this.heroContentGroup,
       { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5 }, "-=0.55"
+      { y: 0, opacity: 1, duration: 0.4 }, "-=0.5"
     );
 
     //this.loaderTl.to(this.strips, 0.8, { height: "100%", ease: Power4.out });
