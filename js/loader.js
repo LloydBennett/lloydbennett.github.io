@@ -2,12 +2,12 @@ class Loader {
   constructor(){
     this.loaderTl = new TimelineLite();
     this.heroTitle = document.querySelector('[data-hero-title]');
-    this.heroTitleLetters = this.heroTitle.querySelectorAll('.word span');
+    this.heroTitleLetters = this.heroTitle.querySelectorAll('.title-mask span');
     this.strips = document.querySelectorAll('[data-strips]');
 
     // this.heroBgStrips = document.querySelectorAll('[data-hero-strip]');
     // this.heroTitles = document.querySelectorAll('[data-hero-titles]');
-    // this.heroCopy = document.querySelector('[data-hero-copy]');
+    this.heroContentGroup = document.querySelectorAll('[data-hero-content-group]');
     // this.heroBtn = document.querySelector('[data-hero-cta]');
     // this.heroBtnLine = document.querySelector('[data-hero-cta] .button__line');
     // this.metaInfo = document.querySelector('[data-meta-info]');
@@ -26,24 +26,23 @@ class Loader {
     this.animateLoader();
   }
 
-  animateNodeList(nodelist, props, offset, duration = 0.3) {
-    nodelist.forEach((e, i) => {
-      if(i == 0) {
-        this.loaderTl.to(e, duration, props);
-      }
-      else {
-        this.loaderTl.to(e, duration, props, offset);
-      }
-    });
-  }
-
   animateLoader() {
     let offsetDelay = "-=0.15";
     let homePage = document.getElementById('home');
     let caseStudy = document.querySelector('.casestudy');
 
-    //this.animateNodeList(this.heroTitleLetters, { y: 0 }, "-=0.39", 0.4);
-    this.animateNodeList(this.strips, { height: "100%" }, "-=0.45", 0.6);
+    this.loaderTl.to(this.heroTitleLetters, {
+      y: 0,
+      duration: 0.5,
+      stagger: {
+        amount: 0.4
+      }
+    });
+
+    this.loaderTl.fromTo(this.heroContentGroup,
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5 }, "-=0.55"
+    );
 
     //this.loaderTl.to(this.strips, 0.8, { height: "100%", ease: Power4.out });
     // this.animateNodeList(this.heroBgStrips, { height: "100%" }, offsetDelay);
