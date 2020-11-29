@@ -3,6 +3,22 @@ const config = {
   width: window.innerWidth
 }
 
+let imageRevel = document.querySelectorAll('[data-image-reveal] .overlay');
+//let tlScroll = gsap.timeline()
+gsap.registerPlugin(ScrollTrigger);
+
+imageRevel.forEach(item => {
+  gsap.to(item, {
+    scrollTrigger: {
+      trigger: item,
+      start: "top center"
+    },
+    x: "100%",
+    duration: 0.7,
+    ease: "power2.inOut"
+  });
+});
+
 class SmoothScroll {
   constructor() {
     this.bindMethods();
