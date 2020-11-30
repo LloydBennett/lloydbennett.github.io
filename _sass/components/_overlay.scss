@@ -2,3 +2,7 @@
   @include overlay;
   background-color: $colour--grey;
 }
+
+.overlay--index {
+  z-index: 2;
+}
