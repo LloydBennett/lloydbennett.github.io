@@ -4,19 +4,19 @@ class Loader {
     this.heroTitle = document.querySelector('[data-hero-title]');
     this.heroTitleLetters = this.heroTitle.querySelectorAll('.title-mask span');
     this.strips = document.querySelectorAll('[data-strips]');
-
+    this.heroContentGroup = document.querySelectorAll('[data-hero-content-group]');
+    this.navBar = document.querySelector('[ data-nav-bar-hero ]');
     // this.heroBgStrips = document.querySelectorAll('[data-hero-strip]');
     // this.heroTitles = document.querySelectorAll('[data-hero-titles]');
-    this.heroContentGroup = document.querySelectorAll('[data-hero-content-group]');
     // this.heroBtn = document.querySelector('[data-hero-cta]');
     // this.heroBtnLine = document.querySelector('[data-hero-cta] .button__line');
-    // this.metaInfo = document.querySelector('[data-meta-info]');
+    this.metaInfo = document.querySelector('[data-meta-info]');
     // this.footer = document.querySelector('[data-footer]');
     // this.heroImage = document.querySelector('[data-hero-image]');
     // this.heroHorizLine = document.querySelector('[data-hero-hr]');
     // this.heroDetailsListItems = document.querySelectorAll('[data-hero-details-item]');
     // this.heroSocials = document.querySelector('[data-hero-socials]');
-    // this.navBar = document.querySelector('[data-nav-bar]');
+
     // this.finishedCalculating = false;
 
     this.init();
@@ -24,6 +24,7 @@ class Loader {
 
   init() {
     this.animateLoader();
+    console.log(this.navBar);
   }
 
   animateLoader() {
@@ -40,7 +41,7 @@ class Loader {
     });
 
     this.loaderTl.fromTo(this.heroContentGroup,
-      { y: 100, opacity: 0 },
+      { y: 50, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.4 }, "-=0.5"
     );
 
@@ -59,9 +60,9 @@ class Loader {
     //   this.animateNodeList(this.heroDetailsListItems, { y: 0 }, "-=0.05", 0.2);
     // }
     //
-    // this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1 }, "last-elements");
+    this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
     // this.loaderTl.fromTo(this.heroSocials, 0.6, { opacity: 0}, { opacity: 1 }, "last-elements");
-    // this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0}, { opacity: 1 }, "last-elements");
+    this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
     // this.loaderTl.fromTo(this.footer, 0.3, { opacity: 0 }, { opacity: 1 });
   }
 }
