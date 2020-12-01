@@ -60,14 +60,19 @@
 
       {% if page.title == 'Home' %}
       <div class="hero__home-masthead">
-        <div class="hero--title-mobile hero--title-mobile-tweak">
-          <span>Designs</span> <span>with</span>
+        <div class="hero--title-mobile hero--title-mobile-tweak" data-hero-title>
+          <div class="no-wrap-and-break title-mask title-mask--with-padding">
+            <span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span><span>s</span><span>&nbsp;</span><span>w</span><span>i</span><span>t</span><span>h</span>
+          </div>
         </div>
         <div class="thumbnail">
           <img src="../images/home/lloyd-hero-face-mobile.jpg" alt="Lloyd Bennett">
         </div>
-        <div class="hero--title-mobile hero--title-mobile-wrap">
-          <span>a</span> <span><i>purpose</i></span>
+        <div class="hero--title-mobile" data-hero-title>
+          <div class="no-wrap-and-break title-mask title-mask--with-padding hero--title-mobile-wrap">
+            <span>a</span>&nbsp;<span class="italic">p</span><span class="italic">u</span><span class="italic">r</span><span class="italic">p</span><span class="italic">o</span><span class="italic">s</span><span class="italic">e</span>
+          </div>
+
         </div>
       </div>
       {% endif %}
