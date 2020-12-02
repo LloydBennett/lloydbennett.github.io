@@ -6,6 +6,7 @@ class Loader {
     this.heroContentGroup = document.querySelectorAll('[data-hero-content-group]');
     this.navBar = document.querySelector('[ data-nav-bar-hero ]');
     this.metaInfo = document.querySelector('[data-meta-info]');
+    this.loader = document.querySelector('[ data-loader ]');
 
     this.init();
   }
@@ -15,7 +16,6 @@ class Loader {
   }
 
   animateLoader() {
-    let offsetDelay = "-=0.15";
     let homePage = document.getElementById('home');
     let caseStudy = document.querySelector('.casestudy');
     let heroTitleAnim = {
@@ -26,20 +26,28 @@ class Loader {
       }
     }
 
+    //this.loaderTl.to(this.loader, { opacity: 0, visibility: "hidden", duration: 0.6, ease: "power2.in" });
+
     this.heroTitle.forEach((item, i) => {
       let letters = item.querySelectorAll('.title-mask span');
-      if(i == this.heroTitle.length - 1) {
-        this.loaderTl.to(letters, heroTitleAnim, "-=0.6");
-      } else {
+
+      if(homePage) {
+        if(i == this.heroTitle.length - 1) {
+          this.loaderTl.to(letters, heroTitleAnim, "-=0.6");
+        } else {
+          this.loaderTl.to(letters, heroTitleAnim, "titles");
+        }
+      }
+      else {
         this.loaderTl.to(letters, heroTitleAnim, "titles");
       }
+
     });
 
     this.loaderTl.fromTo(this.heroContentGroup,
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.4 }, "-=0.5"
     );
-
 
     this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
     this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
