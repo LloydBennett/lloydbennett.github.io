@@ -28,7 +28,7 @@ class Loader {
       }
     }
 
-    //this.loaderTl.to(this.loader, { opacity: 0, visibility: "hidden", duration: 0.6, ease: "power2.in" });
+    this.loaderTl.to(this.loader, { opacity: 0, visibility: "hidden", duration: 0.6, ease: "power2.in" });
 
     this.heroTitle.forEach((item, i) => {
       let letters = item.querySelectorAll('.title-mask span');

@@ -1,0 +1,28 @@
+.loader {
+  @include overlay;
+  position: fixed;
+  background-color: $colour--grit;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader__percentage {
+  font-family: $type--family-alt;
+  color: $colour--white;
+  font-size: 4.2rem;
+}
+
+.loader__strips {
+  @include overlay;
+  display: flex;
+}
+
+.loader__strip-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33.3%;
+  background-color: red;
+}

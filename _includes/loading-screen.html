@@ -1,11 +1,15 @@
 <div class="loader" data-loader>
-  <div class="loader__bg">
-    {% include background-strip.html colour= "202020" %}
+  <div class="loader__strips">
+    <div class="loader__strip"></div>
+    <div class="loader__strip"></div>
+    <div class="loader__strip"></div>
   </div>
-  <div class="loader__progress" data-loader-timer>
-    <span class="loader__percentage" data-loader-percentage>
-      00
-    </span>
-    <span class="loader__percentage">%</span>
+  <div class="loader__circle">
+    <div class="loader__progress" data-loader-timer>
+      <span class="loader__percentage" data-loader-percentage>
+        00
+      </span>
+      <span class="loader__percentage">%</span>
+    </div>
   </div>
 </div>
