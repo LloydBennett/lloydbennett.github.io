@@ -2,6 +2,8 @@ class Loader {
   constructor(){
     this.loaderTl = new TimelineLite();
     this.heroTitle = document.querySelectorAll('[data-hero-title]');
+    this.heroMobileImgOverlay = document.querySelector('[data-home-mobile-image] .overlay');
+    this.heroMobileImg = document.querySelector('[data-home-mobile-image] img');
     this.strips = document.querySelectorAll('[data-strips]');
     this.heroContentGroup = document.querySelectorAll('[data-hero-content-group]');
     this.navBar = document.querySelector('[ data-nav-bar-hero ]');
@@ -37,12 +39,24 @@ class Loader {
         } else {
           this.loaderTl.to(letters, heroTitleAnim, "titles");
         }
+        this.loaderTl.to(this.heroMobileImgOverlay,
+        {
+          x: "100%",
+          duration: 0.7,
+          ease: "power2.inOut"
+        }, "titles");
       }
       else {
         this.loaderTl.to(letters, heroTitleAnim, "titles");
       }
-
     });
+
+    if(homePage) {
+      this.loaderTl.fromTo(this.heroMobileImg,
+        { scale: 1.2 },
+        { scale: 1, duration: 0.5, ease: "power2.out"},
+      "-=0.7");
+    }
 
     this.loaderTl.fromTo(this.heroContentGroup,
       { y: 50, opacity: 0 },
