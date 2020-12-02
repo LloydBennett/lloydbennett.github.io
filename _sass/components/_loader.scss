@@ -11,7 +11,7 @@
 .loader__percentage {
   font-family: $type--family-alt;
   color: $colour--white;
-  font-size: 4.2rem;
+  font-size: 3rem;
 }
 
 .loader__strips {
@@ -27,4 +27,31 @@
 
 .loader-strip-line--white {
   background-color: $colour--white;
+}
+
+.loader__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader__progress {
+  position: absolute;
+}
+
+.loader__circle {
+  fill: none;
+  stroke-width: 0.3rem;
+}
+
+.loader-circle--progress {
+  stroke: lighten($colour--grit, 20%);
+}
+
+.loader-circle--loaded {
+  stroke: $colour--passion;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
