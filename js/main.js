@@ -26,16 +26,6 @@
       });
     });
 
-    // if(homePage) {
-    //   buttonLine.addEventListener('animationend', () => {
-    //     var $thisElem = event.target;
-    //     if($thisElem.classList.contains('wow')){
-    //       $thisElem.classList.remove('wow', 'anim-grow');
-    //       $thisElem.setAttribute("style", "");
-    //     };
-    //   });
-    // }
-
     new NavigationMenu();
     new SmoothScroll();
 	}
