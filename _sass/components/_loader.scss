@@ -20,9 +20,11 @@
 }
 
 .loader__strip-line {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 33.3%;
-  background-color: red;
+  background-color: $colour--grey;
+  height: 0;
+}
+
+.loader-strip-line--white {
+  background-color: $colour--white;
 }

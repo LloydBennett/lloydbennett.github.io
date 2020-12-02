@@ -1,8 +1,14 @@
 <div class="loader" data-loader>
   <div class="loader__strips">
-    <div class="loader__strip"></div>
-    <div class="loader__strip"></div>
-    <div class="loader__strip"></div>
+    {% if page.type == "casestudy" %}
+    <div class="loader__strip-line loader-strip-line--white" data-loader-strip></div>
+    <div class="loader__strip-line loader-strip-line--white" data-loader-strip></div>
+    <div class="loader__strip-line loader-strip-line--white" data-loader-strip></div>
+    {% else %}
+    <div class="loader__strip-line" data-loader-strip></div>
+    <div class="loader__strip-line" data-loader-strip></div>
+    <div class="loader__strip-line" data-loader-strip></div>
+    {% endif %}
   </div>
   <div class="loader__circle">
     <div class="loader__progress" data-loader-timer>
@@ -13,3 +19,9 @@
     </div>
   </div>
 </div>
+
+{% if page.type == "casestudy" %}
+  {% capture stripColour %}"#FFFFFF"{% endcapture %}
+{% else %}
+  {% capture stripColour %}"#FFFFFF"{% endcapture %}
+{% endif %}

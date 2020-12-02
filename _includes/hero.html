@@ -65,7 +65,7 @@
             <span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span><span>s</span><span>&nbsp;</span><span>w</span><span>i</span><span>t</span><span>h</span>
           </div>
         </div>
-        <div class="thumbnail image-reveal" data-home-mobile-image>
+        <div class="thumbnail image-reveal" data-hero-image>
           <div class="overlay overlay--index"></div>
           <img src="../images/home/lloyd-hero-face-mobile.jpg" alt="Lloyd Bennett">
         </div>
@@ -98,8 +98,8 @@
 
   {% if page.type == 'casestudy' %}
 
-    <picture class="thumbnail image-reveal" data-image-reveal>
-      <div class="overlay overlay--index overlay--white" data-image-overlay></div>
+    <picture class="thumbnail image-reveal" data-hero-image>
+      <div class="overlay overlay--index overlay--white"></div>
       <source media="(max-width: 700px)" srcset="../images/projects/{{page.directory}}/hero/hero-small.jpg">
       <source media="(max-width: 1270px)" srcset="../images/projects/{{page.directory}}/hero/hero-medium.jpg">
       <source media="(min-width: 1271px)" srcset="../images/projects/{{page.directory}}/hero/hero-large.jpg">
@@ -126,8 +126,8 @@
     {% else %}
 
       <div class="hero__grid hero--collaspe-padding">
-        <picture class="hero__image hero--image-two-thirds image-reveal" data-image-reveal>
-          <div class="overlay overlay--index" data-image-overlay></div>
+        <picture class="hero__image hero--image-two-thirds image-reveal" data-hero-image>
+          <div class="overlay overlay--index"></div>
           <source media="(min-width: 1000px)" srcset="../images/{{page.directory}}/hero@1-5x.jpg">
           <source media="(min-width: 700px)" srcset="../images/{{page.directory}}/hero.jpg">
           <img src="../images/{{page.directory}}/hero-mobile.jpg" alt="image" />
