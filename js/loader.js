@@ -10,11 +10,12 @@ class Loader {
     this.metaInfo = document.querySelector('[data-meta-info]');
     this.loader = document.querySelector('[ data-loader ]');
     this.loaderStrips = document.querySelectorAll('[ data-loader-strip ]');
-
+    this.body = document.querySelector('[data-body]');
     this.init();
   }
 
   init() {
+    this.body.classList.add('no-scrolling');
     this.animateLoader();
   }
 
@@ -29,17 +30,23 @@ class Loader {
       }
     }
 
-    // this.loaderTl.to(this.loaderStrips,
-    //   {
-    //     height: "100%",
-    //     duration: 0.6,
-    //     ease: Power2.easeInOut,
-    //     stagger: {
-    //       amount: 0.3
-    //     }
-    //   }, "+=0.8");
+    this.loaderTl.to(this.loaderStrips,
+      {
+        height: "100%",
+        duration: 0.6,
+        ease: Power2.easeInOut,
+        stagger: {
+          amount: 0.3
+        }
+      }, "+=0.8");
 
-    //this.loaderTl.to(this.loader, { opacity: 0, visibility: "hidden", duration: 0.3, ease: "power2.in" });
+    this.loaderTl.to(this.loader, {
+      opacity: 0,
+      visibility: "hidden",
+      duration: 0.3,
+      ease: "power2.in",
+      oncomplete: () => { this.body.classList.remove('no-scrolling') }
+    });
 
     this.heroTitle.forEach((item, i) => {
       let letters = item.querySelectorAll('.title-mask span');
