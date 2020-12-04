@@ -4,19 +4,19 @@
   {% capture project-image-url %}images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}{% endcapture %}
 
 <div class="card">
-  <h2 class="card__no card__side">
-    {{ forloop.index | prepend: "0" }}
+  <h2 class="card__no card__side title-mask" data-text-wipe>
+    <span>{{ forloop.index | prepend: "0" }}</span>
   </h2>
-  <h2 class="card__title card__main">
-    {{ casestudy.title }}
+  <h2 class="card__title card__main title-mask" data-text-wipe>
+    {% assign casestudyTitle = casestudy.title | split: ' ' %}
+
+    {% for title in casestudyTitle %}
+      <span>{{ title }}</span>
+    {% endfor %}
   </h2>
-  <a class="card__thumbnail" href="{{ casestudy.url }}" data-page-transition="{{ casestudy.directory }}" data-item>
-    <!-- {% include casestudy-graphic.html
-      classlist= thumbnail-css-classes
-      title= casestudy.directory
-      image-url= project-image-url
-    %} -->
-    <div class="card__thumbnail-img" style="background-image: url('{{ project-image-url }}-4.jpg')"></div>
+  <a class="card__thumbnail image-reveal" href="{{ casestudy.url }}" data-page-transition="{{ casestudy.directory }}" data-image-reveal>
+    <div class="overlay overlay--index" data-image-overlay></div>
+    <div class="card__thumbnail-img" style="background-image: url('{{ project-image-url }}-4.jpg')" data-image-reveal-content></div>
   </a>
 
   <ul class="card__meta-tags card__side card--desktop">
