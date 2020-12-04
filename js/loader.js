@@ -26,7 +26,6 @@ class Loader {
     this.loaderSpinnerCircle.style.strokeDasharray = this.LSPINNER_CIRCUMFERENCE;
     this.body.classList.add('no-scrolling');
     this.calculatePageLoadTime(0);
-
   }
 
   animateLoader() {
@@ -85,31 +84,31 @@ class Loader {
       this.loaderTl.to(this.heroImgOverlay,
       {
         x: "100%",
-        duration: 0.7,
-        ease: "power2.inOut"
+        duration: 0.6,
+        ease: "power2.in"
       }, "-=0.4");
 
       this.loaderTl.fromTo(this.heroImg,
         { scale: 1.2 },
         { scale: 1, duration: 0.6, ease: "power2.out"},
-      "-=0.4");
+      "-=0.1");
     }
     else {
       this.loaderTl.to(this.heroImgOverlay,
       {
         x: "100%",
-        duration: 0.7,
-        ease: "power2.inOut"
+        duration: 0.6,
+        ease: "power2.in"
       }, "titles+=0.4");
 
       this.loaderTl.fromTo(this.heroImg,
         { scale: 1.2 },
         { scale: 1, duration: 0.5, ease: "power2.out"},
-      "-=0.4");
+      "-=0.1");
 
       this.loaderTl.fromTo(this.heroContentGroup,
         { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4 }, "-=0.8"
+        { y: 0, opacity: 1, duration: 0.4 }, "-=1.05"
       );
 
       this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
