@@ -92,6 +92,7 @@ class Loader {
         { scale: 1.2 },
         { scale: 1, duration: 0.6, ease: "power2.out"},
       "-=0.1");
+      this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
     }
     else {
       this.loaderTl.to(this.heroImgOverlay,
@@ -111,10 +112,10 @@ class Loader {
         { y: 0, opacity: 1, duration: 0.4 }, "-=1.05"
       );
 
-      this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
+      this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.8");
+      this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.8");
     }
 
-    this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
   }
 
   calculatePageLoadTime(progress) {
