@@ -54,4 +54,8 @@
   position: absolute;
   top: 0;
   left: 0;
+  stroke-dashoffset: 520px;
+  stroke-dasharray: 520px;
+  transform: rotate(-90deg);
+  transform-origin: 50%;
 }

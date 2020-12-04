@@ -11,12 +11,21 @@ class Loader {
     this.loader = document.querySelector('[ data-loader ]');
     this.loaderStrips = document.querySelectorAll('[ data-loader-strip ]');
     this.body = document.querySelector('[data-body]');
+    this.loaderSpinner = document.querySelector('[data-loader-spinner]');
+    this.loaderSpinnerCircle = this.loaderSpinner.querySelector('circle');
+
+    this.LSPINNER_WIDTH = this.loaderSpinner.getBoundingClientRect().width;
+    this.LSPINNER_WIDTH_RULE = this.LSPINNER_WIDTH / 10;
+    this.LSPINNER_RADIUS = (this.LSPINNER_WIDTH / 2) - (this.LSPINNER_WIDTH_RULE / 2) ;
+    this.LSPINNER_CIRCUMFERENCE = 2 * Math.PI * this.LSPINNER_RADIUS;
+
     this.init();
   }
 
   init() {
+    this.loaderSpinnerCircle.style.strokeDasharray = this.LSPINNER_CIRCUMFERENCE;
     this.body.classList.add('no-scrolling');
-    this.animateLoader();
+    this.calculatePageLoadTime(0);
   }
 
   animateLoader() {
@@ -64,7 +73,6 @@ class Loader {
     });
 
     if(caseStudy) {
-      console.log('heyy casestudy!!');
       this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "-=0.4");
 
       this.loaderTl.to(this.heroImgOverlay,
@@ -101,6 +109,26 @@ class Loader {
     }
 
     this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
+  }
+
+  calculatePageLoadTime(progress) {
+    this.updateLoading(progress);
+    progress++;
+
+    let timer = setTimeout(() => {
+      this.calculatePageLoadTime(progress);
+    }, 40);
+
+    if(progress > 100) {
+      clearInterval(timer);
+      this.animateLoader();
+    }
+  }
+
+  updateLoading(amount) {
+    let progress = amount / 100;
+    let dashoffset = this.LSPINNER_CIRCUMFERENCE * (1 - progress);
+    this.loaderSpinnerCircle.style.strokeDashoffset = dashoffset;
   }
 }
 
