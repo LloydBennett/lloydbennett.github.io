@@ -13,12 +13,12 @@ class Loader {
     this.body = document.querySelector('[data-body]');
     this.loaderSpinner = document.querySelector('[data-loader-spinner]');
     this.loaderSpinnerCircle = this.loaderSpinner.querySelector('circle');
+    this.loaderContent = document.querySelector('[data-loader-content]');
 
     this.LSPINNER_WIDTH = this.loaderSpinner.getBoundingClientRect().width;
     this.LSPINNER_WIDTH_RULE = this.LSPINNER_WIDTH / 10;
     this.LSPINNER_RADIUS = (this.LSPINNER_WIDTH / 2) - (this.LSPINNER_WIDTH_RULE / 2) ;
     this.LSPINNER_CIRCUMFERENCE = 2 * Math.PI * this.LSPINNER_RADIUS;
-
     this.init();
   }
 
@@ -26,6 +26,7 @@ class Loader {
     this.loaderSpinnerCircle.style.strokeDasharray = this.LSPINNER_CIRCUMFERENCE;
     this.body.classList.add('no-scrolling');
     this.calculatePageLoadTime(0);
+
   }
 
   animateLoader() {
@@ -47,7 +48,13 @@ class Loader {
         stagger: {
           amount: 0.3
         }
-      }, "+=0.8");
+      }, "+=0.2");
+
+    this.loaderTl.to(this.loaderContent, {
+      opacity: 0,
+      duration: 0.3,
+      ease: Power2.easeIn
+    }, "-=0.7");
 
     this.loaderTl.to(this.loader, {
       opacity: 0,
@@ -117,7 +124,7 @@ class Loader {
 
     let timer = setTimeout(() => {
       this.calculatePageLoadTime(progress);
-    }, 40);
+    }, 30);
 
     if(progress > 100) {
       clearInterval(timer);
