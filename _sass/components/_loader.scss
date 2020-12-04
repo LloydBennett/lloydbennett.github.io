@@ -43,6 +43,19 @@
 .loader__circle {
   fill: none;
   stroke-width: 0.3rem;
+
+  @include media-query($breakpoint--small - 1, max-width) {
+    width: 80px;
+    height: 80px;
+  }
+
+  circle {
+    @include media-query($breakpoint--small - 1, max-width) {
+      cx: 40;
+      cy: 40;
+      r: 36;
+    }
+  }
 }
 
 .loader-circle--progress {
