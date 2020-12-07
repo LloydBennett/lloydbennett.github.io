@@ -48,7 +48,8 @@ class PageTransitions {
     this.wrapper.removeChild(currentPageContent);
     this.reloadFunctionality();
   }
+  
   reloadFunctionality() {
-    console.log('heyyy yo!');
+    new Website();
   }
 }
