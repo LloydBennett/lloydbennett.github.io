@@ -4,7 +4,7 @@ class PageTransitions {
     this.wrapper = document.querySelector('[data-main]');
     this.body = document.querySelector('body');
     this.currentTrigger;
-    this.currentTriggerMorphElem;
+    this.currentTriggerMorphElems = [];
     this.currentTriggerParent;
 
     this.init();
@@ -21,12 +21,10 @@ class PageTransitions {
         let url = item.href;
         this.currentTrigger = item;
         this.currentTriggerParent = item.parentNode;
-        this.currentTriggerMorphElem = this.currentTriggerParent.querySelector('.card__morph');
+        // this.currentTriggerMorphElem = this.currentTriggerParent.querySelector('.card__morph');
         this.getPageData(url);
       });
     });
-
-
   }
 
   getPageData(url) {
@@ -61,8 +59,8 @@ class PageTransitions {
   insertNewPageContent(newPage) {
     let currentPageContent = document.querySelector('[data-scroll]');
 
-    //this.wrapper.appendChild(newPage);
-    //this.wrapper.removeChild(currentPageContent);
+    this.wrapper.appendChild(newPage);
+    this.wrapper.removeChild(currentPageContent);
     // this.reloadFunctionality();
   }
 
@@ -79,39 +77,82 @@ class PageTransitions {
     let top = trigger.getBoundingClientRect().top;
     let left = trigger.getBoundingClientRect().left;
     let bodyRect = document.body.getBoundingClientRect();
+    let intViewportHeight = window.innerHeight;
+    //let windowBottom =
+    //let newTopPos = (top * intViewportHeight) / 100;
+    console.log(newTopPos);
+
 
     cardMorph.style.width = `${width}px`;
     cardMorph.style.height = `${height}px`;
+    // cardMorph.style.top = `${top - bodyRect.top }px`;
     cardMorph.style.top = `${top - bodyRect.top }px`;
+    //cardMorph.style.top = "466.515625px";
     cardMorph.style.left = `${left - bodyRect.left }px`;
+
+    //this.wrapper.removeChild(cardMorph);
+    this.body.insertBefore(cardMorph, this.wrapper);
+    this.currentTriggerMorphElems.push(cardMorph);
   }
 
   animate(htmlElement) {
+    let _this = this;
     let tl = new TimelineLite();
+    let transitionName = getTransitionEndEventName();
     let newHTML = this.getNewHTML(htmlElement);
-    let heroImage = newHTML.querySelector('[data-hero-image]');
-    let heroImageHeight = heroImage.offsetHeight;
+    let currentTriggerAttr = this.currentTrigger.dataset.pageTransition;
+    let heroSelectorName = "#" + currentTriggerAttr + " " + "[data-hero-image]";
+    let heroImage;
+    let heroImageHeight;
+    let currentMorphItem;
 
-    //console.log(width);
-    //this.body.classList.add('no-scrolling');
+    this.wrapper.addEventListener(transitionName, () => {
+      _this.insertNewPageContent(newHTML);
+      heroImage = document.querySelector(heroSelectorName);
+      heroImageHeight = heroImage.offsetHeight;
+      let heroImageXpos = heroImage.getBoundingClientRect().top;
+
+      tl.to(currentMorphItem,{
+        width: window.innerWidth,
+        left: 0,
+        ease: Power2.easeIn,
+        duration: 0.4
+      }, "+=0.3");
+
+      tl.to(currentMorphItem,{
+        height: heroImageHeight,
+        ease: Power2.easeIn,
+        duration: 0.4
+      });
+
+      // tl.to(currentMorphItem,{
+      //   top: heroImageXpos,
+      //   ease: Power2.easeIn,
+      //   duration: 0.8,
+      //   onComplete: () => {
+      //     window.scrollTo(0, 0);
+      //     //_this.body.classList.add('no-scrolling');
+      //   }
+      // });
+
+
+    });
+
     this.wrapper.classList.add('website--hide-content','website--casestudy');
 
-    this.currentTriggerMorphElem.style.opacity = 1;
+    this.currentTriggerMorphElems.forEach((item) => {
+      if (item.dataset.cardMorph === currentTriggerAttr) {
+        currentMorphItem = item;
+      }
+    });
 
+    currentMorphItem.style.opacity = 1;
 
-    tl.to(this.currentTriggerMorphElem,{
-      width: window.innerWidth,
-      left: 0,
-      ease: Power2.easeIn,
-      duration: 0.4
-    }, "+=0.3");
+    // setTimeout(() => {
+    //   this.body.classList.add('no-scrolling');
+    //
+    // }, 3000);
 
-    console.log(heroImage);
-    // tl.to(this.currentTriggerMorphElem,{
-    //   height: heroImageHeight,
-    //   ease: Power2.easeIn,
-    //   duration: 0.4
-    // });
 
     //this.insertNewPageContent(newHTML);
   }

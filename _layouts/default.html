@@ -6,7 +6,12 @@
     <main class="website {% if page.type == "casestudy" %}website--casestudy{% endif %}"
     data-main>
       <div data-scroll>
-        <div id="{{ page.title | downcase }}" data-page-content>
+        {% if page.type == "casestudy" %}
+          {% assign title = page.directory %}
+        {% else %}
+          {% assign title = page.title | replace: ' ', ''%}
+        {% endif %}
+        <div id="{{ title | downcase }}" data-page-content>
           {% include _navigation/nav-menu.html %}
           {% include _navigation/nav-bar.html %}
           {% include hero.html %}
