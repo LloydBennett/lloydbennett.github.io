@@ -8,6 +8,13 @@ function scrollToSection(e, $this) {
              navigator.userAgent.indexOf('FxiOS') == -1;
   var destination = $this.getAttribute("href");
 
+
+  //heroCta.forEach(function(element, index){
+  //       element.addEventListener('click', (e) => {
+  //         scrollToSection(e, element)
+  //       });
+  //     });
+
   // Scroll functionality works differently on safari
 
   if($this.hasAttribute('data-scroll-to-bottom')) {
