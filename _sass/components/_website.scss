@@ -3,9 +3,10 @@
   z-index: 3;
   background-color: $colour--grey;
 
-  // @include media-query($breakpoint--small) {
-  //   margin-bottom: 100vh;
-  // }
+  &.website--hide-content > * {
+    opacity: 0;
+    transition: 400ms ease opacity;
+  }
 }
 
 .website--casestudy {

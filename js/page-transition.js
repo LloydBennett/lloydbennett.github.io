@@ -43,14 +43,15 @@ class PageTransitions {
 
     htmlWrapper.innerHTML = data;
 
-    if(htmlWrapper.querySelector('.website--casestudy')) {
-      this.wrapper.classList.add('website--casestudy');
-    }
-    pageContent = htmlWrapper.querySelector('[data-scroll]');
 
-    this.wrapper.appendChild(pageContent);
-    this.wrapper.removeChild(currentPageContent);
-    this.reloadFunctionality();
+    this.wrapper.classList.add('website--hide-content','website--casestudy');
+
+
+    // pageContent = htmlWrapper.querySelector('[data-scroll]');
+    //
+    // this.wrapper.appendChild(pageContent);
+    // this.wrapper.removeChild(currentPageContent);
+    // this.reloadFunctionality();
   }
 
   reloadFunctionality() {
