@@ -28,6 +28,7 @@
 
     new NavigationMenu();
     new SmoothScroll();
+    new PageTransitions();
 	}
 
   window.addEventListener('load', function(){

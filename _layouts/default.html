@@ -6,7 +6,7 @@
     <main class="website {% if page.type == "casestudy" %}website--casestudy{% endif %}"
     data-main>
       <div data-scroll>
-        <div id="{{ page.title | downcase }}">
+        <div id="{{ page.title | downcase }}" data-page-content>
           {% include _navigation/nav-menu.html %}
           {% include _navigation/nav-bar.html %}
           {% include hero.html %}
@@ -22,7 +22,7 @@
     </main>
 
 
-    <!-- <script src="/js/page-transition.js"></script> -->
+    <script src="/js/page-transition.js"></script>
     <!-- <script src="/js/smooth-to-section.js"></script> -->
 
     <script src="/js/main.js"></script>
