@@ -42,13 +42,17 @@ class PageTransitions {
     let pageContent;
 
     htmlWrapper.innerHTML = data;
+
+    if(htmlWrapper.querySelector('.website--casestudy')) {
+      this.wrapper.classList.add('website--casestudy');
+    }
     pageContent = htmlWrapper.querySelector('[data-scroll]');
 
     this.wrapper.appendChild(pageContent);
     this.wrapper.removeChild(currentPageContent);
     this.reloadFunctionality();
   }
-  
+
   reloadFunctionality() {
     new Website();
   }

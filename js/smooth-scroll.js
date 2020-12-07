@@ -1,15 +1,13 @@
-const config = {
-  height: window.innerHeight,
-  width: window.innerWidth
-}
-
-gsap.registerPlugin(ScrollTrigger);
-
-
 class SmoothScroll {
   constructor() {
+    gsap.registerPlugin(ScrollTrigger);
     this.bindMethods();
     this.activateScrollTriggerEvents();
+
+    this.config = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    }
 
     this.data = {
       ease: 0.1,
@@ -62,7 +60,7 @@ class SmoothScroll {
     this.data.rounded = Math.round(this.data.last * 100) / 100
 
     const diff = this.data.current - this.data.rounded
-    const acc = diff / config.width
+    const acc = diff / this.config.width
 
     this.dom.content.style.transform = `translate3d(0, -${this.data.rounded}px, 0)`;
     this.requestAnimationFrame();

@@ -150,7 +150,6 @@ class NavigationMenu {
         }
       }
 
-
       elemChild.forEach((item, i) => {
         _this.menuIsOpen? delay = 20 * i : delay = 0;
 
@@ -218,6 +217,6 @@ class NavigationMenu {
   }
 }
 
-NavigationMenu.prototype = {
-  smoothScrolling: scrollToSection
-}
+// NavigationMenu.prototype = {
+//   smoothScrolling: scrollToSection
+// }
