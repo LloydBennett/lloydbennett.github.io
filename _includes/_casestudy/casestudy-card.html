@@ -3,7 +3,10 @@
 {% for casestudy in casestudies %}
   {% capture project-image-url %}images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}{% endcapture %}
 
+
 <div class="card">
+  <div class="card__morph" style="background-color: #{{ casestudy.colour }}"></div>
+
   <h2 class="card__no card__side title-mask" data-text-wipe>
     <span>{{ forloop.index | prepend: "0" }}</span>
   </h2>

@@ -128,3 +128,12 @@
     display: none;
   }
 }
+
+.card__morph {
+  @include overlay;
+  z-index: 6;
+  opacity: 0;
+  transition: 300ms ease opacity;
+  pointer-events: none;
+  position: fixed;
+}
