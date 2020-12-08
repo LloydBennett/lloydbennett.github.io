@@ -17,6 +17,7 @@ class PageTransitions {
 
       item.addEventListener('click', (ev) => {
         ev.preventDefault();
+        ev.stopPropagation();
 
         let url = item.href;
         this.currentTrigger = item;
@@ -39,7 +40,7 @@ class PageTransitions {
 
       if (xhr.status === 200) {
         //_this.insertNewPageContent(xhr.response);
-        _this.animate(xhr.response);
+        _this.animateTransition(xhr.response);
       }
       else {
         console.log('failed!!');
@@ -80,13 +81,13 @@ class PageTransitions {
     let intViewportHeight = window.innerHeight;
     //let windowBottom =
     //let newTopPos = (top * intViewportHeight) / 100;
-    console.log(newTopPos);
+    //console.log(newTopPos);
 
 
     cardMorph.style.width = `${width}px`;
     cardMorph.style.height = `${height}px`;
-    // cardMorph.style.top = `${top - bodyRect.top }px`;
     cardMorph.style.top = `${top - bodyRect.top }px`;
+    //cardMorph.style.top = "20%";
     //cardMorph.style.top = "466.515625px";
     cardMorph.style.left = `${left - bodyRect.left }px`;
 
@@ -95,7 +96,7 @@ class PageTransitions {
     this.currentTriggerMorphElems.push(cardMorph);
   }
 
-  animate(htmlElement) {
+  animateTransition(htmlElement) {
     let _this = this;
     let tl = new TimelineLite();
     let transitionName = getTransitionEndEventName();
@@ -106,24 +107,31 @@ class PageTransitions {
     let heroImageHeight;
     let currentMorphItem;
 
+    this.currentTriggerMorphElems.forEach((item) => {
+      if (item.dataset.cardMorph === currentTriggerAttr) {
+        currentMorphItem = item;
+      }
+    });
+
     this.wrapper.addEventListener(transitionName, () => {
+      //window.scrollTo(0,0);
       _this.insertNewPageContent(newHTML);
       heroImage = document.querySelector(heroSelectorName);
       heroImageHeight = heroImage.offsetHeight;
       let heroImageXpos = heroImage.getBoundingClientRect().top;
 
-      tl.to(currentMorphItem,{
+      tl.to(currentMorphItem, {
         width: window.innerWidth,
         left: 0,
         ease: Power2.easeIn,
         duration: 0.4
       }, "+=0.3");
 
-      tl.to(currentMorphItem,{
+      tl.to(currentMorphItem, {
         height: heroImageHeight,
         ease: Power2.easeIn,
         duration: 0.4
-      });
+      }, "+=0.3");
 
       // tl.to(currentMorphItem,{
       //   top: heroImageXpos,
@@ -134,19 +142,19 @@ class PageTransitions {
       //     //_this.body.classList.add('no-scrolling');
       //   }
       // });
-
-
     });
 
-    this.wrapper.classList.add('website--hide-content','website--casestudy');
-
-    this.currentTriggerMorphElems.forEach((item) => {
-      if (item.dataset.cardMorph === currentTriggerAttr) {
-        currentMorphItem = item;
+    tl.to(currentMorphItem, {
+      opacity: 1,
+      ease: Power2.easeIn,
+      duration: 0.4,
+      onComplete: () => {
+        this.wrapper.classList.add('website--hide-content','website--casestudy');
       }
     });
 
-    currentMorphItem.style.opacity = 1;
+
+    //currentMorphItem.style.opacity = 1;
 
     // setTimeout(() => {
     //   this.body.classList.add('no-scrolling');
