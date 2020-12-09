@@ -7,12 +7,12 @@ class PageTransitions {
     this.currentTriggerMorphElems = [];
     this.currentTriggerParent;
     this.url;
+    this.tl = new TimelineLite();
 
     this.init();
   }
 
   init() {
-
     this.pageTriggers.forEach((item, i) => {
       this.setHeightOfOverlays(item);
 
@@ -23,7 +23,6 @@ class PageTransitions {
         this.url = item.href;
         this.currentTrigger = item;
         this.currentTriggerParent = item.parentNode;
-        // this.currentTriggerMorphElem = this.currentTriggerParent.querySelector('.card__morph');
         this.getPageData(this.url);
       });
     });
@@ -40,7 +39,6 @@ class PageTransitions {
       if (xhr.readyState !== XMLHttpRequest.DONE) return;
 
       if (xhr.status === 200) {
-        //_this.insertNewPageContent(xhr.response);
         _this.animateTransition(xhr.response);
       }
       else {
@@ -63,7 +61,6 @@ class PageTransitions {
 
     this.wrapper.appendChild(newPage);
     this.wrapper.removeChild(currentPageContent);
-    // this.reloadFunctionality();
   }
 
   reloadFunctionality() {
@@ -73,7 +70,6 @@ class PageTransitions {
   setHeightOfOverlays(trigger) {
     let triggerParent = trigger.parentNode;
     let cardMorph = triggerParent.querySelector('.card__morph');
-    //let cardThumb = triggerParent.querySelector('.card__thumbnail');
     let width = trigger.offsetWidth;
     let height = trigger.offsetHeight;
     let top = trigger.getBoundingClientRect().top;
@@ -88,18 +84,14 @@ class PageTransitions {
     cardMorph.style.width = `${width}px`;
     cardMorph.style.height = `${height}px`;
     cardMorph.style.top = `${top - bodyRect.top }px`;
-    //cardMorph.style.top = "20%";
-    //cardMorph.style.top = "466.515625px";
     cardMorph.style.left = `${left - bodyRect.left }px`;
 
-    //this.wrapper.removeChild(cardMorph);
     this.body.insertBefore(cardMorph, this.wrapper);
     this.currentTriggerMorphElems.push(cardMorph);
   }
 
   animateTransition(htmlElement) {
     let _this = this;
-    let tl = new TimelineLite();
     let transitionName = getTransitionEndEventName();
     let newHTML = this.getNewHTML(htmlElement);
     let currentTriggerAttr = this.currentTrigger.dataset.pageTransition;
@@ -112,6 +104,9 @@ class PageTransitions {
       if (item.dataset.cardMorph === currentTriggerAttr) {
         currentMorphItem = item;
       }
+      else {
+        this.body.removeChild(item);
+      }
     });
 
     this.wrapper.addEventListener(transitionName, () => {
@@ -121,20 +116,20 @@ class PageTransitions {
       heroImageHeight = heroImage.offsetHeight;
       let heroImageXpos = heroImage.getBoundingClientRect().top;
 
-      tl.to(currentMorphItem, {
+      this.tl.to(currentMorphItem, {
         width: window.innerWidth,
         left: 0,
         ease: Power2.easeIn,
         duration: 0.4
       }, "+=0.3");
 
-      tl.to(currentMorphItem, {
+      this.tl.to(currentMorphItem, {
         height: heroImageHeight,
         ease: Power2.easeIn,
         duration: 0.4
       }, "+=0.3");
 
-      // tl.to(currentMorphItem,{
+      // this.tl.to(currentMorphItem,{
       //   top: heroImageXpos,
       //   ease: Power2.easeIn,
       //   duration: 0.8,
@@ -143,11 +138,11 @@ class PageTransitions {
       //     //_this.body.classList.add('no-scrolling');
       //   }
       // });
-      _this.updateURL();
+      _this.endAnimation(currentMorphItem);
 
     });
 
-    tl.to(currentMorphItem, {
+    this.tl.to(currentMorphItem, {
       opacity: 1,
       ease: Power2.easeIn,
       duration: 0.4,
@@ -155,21 +150,47 @@ class PageTransitions {
         this.wrapper.classList.add('website--hide-content','website--casestudy');
       }
     });
-
-
-    //currentMorphItem.style.opacity = 1;
-
-    // setTimeout(() => {
-    //   this.body.classList.add('no-scrolling');
-    //
-    // }, 3000);
-
-
-    //this.insertNewPageContent(newHTML);
   }
+
   updateURL() {
     if (this.url != window.location) {
       window.history.pushState({path:this.url},'',this.url);
     }
+  }
+
+  endAnimation(morphElem){
+    let heroTitle = document.querySelectorAll('[data-hero-title] .title-mask span');
+    let heroImgOverlay = document.querySelector('[data-hero-image] .overlay');
+    let heroImg = document.querySelector('[data-hero-image] img');
+    let metaInfo = document.querySelector('[data-meta-info]');
+    let navBar = document.querySelector('[ data-nav-bar-hero ]');
+
+    let heroTitleAnim = {
+      y: 0,
+      duration: 0.4,
+      stagger: {
+        amount: 0.4
+      }
+    }
+
+    this.wrapper.classList.remove('website--hide-content');
+    heroImgOverlay.style.transform = "translateX(100%)";
+
+    this.tl.to(heroTitle, heroTitleAnim);
+
+    this.tl.fromTo(metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "-=0.4");
+
+    this.tl.fromTo(navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
+    this.tl.to(morphElem, 0.6,
+    {
+      opacity: 0,
+      ease: "power2.inOut",
+      onComplete: () => {
+        this.body.removeChild(morphElem);
+      }
+    });
+
+    this.updateURL();
+    this.reloadFunctionality();
   }
 }
