@@ -6,6 +6,7 @@ class PageTransitions {
     this.currentTrigger;
     this.currentTriggerMorphElems = [];
     this.currentTriggerParent;
+    this.url;
 
     this.init();
   }
@@ -19,11 +20,11 @@ class PageTransitions {
         ev.preventDefault();
         ev.stopPropagation();
 
-        let url = item.href;
+        this.url = item.href;
         this.currentTrigger = item;
         this.currentTriggerParent = item.parentNode;
         // this.currentTriggerMorphElem = this.currentTriggerParent.querySelector('.card__morph');
-        this.getPageData(url);
+        this.getPageData(this.url);
       });
     });
   }
@@ -142,6 +143,8 @@ class PageTransitions {
       //     //_this.body.classList.add('no-scrolling');
       //   }
       // });
+      _this.updateURL();
+
     });
 
     tl.to(currentMorphItem, {
@@ -163,5 +166,10 @@ class PageTransitions {
 
 
     //this.insertNewPageContent(newHTML);
+  }
+  updateURL() {
+    if (this.url != window.location) {
+      window.history.pushState({path:this.url},'',this.url);
+    }
   }
 }
