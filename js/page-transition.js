@@ -59,12 +59,15 @@ class PageTransitions {
   insertNewPageContent(newPage) {
     let currentPageContent = document.querySelector('[data-scroll]');
 
-    this.wrapper.appendChild(newPage);
     this.wrapper.removeChild(currentPageContent);
+    this.wrapper.appendChild(newPage);
   }
 
   reloadFunctionality() {
-    new Website();
+    //initializeFunctionality();
+    new NavigationMenu();
+    new SmoothScroll();
+    new Form();
   }
 
   setHeightOfOverlays(trigger) {
@@ -104,9 +107,9 @@ class PageTransitions {
       if (item.dataset.cardMorph === currentTriggerAttr) {
         currentMorphItem = item;
       }
-      else {
-        this.body.removeChild(item);
-      }
+      // else {
+      //   this.body.removeChild(item);
+      // }
     });
 
     this.wrapper.addEventListener(transitionName, () => {
@@ -126,7 +129,10 @@ class PageTransitions {
       this.tl.to(currentMorphItem, {
         height: heroImageHeight,
         ease: Power2.easeIn,
-        duration: 0.4
+        duration: 0.4,
+        onComplete: ()=> {
+          _this.endAnimation(currentMorphItem);
+        }
       }, "+=0.3");
 
       // this.tl.to(currentMorphItem,{
@@ -138,7 +144,7 @@ class PageTransitions {
       //     //_this.body.classList.add('no-scrolling');
       //   }
       // });
-      _this.endAnimation(currentMorphItem);
+
 
     });
 
@@ -184,11 +190,12 @@ class PageTransitions {
     this.tl.to(morphElem, 0.6,
     {
       opacity: 0,
-      ease: "power2.inOut",
-      onComplete: () => {
-        this.body.removeChild(morphElem);
-      }
+      ease: "power2.inOut"
+      // onComplete: () => {
+      //   //this.body.removeChild(morphElem);
+      // }
     });
+    console.log("page transitioned!");
 
     this.updateURL();
     this.reloadFunctionality();
