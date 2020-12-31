@@ -87,16 +87,19 @@ class PageTransitions {
     };
 
     let bodyRect = document.body.getBoundingClientRect();
-    let intViewportHeight = window.innerHeight;
-    let yPos = (imageDimensions.y / intViewportHeight) * 100;
+    let viewportHeight = window.innerHeight;
+    let viewportWidth = window.innerWidth;
+
+    let yPos = (imageDimensions.y / viewportHeight) * 100;
+    let xPos = (imageDimensions.x / viewportWidth) * 100;
 
     this.currentTriggerOverlay = cardMorph;
 
-    cardMorph.style.top = `${yPos}%`;
     cardMorph.style.position = "fixed";
+    cardMorph.style.top = `${yPos}%`;
+    cardMorph.style.left = `${xPos}%`;
     cardMorph.style.width = `${imageDimensions.w}px`;
     cardMorph.style.height = `${imageDimensions.h}px`;
-    cardMorph.style.left = `${imageDimensions.x - bodyRect.left }px`;
   }
 
   animateTransition(htmlElement) {
