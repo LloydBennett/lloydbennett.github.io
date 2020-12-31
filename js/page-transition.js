@@ -4,7 +4,7 @@ class PageTransitions {
     this.wrapper = document.querySelector('[data-main]');
     this.body = document.querySelector('body');
     this.currentTrigger;
-    this.currentTriggerMorphElems = [];
+    this.currentTriggerOverlay;
     this.currentTriggerParent;
     this.url;
     this.tl = new TimelineLite();
@@ -14,16 +14,22 @@ class PageTransitions {
 
   init() {
     this.pageTriggers.forEach((item, i) => {
-      this.setHeightOfOverlays(item);
-
       item.addEventListener('click', (ev) => {
         ev.preventDefault();
         ev.stopPropagation();
 
-        this.url = item.href;
         this.currentTrigger = item;
         this.currentTriggerParent = item.parentNode;
-        this.getPageData(this.url);
+
+        this.url = item.href;
+        console.log(this.currentTriggerParent);
+
+        this.setCurrentOverlayDimensions();
+
+        setTimeout(() => {
+          this.getPageData(this.url);
+        }, 1000);
+
       });
     });
   }
@@ -70,27 +76,27 @@ class PageTransitions {
     new Form();
   }
 
-  setHeightOfOverlays(trigger) {
-    let triggerParent = trigger.parentNode;
-    let cardMorph = triggerParent.querySelector('.card__morph');
-    let width = trigger.offsetWidth;
-    let height = trigger.offsetHeight;
-    let top = trigger.getBoundingClientRect().top;
-    let left = trigger.getBoundingClientRect().left;
+  setCurrentOverlayDimensions() {
+    let triggerImage = this.currentTrigger.querySelector('.card__thumbnail-img');
+    let cardMorph = this.currentTriggerParent.querySelector('.card__morph');
+    let imageDimensions = {
+      w: triggerImage.offsetWidth,
+      h: triggerImage.offsetHeight,
+      y: triggerImage.getBoundingClientRect().top,
+      x: triggerImage.getBoundingClientRect().left
+    };
+
     let bodyRect = document.body.getBoundingClientRect();
     let intViewportHeight = window.innerHeight;
-    //let windowBottom =
-    //let newTopPos = (top * intViewportHeight) / 100;
-    //console.log(newTopPos);
+    let yPos = (imageDimensions.y / intViewportHeight) * 100;
 
+    this.currentTriggerOverlay = cardMorph;
 
-    cardMorph.style.width = `${width}px`;
-    cardMorph.style.height = `${height}px`;
-    cardMorph.style.top = `${top - bodyRect.top }px`;
-    cardMorph.style.left = `${left - bodyRect.left }px`;
-
-    this.body.insertBefore(cardMorph, this.wrapper);
-    this.currentTriggerMorphElems.push(cardMorph);
+    cardMorph.style.top = `${yPos}%`;
+    cardMorph.style.position = "fixed";
+    cardMorph.style.width = `${imageDimensions.w}px`;
+    cardMorph.style.height = `${imageDimensions.h}px`;
+    cardMorph.style.left = `${imageDimensions.x - bodyRect.left }px`;
   }
 
   animateTransition(htmlElement) {
@@ -101,59 +107,52 @@ class PageTransitions {
     let heroSelectorName = "#" + currentTriggerAttr + " " + "[data-hero-image]";
     let heroImage;
     let heroImageHeight;
-    let currentMorphItem;
 
-    this.currentTriggerMorphElems.forEach((item) => {
-      if (item.dataset.cardMorph === currentTriggerAttr) {
-        currentMorphItem = item;
-      }
-      // else {
-      //   this.body.removeChild(item);
-      // }
-    });
+    this.body.insertBefore(this.currentTriggerOverlay, this.wrapper);
+
 
     this.wrapper.addEventListener(transitionName, () => {
-      //window.scrollTo(0,0);
+      window.scrollTo(0,0);
       _this.insertNewPageContent(newHTML);
       heroImage = document.querySelector(heroSelectorName);
       heroImageHeight = heroImage.offsetHeight;
-      let heroImageXpos = heroImage.getBoundingClientRect().top;
+      let heroImageYpos = heroImage.getBoundingClientRect().top;
 
-      this.tl.to(currentMorphItem, {
-        width: window.innerWidth,
-        left: 0,
-        ease: Power2.easeIn,
-        duration: 0.4
-      }, "+=0.3");
+      // this.tl.to(this.currentTriggerOverlay, {
+      //   width: window.innerWidth,
+      //   left: 0,
+      //   ease: Power2.easeIn,
+      //   duration: 0.4
+      // }, "+=0.3");
+      //
+      // this.tl.to(this.currentTriggerOverlay, {
+      //   height: heroImageHeight,
+      //   ease: Power2.easeIn,
+      //   duration: 0.4,
+      //   onComplete: ()=> {
+      //     _this.endAnimation(currentMorphItem);
+      //   }
+      // }, "+=0.3");
 
-      this.tl.to(currentMorphItem, {
-        height: heroImageHeight,
-        ease: Power2.easeIn,
-        duration: 0.4,
-        onComplete: ()=> {
-          _this.endAnimation(currentMorphItem);
-        }
-      }, "+=0.3");
-
-      // this.tl.to(currentMorphItem,{
-      //   top: heroImageXpos,
+      // this.tl.to(this.currentTriggerOverlay,{
+      //   top: heroImageYpos,
       //   ease: Power2.easeIn,
       //   duration: 0.8,
-      //   onComplete: () => {
-      //     window.scrollTo(0, 0);
-      //     //_this.body.classList.add('no-scrolling');
-      //   }
+      // //   onComplete: () => {
+      // //     window.scrollTo(0, 0);
+      // //     //_this.body.classList.add('no-scrolling');
+      // //   }
       // });
 
 
     });
 
-    this.tl.to(currentMorphItem, {
+    this.tl.to(this.currentTriggerOverlay, {
       opacity: 1,
       ease: Power2.easeIn,
       duration: 0.4,
       onComplete: () => {
-        this.wrapper.classList.add('website--hide-content','website--casestudy');
+        this.wrapper.classList.add('website--hide-content','website--casestudy', 'website--no-overflow');
       }
     });
   }
