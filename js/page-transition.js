@@ -28,7 +28,7 @@ class PageTransitions {
 
         setTimeout(() => {
           this.getPageData(this.url);
-        }, 1000);
+        }, 200);
 
       });
     });
@@ -45,6 +45,7 @@ class PageTransitions {
       if (xhr.readyState !== XMLHttpRequest.DONE) return;
 
       if (xhr.status === 200) {
+        console.log('new page!');
         _this.animateTransition(xhr.response);
       }
       else {
@@ -100,53 +101,50 @@ class PageTransitions {
     cardMorph.style.left = `${xPos}%`;
     cardMorph.style.width = `${imageDimensions.w}px`;
     cardMorph.style.height = `${imageDimensions.h}px`;
+    this.body.insertBefore(cardMorph, this.wrapper);
   }
 
   animateTransition(htmlElement) {
     let _this = this;
     let transitionName = getTransitionEndEventName();
+    let websiteElem = document.querySelector('.website > *');
     let newHTML = this.getNewHTML(htmlElement);
     let currentTriggerAttr = this.currentTrigger.dataset.pageTransition;
     let heroSelectorName = "#" + currentTriggerAttr + " " + "[data-hero-image]";
     let heroImage;
     let heroImageHeight;
 
-    this.body.insertBefore(this.currentTriggerOverlay, this.wrapper);
+    console.log(newHTML);
 
-
-    this.wrapper.addEventListener(transitionName, () => {
+    websiteElem.addEventListener(transitionName, () => {
       window.scrollTo(0,0);
-      _this.insertNewPageContent(newHTML);
+      this.wrapper.classList.add('website--no-overflow');
+      this.insertNewPageContent(newHTML);
       heroImage = document.querySelector(heroSelectorName);
       heroImageHeight = heroImage.offsetHeight;
       let heroImageYpos = heroImage.getBoundingClientRect().top;
 
-      // this.tl.to(this.currentTriggerOverlay, {
-      //   width: window.innerWidth,
-      //   left: 0,
-      //   ease: Power2.easeIn,
-      //   duration: 0.4
-      // }, "+=0.3");
-      //
-      // this.tl.to(this.currentTriggerOverlay, {
-      //   height: heroImageHeight,
-      //   ease: Power2.easeIn,
-      //   duration: 0.4,
-      //   onComplete: ()=> {
-      //     _this.endAnimation(currentMorphItem);
-      //   }
-      // }, "+=0.3");
+      this.tl.to(this.currentTriggerOverlay, {
+        height: heroImageHeight,
+        ease: Power2.easeIn,
+        duration: 0.4
+      });
 
-      // this.tl.to(this.currentTriggerOverlay,{
-      //   top: heroImageYpos,
-      //   ease: Power2.easeIn,
-      //   duration: 0.8,
+      this.tl.to(this.currentTriggerOverlay, {
+        width: "100%",
+        left: 0,
+        ease: Power2.easeIn,
+        duration: 0.4
+      }, "-=0.1");
+
+      this.tl.to(this.currentTriggerOverlay, {
+        top: heroImageYpos,
+        ease: Power2.easeIn,
+        duration: 0.7,
       // //   onComplete: () => {
-      // //     window.scrollTo(0, 0);
-      // //     //_this.body.classList.add('no-scrolling');
+      // //    _this.endAnimation();
       // //   }
-      // });
-
+      },"-=0.15");
 
     });
 
@@ -155,7 +153,7 @@ class PageTransitions {
       ease: Power2.easeIn,
       duration: 0.4,
       onComplete: () => {
-        this.wrapper.classList.add('website--hide-content','website--casestudy', 'website--no-overflow');
+        this.wrapper.classList.add('website--hide-content','website--casestudy');
       }
     });
   }
@@ -166,7 +164,7 @@ class PageTransitions {
     }
   }
 
-  endAnimation(morphElem){
+  endAnimation(morphElem) {
     let heroTitle = document.querySelectorAll('[data-hero-title] .title-mask span');
     let heroImgOverlay = document.querySelector('[data-hero-image] .overlay');
     let heroImg = document.querySelector('[data-hero-image] img');
@@ -197,6 +195,7 @@ class PageTransitions {
       //   //this.body.removeChild(morphElem);
       // }
     });
+    
     console.log("page transitioned!");
 
     this.updateURL();
