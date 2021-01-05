@@ -194,15 +194,18 @@ class PageTransitions {
 
     this.tl.fromTo(navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
 
-    this.tl.to(this.currentTriggerOverlay, 0.5,
+    this.tl.to(this.currentTriggerOverlay,
     {
       opacity: 0,
-      ease: "power2.inOut",
+      ease: Power2.easeIn,
+      duration: 0.4,
       onComplete: () => {
-        this.body.removeChild(this.currentTriggerOverlay);
+        setTimeout(() => {
+          this.body.removeChild(this.currentTriggerOverlay);
+        }, 300);
         this.wrapper.classList.remove('website--no-overflow');
       }
-    }, "-=0.15");
+    }, "-=0.2");
 
     this.updateURL();
     this.reloadFunctionality();

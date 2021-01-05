@@ -14,4 +14,8 @@
 
 .casestudy-footer__title {
   @extend h1;
+
+  .title-mask span {
+    transform: translateY(0);
+  }
 }
