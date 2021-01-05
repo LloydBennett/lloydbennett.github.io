@@ -2,11 +2,6 @@
   position: relative;
   z-index: 3;
   background-color: $colour--grey;
-
-  &.website--hide-content > * {
-    opacity: 0;
-    transition: 550ms ease opacity;
-  }
 }
 
 .website--casestudy {

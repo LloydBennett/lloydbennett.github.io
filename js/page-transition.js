@@ -7,6 +7,7 @@ class PageTransitions {
     this.currentTriggerOverlay;
     this.currentTriggerParent;
     this.url;
+    this.newPageData;
     this.tl = new TimelineLite();
 
     this.init();
@@ -22,7 +23,6 @@ class PageTransitions {
         this.currentTriggerParent = item.parentNode;
 
         this.url = item.href;
-        console.log(this.currentTriggerParent);
 
         this.setCurrentOverlayDimensions();
 
@@ -45,8 +45,8 @@ class PageTransitions {
       if (xhr.readyState !== XMLHttpRequest.DONE) return;
 
       if (xhr.status === 200) {
-        console.log('new page!');
-        _this.animateTransition(xhr.response);
+        _this.newPageData = xhr.response;
+        _this.animateTransition();
       }
       else {
         console.log('failed!!');
@@ -54,9 +54,9 @@ class PageTransitions {
     }
   }
 
-  getNewHTML(data) {
+  get newHTML() {
     let htmlWrapper = document.createElement('div');
-    htmlWrapper.innerHTML = data;
+    htmlWrapper.innerHTML = this.newPageData;
 
     let pageContent = htmlWrapper.querySelector('[data-scroll]');
 
@@ -104,30 +104,30 @@ class PageTransitions {
     this.body.insertBefore(cardMorph, this.wrapper);
   }
 
-  animateTransition(htmlElement) {
+  animateTransition() {
     let _this = this;
     let transitionName = getTransitionEndEventName();
-    let websiteElem = document.querySelector('.website > *');
-    let newHTML = this.getNewHTML(htmlElement);
+    let newHTML = this.newHTML;
     let currentTriggerAttr = this.currentTrigger.dataset.pageTransition;
     let heroSelectorName = "#" + currentTriggerAttr + " " + "[data-hero-image]";
     let heroImage;
     let heroImageHeight;
+    let heroImageYpos;
 
-    console.log(newHTML);
-
-    websiteElem.addEventListener(transitionName, () => {
+    let animate = () => {
+      console.log("whatsappp!!");
       window.scrollTo(0,0);
-      this.wrapper.classList.add('website--no-overflow');
+      this.wrapper.classList.add('website--no-overflow', 'website--casestudy');
+
       this.insertNewPageContent(newHTML);
       heroImage = document.querySelector(heroSelectorName);
       heroImageHeight = heroImage.offsetHeight;
-      let heroImageYpos = heroImage.getBoundingClientRect().top;
+      heroImageYpos = heroImage.getBoundingClientRect().top;
 
       this.tl.to(this.currentTriggerOverlay, {
-        height: heroImageHeight,
+        top: heroImageYpos,
         ease: Power2.easeIn,
-        duration: 0.4
+        duration: 0.6
       });
 
       this.tl.to(this.currentTriggerOverlay, {
@@ -135,27 +135,30 @@ class PageTransitions {
         left: 0,
         ease: Power2.easeIn,
         duration: 0.4
-      }, "-=0.1");
+      });
 
       this.tl.to(this.currentTriggerOverlay, {
-        top: heroImageYpos,
+        height: heroImageHeight,
         ease: Power2.easeIn,
-        duration: 0.7,
-      // //   onComplete: () => {
-      // //    _this.endAnimation();
-      // //   }
-      },"-=0.15");
-
-    });
+        duration: 0.4,
+        onComplete: () => {
+         _this.endAnimation();
+        }
+      }, "-=0.1");
+    }
 
     this.tl.to(this.currentTriggerOverlay, {
       opacity: 1,
       ease: Power2.easeIn,
-      duration: 0.4,
-      onComplete: () => {
-        this.wrapper.classList.add('website--hide-content','website--casestudy');
-      }
+      duration: 0.4
     });
+
+    this.tl.to(this.wrapper, {
+      opacity: 0,
+      ease: Power2.easeIn,
+      duration: 0.45,
+      onComplete: animate
+    }, "-=0.2");
   }
 
   updateURL() {
@@ -179,7 +182,12 @@ class PageTransitions {
       }
     }
 
-    this.wrapper.classList.remove('website--hide-content');
+    this.tl.to(this.wrapper, {
+      opacity: 1,
+      ease: Power2.easeIn,
+      duration: 0.2,
+    });
+
     heroImgOverlay.style.transform = "translateX(100%)";
 
     this.tl.to(heroTitle, heroTitleAnim);
@@ -187,18 +195,19 @@ class PageTransitions {
     this.tl.fromTo(metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "-=0.4");
 
     this.tl.fromTo(navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
-    this.tl.to(morphElem, 0.6,
+
+    this.tl.to(this.currentTriggerOverlay, 0.5,
     {
       opacity: 0,
       ease: "power2.inOut"
       // onComplete: () => {
       //   //this.body.removeChild(morphElem);
       // }
-    });
-    
+    }, "-=0.25");
+
     console.log("page transitioned!");
 
-    this.updateURL();
-    this.reloadFunctionality();
+    //this.updateURL();
+    //this.reloadFunctionality();
   }
 }
