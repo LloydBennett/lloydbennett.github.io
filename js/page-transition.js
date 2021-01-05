@@ -71,9 +71,8 @@ class PageTransitions {
   }
 
   reloadFunctionality() {
-    //initializeFunctionality();
     new NavigationMenu();
-    new SmoothScroll();
+    //new SmoothScroll();
     new Form();
   }
 
@@ -115,7 +114,6 @@ class PageTransitions {
     let heroImageYpos;
 
     let animate = () => {
-      console.log("whatsappp!!");
       window.scrollTo(0,0);
       this.wrapper.classList.add('website--no-overflow', 'website--casestudy');
 
@@ -167,7 +165,7 @@ class PageTransitions {
     }
   }
 
-  endAnimation(morphElem) {
+  endAnimation() {
     let heroTitle = document.querySelectorAll('[data-hero-title] .title-mask span');
     let heroImgOverlay = document.querySelector('[data-hero-image] .overlay');
     let heroImg = document.querySelector('[data-hero-image] img');
@@ -199,15 +197,14 @@ class PageTransitions {
     this.tl.to(this.currentTriggerOverlay, 0.5,
     {
       opacity: 0,
-      ease: "power2.inOut"
-      // onComplete: () => {
-      //   //this.body.removeChild(morphElem);
-      // }
-    }, "-=0.25");
+      ease: "power2.inOut",
+      onComplete: () => {
+        this.body.removeChild(this.currentTriggerOverlay);
+        this.wrapper.classList.remove('website--no-overflow');
+      }
+    }, "-=0.15");
 
-    console.log("page transitioned!");
-
-    //this.updateURL();
-    //this.reloadFunctionality();
+    this.updateURL();
+    this.reloadFunctionality();
   }
 }
