@@ -105,7 +105,6 @@ class PageTransitions {
 
   animateTransition() {
     let _this = this;
-    let transitionName = getTransitionEndEventName();
     let newHTML = this.newHTML;
     let currentTriggerAttr = this.currentTrigger.dataset.pageTransition;
     let heroSelectorName = "#" + currentTriggerAttr + " " + "[data-hero-image]";
