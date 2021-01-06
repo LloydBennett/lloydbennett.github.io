@@ -72,7 +72,7 @@ class PageTransitions {
 
   reloadFunctionality() {
     new NavigationMenu();
-    //new SmoothScroll();
+    new SmoothScroll();
     new Form();
   }
 
