@@ -7,15 +7,20 @@
 <div class="card">
   <div class="card__morph" style="background-color: #{{ casestudy.colour }}" data-card-morph="{{ casestudy.directory }}"></div>
 
-  <h2 class="card__no card__side title-mask" data-text-wipe>
-    <span>{{ forloop.index | prepend: "0" }}</span>
+  <h2 class="card__no card__side">
+    <span class="title-mask" data-text-wipe>
+      <span>{{ forloop.index | prepend: "0" }}</span>
+    </span>
   </h2>
-  <h2 class="card__title card__main title-mask" data-text-wipe>
+  <h2 class="card__title card__main">
     {% assign casestudyTitle = casestudy.title | split: ' ' %}
 
     {% for title in casestudyTitle %}
+    <span class="title-mask" data-text-wipe>
       <span>{{ title }}</span>
+    </span>
     {% endfor %}
+
   </h2>
   <a class="card__thumbnail image-reveal" href="{{ casestudy.url }}" data-page-transition="{{ casestudy.directory }}" data-image-reveal>
     <div class="overlay overlay--index" data-image-overlay></div>

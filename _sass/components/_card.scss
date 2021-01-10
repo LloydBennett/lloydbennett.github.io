@@ -61,6 +61,14 @@
   }
 }
 
+.card__title {
+  .title-mask {
+    @include media-query(450px) {
+      display: inline-block;
+    }
+  }
+}
+
 .card__thumbnail {
   @extend .thumbnail;
   grid-column: 1 / 4;
