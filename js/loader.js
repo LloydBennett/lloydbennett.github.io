@@ -1,5 +1,5 @@
 class Loader {
-  constructor(){
+  constructor() {
     this.loaderTl = new TimelineLite();
     this.heroTitle = document.querySelectorAll('[data-hero-title] .title-mask span');
     this.heroTitleMobile = document.querySelectorAll('[data-hero-title-mobile] .title-mask span');
@@ -65,7 +65,6 @@ class Loader {
       ease: "power2.in",
       oncomplete: () => { this.body.classList.remove('no-scrolling') }
     });
-
 
     this.loaderTl.to(this.heroTitleMobile, heroTitleAnim, "titles");
     this.loaderTl.to(this.heroTitle, heroTitleAnim, "titles");
