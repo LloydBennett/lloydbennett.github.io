@@ -59,7 +59,6 @@
   .thumbnail {
     position: relative;
     align-self: flex-start;
-    overflow: hidden;
 
     &:first-child {
       @include media-query($breakpoint--small - 1, max-width) {
