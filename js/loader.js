@@ -1,9 +1,11 @@
 class Loader {
   constructor(){
     this.loaderTl = new TimelineLite();
-    this.heroTitle = document.querySelectorAll('[data-hero-title]');
+    this.heroTitle = document.querySelectorAll('[data-hero-title] .title-mask span');
+    this.heroTitleMobile = document.querySelectorAll('[data-hero-title-mobile] .title-mask span');
     this.heroImgOverlay = document.querySelector('[data-hero-image] .overlay');
     this.heroImg = document.querySelector('[data-hero-image] img');
+    this.heroImageMobile = document.querySelector('[data-hero-image-mobile] img');
     this.strips = document.querySelectorAll('[data-strips]');
     this.heroContentGroup = document.querySelectorAll('[data-hero-content-group]');
     this.navBar = document.querySelector('[ data-nav-bar-hero ]');
@@ -34,6 +36,7 @@ class Loader {
     let heroTitleAnim = {
       y: 0,
       duration: 0.4,
+      ease: Power2.in,
       stagger: {
         amount: 0.4
       }
@@ -63,20 +66,9 @@ class Loader {
       oncomplete: () => { this.body.classList.remove('no-scrolling') }
     });
 
-    this.heroTitle.forEach((item, i) => {
-      let letters = item.querySelectorAll('.title-mask span');
 
-      if(homePage) {
-        if(i == this.heroTitle.length - 1) {
-          this.loaderTl.to(letters, heroTitleAnim, "-=0.6");
-        } else {
-          this.loaderTl.to(letters, heroTitleAnim, "titles");
-        }
-      }
-      else {
-        this.loaderTl.to(letters, heroTitleAnim, "titles");
-      }
-    });
+    this.loaderTl.to(this.heroTitleMobile, heroTitleAnim, "titles");
+    this.loaderTl.to(this.heroTitle, heroTitleAnim, "titles");
 
     if (caseStudy) {
       this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "-=0.4");
@@ -89,15 +81,23 @@ class Loader {
       this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
     }
     else {
-      
+
       this.loaderTl.fromTo(this.heroImg, 0.5,
         { y: 40, opacity: 0 },
         { y: 0, opacity: 1, ease: Power2.in },
       "others-=0.4");
 
+      if(this.heroImageMobile) {
+        this.loaderTl.fromTo(this.heroImageMobile, 0.5,
+          { opacity: 0 },
+          { opacity: 1, ease: Power2.in },
+        "others-=0.25");
+        console.log('yesss!');
+      }
+
       this.loaderTl.fromTo(this.heroContentGroup,
         { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4 }, "others-=0.65"
+        { y: 0, opacity: 1, duration: 0.4 }, "others-=0.3"
       );
 
       this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.8");
