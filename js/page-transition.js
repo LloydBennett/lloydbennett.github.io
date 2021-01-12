@@ -166,7 +166,6 @@ class PageTransitions {
 
   endAnimation() {
     let heroTitle = document.querySelectorAll('[data-hero-title] .title-mask span');
-    let heroImgOverlay = document.querySelector('[data-hero-image] .overlay');
     let heroImg = document.querySelector('[data-hero-image] img');
     let metaInfo = document.querySelector('[data-meta-info]');
     let navBar = document.querySelector('[ data-nav-bar-hero ]');
@@ -174,6 +173,7 @@ class PageTransitions {
     let heroTitleAnim = {
       y: 0,
       duration: 0.4,
+      ease: Power2.in,
       stagger: {
         amount: 0.4
       }
@@ -184,8 +184,6 @@ class PageTransitions {
       ease: Power2.easeIn,
       duration: 0.2,
     });
-
-    heroImgOverlay.style.transform = "translateX(100%)";
 
     this.tl.to(heroTitle, heroTitleAnim);
 

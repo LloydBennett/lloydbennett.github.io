@@ -76,7 +76,7 @@ class Loader {
       this.loaderTl.fromTo(this.heroImg, 0.3,
         { y: 40, opacity: 0 },
         { y: 0, opacity: 1 , ease: Power2.in },
-      "last-elements-=0.55");
+      "last-elements-=0.4");
 
       this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
     }
@@ -100,8 +100,8 @@ class Loader {
         { y: 0, opacity: 1, duration: 0.4 }, "others-=0.3"
       );
 
-      this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.8");
-      this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.8");
+      this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "others-=0.3");
+      this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "others-=0.3");
     }
   }
 

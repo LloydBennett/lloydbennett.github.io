@@ -142,6 +142,7 @@ class SmoothScroll {
       tlScroll.to(itemSpan, {
         y: 0,
         duration: 0.4,
+        ease: Power2.in,
         stagger: {
           amount: 0
         }
