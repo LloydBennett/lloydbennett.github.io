@@ -92,10 +92,14 @@
 
     &:nth-child(2) {
       @include media-query($breakpoint--small - 1, max-width) {
-        grid-column: 2/4;
+        grid-column: 2 / 4;
       }
 
       @include media-query($breakpoint--small) {
+        grid-column: 4 / 7;
+      }
+
+      @include media-query($breakpoint--medium) {
         grid-column: 5 / 7;
       }
 
