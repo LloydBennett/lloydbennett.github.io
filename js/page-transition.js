@@ -71,6 +71,7 @@ class PageTransitions {
   }
 
   reloadFunctionality() {
+    activateScrollTriggerEvents();
     new NavigationMenu();
     new SmoothScroll();
     new Form();

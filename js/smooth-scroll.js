@@ -1,8 +1,6 @@
 class SmoothScroll {
   constructor() {
-    gsap.registerPlugin(ScrollTrigger);
     this.bindMethods();
-    this.activateScrollTriggerEvents();
 
     this.config = {
       height: window.innerHeight,
@@ -100,54 +98,6 @@ class SmoothScroll {
   resize() {
     this.setHeight()
     this.data.rounded = this.data.last = this.data.current;
-  }
-
-  activateScrollTriggerEvents() {
-    let imageRevel = document.querySelectorAll('[data-image-reveal] [ data-image-overlay ]');
-    let textWipe = document.querySelectorAll('[data-text-wipe]');
-
-    imageRevel.forEach(item => {
-      let itemParentNode = item.parentNode;
-      let itemImage = itemParentNode.querySelector('[data-image-reveal-content]');
-
-      let tlScroll = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: "top center"
-        }
-      });
-
-      tlScroll.to(item, {
-        x: "100%",
-        duration: 0.7,
-        ease: "power2.inOut"
-      });
-
-      tlScroll.fromTo(itemImage,
-        { scale: 1.2 },
-        { scale: 1, duration: 0.5, ease: "power2.out" },
-      "-=0.4");
-    });
-
-    textWipe.forEach(item => {
-      let itemSpan = item.querySelectorAll('span');
-
-      let tlScroll = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: "center center"
-        }
-      });
-
-      tlScroll.to(itemSpan, {
-        y: 0,
-        duration: 0.4,
-        ease: Power2.in,
-        stagger: {
-          amount: 0
-        }
-      });
-    });
   }
 
   addEvents() {
