@@ -83,8 +83,8 @@ class PageTransitions {
     let imageDimensions = {
       w: triggerImage.offsetWidth,
       h: triggerImage.offsetHeight,
-      y: triggerImage.getBoundingClientRect().top,
-      x: triggerImage.getBoundingClientRect().left
+      y: this.currentTrigger.getBoundingClientRect().top,
+      x: this.currentTrigger.getBoundingClientRect().left
     };
 
     let bodyRect = document.body.getBoundingClientRect();
