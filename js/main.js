@@ -13,9 +13,6 @@ function activateScrollTriggerEvents() {
   let textWipe = document.querySelectorAll('[data-text-wipe]');
 
   imageRevel.forEach(item => {
-    // let itemOverlay = item.querySelector('[data-image-overlay]');
-    //let itemImage = item.querySelector('[data-image-reveal-content]');
-
     let tlScroll = gsap.timeline({
       scrollTrigger: {
         trigger: item,
