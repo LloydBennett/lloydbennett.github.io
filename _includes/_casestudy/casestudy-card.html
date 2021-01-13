@@ -12,16 +12,10 @@
       <span>{{ forloop.index | prepend: "0" }}</span>
     </span>
   </h2>
-  <h2 class="card__title card__main">
-    {% assign casestudyTitle = casestudy.title | split: ' ' %}
-
-    {% for title in casestudyTitle %}
-    <span class="title-mask" data-text-wipe>
-      <span>{{ title }}</span>
-    </span>
-    {% endfor %}
-
+  <h2 class="card__title card__main" data-text-wipe>
+    {{ casestudy.herotitle }}
   </h2>
+
   <a class="card__thumbnail image-reveal" href="{{ casestudy.url }}" data-page-transition="{{ casestudy.directory }}" data-image-reveal>
     <div class="card__thumbnail-img" style="background-image: url('{{ project-image-url }}-4.jpg')" data-image-reveal-content></div>
   </a>

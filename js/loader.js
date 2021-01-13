@@ -34,9 +34,9 @@ class Loader {
     let homePage = document.getElementById('home');
     let caseStudy = document.querySelector('.website--casestudy');
     let heroTitleAnim = {
-      y: 0,
-      duration: 0.4,
-      ease: Power2.in,
+      transform: "translateY(0) skewY(0)",
+      duration: 0.65,
+      ease: Power2.easeOut,
       stagger: {
         amount: 0.4
       }
@@ -96,11 +96,11 @@ class Loader {
 
       this.loaderTl.fromTo(this.heroContentGroup,
         { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4 }, "others-=0.3"
+        { y: 0, opacity: 1, duration: 0.4, ease: Power2.easeOut }, "others-=0.6"
       );
 
-      this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "others-=0.3");
-      this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "others-=0.3");
+      this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "others-=0.5");
+      this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "others-=0.5");
     }
   }
 

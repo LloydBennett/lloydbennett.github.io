@@ -21,13 +21,13 @@ function activateScrollTriggerEvents() {
     });
 
     tlScroll.fromTo(item,
-      { y: 40, opacity: 0 },
+      { y: 80, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }
     );
   });
 
   textWipe.forEach(item => {
-    let itemSpan = item.querySelectorAll('span');
+    let itemSpan = item.querySelectorAll('.title-mask span');
 
     let tlScroll = gsap.timeline({
       scrollTrigger: {
@@ -37,11 +37,11 @@ function activateScrollTriggerEvents() {
     });
 
     tlScroll.to(itemSpan, {
-      y: 0,
-      duration: 0.4,
-      ease: Power2.in,
+      transform: "translateY(0) skewY(0)",
+      duration: 0.5,
+      ease: Power2.easeOut,
       stagger: {
-        amount: 0
+        amount: 0.3
       }
     });
   });

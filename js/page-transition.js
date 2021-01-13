@@ -172,9 +172,9 @@ class PageTransitions {
     let navBar = document.querySelector('[ data-nav-bar-hero ]');
 
     let heroTitleAnim = {
-      y: 0,
-      duration: 0.4,
-      ease: Power2.in,
+      transform: "translateY(0) skewY(0)",
+      duration: 0.65,
+      ease: Power2.easeOut,
       stagger: {
         amount: 0.4
       }
