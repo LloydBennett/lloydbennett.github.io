@@ -1,6 +1,6 @@
 class Loader {
   constructor() {
-    this.loaderTl = new TimelineLite();
+    this.loaderTl = gsap.timeline();
     this.heroTitle = document.querySelectorAll('[data-hero-title] .title-mask span');
     this.heroTitleMobile = document.querySelectorAll('[data-hero-title-mobile] .title-mask span');
     this.heroImg = document.querySelector('[data-hero-image]');
@@ -32,6 +32,7 @@ class Loader {
   animateLoader() {
     let homePage = document.getElementById('home');
     let caseStudy = document.querySelector('.website--casestudy');
+    let imageTop = (this.heroImg)? this.heroImg.getBoundingClientRect().top : undefined;
     let heroTitleAnim = {
       transform: "translateY(0) skewY(0)",
       duration: 0.65,
@@ -68,10 +69,29 @@ class Loader {
     this.loaderTl.to(this.heroTitleMobile, heroTitleAnim, "titles");
     this.loaderTl.to(this.heroTitle, heroTitleAnim, "titles");
 
-    this.loaderTl.fromTo(this.heroImg, 0.6,
-      { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, ease: Power2.easeOut },
-    "others-=0.5");
+    if(window.innerHeight < imageTop) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.fromTo(this.heroImg,
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: Power2.easeOut,
+          scrollTrigger: {
+            trigger: this.heroImg,
+            start: "top center"
+          }
+        }
+      );
+    }
+    else {
+      this.loaderTl.fromTo(this.heroImg, 0.6,
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, ease: Power2.easeOut },
+      "others-=0.5");
+    }
 
     if(this.heroImageMobile) {
       this.loaderTl.fromTo(this.heroImageMobile, 0.6,
@@ -90,7 +110,6 @@ class Loader {
 
     this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0 }, { opacity: 1, ease: Power2.in }, "others-=0.4");
     this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: Power2.in }, "others-=0.4");
-
   }
 
   calculatePageLoadTime(progress) {
