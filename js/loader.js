@@ -69,39 +69,29 @@ class Loader {
     this.loaderTl.to(this.heroTitleMobile, heroTitleAnim, "titles");
     this.loaderTl.to(this.heroTitle, heroTitleAnim, "titles");
 
-    if (caseStudy) {
-      this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "-=0.4");
+    this.loaderTl.fromTo(this.heroImg, 0.6,
+      { y: 40, opacity: 0 },
+      { y: 0, opacity: 1, ease: Power2.easeOut },
+    "others-=0.5");
 
-      this.loaderTl.fromTo(this.heroImg, 0.3,
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1 , ease: Power2.in },
-      "last-elements-=0.4");
-
-      this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "last-elements-=0.4");
+    if(this.heroImageMobile) {
+      this.loaderTl.fromTo(this.heroImageMobile, 0.5,
+        { opacity: 0 },
+        { opacity: 1, ease: Power2.in },
+      "others-=0.25");
+      console.log('yesss!');
     }
-    else {
 
-      this.loaderTl.fromTo(this.heroImg, 0.5,
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, ease: Power2.in },
-      "others-=0.4");
-
-      if(this.heroImageMobile) {
-        this.loaderTl.fromTo(this.heroImageMobile, 0.5,
-          { opacity: 0 },
-          { opacity: 1, ease: Power2.in },
-        "others-=0.25");
-        console.log('yesss!');
-      }
-
+    if(this.heroContentGroup) {
       this.loaderTl.fromTo(this.heroContentGroup,
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.4, ease: Power2.easeOut }, "others-=0.6"
       );
-
-      this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0}, { opacity: 1, ease: "power2.inOut" }, "others-=0.5");
-      this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: "power2.inOut" }, "others-=0.5");
     }
+
+    this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0 }, { opacity: 1, ease: Power2.in }, "others-=0.4");
+    this.loaderTl.fromTo(this.navBar, 0.6, { opacity: 0 }, { opacity: 1, ease: Power2.in }, "others-=0.4");
+
   }
 
   calculatePageLoadTime(progress) {
