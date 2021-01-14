@@ -75,10 +75,10 @@ class Loader {
     "others-=0.5");
 
     if(this.heroImageMobile) {
-      this.loaderTl.fromTo(this.heroImageMobile, 0.5,
+      this.loaderTl.fromTo(this.heroImageMobile, 0.6,
         { opacity: 0 },
-        { opacity: 1, ease: Power2.in },
-      "others-=0.25");
+        { opacity: 1, ease: Power2.easeOut },
+      "others-=0.3");
       console.log('yesss!');
     }
 
