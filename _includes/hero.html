@@ -123,8 +123,8 @@
 
     {% else %}
 
-      <div class="hero__grid hero--collaspe-padding">
-        <picture class="hero__image hero--image-two-thirds image-reveal" data-hero-image>
+      <div class="hero__grid hero--collaspe-padding" data-hero-image>
+        <picture class="hero__image hero--image-two-thirds image-reveal">
           <source media="(min-width: 1000px)" srcset="../images/{{page.directory}}/hero@1-5x.jpg">
           <source media="(min-width: 700px)" srcset="../images/{{page.directory}}/hero.jpg">
           <img src="../images/{{page.directory}}/hero-mobile.jpg" alt="image" />

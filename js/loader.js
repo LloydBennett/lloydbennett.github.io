@@ -3,8 +3,7 @@ class Loader {
     this.loaderTl = new TimelineLite();
     this.heroTitle = document.querySelectorAll('[data-hero-title] .title-mask span');
     this.heroTitleMobile = document.querySelectorAll('[data-hero-title-mobile] .title-mask span');
-    this.heroImgOverlay = document.querySelector('[data-hero-image] .overlay');
-    this.heroImg = document.querySelector('[data-hero-image] img');
+    this.heroImg = document.querySelector('[data-hero-image]');
     this.heroImageMobile = document.querySelector('[data-hero-image-mobile] img');
     this.strips = document.querySelectorAll('[data-strips]');
     this.heroContentGroup = document.querySelectorAll('[data-hero-content-group]');
