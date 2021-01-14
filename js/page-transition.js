@@ -73,7 +73,6 @@ class PageTransitions {
   reloadFunctionality() {
     activateScrollTriggerEvents();
     new NavigationMenu();
-    new SmoothScroll();
     new Form();
   }
 
@@ -124,8 +123,8 @@ class PageTransitions {
 
       this.tl.to(this.currentTriggerOverlay, {
         top: heroImageYpos,
-        ease: Power2.easeIn,
-        duration: 0.6
+        ease: Power2.in,
+        duration: 0.8
       });
 
       this.tl.to(this.currentTriggerOverlay, {
@@ -133,7 +132,7 @@ class PageTransitions {
         left: 0,
         ease: Power2.easeIn,
         duration: 0.4
-      });
+      }, "-=0.2");
 
       this.tl.to(this.currentTriggerOverlay, {
         height: heroImageHeight,

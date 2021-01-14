@@ -1,7 +1,6 @@
 function initializeFunctionality() {
   activateScrollTriggerEvents();
   new NavigationMenu();
-  //new SmoothScroll();
   new PageTransitions();
   new Form();
 }
