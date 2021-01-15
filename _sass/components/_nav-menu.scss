@@ -190,7 +190,8 @@ $nav-inactive: #676767;
 
 .nav-menu__aside-content {
   @include overlay;
-  background-color: #c8a07d;
+  background: url('../images/menu-cover.jpg') no-repeat;
+  background-size: cover;
   opacity: 0;
   transition: 400ms ease 400ms;
 }

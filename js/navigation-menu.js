@@ -42,10 +42,9 @@ class NavigationMenu {
   }
 
   addEvents() {
-    let _this = this;
     this.menuTrigger.forEach((el) => {
       el.addEventListener('click', () => {
-        _this.checkNavigationMenuState();
+        this.checkNavigationMenuState();
       });
     });
 
@@ -61,11 +60,11 @@ class NavigationMenu {
 
     this.subMenuLinks.forEach((el) => {
       el.addEventListener('mouseover', () => {
-        _this.showProjectImg(el);
+        this.showProjectImg(el);
       });
 
       el.addEventListener('mouseleave', () => {
-        _this.removeProjectImg();
+        this.showProjectImg();
       });
     });
 
@@ -83,25 +82,16 @@ class NavigationMenu {
   }
 
   showProjectImg(target) {
-    let link = target.querySelector('a');
-    let projectLink = link.getAttribute('data-nav-menu-link');
+    let link = target? target.querySelector('a') : null;
+    let projectLink = target? link.getAttribute('data-nav-menu-link') : null;
 
     this.navSideImage.forEach((item, i) => {
       let currentDataVal = item.getAttribute('data-nav-aside-image');
 
-      if(currentDataVal === projectLink) {
+      if(currentDataVal === projectLink ) {
         item.classList.add('nav-menu-image--active');
-      } else {
-        item.classList.remove('nav-menu-image--active');
       }
-    });
-  }
-
-  removeProjectImg(){
-    this.navSideImage.forEach((item, i) => {
-      if(item.getAttribute('data-nav-aside-image') == "default") {
-        item.classList.add('nav-menu-image--active');
-      } else {
+      else {
         item.classList.remove('nav-menu-image--active');
       }
     });
