@@ -74,7 +74,13 @@
           <ul class="nav-menu__list">
             {% for casestudy in site.projects %}
             <li class="nav-menu__list-item nav-menu__sub-item">
-              <a href="{{ casestudy.url }}" class="nav-menu__link" data-nav-menu-link="{{ casestudy.directory }}">
+              <a {% if casestudy.coming-soon %}
+                href="{{ casestudy.live-url }}"
+                target="_blank"
+              {% else %}
+                href="{{ casestudy.url }}"
+              {% endif %}
+                class="nav-menu__link" data-nav-menu-link="{{ casestudy.directory }}">
                 <span class="nav-menu__link-no">
                   {{ forloop.index | prepend: "0" }}
                 </span>

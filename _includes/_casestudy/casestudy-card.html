@@ -16,7 +16,14 @@
     {{ casestudy.herotitle }}
   </h2>
 
-  <a class="card__thumbnail image-reveal" href="{{ casestudy.url }}" data-page-transition="{{ casestudy.directory }}" data-image-reveal>
+  <a class="card__thumbnail image-reveal"
+  {% if casestudy.coming-soon %}
+    href="{{ casestudy.live-url }}"
+    target="_blank"
+  {% else %}
+  href="{{ casestudy.url }}" data-page-transition="{{ casestudy.directory }}"
+  {% endif %}
+  data-image-reveal>
     <div class="card__thumbnail-img" style="background-image: url('{{ project-image-url }}-4.jpg')" data-image-reveal-content></div>
   </a>
 
