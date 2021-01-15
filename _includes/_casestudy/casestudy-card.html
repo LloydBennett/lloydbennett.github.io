@@ -3,8 +3,20 @@
 {% for casestudy in casestudies %}
   {% capture project-image-url %}images/projects/{{casestudy.directory}}/thumbnail/{{casestudy.thumbnail}}{% endcapture %}
 
+<div id="card--{{ casestudy.directory }}" class="card">
+  <style>
 
-<div class="card">
+    #card--{{ casestudy.directory }} .card__thumbnail-img {
+      background-image: url('{{ project-image-url }}-1.jpg');
+    }
+
+    @media screen and (min-width: 550px) {
+      #card--{{ casestudy.directory }} .card__thumbnail-img {
+        background-image: url('{{ project-image-url }}-4.jpg');
+      }
+    }
+  </style>
+  
   <div class="card__morph" style="background-color: #{{ casestudy.colour }}" data-card-morph="{{ casestudy.directory }}"></div>
 
   <h2 class="card__no card__side">
@@ -24,7 +36,7 @@
   href="{{ casestudy.url }}" data-page-transition="{{ casestudy.directory }}"
   {% endif %}
   data-image-reveal>
-    <div class="card__thumbnail-img" style="background-image: url('{{ project-image-url }}-4.jpg')" data-image-reveal-content></div>
+    <div class="card__thumbnail-img" data-image-reveal-content></div>
   </a>
 
   <ul class="card__meta-tags card__side card--desktop">
