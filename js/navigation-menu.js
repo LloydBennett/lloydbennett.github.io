@@ -60,11 +60,11 @@ class NavigationMenu {
     });
 
     this.subMenuLinks.forEach((el) => {
-      el.addEventListener('mouseover', () =>{
+      el.addEventListener('mouseover', () => {
         _this.showProjectImg(el);
       });
 
-      el.addEventListener('mouseleave', () =>{
+      el.addEventListener('mouseleave', () => {
         _this.removeProjectImg();
       });
     });
@@ -73,6 +73,7 @@ class NavigationMenu {
       el.addEventListener('mouseover', (e) => {
         this.parentLinks.forEach(element => element.classList.add("nav-menu-link--inactive"));
         el.classList.remove("nav-menu-link--inactive");
+
       });
       el.addEventListener('mouseleave', (e) => {
         this.parentLinks.forEach(element => element.classList.remove("nav-menu-link--inactive"));
@@ -100,6 +101,8 @@ class NavigationMenu {
     this.navSideImage.forEach((item, i) => {
       if(item.getAttribute('data-nav-aside-image') == "default") {
         item.classList.add('nav-menu-image--active');
+      } else {
+        item.classList.remove('nav-menu-image--active');
       }
     });
   }

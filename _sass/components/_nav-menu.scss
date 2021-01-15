@@ -52,7 +52,7 @@ $nav-inactive: #676767;
       opacity: 0;
     }
 
-    .nav-menu__aside-image {
+    .nav-menu__aside-content {
       transition: 400ms ease 1s;
       opacity: 1;
     }
@@ -188,19 +188,26 @@ $nav-inactive: #676767;
   }
 }
 
-.nav-menu__aside-image {
+.nav-menu__aside-content {
   @include overlay;
-  background-color: blue;
+  background-color: #c8a07d;
   opacity: 0;
   transition: 400ms ease 400ms;
+}
 
-  img {
-    display: none;
-    width: 100%;
-  }
+.nav-menu__aside-image {
+  opacity: 0;
+  width: 100%;
+  transform: scale(1.1);
+  transition: 300ms ease;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  .nav-menu-image--active {
-    display: block;
+  &.nav-menu-image--active {
+    opacity: 1;
+    transform: scale(1.001);
+    transition: 300ms ease;
   }
 }
 

@@ -100,11 +100,11 @@
   </div>
   <div class="nav-menu__aside">
     <div class="nav-menu__aside-overlay" data-nav-aside-overlay></div>
-    <div class="nav-menu__aside-image" data-nav-aside-image-wrapper>
+    <div class="nav-menu__aside-content" data-nav-aside-image-wrapper>
 
-      <img class="nav-menu-image--active" src="../images/menu-cover.jpg" alt="Sideview" data-nav-aside-image="default">
+      <img class="nav-menu__aside-image nav-menu-image--active" src="../images/menu-cover.jpg" alt="Sideview" data-nav-aside-image="default">
       {% for project in site.projects %}
-        <img src="../images/projects/{{ project.directory }}/menu-cover.jpg" alt="{{ project.title }}"
+        <img class="nav-menu__aside-image" src="../images/projects/{{ project.directory }}/menu-cover.jpg" alt="{{ project.title }}"
         data-nav-aside-image="{{ project.directory }}">
       {% endfor %}
     </div>
