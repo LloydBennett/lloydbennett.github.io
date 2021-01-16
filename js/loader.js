@@ -8,6 +8,7 @@ class Loader {
     this.strips = document.querySelectorAll('[data-strips]');
     this.heroContentGroup = document.querySelectorAll('[data-hero-content-group]');
     this.navBar = document.querySelector('[ data-nav-bar-hero ]');
+    this.fadeContent = document.querySelectorAll('[data-fade-element]');
     this.metaInfo = document.querySelector('[data-meta-info]');
     this.loader = document.querySelector('[ data-loader ]');
     this.loaderStrips = document.querySelectorAll('[ data-loader-strip ]');
@@ -106,6 +107,13 @@ class Loader {
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.4, ease: Power2.easeOut }, "others-=0.6"
       );
+    }
+
+    if(this.fadeContent) {
+      this.loaderTl.fromTo(this.fadeContent, 0.6,
+        { opacity: 0 },
+        { opacity: 1, ease: Power2.in }, 
+      "others-=0.4");
     }
 
     this.loaderTl.fromTo(this.metaInfo, 0.6, { opacity: 0 }, { opacity: 1, ease: Power2.in }, "others-=0.4");
