@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html class="fullpage">
+  {% include head.html %}
+  <body data-body>
+    {% include loading-screen.html %}
+    <main class="website">
+      <div data-scroll>
+        {{ content }}
+      </div>
+    </main>
+
+    <script src="/js/page-transition.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/form.js"></script>
+    <script src="/js/navigation-menu.js"></script>
+    <script src="/js/smooth-scroll.js"></script>
+    <script src="/js/loader.js"></script>
+  </body>
+</html>

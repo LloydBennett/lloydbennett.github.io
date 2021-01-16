@@ -1,0 +1,39 @@
+---
+layout: blank
+title: 404
+---
+
+<div class="error-grid">
+  <div class="error-grid__column">
+    <div class="error-grid__column-content">
+      <div class="meta meta--head meta--margin-bottom">
+        <div class="hr"></div>
+        <span class="meta__title">
+          Error
+        </span>
+      </div>
+      <h1 data-hero-title>
+        <div class="title-mask title-mask--inline title-mask--with-padding"><span>P</span><span>a</span><span>g</span><span>e</span><span>&nbsp;</span><span>c</span><span>a</span><span>n</span><span>&apos;t&nbsp;</span></div><div class="title-mask"><span>b</span><span>e&nbsp;</span><span>f</span><span>o</span><span>u</span><span>n</span><span>d</span></div>
+      </h1>
+      <p class="error-grid__message">
+        The page you are looking for doesn't exist or has been moved.
+        Let’s return to the home page to get you back on track.
+      </p>
+
+      {% include button.html
+        target = "/"
+        buttonText = "Back To Home"
+      %}
+
+    </div>
+
+    <div class="error-grid__socials">
+      {% include _social-links/dribbble.html useIcon = false dark-mode = false %}
+      {% include _social-links/instagram.html useIcon = false dark-mode = false %}
+      {% include _social-links/linkedin.html useIcon = false dark-mode = false %}
+    </div>
+  </div>
+  <div class="error-grid__column">
+
+  </div>
+</div>

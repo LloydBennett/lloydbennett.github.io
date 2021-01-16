@@ -3,6 +3,10 @@
   @include title-mask;
 }
 
-.title-mask--with-padding{
+.title-mask--with-padding {
   padding-bottom: 2%;
+}
+
+.title-mask--inline {
+  display: inline-block;
 }
