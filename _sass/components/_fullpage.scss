@@ -1,6 +1,17 @@
-.fullpage,
-.fullpage body,
-.fullpage .website,
-.fullpage .website > * {
+.fullpage.html {
   height: 100%;
+}
+
+.fullpage.html,
+.fullpage body {
+   margin: 0px;
+   width: 100%;
+}
+
+.fullpage body {
+  min-height: 100%;
+}
+
+.fullpage .website {
+  min-height: 100vh;
 }

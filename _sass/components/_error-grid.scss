@@ -13,11 +13,11 @@
     height: 100%;
 
     @include media-query($breakpoint--small) {
-      grid-column: 1 / 6;
+      grid-column: 1 / 5;
       padding: spacing(10) 0 spacing(8);
     }
 
-    @include media-query($breakpoint--x-large) {
+    @include media-query(1080px) {
       grid-column: 1 / 4;
     }
 
@@ -52,6 +52,12 @@
 }
 
 .error-grid__socials {
+  margin-top: spacing(7);
+
+  @include media-query($breakpoint--small) {
+    margin-top: spacing(10);
+  }
+
   .link {
     display: table;
     margin-top: spacing(2);
