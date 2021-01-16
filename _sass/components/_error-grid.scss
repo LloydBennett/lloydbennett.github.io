@@ -35,6 +35,22 @@
   }
 }
 
+.error-grid__aside {
+  top: 0;
+  right: 0;
+  position: fixed;
+  min-width: 40rem;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+  background: url('../images/404.jpg') no-repeat;
+  background-size: cover;
+
+  @include media-query(1080px) {
+    display: block;
+  }
+}
+
 .error-grid__socials {
   .link {
     display: table;
