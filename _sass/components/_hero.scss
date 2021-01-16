@@ -170,16 +170,6 @@
       }
     }
   }
-
-  .meta {
-    @include media-query($breakpoint--medium) {
-      padding-top: spacing(2);
-    }
-
-    @include media-query($breakpoint--large) {
-      padding-top: 2rem;
-    }
-  }
 }
 
 .hero__home-masthead {

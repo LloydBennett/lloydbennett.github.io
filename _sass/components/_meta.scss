@@ -12,6 +12,16 @@
   }
 }
 
+.meta--padding {
+  @include media-query($breakpoint--medium) {
+    padding-top: spacing(2);
+  }
+
+  @include media-query($breakpoint--large) {
+    padding-top: 2rem;
+  }
+}
+
 .meta--white {
   .meta__title {
   color: $colour--white;
