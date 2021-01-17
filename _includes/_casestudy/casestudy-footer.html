@@ -29,7 +29,7 @@
 
 {% endfor %}
 >
-  {% capture project-image-url %}../images/projects/{{next.directory}}/hero/{% endcapture %}
+  {% capture project-image-url %}../images/projects/{{next.directory}}/next-project/{% endcapture %}
 
   <div class="hero__grid">
     <div class="meta meta--head">
@@ -44,11 +44,10 @@
       </span>
     </div>
   </div>
+  
   <picture class="thumbnail">
-    <source media="(max-width: 700px)" srcset="{{ project-image-url }}/hero-small.jpg">
-    <source media="(max-width: 1270px)" srcset="{{ project-image-url }}/hero-medium.jpg">
-    <source media="(min-width: 1271px)" srcset="{{ project-image-url }}/hero-large.jpg">
-    <img src="{{ project-image-url }}/hero-medium.jpg" alt="{{page.directory}}">
+    <source media="(min-width: 700px)" srcset="{{ project-image-url }}/next-project-large.jpg">
+    <img src="{{ project-image-url }}/next-project-small.jpg" alt="{{page.directory}}">
   </picture>
 </a>
 {% endif %}
