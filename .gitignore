@@ -1,4 +1,4 @@
 _site
 .sass-cache
 .idea
-node-modules/
+node_modules/
