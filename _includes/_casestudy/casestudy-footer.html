@@ -17,13 +17,12 @@
         {% assign nexttitle = next.herotitle %}
       {% endif %}
 
-        {% if next.point-to-url %}
+        {% if next.coming-soon %}
           {% assign nexturl = next.live-url %}
-          href="http://www.{{ nexturl }}" target="_blank"
+          href="{{ nexturl }}" target="_blank"
         {% else %}
           {% assign nexturl = next.url %}
           href="{{ nexturl }}"
-          data-page-load
         {% endif %}
 
     {% endif %}
