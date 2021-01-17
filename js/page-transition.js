@@ -58,13 +58,13 @@ class PageTransitions {
     let htmlWrapper = document.createElement('div');
     htmlWrapper.innerHTML = this.newPageData;
 
-    let pageContent = htmlWrapper.querySelector('[data-scroll]');
+    let pageContent = htmlWrapper.querySelector('[data-scroll-container]');
 
     return pageContent;
   }
 
   insertNewPageContent(newPage) {
-    let currentPageContent = document.querySelector('[data-scroll]');
+    let currentPageContent = document.querySelector('[data-scroll-container]');
 
     this.wrapper.removeChild(currentPageContent);
     this.wrapper.appendChild(newPage);

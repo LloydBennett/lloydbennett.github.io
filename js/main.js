@@ -49,6 +49,12 @@ function activateScrollTriggerEvents() {
 window.addEventListener('load', function() {
   let scrollToSectionTrig = document.querySelectorAll('[data-scroll-to-section]');
 
+
+  let scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+  });
+
   function scrollToSection(e) {
     e.preventDefault();
     e.stopPropagation();

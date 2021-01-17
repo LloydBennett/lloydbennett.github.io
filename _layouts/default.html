@@ -5,7 +5,7 @@
     {% include loading-screen.html %}
     <main class="website {% if page.type == "casestudy" %}website--casestudy{% endif %}"
     data-main>
-      <div data-scroll>
+      <div data-scroll-container>
         {% if page.type == "casestudy" %}
           {% assign title = page.directory %}
         {% else %}
