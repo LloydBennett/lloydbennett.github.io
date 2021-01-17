@@ -49,7 +49,6 @@ function activateScrollTriggerEvents() {
 window.addEventListener('load', function() {
   let scrollToSectionTrig = document.querySelectorAll('[data-scroll-to-section]');
 
-
   let scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true
@@ -60,15 +59,9 @@ window.addEventListener('load', function() {
     e.stopPropagation();
 
     let href = this.getAttribute("href");
-    let hrefElement = document.querySelector(href);
+    let destination = document.querySelector(href);
 
-    let destination = hrefElement.getBoundingClientRect().top;
-
-    window.scrollTo({
-      top: destination,
-      left: 0,
-      behaviour: 'smooth'
-    });
+    scroll.scrollTo(destination);
   }
 
   scrollToSectionTrig.forEach((item) => {
