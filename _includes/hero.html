@@ -110,12 +110,12 @@
 
     {% if page.title == 'Home' %}
       <div class="hero__two-images">
-        <picture class="thumbnail" data-hero-image>
+        <picture class="thumbnail" data-hero-image data-scroll data-scroll-speed="1">
           <source media="(min-width: 550px)" srcset="../images/home/lloyd-face.jpg">
           <img src="../images/home/lloyd-face-mobile.jpg" alt="Lloyd Bennett" data-image-reveal-content />
         </picture>
 
-        <picture class="thumbnail" data-image-reveal>
+        <picture class="thumbnail scroll__hidden" data-scroll data-scroll-class="scroll__appear" data-scroll-speed="4" data-scroll-offset="100">
           <source media="(min-width: 960px)" srcset="../images/home/lloyd-side.jpg">
           <img src="../images/home/lloyd-watch.jpg" alt="Lloyd Bennett" data-image-reveal-content />
         </picture>
