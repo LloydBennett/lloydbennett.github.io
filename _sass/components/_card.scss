@@ -41,7 +41,7 @@
 }
 
 .card__main {
-  grid-column: 2 / 4;
+  grid-column: 3 / 4;
 
   @include media-query($breakpoint--small) {
     grid-column: 4 / 7;
@@ -71,7 +71,7 @@
 
 .card__title {
   .title-mask {
-    @include media-query(450px) {
+    @include media-query($breakpoint--small) {
       display: inline-block;
     }
   }
