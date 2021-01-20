@@ -3,7 +3,7 @@ class Loader {
     this.loaderTl = gsap.timeline();
     this.heroTitle = document.querySelectorAll('[data-hero-title] .title-mask span');
     this.heroTitleMobile = document.querySelectorAll('[data-hero-title-mobile] .title-mask span');
-    this.heroImg = document.querySelector('[data-hero-image]');
+    this.heroImg = document.querySelectorAll('[data-hero-image]');
     this.heroImageMobile = document.querySelector('[data-hero-image-mobile] img');
     this.strips = document.querySelectorAll('[data-strips]');
     this.heroContentGroup = document.querySelectorAll('[data-hero-content-group]');
@@ -33,7 +33,6 @@ class Loader {
   animateLoader() {
     let homePage = document.getElementById('home');
     let caseStudy = document.querySelector('.website--casestudy');
-    let imageTop = (this.heroImg)? this.heroImg.getBoundingClientRect().top : undefined;
     let heroTitleAnim = {
       transform: "translateY(0) skewY(0)",
       duration: 0.65,
@@ -70,36 +69,44 @@ class Loader {
     this.loaderTl.to(this.heroTitleMobile, heroTitleAnim, "titles");
     this.loaderTl.to(this.heroTitle, heroTitleAnim, "titles");
 
-    if(window.innerHeight < imageTop) {
-      gsap.registerPlugin(ScrollTrigger);
+    this.heroImg.forEach((item, i) => {
+      let imageTop = item.getBoundingClientRect().top;
+      let delay = 5;
 
-      gsap.fromTo(this.heroImg,
-        { y: 40, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: Power2.easeOut,
-          scrollTrigger: {
-            trigger: this.heroImg,
-            start: "top center"
+      if(window.innerHeight < imageTop) {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.fromTo(item,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: Power2.easeOut,
+            scrollTrigger: {
+              trigger: item,
+              start: "top center"
+            }
           }
-        }
-      );
-    }
-    else {
-      this.loaderTl.fromTo(this.heroImg, 0.6,
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, ease: Power2.easeOut },
-      "others-=0.5");
-    }
+        );
+      }
+      else {
+        this.loaderTl.fromTo(item, 0.6,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            ease: Power2.easeOut
+          },
+          `others-=0.${delay - i}`);
+      }
+    });
 
     if(this.heroImageMobile) {
       this.loaderTl.fromTo(this.heroImageMobile, 0.6,
         { opacity: 0 },
         { opacity: 1, ease: Power2.easeOut },
       "others-=0.3");
-      console.log('yesss!');
     }
 
     if(this.heroContentGroup) {
@@ -112,7 +119,7 @@ class Loader {
     if(this.fadeContent) {
       this.loaderTl.fromTo(this.fadeContent, 0.6,
         { opacity: 0 },
-        { opacity: 1, ease: Power2.in }, 
+        { opacity: 1, ease: Power2.in },
       "others-=0.4");
     }
 
