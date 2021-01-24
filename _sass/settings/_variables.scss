@@ -25,3 +25,6 @@ $breakpoint--large: 960px;
 $breakpoint--x-large: 1200px;
 $breakpoint--xx-large: 1600px;
 $breakpoint--xxx-large: 2000px;
+
+/* Animation Easing */
+$cubic-bezier--zoom: cubic-bezier(0.420,0.000,0.002,1.000);
