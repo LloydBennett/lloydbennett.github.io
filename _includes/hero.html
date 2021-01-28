@@ -1,7 +1,7 @@
 <section class="hero {% if page.title == 'About' %}hero--about{% endif %}{% if page.title == 'Home' %}hero--home{% endif %}">
   <div class="hero__grid {% if page.type == 'casestudy' %}hero--flex">
 
-    <div class="meta meta--padding meta--credits" data-meta-info>
+    <div class="meta meta--padding meta--credits meta--casestudy" data-meta-info>
       <div class="meta__group">
         <span class="meta__title">
           My Roles
@@ -20,11 +20,11 @@
       </div>
       <div class="meta__group">
         <span class="meta__title">
-          Contributors
+          Industry
         </span>
-        {% for person in page.contributors %}
+        {% for industry in page.industry %}
           <span class="meta__content meta--body-text">
-            {{ person }}
+            {{ industry }}
           </span>
         {% endfor %}
       </div>

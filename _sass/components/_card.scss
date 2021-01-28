@@ -41,7 +41,7 @@
 }
 
 .card__main {
-  grid-column: 2 / 4;
+  grid-column: 3 / 4;
 
   @include media-query($breakpoint--small) {
     grid-column: 4 / 7;
@@ -71,7 +71,7 @@
 
 .card__title {
   .title-mask {
-    @include media-query(450px) {
+    @include media-query($breakpoint--small) {
       display: inline-block;
     }
   }
@@ -102,7 +102,7 @@
   &:hover {
     .card__thumbnail-img {
       transform: scale(1.1);
-      transition: 500ms transform cubic-bezier(0.28,0,0.49,1);
+      transition: 700ms transform $cubic-bezier--zoom;
     }
   }
 }
@@ -113,7 +113,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 0%;
-  transition: 500ms transform cubic-bezier(0.28,0,0.49,1);
+  transition: 700ms $cubic-bezier--zoom;
   transform: scale(1.001);
 
   @include media-query($breakpoint--small) {

@@ -10,7 +10,7 @@
   }
 
   @include media-query($breakpoint--medium) {
-    padding-bottom: spacing(13);
+    padding-bottom: spacing(15);
   }
 
   @include media-query($breakpoint--x-large) {
