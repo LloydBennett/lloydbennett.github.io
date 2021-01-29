@@ -49,16 +49,16 @@ paragraph:
 
 ---
 
-{% include media-block.html
-  no-margin = true
-  grid = true
-  media-items = page.media
-%}
-
 {% include single-column-text.html
-  title= "Driving equality in creative industries through sharing life sharing stories."
+  small-margin = true
+  title = "Driving equality in creative industries through sharing life sharing stories."
   meta-title = "The Challenge"
   paragraph = page.paragraph
+%}
+
+{% include media-block.html
+  grid = true
+  media-items = page.media
 %}
 
 <div>
