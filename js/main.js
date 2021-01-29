@@ -15,7 +15,7 @@ function activateScrollTriggerEvents() {
     let tlScroll = gsap.timeline({
       scrollTrigger: {
         trigger: item,
-        start: "top center"
+        start: "top bottom-=20%"
       }
     });
 
@@ -31,7 +31,7 @@ function activateScrollTriggerEvents() {
     let tlScroll = gsap.timeline({
       scrollTrigger: {
         trigger: item,
-        start: "top center"
+        start: "top bottom-=20%"
       }
     });
 

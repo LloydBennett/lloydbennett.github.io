@@ -85,7 +85,7 @@ class Loader {
             ease: Power2.easeOut,
             scrollTrigger: {
               trigger: item,
-              start: "top center"
+              start: "top bottom-=20%"
             }
           }
         );
