@@ -1,9 +1,23 @@
 .media {
   @include section;
+
+  &.media--no-margin {
+    margin-bottom: 0;
+  }
 }
 
 .media__thumbnail {
   @extend .thumbnail;
+}
+
+.media__item {
+  & + & {
+    margin-top: spacing(5);
+
+    @include media-query($breakpoint--medium) {
+      margin-top: spacing(7);
+    }
+  }
 }
 
 .media__wrapper {

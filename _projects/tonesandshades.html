@@ -19,6 +19,12 @@ media:
     images:
       - breakpoint: "min-width: 1200px"
         file: "kite.jpg"
+  - src: "../images/projects/tonesandshades/case-study/"
+    alt: "Test Image"
+    default-image: "kite-default.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "kite.jpg"
   - src: "../video/projects/bluvalt/inspo-board.mp4"
     video: true
     default-image: "kite-default.jpg"
@@ -27,6 +33,7 @@ media:
 ---
 
 {% include media-block.html
+  no-margin = true
   media-items = page.media
 %}
 

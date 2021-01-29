@@ -1,14 +1,14 @@
-<div class="media">
+<div class="media {% if include.no-margin %}media--no-margin{% endif %}">
   <div class="container">
     {% for media in include.media-items %}
       {% if media.video %}
-      <div class="media__video" data-image-reveal>
+      <div class="media__item media__video" data-image-reveal>
         <video loop muted playsinline>
           <source src="{{ media.src }}" type="video/mp4">
         </video>
       </div>
       {% else %}
-      <picture class="media__thumbnail" data-image-reveal>
+      <picture class="media__item media__thumbnail" data-image-reveal>
         {% if media.images %}
           {% for img in media.images %}
             <source media="({{ img.breakpoint }})" srcset="{{ media.src }}{{ img.file }}">
