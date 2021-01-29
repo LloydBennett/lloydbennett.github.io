@@ -12,10 +12,23 @@ industry: Editorial
 live-url: http://www.tonesandshad.es
 order: 1
 excerpt: A digital magazine that shares stories of the lives and journeys of black creatives. <b>Case study coming soon.</b>
+media:
+  - src: "../images/projects/tonesandshades/case-study/"
+    alt: "Test Image"
+    default-image: "kite-default.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "kite.jpg"
+  - src: "../video/projects/bluvalt/inspo-board.mp4"
+    video: true
+    default-image: "kite-default.jpg"
+
 
 ---
 
-{% include media-block.html %}
+{% include media-block.html
+  media-items = page.media
+%}
 
 <div>
   <span>Hello people</span>
