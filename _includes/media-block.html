@@ -1,21 +1,28 @@
 <div class="media {% if include.no-margin %}media--no-margin{% endif %}">
-  <div class="container">
+  <div class="media__grid {% if include.two-columns %}media--grid-two-col{% endif %}">
     {% for media in include.media-items %}
       {% if media.video %}
-      <div class="media__item media__video" data-image-reveal>
-        <video loop muted playsinline>
-          <source src="{{ media.src }}" type="video/mp4">
-        </video>
-      </div>
+        <div class="media__item media__video" data-image-reveal>
+          <video loop muted playsinline>
+            <source src="{{ media.src }}" type="video/mp4">
+          </video>
+        </div>
       {% else %}
-      <picture class="media__item media__thumbnail" data-image-reveal>
-        {% if media.images %}
-          {% for img in media.images %}
-            <source media="({{ img.breakpoint }})" srcset="{{ media.src }}{{ img.file }}">
-          {% endfor %}
-        {% endif %}
-        <img src="{{ media.src }}{{ media.default-image }}" alt="{{ media.name }}">
-      </picture>
+        <picture class="media__item media__thumbnail" data-image-reveal>
+          {% if media.images %}
+            {% for img in media.images %}
+              <source media="({{ img.breakpoint }})" srcset="{{ media.src }}{{ img.file }}">
+            {% endfor %}
+          {% endif %}
+          <img src="{{ media.src }}{{ media.default-image }}" alt="{{ media.name }}">
+        </picture>
+      {% endif %}
+      {% if media.figure %}
+      <div class="single-column">
+        <p class="media__figure">
+          {{ media.figure }}
+        </p>
+      </div>
       {% endif %}
     {% endfor %}
   </div>
