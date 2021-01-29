@@ -18,6 +18,14 @@
       {% for paragraph in include.paragraph %}
       <p>{{ paragraph.text }}</p>
       {% endfor %}
+
+      {% if include.cta-text %}
+        {% include button.html
+          target = include.cta-link
+          externalLink = true
+          buttonText = include.cta-text
+        %}
+      {% endif %}
     </div>
   </div>
 </section>
