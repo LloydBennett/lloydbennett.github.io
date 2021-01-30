@@ -1,5 +1,5 @@
-<div class="media {% if include.no-margin %}media--no-margin{% endif %}">
-  <div class="media__grid {% if include.two-columns %}media--grid-two-col{% endif %}">
+<div class="media{% if include.no-margin %} media--no-margin{% endif %}">
+  <div class="media__grid{% if include.two-columns %} media--grid-two-col{% endif %}">
     {% for media in include.media-items %}
       {% if media.video %}
         <div class="media__item media__video" data-image-reveal>

@@ -1,19 +1,25 @@
-<div class="colour">
-  <div class="colour__swatch">
-    <img src="https://via.placeholder.com/378x110.jpg/{{ include.hex }}/{{ include.hex }}" alt="Colour Swatch">
+<section class="colour">
+  <div class="colour__layout">
+    {% for colour in include.colour-swatches %}
+    <div class="colour__group">
+      <div class="colour__swatch">
+        <img src="https://via.placeholder.com/378x110.jpg/{{ colour.hex }}/{{ colour.hex }}" alt="{{ colour.name }}">
+      </div>
+      <div class="colour__details">
+        <h4 class="colour__details-name">
+          {{ colour.name }}
+        </h4>
+        <p class="colour__details-code">
+          HEX: {{ colour.hex }}
+        </p>
+        <p class="colour__details-code">
+          RGB: {{ colour.rgb }}
+        </p>
+        <p class="colour__details-code">
+          CMYK: {{ colour.cmyk }}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
   </div>
-  <div class="colour__details">
-    <h4 class="colour__details-name">
-      {{ include.colour-name }}
-    </h4>
-    <p class="colour__details-code">
-      HEX: {{ include.hex }}
-    </p>
-    <p class="colour__details-code">
-      RGB: {{ include.rgb }}
-    </p>
-    <p class="colour__details-code">
-      CMYK: {{ include.cmyk }}
-    </p>
-  </div>
-</div>
+</section>

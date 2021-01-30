@@ -1,3 +1,31 @@
+.colour {
+  @include section;
+}
+
+.colour__layout {
+  @include container;
+  @include grid;
+
+  font-family: $type--family-alt;
+
+  @include media-query($breakpoint--small) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: spacing(6);
+  }
+
+  @include media-query($breakpoint--medium) {
+    grid-row-gap: spacing(11);
+  }
+}
+
+.colour__group {
+  & + & {
+    @include media-query($breakpoint--small - 1, max-width) {
+      margin-top: spacing(6);
+    }
+  }
+}
+
 .colour__swatch {
   img {
     width: 100%;
@@ -9,7 +37,6 @@
   font-size: 1.8rem;
   color: $colour--body-type;
   margin: spacing(3) 0 spacing(2);
-  font-family: $type--family-body;
 }
 
 .colour__details-code {
