@@ -118,6 +118,17 @@ assets3:
         file: "email-design@2x.jpg"
       - breakpoint: "max-width: 1199px"
         file: "email-design.jpg"
+
+journey-text:
+  - text: Building this platform required us to shortlist a number of
+          creatives we want to interview and contact them. We targeted
+          to release at least 8 stories for the initial launch. Convincing
+          a stranger to do you a favour is never an easy task. We knew had
+          to sell this idea in the best way possible to get people onboard.
+          This required us to create a presentation deck that showcase our
+          overall vision and why we had choice them. I went for an invitational
+          style over your traditional pitch to make our approach more personable,
+          which received a positive response.
 invitation:
   - src: "../images/projects/tonesandshades/case-study/"
     alt: "Invitation Design"
@@ -176,6 +187,12 @@ invitation:
 
 {% include media-block.html
   media-items = page.assets3
+%}
+
+{% include single-column-text.html
+  small-margin = true
+  title = "Getting creatives to join our journey"
+  paragraph = page.journey-text
 %}
 
 {% include media-block.html
