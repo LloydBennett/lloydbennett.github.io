@@ -74,6 +74,59 @@ colour-swatches:
     hex: "4BCBF3"
     rgb: "75,203,243"
     cymk: "69,16,0,5"
+
+assets:
+  - src: "../images/projects/tonesandshades/case-study/"
+    alt: "Logo Grid"
+    default-image: "logo-grid.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "logo-grid@2x.jpg"
+      - breakpoint: "max-width: 1199px"
+        file: "logo-grid.jpg"
+  - src: "../images/projects/tonesandshades/case-study/"
+    alt: "Instagram Posts"
+    default-image: "social-media.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "social-media@2x.jpg"
+      - breakpoint: "max-width: 1199px"
+        file: "social-media.jpg"
+assets2:
+  - src: "../images/projects/tonesandshades/case-study/"
+    alt: "Sticker"
+    default-image: "sticker.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "sticker@2x.jpg"
+      - breakpoint: "max-width: 1199px"
+        file: "sticker.jpg"
+  - src: "../images/projects/tonesandshades/case-study/"
+    alt: "Business Card"
+    default-image: "business-card.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "business-card@2x.jpg"
+      - breakpoint: "max-width: 1199px"
+        file: "business-card.jpg"
+assets3:
+  - src: "../images/projects/tonesandshades/case-study/"
+    alt: "Email Design"
+    default-image: "email-design.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "email-design@2x.jpg"
+      - breakpoint: "max-width: 1199px"
+        file: "email-design.jpg"
+invitation:
+  - src: "../images/projects/tonesandshades/case-study/"
+    alt: "Invitation Design"
+    default-image: "invitation-deck.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "invitation-deck@2x.jpg"
+      - breakpoint: "max-width: 1199px"
+        file: "invitation-deck.jpg"
 ---
 
 {% include single-column-text.html
@@ -108,4 +161,23 @@ colour-swatches:
 {%
   include colour-swatches.html
   colour-swatches = page.colour-swatches
+%}
+
+{% include media-block.html
+  no-margin = true
+  media-items = page.assets
+%}
+
+{% include media-block.html
+  no-margin = true
+  two-columns = true
+  media-items = page.assets2
+%}
+
+{% include media-block.html
+  media-items = page.assets3
+%}
+
+{% include media-block.html
+  media-items = page.invitation
 %}
