@@ -138,6 +138,39 @@ invitation:
         file: "invitation-deck@2x.jpg"
       - breakpoint: "max-width: 1199px"
         file: "invitation-deck.jpg"
+
+building-magazine:
+  - text: The aim of the website is create simple and clean experience that put
+          the stories front-end centre. With this in mind, we were conscious about
+          overwhelming the user with loads of stories scattered all over the screen
+          as you often see with digital magazines. I tried to create layout that
+          linear to guide the user to find the story they want to read. I used
+          opportunities throughout the design to champion black culture and
+          communicate the brands message.
+  - text: We made a collective decision to opt out of integrating the site with
+          CMS and instead built the site using a static site generator to reduce
+          the scope of the project. Jekyll, the static site generator we used
+          allowed us to store content and re-purpose it in dynamic way similar
+          as you would if it was built with a CMS. The drawback to us not using
+          a CMS meant that we would have to go into the source code to made
+          content edits, which isn’t user friendly. But this is fine for what
+          wanted to achieve in the first launch.
+website:
+  - src: "../images/projects/tonesandshades/case-study/"
+    alt: "Mobile Website"
+    default-image: "mobile-web.jpg"
+    images:
+      - breakpoint: "max-width: 900px"
+        file: "mobile-web-small.jpg"
+      - breakpoint: "min-width: 1200px"
+        file: "mobile-web@2x.jpg"
+      - breakpoint: "max-width: 1199px"
+        file: "mobile-web.jpg"
+conclusion:
+  - text: We successfully launched the Tones & Shades brand and website in October 2020 with three articles.
+          We are now currently working towards our social media push to drive traffic to the digital magazine.
+          As part of our strategy to drive engagement we will be releasing the remaining five stories in an
+          incremental fashion.
 ---
 
 {% include single-column-text.html
@@ -232,4 +265,20 @@ invitation:
 
 {% include media-block.html
   media-items = page.invitation
+%}
+
+{% include single-column-text.html
+  small-margin = true
+  title = "Building the digital magazine"
+  paragraph = page.building-magazine
+%}
+
+{% include media-block.html
+  media-items = page.website
+%}
+
+{% include single-column-text.html
+  meta-title = "The Outcome"
+  title = "Conclusion"
+  paragraph = page.conclusion
 %}
