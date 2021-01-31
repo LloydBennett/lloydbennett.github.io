@@ -1,4 +1,4 @@
-<div class="media{% if include.no-margin %} media--no-margin{% endif %}">
+<div class="media{% if include.no-margin %} media--no-margin{% endif %} {% if include.small-margin %} media--small-margin{% endif%}">
   <div class="media__grid{% if include.two-columns %} media--grid-two-col{% endif %}">
     {% for media in include.media-items %}
       {% if media.video %}

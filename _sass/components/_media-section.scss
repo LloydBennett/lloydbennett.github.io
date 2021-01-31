@@ -4,13 +4,27 @@
   &.media--no-margin {
     margin-bottom: 0;
   }
+
+  &.media--small-margin {
+    margin-bottom: spacing(3);
+
+    @include media-query($breakpoint--medium) {
+      margin-bottom: spacing(5);
+    }
+
+    @include media-query($breakpoint--medium) {
+      margin-bottom: spacing(7);
+    }
+  }
 }
 
 .media__grid {
   @include container;
-  @include grid;
+  display: grid;
+  grid-row-gap: spacing(3);
 
   @include media-query($breakpoint--small) {
+    @include grid;
     grid-row-gap: spacing(5);
   }
 
@@ -18,6 +32,7 @@
     grid-row-gap: spacing(7);
   }
 }
+
 
 .media--grid-two-col {
   @include media-query($breakpoint--small) {
