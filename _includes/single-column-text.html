@@ -1,0 +1,60 @@
+<section class="{% if include.small-margin %}inner-section{% else %}section{% endif %}">
+  <div class="container grid">
+    {% if include.meta-title %}
+    <div class="meta meta--head meta--padding-two">
+      <div class="hr"></div>
+      <span class="meta__title">
+        {{ include.meta-title }}
+      </span>
+      {% if include.stats %}
+      <div class="meta--stats stats">
+        {% for stat in include.stats %}
+        <div class="stats__info">
+          <span class="stats__info-percentage">
+            {{ stat.figure }}
+          </span>
+          <span class="stats__info-description">
+            {{ stat.description }}
+          </span>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="single-column">
+      {% if include.title %}
+      <h3>
+        {{ include.title }}
+      </h3>
+      {% endif %}
+
+      {% for paragraph in include.paragraph %}
+      <p>{{ paragraph.text }}</p>
+      {% endfor %}
+
+      {% if include.cta-text %}
+        {% include button.html
+          target = include.cta-link
+          externalLink = true
+          buttonText = include.cta-text
+        %}
+      {% endif %}
+
+      {% if include.stats %}
+      <div class="stats stats--grid stats--l-margin stats--mobile">
+        {% for stat in include.stats %}
+        <div class="stats__info">
+          <span class="stats__info-percentage stats--info--large">
+            {{ stat.figure }}
+          </span>
+          <span class="stats__info-description stats--info--large">
+            {{ stat.description }}
+          </span>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
