@@ -116,6 +116,15 @@ visual-direction:
           an emphasis on the working Saudi community. We wanted to remove the typical
           “serious”, “nerdy” and “enterprise” feel about computing and create something
           that resonated with the local community.
+hand-off:
+  - text: The typical designer to developer hand off consists
+          of a bunch of Sketch files with annotations being thrown
+          over the wall with the expectation that the developer(s)
+          will be able to make sense of it. In my experience this
+          approach usually doesn’t end well. To avoid this I created
+          an HTML & CSS prototype of the website. This allowed the
+          client’s internal development to work more efficiently as
+          they had ready made code available to convert into React components.
 conclusion:
   - text: thoughtbot delivered a new web experience and a cohesive visual
           language for Bluvalt.com. This generated lots of positive feedback
@@ -172,7 +181,7 @@ stats:
 %}
 
 {% include single-column-text.html
-  title = <span>Establishing a</span><span> visual direction</span>
+  title = "Establishing a visual direction"
   paragraph = page.visual-direction
   small-margin = true
 %}
@@ -196,24 +205,11 @@ stats:
   two-columns = true
 %}
 
-  <section class="inner-section">
-    <div class="container grid">
-      <div class="single-column">
-        <h3>
-          Developer Hand-off
-        </h3>
-        <p>
-          The typical designer to developer hand off consists of a bunch of
-          Sketch files with annotations being thrown over the wall with the
-          expectation that the developer(s) will be able to make sense of it.
-          In my experience this approach usually doesn’t end well. To avoid this
-          I created an HTML & CSS prototype of the website. This allowed the
-          client’s internal development to work more efficiently as they had
-          ready made code available to convert into React components.
-        </p>
-      </div>
-    </div>
-  </section>
+{% include single-column-text.html
+  title = "Developer Hand-off"
+  paragraph = page.hand-off
+  small-margin = true
+%}
 
 {% include media-block.html
   media-items = page.components
