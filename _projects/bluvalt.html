@@ -14,18 +14,30 @@ live-url: http://www.thoughtbot.co.uk
 order: 2
 excerpt: Bluvalt is a Saudi Arabian cloud computing service that was encountering a high bounce rate on their marketing site. A site redesign was required to make their service clearer and more accessible to their customers.
 colour-swatches:
-  - colour: Tech Blue
+  - name: Tech Blue
     hex: "4BCBF3"
     rgb: "75,203,243"
     cmyk: "69,16,0,5"
-  - colour: Communicative Purple
+  - name: Communicative Purple
     hex: "AD72E4"
     rgb: "173,114,228"
     cmyk: "22,45,0,11"
-  - colour: Authoritative Blue
+  - name: Authoritative Blue
     hex: "024065"
     rgb: "2,64,101"
     cmyk: "39,15,0,60"
+diagram:
+  - src: "../images/projects/bluvalt/case-study/"
+    alt: "Flow Diagram"
+    default-image: "diagram.jpg"
+    figure: <strong>Goal Statement:</strong> A customer is able to learn about Bluvalt’s services, find a cloud solution suited to their needs and subscribe to it with ease.
+    images:
+      - breakpoint: "max-width: 767px"
+        file: "diagram-mobile.jpg"
+      - breakpoint: "min-width: 1200px"
+        file: "diagram@2x.jpg"
+      - breakpoint: "max-width: 1199px"
+        file: "diagram.jpg"
 
 ---
 
@@ -92,23 +104,9 @@ colour-swatches:
     </div>
   </section>
 
-  <section class="media">
-    <div class="container">
-      <picture class="media__thumbnail">
-        <source media="(max-width: 767px)" srcset="../images/projects/{{page.directory}}/case-study/diagram-mobile.jpg">
-        <source media="(max-width: 1199px)" srcset="../images/projects/{{page.directory}}/case-study/diagram.jpg">
-        <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/diagram@2x.jpg">
-        <img src="../images/projects/{{page.directory}}/case-study/diagram.jpg" alt="Flow Diagram">
-      </picture>
-      <div class="grid">
-        <div class="single-column">
-          <p class="media__figure">
-            <strong>Goal Statement:</strong> A customer is able to learn about Bluvalt’s services, find a cloud solution suited t0 their needs and subscribe to it with ease.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% include media-block.html
+    media-items = page.diagram
+  %}
 
   <section class="inner-section">
     <div class="container grid">
@@ -161,72 +159,9 @@ colour-swatches:
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-
-      <div class="grid section">
-
-        {% for colour in page.colour-swatches %}
-        <div class="three-columns">
-          {% if forloop.first %}
-            {% include colour-swatches.html
-              colour-name = colour.colour
-              hex = colour.hex
-              rgb = colour.rgb
-              cmyk = colour.cmyk
-            %}
-
-          {% else %}
-            {% assign delayTime = forloop.index | minus: 1 | times: delay %}
-
-            {% include colour-swatches.html
-              colour-name = colour.colour
-              hex = colour.hex
-              rgb = colour.rgb
-              cmyk = colour.cmyk
-            %}
-
-          {% endif %}
-
-
-        </div>
-        {% endfor %}
-      </div>
-
-      <div class="two-columns two-columns--large-gap inner-section">
-        <div class="two-columns__item">
-          <span class="small-caps type-container__heading">
-            Latin Version &ndash; Gotham Rounded Bold, Medium &amp; Light
-          </span>
-          <div class="type-container type-container--h1">
-            {% include _casestudy/_bluvalt/type-headline-bold.html %}
-          </div>
-          <div class="type-container type-container--h2">
-            {% include _casestudy/_bluvalt/type-headline-bold.html %}
-          </div>
-          <div class="type-container type-container--body">
-            {% include _casestudy/_bluvalt/type-body.html %}
-          </div>
-        </div>
-
-        <div class="two-columns__item">
-          <span class="small-caps type-container__heading">
-            Arabic Version &ndash; Teshrin Bold, Medium, Light
-          </span>
-          <div class="type-container type-container--h1">
-            {% include _casestudy/_bluvalt/type-arabic-bold.html %}
-          </div>
-          <div class="type-container type-container--h3">
-            {% include _casestudy/_bluvalt/type-arabic-medium.html %}
-          </div>
-          <div class="type-container type-container--body">
-            {% include _casestudy/_bluvalt/type-arabic-light.html %}
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  {% include colour-swatches.html
+    colour-swatches = page.colour-swatches
+  %}
 
   <section class="section">
     <div class="container">

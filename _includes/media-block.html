@@ -15,15 +15,20 @@
             {% endfor %}
           {% endif %}
           <img src="{{ media.src }}{{ media.default-image }}" alt="{{ media.name }}">
+
+          {% if media.figure %}
+          <div class="media__figure">
+            <div class="media__figure-column">
+              <p class="media__figure-copy">
+                {{ media.figure }}
+              </p>
+            </div>
+          </div>
+          {% endif %}
+
         </picture>
       {% endif %}
-      {% if media.figure %}
-      <div class="single-column">
-        <p class="media__figure">
-          {{ media.figure }}
-        </p>
-      </div>
-      {% endif %}
+
     {% endfor %}
   </div>
 </div>
