@@ -6,6 +6,15 @@
           <video loop muted playsinline>
             <source src="{{ media.src }}" type="video/mp4">
           </video>
+          {% if media.figure %}
+          <div class="media__figure">
+            <div class="media__figure-column">
+              <p class="media__figure-copy">
+                {{ media.figure }}
+              </p>
+            </div>
+          </div>
+          {% endif %}
         </div>
       {% else %}
         <picture class="media__item media__thumbnail" data-image-reveal>
