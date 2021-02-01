@@ -2,9 +2,10 @@
   <div class="colour__layout">
     {% for colour in include.colour-swatches %}
     <div class="colour__group">
-      <div class="colour__swatch">
+      <picture class="colour__swatch">
+        <source media="(max-width: 549px)" srcset="https://via.placeholder.com/378x50.jpg/{{ colour.hex }}/{{ colour.hex }}">
         <img src="https://via.placeholder.com/378x110.jpg/{{ colour.hex }}/{{ colour.hex }}" alt="{{ colour.name }}">
-      </div>
+      </picture>
       <div class="colour__details">
         <h4 class="colour__details-name">
           {{ colour.name }}

@@ -18,18 +18,16 @@
   }
 }
 
-.colour__group {
-  & + & {
-    @include media-query($breakpoint--small - 1, max-width) {
-      margin-top: spacing(6);
-    }
-  }
-}
-
 .colour__swatch {
   img {
     width: 100%;
-    height: 100%;
+    display: block;
+  }
+}
+
+.colour__details {
+  @include media-query($breakpoint--small - 1, max-width) {
+    display: none;
   }
 }
 
