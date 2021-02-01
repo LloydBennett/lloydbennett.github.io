@@ -33,7 +33,6 @@
   }
 }
 
-
 .media--grid-two-col {
   @include media-query($breakpoint--small) {
     grid-template-columns: repeat(2, 1fr);
@@ -50,38 +49,6 @@
 
 .media__thumbnail {
   @extend .thumbnail;
-}
-
-.media__wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.media__overlay,
-.media__overlay img {
-  @include overlay;
-}
-
-.media__content {
-  margin-left: auto;
-  margin-right: auto;
-
-  img {
-    height: 100%;
-    width: 100%;
-  }
-}
-
-.media--center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.media__bg,
-.media__bg img {
-  display: block;
-  width: 100%;
 }
 
 .media__figure {
@@ -110,8 +77,4 @@
     display: block;
     width: 100%;
   }
-}
-
-.media--shadow {
-  @include drop-shadow;
 }
