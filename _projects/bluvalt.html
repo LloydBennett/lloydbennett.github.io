@@ -76,10 +76,34 @@ screens2:
     images:
       - breakpoint: "min-width: 1200px"
         file: "vdc@2x.jpg"
+components:
+  - src: "../images/projects/bluvalt/case-study/"
+    alt: "Components"
+    default-image: "components.jpg"
+    figure: "Figure 4: UI Components"
+    images:
+      - breakpoint: "max-width: 767px"
+        file: "components-mobile.jpg"
+      - breakpoint: "min-width: 1200px"
+        file: "components@2x.jpg"
+      - breakpoint: "max-width: 1199px"
+        file: "components.jpg"
+conclusion:
+  - text: thoughtbot delivered a new web experience and a cohesive visual
+          language for Bluvalt.com. This generated lots of positive feedback
+          and sharing from customers on social media. Most importantly,
+          the website bounce rate reduced by an impressive 35%. Bluvalt also
+          benefited largely from the high level of communication and
+          transparency we maintained during our engagement with them,
+          through daily stand-ups, retrospectives and demos. They felt involved
+          in the design process and understood every decision being made.
+stats:
+  - figure: 35&percnt;
+    description: Bounce rate reduced
 
 ---
 
-<div class="section--padding">
+
   <section class="intro">
     <div class="container grid">
       <div class="meta meta--head meta--padding-two">
@@ -231,66 +255,28 @@ screens2:
     </div>
   </section>
 
-  <section class="media">
-    <div class="container">
-      <picture class="media__thumbnail">
-        <source media="(max-width: 767px)" srcset="../images/projects/{{page.directory}}/case-study/components-mobile.jpg">
-        <source media="(max-width: 1199px)" srcset="../images/projects/{{page.directory}}/case-study/components.jpg">
-        <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/components@2x.jpg">
-        <img src="../images/projects/{{page.directory}}/case-study/components.jpg" alt="Components">
-      </picture>
-      <div class="grid">
-        <div class="single-column">
-          <p class="media__figure">
-            Figure 4: UI Components
-          </p>
-        </div>
+
+  {% include media-block.html
+    media-items = page.components
+  %}
+
+  <section class="section">
+    <div class="container grid">
+      <div class="single-column">
+        {% include testimony.html avatar = "rami-taibah"
+          name = "Rami Taibah"
+          role = "UX Architect at Bluvalt"
+          quote = "Top notch, problem solvers, very candid. I felt like it wasn’t all
+          about the end product, the work-flow, communication was very
+          important to thoughtbotters too."
+        %}
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="container grid">
-      <div class="meta meta--head meta--padding-two">
-        <div class="hr"></div>
-        <span class="meta__title">
-          The Outcome
-        </span>
-        <div class="stats">
-          <div class="stats__info">
-            <span class="stats__info-percentage">
-              35&percnt;
-            </span>
-            <span class="stats__info-description">
-              Bounce rate reduced
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="single-column">
-        <div class="single-column__group">
-          <h3>Conclusion</h3>
-          <p>
-            thoughtbot delivered a new web experience and a cohesive visual
-            language for Bluvalt.com. This generated lots of positive feedback
-            and sharing from customers on social media. Most importantly,
-            the website bounce rate reduced by an impressive 35%. Bluvalt also
-            benefited largely from the high level of communication and
-            transparency we maintained during our engagement with them,
-            through daily stand-ups, retrospectives and demos. They felt involved
-            in the design process and understood every decision being made.
-          </p>
-        </div>
-        <div class="single-column__group">
-          {% include testimony.html avatar = "rami-taibah"
-            name = "Rami Taibah"
-            role = "UX Architect at Bluvalt"
-            quote = "Top notch, problem solvers, very candid. I felt like it wasn’t all
-            about the end product, the work-flow, communication was very
-            important to thoughtbotters too."
-          %}
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+  {% include single-column-text.html
+    meta-title = "The Outcome"
+    title = "Conclusion"
+    paragraph = page.conclusion
+    stats = page.stats
+  %}
