@@ -6,8 +6,21 @@
   }
 }
 
-.stats__info {
-  max-width: 11.5rem;
+.stats--grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: spacing(3);
+  max-width: 30rem;
+}
+
+.stats--l-margin {
+  margin-top: spacing(5);
+}
+
+.stats--mobile {
+  @include media-query($breakpoint--medium) {
+    display: none;
+  }
 }
 
 .stats__info-percentage {
@@ -17,10 +30,15 @@
   margin-bottom: spacing(1);
   margin-top: spacing(1);
   font-weight: 400;
+  line-height: 1;
 
   @include media-query($breakpoint--medium) {
     font-size: 5.8rem;
   }
+}
+
+.stats--info--large {
+  font-size: 8rem;
 }
 
 .stats__info-description {

@@ -6,6 +6,20 @@
       <span class="meta__title">
         {{ include.meta-title }}
       </span>
+      {% if include.stats %}
+      <div class="meta--stats stats">
+        {% for stat in include.stats %}
+        <div class="stats__info">
+          <span class="stats__info-percentage">
+            {{ stat.figure }}
+          </span>
+          <span class="stats__info-description">
+            {{ stat.description }}
+          </span>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
     {% endif %}
     <div class="single-column">
@@ -25,6 +39,21 @@
           externalLink = true
           buttonText = include.cta-text
         %}
+      {% endif %}
+
+      {% if include.stats %}
+      <div class="stats stats--grid stats--l-margin stats--mobile">
+        {% for stat in include.stats %}
+        <div class="stats__info">
+          <span class="stats__info-percentage stats--info--large">
+            {{ stat.figure }}
+          </span>
+          <span class="stats__info-description stats--info--large">
+            {{ stat.description }}
+          </span>
+        </div>
+        {% endfor %}
+      </div>
       {% endif %}
     </div>
   </div>

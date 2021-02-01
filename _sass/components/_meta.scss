@@ -66,6 +66,16 @@
   }
 }
 
+.meta--stats {
+  @include media-query($breakpoint--medium - 1, max-width) {
+    display: none;
+  }
+
+  .stats__info + .stats__info {
+    margin-top: spacing(3);
+  }
+}
+
 .meta--margin-bottom {
   margin-bottom: spacing(7);
 
