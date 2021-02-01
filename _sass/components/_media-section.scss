@@ -8,7 +8,7 @@
   &.media--small-margin {
     margin-bottom: spacing(3);
 
-    @include media-query($breakpoint--medium) {
+    @include media-query($breakpoint--small) {
       margin-bottom: spacing(5);
     }
 

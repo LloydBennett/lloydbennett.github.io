@@ -38,6 +38,44 @@ diagram:
         file: "diagram@2x.jpg"
       - breakpoint: "max-width: 1199px"
         file: "diagram.jpg"
+screens:
+  - src: "../images/projects/bluvalt/case-study/"
+    alt: "Sign Up"
+    default-image: "sign-up.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "sign-up@2x.jpg"
+  - src: "../images/projects/bluvalt/case-study/"
+    alt: "404 Page"
+    default-image: "404.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "404@2x.jpg"
+screens2:
+  - src: "../images/projects/bluvalt/case-study/"
+    alt: "About Us"
+    default-image: "about-us.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "about-us@2x.jpg"
+  - src: "../images/projects/bluvalt/case-study/"
+    alt: "Marketplace"
+    default-image: "marketplace.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "marketplace@2x.jpg"
+  - src: "../images/projects/bluvalt/case-study/"
+    alt: "Home Page"
+    default-image: "home-page.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "home-page@2x.jpg"
+  - src: "../images/projects/bluvalt/case-study/"
+    alt: "Virtual Data Center"
+    default-image: "vdc.jpg"
+    images:
+      - breakpoint: "min-width: 1200px"
+        file: "vdc@2x.jpg"
 
 ---
 
@@ -163,44 +201,16 @@ diagram:
     colour-swatches = page.colour-swatches
   %}
 
-  <section class="section">
-    <div class="container">
-      <div class="two-columns">
-        <picture class="two-columns__full-width thumbnail">
-          <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/sign-up@2x.jpg">
-          <img src="../images/projects/{{page.directory}}/case-study/sign-up.jpg" alt="Sign Up">
-        </picture>
-        <picture class="two-columns__full-width thumbnail">
-          <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/404@2x.jpg">
-          <img src="../images/projects/{{page.directory}}/case-study/404.jpg" alt="404 Page">
-        </picture>
-        <div class="two-columns__item text-center">
-          <picture class="thumbnail">
-            <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/about-us@2x.jpg">
-            <img src="../images/projects/{{page.directory}}/case-study/about-us.jpg" alt="About Us">
-          </picture>
-        </div>
-        <div class="two-columns__item text-center">
-          <picture class="thumbnail">
-            <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/marketplace@2x.jpg">
-            <img src="../images/projects/{{page.directory}}/case-study/marketplace.jpg" alt="Marketplace">
-          </picture>
-        </div>
-        <div class="two-columns__item text-center">
-          <picture class="thumbnail">
-            <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/home-page@2x.jpg">
-            <img src="../images/projects/{{page.directory}}/case-study/home-page.jpg" alt="Home Page">
-          </picture>
-        </div>
-        <div class="two-columns__item text-center">
-          <picture class="thumbnail">
-            <source media="(min-width: 1200px)" srcset="../images/projects/{{page.directory}}/case-study/vdc@2x.jpg">
-            <img src="../images/projects/{{page.directory}}/case-study/vdc.jpg" alt="Virtual Data Center Page">
-          </picture>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  {% include media-block.html
+    media-items = page.screens
+    small-margin = true
+  %}
+
+  {% include media-block.html
+    media-items = page.screens2
+    two-columns = true
+  %}
 
   <section class="inner-section">
     <div class="container grid">
