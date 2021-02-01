@@ -13,6 +13,20 @@ button-text: "View Website"
 live-url: http://www.thoughtbot.co.uk
 order: 2
 excerpt: Bluvalt is a Saudi Arabian cloud computing service that was encountering a high bounce rate on their marketing site. A site redesign was required to make their service clearer and more accessible to their customers.
+intro:
+  - text: Bluvalt is a cloud computing service based in Saudi Arabia, focused
+          on providing affordable and locally-tailored computing resources
+          for SME businesses. Think <a href="https://www.heroku.com/" target="_blank"
+          class="link">Heroku</a> or <a href="https://www.digitalocean.com/" target="_blank" class="link">
+          Digital Ocean</a> but tailored for Saudi tech start-ups. Bluvalt launched
+          several social media campaigns to increase customer engagement and acquisition.
+          Even though they had a high click through rate, they found 95% of
+          their visitors on average would only spend 30 seconds on their website.
+  - text: Bluvalt believed their low customer conversion stemmed from the
+          overall design and experience of their website. To solve this issue,
+          Bluvalt hired software design and development agency thoughtbot to
+          redesign their website for a better user experience. My remit on the
+          project was to carry out the visual and interaction design.
 colour-swatches:
   - name: Tech Blue
     hex: "4BCBF3"
@@ -92,6 +106,16 @@ components:
         file: "components@2x.jpg"
       - breakpoint: "max-width: 1199px"
         file: "components.jpg"
+visual-direction:
+  - text: I created an inspiration / mood board of visuals that
+          I felt would best convey the brand and presented this
+          to the client. Undertaking this step before fleshing
+          out any mock-ups made the client feel involved in the process
+          and prevented excessive design revisions going forward. Together
+          we decided to go down a playful illustrative direction that has
+          an emphasis on the working Saudi community. We wanted to remove the typical
+          “serious”, “nerdy” and “enterprise” feel about computing and create something
+          that resonated with the local community.
 conclusion:
   - text: thoughtbot delivered a new web experience and a cohesive visual
           language for Bluvalt.com. This generated lots of positive feedback
@@ -108,115 +132,69 @@ stats:
 ---
 
 
-  <section class="intro">
-    <div class="container grid">
-      <div class="meta meta--head meta--padding-two">
-        <div class="hr"></div>
-        <span class="meta__title">
-          The Challenge
-        </span>
-      </div>
-      <div class="single-column">
+{% include single-column-text.html
+  meta-title = "The Challenge"
+  title = "Create an optimal experience that encourages customer conversion"
+  paragraph = page.intro
+%}
+
+<section class="inner-section">
+  <div class="container grid">
+    <div class="single-column">
+      <div class="single-column__group">
         <h3>
-          Create an optimal experience that encourages customer conversion
+          Setting goals and wireframming
         </h3>
         <p>
-          Bluvalt is a cloud computing service based in Saudi Arabia, focused
-          on providing affordable and locally-tailored computing resources
-          for SME businesses. Think <a href="https://www.heroku.com/" target="_blank" class="link">Heroku</a>
-          or <a href="https://www.digitalocean.com/" target="_blank" class="link">Digital Ocean</a>
-          but tailored for Saudi tech start-ups. Bluvalt launched several social media campaigns
-          to increase customer engagement and acquisition. Even though they had
-          a high click through rate, they found 95% of their visitors on average
-          would only spend 30 seconds on their website.
-        </p>
-        <p>
-          Bluvalt believed their low customer conversion stemmed from the
-          overall design and experience of their website. To solve this issue,
-          Bluvalt hired software design and development agency thoughtbot to
-          redesign their website for a better user experience. My remit on the
-          project was to carry out the visual and interaction design.
+          After reviewing users activity on Bluvalt’s website we noticed many
+          users were becoming lost. We came to the conclusion that the
+          high bounce rate was due to a lack of clarity in the value proposition
+          and a poor information architecture. We saw this as a good point to
+          take a step back and try to understand the goal(s) of the website.
+          Understanding the goal empowered us to make better design decisions
+          when crafting a new user journey.
         </p>
       </div>
-    </div>
-  </section>
 
-  <section class="inner-section">
-    <div class="container grid">
-      <div class="single-column">
-        <div class="single-column__group">
-          <h3>
-            Setting goals and wireframming
-          </h3>
-          <p>
-            After reviewing users activity on Bluvalt’s website we noticed many
-            users were becoming lost. We came to the conclusion that the
-            high bounce rate was due to a lack of clarity in the value proposition
-            and a poor information architecture. We saw this as a good point to
-            take a step back and try to understand the goal(s) of the website.
-            Understanding the goal empowered us to make better design decisions
-            when crafting a new user journey.
-          </p>
-        </div>
-
-        <div class="single-column__group">
-          {% include testimony.html avatar = "rami-taibah"
-            name = "Rami Taibah"
-            role = "UX Architect at Bluvalt"
-            quote = "Lloyd understood the problem, wasn’t much back and forth."
-          %}
-        </div>
+      <div class="single-column__group">
+        {% include testimony.html avatar = "rami-taibah"
+          name = "Rami Taibah"
+          role = "UX Architect at Bluvalt"
+          quote = "Lloyd understood the problem, wasn’t much back and forth."
+        %}
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  {% include media-block.html
-    media-items = page.diagram
-  %}
+{% include media-block.html
+  media-items = page.diagram
+%}
 
-  <section class="inner-section">
-    <div class="container grid">
-      <div class="single-column">
-        <h3>
-          <span>
-            Establishing a
-          </span>
-          <span>
-            visual direction
-          </span>
-        </h3>
-        <p>
-          I created an inspiration / mood board of visuals that I felt would
-          best convey the brand and presented this to the client. Undertaking
-          this step before fleshing out any mock-ups made the client feel involved
-          in the process and prevented excessive design revisions going forward.
-          Together we decided to go down a playful illustrative direction that has
-          an emphasis on the working Saudi community. We wanted to remove the typical
-          “serious”, “nerdy” and “enterprise” feel about computing and create something
-          that resonated with the local community.
-        </p>
-      </div>
-    </div>
-  </section>
+{% include single-column-text.html
+  title = <span>Establishing a</span><span> visual direction</span>
+  paragraph = page.visual-direction
+  small-margin = true
+%}
 
-  {% include media-block.html
-    media-items = page.inspo-board
-    video = true
-  %}
+{% include media-block.html
+  media-items = page.inspo-board
+  video = true
+%}
 
-  {% include colour-swatches.html
-    colour-swatches = page.colour-swatches
-  %}
+{% include colour-swatches.html
+  colour-swatches = page.colour-swatches
+%}
 
-  {% include media-block.html
-    media-items = page.screens
-    small-margin = true
-  %}
+{% include media-block.html
+  media-items = page.screens
+  small-margin = true
+%}
 
-  {% include media-block.html
-    media-items = page.screens2
-    two-columns = true
-  %}
+{% include media-block.html
+  media-items = page.screens2
+  two-columns = true
+%}
 
   <section class="inner-section">
     <div class="container grid">
@@ -237,27 +215,27 @@ stats:
     </div>
   </section>
 
-  {% include media-block.html
-    media-items = page.components
-  %}
+{% include media-block.html
+  media-items = page.components
+%}
 
-  <section class="section">
-    <div class="container grid">
-      <div class="single-column">
-        {% include testimony.html avatar = "rami-taibah"
-          name = "Rami Taibah"
-          role = "UX Architect at Bluvalt"
-          quote = "Top notch, problem solvers, very candid. I felt like it wasn’t all
-          about the end product, the work-flow, communication was very
-          important to thoughtbotters too."
-        %}
-      </div>
+<section class="section">
+  <div class="container grid">
+    <div class="single-column">
+      {% include testimony.html avatar = "rami-taibah"
+        name = "Rami Taibah"
+        role = "UX Architect at Bluvalt"
+        quote = "Top notch, problem solvers, very candid. I felt like it wasn’t all
+        about the end product, the work-flow, communication was very
+        important to thoughtbotters too."
+      %}
     </div>
-  </section>
+  </div>
+</section>
 
-  {% include single-column-text.html
-    meta-title = "The Outcome"
-    title = "Conclusion"
-    paragraph = page.conclusion
-    stats = page.stats
-  %}
+{% include single-column-text.html
+  meta-title = "The Outcome"
+  title = "Conclusion"
+  paragraph = page.conclusion
+  stats = page.stats
+%}
