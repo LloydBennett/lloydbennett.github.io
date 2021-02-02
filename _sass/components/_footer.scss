@@ -42,6 +42,7 @@
 .footer__grid {
   @include media-query($tweakpoint-two-column-layout) {
     @include grid;
+    grid-row-gap: spacing(20);
   }
 }
 
@@ -55,19 +56,20 @@
 }
 
 .footer__form {
-  @include media-query($tweakpoint-two-column-layout) {
-    grid-column: 4 / 7;
+  margin: spacing(6) 0 spacing(10);
+
+  @include media-query($breakpoint--small) {
+    margin: spacing(6) 0 spacing(13);
   }
 
-  @include media-query($tweakpoint-two-column-layout - 1, max-width) {
-    margin-top: spacing(6);
-    margin-bottom: spacing(8);
+  @include media-query($tweakpoint-two-column-layout) {
+    grid-column: 4 / 7;
+    margin: 0;
   }
 }
 
 .footer__connect,
-.footer__form,
-.footer__socials {
+.footer__form {
   @include max-paragraph-width;
   width: 100%;
 
@@ -89,17 +91,35 @@
   }
 }
 
-.footer__socials {
-  margin-top: spacing(4);
+.footer__credits {
+  @include media-query($tweakpoint-two-column-layout) {
+    grid-column: 4 / 7;
+  }
 
-  @include media-query($breakpoint--medium) {
-    margin-top: spacing(5);
+  @include media-query($tweakpoint-two-column-layout - 1, max-width) {
+    @include max-paragraph-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.footer__socials {
+  @include media-query($tweakpoint-two-column-layout - 1, max-width) {
+    @include max-paragraph-width;
+    margin-top: spacing(8);
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  @include media-query($tweakpoint-two-column-layout) {
+    grid-column: 1 / 3;
+    grid-row-start: 2;
   }
 
   a {
     display: inline-block;
     margin-right: spacing(3);
-    width: 22px;
 
     &:last-child {
       margin-right: 0;

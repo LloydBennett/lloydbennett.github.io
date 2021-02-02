@@ -14,11 +14,6 @@
           </a>
         </p>
       </div>
-      <div class="footer__socials footer--desktop">
-        {% include _social-links/dribbble.html useIcon = true %}
-        {% include _social-links/instagram.html useIcon = true %}
-        {% include _social-links/linkedin.html useIcon = true %}
-      </div>
     </div>
     <form action="https://formspree.io/{{ site.email }}"
           class="footer__form"
@@ -87,10 +82,18 @@
         <span class="button__line"></span>
       </button>
     </form>
-    <div class="footer__socials footer--mobile">
-      {% include _social-links/dribbble.html useIcon = true%}
-      {% include _social-links/instagram.html useIcon = true%}
-      {% include _social-links/linkedin.html useIcon = true %}
+
+    <p class="footer__credits">
+      <span>Photography by</span>
+      <a class="link link--dark" target="_blank" href="https://www.nyamekyecann.com/">
+        Nyamekye Cann
+      </a>
+    </p>
+
+    <div class="footer__socials">
+      {% include _social-links/dribbble.html useIcon = false dark-mode = true %}
+      {% include _social-links/instagram.html useIcon = false dark-mode = true %}
+      {% include _social-links/linkedin.html useIcon = false dark-mode = true %}
     </div>
   </div>
 </footer>
