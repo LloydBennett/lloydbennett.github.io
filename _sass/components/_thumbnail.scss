@@ -6,3 +6,8 @@
     display: block;
   }
 }
+
+.thumbnail--block {
+  @extend .thumbnail;
+  display: block;
+}
