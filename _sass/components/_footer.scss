@@ -40,8 +40,13 @@
 }
 
 .footer__grid {
+  @include grid;
+
+  @media screen and (min-width: $breakpoint--small) and (max-width: $tweakpoint-two-column-layout - 1) {
+    @include max-paragraph-width;
+  }
+
   @include media-query($tweakpoint-two-column-layout) {
-    @include grid;
     grid-row-gap: spacing(20);
   }
 }
@@ -76,6 +81,7 @@
   @include media-query($tweakpoint-two-column-layout - 1, max-width) {
     margin-left: auto;
     margin-right: auto;
+    grid-column: 1 / 7;
   }
 }
 
@@ -92,24 +98,34 @@
 }
 
 .footer__credits {
-  @include media-query($tweakpoint-two-column-layout) {
-    grid-column: 4 / 7;
-  }
+  font-size: 1.4rem;
 
-  @include media-query($tweakpoint-two-column-layout - 1, max-width) {
+  @include media-query($breakpoint--small - 1, max-width) {
     @include max-paragraph-width;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  @media screen and (min-width: $breakpoint--small) and (max-width: $tweakpoint-two-column-layout - 1) {
+    grid-column: 5 / 7;
+  }
+
+  @include media-query($tweakpoint-two-column-layout) {
+    grid-column: 4 / 7;
   }
 }
 
 .footer__socials {
-  @include media-query($tweakpoint-two-column-layout - 1, max-width) {
+  @include media-query($breakpoint--small - 1, max-width) {
     @include max-paragraph-width;
-    margin-top: spacing(8);
+    margin-bottom: spacing(8);
     margin-left: auto;
     margin-right: auto;
+  }
 
+  @media screen and (min-width: $breakpoint--small) and (max-width: $tweakpoint-two-column-layout - 1) {
+    grid-column: 1 / 2;
+    grid-row: 3;
   }
 
   @include media-query($tweakpoint-two-column-layout) {
@@ -133,5 +149,9 @@
 
   path {
     fill: $colour--white;
+  }
+
+  p {
+    font-size: 1.4rem;
   }
 }
