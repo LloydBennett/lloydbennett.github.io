@@ -22,7 +22,8 @@
     grid-template-columns: repeat(6, 1fr);
   }
 
-  @include media-query($breakpoint--x-large) {
+  @include media-query($breakpoint--large) {
     grid-column-gap: spacing(4);
+    grid-template-columns: repeat(10, 1fr);
   }
 }
