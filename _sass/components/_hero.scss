@@ -1,6 +1,6 @@
 .hero {
   @include section;
-  padding-top: spacing(7);
+  padding-top: spacing(9);
   overflow: hidden;
 
   @include media-query($breakpoint--small) {
@@ -36,26 +36,46 @@
 
 .hero-grid--one {
   .hero__title {
-    grid-column: 1 / 5;
+
+    @include media-query($breakpoint--small) {
+      grid-column: 1 / 4;
+    }
+
+    @include media-query($breakpoint--large) {
+      grid-column: 1 / 5;
+    }
   }
 
   .hero__copy {
-    grid-column: 6 / 8;
+    grid-column: 4 / 6;
+
+    @include media-query($breakpoint--large) {
+      grid-column: 6 / 8;
+    }
   }
 
   .thumbnail {
     //width: 30vw;
-    grid-column-start: 10;
+    // grid-column-start: 10;
     position: relative;
-    right: -20%;
+    right: -25%;
     grid-row-start: 2;
     grid-row-end: 4;
-    grid-column: 7 / 11;
+    grid-column: 3 / 7;
+
+    @include media-query($breakpoint--large) {
+      grid-column: 7 / 11;
+      right: -20%;
+    }
   }
 
   .scroll-button {
     grid-column: 4 / 5;
     grid-row: 3;
+
+    @include media-query($breakpoint--large) {
+      grid-column: 4 / 5;
+    }
   }
 }
 
