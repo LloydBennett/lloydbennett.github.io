@@ -1,0 +1,11 @@
+.show-mobile {
+  @include media-query($breakpoint--small) {
+    display: none;
+  }
+}
+
+.hide-mobile {
+  @include media-query($breakpoint--small - 1, max-width) {
+    display: none;
+  }
+}
