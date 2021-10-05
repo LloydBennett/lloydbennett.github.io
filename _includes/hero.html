@@ -1,62 +1,33 @@
 <section class="hero {% if page.title == 'About' %}hero--about{% endif %}{% if page.title == 'Home' %}hero--home{% endif %}">
-  <div class="hero__grid {% if page.type == 'casestudy' %}hero--flex">
+  <div class="hero__grid hero-grid--one {% if page.type == 'casestudy' %}hero--flex {% endif%}">
 
-    <div class="meta meta--padding meta--credits meta--casestudy" data-meta-info>
-      <div class="meta__group">
-        <span class="meta__title">
-          My Roles
-        </span>
-      {% for cat in page.category %}
-
-        <span class="meta__content meta--body-text">
-          {% if forloop.last == true %}
-            {{ cat }}
-          {% else %}
-            {{ cat }},
-          {% endif %}
-        </span>
-
-      {% endfor %}
-      </div>
-      <div class="meta__group">
-        <span class="meta__title">
-          Industry
-        </span>
-        {% for industry in page.industry %}
-          <span class="meta__content meta--body-text">
-            {{ industry }}
-          </span>
-        {% endfor %}
-      </div>
-    </div>
-    {% else %}
-    ">
-    <div class="meta meta--padding meta--head" data-meta-info>
-      <div class="hr"></div>
-      {% if page.meta %}
-        <span class="meta__title">
-          {{ page.meta }}
-        </span>
+    <h1 class="hero__title{% if page.type == 'casestudy' %} hero--title-no-margin{% endif %}"
+    data-hero-title>
+      {% if page.herotitle %}
+        {{ page.herotitle }}
       {% else %}
-        <span class="meta__content meta--body-text">
-          Lloyd Bennett
-        </span>
-        <span class="meta__content meta--body-text">
-          Brand &amp; Web Designer
-        </span>
+        {{ page.title }}
       {% endif %}
-    </div>
+    </h1>
+
+    {% if page.description %}
+    <p class="hero__copy" data-hero-copy data-hero-content-group>
+      {{ page.description }}
+    </p>
     {% endif %}
 
+
+    <picture class="thumbnail" data-hero-image>
+      <source media="(min-width: 550px)" srcset="../images/home/lloyd-face.jpg">
+      <img src="../images/home/lloyd-face-mobile.jpg" alt="Lloyd Bennett" data-image-reveal-content />
+    </picture>
+
+
+    {% include scroll-button.html %}
+
     <div class="hero__content">
-      <h1 class="hero__title{% if page.type == 'casestudy' %} hero--title-no-margin{% endif %}"
-      data-hero-title>
-        {% if page.herotitle %}
-          {{ page.herotitle }}
-        {% else %}
-          {{ page.title }}
-        {% endif %}
-      </h1>
+
+
 
       {% if page.title == 'Home' %}
       <div class="hero__home-masthead" data-hero-title-mobile>
@@ -79,20 +50,6 @@
       </div>
       {% endif %}
 
-      {% if page.description %}
-      <p class="hero__copy" data-hero-copy data-hero-content-group>
-        {{ page.description }}
-      </p>
-      {% endif %}
-
-      {% if page.buttoname %}
-        {% include button.html
-          target="#portfolio"
-          externalLink = true
-          heroCta = true
-          buttonText = page.buttoname
-        %}
-      {% endif %}
 
     </div>
   </div>
@@ -110,15 +67,7 @@
 
     {% if page.title == 'Home' %}
       <div class="hero__two-images">
-        <picture class="thumbnail" data-hero-image>
-          <source media="(min-width: 550px)" srcset="../images/home/lloyd-face.jpg">
-          <img src="../images/home/lloyd-face-mobile.jpg" alt="Lloyd Bennett" data-image-reveal-content />
-        </picture>
 
-        <picture class="thumbnail" data-hero-image>
-          <source media="(min-width: 960px)" srcset="../images/home/lloyd-side.jpg">
-          <img src="../images/home/lloyd-watch.jpg" alt="Lloyd Bennett" data-image-reveal-content />
-        </picture>
       </div>
 
     {% else %}
