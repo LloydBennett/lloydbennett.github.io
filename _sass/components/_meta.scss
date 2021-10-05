@@ -104,14 +104,8 @@
 
 .meta--body-text {
   font-size: 1.4rem;
-
-  @include media-query($breakpoint--large) {
-    font-size: 1.6rem;
-  }
-
-  @include media-query($breakpoint--xx-large) {
-    font-size: 1.8rem;
-  }
+  font-family: $type--family-alt;
+  font-weight: 500;
 
   & + & {
     margin-top: $spacing-rule-half / 2;
