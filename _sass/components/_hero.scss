@@ -6,14 +6,6 @@
   @include media-query($breakpoint--small) {
     padding-top: spacing(13);
   }
-
-  @include media-query($breakpoint--large) {
-    padding-top: spacing(18);
-  }
-
-  @include media-query($breakpoint--x-large) {
-    padding-top: spacing(22);
-  }
 }
 
 .hero--about {
@@ -52,12 +44,13 @@
   }
 
   .thumbnail {
-    width: 30vw;
+    //width: 30vw;
     grid-column-start: 10;
     position: relative;
     right: -20%;
     grid-row-start: 2;
     grid-row-end: 4;
+    grid-column: 7 / 11;
   }
 
   .scroll-button {

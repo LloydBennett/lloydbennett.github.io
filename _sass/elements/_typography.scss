@@ -3,7 +3,7 @@ html {
   font-size: 62.5%;
 
   @include media-query($breakpoint--xxx-large) {
-    font-size: 0.55vw;
+    font-size: 0.50vw;
   }
 }
 
@@ -24,6 +24,8 @@ h2,
 h3 {
   color: $colour--heading-type;
   font-weight: 600;
+  font-family: $type--family-display;
+  font-weight: 700;
 }
 
 h1 {
@@ -47,7 +49,7 @@ h1 {
   }
 
   @include media-query($breakpoint--xx-large) {
-    font-size: 11rem;
+    font-size: 14rem;
   }
 }
 
