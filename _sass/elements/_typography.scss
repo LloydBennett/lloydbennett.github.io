@@ -38,13 +38,13 @@ h1 {
   }
 
   @include media-query($breakpoint--small) {
-    font-size: 7.2rem;
+    font-size: 9.3rem;
     line-height: 1;
     margin: 0 0 spacing(7);
   }
 
   @include media-query($breakpoint--large) {
-    font-size: 9.6rem;
+    font-size: 11.8rem;
     margin: 0 0 spacing(9);
   }
 
