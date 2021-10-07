@@ -1,3 +1,5 @@
+$hero-grid-one-tweakpoint: 650px;
+
 .hero {
   @include section;
   padding-top: spacing(9);
@@ -32,26 +34,24 @@
 .hero-grid--one {
   .hero__title {
     @include media-query($breakpoint--small) {
-      grid-column: 1 / 4;
-    }
-
-    @include media-query($breakpoint--large) {
       grid-column: 1 / 5;
     }
   }
 
   .hero__copy {
-
     @include media-query($breakpoint--small) {
       grid-column: 3 / 7;
     }
 
-    @media screen and (min-width: $breakpoint--small) and (max-width: $breakpoint--large - 1 ) {
+    @media screen and (min-width: $breakpoint--small) and (max-width: $hero-grid-one-tweakpoint - 1 ) {
       grid-row: 2;
     }
 
+    @include media-query($hero-grid-one-tweakpoint) {
+      grid-column: 5 / 7;
+    }
 
-    @include media-query($breakpoint--large) {
+    @include media-query($breakpoint--x-large) {
       grid-column: 6 / 8;
     }
   }
@@ -61,11 +61,11 @@
     right: -20%;
     grid-column: 2 / 7;
 
-    @media screen and (min-width: $breakpoint--small) and (max-width: $breakpoint--large - 1 ) {
+    @media screen and (min-width: $breakpoint--small) and (max-width: $breakpoint--x-large - 1 ) {
       grid-row: 3;
     }
 
-    @include media-query($breakpoint--large) {
+    @include media-query($breakpoint--x-large) {
       grid-column: 7 / 11;
       grid-row-start: 2;
       grid-row-end: 4;
@@ -80,11 +80,14 @@
 
     @include media-query($breakpoint--small) {
       grid-column: 1 / 2;
-      grid-row: 3;
       margin-top: 0;
     }
 
-    @include media-query($breakpoint--large) {
+    @include media-query($breakpoint--x-large - 1, max-width) {
+      grid-row: 3;
+    }
+
+    @include media-query($breakpoint--x-large) {
       grid-column: 4 / 5;
     }
   }
