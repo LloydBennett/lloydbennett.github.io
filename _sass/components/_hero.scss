@@ -41,10 +41,12 @@ $hero-grid-one-tweakpoint: 650px;
   .hero__copy {
     @include media-query($breakpoint--small) {
       grid-column: 3 / 7;
+      padding-top: 7%;
     }
 
     @media screen and (min-width: $breakpoint--small) and (max-width: $hero-grid-one-tweakpoint - 1 ) {
       grid-row: 2;
+      margin-bottom: spacing(5);
     }
 
     @include media-query($hero-grid-one-tweakpoint) {
@@ -88,7 +90,7 @@ $hero-grid-one-tweakpoint: 650px;
     }
 
     @include media-query($breakpoint--x-large) {
-      grid-column: 4 / 5;
+      grid-column: 4 / 6;
     }
   }
 }
