@@ -36,12 +36,16 @@ $hero-grid-one-tweakpoint: 650px;
     @include media-query($breakpoint--small) {
       grid-column: 1 / 5;
     }
+
+    @include media-query($breakpoint--x-large) {
+      grid-row-end: 3;
+      grid-row-start: 1;
+    }
   }
 
   .hero__copy {
     @include media-query($breakpoint--small) {
       grid-column: 3 / 7;
-      padding-top: 7%;
     }
 
     @media screen and (min-width: $breakpoint--small) and (max-width: $hero-grid-one-tweakpoint - 1 ) {
@@ -51,10 +55,12 @@ $hero-grid-one-tweakpoint: 650px;
 
     @include media-query($hero-grid-one-tweakpoint) {
       grid-column: 5 / 7;
+      padding-top: 7%;
     }
 
     @include media-query($breakpoint--x-large) {
       grid-column: 6 / 8;
+      margin-bottom: spacing(8);
     }
   }
 
@@ -70,7 +76,7 @@ $hero-grid-one-tweakpoint: 650px;
     @include media-query($breakpoint--x-large) {
       grid-column: 7 / 11;
       grid-row-start: 2;
-      grid-row-end: 4;
+      grid-row-end: 5;
     }
   }
 
