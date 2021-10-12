@@ -9,7 +9,7 @@
         <p>
           Drop me a message on the contact form or
           alternatively via email at:
-          <a class="link link--dark" href="mailto:{{ site.email }}">
+          <a class="link" href="mailto:{{ site.email }}">
             {{ site.email }}
           </a>
         </p>
@@ -20,53 +20,53 @@
           method="POST">
       <div class="input">
         <input type="text" name="name"
-               class="input__field input__field--dark"
+               class="input__field input__field--black"
                placeholder="Your Name"
                data-input-field>
-        <label for="name" class="input__label input__label--dark">
+        <label for="name" class="input__label">
           Your Name
         </label>
       </div>
       <div class="input">
         <input type="email" name="_replyto"
-               class="input__field input__field--dark"
+               class="input__field input__field--black"
                placeholder="Email Address"
                data-input-field>
-        <label for="_replyto" class="input__label input__label--dark">
+        <label for="_replyto" class="input__label">
           Email Address
         </label>
       </div>
       <div class="input">
         <input type="tel"
                name="phone-number"
-               class="input__field input__field--dark"
+               class="input__field input__field--black"
                placeholder="Contact Number"
                data-input-field>
-        <label for="phone-number" class="input__label input__label--dark">
+        <label for="phone-number" class="input__label">
           Contact Number
         </label>
       </div>
       <div class="input">
         <input type="tel" name="company"
-               class="input__field input__field--dark"
+               class="input__field input__field--black"
                placeholder="Project Name / Company"
                data-input-field>
-        <label for="company" class="input__label input__label--dark">
+        <label for="company" class="input__label">
           Project Name / Company
         </label>
       </div>
       <div class="input">
         <input type="tel" name="budget"
-               class="input__field input__field--dark"
+               class="input__field input__field--black"
                placeholder="Project Budget"
                data-input-field>
-        <label for="budget" class="input__label input__label--dark">
+        <label for="budget" class="input__label">
           Project Budget
         </label>
       </div>
       <div class="input">
         <textarea name="your-project"
-                  class="input__field input__field--dark"
+                  class="input__field input__field--black"
                   placeholder="Tell me about your project"
                   rows="1" data-input-field></textarea>
         <label for="your-project" class="input__label input__label--dark">
@@ -75,7 +75,7 @@
       </div>
 
       <button type="submit" value="Send"
-      class="button button--inverted button--margin-top">
+      class="button button--margin-top">
         <span class="button__text">
           Send
         </span>
@@ -84,14 +84,14 @@
     </form>
 
     <div class="footer__socials">
-      {% include _social-links/dribbble.html useIcon = false dark-mode = true %}
-      {% include _social-links/instagram.html useIcon = false dark-mode = true %}
-      {% include _social-links/linkedin.html useIcon = false dark-mode = true %}
+      {% include _social-links/dribbble.html useIcon = false dark-mode = false %}
+      {% include _social-links/instagram.html useIcon = false dark-mode = false %}
+      {% include _social-links/linkedin.html useIcon = false dark-mode = false %}
     </div>
 
     <p class="footer__credits">
       <span>Photography by</span>
-      <a class="link link--dark" target="_blank" href="https://www.nyamekyecann.com/">
+      <a class="link" target="_blank" href="https://www.nyamekyecann.com/">
         Nyamekye Cann
       </a>
     </p>

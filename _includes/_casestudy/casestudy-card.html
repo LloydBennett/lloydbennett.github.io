@@ -24,9 +24,9 @@
       <span>{{ forloop.index | prepend: "0" }}</span>
     </span>
   </h2>
-  <h2 class="card__title card__main" data-text-wipe>
+  <h3 class="card__title card__main" data-text-wipe>
     {{ casestudy.herotitle }}
-  </h2>
+  </h3>
 
   <a class="card__thumbnail image-reveal"
   {% if casestudy.coming-soon %}
@@ -51,10 +51,10 @@
     {% endfor %}
   </ul>
 
-  <div class="card__main card--desktop">
-    <p class="card__description">
-      {{ casestudy.excerpt }}
-    </p>
-  </div>
+
+  <p class="card__description card__main card--desktop">
+    {{ casestudy.excerpt }}
+  </p>
+
 </div>
 {% endfor %}

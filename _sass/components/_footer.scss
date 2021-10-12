@@ -1,6 +1,5 @@
 .footer {
-  background-color: $colour--grit;
-  color: $colour--white;
+  border: 1px solid $colour--grit;
   padding: spacing(8) 0 spacing(6);
   width: 100%;
   z-index: 1;
@@ -14,10 +13,6 @@
   @include media-query($breakpoint--large) {
     padding: spacing(10) 0 spacing(7);
   }
-
-  p {
-    color: $colour--text-on-grit;
-  }
 }
 
 .footer-spacer {
@@ -30,7 +25,6 @@
 }
 
 .footer__title {
-  color: $colour--white;
 
   span {
     @include media-query($tweakpoint-two-column-layout) {
@@ -53,7 +47,7 @@
 
 .footer__connect {
   @include media-query($tweakpoint-two-column-layout) {
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -68,7 +62,7 @@
   }
 
   @include media-query($tweakpoint-two-column-layout) {
-    grid-column: 4 / 7;
+    grid-column: 6 / 10;
     margin: 0;
   }
 }
@@ -111,7 +105,7 @@
   }
 
   @include media-query($tweakpoint-two-column-layout) {
-    grid-column: 4 / 7;
+    grid-column: 6 / 7;
   }
 }
 
@@ -123,13 +117,12 @@
     margin-right: auto;
   }
 
-  @media screen and (min-width: $breakpoint--small) and (max-width: $tweakpoint-two-column-layout - 1) {
+  @include media-query($breakpoint--small) {
     grid-column: 1 / 2;
     grid-row: 3;
   }
 
   @include media-query($tweakpoint-two-column-layout) {
-    grid-column: 1 / 3;
     grid-row-start: 2;
   }
 

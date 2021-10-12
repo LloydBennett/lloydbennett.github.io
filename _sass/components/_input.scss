@@ -37,6 +37,12 @@ $input-placeholder: #B8B8B6;
   transition: 300ms ease;
 }
 
+.input__field--black {
+  border-bottom: 2px solid $colour--grit;
+  transition: 300ms ease;
+}
+
+
 .input__label {
   display: inline-block;
   font-size: 1.4rem;
