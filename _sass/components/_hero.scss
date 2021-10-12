@@ -64,6 +64,8 @@ $hero-grid-one-tweakpoint: 650px;
     }
   }
 
+
+
   .thumbnail {
     position: relative;
     right: -20%;
@@ -97,6 +99,15 @@ $hero-grid-one-tweakpoint: 650px;
 
     @include media-query($breakpoint--x-large) {
       grid-column: 4 / 6;
+    }
+  }
+}
+
+.hero-grid--casestudy {
+  .hero__title {
+    grid-column: 3 / 7;
+    @include media-query($breakpoint--x-large) {
+      grid-column: 6 / 10;
     }
   }
 }

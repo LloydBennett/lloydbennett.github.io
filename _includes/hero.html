@@ -1,5 +1,5 @@
 <section class="hero {% if page.title == 'About' %}hero--about{% endif %}{% if page.title == 'Home' %}hero--home{% endif %}">
-  <div class="hero__grid hero-grid--one {% if page.type == 'casestudy' %}hero--flex {% endif%}">
+  <div class="hero__grid {% if page.title == 'Home' %}hero-grid--one{% endif %} {% if page.type == 'casestudy' %}hero-grid--casestudy {% endif%}">
 
     {% if page.title == 'Home' %}
     <div class="hero__home-masthead" data-hero-title-mobile>
@@ -20,16 +20,21 @@
 
       </div>
     </div>
+
+    <picture class="thumbnail hide-mobile" data-hero-image>
+      <source media="(min-width: 1200px)" srcset="../images/home/lloyd-home-side-face-hero-large.jpg">
+      <source media="(min-width: 850px)" srcset="../images/home/lloyd-home-side-face-hero-medium.jpg">
+      <img src="../images/home/lloyd-home-side-face-hero-small.jpg" alt="Lloyd Bennett" data-image-reveal-content />
+    </picture>
     {% endif %}
 
     <h1 class="hero__title{% if page.type == 'casestudy' %} hero--title-no-margin{% endif %}"
     data-hero-title>
-      <!-- {% if page.herotitle %}
+      {% if page.herotitle %}
         {{ page.herotitle }}
       {% else %}
         {{ page.title }}
-      {% endif %} -->
-      Designs <br/>with a<br/> purpose
+      {% endif %}
     </h1>
 
     {% if page.description %}
@@ -37,14 +42,6 @@
       {{ page.description }}
     </p>
     {% endif %}
-
-
-    <picture class="thumbnail hide-mobile" data-hero-image>
-      <source media="(min-width: 1200px)" srcset="../images/home/lloyd-home-side-face-hero-large.jpg">
-      <source media="(min-width: 850px)" srcset="../images/home/lloyd-home-side-face-hero-medium.jpg">
-      <img src="../images/home/lloyd-home-side-face-hero-small.jpg" alt="Lloyd Bennett" data-image-reveal-content />
-    </picture>
-
 
     {% include scroll-button.html %}
 
