@@ -14,18 +14,32 @@
 }
 
 .services__description {
-  font-size: 2.1rem;
+  font-size: 2rem;
   line-height: 1.4;
   margin-bottom: spacing(3);
 
+  @include media-query($breakpoint--small) {
+    font-size: 2.5rem;
+  }
+
   @include media-query($breakpoint--medium) {
-    font-size: 2.8rem;
+    font-size: 3.6rem;
+  }
+}
+
+.services-column {
+  @include media-query($breakpoint--small) {
+    grid-column: 3 / 7;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 4 / 9;
   }
 }
 
 .services__skill {
-  @include media-query($breakpoint--small) {
-    white-space: nowrap;
+  @include media-query($breakpoint--medium) {
+    font-size: 2rem;
   }
 
   & + & {
@@ -35,36 +49,32 @@
       margin-top: 0;
     }
   }
+}
 
-  &:nth-child(odd) {
-    @include media-query($breakpoint--small) {
-      grid-column: 2/4;
-    }
-
-    @include media-query($breakpoint--medium) {
-      grid-column: 3/5;
-    }
-
-    @include media-query($breakpoint--x-large) {
-      grid-column: 4/5;
-    }
+.services-skill--left {
+  @include media-query($breakpoint--small) {
+    grid-column: 3 / 7;
   }
 
-  &:nth-child(even) {
-    @include media-query($breakpoint--small) {
-      grid-column: 4/7;
-    }
+  @include media-query($breakpoint--medium) {
+    grid-column: 3 / 5;
+  }
 
-    @include media-query($breakpoint--medium) {
-      grid-column: 5/7;
-    }
+  @include media-query($breakpoint--x-large) {
+    grid-column: 4 / 6;
+  }
+}
 
-    @include media-query($breakpoint--x-large) {
-      grid-column: 5/7;
-    }
+.services-skill--right {
+  @include media-query($breakpoint--small) {
+    grid-column: 3 / 7;
+  }
 
-    @include media-query($breakpoint--xx-large) {
-      grid-column: 5/6;
-    }
+  @include media-query($breakpoint--medium) {
+    grid-column: 5 / 7;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 6 / 8;
   }
 }
