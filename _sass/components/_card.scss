@@ -73,7 +73,7 @@
 .card__title {
 
   @include media-query($breakpoint--x-large) {
-    grid-column: 4 / 7;
+    grid-column: 4 / 6;
   }
 
   .title-mask {
@@ -137,7 +137,6 @@
 
 .card__description {
   @include max-paragraph-width;
-  // grid-row-start: 2;
 
   @include media-query($breakpoint--x-large) {
     grid-column: 7 / 9;
