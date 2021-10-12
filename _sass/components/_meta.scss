@@ -1,24 +1,12 @@
 .meta {
-  @include media-query($breakpoint--medium) {
-    grid-column: 1 / 2;
+  max-width: 14rem;
+
+  @include media-query($breakpoint--small) {
+    max-width: 19rem;
   }
 
   @include media-query($breakpoint--large) {
     padding-top: spacing(1);
-  }
-
-  @include media-query($breakpoint--x-large) {
-    grid-column: 2 / 3;
-  }
-}
-
-.meta--casestudy {
-  @include media-query($breakpoint--medium) {
-    grid-column: 1 / 3;
-  }
-
-  @include media-query($breakpoint--x-large) {
-    grid-column: 2 / 4;
   }
 }
 
@@ -32,37 +20,13 @@
   }
 }
 
-.meta--padding-two {
-  @include media-query($breakpoint--medium) {
-    padding-top: 1rem;
-  }
-}
-
 .meta--white {
   .meta__title {
-  color: $colour--white;
+    color: $colour--white;
   }
 
   .hr {
     background-color: $colour--white;
-  }
-}
-
-.meta--head {
-  display: flex;
-  flex-direction: column;
-
-  @include media-query($breakpoint--small - 1, max-width) {
-    display: table;
-  }
-
-  @media screen and (min-width: $breakpoint--small)
-  and (max-width: $breakpoint--medium - 1) {
-    grid-column: 2 / 4;
-  }
-
-  @include media-query($breakpoint--medium - 1, max-width) {
-    margin-bottom: spacing(7);
   }
 }
 
@@ -84,32 +48,8 @@
   }
 }
 
-.meta--credits {
-  @media screen and (min-width: $breakpoint--small)
-  and (max-width: $breakpoint--medium - 1) {
-    grid-row-start: 2;
-    grid-column: 2 / 7;
-  }
-
-  @include media-query($breakpoint--medium - 1, max-width) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: spacing(3);
-  }
-}
-
 .meta__content {
   display: block;
-}
-
-.meta--body-text {
-  font-size: 1.4rem;
-  font-family: $type--family-alt;
-  font-weight: 500;
-
-  & + & {
-    margin-top: $spacing-rule-half / 2;
-  }
 }
 
 .meta__title {
@@ -123,13 +63,16 @@
   }
 }
 
-.meta__group {
+.meta--body-text {
+  font-size: 1.4rem;
+  font-family: $type--family-alt;
+  font-weight: 500;
+
   & + & {
-    @include media-query($breakpoint--medium) {
-      margin-top: spacing(3);
-    }
+    margin-top: $spacing-rule-half / 2;
   }
 }
+
 
 .meta__frame {
   position: relative;
