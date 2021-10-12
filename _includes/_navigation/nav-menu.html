@@ -1,32 +1,12 @@
 <div class="nav-menu" data-nav-menu>
   <div class="nav-menu__bg" data-nav-menu-bg></div>
   <div class="nav-menu__grid">
-    <div class="nav-bar" data-nav-bar>
-      <div class="nav-bar__wrapper">
-        <div class="nav-bar__back" data-close-submenu>
-          <svg width="50" height="50" class="nav-bar__back-outline">
-             <circle cx="25" cy="25" r="24" />
-          </svg>
-          <div class="nav-bar__back-main">
-            <div class="nav-bar__back-wrap">
-              {% include back-icon.html %}
-            </div>
-          </div>
 
-        </div>
-
-        <a class="nav-bar__logo" href="../../" data-logo>
-          {% include logo.html %}
-        </a>
-
-        <button class="hamburger is-open" data-toggle-menu>
-          <div class="hamburger__icon-line"></div>
-          <div class="hamburger__icon-line"></div>
-          <div class="hamburger__icon-line"></div>
-        </button>
-      </div>
-    </div>
-
+    {%
+      include _navigation/nav-bar.html
+      nav-menu = true
+    %}
+    
     <div class="nav-menu__heading meta--white meta--margin-bottom">
       <div class="hr" data-meta-menu-hr></div>
       <div class="meta__frame">

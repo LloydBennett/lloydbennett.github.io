@@ -87,7 +87,7 @@ $nav-inactive: #676767;
     }
 
     @include media-query($breakpoint--x-large) {
-      grid-column: 1 / 6;
+      grid-column: 2 / 8;
     }
   }
 }

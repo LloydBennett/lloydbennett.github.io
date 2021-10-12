@@ -13,7 +13,9 @@
         {% endif %}
         <div id="{{ title | downcase }}" data-page-content>
           {% include _navigation/nav-menu.html %}
-          {% include _navigation/nav-bar.html %}
+          {% include _navigation/nav-bar.html
+            main = true
+          %}
           {% include hero.html %}
           {{ content }}
         </div>

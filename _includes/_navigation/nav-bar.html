@@ -1,5 +1,5 @@
-<div class="nav-bar" data-nav-bar-hero>
-  <div class="container nav-bar__wrapper">
+<div class="nav-bar" {% if include.nav-menu %}data-nav-bar{% else %}data-nav-bar-hero{% endif %}>
+  <div class="{% if include.main %}container nav-bar__wrapper{% else %}nav-bar__flex{% endif %}">
     <div class="nav-bar__col">
       <a href="../../">
         <span class="meta__content meta--body-text">
@@ -9,8 +9,23 @@
           <span class="hide-mobile">Bennett</span><span class="show-mobile">Brand &amp; Web Designer </span>
         </span>
       </a>
+
+      {% if include.nav-menu %}
+      <div class="nav-bar__back" data-close-submenu>
+        <svg width="50" height="50" class="nav-bar__back-outline">
+           <circle cx="25" cy="25" r="24" />
+        </svg>
+        <div class="nav-bar__back-main">
+          <div class="nav-bar__back-wrap">
+            {% include back-icon.html %}
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
     </div>
 
+    {% if include.main %}
     <div class="nav-bar__col">
       <span class="meta__content meta--body-text">
         Brand &amp;
@@ -19,9 +34,10 @@
          Web Designer
       </span>
     </div>
+    {% endif %}
 
     <div class="nav-bar__col">
-      <button class="hamburger" data-toggle-menu>
+      <button class="hamburger {% if include.nav-menu %}is-open{% endif %}" data-toggle-menu>
         <div class="hamburger__icon-line"></div>
         <div class="hamburger__icon-line"></div>
         <div class="hamburger__icon-line"></div>

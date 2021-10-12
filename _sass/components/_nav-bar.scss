@@ -26,6 +26,11 @@
   }
 }
 
+.nav-bar__flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 .nav-bar__wrapper {
   @include media-query($breakpoint--small - 1, max-width) {
     align-items: center;
