@@ -1,4 +1,5 @@
 .services {
+  position: relative;
   @include section;
 }
 
@@ -11,6 +12,17 @@
   @include media-query($breakpoint--medium) {
     grid-row-gap: spacing(3);
   }
+}
+
+.services__side {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 12%;
+  background-color: red;
+  background: url('../images/home/lloyd-face-half.jpg');
+  background-size: cover;
 }
 
 .services__description {
