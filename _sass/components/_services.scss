@@ -20,9 +20,18 @@
   position: absolute;
   height: 100%;
   width: 12%;
-  background-color: red;
-  background: url('../images/home/lloyd-face-half.jpg');
+  background: url('../images/home/lloyd-face.jpg');
   background-size: cover;
+  background-position-x: 80%;
+  display: none;
+
+  @include media-query($breakpoint--x-large) {
+    display: block;
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    background-position-x: 90%;
+  }
 }
 
 .services__description {
