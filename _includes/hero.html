@@ -28,6 +28,16 @@
     </picture>
     {% endif %}
 
+    {% if page.type == 'casestudy' %}
+      {% for project in site.projects %}
+        {% unless project.title == page.title %}
+          <span class="hero__number">
+            {{ forloop.index | prepend: '00' | slice: -2, 2 }}
+          </span>
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+
     <h1 class="hero__title{% if page.type == 'casestudy' %} hero--title-no-margin{% endif %}"
     data-hero-title>
       {% if page.herotitle %}
@@ -44,9 +54,9 @@
     {% endif %}
 
     {% if page.type != 'casestudy' %}
-
       {% include scroll-button.html %}
     {% endif %}
+
   </div>
 
   {% if page.type == 'casestudy' %}
