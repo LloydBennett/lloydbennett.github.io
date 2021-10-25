@@ -1,5 +1,5 @@
 <section class="hero {% if page.title == 'About' %}hero--about{% endif %}{% if page.title == 'Home' %}hero--home{% endif %}">
-  <div class="hero__grid {% if page.title == 'Home' %}hero-grid--one{% endif %} {% if page.type == 'casestudy' %}hero-grid--casestudy {% endif%}">
+  <div class="hero__grid {% if page.title == 'Home' %}hero-grid--one{% else if page.type == 'casestudy' %}hero-grid--casestudy {% else %}hero-grid--two {% endif%}">
 
     {% if page.title == 'Home' %}
     <div class="hero__home-masthead" data-hero-title-mobile>
