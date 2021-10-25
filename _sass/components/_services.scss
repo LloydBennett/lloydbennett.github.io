@@ -1,3 +1,5 @@
+$services-grid-tweakpoint: 1460px;
+
 .services {
   position: relative;
   @include section;
@@ -55,6 +57,10 @@
 
   @include media-query($breakpoint--x-large) {
     grid-column: 4 / 9;
+  }
+
+  @include media-query($services-grid-tweakpoint) {
+    grid-column: 4 / 8;
   }
 }
 
