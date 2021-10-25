@@ -1,28 +1,56 @@
 <section class="{% if include.small-margin %}inner-section{% else %}section{% endif %}">
   <div class="container grid">
-    {% if include.meta-title %}
-    <div class="meta meta--head meta--padding-two">
-      <div class="hr"></div>
-      <span class="meta__title">
-        {{ include.meta-title }}
-      </span>
-      {% if include.stats %}
-      <div class="meta--stats stats">
-        {% for stat in include.stats %}
-        <div class="stats__info">
-          <span class="stats__info-percentage">
-            {{ stat.figure }}
-          </span>
-          <span class="stats__info-description">
-            {{ stat.description }}
-          </span>
-        </div>
+
+    {% if include.side-content %}
+    <div class="side-content">
+      <ul>
+        <li>
+          <p><b>Services</b></p>
+        </li>
+        {% for cat in page.category %}
+        <li>
+          <p>{{ cat }}</p>
+        </li>
         {% endfor %}
-      </div>
-      {% endif %}
+
+      </ul>
+      <ul>
+        <li>
+          <p><b>Industry</b></p>
+        </li>
+        {% for cat in page.industry %}
+        <li>
+          <p>{{ cat }}</p>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
     {% endif %}
+
     <div class="single-column">
+      {% if include.meta-title %}
+      <div class="meta meta--margin-bottom">
+        <div class="hr"></div>
+        <span class="meta__title">
+          {{ include.meta-title }}
+        </span>
+        {% if include.stats %}
+        <div class="meta--stats stats">
+          {% for stat in include.stats %}
+          <div class="stats__info">
+            <span class="stats__info-percentage">
+              {{ stat.figure }}
+            </span>
+            <span class="stats__info-description">
+              {{ stat.description }}
+            </span>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
       {% if include.title %}
       <h4>
         {{ include.title }}
