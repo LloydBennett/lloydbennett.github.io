@@ -64,8 +64,6 @@ $hero-grid-one-tweakpoint: 650px;
     }
   }
 
-
-
   .thumbnail {
     position: relative;
     right: -20%;
@@ -104,6 +102,8 @@ $hero-grid-one-tweakpoint: 650px;
 }
 
 .hero-grid--casestudy {
+  margin-bottom: spacing(13);
+  
   .hero__title {
     grid-column: 3 / 7;
     @include media-query($breakpoint--x-large) {
