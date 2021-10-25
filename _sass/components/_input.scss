@@ -1,4 +1,4 @@
-$input-placeholder: #B8B8B6;
+$input-placeholder: lighten($colour--body-type, 0.2);
 
 @include change-input-placeholder-color($input-placeholder);
 @include input-placeholder-disappear-on-focus;
