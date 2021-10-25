@@ -1,4 +1,4 @@
-$services-grid-tweakpoint: 1460px;
+$services-grid-tweakpoint: 1500px;
 
 .services {
   position: relative;
@@ -47,6 +47,10 @@ $services-grid-tweakpoint: 1460px;
 
   @include media-query($breakpoint--medium) {
     font-size: 3.6rem;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    font-size: 4.8rem;
   }
 }
 
