@@ -43,8 +43,10 @@
     </p>
     {% endif %}
 
-    {% include scroll-button.html %}
+    {% if page.type != 'casestudy' %}
 
+      {% include scroll-button.html %}
+    {% endif %}
   </div>
 
   {% if page.type == 'casestudy' %}
