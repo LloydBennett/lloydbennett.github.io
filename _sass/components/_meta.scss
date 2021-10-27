@@ -48,6 +48,24 @@
   }
 }
 
+.meta--margin-bottom-l {
+  margin-bottom: spacing(9);
+
+  @include media-query($breakpoint--medium) {
+    margin-bottom: spacing(12);
+  }
+
+  @include media-query($breakpoint--large) {
+    margin-bottom: spacing(18);
+  }
+}
+
+.meta--center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .meta__content {
   display: block;
 }
