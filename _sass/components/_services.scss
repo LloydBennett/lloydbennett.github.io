@@ -30,10 +30,6 @@ $services-grid-tweakpoint: 1500px;
   @include media-query($breakpoint--x-large) {
     display: block;
   }
-
-  @include media-query($breakpoint--xx-large) {
-    background-position-x: 90%;
-  }
 }
 
 .services__description {
