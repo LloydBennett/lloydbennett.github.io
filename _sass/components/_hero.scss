@@ -14,14 +14,33 @@ $hero-grid-one-tweakpoint: 650px;
   @include inner-section;
 
   .hero__copy {
-    @include media-query($breakpoint--medium - 1, max-width) {
+    grid-column: 5 / 8;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    @include media-query(900px, max-width) {
       display: none;
+    }
+
+    @include media-query($breakpoint--x-large) {
+      grid-column: 6 / 9;
     }
   }
 
   .hero__title {
-    @include media-query($breakpoint--medium - 1, max-width) {
-      margin-bottom: 0;
+    grid-column: 1 / 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    margin-bottom: 0;
+  }
+
+  .scroll-button {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column: 5 / 8;
+
+    @include media-query($breakpoint--x-large) {
+      grid-column: 6 / 8;
     }
   }
 }
