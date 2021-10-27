@@ -1,11 +1,15 @@
 @mixin section {
   margin-bottom: spacing(10);
-  
+
   @include media-query($breakpoint--medium) {
     margin-bottom: spacing(13);
   }
 
   @include media-query($breakpoint--x-large) {
     margin-bottom: spacing(20);
+  }
+
+  @include media-query($breakpoint--xx-large) {
+    margin-bottom: spacing(28);
   }
 }
