@@ -27,6 +27,21 @@
     </div>
     {% endif %}
 
+    {% if include.stats %}
+    <div class="side-content">
+      {% for stat in include.stats %}
+      <div class="stats__info">
+        <span class="stats__info-percentage">
+          {{ stat.figure }}
+        </span>
+        <span class="stats__info-description">
+          {{ stat.description }}
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
     <div class="single-column">
       {% if include.meta-title %}
       <div class="meta meta--margin-bottom">
@@ -34,20 +49,6 @@
         <span class="meta__title">
           {{ include.meta-title }}
         </span>
-        {% if include.stats %}
-        <div class="meta--stats stats">
-          {% for stat in include.stats %}
-          <div class="stats__info">
-            <span class="stats__info-percentage">
-              {{ stat.figure }}
-            </span>
-            <span class="stats__info-description">
-              {{ stat.description }}
-            </span>
-          </div>
-          {% endfor %}
-        </div>
-        {% endif %}
       </div>
       {% endif %}
 
