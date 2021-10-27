@@ -31,23 +31,22 @@
 >
   {% capture project-image-url %}../images/projects/{{next.directory}}/next-project/{% endcapture %}
 
-  <div class="hero__grid">
-    <div class="meta meta--head">
-      <div class="hr"></div>
-      <span class="meta__title">
-        Next Project
-      </span>
-    </div>
-    <div class="hero__content">
+  <div class="casestudy-footer__grid">
+    <div class="casestudy-footer__content">
+      <div class="meta meta--margin-bottom-l meta--center">
+        <span class="meta__title">
+          // Next Project //
+        </span>
+      </div>
       <span class="casestudy-footer__title">
         {{ nexttitle }}
       </span>
     </div>
+    <picture class="casestudy-footer__img thumbnail--block">
+      <source media="(min-width: 700px)" srcset="{{ project-image-url }}/next-project-large.jpg">
+      <img src="{{ project-image-url }}/next-project-small.jpg" alt="{{page.directory}}">
+    </picture>
   </div>
 
-  <picture class="thumbnail--block">
-    <source media="(min-width: 700px)" srcset="{{ project-image-url }}/next-project-large.jpg">
-    <img src="{{ project-image-url }}/next-project-small.jpg" alt="{{page.directory}}">
-  </picture>
 </a>
 {% endif %}

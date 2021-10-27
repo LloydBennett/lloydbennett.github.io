@@ -1,21 +1,29 @@
 .casestudy__footer {
-  background-color: $colour--grey;
+  padding-top: spacing(2);
+  border-top: $border-top;
   display: block;
   position: relative;
-  padding: spacing(8) 0 0;
   overflow: hidden;
-  height: 50rem;
+  height: 60rem;
 
   @include media-query($breakpoint--large) {
-    padding: spacing(13) 0 0;
-    height: 56rem;
+    height: 80rem;
   }
+}
+
+.casestudy-footer__grid {
+  @include container;
 }
 
 .casestudy-footer__title {
   @extend h1;
+  text-align: center;
 
   .title-mask span {
     transform: translateY(0);
   }
+}
+
+.casestudy-footer__content {
+  @include inner-section;
 }
