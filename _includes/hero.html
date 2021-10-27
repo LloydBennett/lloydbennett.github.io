@@ -48,9 +48,11 @@
     </h1>
 
     {% if page.description %}
-    <p class="hero__copy" data-hero-copy data-hero-content-group>
-      {{ page.description }}
-    </p>
+    <div class="hero__copy" data-hero-copy data-hero-content-group>
+      {% for description in page.description %}
+        <p>{{ description.paragraph }}</p>
+      {% endfor %}
+    </div>
     {% endif %}
 
     {% if page.type != 'casestudy' %}
