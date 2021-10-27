@@ -33,11 +33,19 @@ $tweakpoint-two-column-layout: 1080px;
     @include media-query($breakpoint--medium) {
       grid-column: 1 / 4;
     }
+
+    @include media-query($breakpoint--x-large) {
+      grid-column: 1 / 6;
+    }
   }
 
   &:nth-child(even) {
     @include media-query($breakpoint--medium) {
       grid-column: 4 / 7;
+    }
+
+    @include media-query($breakpoint--x-large) {
+      grid-column: 6 / 11;
     }
   }
 }
