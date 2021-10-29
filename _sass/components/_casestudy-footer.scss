@@ -4,7 +4,11 @@
   display: block;
   position: relative;
   overflow: hidden;
-  height: 60rem;
+  height: 35rem;
+
+  @include media-query($breakpoint--medium) {
+    height: 60rem;
+  }
 
   @include media-query($breakpoint--large) {
     height: 80rem;
