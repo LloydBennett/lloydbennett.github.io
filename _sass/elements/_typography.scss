@@ -29,16 +29,16 @@ h4 {
 }
 
 h1 {
-  font-size: 4.8rem;
+  font-size: 6rem;
   line-height: 1.1;
   margin: 0 0 spacing(5);
 
-  @include media-query(360px) {
-    font-size: 6rem;
+  @include media-query(450px) {
+    font-size: 7.6rem;
   }
 
   @include media-query($breakpoint--small) {
-    font-size: 9.3rem;
+    font-size: 9.6rem;
     line-height: 1;
     margin: 0 0 spacing(7);
   }
@@ -54,9 +54,13 @@ h1 {
 }
 
 h2 {
-  font-size: 3.6rem;
+  font-size: 4.8rem;
   line-height: 1.1;
   margin: 0 0 spacing(4);
+
+  @include media-query($breakpoint--small) {
+    font-size: 6rem;
+  }
 
   @include media-query($breakpoint--medium) {
     font-size: 9.6rem;
@@ -65,25 +69,29 @@ h2 {
 }
 
 h3 {
-  font-size: 2.4rem;
+  font-size: 3.9rem;
   line-height: 1.3;
   margin: 0 0 spacing(2);
 
+  @include media-query($breakpoint--small) {
+    font-size: 4.8rem;
+  }
+
   @include media-query($breakpoint--medium) {
     margin: 0 0 spacing(3);
-    font-size: 7.4rem;
+    font-size: 7.6rem;
     line-height: 1.1;
   }
 }
 
 h4 {
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   line-height: 1.3;
   margin: 0 0 spacing(2);
 
   @include media-query($breakpoint--medium) {
     margin: 0 0 spacing(3);
-    font-size: 4.6rem;
+    font-size: 4.8rem;
     line-height: 1.2;
   }
 }
