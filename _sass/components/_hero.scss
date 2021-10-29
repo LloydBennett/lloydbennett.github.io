@@ -28,10 +28,14 @@ $hero-grid-one-tweakpoint: 650px;
   }
 
   .hero__title {
-    grid-column: 1 / 5;
+    grid-column: 1 / 6;
     grid-row-start: 2;
     grid-row-end: 4;
     margin-bottom: 0;
+
+    @include media-query($breakpoint--medium) {
+      grid-column: 1 / 5;
+    }
   }
 
   .scroll-button {
@@ -138,6 +142,7 @@ $hero-grid-one-tweakpoint: 650px;
 
     @include media-query($breakpoint--small - 1, max-width) {
       text-align: right;
+      font-size: 5rem;
     }
 
     @include media-query($breakpoint--small) {
@@ -151,6 +156,10 @@ $hero-grid-one-tweakpoint: 650px;
 
   .hero__number {
     grid-column: 1 / 2;
+
+    @include media-query($breakpoint--small - 1, max-width) {
+      font-size: 5rem;
+    }
 
     @include media-query($breakpoint--small) {
       grid-column: 1 / 3;
