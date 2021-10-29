@@ -12,9 +12,3 @@
     }
   }
 }
-
-.single-column__mobile-copy {
-  @include media-query($breakpoint--medium) {
-    display: none;
-  }
-}

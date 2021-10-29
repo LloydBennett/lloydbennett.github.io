@@ -17,3 +17,9 @@
     padding-bottom: spacing(23);
   }
 }
+
+.section--mobile {
+  @include media-query($breakpoint--medium) {
+    display: none;
+  }
+}
