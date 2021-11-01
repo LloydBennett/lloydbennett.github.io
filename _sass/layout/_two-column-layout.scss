@@ -49,3 +49,19 @@ $tweakpoint-two-column-layout: 1080px;
     }
   }
 }
+
+.two-columns-item--indent {
+  grid-column: 3 / 7;
+
+  &:nth-child(even) {
+    @include media-query($breakpoint--x-large) {
+      grid-column: 7 / 11;
+    }
+  }
+
+  & + & {
+    @include media-query($breakpoint--x-large - 1, max-width) {
+      margin-top: spacing(4);
+    }
+  }
+}
