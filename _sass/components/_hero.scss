@@ -11,8 +11,6 @@ $hero-grid-one-tweakpoint: 650px;
 }
 
 .hero--about {
-  @include inner-section;
-
   .hero__copy {
     grid-column: 5 / 8;
     grid-row-start: 1;

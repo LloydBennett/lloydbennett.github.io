@@ -9,6 +9,14 @@ $tweakpoint-two-column-layout: 1080px;
   }
 }
 
+.two-columns--indent {
+  grid-row-gap: spacing(6);
+
+  @include media-query($breakpoint--x-large) {
+    grid-row-gap: spacing(8);
+  }
+}
+
 .two-columns--large-gap {
   @include media-query($breakpoint--small - 1, max-width) {
     grid-row-gap: spacing(6);
@@ -53,7 +61,7 @@ $tweakpoint-two-column-layout: 1080px;
 .two-columns-item--indent {
   grid-column: 3 / 7;
 
-  &:nth-child(even) {
+  &:nth-child(2n + 3) {
     @include media-query($breakpoint--x-large) {
       grid-column: 7 / 11;
     }
