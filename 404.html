@@ -13,7 +13,7 @@ title: 404
         </span>
       </div>
       <h1 data-hero-title>
-        <div class="title-mask title-mask--inline title-mask--with-padding"><span>P</span><span>a</span><span>g</span><span>e</span><span>&nbsp;</span><span>c</span><span>a</span><span>n</span><span>&apos;t&nbsp;</span></div><div class="title-mask"><span>b</span><span>e&nbsp;</span><span>f</span><span>o</span><span>u</span><span>n</span><span>d</span></div>
+        <div class="title-mask title-mask--inline title-mask--with-padding"><span>P</span><span>a</span><span>g</span><span>e</span></div><div class="title-mask title-mask--inline"><span>c</span><span>a</span><span>n</span><span>&apos;t&nbsp;</span><span>b</span><span>e</span></div><div class="title-mask"><span>f</span><span>o</span><span>u</span><span>n</span><span>d</span></div>
       </h1>
       <div data-hero-content-group>
         <p class="error-grid__message">
@@ -28,11 +28,18 @@ title: 404
       </div>
     </div>
 
-    <div class="error-grid__socials" data-fade-element>
-      {% include _social-links/dribbble.html useIcon = false dark-mode = false %}
-      {% include _social-links/instagram.html useIcon = false dark-mode = false %}
-      {% include _social-links/linkedin.html useIcon = false dark-mode = false %}
-    </div>
+
   </div>
-  <div class="error-grid__aside" data-fade-element></div>
+
+  <picture class="error-grid__image thumbnail--block" data-fade-element>
+    <source media="(max-width: 1270px)" srcset="../images/404.jpg">
+    <source media="(min-width: 1271px)" srcset="../images/404.jpg">
+    <img src="../images/404.jpg" alt="Error Image">
+  </picture>
+
+  <div class="error-grid__socials" data-fade-element>
+    {% include _social-links/dribbble.html useIcon = false dark-mode = false %}
+    {% include _social-links/instagram.html useIcon = false dark-mode = false %}
+    {% include _social-links/linkedin.html useIcon = false dark-mode = false %}
+  </div>
 </div>
