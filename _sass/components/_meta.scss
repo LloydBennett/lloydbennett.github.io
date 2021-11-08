@@ -4,10 +4,6 @@
   @include media-query($breakpoint--small) {
     max-width: 19rem;
   }
-
-  @include media-query($breakpoint--large) {
-    padding-top: spacing(1);
-  }
 }
 
 .meta--padding {

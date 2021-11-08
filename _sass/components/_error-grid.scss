@@ -2,7 +2,11 @@
   @include container;
   @include grid;
   height: 100%;
-  padding: spacing(6) 0 0;
+  padding: spacing(3) 0 0;
+
+  @include media-query($breakpoint--small) {
+    padding: spacing(6) 0 0;
+  }
 }
 
 .error-grid__column {
@@ -10,15 +14,17 @@
   justify-content: space-between;
   flex-direction: column;
   height: 100%;
+  grid-column: 1 / 5;
+  grid-row-start: 2;
+  grid-row-end: 4;
 
-  @include media-query($breakpoint--small) {
-    grid-column: 1 / 5;
+  @include media-query($breakpoint--large) {
+    grid-column: 4 / 7;
   }
 
   @include media-query($breakpoint--x-large) {
     grid-column: 7 / 11;
     grid-row-start: 1;
-    grid-row-end: 4;
   }
 
   .meta {
@@ -27,18 +33,39 @@
 }
 
 .error-grid__image {
-  grid-column: 3 / 6;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  @include media-query($breakpoint--large - 1, max-width) {
+    display: none;
+  }
+
+  @include media-query($breakpoint--large) {
+    grid-column: 1 / 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 3 / 6;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
 }
 
 .error-grid__socials {
-  grid-column: 3 / 5;
   grid-row-start: 1;
+
+  @include media-query($breakpoint--medium) {
+    grid-column: 4 / 6;
+    margin-bottom: spacing(14);
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 3 / 5;
+    margin-bottom: 0;
+  }
 
   .link {
     display: table;
-    margin-top: spacing(2);
+    margin-top: spacing(1);
 
     &:first-child {
       margin-top: 0;
@@ -60,13 +87,39 @@
 
 .error-grid__logo {
   grid-column: 1 / 3;
+
+  @include media-query($breakpoint--medium - 1, max-width) {
+    margin-bottom: spacing(8);
+  }
 }
 
 .error-grid__code {
   @extend h3;
-  grid-column: 1 / 2;
   margin-bottom: 0;
-  grid-row-end: 4;
-  display: flex;
-  align-items: flex-end;
+  display: none;
+
+  @include media-query($breakpoint--medium) {
+    grid-column: 6 / 7;
+    display: flex;
+    align-items: center;
+  }
+
+
+  @include media-query($breakpoint--large - 1, max-width) {
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+
+  @include media-query($breakpoint--large) {
+    align-items: flex-end;
+    grid-column: 1 / 2;
+  }
+
+  @media screen and (min-width: $breakpoint--large) and (max-width: $breakpoint--x-large - 1) {
+    grid-row-start: 3;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-row-end: 4;
+  }
 }
