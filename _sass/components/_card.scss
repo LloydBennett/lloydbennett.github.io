@@ -28,15 +28,6 @@ $card-tweakpoint: 1400px;
 
 .card__side {
   grid-row-start: 2;
-
-  @include media-query($breakpoint--x-large) {
-    grid-column: 9 / 11;
-    padding-top: spacing(2);
-  }
-
-  @include media-query($card-tweakpoint) {
-    grid-column: 10 / 11;
-  }
 }
 
 .card__main {
@@ -50,13 +41,19 @@ $card-tweakpoint: 1400px;
 
 .card__no {
   grid-column: 1 / 3;
+  margin-top: -#{spacing(1)};
+
+  @include media-query($breakpoint--small) {
+    margin-top: -#{spacing(2)};
+  }
 
   @include media-query($breakpoint--medium) {
     line-height: 1;
   }
-  
+
   @include media-query($breakpoint--x-large) {
     grid-row-start: 1;
+    margin-top: -#{spacing(3)};
   }
 
 }
@@ -72,7 +69,6 @@ $card-tweakpoint: 1400px;
 
   .title-mask {
     @include media-query($breakpoint--small) {
-      //display: inline-block;
       display: table;
     }
   }
@@ -143,18 +139,6 @@ $card-tweakpoint: 1400px;
   }
 }
 
-.card--desktop {
-  @include media-query($breakpoint--large - 1, max-width) {
-    display: none;
-  }
-}
-
-.card--mobile {
-  @include media-query($breakpoint--large) {
-    display: none;
-  }
-}
-
 .card__morph {
   @include overlay;
   z-index: 6;
@@ -167,5 +151,14 @@ $card-tweakpoint: 1400px;
 .card__meta-tags {
   @include media-query($breakpoint--x-large - 1, max-width) {
     display: none;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 9 / 11;
+    padding-top: spacing(2);
+  }
+
+  @include media-query($card-tweakpoint) {
+    grid-column: 10 / 11;
   }
 }
