@@ -73,3 +73,10 @@ $tweakpoint-two-column-layout: 1080px;
     }
   }
 }
+
+.two-columns-item__no {
+  @extend .no-wrap-and-break;
+  @include media-query($breakpoint--medium) {
+    font-size: 0.8em;
+  }
+}

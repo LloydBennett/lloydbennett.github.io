@@ -111,6 +111,7 @@ $nav-inactive: #676767;
   margin-bottom: spacing(2);
   overflow: hidden;
   align-self: flex-start;
+  font-style: normal;
 
   @include media-query($breakpoint--small) {
     margin-bottom: spacing(4);
@@ -123,13 +124,13 @@ $nav-inactive: #676767;
   &:hover  {
     .nav-menu__link-line {
       transition: 200ms ease;
-      transform: translateX(0);
+      animation: link-hover 600ms ease 0s 1 forwards;
     }
   }
 }
 
 .nav-menu__link {
-  @extend h3;
+  @extend h2;
   display: block;
   color: $colour--white;
   display: inline-block;
