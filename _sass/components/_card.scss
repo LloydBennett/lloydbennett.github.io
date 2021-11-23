@@ -1,3 +1,5 @@
+$card-tweakpoint: 1400px;
+
 .card {
   @include container;
   @include grid(null, true);
@@ -25,14 +27,14 @@
 }
 
 .card__side {
-  ///grid-column: 1 / 2;
   grid-row-start: 2;
 
-  @include media-query($breakpoint--small) {
-    grid-column: 5 / 7;
+  @include media-query($breakpoint--x-large) {
+    grid-column: 9 / 11;
+    padding-top: spacing(2);
   }
 
-  @include media-query($breakpoint--x-large) {
+  @include media-query($card-tweakpoint) {
     grid-column: 10 / 11;
   }
 }
@@ -129,12 +131,13 @@
 .card__description {
   @include max-paragraph-width;
 
-  @include media-query($breakpoint--x-large - 1, max-width) {
+  @include media-query($card-tweakpoint - 1, max-width) {
     display: none;
   }
 
-  @include media-query($breakpoint--x-large) {
+  @include media-query($card-tweakpoint) {
     grid-column: 7 / 9;
+    padding-top: spacing(2);
   }
 }
 
@@ -157,4 +160,10 @@
   transition: 300ms ease opacity;
   pointer-events: none;
   position: absolute;
+}
+
+.card__meta-tags {
+  @include media-query($breakpoint--x-large - 1, max-width) {
+    display: none;
+  }
 }
