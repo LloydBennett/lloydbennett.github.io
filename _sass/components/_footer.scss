@@ -113,7 +113,11 @@
   }
 
   @include media-query($breakpoint--x-large) {
-    grid-column: 6 / 7;
+    grid-column: 6 / 8;
+  }
+
+  a {
+    display: table;
   }
 }
 

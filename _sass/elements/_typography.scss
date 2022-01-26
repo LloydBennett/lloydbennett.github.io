@@ -48,8 +48,15 @@ h1 {
     margin: 0 0 spacing(9);
   }
 
-  @include media-query($breakpoint--xx-large) {
+  // @include media-query($breakpoint--xx-large) {
+  //   font-size: 14.9rem;
+  // }
+  @include media-query(1470px) {
     font-size: 14.9rem;
+  }
+
+  @include media-query($breakpoint--xxx-large) {
+    font-size: 18rem;
   }
 }
 
