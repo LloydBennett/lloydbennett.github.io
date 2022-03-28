@@ -57,7 +57,11 @@ $hero-grid-one-tweakpoint: 650px;
 }
 
 .hero-grid--with-row {
-  grid-row-gap: spacing(3);
+  grid-row-gap: spacing(2);
+
+  @include media-query($breakpoint--small) {
+    grid-row-gap: spacing(3);
+  }
 
   @include media-query($breakpoint--x-large) {
     grid-row-gap: spacing(4);
@@ -185,7 +189,6 @@ $hero-grid-one-tweakpoint: 650px;
   }
 }
 
-
 .hero--collaspe-padding {
   @include media-query($breakpoint--medium - 1, max-width) {
     width: 100%;
@@ -213,32 +216,43 @@ $hero-grid-one-tweakpoint: 650px;
 
 .hero--image-two-thirds {
   @include two-thirds-media-layout;
+  @include media-query($breakpoint--x-large) {
+    grid-column: 1 / 11;
+  }
+}
+
+.hero--image-offset {
+  @include media-query($breakpoint--x-large) {
+    left: -20%;
+  }
 }
 
 .hero-image--half-one {
   @include media-query($breakpoint--small - 1, max-width) {
-    width: 50%;
+    width: calc(50% - #{spacing(1)});
   }
 
   @include media-query($breakpoint--small) {
-    grid-column: 1 / 4;
+    grid-column: 3 / 5;
   }
 
   @include media-query($breakpoint--x-large) {
-    grid-column: 1 / 6;
+    grid-column: 3 / 7;
   }
 }
 
 .hero-image--half-two {
   @include media-query($breakpoint--small - 1, max-width) {
-    width: 50%;
+    width: calc(50% - #{spacing(1)});
+    margin-left: spacing(2);
   }
+
   @include media-query($breakpoint--small) {
-    grid-column: 4 / 7;
+    grid-column: 5 / 7;
   }
 
   @include media-query($breakpoint--x-large) {
-    grid-column: 6 / 11;
+    grid-column: 7 / 11;
   }
 }
 
