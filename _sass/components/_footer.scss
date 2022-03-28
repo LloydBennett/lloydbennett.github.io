@@ -99,13 +99,15 @@
     margin-right: auto;
   }
 
-  @media screen and (min-width: $breakpoint--small) and (max-width: $tweakpoint-two-column-layout - 1) {
-    grid-column: 4 / 5;
-    grid-row-start: 3;
+  @media screen and (min-width: $breakpoint--small) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-column: 4 / 6;
   }
 
-  @include media-query($tweakpoint-two-column-layout) {
-    grid-column: 4 / 5;
+  @media screen and (min-width: $breakpoint--small) and (max-width: $tweakpoint-two-column-layout - 1) {
+    grid-row-start: 3;
   }
 
   @include media-query($breakpoint--large) {
@@ -118,6 +120,7 @@
 
   a {
     display: table;
+    align-self: flex-start;
   }
 }
 
@@ -139,8 +142,8 @@
   }
 
   a {
-    display: inline-block;
-    margin-right: spacing(3);
+    display: table;
+    margin-bottom: spacing(1);
 
     &:last-child {
       margin-right: 0;
