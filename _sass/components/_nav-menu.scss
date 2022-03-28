@@ -15,6 +15,7 @@ $nav-inactive: #676767;
 
   .nav-bar {
     opacity: 0;
+    align-self: flex-start;
 
     &.appear {
       opacity: 1;
@@ -73,6 +74,8 @@ $nav-inactive: #676767;
   @include grid;
   position: relative;
 
+  min-height: 100%;
+
   @include media-query($breakpoint--x-large) {
     width: 95%;
     margin-right: 0;
@@ -99,6 +102,10 @@ $nav-inactive: #676767;
 
   @include media-query($breakpoint--large) {
     grid-column: 2 / 8;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
@@ -218,23 +225,24 @@ $nav-inactive: #676767;
 }
 
 .nav-menu__socials {
-  margin-bottom: 5%;
+  //margin-bottom: 5%;
   transition: 300ms ease 100ms;
   margin-top: spacing(6);
-  margin-bottom: spacing(5);
+  margin-bottom: spacing(3);
+  //margin-bottom: spacing(5);
 
   @include media-query($breakpoint--small) {
     margin-top: spacing(8);
   }
 
   @include media-query($breakpoint--medium) {
-    margin-bottom: spacing(9);
+    //margin-bottom: spacing(9);
     margin-top: spacing(9);
   }
 
-  @include media-query($breakpoint--large) {
-    margin-bottom: spacing(13);
-  }
+  // @include media-query($breakpoint--large) {
+  //   margin-bottom: spacing(13);
+  // }
 
   &.hide {
     opacity: 0;
