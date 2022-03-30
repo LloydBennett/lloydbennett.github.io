@@ -1,4 +1,4 @@
-<div class="nav-bar" {% if include.nav-menu %}data-nav-bar{% else %}data-nav-bar-hero{% endif %}>
+<div class="nav-bar{% if include.nav-menu %}" data-nav-bar{% else %} is-sticky" data-nav-bar-hero{% endif %}>
   <div class="{% if include.main %}container nav-bar__wrapper{% else %}nav-bar__flex{% endif %}">
     <div class="nav-bar__col nav-bar__logo">
       <a href="../../">
