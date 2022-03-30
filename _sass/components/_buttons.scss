@@ -1,6 +1,6 @@
 .button {
   @include body-text;
-  @include capitalized-text;
+  @include capitalized-text-bold;
   background-color: transparent;
   border: none;
   cursor: pointer;

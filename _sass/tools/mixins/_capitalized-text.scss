@@ -1,7 +1,11 @@
 @mixin capitalized-text {
   color: $colour--black;
   font-family: $type--family-alt;
+  text-transform: uppercase;
+}
+
+@mixin capitalized-text-bold {
+  @include capitalized-text;
   font-weight: 600;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
