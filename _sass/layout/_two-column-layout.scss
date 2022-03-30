@@ -76,6 +76,12 @@ $tweakpoint-two-column-layout: 1080px;
       margin-top: spacing(4);
     }
   }
+
+  &:nth-child(3) {
+    @include media-query($breakpoint--x-large) {
+      margin-top: 0;
+    }
+  }
 }
 
 .two-columns-item__no {
