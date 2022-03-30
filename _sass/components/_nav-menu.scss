@@ -225,24 +225,17 @@ $nav-inactive: #676767;
 }
 
 .nav-menu__socials {
-  //margin-bottom: 5%;
   transition: 300ms ease 100ms;
   margin-top: spacing(6);
   margin-bottom: spacing(3);
-  //margin-bottom: spacing(5);
 
   @include media-query($breakpoint--small) {
     margin-top: spacing(8);
   }
 
   @include media-query($breakpoint--medium) {
-    //margin-bottom: spacing(9);
     margin-top: spacing(9);
   }
-
-  // @include media-query($breakpoint--large) {
-  //   margin-bottom: spacing(13);
-  // }
 
   &.hide {
     opacity: 0;
@@ -348,7 +341,7 @@ $nav-inactive: #676767;
   .nav-menu__link .title-mask {
     &:before {
       counter-increment: li;
-      content: counter(li, decimal-leading-zero);
+      content: counter(li, decimal-leading-zero) ".";
     }
   }
 }
