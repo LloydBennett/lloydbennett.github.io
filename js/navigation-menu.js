@@ -8,6 +8,7 @@ class NavigationMenu {
     this.menuTrigger = document.querySelectorAll('[data-toggle-menu]');
     this.parentBg = this.parent.querySelector('[data-nav-menu-bg]');
     this.navAsideOverlay = this.parent.querySelector('[data-nav-aside-overlay]');
+    this.heroNavBar = document.querySelector('[data-nav-bar-hero]');
     this.body = document.body;
     this.subMenuTrigger = document.querySelector('[data-toggle-sub-menu]');
     this.closeSubMenuTrigger = document.querySelector('[data-close-submenu]');
@@ -37,6 +38,7 @@ class NavigationMenu {
       this.body.classList.toggle('no-scrolling');
       this.parent.classList.toggle('is-open');
       this.navBar.classList.toggle('is-open');
+      this.heroNavBar.classList.toggle('is-sticky');
       this.animate();
     }
   }
