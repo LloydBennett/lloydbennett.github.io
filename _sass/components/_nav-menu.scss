@@ -337,13 +337,6 @@ $nav-inactive: #676767;
     opacity: 0;
     transition: 500ms ease transform, 300ms ease opacity 150ms;
   }
-
-  .nav-menu__link .title-mask {
-    &:before {
-      counter-increment: li;
-      content: counter(li, decimal-leading-zero) ".";
-    }
-  }
 }
 
 .nav-menu__sub {
