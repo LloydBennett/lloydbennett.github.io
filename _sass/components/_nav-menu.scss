@@ -287,10 +287,10 @@ $nav-inactive: #676767;
   min-width: 15rem;
   max-width: 20rem;
   display: table;
-  //align-self: flex-end;
 
   @include media-query($breakpoint--small) {
     grid-column: 1 / 3;
+    align-self: flex-end;
   }
 
   @include media-query($breakpoint--large) {
