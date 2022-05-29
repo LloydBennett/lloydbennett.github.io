@@ -73,8 +73,12 @@ $nav-inactive: #676767;
   @include container;
   @include grid;
   position: relative;
-
   min-height: 100%;
+
+  @include media-query($breakpoint--small - 1, max-width) {
+    display: flex;
+    flex-direction: column;
+  }
 
   @include media-query($breakpoint--x-large) {
     width: 95%;
@@ -82,12 +86,15 @@ $nav-inactive: #676767;
   }
 
   .nav-bar {
-    margin-bottom: spacing(6);
     grid-column: 1 / 7;
 
-    @include media-query($breakpoint--small) {
-      margin-bottom: spacing(9);
+    @include media-query($breakpoint--small - 1, max-width) {
+      margin-bottom: spacing(6);
     }
+
+    // @include media-query($breakpoint--small) {
+    //   margin-bottom: spacing(9);
+    // }
 
     @include media-query($breakpoint--large) {
       grid-column: 2 / 8;
@@ -96,16 +103,17 @@ $nav-inactive: #676767;
 }
 
 .nav-menu__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+
   @include media-query($breakpoint--small) {
     grid-column: 1 / 8;
   }
 
   @include media-query($breakpoint--large) {
     grid-column: 2 / 8;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
 }
 
@@ -279,6 +287,7 @@ $nav-inactive: #676767;
   min-width: 15rem;
   max-width: 20rem;
   display: table;
+  //align-self: flex-end;
 
   @include media-query($breakpoint--small) {
     grid-column: 1 / 3;

@@ -1,6 +1,7 @@
 %meta-text {
   @include capitalized-text;
   font-size: 1.2rem;
+  line-height: 1.1;
 
   @include media-query($breakpoint--large) {
     font-size: 1.4rem;
