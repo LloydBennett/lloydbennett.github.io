@@ -26,7 +26,7 @@
     </div>
 
     {% if include.main %}
-    <div class="nav-bar__col">
+    <div class="nav-bar__col nav-bar--hide-mobile">
       <span class="meta__content meta--body-text">
         Brand &amp;
       </span>
@@ -36,7 +36,7 @@
     </div>
     {% endif %}
 
-    <div class="nav-bar__col">
+    <div class="nav-bar__col nav-bar--center">
       <button class="hamburger {% if include.nav-menu %}is-open{% endif %}" data-toggle-menu>
         <div class="hamburger__icon-line"></div>
         <div class="hamburger__icon-line"></div>

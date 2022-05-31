@@ -44,10 +44,6 @@
   }
 
   &:nth-child(2) {
-    @include media-query($breakpoint--small - 1, max-width) {
-      display: none;
-    }
-
     @include media-query($breakpoint--small) {
       grid-column: 3 / 5;
     }
@@ -68,6 +64,16 @@
       grid-column: 10 / 11;
     }
   }
+}
+
+.nav-bar--hide-mobile {
+  @include media-query($breakpoint--small - 1, max-width) {
+    display: none;
+  }
+}
+
+.nav-bar--center {
+  align-self: center;
 }
 
 .nav-bar__logo {
