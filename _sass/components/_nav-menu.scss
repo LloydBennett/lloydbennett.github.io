@@ -86,7 +86,7 @@ $nav-inactive: #676767;
   }
 
   .nav-bar {
-    grid-column: 1 / 7;
+    grid-column: 1 / 8;
 
     @include media-query($breakpoint--small - 1, max-width) {
       margin-bottom: spacing(6);
