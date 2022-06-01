@@ -4,7 +4,7 @@
   display: block;
   position: relative;
   overflow: hidden;
-  height: 35rem;
+  height: 50rem;
 
   @include media-query($breakpoint--medium) {
     height: 60rem;
@@ -13,10 +13,15 @@
   @include media-query($breakpoint--large) {
     height: 80rem;
   }
+
+  @include media-query($breakpoint--xx-large) {
+    height: 100rem;
+  }
 }
 
 .casestudy-footer__grid {
   @include container;
+  @include grid;
 }
 
 .casestudy-footer__title {
@@ -30,4 +35,23 @@
 
 .casestudy-footer__content {
   @include inner-section;
+
+  @include media-query($breakpoint--small) {
+    grid-column: 2 / 6;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 2 / 10;
+  }
+}
+
+.casestudy-footer__img {
+
+  @include media-query($breakpoint--small) {
+    grid-column: 2 / 6;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 2 / 10;
+  }
 }
