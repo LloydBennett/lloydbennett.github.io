@@ -2,14 +2,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 8rem;
-  height: 8rem;
+  width: 11.9rem;
+  height: 11.9rem;
   position: relative;
   cursor: pointer;
 
   @include media-query($breakpoint--large) {
-    width: 12rem;
-    height: 12rem;
+    width: 18rem;
+    height: 18rem;
+  }
+
+  @include media-query($breakpoint--x-large) {
+    width: 25.5rem;
+    height: 25.5rem;
   }
 
   svg {
@@ -59,8 +64,8 @@
 .scroll-button__wrapper {
   overflow: hidden;
 
-  @include media-query($breakpoint--large - 1, max-width) {
-    width: 26px;
+  @include media-query($breakpoint--x-large) {
+    width: 60px;
   }
 }
 
