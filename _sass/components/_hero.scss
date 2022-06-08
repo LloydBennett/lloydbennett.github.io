@@ -88,6 +88,10 @@ $hero-grid-one-tweakpoint: 650px;
   }
 
   .hero__copy {
+    @include media-query($breakpoint--small - 1, max-width) {
+      text-align: center;
+    }
+
     @include media-query($breakpoint--small) {
       grid-column: 3 / 7;
     }
