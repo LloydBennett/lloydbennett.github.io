@@ -57,7 +57,9 @@
     {% endif %}
 
     {% if page.type != 'casestudy' %}
-      {% include scroll-button.html %}
+      <div class="hero__button scroll-button--margin-top">
+        {% include scroll-button.html %}
+      </div>
     {% endif %}
 
   </div>
