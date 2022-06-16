@@ -4,10 +4,6 @@ $hero-grid-one-tweakpoint: 650px;
   @include section;
   padding-top: spacing(9);
   overflow: hidden;
-
-  @include media-query($breakpoint--small) {
-    padding-top: spacing(13);
-  }
 }
 
 .hero--about {
@@ -145,6 +141,7 @@ $hero-grid-one-tweakpoint: 650px;
 
     @include media-query($breakpoint--x-large) {
       grid-column: 4 / 6;
+      grid-row-end: 5;
     }
   }
 }
