@@ -8,6 +8,7 @@ class NavigationMenu {
     this.menuTrigger = document.querySelectorAll('[data-toggle-menu]');
     this.parentBg = this.parent.querySelector('[data-nav-menu-bg]');
     this.navAsideOverlay = this.parent.querySelector('[data-nav-aside-overlay]');
+    this.navAsideWrapper = this.parent.querySelector('[data-nav-aside-image-wrapper]');
     this.heroNavBar = document.querySelector('[data-nav-bar-hero]');
     this.body = document.body;
     this.subMenuTrigger = document.querySelector('[data-toggle-sub-menu]');
@@ -50,25 +51,25 @@ class NavigationMenu {
       });
     });
 
-    this.subMenuTrigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.toggleSubMenu(this);
-    });
-
-    this.closeSubMenuTrigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.toggleSubMenu(this);
-    });
-
-    this.subMenuLinks.forEach((el) => {
-      el.addEventListener('mouseover', () => {
-        this.showProjectImg(el);
-      });
-
-      el.addEventListener('mouseleave', () => {
-        this.showProjectImg();
-      });
-    });
+    // this.subMenuTrigger.addEventListener('click', (e) => {
+    //   e.preventDefault();
+    //   this.toggleSubMenu(this);
+    // });
+    //
+    // this.closeSubMenuTrigger.addEventListener('click', (e) => {
+    //   e.preventDefault();
+    //   this.toggleSubMenu(this);
+    // });
+    //
+    // this.subMenuLinks.forEach((el) => {
+    //   el.addEventListener('mouseover', () => {
+    //     this.showProjectImg(el);
+    //   });
+    //
+    //   el.addEventListener('mouseleave', () => {
+    //     this.showProjectImg();
+    //   });
+    // });
 
     this.parentLinks.forEach((el) => {
       el.addEventListener('mouseover', (e) => {
@@ -109,70 +110,140 @@ class NavigationMenu {
   }
 
   animate() {
-    let _this = this;
-    let duration = 620;
+    //let _this = this;
+    //let duration = 620;
     this.isAnimating = true;
 
-    if(this.menuIsOpen) {
-      setTimeout(() => {
-        this.showNavLinks();
-        this.navBar.classList.add('appear');
-      }, duration);
-    }
-    else {
-      this.showNavLinks();
-      this.navBar.classList.remove('appear');
-    }
+    this.navTl.to(this.parentBg, {
+      width: '100%',
+      ease: Power2.easeOut,
+      duration: 0.65
+    });
+
+    this.navTl.to(this.navAsideOverlay,
+      { x: 0, ease: Power2.easeOut, duration: 0.5 }, "enter")
+      .to(this.navAsideOverlay, {
+        opacity: 0,
+        ease: Power2.easeOut,
+        duration: 0.5,
+        delay: 0.5
+      });
+
+    this.navTl.to(this.navAsideWrapper, { opacity: 1, ease: Power2.easeOut, duration: 0.4 }, "-=0.8");
+
+    this.showNavLinks();
+
+    // if(this.menuIsOpen) {
+    //   setTimeout(() => {
+    //     this.showNavLinks();
+    //     this.navBar.classList.add('appear');
+    //   }, duration);
+    // }
+    // else {
+    //   this.showNavLinks();
+    //   this.navBar.classList.remove('appear');
+    // }
   }
 
   showNavLinks() {
-    var delay,
-        _this = this;
+    let delay;
 
     this.parentLinks.forEach((elem, index) => {
-      var elemChild = elem.querySelectorAll('.title-mask span');
+      let elemChild = elem.querySelectorAll('.title-mask span');
 
-      if (!_this.initializedMenu) {
-        // add mouse over event
-
-        if(elem.hasAttribute('data-scroll-to-bottom')) {
-          _this.initializedMenu = true;
-
-          elem.addEventListener('click', (e) => {
-            _this.checkNavigationMenuState();
-            _this.smoothScrolling(e, this);
-          });
+      this.navTl.to(elemChild, {
+        transform: 'translateY(0) skew(0)',
+        ease: Power2.easeOut,
+        duration: 0.4,
+        stagger: {
+          amount: 0.3
         }
-      }
-
-      elemChild.forEach((item, i) => {
-        _this.menuIsOpen? delay = 20 * i : delay = 0;
-
-        setTimeout(function() {
-          item.classList.toggle('appear');
-        }, delay);
-      });
-
-      this.metaHr.classList.toggle('appear');
-      this.metaFrame.classList.toggle('appear');
+      }, "enter");
     });
 
-    this.socialMediaLinks.forEach((e, i) => {
-      if(i === this.socialMediaLinks.length - 1) {
-        e.addEventListener('transitionend', () => {
-          _this.isAnimating = false;
-        });
-      }
-      setTimeout(() => {
-        e.classList.toggle('appear');
-      }, 200);
-    });
+    this.navTl.fromTo(this.metaHr,
+      { width: '0'} ,
+      { width: '100%', ease: Power2.easeOut, duration: 0.4 }
+    );
 
-    if(this.subMenuOpen) {
-      setTimeout(() => {
-        this.toggleSubMenu(this);
-      }, 600);
-    }
+    this.navTl.fromTo(this.metaFrame,
+      { y: 100 },
+      { y: 0, ease: Power2.easeOut, duration: 0.3 }
+    );
+
+    // this.navTl.to(this.socialMediaLinks, {
+    //   transform: 'translateY(0)',
+    //   ease: Power2.easeOut,
+    //   duration: 0.4,
+    //   stagger: {
+    //     amount: 0.4
+    //   },
+    //   onComplete: () => { this.isAnimating = false; }
+    // });
+
+
+    //this.metaHr.classList.toggle('appear');
+    //this.metaFrame.classList.toggle('appear');
+
+
+
+      // transform: "translateY(0) skewY(0)",
+      // duration: 0.65,
+      // ease: Power2.easeOut,
+      // stagger: {
+      //   amount: 0.4
+      // }
+      //
+
+      // this.navTl.to(elemChild, {
+      //   transform: 'translateY(0)',
+      //   ease: Power2.easeIn,
+      //   duration: 0.4,
+      //   stagger: 0.2
+      // }, "-=0.1");
+
+      // transform: translateY(0);
+      // transition: transform 400ms ease;
+
+      // if (!_this.initializedMenu) {
+      //   // add mouse over event
+      //
+      //   if(elem.hasAttribute('data-scroll-to-bottom')) {
+      //     _this.initializedMenu = true;
+      //
+      //     elem.addEventListener('click', (e) => {
+      //       _this.checkNavigationMenuState();
+      //       _this.smoothScrolling(e, this);
+      //     });
+      //   }
+      // }
+
+      // elemChild.forEach((item, i) => {
+      //   _this.menuIsOpen? delay = 20 * i : delay = 0;
+      //
+      //   setTimeout(function() {
+      //     item.classList.toggle('appear');
+      //   }, delay);
+      // });
+
+
+    // this.socialMediaLinks.forEach((e, i) => {
+    //   if(i === this.socialMediaLinks.length - 1) {
+    //     e.addEventListener('transitionend', () => {
+    //       _this.isAnimating = false;
+    //       console.log()
+    //     });
+    //   }
+    //   setTimeout(() => {
+    //     e.classList.toggle('appear');
+    //   }, 200);
+    // });
+
+    // if(this.subMenuOpen) {
+    //   setTimeout(() => {
+    //     this.toggleSubMenu(this);
+    //   }, 600);
+    // }
   }
 
   toggleSubMenu(_this) {
@@ -211,7 +282,3 @@ class NavigationMenu {
     showSubMenuLinks(subMenuListItems, delay, "appear");
   }
 }
-
-// NavigationMenu.prototype = {
-//   smoothScrolling: scrollToSection
-// }

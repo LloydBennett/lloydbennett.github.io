@@ -98,8 +98,8 @@
 }
 
 .meta__frame-content {
-  @include appear;
-  transition: 300ms ease 600ms;
+  //@include appear;
+  //transition: 300ms ease 600ms;
 
   .meta__title {
     margin-bottom: 0;
