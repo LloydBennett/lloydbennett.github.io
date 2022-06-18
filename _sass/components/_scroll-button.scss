@@ -26,16 +26,8 @@
     }
 
     .scroll-button__highlight {
-
-      transition: 300ms ease;
-
-      @include media-query($breakpoint--large) {
-        stroke-dashoffset: 800px;
-      }
-
-      @include media-query($breakpoint--x-large) {
-        stroke-dashoffset: 1000px;
-      }
+      transition: 800ms ease;
+      stroke-dashoffset: 0;
     }
   }
 }
@@ -57,7 +49,7 @@
 }
 
 .scroll-button__circle {
-  stroke-width: 2;
+  stroke-width: 3;
   stroke: $colour--black;
   fill: none;
   display: inline-block;
@@ -66,16 +58,14 @@
 .scroll-button__highlight {
   stroke: $colour--passion;
   transform-origin: 50% 50%;
-  stroke-dasharray: 800px;
-  stroke-dashoffset: 0;
-  transition: 300ms ease;
-
-  @include media-query($breakpoint--large) {
-    stroke-dashoffset: 800px;
-  }
+  stroke-dashoffset: 1500px;
+  stroke-dasharray: 1500px;
+  transition: 800ms ease;
+  transform: rotate(-90deg);
 
   @include media-query($breakpoint--x-large) {
-    stroke-dashoffset: 1000px;
+    stroke-dashoffset: 2057px;
+    stroke-dasharray: 2057px;
   }
 }
 
@@ -91,7 +81,7 @@
   bottom: 50%;
   transform: translate(-50%, 50%);
 
-  @include media-query($breakpoint--medium - 1, max-width) {
+  @include media-query($breakpoint--large - 1, max-width) {
     width: 30px;
   }
 
