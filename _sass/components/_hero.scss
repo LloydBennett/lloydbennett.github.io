@@ -1,4 +1,5 @@
 $hero-grid-one-tweakpoint: 650px;
+$hero-about-tweakpoint: 900px;
 
 .hero {
   @include section;
@@ -12,7 +13,7 @@ $hero-grid-one-tweakpoint: 650px;
     grid-row-start: 1;
     grid-row-end: 3;
 
-    @include media-query(900px, max-width) {
+    @include media-query($hero-about-tweakpoint - 1, max-width) {
       display: none;
     }
 
@@ -23,19 +24,26 @@ $hero-grid-one-tweakpoint: 650px;
 
   .hero__title {
     grid-column: 1 / 6;
-    grid-row-start: 2;
+    grid-row-start: 1;
     grid-row-end: 4;
     margin-bottom: 0;
 
     @include media-query($breakpoint--medium) {
       grid-column: 1 / 5;
     }
+
+    @include media-query($hero-about-tweakpoint) {
+      padding-top: spacing(12);
+    }
   }
 
   .hero__button {
-    grid-row-start: 3;
+    grid-row-start: 2;
     grid-row-end: 3;
     grid-column: 5 / 8;
+    position: relative;
+    top: 110%;
+    z-index: 2;
 
     @include media-query(900px, max-width) {
       display: none;
@@ -43,6 +51,10 @@ $hero-grid-one-tweakpoint: 650px;
 
     @include media-query($breakpoint--x-large) {
       grid-column: 6 / 8;
+    }
+
+    @include media-query($breakpoint--tweakpoint) {
+      top: 150%;
     }
   }
 }
