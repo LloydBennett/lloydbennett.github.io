@@ -2,3 +2,4 @@ _site
 .sass-cache
 .idea
 node_modules/
+_vendor/ruby/2.6.0/gems/sassc-2.4.0/ext/util.o
