@@ -33,10 +33,15 @@
       {% for project in site.projects %}
         {% unless project.title == page.title %}
           <div class="hero__number" data-hero-title>
-            <div class="title-mask">
-              <span>
-                {{ forloop.index | prepend: '00' | slice: -2, 2 }}
-              </span>
+            <div class="title-mask flex">
+              {% capture number %}{{ forloop.index | prepend: '00' | slice: -2, 2 }}{% endcapture %}
+              {% capture numberSize %}{{ number.size }}{% endcapture %}
+              {% assign length = numberSize | plus: 0 %}
+
+              {% for i in (1..length) %}
+              {% assign count = i | minus: 1 %}
+              <span>{{ number | slice: count }}</span>
+              {% endfor %}
             </div>
           </div>
         {% endunless %}
