@@ -2,6 +2,10 @@
   position: relative;
   z-index: 3;
   background-color: $colour--grey;
+
+  @include media-query($breakpoint--medium) {
+    margin-bottom: 90vh;
+  }
 }
 
 .website--casestudy {

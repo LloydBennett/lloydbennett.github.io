@@ -11,7 +11,7 @@
         {% else %}
           {% assign title = page.title | replace: ' ', ''%}
         {% endif %}
-        <div id="{{ title | downcase }}" data-page-content>
+        <div id="{{ title | downcase }}" class="website__content" data-page-content>
           {% include _navigation/nav-menu.html %}
           {% include _navigation/nav-bar.html
             main = true
@@ -21,12 +21,13 @@
         </div>
         {% if page.type == "casestudy" %}
           {% include _casestudy/casestudy-footer.html %}
-        {% else %}
-          {% include footer.html %}
         {% endif %}
+
       </div>
 
     </main>
+
+    {% include footer.html %}
 
 
     <script src="/js/page-transition.js"></script>

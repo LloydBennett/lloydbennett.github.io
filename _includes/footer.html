@@ -1,5 +1,5 @@
 <footer id="contact" class="footer" data-footer>
-	<div class="container footer__grid">
+	<div class="container">
     <div class="footer__connect">
       <div>
         <h2 class="footer__title">
@@ -15,73 +15,6 @@
         </p>
       </div>
     </div>
-    <form action="https://formspree.io/{{ site.email }}"
-          class="footer__form"
-          method="POST">
-      <div class="input">
-        <input type="text" name="name"
-               class="input__field input__field--black"
-               placeholder="Your Name"
-               data-input-field>
-        <label for="name" class="input__label">
-          Your Name
-        </label>
-      </div>
-      <div class="input">
-        <input type="email" name="_replyto"
-               class="input__field input__field--black"
-               placeholder="Email Address"
-               data-input-field>
-        <label for="_replyto" class="input__label">
-          Email Address
-        </label>
-      </div>
-      <div class="input">
-        <input type="tel"
-               name="phone-number"
-               class="input__field input__field--black"
-               placeholder="Contact Number"
-               data-input-field>
-        <label for="phone-number" class="input__label">
-          Contact Number
-        </label>
-      </div>
-      <div class="input">
-        <input type="tel" name="company"
-               class="input__field input__field--black"
-               placeholder="Project Name / Company"
-               data-input-field>
-        <label for="company" class="input__label">
-          Project Name / Company
-        </label>
-      </div>
-      <div class="input">
-        <input type="tel" name="budget"
-               class="input__field input__field--black"
-               placeholder="Project Budget"
-               data-input-field>
-        <label for="budget" class="input__label">
-          Project Budget
-        </label>
-      </div>
-      <div class="input">
-        <textarea name="your-project"
-                  class="input__field input__field--black"
-                  placeholder="Tell me about your project"
-                  rows="1" data-input-field></textarea>
-        <label for="your-project" class="input__label">
-          Tell me about your project
-        </label>
-      </div>
-
-      <button type="submit" value="Send"
-      class="button button--main button--margin-top">
-        <span class="button__text">
-          Send
-        </span>
-        <span class="button__line"></span>
-      </button>
-    </form>
 
     <div class="footer__socials">
       {% include _social-links/dribbble.html useIcon = false dark-mode = false %}
@@ -89,11 +22,11 @@
       {% include _social-links/linkedin.html useIcon = false dark-mode = false %}
     </div>
 
-    <p class="footer__credits">
+    <!-- <p class="footer__credits">
       <span>Photography by</span>
       <a class="link" target="_blank" href="https://www.nyamekyecann.com/">
         Nyamekye Cann
       </a>
-    </p>
+    </p> -->
   </div>
 </footer>
