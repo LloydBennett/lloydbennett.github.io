@@ -114,7 +114,7 @@ class PageTransitions {
 
     let animate = () => {
       window.scrollTo(0,0);
-      this.wrapper.classList.add('website--no-overflow', 'website--casestudy');
+      this.wrapper.classList.add('website--no-overflow');
 
       this.insertNewPageContent(newHTML);
       heroImage = document.querySelector(heroSelectorName);

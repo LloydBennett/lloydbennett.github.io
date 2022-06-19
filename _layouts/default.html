@@ -3,15 +3,14 @@
   {% include head.html %}
   <body data-body>
     {% include loading-screen.html %}
-    <main class="website {% if page.type == "casestudy" %}website--casestudy{% endif %}"
-    data-main>
-      <div data-scroll>
+    <main class="website" data-main>
+      <div data-scroll class="website__container {% if page.type == "casestudy" %}website--casestudy{% else %}website--bg{% endif %}">
         {% if page.type == "casestudy" %}
           {% assign title = page.directory %}
         {% else %}
           {% assign title = page.title | replace: ' ', ''%}
         {% endif %}
-        <div id="{{ title | downcase }}" class="website__content" data-page-content>
+        <div id="{{ title | downcase }}" data-page-content>
           {% include _navigation/nav-menu.html %}
           {% include _navigation/nav-bar.html
             main = true
@@ -24,11 +23,8 @@
         {% endif %}
 
       </div>
-
+      {% include footer.html %}
     </main>
-
-    {% include footer.html %}
-
 
     <script src="/js/page-transition.js"></script>
     <script src="/js/main.js"></script>

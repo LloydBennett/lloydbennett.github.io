@@ -1,19 +1,18 @@
-.website {
+.website__container {
   position: relative;
   z-index: 3;
-  background-color: $colour--grey;
 
   @include media-query($breakpoint--medium) {
     margin-bottom: 90vh;
   }
 }
 
+.website--bg {
+  background-color: $colour--grey;
+}
+
 .website--casestudy {
   background-color: $colour--white;
-
-  @include media-query($breakpoint--small) {
-    margin-bottom: 0;
-  }
 }
 
 .website--no-overflow {
