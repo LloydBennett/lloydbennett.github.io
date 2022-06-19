@@ -26,7 +26,7 @@
     }
 
     .scroll-button__highlight {
-      transition: 800ms ease;
+      transition: 600ms ease;
       stroke-dashoffset: 0;
     }
   }
@@ -60,7 +60,7 @@
   transform-origin: 50% 50%;
   stroke-dashoffset: 1500px;
   stroke-dasharray: 1500px;
-  transition: 800ms ease;
+  transition: 600ms ease;
   transform: rotate(-90deg);
 
   @include media-query($breakpoint--x-large) {
