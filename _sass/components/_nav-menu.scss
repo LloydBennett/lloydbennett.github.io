@@ -14,13 +14,7 @@ $nav-inactive: #676767;
   overflow-y: scroll;
 
   .nav-bar {
-    opacity: 0;
     align-self: flex-start;
-
-    &.appear {
-      opacity: 1;
-      transition: 400ms ease;
-    }
   }
 
 
@@ -251,10 +245,8 @@ $nav-inactive: #676767;
     transition: 200ms ease;
   }
 
-  .link {
-    display: table;
+  .title-mask {
     margin-top: spacing(1);
-    overflow: hidden;
 
     @include media-query($breakpoint--small) {
       margin-top: spacing(2);
@@ -262,24 +254,6 @@ $nav-inactive: #676767;
 
     &:first-child {
       margin-top: 0;
-    }
-
-    p {
-      transform: translateY(100%);
-      transition: 300ms ease 600ms;
-    }
-
-    &::after {
-      transform: translateY(20px);
-      transition: 300ms ease 600ms;
-    }
-
-    &.appear {
-      p,
-      &::after {
-        transform: translateY(0);
-        transition: 300ms ease;
-      }
     }
   }
 }
