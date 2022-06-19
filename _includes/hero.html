@@ -32,9 +32,13 @@
     {% if page.type == 'casestudy' %}
       {% for project in site.projects %}
         {% unless project.title == page.title %}
-          <span class="hero__number">
-            {{ forloop.index | prepend: '00' | slice: -2, 2 }}
-          </span>
+          <div class="hero__number" data-hero-title>
+            <div class="title-mask">
+              <span>
+                {{ forloop.index | prepend: '00' | slice: -2, 2 }}
+              </span>
+            </div>
+          </div>
         {% endunless %}
       {% endfor %}
     {% endif %}
