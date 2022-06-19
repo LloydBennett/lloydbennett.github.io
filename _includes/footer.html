@@ -1,26 +1,36 @@
 <footer id="contact" class="footer" data-footer>
-	<div class="container">
-    <div class="footer__connect">
-      <div>
-        <h2 class="footer__title">
-          <span>Got a project</span>
-          <span>in mind?</span>
-        </h2>
-        <p>
-          Drop me a message on the contact form or
-          alternatively via email at:
-          <a class="link" href="mailto:{{ site.email }}">
-            {{ site.email }}
-          </a>
-        </p>
-      </div>
-    </div>
+	<div class="container footer__grid">
+		<div class="footer__heading">
+			<h2 class="footer__title">
+				<span>Got a project</span>
+				<span>in mind?</span>
+			</h2>
+		</div>
+
+		<div class="footer__message">
+			<p>
+				If you got have something in the pipeline that require design expertise, I would love to hear about it.
+			</p>
+		</div>
+
+
+    <p class="footer__connect">
+      Drop me a message at:
+      <a class="link" href="mailto:{{ site.email }}">
+        {{ site.email }}
+      </a>
+    </p>
+
 
     <div class="footer__socials">
       {% include _social-links/dribbble.html useIcon = false dark-mode = false %}
       {% include _social-links/instagram.html useIcon = false dark-mode = false %}
       {% include _social-links/linkedin.html useIcon = false dark-mode = false %}
     </div>
+
+		<div class="footer__copyright">
+			<p>&copy;{{ "now" | date: "%Y" }}</p>
+		</div>
 
     <!-- <p class="footer__credits">
       <span>Photography by</span>
