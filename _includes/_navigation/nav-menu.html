@@ -76,9 +76,15 @@
       </div>
 
       <div class="nav-menu__socials">
-        {% include _social-links/dribbble.html useIcon = false dark-mode = true %}
-        {% include _social-links/instagram.html useIcon = false dark-mode = true %}
-        {% include _social-links/linkedin.html useIcon = false dark-mode = true %}
+        <div class="title-mask">
+          {% include _social-links/dribbble.html useIcon = false dark-mode = true %}
+        </div>
+        <div class="title-mask">
+          {% include _social-links/instagram.html useIcon = false dark-mode = true %}
+        </div>
+        <div class="title-mask">
+          {% include _social-links/linkedin.html useIcon = false dark-mode = true %}
+        </div>
       </div>
     </div>
     <!-- <div class="nav-menu__dummy"></div> -->
