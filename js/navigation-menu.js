@@ -34,7 +34,9 @@ class NavigationMenu {
 
   checkNavigationMenuState() {
     this.menuIsOpen = !this.menuIsOpen;
+  }
 
+  initAnimation() {
     if(!this.isAnimating) {
       this.body.classList.toggle('no-scrolling');
       this.parent.classList.toggle('is-open');
@@ -48,6 +50,7 @@ class NavigationMenu {
     this.menuTrigger.forEach((el) => {
       el.addEventListener('click', () => {
         this.checkNavigationMenuState();
+        this.initAnimation();
       });
     });
 
@@ -75,8 +78,8 @@ class NavigationMenu {
       el.addEventListener('mouseover', (e) => {
         this.parentLinks.forEach(element => element.classList.add("nav-menu-link--inactive"));
         el.classList.remove("nav-menu-link--inactive");
-
       });
+
       el.addEventListener('mouseleave', (e) => {
         this.parentLinks.forEach(element => element.classList.remove("nav-menu-link--inactive"));
       });
@@ -110,8 +113,6 @@ class NavigationMenu {
   }
 
   animate() {
-    //let _this = this;
-    //let duration = 620;
     this.isAnimating = true;
 
     this.navTl.to(this.parentBg, {
@@ -133,6 +134,8 @@ class NavigationMenu {
 
     this.showNavLinks();
 
+
+
     // if(this.menuIsOpen) {
     //   setTimeout(() => {
     //     this.showNavLinks();
@@ -146,7 +149,6 @@ class NavigationMenu {
   }
 
   showNavLinks() {
-    let delay;
 
     this.parentLinks.forEach((elem, index) => {
       let elemChild = elem.querySelectorAll('.title-mask span');
@@ -163,48 +165,26 @@ class NavigationMenu {
 
     this.navTl.fromTo(this.metaHr,
       { width: '0'} ,
-      { width: '100%', ease: Power2.easeOut, duration: 0.4 }
+      { width: '100%', ease: Power2.easeOut, duration: 0.4 }, "enter+=0.2"
     );
 
     this.navTl.fromTo(this.metaFrame,
       { y: 100 },
-      { y: 0, ease: Power2.easeOut, duration: 0.3 }
-    );
+      { y: 0, ease: Power2.easeOut, duration: 0.3 },
+    "enter+=0.4");
 
-    // this.navTl.to(this.socialMediaLinks, {
-    //   transform: 'translateY(0)',
-    //   ease: Power2.easeOut,
-    //   duration: 0.4,
-    //   stagger: {
-    //     amount: 0.4
-    //   },
-    //   onComplete: () => { this.isAnimating = false; }
-    // });
-
-
-    //this.metaHr.classList.toggle('appear');
-    //this.metaFrame.classList.toggle('appear');
+    this.navTl.fromTo(this.socialMediaLinks,
+      { y: 100 },
+      {
+        y: 0,
+        ease: Power2.easeOut,
+        duration: 0.3,
+        onComplete: () => { this.isAnimating = false; console.log('we done here!!')}
+      }, "enter+=0.4");
 
 
+    this.navTl.fromTo(this.navBar, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: Power2.easeOut }, "enter");
 
-      // transform: "translateY(0) skewY(0)",
-      // duration: 0.65,
-      // ease: Power2.easeOut,
-      // stagger: {
-      //   amount: 0.4
-      // }
-      
-      //
-
-      // this.navTl.to(elemChild, {
-      //   transform: 'translateY(0)',
-      //   ease: Power2.easeIn,
-      //   duration: 0.4,
-      //   stagger: 0.2
-      // }, "-=0.1");
-
-      // transform: translateY(0);
-      // transition: transform 400ms ease;
 
       // if (!_this.initializedMenu) {
       //   // add mouse over event
@@ -218,27 +198,6 @@ class NavigationMenu {
       //     });
       //   }
       // }
-
-      // elemChild.forEach((item, i) => {
-      //   _this.menuIsOpen? delay = 20 * i : delay = 0;
-      //
-      //   setTimeout(function() {
-      //     item.classList.toggle('appear');
-      //   }, delay);
-      // });
-
-
-    // this.socialMediaLinks.forEach((e, i) => {
-    //   if(i === this.socialMediaLinks.length - 1) {
-    //     e.addEventListener('transitionend', () => {
-    //       _this.isAnimating = false;
-    //       console.log()
-    //     });
-    //   }
-    //   setTimeout(() => {
-    //     e.classList.toggle('appear');
-    //   }, 200);
-    // });
 
     // if(this.subMenuOpen) {
     //   setTimeout(() => {
