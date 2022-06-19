@@ -1,4 +1,4 @@
-<section class="{% if include.small-margin %}inner-section{% else %}section{% endif %}">
+<section class="{% if include.small-margin %}inner-section{% else %}{% if include.section-ending %}section--padding{% else %} section{% endif %}{% endif %}">
   <div class="container grid">
 
     {% if include.side-content %}
