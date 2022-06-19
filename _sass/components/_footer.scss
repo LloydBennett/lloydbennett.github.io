@@ -37,12 +37,25 @@
 }
 
 .footer__heading {
-  grid-column: 1 / 6;
+  grid-column: 1 / 4;
+
+  @include media-query($breakpoint--small - 1, max-width) {
+    margin-bottom: spacing(4);
+  }
+
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 1 / 5;
+  }
+
+  p {
+    @include max-paragraph-width(50rem);
+  }
+
 
 }
 
 .footer__title {
-  //text-align: center;
   color: $colour--white;
 
   span {
@@ -50,53 +63,33 @@
   }
 }
 
-.footer__message {
-  grid-column: 6 / 8;
-}
-
 .footer__connect {
-  grid-column: 9 / 12;
-  //margin-bottom: spacing(10);
+  grid-column: 1 / 5;
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 6 / 8;
+  }
+
+  @include media-query($breakpoint--small - 1, max-width) {
+    margin-bottom: spacing(10);
+  }
 
   p {
     @include max-paragraph-width;
-    // text-align: center;
-    // margin-left: auto;
-    //margin-right: auto;
   }
 }
 
-.footer--desktop {
-  @include media-query($tweakpoint-two-column-layout - 1, max-width) {
-    display: none;
-  }
-}
-
-.footer--mobile {
-  @include media-query($tweakpoint-two-column-layout) {
-    display: none;
-  }
-}
-
-.footer__credits {
-  font-size: 1.4rem;
-
-  @include media-query($breakpoint--large) {
-    font-size: 1.6rem;
-  }
-
-  a {
-    display: table;
-    align-self: flex-start;
-  }
+.footer__email {
+  font-size: 2rem;
+  display: table;
 }
 
 .footer__socials {
-  // margin-left: auto;
-  // margin-right: auto;
-  // text-align: center;
+  grid-column: 6 / 8;
 
-  grid-column: 9/ 12;
+  @include media-query($breakpoint--x-large - 1, max-width) {
+    grid-row: 1;
+  }
 
   @include media-query($breakpoint--small - 1, max-width) {
     @include max-paragraph-width;
@@ -106,15 +99,18 @@
   a {
     display: table;
     margin-bottom: spacing(1);
-    // margin-left: auto;
-    // margin-right: auto;
   }
 }
 
 .footer__copyright {
-  grid-column: 1;
+  grid-column: 6 / 8;
   grid-row: 2;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+
+
+  @include media-query($breakpoint--x-large) {
+    grid-column: 1;
+  }
 }
