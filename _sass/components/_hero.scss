@@ -86,6 +86,10 @@ $hero-about-tweakpoint: 900px;
 .hero-grid--one {
   .hero__title {
     @include media-query($breakpoint--small) {
+      grid-column: 1 / 7;
+    }
+
+    @include media-query(557px) {
       grid-column: 1 / 5;
     }
 
