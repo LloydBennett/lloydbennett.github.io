@@ -2,6 +2,7 @@
   padding: spacing(2) 0;
   width: 100%;
   z-index: 200;
+  color: $colour--black;
 
   @include media-query($breakpoint--medium) {
     padding: spacing(3) 0;
