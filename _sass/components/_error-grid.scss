@@ -65,7 +65,6 @@
   }
 
   @include media-query($breakpoint--medium) {
-    grid-column: 6 / 7;
     margin-bottom: spacing(14);
   }
 
@@ -110,6 +109,10 @@
   @include media-query($breakpoint--medium - 1, max-width) {
     margin-bottom: spacing(8);
   }
+
+  a {
+    display: table;
+  }
 }
 
 .error-grid__code {
@@ -117,18 +120,8 @@
   margin-bottom: 0;
   display: none;
 
-  @include media-query($breakpoint--medium) {
-    grid-column: 6 / 7;
-    display: flex;
-    align-items: center;
-  }
-
-  @include media-query($breakpoint--large - 1, max-width) {
-    grid-row-start: 2;
-    grid-row-end: 4;
-  }
-
   @include media-query($breakpoint--large) {
+    display: flex;
     align-items: flex-end;
     grid-column: 1 / 2;
   }
