@@ -53,15 +53,17 @@
   stroke: $colour--black;
   fill: none;
   display: inline-block;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
 }
 
 .scroll-button__highlight {
   stroke: $colour--passion;
-  transform-origin: 50% 50%;
+
   stroke-dashoffset: 1500px;
   stroke-dasharray: 1500px;
   transition: 600ms ease;
-  transform: rotate(-90deg);
+
 
   @include media-query($breakpoint--x-large) {
     stroke-dashoffset: 2057px;

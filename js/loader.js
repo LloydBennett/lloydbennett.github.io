@@ -16,6 +16,7 @@ class Loader {
     this.loaderSpinner = document.querySelector('[data-loader-spinner]');
     this.loaderSpinnerCircle = this.loaderSpinner.querySelector('circle');
     this.loaderContent = document.querySelector('[data-loader-content]');
+    this.scrollBtnCircle = document.querySelector('[data-scroll-button-circle]');
 
     this.LSPINNER_WIDTH = this.loaderSpinner.getBoundingClientRect().width;
     this.LSPINNER_WIDTH_RULE = this.LSPINNER_WIDTH / 10;
@@ -68,6 +69,7 @@ class Loader {
 
     this.loaderTl.to(this.heroTitleMobile, heroTitleAnim, "titles");
     this.loaderTl.to(this.heroTitle, heroTitleAnim, "titles");
+    this.loaderTl.fromTo(this.scrollBtnCircle, 1.2, { strokeDashoffset: 2057, strokeDasharray: 2057 }, { strokeDashoffset:0, ease: Power2.easeOut}, "others-=0.4");
 
     this.heroImg.forEach((item, i) => {
       let imageTop = item.getBoundingClientRect().top;
