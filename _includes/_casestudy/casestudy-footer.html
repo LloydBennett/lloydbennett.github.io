@@ -5,30 +5,28 @@
 {% endif %}
 
 {% if document.size > 1 %}
-<a class="casestudy__footer"
-
-{% for links in document %}
-    {% if links.title == page.title %}
-      {% if forloop.last %}
-        {% assign next = document[0] %}
-        {% assign nexttitle = next.herotitle %}
-      {% else %}
-        {% assign next = document[forloop.index] %}
-        {% assign nexttitle = next.herotitle %}
-      {% endif %}
-
-        {% if next.coming-soon %}
-          {% assign nexturl = next.live-url %}
-          href="{{ nexturl }}" target="_blank"
+<div class="casestudy__footer">
+  {% for links in document %}
+      {% if links.title == page.title %}
+        {% if forloop.last %}
+          {% assign next = document[0] %}
+          {% assign nexttitle = next.herotitle %}
         {% else %}
-          {% assign nexturl = next.url %}
-          href="{{ nexturl }}"
+          {% assign next = document[forloop.index] %}
+          {% assign nexttitle = next.herotitle %}
         {% endif %}
 
-    {% endif %}
+          {% if next.coming-soon %}
+            {% assign nexturl = next.live-url %}
 
-{% endfor %}
->
+          {% else %}
+            {% assign nexturl = next.url %}
+          {% endif %}
+
+      {% endif %}
+
+  {% endfor %}
+
   {% capture project-image-url %}../images/projects/{{next.directory}}/next-project/{% endcapture %}
 
   <div class="casestudy-footer__grid">
@@ -42,11 +40,14 @@
         {{ nexttitle }}
       </span>
     </div>
-    <picture class="casestudy-footer__img thumbnail--block">
-      <source media="(min-width: 700px)" srcset="{{ project-image-url }}/next-project-large.jpg">
-      <img src="{{ project-image-url }}/next-project-small.jpg" alt="{{page.directory}}">
-    </picture>
+    <a class="casestudy-footer__img" href="{{nexturl }}">
+      <picture class=" thumbnail--block">
+        <source media="(min-width: 700px)" srcset="{{ project-image-url }}/next-project-large.jpg">
+        <img src="{{ project-image-url }}/next-project-small.jpg" alt="{{page.directory}}">
+      </picture>
+    </a>
+
   </div>
 
-</a>
+</div>
 {% endif %}
