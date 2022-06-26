@@ -42,6 +42,7 @@ class NavigationMenu {
       this.parent.classList.toggle('is-open');
       this.navBar.classList.toggle('is-open');
       this.heroNavBar.classList.toggle('is-sticky');
+
       this.animate();
     }
   }
@@ -115,45 +116,33 @@ class NavigationMenu {
   animate() {
     this.isAnimating = true;
 
-    this.navTl.to(this.parentBg, {
-      width: '100%',
-      ease: Power2.easeOut,
-      duration: 0.65
-    });
+    if(!this.menuIsOpen) {
+      this.navTl.clear();
+      this.isAnimating = false;
 
-    this.navTl.to(this.navAsideOverlay,
-      { x: 0, ease: Power2.easeOut, duration: 0.5 }, "enter")
-      .to(this.navAsideOverlay, {
-        opacity: 0,
-        ease: Power2.easeOut,
-        duration: 0.5,
-        delay: 0.5
-      });
+      return;
+    }
 
-    this.navTl.to(this.navAsideWrapper, { opacity: 1, ease: Power2.easeOut, duration: 0.4 }, "-=0.8");
+
+    this.navTl.fromTo(this.parentBg,
+      { width: 0 },
+      { width: '100%', ease: Power2.easeOut, duration: 0.65 });
+
+    this.navTl.fromTo(this.navAsideOverlay,
+      { x: "100%" }, { x: 0, ease: Power2.easeOut, duration: 0.5 }, "enter")
+      .fromTo(this.navAsideOverlay, { opacity: 1 }, { opacity: 0, ease: Power2.easeOut, duration: 0.5, delay: 0.5 });
+
+    this.navTl.fromTo(this.navAsideWrapper, { opacity: 0 }, { opacity: 1, ease: Power2.easeOut, duration: 0.4 }, "-=0.8");
 
     this.showNavLinks();
-
-
-
-    // if(this.menuIsOpen) {
-    //   setTimeout(() => {
-    //     this.showNavLinks();
-    //     this.navBar.classList.add('appear');
-    //   }, duration);
-    // }
-    // else {
-    //   this.showNavLinks();
-    //   this.navBar.classList.remove('appear');
-    // }
   }
 
   showNavLinks() {
-
     this.parentLinks.forEach((elem, index) => {
       let elemChild = elem.querySelectorAll('.title-mask span');
 
-      this.navTl.to(elemChild, {
+      this.navTl.to(elemChild,
+        {
         transform: 'translateY(0) skew(0)',
         ease: Power2.easeOut,
         duration: 0.4,
@@ -181,7 +170,6 @@ class NavigationMenu {
         duration: 0.3,
         onComplete: () => { this.isAnimating = false; console.log('we done here!!')}
       }, "enter+=0.4");
-
 
     this.navTl.fromTo(this.navBar, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: Power2.easeOut }, "enter");
 
