@@ -4,26 +4,29 @@
   <body data-body>
     {% include loading-screen.html %}
     <main class="website" data-main>
-      <div data-scroll class="website__container {% if page.type == "casestudy" %}website--casestudy{% else %}website--bg{% endif %}">
-        {% if page.type == "casestudy" %}
-          {% assign title = page.directory %}
-        {% else %}
-          {% assign title = page.title | replace: ' ', ''%}
-        {% endif %}
-        <div id="{{ title | downcase }}" data-page-content>
-          {% include _navigation/nav-menu.html %}
-          {% include _navigation/nav-bar.html
-            main = true
-          %}
-          {% include hero.html %}
-          {{ content }}
+      <div data-scroll class="website__container">
+        <div class="{% if page.type == "casestudy" %}website--casestudy{% else %}website--bg{% endif %}">
+          {% if page.type == "casestudy" %}
+            {% assign title = page.directory %}
+          {% else %}
+            {% assign title = page.title | replace: ' ', ''%}
+          {% endif %}
+          <div id="{{ title | downcase }}" data-page-content>
+            {% include _navigation/nav-menu.html %}
+            {% include _navigation/nav-bar.html
+              main = true
+            %}
+            {% include hero.html %}
+            {{ content }}
+          </div>
+          {% if page.type == "casestudy" %}
+            {% include _casestudy/casestudy-footer.html %}
+          {% endif %}
         </div>
-        {% if page.type == "casestudy" %}
-          {% include _casestudy/casestudy-footer.html %}
-        {% endif %}
 
+        {% include footer.html %}
       </div>
-      {% include footer.html %}
+
     </main>
 
     <script src="/js/page-transition.js"></script>
