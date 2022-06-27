@@ -17,41 +17,10 @@ $nav-inactive: #676767;
     align-self: flex-start;
   }
 
-
-  // .hr {
-  //   width: 0;
-  //
-  //   &.appear {
-  //     width: 100%;
-  //     transition: 300ms ease;
-  //   }
-  // }
-
   &.is-open {
     opacity: 1;
     pointer-events: auto;
     transition: 300ms ease;
-
-    // .nav-menu__bg {
-    //   width: 100%;
-    //   transition: 550ms ease;
-    //
-    //   @include media-query($breakpoint--medium) {
-    //     transition: 650ms ease;
-    //   }
-    // }
-
-    // .nav-menu__aside-overlay {
-    //   transition: 500ms ease 500ms transform,
-    //               400ms ease 1.3s opacity;
-    //   transform: translateX(0);
-    //   opacity: 0;
-    // }
-
-    // .nav-menu__aside-content {
-    //   transition: 400ms ease 1s;
-    //   opacity: 1;
-    // }
   }
 }
 
@@ -60,8 +29,6 @@ $nav-inactive: #676767;
   height: 100%;
   position: fixed;
   right: 0;
-  width: 0;
-  //transition: 650ms ease 600ms;
 }
 
 .nav-menu__grid {
@@ -86,10 +53,6 @@ $nav-inactive: #676767;
     @include media-query($breakpoint--small - 1, max-width) {
       margin-bottom: spacing(6);
     }
-
-    // @include media-query($breakpoint--small) {
-    //   margin-bottom: spacing(9);
-    // }
 
     @include media-query($breakpoint--large) {
       grid-column: 2 / 8;
@@ -157,6 +120,10 @@ $nav-inactive: #676767;
       transition: transform 400ms ease;
     }
   }
+
+  .title-mask span {
+    transform: translateY(0) skewY(0);
+  }
 }
 
 .nav-menu-link--inactive {
@@ -198,7 +165,6 @@ $nav-inactive: #676767;
   background: url('../images/menu-cover.jpg') no-repeat;
   background-size: cover;
   opacity: 0;
-  //transition: 400ms ease 400ms;
 }
 
 .nav-menu__aside-image {
@@ -223,7 +189,6 @@ $nav-inactive: #676767;
   height: calc(100% - 2.4rem);
   right: 0;
   position: absolute;
-  transform: translateX(100%);
   z-index: 2;
 }
 

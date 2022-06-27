@@ -141,9 +141,11 @@ class NavigationMenu {
     this.parentLinks.forEach((elem, index) => {
       let elemChild = elem.querySelectorAll('.title-mask span');
 
-      this.navTl.to(elemChild,
+      this.navTl.fromTo(elemChild,
+        { y: 100, skewY: 4},
         {
-        transform: 'translateY(0) skew(0)',
+        y: 0,
+        skewY: 0,
         ease: Power2.easeOut,
         duration: 0.4,
         stagger: {
