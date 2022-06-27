@@ -120,9 +120,9 @@ class NavigationMenu {
       if(this.subMenuOpen) {
         setTimeout(() => {
           this.toggleSubMenu(this);
-          this.isAnimating = false;
         }, 600);
       }
+      this.isAnimating = false;
       return;
     }
 
