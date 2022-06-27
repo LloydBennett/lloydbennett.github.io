@@ -165,6 +165,7 @@ $nav-inactive: #676767;
   background: url('../images/menu-cover.jpg') no-repeat;
   background-size: cover;
   opacity: 0;
+  overflow: hidden;
 }
 
 .nav-menu__aside-image {
@@ -266,27 +267,29 @@ $nav-inactive: #676767;
 }
 
 .nav-menu__main {
-  transition: 300ms ease;
-  counter-reset: li;
+  transition: 500ms ease;
+  //counter-reset: li;
 
   &.hide {
     position: absolute;
     transform: translateX(-100%);
-    transition: 300ms ease 900ms;
+    transition: 500ms ease;
+    //transition: 300ms ease 900ms;
     opacity: 0;
     pointer-events: none;
   }
 }
 
-.nav-menu__main-item {
-  transition: 500ms ease transform, 300ms ease opacity 150ms;
-
-  &.hide {
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: 500ms ease transform, 300ms ease opacity 150ms;
-  }
-}
+// .nav-menu__main-item {
+//   //transition: 500ms ease transform, 300ms ease opacity 150ms;
+//   transition: 500ms ease;
+//
+//   &.hide {
+//     transform: translateX(-100%);
+//     opacity: 0;
+//     //transition: 500ms ease transform, 300ms ease opacity 150ms;
+//   }
+// }
 
 .nav-menu__sub {
   transition: 300ms ease;
@@ -299,17 +302,23 @@ $nav-inactive: #676767;
     transition: 400ms ease;
     position: static;
     pointer-events: auto;
+
+    .nav-menu__sub-item {
+      opacity: 1;
+      transition: 500ms ease;
+    }
   }
 }
 
 .nav-menu__sub-item {
-  transform: translateX(30%);
+  //transform: translateX(30%);
   opacity: 0;
-  transition: 500ms ease transform, 300ms ease opacity 150ms;
+  transition: 500ms ease;
+  //transition: 500ms ease transform, 300ms ease opacity 150ms;
 
-  &.appear {
-    transform: translateX(0%);
-    transition: 500ms ease transform, 300ms ease opacity 150ms;
-    opacity: 1;
-  }
+  // &.appear {
+  //   transform: translateX(0%);
+  //   transition: 500ms ease transform, 300ms ease opacity 150ms;
+  //   opacity: 1;
+  // }
 }

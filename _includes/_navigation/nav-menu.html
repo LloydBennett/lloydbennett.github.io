@@ -7,6 +7,8 @@
       nav-menu = true
     %}
 
+    {% assign casestudies = site.projects | sort: "order" %}
+
     <div class="nav-menu__heading meta--white meta--margin-bottom">
       <div class="hr" data-meta-menu-hr></div>
       <div class="meta__frame">
@@ -52,7 +54,7 @@
         </div>
         <div class="nav-menu__sub" data-sub-menu>
           <ul class="nav-menu__list">
-            {% for casestudy in site.projects %}
+            {% for casestudy in casestudies %}
             <li class="nav-menu__list-item nav-menu__sub-item">
               <a {% if casestudy.coming-soon %}
                 href="{{ casestudy.live-url }}"
@@ -61,10 +63,10 @@
                 href="{{ casestudy.url }}"
               {% endif %}
                 class="nav-menu__link" data-nav-menu-link="{{ casestudy.directory }}">
-                <span class="nav-menu__link-no">
-                  {{ forloop.index | prepend: "0" }}
-                </span>
                 <span class="nav-menu__link-wrapper">
+                  <span class="nav-menu__link-no">
+                    {{ forloop.index | prepend: "0" }}.
+                  </span>
                   <span>{{ casestudy.title }}</span>
                   <span class="nav-menu__link-line"></span>
                 </span>

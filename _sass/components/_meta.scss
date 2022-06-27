@@ -110,7 +110,7 @@
   }
 
   &.flip-frame {
-    transform: translateY(-100%);
+    transform: translateY(-100%) !important;
     transition: 400ms ease 50ms;
   }
 }

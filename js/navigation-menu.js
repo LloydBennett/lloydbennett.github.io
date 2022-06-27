@@ -11,8 +11,7 @@ class NavigationMenu {
     this.navAsideWrapper = this.parent.querySelector('[data-nav-aside-image-wrapper]');
     this.heroNavBar = document.querySelector('[data-nav-bar-hero]');
     this.body = document.body;
-    this.subMenuTrigger = document.querySelector('[data-toggle-sub-menu]');
-    this.closeSubMenuTrigger = document.querySelector('[data-close-submenu]');
+    this.subMenuTrigger = document.querySelectorAll('[data-toggle-sub-menu]');
     this.metaHr = document.querySelector('[data-meta-menu-hr]');
     this.metaFrame = document.querySelector('[data-meta-frame]');
     this.subMenu = document.querySelector('[data-sub-menu]');
@@ -55,25 +54,24 @@ class NavigationMenu {
       });
     });
 
-    // this.subMenuTrigger.addEventListener('click', (e) => {
-    //   e.preventDefault();
-    //   this.toggleSubMenu(this);
-    // });
-    //
-    // this.closeSubMenuTrigger.addEventListener('click', (e) => {
-    //   e.preventDefault();
-    //   this.toggleSubMenu(this);
-    // });
-    //
-    // this.subMenuLinks.forEach((el) => {
-    //   el.addEventListener('mouseover', () => {
-    //     this.showProjectImg(el);
-    //   });
-    //
-    //   el.addEventListener('mouseleave', () => {
-    //     this.showProjectImg();
-    //   });
-    // });
+    this.subMenuTrigger.forEach((el, i) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('heyyy!!');
+        this.toggleSubMenu();
+      });
+    });
+
+
+    this.subMenuLinks.forEach((el) => {
+      el.addEventListener('mouseover', () => {
+        this.showProjectImg(el);
+      });
+
+      el.addEventListener('mouseleave', () => {
+        this.showProjectImg();
+      });
+    });
 
     this.parentLinks.forEach((el) => {
       el.addEventListener('mouseover', (e) => {
@@ -118,8 +116,13 @@ class NavigationMenu {
 
     if(!this.menuIsOpen) {
       this.navTl.clear();
-      this.isAnimating = false;
 
+      if(this.subMenuOpen) {
+        setTimeout(() => {
+          this.toggleSubMenu(this);
+          this.isAnimating = false;
+        }, 600);
+      }
       return;
     }
 
@@ -188,47 +191,17 @@ class NavigationMenu {
       //     });
       //   }
       // }
-
-    // if(this.subMenuOpen) {
-    //   setTimeout(() => {
-    //     this.toggleSubMenu(this);
-    //   }, 600);
-    // }
   }
 
-  toggleSubMenu(_this) {
-    let delay = 50;
-    let subMenu = _this.subMenu;
-    let mainMenu = _this.mainMenu;
-    let mainMenuListItems = mainMenu.querySelectorAll('.nav-menu__list-item');
-    let subMenuListItems = subMenu.querySelectorAll('.nav-menu__list-item');
-    let socialMedia = document.querySelector('.nav-menu__socials');
+  toggleSubMenu() {
+    let closeSubMenuTrigger = document.querySelector('[data-back]');
 
-    let showSubMenuLinks = (nodeList, delay, className, parentNode = null, afterElement = null) => {
-      nodeList.forEach((e, i) => {
-        setTimeout(() => {
-          e.classList.toggle(className);
+    this.subMenuOpen = !this.subMenuOpen;
 
-          if(i === nodeList.length - 1) {
-            if(parentNode != null) {
-              parentNode.classList.toggle(className);
-            }
-
-            if(afterElement != null) {
-              afterElement.classList.toggle('appear');
-            }
-          }
-        }, delay * i);
-      });
-    };
-
-    _this.subMenuOpen = !_this.subMenuOpen;
-
-    _this.closeSubMenuTrigger.classList.toggle('appear');
-    _this.logo.classList.toggle('hide');
-    _this.metaFrame.classList.toggle('flip-frame');
-
-    showSubMenuLinks(mainMenuListItems, delay, "hide", _this.mainMenu, _this.subMenu);
-    showSubMenuLinks(subMenuListItems, delay, "appear");
+    closeSubMenuTrigger.classList.toggle('appear');
+    this.logo.classList.toggle('hide');
+    this.metaFrame.classList.toggle('flip-frame');
+    this.subMenu.classList.toggle('appear');
+    this.mainMenu.classList.toggle('hide');
   }
 }

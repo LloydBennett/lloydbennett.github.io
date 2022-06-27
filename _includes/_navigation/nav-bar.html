@@ -1,7 +1,7 @@
 <div class="nav-bar{% if include.nav-menu %}" data-nav-bar{% else %} is-sticky" data-nav-bar-hero{% endif %}>
   <div class="{% if include.main %}container nav-bar__wrapper{% else %}nav-bar__flex{% endif %}">
-    <div class="nav-bar__col nav-bar__logo">
-      <a href="../../">
+    <div class="nav-bar__col">
+      <a href="../../" class="nav-bar__logo" data-logo>
         <span class="meta__content meta--body-text">
           Lloyd<span class="hide-mobile">&ndash;Jamie</span><span class="show-mobile">&nbsp;Bennett</span><span class="show-mobile">&nbsp;&mdash;</span>
         </span>
@@ -11,7 +11,7 @@
       </a>
 
       {% if include.nav-menu %}
-      <div class="nav-bar__back" data-close-submenu>
+      <div class="nav-bar__back" data-toggle-sub-menu data-back>
         <svg width="50" height="50" class="nav-bar__back-outline">
            <circle cx="25" cy="25" r="24" />
         </svg>
